@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 40 | Theme: "Beast Battle (Comparisons)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:36:25.000Z
+ * Generated: 2026-11-13T05:53:06.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */

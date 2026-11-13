@@ -34,6 +34,100 @@ def get_blueprint(w):
         "isFullMock": False
     }
 
+def normalize_info_exchange(cards, week, theme):
+    if 'table_a' in cards and 'table_b' in cards:
+        return cards
+    card_a = cards.get('card_a', {})
+    card_b = cards.get('card_b', {})
+    cues_a = card_a.get('cues', [])
+    cues_b = card_b.get('cues', [])
+    role_a = card_a.get('role', 'Candidate')
+    role_b = card_b.get('role', 'Partner')
+
+    fields_a = []
+    for i, cue in enumerate(cues_a[:5]):
+        is_missing = (i < 2)
+        field_id = f"f{i+1}"
+        cue_word = cue.split()[0].lower()
+        if is_missing:
+            fields_a.append({
+                "id": field_id,
+                "label": cue,
+                "cue_prompt": f"what / {cue.lower()}?",
+                "cue_word": cue_word,
+                "is_missing": True,
+                "acceptable_questions": [
+                    f"What is the {cue.lower()}?",
+                    f"Can you tell me the {cue.lower()}?"
+                ],
+                "nova_reply": f"The {cue.lower()} is recorded for {theme}."
+            })
+        else:
+            fields_a.append({
+                "id": field_id,
+                "label": cue,
+                "cue_prompt": f"what / {cue.lower()}?",
+                "cue_word": cue_word,
+                "is_missing": False,
+                "card_value": f"{cue} verified",
+                "value": f"{cue} verified",
+                "examiner_question": f"What is the {cue.lower()}?",
+                "acceptable_answers": [
+                    f"It is {cue.lower()}.",
+                    f"{cue}."
+                ]
+            })
+
+    fields_b = []
+    for i, cue in enumerate(cues_b[:5]):
+        is_missing = (i >= 2)
+        field_id = f"fb{i+1}"
+        cue_word = cue.split()[0].lower()
+        if is_missing:
+            fields_b.append({
+                "id": field_id,
+                "label": cue,
+                "cue_prompt": f"what / {cue.lower()}?",
+                "cue_word": cue_word,
+                "is_missing": True,
+                "acceptable_questions": [
+                    f"What is the {cue.lower()}?",
+                    f"Can you tell me the {cue.lower()}?"
+                ],
+                "nova_reply": f"The {cue.lower()} is confirmed in our notes."
+            })
+        else:
+            fields_b.append({
+                "id": field_id,
+                "label": cue,
+                "cue_prompt": f"what / {cue.lower()}?",
+                "cue_word": cue_word,
+                "is_missing": False,
+                "card_value": f"{cue} on file",
+                "value": f"{cue} on file",
+                "examiner_question": f"What is the {cue.lower()}?",
+                "acceptable_answers": [
+                    f"It is {cue.lower()}.",
+                    f"{cue}."
+                ]
+            })
+
+    return {
+        **cards,
+        "table_a": {
+            "title": f"{role_a}'s Info Card",
+            "subtitle": "Candidate Card",
+            "person": role_a,
+            "fields": fields_a
+        },
+        "table_b": {
+            "title": f"{role_b}'s Info Card",
+            "subtitle": "Partner Card",
+            "person": role_b,
+            "fields": fields_b
+        }
+    }
+
 def build_week_files(data):
     w = data['week']
     theme = data['theme']
@@ -135,12 +229,13 @@ export default writingHubData;
         f.write(wh_js)
 
     # 5. speaking_hub.js
+    sh_cards = normalize_info_exchange(speaking['info_exchange_cards'], w, theme)
     sh_data = {
         "week": w,
         "theme": theme,
         "cefr_level": "A2 Flyers",
         "talkshow_prompt": speaking['talkshow_prompt'],
-        "info_exchange_cards": speaking['info_exchange_cards']
+        "info_exchange_cards": sh_cards
     }
     sh_js = f"""{header}
 export const speakingHubData = {json.dumps(sh_data, indent=2, ensure_ascii=False)};

@@ -26,12 +26,12 @@ In Round 91, sequential production was formally resumed per Owner ruling: higher
 ## 2. Task A: Forensic Status Report on W01–32
 
 ### 2.1 Archived Git Tag Forensics (`v1-w01-w32-final-20260820`)
-Forensic examination of git tag `v1-w01-w32-final-20260820` (commit `ee8ea2775fba18ef18bf7be959f6b9dc178f7734`) was conducted across sample weeks W05, W12, W20, and W28 in both `src/data/weeks/` and `src/data/weeks_easy/`.
+Forensic examination of git tag `v1-w01-w32-final-20260820` (commit `07935596ead34fcc195159767310e8349fb15f3f` as verified via `git rev-parse`; noted historically as `ee8ea277` in `src/data/weeks_easy/DEPRECATED_DO_NOT_EDIT.md`) was conducted across sample weeks W05, W12, W20, and W28 in both `src/data/weeks/` and `src/data/weeks_easy/`.
 
 ```bash
 git ls-tree v1-w01-w32-final-20260820 src/data/weeks/week_05/
 ```
-**Verbatim Output:**
+**Verbatim Output (Complete 21-file listing):**
 ```
 100644 blob 84a139d3119ba440168977a0a82c21b7f2d50807	src/data/weeks/week_05/ask_ai.js
 100644 blob 3dade35c8e2ce0305ee75bbbc9e564221559a9b5	src/data/weeks/week_05/daily_watch.js
@@ -45,8 +45,10 @@ git ls-tree v1-w01-w32-final-20260820 src/data/weeks/week_05/
 100644 blob 6927fbb5ab707d878ad3a1319cf8ddf77f56146a	src/data/weeks/week_05/mindmap.js
 100644 blob c6d7ed0c1691c9bed6008733b6b8656d8806520c	src/data/weeks/week_05/read.js
 100644 blob 02b75a9f31a953ba0f044ffe5a1cfbe999d87f48	src/data/weeks/week_05/shadowing.js
+100644 blob d092daff67e6b8ee2cc67e3f75867bb0755387a0	src/data/weeks/week_05/shadowing.js.bak
 100644 blob 9bef10cb57312d33c9f450e61562e446e432dadb	src/data/weeks/week_05/shadowing_ipa.js
 100644 blob deac5cbbbc28a55ba5fe1e6c2e312855fe0807c9	src/data/weeks/week_05/singapore_math.js
+100644 blob 4fd979fd2d72b4a63536b7bbc17b1e7c03f73ec5	src/data/weeks/week_05/video_queries.json
 100644 blob 5098c83b0343893de61909e0c1e561296f80f12c	src/data/weeks/week_05/vocab.js
 100644 blob 97ee2c248e44cfc80502cff5d03daea8a5db93fe	src/data/weeks/week_05/week_05_real.js
 100644 blob 58417f116c34e6c3fc99549b3d04946ff674cd4d	src/data/weeks/week_05/word_match.js
@@ -259,3 +261,4 @@ The deliverables are packaged according to the established project governance pr
    - Commit `docs/review_packages/manifest_round91.txt` (`round91_20261113.zip` is ignored by `.gitignore`).
 4. **Adversarial Review Subagent:**
    - Spawn adversarial QA subagent to independently inspect and verify all Round 91 staging deliverables.
+
