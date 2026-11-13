@@ -1,0 +1,164 @@
+ROUND 87 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:                 2026-11-13T03:34:09.813Z
+round86_baseline_commit:   287b0120747baf8074aaa81d2b7426d7917c66f6
+deliverables_commit:       08320f4e043d0aa65350b58f55b0cbc9f2baaab9
+deliverables_clean_check:  PASS (0 uncommitted/untracked changes in Round 87 deliverables)
+manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
+                           Commit 2 ONLY adds docs/review_packages/manifest_round87.txt
+                           (round87_20261113.zip is gitignored via .gitignore; 0 code/artifact delta in Commit 2).
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round87_20261113.zip
+  Size:    46614 bytes
+  SHA-256: 1ba2de6a84893b6d7a17e4ed4c12f789b9c05e16ec46c8ebfb3248988b790665
+
+ROUND 87 SCRIPTS & ARTIFACT HASHES (SHA-256):
+  52323d845a0623e8b102aafd01b19f34344e6217dc5a5ea2d5f3595187cb660d  scripts/audit_round87_digital_map_mocks.mjs
+  b9dd5f6769d28f40d2bdc7a1d91525c53be649c0254a38ce249a3dcc13e5a216  scripts/apply_round87_map_cleanup.mjs
+  384ee81e81388413fe71e3dec7dec80587e20be5b527918dfe2713ec8a91cc29  scripts/package_round87.mjs
+  fd8683535e294359bddf1dfb4d65d86a27f84050706d1e1afa933c65867ff8d5  docs/agent_artifacts/round87_report.md
+  2ff640bdb719e44c4c7c41922768ce3b0d6fa12c653af96e4a382d94b6a34d8c  docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+
+LIVE GIT SCOPE DISCLOSURE (R86 BASELINE 287b0120..08320f4e):
+1. Live Digital Map (docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md) delta (27 content mock rows cleaned):
+   M	docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+2. Governance docs & freeze manifests delta (MUST be none):
+   (none)
+3. Full Round 87 deliverables delta (R86..deliverables_commit):
+   M	docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md
+   A	docs/agent_artifacts/round87_report.md
+   A	scripts/apply_round87_map_cleanup.mjs
+   A	scripts/audit_round87_digital_map_mocks.mjs
+   A	scripts/package_round87.mjs
+4. Remaining working-tree entries (pre-existing unrelated files left unstaged + current zip/manifest):
+   M docs/Claude_handoff.txt
+    M docs/agent_artifacts/differentiation_options_w79_80_w129_132.md
+    M docs/agent_artifacts/round86_report.md
+    D docs/review_packages/manifest_round70.txt
+    D docs/review_packages/manifest_round71.txt
+    D docs/review_packages/manifest_round72.txt
+    D docs/review_packages/manifest_round73.txt
+    D docs/review_packages/manifest_round74.txt
+    D docs/review_packages/manifest_round75.txt
+    D docs/review_packages/manifest_round80.txt
+    M scripts/analyze_source_b_internal_conflicts.mjs
+    M scripts/audit_round73_source_b_baseline.mjs
+    M scripts/audit_round75_source_b_baseline.mjs
+    M scripts/audit_staged_gate11.mjs
+    M scripts/build_source_a_vs_source_b_table.mjs
+    M scripts/merge_wave3_production.mjs
+    M scripts/package_round73.mjs
+    M scripts/package_round74.mjs
+    M scripts/package_round75.mjs
+    M scripts/package_round76.mjs
+    M scripts/package_round78.mjs
+   ?? "docs/Claude_handoff copy.txt"
+   ?? docs/OPEN_ITEMS.md
+   ?? docs/agent_artifacts/G1D_SO_DANG_KY_NGUON_SU_THAT_W33.md
+   ?? docs/agent_artifacts/HOTFIX_W35_DOM_EVIDENCE.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.md
+   ?? docs/agent_artifacts/ROUND55_AUDIO_FEASIBILITY_AUDIT.json
+   ?? docs/agent_artifacts/ROUND56_W35_FORENSIC_SCOPE_REPORT.md
+   ?? docs/agent_artifacts/ROUND57_W35_FIELD_LEVEL_DATA_AUDIT.md
+   ?? docs/agent_artifacts/STEP_C_FALLBACK_TABLE.md
+   ?? docs/agent_artifacts/W33_40_COMMITS_AFTER_TAG.csv
+   ?? docs/agent_artifacts/W33_W34_DATA_COMPARISON.md
+   ?? docs/agent_artifacts/W34_AUDIO_COVERAGE_TABLE.md
+   ?? docs/agent_artifacts/W34_HANDOFF_LOGS_2026-10-28.md
+   ?? docs/agent_artifacts/analyze_mcq_recursive.mjs
+   ?? docs/agent_artifacts/analyze_w33_mcq.mjs
+   ?? docs/agent_artifacts/broadcast_studio_scene_proof.png
+   ?? docs/agent_artifacts/build_40_commits_csv.mjs
+   ?? docs/agent_artifacts/doc_inventory.tsv
+   ?? docs/agent_artifacts/exhaustive_production_playtest_report.json
+   ?? docs/agent_artifacts/f7d3_batch1.json
+   ?? docs/agent_artifacts/fallback_scan_raw.json
+   ?? docs/agent_artifacts/fs_trace.cjs
+   ?? docs/agent_artifacts/g1i_raw/m41_git_commit_w34.txt
+   ?? docs/agent_artifacts/g1i_raw/m42_git_log_and_status.txt
+   ?? docs/agent_artifacts/g1i_scripts/
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w33.json
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w34.json
+   ?? docs/agent_artifacts/gate15_w33_local.txt
+   ?? docs/agent_artifacts/gate15_w33_prod.txt
+   ?? docs/agent_artifacts/gate_run_results_1218f5af.json
+   ?? docs/agent_artifacts/gate_run_results_df023efe.json
+   ?? docs/agent_artifacts/gate_run_results_e8dbc532.json
+   ?? docs/agent_artifacts/generate_quality_dump.mjs
+   ?? docs/agent_artifacts/investigation_w34/
+   ?? docs/agent_artifacts/official_wordlists_scanned.json
+   ?? docs/agent_artifacts/oxford_a2_verified_36.json
+   ?? docs/agent_artifacts/oxford_a2_word_levels.json
+   ?? docs/agent_artifacts/oxford_scraped_lemmas.json
+   ?? docs/agent_artifacts/prod_vs_local_73_mp3.json
+   ?? docs/agent_artifacts/round10_diff.patch
+   ?? docs/agent_artifacts/round75_prompt.txt
+   ?? docs/agent_artifacts/round75_prompt_full.txt
+   ?? docs/agent_artifacts/screenshots/audit_all_21_games_results.json
+   ?? docs/agent_artifacts/screenshots/hotfix_w35/
+   ?? docs/agent_artifacts/screenshots/w33/
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_direction_a.png
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_fixed.png
+   ?? docs/agent_artifacts/screenshots/w34/mouse_or_squirrel_closeup.jpg
+   ?? docs/agent_artifacts/screenshots/w34/science_report_hotspot_mouse_ui.png
+   ?? docs/agent_artifacts/test_all_gates.mjs
+   ?? docs/agent_artifacts/test_negative_empty_data_output.txt
+   ?? docs/agent_artifacts/w33_inventory_run1.json
+   ?? docs/agent_artifacts/w33_inventory_run2.json
+   ?? docs/agent_artifacts/w33_orphaned_media_full_list.json
+   ?? docs/agent_artifacts/w33_quality_dump.txt
+   ?? docs/agent_artifacts/w34_audio_comparison.json
+   ?? docs/agent_artifacts/w34_auto_extracted_expected.json
+   ?? docs/agent_artifacts/w34_prod_playtest_report.json
+   ?? docs/agent_artifacts/w34_rigorous_asr_audit_small.json
+   ?? docs/agent_artifacts/w34_whisper_all_73.json
+   ?? docs/agent_artifacts/w34_wip_2026-10-20.patch
+   ?? docs/agent_artifacts/week_inventory.mjs
+   ?? scripts/audit_week_audio_readiness.mjs
+   ?? scripts/batch_generate_week_audio.mjs
+   ?? scripts/build_wave1_specs.mjs
+   ?? scripts/build_wave3_specs.mjs
+   ?? scripts/capture_followup_evidence.mjs
+   ?? scripts/capture_hotfix_w35_evidence.mjs
+   ?? scripts/capture_investigation_proofs.mjs
+   ?? scripts/capture_round12_requested_screenshots.mjs
+   ?? scripts/capture_w33_batch1_screenshots.mjs
+   ?? scripts/capture_w34_package_screenshots.mjs
+   ?? scripts/compare_w33_w34_data_metrics.mjs
+   ?? scripts/compare_w33_w34_schemas.mjs
+   ?? scripts/create_w80_generator.py
+   ?? scripts/deep_audio_playtest_prod.mjs
+   ?? scripts/enrich_audio_log.mjs
+   ?? scripts/extract_w34_expected.mjs
+   ?? scripts/fetch_oxford_lemmas_real.py
+   ?? scripts/gen_w127_w129.py
+   ?? scripts/gen_w129_w130.py
+   ?? scripts/gen_w131.py
+   ?? scripts/gen_w134.py
+   ?? scripts/generate_step_c_table.mjs
+   ?? scripts/generate_w34_all_images.py
+   ?? scripts/generate_w34_audio_coverage_table.mjs
+   ?? scripts/generate_wave3_specs.py
+   ?? scripts/generate_wave3_specs_full.py
+   ?? scripts/migrate_w35_group_a.mjs
+   ?? scripts/package_round56_batch_audio.mjs
+   ?? scripts/package_round56_hotfix.mjs
+   ?? scripts/package_round58_migration.mjs
+   ?? scripts/package_round59.mjs
+   ?? scripts/package_round60.mjs
+   ?? scripts/patch_w80.py
+   ?? scripts/play_15_quests_production_forensics.mjs
+   ?? scripts/playtest_production_exhaustive.mjs
+   ?? scripts/rigorous_w34_audio_asr_audit.py
+   ?? scripts/run_14_gates_logging.mjs
+   ?? scripts/scan_fallbacks_and_defaults.mjs
+   ?? scripts/scan_hardcoded_student_strings.mjs
+   ?? scripts/test_batch_audio_generator.mjs
+   ?? scripts/test_cross_week_duplication.mjs
+   ?? scripts/test_negative_empty_data.mjs
+   ?? scripts/test_parse_source_b.mjs
+   ?? scripts/validate_f7d3_batch1.mjs
+   ?? scripts/verify_broadcast_5scenes.mjs
+========================================================================
