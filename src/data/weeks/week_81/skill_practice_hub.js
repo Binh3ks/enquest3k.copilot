@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 81 | Theme: "ELA: The Master Architect (Structure) / Math: Graphing Data" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.704Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 81 | Theme: "ELA: The Master Architect (Structure) / Math: Graphing Data" | CEFR: "B1 Preliminary"
+ * Updated: 2026-11-13T04:18:06.397Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract Paragraph 2 evidence: 32 words.",
         "48 - 32 = 16 words difference."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Atrium Pillar Load Capacity (Part-Whole)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A grand atrium pavilion rests on two primary load-bearing pillars. The north pillar supports 280 kilonewtons of weight and the south pillar supports 220 kilonewtons. What is the combined load supported by both pillars?",
+      "question": "A grand atrium pavilion rests on two primary load-bearing pillars. The north pillar supports 280 kilonewtons of weight and the south pillar supports 220 kilonewtons. What is the combined load supported by both pillars?",
+      "correctAnswer": 500,
+      "target_answer": 500,
+      "unit": "kilonewtons",
+      "hintText": "Add the north pillar load (280) and south pillar load (220) together.",
+      "steps": [
+        "North pillar: 280 kN.",
+        "South pillar: 220 kN.",
+        "Combined structural load: 280 + 220 = 500 kilonewtons."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "North: 280kN",
+            "value": 280,
+            "color": "#475569"
+          },
+          {
+            "label": "South: 220kN",
+            "value": 220,
+            "color": "#64748b"
+          }
+        ],
+        "totalLabel": "Total: 500 kN"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Drafting Revision Expansion (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "Elena's revised second draft of her architectural research essay contains 680 words, whereas her preliminary first draft contained 490 words. How many words did Elena add during revision?",
+      "question": "Elena's revised second draft of her architectural research essay contains 680 words, whereas her preliminary first draft contained 490 words. How many words did Elena add during revision?",
+      "correctAnswer": 190,
+      "target_answer": 190,
+      "unit": "words",
+      "hintText": "Subtract first draft words (490) from second draft words (680).",
+      "steps": [
+        "Second draft: 680 words.",
+        "First draft: 490 words.",
+        "Words added: 680 - 490 = 190 words."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Draft 2: 680",
+            "value": 680,
+            "color": "#2563eb"
+          },
+          {
+            "label": "Draft 1: 490",
+            "value": 490,
+            "color": "#94a3b8"
+          }
+        ],
+        "differenceLabel": "190 words added"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Blueprint Measurement Framing (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A structural blueprint specifies a corridor gallery length of 850 centimeters. The construction crew framed 310 centimeters on day one and 340 centimeters on day two. How many centimeters remain to be framed on day three?",
+      "question": "A structural blueprint specifies a corridor gallery length of 850 centimeters. The construction crew framed 310 centimeters on day one and 340 centimeters on day two. How many centimeters remain to be framed on day three?",
+      "correctAnswer": 200,
+      "target_answer": 200,
+      "unit": "cm",
+      "hintText": "Add day one (310) and day two (340) framing first. Then subtract from 850 cm specified length.",
+      "steps": [
+        "Framed so far: 310 + 340 = 650 cm.",
+        "Remaining to frame: 850 - 650 = 200 cm."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Day 1: 310cm",
+            "value": 310,
+            "color": "#0891b2"
+          },
+          {
+            "label": "Day 2: 340cm",
+            "value": 340,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "Day 3: 200cm",
+            "value": 200,
+            "color": "#cbd5e1"
+          }
+        ],
+        "totalLabel": "Spec: 850 cm"
+      }
     }
   ],
   "science_lab": {

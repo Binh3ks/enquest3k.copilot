@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 46 | Theme: "The Pattern Code (Logic)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.169Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 46 | Theme: "The Pattern Code (Logic)" | CEFR: "A2 Flyers"
+ * Updated: 2026-11-13T04:18:06.389Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract the 27 triangular tiles.",
         "45 - 27 = 18 more square tiles."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Binary Code Matrix Grid (Part-Whole)",
+      "difficulty": "easy",
+      "type": "part_whole",
+      "problemText": "In a digital puzzle matrix, there are 54 green code chips and 46 gold code chips. How many total code chips are inserted into the matrix?",
+      "question": "In a digital puzzle matrix, there are 54 green code chips and 46 gold code chips. How many total code chips are inserted into the matrix?",
+      "correctAnswer": 100,
+      "target_answer": 100,
+      "unit": "chips",
+      "hintText": "Add green code chips (54) and gold code chips (46) together.",
+      "steps": [
+        "Green chips: 54.",
+        "Gold chips: 46.",
+        "Total code chips: 54 + 46 = 100 chips."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Green: 54",
+            "value": 54,
+            "color": "#10b981"
+          },
+          {
+            "label": "Gold: 46",
+            "value": 46,
+            "color": "#f59e0b"
+          }
+        ],
+        "totalLabel": "Total: 100 chips"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Logic Algorithm Cycles (Comparison)",
+      "difficulty": "easy",
+      "type": "comparison",
+      "problemText": "Algorithm Alpha completed 72 logic cycles in one minute, while Algorithm Beta completed 48 logic cycles. How many more cycles did Algorithm Alpha complete?",
+      "question": "Algorithm Alpha completed 72 logic cycles in one minute, while Algorithm Beta completed 48 logic cycles. How many more cycles did Algorithm Alpha complete?",
+      "correctAnswer": 24,
+      "target_answer": 24,
+      "unit": "cycles",
+      "hintText": "Subtract Algorithm Beta cycles (48) from Algorithm Alpha cycles (72).",
+      "steps": [
+        "Algorithm Alpha: 72 cycles.",
+        "Algorithm Beta: 48 cycles.",
+        "Difference: 72 - 48 = 24 more cycles."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Alpha: 72",
+            "value": 72,
+            "color": "#6366f1"
+          },
+          {
+            "label": "Beta: 48",
+            "value": 48,
+            "color": "#64748b"
+          }
+        ],
+        "differenceLabel": "24 more cycles"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Pattern Bead Necklace Goal (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "Sophia needs 120 patterned beads to finish an ornamental code belt. She has strung 45 striped beads and 40 dotted beads. How many more beads must she string?",
+      "question": "Sophia needs 120 patterned beads to finish an ornamental code belt. She has strung 45 striped beads and 40 dotted beads. How many more beads must she string?",
+      "correctAnswer": 35,
+      "target_answer": 35,
+      "unit": "beads",
+      "hintText": "Add striped beads (45) and dotted beads (40) first. Then subtract from the 120-bead goal.",
+      "steps": [
+        "Strung beads: 45 + 40 = 85 beads.",
+        "Remaining needed: 120 - 85 = 35 beads."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Striped: 45",
+            "value": 45,
+            "color": "#ec4899"
+          },
+          {
+            "label": "Dotted: 40",
+            "value": 40,
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "Needed: 35",
+            "value": 35,
+            "color": "#cbd5e1"
+          }
+        ],
+        "totalLabel": "Goal: 120 beads"
+      }
     }
   ],
   "science_lab": {

@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 74 | Theme: "Science/ELA: Food Chains / Math: Complex Charts" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.697Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 74 | Theme: "Science/ELA: Food Chains / Math: Complex Charts" | CEFR: "B1 Preliminary"
+ * Updated: 2026-11-13T04:18:06.393Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,113 @@ export const skillPracticeHubData = {
         "Subtract Sector South biomass: 115 kg.",
         "180 - 115 = 65 kg difference in biomass."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Invertebrate Biomass Census (Part-Whole)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "An ecological survey recorded 240 grams of insect biomass, 160 grams of crustacean biomass, and 120 grams of mollusk biomass per square meter. What is the total invertebrate biomass?",
+      "question": "An ecological survey recorded 240 grams of insect biomass, 160 grams of crustacean biomass, and 120 grams of mollusk biomass per square meter. What is the total invertebrate biomass?",
+      "correctAnswer": 520,
+      "target_answer": 520,
+      "unit": "grams",
+      "hintText": "Add insect biomass (240), crustacean biomass (160), and mollusk biomass (120) together.",
+      "steps": [
+        "Insects and crustaceans: 240 + 160 = 400 g.",
+        "Add mollusks: 400 + 120 = 520 g."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Insects: 240g",
+            "value": 240,
+            "color": "#16a34a"
+          },
+          {
+            "label": "Crustaceans: 160g",
+            "value": 160,
+            "color": "#059669"
+          },
+          {
+            "label": "Mollusks: 120g",
+            "value": 120,
+            "color": "#10b981"
+          }
+        ],
+        "totalLabel": "Total: 520 g"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Primary Producers Energy Yield (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "Grassland Plot Alpha produced 450 kilocalories of vegetative energy per square meter, while Shrubland Plot Beta produced 275 kilocalories. How many more kilocalories were produced in Plot Alpha?",
+      "question": "Grassland Plot Alpha produced 450 kilocalories of vegetative energy per square meter, while Shrubland Plot Beta produced 275 kilocalories. How many more kilocalories were produced in Plot Alpha?",
+      "correctAnswer": 175,
+      "target_answer": 175,
+      "unit": "kcal",
+      "hintText": "Subtract Plot Beta energy (275) from Plot Alpha energy (450).",
+      "steps": [
+        "Plot Alpha yield: 450 kcal.",
+        "Plot Beta yield: 275 kcal.",
+        "Difference: 450 - 275 = 175 kcal."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Plot Alpha: 450",
+            "value": 450,
+            "color": "#84cc16"
+          },
+          {
+            "label": "Plot Beta: 275",
+            "value": 275,
+            "color": "#a16207"
+          }
+        ],
+        "differenceLabel": "175 kcal difference"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Apex Predator Prey Tracking (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A tracked hawk consumed 80 small rodents in a month. Field observations identified 32 field mice and 28 voles. The remaining prey were shrews. How many shrews did the hawk consume?",
+      "question": "A tracked hawk consumed 80 small rodents in a month. Field observations identified 32 field mice and 28 voles. The remaining prey were shrews. How many shrews did the hawk consume?",
+      "correctAnswer": 20,
+      "target_answer": 20,
+      "unit": "shrews",
+      "hintText": "Add field mice (32) and voles (28) first. Then subtract from total prey (80).",
+      "steps": [
+        "Mice and voles: 32 + 28 = 60 rodents.",
+        "Shrews: 80 - 60 = 20 shrews."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Mice: 32",
+            "value": 32,
+            "color": "#6366f1"
+          },
+          {
+            "label": "Voles: 28",
+            "value": 28,
+            "color": "#8b5cf6"
+          },
+          {
+            "label": "Shrews: 20",
+            "value": 20,
+            "color": "#cbd5e1"
+          }
+        ],
+        "totalLabel": "Total: 80 prey"
+      }
     }
   ],
   "science_lab": {

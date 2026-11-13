@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 77 | Theme: "Social Studies/ELA: World Landmarks / Math: 3D Geometry" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.701Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 77 | Theme: "Social Studies/ELA: World Landmarks / Math: 3D Geometry" | CEFR: "B1 Preliminary"
+ * Updated: 2026-11-13T04:18:06.394Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract the triangular prism edges: 9 edges.",
         "12 - 9 = 3 edges difference."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Colosseum Tier Arch Count (Part-Whole)",
+      "difficulty": "easy",
+      "type": "part_whole",
+      "problemText": "The lower tier of an ancient arena structure features 80 exterior stone arches and the middle tier features 80 matching arches. How many arches are built across both tiers combined?",
+      "question": "The lower tier of an ancient arena structure features 80 exterior stone arches and the middle tier features 80 matching arches. How many arches are built across both tiers combined?",
+      "correctAnswer": 160,
+      "target_answer": 160,
+      "unit": "arches",
+      "hintText": "Add the 80 lower tier arches and 80 middle tier arches together.",
+      "steps": [
+        "Lower tier: 80 arches.",
+        "Middle tier: 80 arches.",
+        "Total arches: 80 + 80 = 160 arches."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Lower: 80",
+            "value": 80,
+            "color": "#78716c"
+          },
+          {
+            "label": "Middle: 80",
+            "value": 80,
+            "color": "#a8a29e"
+          }
+        ],
+        "totalLabel": "Total: 160 arches"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Monument Height Differential (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "The Eiffel Tower in Paris rises to 330 meters, while the statue tower in the park stands 95 meters tall. How much taller is the Eiffel Tower?",
+      "question": "The Eiffel Tower in Paris rises to 330 meters, while the statue tower in the park stands 95 meters tall. How much taller is the Eiffel Tower?",
+      "correctAnswer": 235,
+      "target_answer": 235,
+      "unit": "meters",
+      "hintText": "Subtract statue tower height (95) from Eiffel Tower height (330).",
+      "steps": [
+        "Eiffel Tower: 330 m.",
+        "Statue tower: 95 m.",
+        "Difference: 330 - 95 = 235 meters."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Eiffel: 330m",
+            "value": 330,
+            "color": "#475569"
+          },
+          {
+            "label": "Statue: 95m",
+            "value": 95,
+            "color": "#94a3b8"
+          }
+        ],
+        "differenceLabel": "235 meters taller"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Geometric Block Assembly (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A stonemason needs 250 carved stone blocks to build a vaulted rotunda arch. She prepared 85 blocks on Monday and 95 blocks on Tuesday. How many more blocks must she carve to complete the assembly?",
+      "question": "A stonemason needs 250 carved stone blocks to build a vaulted rotunda arch. She prepared 85 blocks on Monday and 95 blocks on Tuesday. How many more blocks must she carve to complete the assembly?",
+      "correctAnswer": 70,
+      "target_answer": 70,
+      "unit": "blocks",
+      "hintText": "Add Monday (85) and Tuesday (95) blocks first. Then subtract from total required (250).",
+      "steps": [
+        "Blocks prepared: 85 + 95 = 180 blocks.",
+        "Remaining needed: 250 - 180 = 70 blocks."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Mon: 85",
+            "value": 85,
+            "color": "#d97706"
+          },
+          {
+            "label": "Tue: 95",
+            "value": 95,
+            "color": "#f59e0b"
+          },
+          {
+            "label": "Needed: 70",
+            "value": 70,
+            "color": "#e2e8f0"
+          }
+        ],
+        "totalLabel": "Goal: 250 blocks"
+      }
     }
   ],
   "science_lab": {

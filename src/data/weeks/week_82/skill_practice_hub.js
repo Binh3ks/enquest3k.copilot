@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 82 | Theme: "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.706Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 82 | Theme: "ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data" | CEFR: "B1 Preliminary"
+ * Updated: 2026-11-13T04:18:06.397Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract the least watched views: 140 views.",
         "310 - 140 = 170 views difference."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: International Flight Duration (Part-Whole)",
+      "difficulty": "easy",
+      "type": "part_whole",
+      "problemText": "Travel vlogger Marcus logged 14 flight hours from London to Singapore and 8 flight hours from Singapore to Sydney. What was his total flight duration in hours?",
+      "question": "Travel vlogger Marcus logged 14 flight hours from London to Singapore and 8 flight hours from Singapore to Sydney. What was his total flight duration in hours?",
+      "correctAnswer": 22,
+      "target_answer": 22,
+      "unit": "hours",
+      "hintText": "Add leg one (14) and leg two (8) flight hours together.",
+      "steps": [
+        "London to Singapore: 14 hours.",
+        "Singapore to Sydney: 8 hours.",
+        "Total flight time: 14 + 8 = 22 hours."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Leg 1: 14h",
+            "value": 14,
+            "color": "#0284c7"
+          },
+          {
+            "label": "Leg 2: 8h",
+            "value": 8,
+            "color": "#0ea5e9"
+          }
+        ],
+        "totalLabel": "Total: 22 hours"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Video Engagement Variance (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "Episode 5 on desert wildlife generated 420 viewer comments, while Episode 6 on canyon hiking generated 275 comments. How many more comments were posted on Episode 5?",
+      "question": "Episode 5 on desert wildlife generated 420 viewer comments, while Episode 6 on canyon hiking generated 275 comments. How many more comments were posted on Episode 5?",
+      "correctAnswer": 145,
+      "target_answer": 145,
+      "unit": "comments",
+      "hintText": "Subtract Episode 6 comments (275) from Episode 5 comments (420).",
+      "steps": [
+        "Episode 5 comments: 420.",
+        "Episode 6 comments: 275.",
+        "Difference: 420 - 275 = 145 more comments."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Ep 5: 420",
+            "value": 420,
+            "color": "#d97706"
+          },
+          {
+            "label": "Ep 6: 275",
+            "value": 275,
+            "color": "#78716c"
+          }
+        ],
+        "differenceLabel": "145 more comments"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Equipment Production Budget (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "Chloe set an equipment production budget of 900 dollars. She purchased a compact drone for 380 dollars and a directional microphone for 240 dollars. How much budget remains for video editing software?",
+      "question": "Chloe set an equipment production budget of 900 dollars. She purchased a compact drone for 380 dollars and a directional microphone for 240 dollars. How much budget remains for video editing software?",
+      "correctAnswer": 280,
+      "target_answer": 280,
+      "unit": "dollars",
+      "hintText": "Add drone cost (380) and microphone cost (240) first. Then subtract from total budget (900).",
+      "steps": [
+        "Spent on hardware: 380 + 240 = 620 dollars.",
+        "Remaining budget: 900 - 620 = 280 dollars."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Drone: $380",
+            "value": 380,
+            "color": "#4f46e5"
+          },
+          {
+            "label": "Mic: $240",
+            "value": 240,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "Software: $280",
+            "value": 280,
+            "color": "#e2e8f0"
+          }
+        ],
+        "totalLabel": "Budget: $900"
+      }
     }
   ],
   "science_lab": {

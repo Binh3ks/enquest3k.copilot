@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 79 | Theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate" | CEFR: B1 Preliminary
- * Generated: 2026-11-09T08:30:07.703Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 79 | Theme: "Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate" | CEFR: "B1 Preliminary"
+ * Updated: 2026-11-13T04:18:06.395Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract the trees planted to date: 125 thousand trees.",
         "190 - 125 = 65 thousand trees remaining."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Clean Energy Micro-Grid Investment (Part-Whole)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A regional environmental trust granted 140 million dollars to coastal wind turbine arrays and 110 million dollars to solar battery storage. What was the total green energy investment in millions of dollars?",
+      "question": "A regional environmental trust granted 140 million dollars to coastal wind turbine arrays and 110 million dollars to solar battery storage. What was the total green energy investment in millions of dollars?",
+      "correctAnswer": 250,
+      "target_answer": 250,
+      "unit": "million dollars",
+      "hintText": "Add wind array grant (140) and solar storage grant (110) together.",
+      "steps": [
+        "Wind turbine grant: 140 million.",
+        "Solar storage grant: 110 million.",
+        "Total investment: 140 + 110 = 250 million dollars."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Wind: $140M",
+            "value": 140,
+            "color": "#0284c7"
+          },
+          {
+            "label": "Solar: $110M",
+            "value": 110,
+            "color": "#eab308"
+          }
+        ],
+        "totalLabel": "Total: $250M"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Industrial Carbon Capture Margin (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "Facility Alpha removed 280 metric tons of atmospheric carbon, while Facility Beta captured 165 metric tons. How many more metric tons did Facility Alpha capture?",
+      "question": "Facility Alpha removed 280 metric tons of atmospheric carbon, while Facility Beta captured 165 metric tons. How many more metric tons did Facility Alpha capture?",
+      "correctAnswer": 115,
+      "target_answer": 115,
+      "unit": "metric tons",
+      "hintText": "Subtract Facility Beta capture (165) from Facility Alpha capture (280).",
+      "steps": [
+        "Facility Alpha: 280 metric tons.",
+        "Facility Beta: 165 metric tons.",
+        "Difference: 280 - 165 = 115 metric tons."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Alpha: 280t",
+            "value": 280,
+            "color": "#16a34a"
+          },
+          {
+            "label": "Beta: 165t",
+            "value": 165,
+            "color": "#64748b"
+          }
+        ],
+        "differenceLabel": "115 metric tons more"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Wetland Restoration Seasonal Goal (Multi-Step)",
+      "difficulty": "hard",
+      "type": "part_whole",
+      "problemText": "A national park authority set a seasonal goal to restore 500 hectares of degraded wetlands. Technicians rehabilitated 160 hectares in spring and 210 hectares in summer. How many hectares remain to be restored in autumn?",
+      "question": "A national park authority set a seasonal goal to restore 500 hectares of degraded wetlands. Technicians rehabilitated 160 hectares in spring and 210 hectares in summer. How many hectares remain to be restored in autumn?",
+      "correctAnswer": 130,
+      "target_answer": 130,
+      "unit": "hectares",
+      "hintText": "Add spring (160) and summer (210) rehabilitated hectares first. Then subtract from total 500 hectares.",
+      "steps": [
+        "Restored so far: 160 + 210 = 370 hectares.",
+        "Remaining for autumn: 500 - 370 = 130 hectares."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Spring: 160ha",
+            "value": 160,
+            "color": "#22c55e"
+          },
+          {
+            "label": "Summer: 210ha",
+            "value": 210,
+            "color": "#15803d"
+          },
+          {
+            "label": "Autumn: 130ha",
+            "value": 130,
+            "color": "#ca8a04"
+          }
+        ],
+        "totalLabel": "Goal: 500 ha"
+      }
     }
   ],
   "science_lab": {

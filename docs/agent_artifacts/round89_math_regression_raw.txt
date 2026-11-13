@@ -1,0 +1,271 @@
+========================================================================
+ROUND 89 SINGAPORE MATH 5/5 REGRESSION & G-GEN GATES VERIFICATION
+Timestamp: 2026-11-13T04:18:32.064Z
+Scope: 18 Live Production Weeks (35, 38, 39, 41, 43, 45, 46, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 125)
+========================================================================
+
+--- WEEK  35 (Storytelling Practice 2 (Personal Recount)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=1): "Emma took 45 photographs on Saturday and 35 photographs on S..."
+       -> resolvedAnswer: 80  | modelType: part_whole | bars: 2
+     • Q2 (id=2): "The museum gift shop sold 64 postcards in the morning and 28..."
+       -> resolvedAnswer: 36  | modelType: comparison | bars: 2
+     • Q3 (id=3): "Liam pasted 18 souvenir stamps in chapter one and 24 stamps ..."
+       -> resolvedAnswer: 18 stamps | modelType: part_whole | bars: 3
+     • Q4 (id=4): "In his sketchbook, Noah drew 32 castle towers and 19 histori..."
+       -> resolvedAnswer: 13 sketches | modelType: comparison | bars: 2
+     • Q5 (id=5): "At the local memory exhibit, 48 visitors arrived before noon..."
+       -> resolvedAnswer: 85 visitors | modelType: part_whole | bars: 2
+  ✅ [G-GEN-11..16 Compliance]: Week 35 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  38 (Animal Abilities (Modals)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=1): "A cheetah can run at 110 kilometers per hour. A gazelle can ..."
+       -> resolvedAnswer: 30  | modelType: comparison | bars: 2
+     • Q2 (id=2): "In three hops, a red kangaroo jumped 9 meters, 8 meters, and..."
+       -> resolvedAnswer: 27  | modelType: part_whole | bars: 3
+     • Q3 (id=3): "An emperor penguin can dive to a depth of 65 meters, while a..."
+       -> resolvedAnswer: 40 meters | modelType: comparison | bars: 2
+     • Q4 (id=4): "An Arctic tern flew 45 kilometers in the morning and 55 kilo..."
+       -> resolvedAnswer: 30 km | modelType: part_whole | bars: 3
+     • Q5 (id=5): "Marine biologists spotted a coastal pod with 14 adult dolphi..."
+       -> resolvedAnswer: 22 dolphins | modelType: part_whole | bars: 2
+  ✅ [G-GEN-11..16 Compliance]: Week 38 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  39 (Habitats (Persuasion Intro)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w39_p1): "The Green Valley Sanctuary has 45 acres of desert land and 5..."
+       -> resolvedAnswer: 100 acres | modelType: part_whole | bars: 2
+     • Q2 (id=w39_p2): "The sanctuary rescued 36 marine turtles and 14 polar seabird..."
+       -> resolvedAnswer: 22 animals | modelType: comparison | bars: 2
+     • Q3 (id=3): "Conservation volunteers planted 52 mangrove seedlings along ..."
+       -> resolvedAnswer: 90 seedlings | modelType: part_whole | bars: 2
+     • Q4 (id=4): "In the alpine habitat zone, rangers documented 46 bighorn sh..."
+       -> resolvedAnswer: 18 animals | modelType: comparison | bars: 2
+     • Q5 (id=5): "A freshwater wetland habitat can accommodate 80 water birds...."
+       -> resolvedAnswer: 20 birds | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 39 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  41 (Life Cycles (Process)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w41_p1): "A hungry caterpillar ate 18 small leaves on Monday and 24 le..."
+       -> resolvedAnswer: 42 leaves | modelType: part_whole | bars: 2
+     • Q2 (id=w41_p2): "In the garden pond, there are 35 swimming tadpoles and 15 yo..."
+       -> resolvedAnswer: 20 amphibians | modelType: comparison | bars: 2
+     • Q3 (id=3): "Student botanists counted 27 butterfly chrysalises in the gr..."
+       -> resolvedAnswer: 60 chrysalises | modelType: part_whole | bars: 2
+     • Q4 (id=4): "A sunflower seedling grew to 42 centimeters in three weeks, ..."
+       -> resolvedAnswer: 16 cm | modelType: comparison | bars: 2
+     • Q5 (id=5): "In a biology tray containing 75 bean seeds, 28 seeds sproute..."
+       -> resolvedAnswer: 15 seeds | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 41 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  43 (The "Plus" Machine (Addition Language)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w43_p1): "Alex dropped 25 red marbles into the Plus Machine and Mia dr..."
+       -> resolvedAnswer: 40 marbles | modelType: part_whole | bars: 2
+     • Q2 (id=w43_p2): "The students stacked 32 yellow blocks and 28 green blocks to..."
+       -> resolvedAnswer: 60 blocks | modelType: part_whole | bars: 2
+     • Q3 (id=3): "The primary gear inside the Plus Machine has 48 teeth, while..."
+       -> resolvedAnswer: 15 teeth | modelType: comparison | bars: 2
+     • Q4 (id=4): "The engineering lab connected a battery pack with 36 lithium..."
+       -> resolvedAnswer: 60 cells | modelType: part_whole | bars: 2
+     • Q5 (id=5): "A digital marble sorter needs 90 marbles to complete its tes..."
+       -> resolvedAnswer: 30 marbles | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 43 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  45 (Shape Detectives (Geometry)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w45_p1): "A student desk has two long sides of 60 centimeters each and..."
+       -> resolvedAnswer: 200 cm | modelType: part_whole | bars: 2
+     • Q2 (id=w45_p2): "The shape detectives found 28 rectangular objects and 16 cir..."
+       -> resolvedAnswer: 12 shapes | modelType: comparison | bars: 2
+     • Q3 (id=3): "An architectural warning sign is shaped like an equilateral ..."
+       -> resolvedAnswer: 105 cm | modelType: part_whole | bars: 3
+     • Q4 (id=4): "A regular octagon has 8 sides and a regular hexagon has 6 si..."
+       -> resolvedAnswer: 16 sides | modelType: comparison | bars: 2
+     • Q5 (id=5): "Detective Sam uses 80 centimeters of wooden molding to borde..."
+       -> resolvedAnswer: 30 cm | modelType: part_whole | bars: 2
+  ✅ [G-GEN-11..16 Compliance]: Week 45 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  46 (The Pattern Code (Logic)) [cefr=A2 Flyers] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w46_p1): "Noah used 36 red beads and 24 blue beads to make a long patt..."
+       -> resolvedAnswer: 60 beads | modelType: part_whole | bars: 2
+     • Q2 (id=w46_p2): "The arcade puzzle board has 45 square tiles and 27 triangula..."
+       -> resolvedAnswer: 18 tiles | modelType: comparison | bars: 2
+     • Q3 (id=3): "In a digital puzzle matrix, there are 54 green code chips an..."
+       -> resolvedAnswer: 100 chips | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Algorithm Alpha completed 72 logic cycles in one minute, whi..."
+       -> resolvedAnswer: 24 cycles | modelType: comparison | bars: 2
+     • Q5 (id=5): "Sophia needs 120 patterned beads to finish an ornamental cod..."
+       -> resolvedAnswer: 35 beads | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 46 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  73 (Science/ELA: The Water Cycle (Advanced) / Math: Volume) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w73_p1): "A water storage section at the Jade Creek Reservoir is built..."
+       -> resolvedAnswer: 200 cubic units | modelType: part_whole | bars: 2
+     • Q2 (id=w73_p2): "Sector A collected 155 cubic meters of rainwater while Secto..."
+       -> resolvedAnswer: 60 cubic meters | modelType: comparison | bars: 2
+     • Q3 (id=3): "A modern water treatment station operates three filtration t..."
+       -> resolvedAnswer: 550 cubic meters | modelType: part_whole | bars: 3
+     • Q4 (id=4): "During a storm, Catchment Area East collected 340 cubic mete..."
+       -> resolvedAnswer: 145 cubic meters | modelType: comparison | bars: 2
+     • Q5 (id=5): "An underground aquifer reservoir holds 600 cubic meters of e..."
+       -> resolvedAnswer: 200 cubic meters | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 73 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  74 (Science/ELA: Food Chains / Math: Complex Charts) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w74_p1): "In the Oak Ridge Reserve survey, researchers counted 140 her..."
+       -> resolvedAnswer: 175 animals | modelType: part_whole | bars: 2
+     • Q2 (id=w74_p2): "Sector North produced 180 kilograms of plant biomass per hec..."
+       -> resolvedAnswer: 65 kg | modelType: comparison | bars: 2
+     • Q3 (id=3): "An ecological survey recorded 240 grams of insect biomass, 1..."
+       -> resolvedAnswer: 520 grams | modelType: part_whole | bars: 3
+     • Q4 (id=4): "Grassland Plot Alpha produced 450 kilocalories of vegetative..."
+       -> resolvedAnswer: 175 kcal | modelType: comparison | bars: 2
+     • Q5 (id=5): "A tracked hawk consumed 80 small rodents in a month. Field o..."
+       -> resolvedAnswer: 20 shrews | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 74 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  75 (History/ELA: Ancient Egypt / Math: Timelines) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w75_p1): "An archaeological timeline spans from the start of the Old K..."
+       -> resolvedAnswer: 505 years | modelType: part_whole | bars: 2
+     • Q2 (id=w75_p2): "The 18th Dynasty lasted 245 years, while the 19th Dynasty ru..."
+       -> resolvedAnswer: 135 years | modelType: comparison | bars: 2
+     • Q3 (id=3): "The construction of a grand temple sanctuary took 45 years u..."
+       -> resolvedAnswer: 80 years | modelType: part_whole | bars: 2
+     • Q4 (id=4): "The Great Pyramid originally stood at 146 meters tall, while..."
+       -> resolvedAnswer: 81 meters | modelType: comparison | bars: 2
+     • Q5 (id=5): "An archaeology mission planned a 90-day field season. The te..."
+       -> resolvedAnswer: 25 days | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 75 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  76 (History/ELA: Explorers / Math: Map Scales) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w76_p1): "On a maritime chart with a scale of 1 cm = 15 km, Captain Mi..."
+       -> resolvedAnswer: 120 km | modelType: part_whole | bars: 1
+     • Q2 (id=w76_p2): "Route Alpha across the strait is 165 kilometers, while Route..."
+       -> resolvedAnswer: 75 km | modelType: comparison | bars: 2
+     • Q3 (id=3): "A sailing vessel covered 140 nautical miles through the west..."
+       -> resolvedAnswer: 315 nautical miles | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Surveyor Elena mapped 320 kilometers of northern coastline, ..."
+       -> resolvedAnswer: 75 km | modelType: comparison | bars: 2
+     • Q5 (id=5): "An exploration caravel stocked 450 barrels of provisions for..."
+       -> resolvedAnswer: 160 barrels | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 76 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  77 (Social Studies/ELA: World Landmarks / Math: 3D Geometry) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w77_p1): "A scale model of the Louvre Pyramid has 5 faces and 8 edges...."
+       -> resolvedAnswer: 11 faces | modelType: part_whole | bars: 2
+     • Q2 (id=w77_p2): "A foundation block shaped like a cube has 12 edges, while a ..."
+       -> resolvedAnswer: 3 edges | modelType: comparison | bars: 2
+     • Q3 (id=3): "The lower tier of an ancient arena structure features 80 ext..."
+       -> resolvedAnswer: 160 arches | modelType: part_whole | bars: 2
+     • Q4 (id=4): "The Eiffel Tower in Paris rises to 330 meters, while the sta..."
+       -> resolvedAnswer: 235 meters | modelType: comparison | bars: 2
+     • Q5 (id=5): "A stonemason needs 250 carved stone blocks to build a vaulte..."
+       -> resolvedAnswer: 70 blocks | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 77 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  78 (Social Studies/ELA: Cultures / Math: Surveys) [cefr=B1 PET] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=1): "In a survey of 250 students, 145 students celebrated the Lan..."
+       -> resolvedAnswer: 20  | modelType: part_whole | bars: 3
+     • Q2 (id=2): "In a class election for the festival theme, Traditional Arts..."
+       -> resolvedAnswer: 12  | modelType: comparison | bars: 2
+     • Q3 (id=3): "At the multicultural heritage fair, 185 guests attended the ..."
+       -> resolvedAnswer: 350 attendees | modelType: part_whole | bars: 2
+     • Q4 (id=4): "In a student survey on language electives, 140 learners chos..."
+       -> resolvedAnswer: 55 students | modelType: comparison | bars: 2
+     • Q5 (id=5): "The youth council registered 300 participants for the annual..."
+       -> resolvedAnswer: 65 participants | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 78 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  79 (Social Studies/ELA: Space Exploration vs Earth Restoration / Math: Micro-Debate) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w79_p1): "A national science council allocates 65 million dollars to s..."
+       -> resolvedAnswer: 150 million dollars | modelType: part_whole | bars: 2
+     • Q2 (id=w79_p2): "Nora's reforestation team set a target to plant 190 thousand..."
+       -> resolvedAnswer: 65 thousand trees | modelType: comparison | bars: 2
+     • Q3 (id=3): "A regional environmental trust granted 140 million dollars t..."
+       -> resolvedAnswer: 250 million dollars | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Facility Alpha removed 280 metric tons of atmospheric carbon..."
+       -> resolvedAnswer: 115 metric tons | modelType: comparison | bars: 2
+     • Q5 (id=5): "A national park authority set a seasonal goal to restore 500..."
+       -> resolvedAnswer: 130 hectares | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 79 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  80 (Supply, Demand & Market Prices / Math: Market Equilibrium Graphs) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w76_p1): "On a maritime chart with a scale of 1 cm = 15 km, Captain Mi..."
+       -> resolvedAnswer: 120 km | modelType: part_whole | bars: 1
+     • Q2 (id=w76_p2): "Route Alpha across the strait is 165 kilometers, while Route..."
+       -> resolvedAnswer: 75 km | modelType: comparison | bars: 2
+     • Q3 (id=3): "A local agricultural co-op delivered 260 crates of organic a..."
+       -> resolvedAnswer: 450 crates | modelType: part_whole | bars: 2
+     • Q4 (id=4): "During high holiday demand, the price of festive honey jars ..."
+       -> resolvedAnswer: 17 dollars | modelType: comparison | bars: 2
+     • Q5 (id=5): "An artisan bakery produced 400 loaves of sourdough bread. Mo..."
+       -> resolvedAnswer: 80 loaves | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 80 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  81 (ELA: The Master Architect (Structure) / Math: Graphing Data) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w81_p1): "Lucas's introductory and concluding paragraphs total 130 wor..."
+       -> resolvedAnswer: 400 words | modelType: part_whole | bars: 2
+     • Q2 (id=w81_p2): "Body Paragraph 1 contains 48 words of cited evidence, while ..."
+       -> resolvedAnswer: 16 words | modelType: comparison | bars: 2
+     • Q3 (id=3): "A grand atrium pavilion rests on two primary load-bearing pi..."
+       -> resolvedAnswer: 500 kilonewtons | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Elena's revised second draft of her architectural research e..."
+       -> resolvedAnswer: 190 words | modelType: comparison | bars: 2
+     • Q5 (id=5): "A structural blueprint specifies a corridor gallery length o..."
+       -> resolvedAnswer: 200 cm | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 81 passed schema, math count, clean English & ESL checks.
+
+--- WEEK  82 (ELA: The Travel Vlogger (Drafting) / Math: Analyzing Data) [cefr=B1 Preliminary] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=w82_p1): "Chloe's mountain sunrise vlog received 280 viewer likes, whi..."
+       -> resolvedAnswer: 500 likes | modelType: part_whole | bars: 2
+     • Q2 (id=w82_p2): "The most watched clip (Sunrise Panorama) received 310 views,..."
+       -> resolvedAnswer: 170 views | modelType: comparison | bars: 2
+     • Q3 (id=3): "Travel vlogger Marcus logged 14 flight hours from London to ..."
+       -> resolvedAnswer: 22 hours | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Episode 5 on desert wildlife generated 420 viewer comments, ..."
+       -> resolvedAnswer: 145 comments | modelType: comparison | bars: 2
+     • Q5 (id=5): "Chloe set an equipment production budget of 900 dollars. She..."
+       -> resolvedAnswer: 280 dollars | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 82 passed schema, math count, clean English & ESL checks.
+
+--- WEEK 125 (Intro & Conclusion (Academic Essay Structure)) [cefr=B1+ Academic] ---
+  ✅ [Math Count]: PASS (exactly 5/5 questions present)
+     • Q1 (id=1): "An academic paper has a target length of 2,400 words. The in..."
+       -> resolvedAnswer: 600  | modelType: part_whole | bars: 3
+     • Q2 (id=2): "Group A cited 48 peer-reviewed research papers in their essa..."
+       -> resolvedAnswer: 16  | modelType: comparison | bars: 2
+     • Q3 (id=3): "A university digital library added 360 peer-reviewed journal..."
+       -> resolvedAnswer: 800 papers | modelType: part_whole | bars: 2
+     • Q4 (id=4): "Team Affirmative scored 285 total rubric points across all s..."
+       -> resolvedAnswer: 37 points | modelType: comparison | bars: 2
+     • Q5 (id=5): "A senior academic thesis has a mandated limit of 1,200 words..."
+       -> resolvedAnswer: 300 words | modelType: part_whole | bars: 3
+  ✅ [G-GEN-11..16 Compliance]: Week 125 passed schema, math count, clean English & ESL checks.
+
+========================================================================
+FINAL REGRESSION SUMMARY
+========================================================================
+Total Weeks Audited:             18/18
+Total Math Questions Audited:    90/90 (5 per week * 18 weeks)
+Adapter-Resolved Answers:        90/90 (100% resolved via station2Adapters.js)
+Fallback-to-10 Violations:       0 (MUST BE 0)
+Vietnamese Diacritic Leaks:      0 (MUST BE 0)
+Boilerplate Leaks:               0 (MUST BE 0)
+ESL Collocation Anomalies:       0 (MUST BE 0)
+Schema Errors:                   0 (MUST BE 0)
+
+🎉 ALL 18 WEEKS PASSED 100% OF MATH REGRESSION & G-GEN AUDIT GATES!

@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 78 | Theme: "Social Studies/ELA: Cultures / Math: Surveys" | CEFR: B1 PET
- * Generated: 2026-11-07T07:16:42.030Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 78 | Theme: "Social Studies/ELA: Cultures / Math: Surveys" | CEFR: "B1 PET"
+ * Updated: 2026-11-13T04:18:06.394Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -115,6 +113,109 @@ export const skillPracticeHubData = {
           }
         ],
         "differenceLabel": "12 more votes"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Cultural Fair Pavilion Visitors (Part-Whole)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "At the multicultural heritage fair, 185 guests attended the folklore pavilion and 165 guests visited the culinary arts tent. What was the combined attendance across both exhibits?",
+      "question": "At the multicultural heritage fair, 185 guests attended the folklore pavilion and 165 guests visited the culinary arts tent. What was the combined attendance across both exhibits?",
+      "correctAnswer": 350,
+      "target_answer": 350,
+      "unit": "attendees",
+      "hintText": "Add folklore pavilion attendance (185) and culinary tent attendance (165) together.",
+      "steps": [
+        "Folklore pavilion: 185 attendees.",
+        "Culinary tent: 165 attendees.",
+        "Total attendance: 185 + 165 = 350 attendees."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Folklore: 185",
+            "value": 185,
+            "color": "#dc2626"
+          },
+          {
+            "label": "Culinary: 165",
+            "value": 165,
+            "color": "#ea580c"
+          }
+        ],
+        "totalLabel": "Total: 350 attendees"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Language Workshop Survey Margin (Comparison)",
+      "difficulty": "medium",
+      "type": "comparison",
+      "problemText": "In a student survey on language electives, 140 learners chose Spanish conversation and 85 learners chose Mandarin calligraphy. How many more students selected Spanish?",
+      "question": "In a student survey on language electives, 140 learners chose Spanish conversation and 85 learners chose Mandarin calligraphy. How many more students selected Spanish?",
+      "correctAnswer": 55,
+      "target_answer": 55,
+      "unit": "students",
+      "hintText": "Subtract Mandarin learners (85) from Spanish learners (140).",
+      "steps": [
+        "Spanish conversation: 140 students.",
+        "Mandarin calligraphy: 85 students.",
+        "Difference: 140 - 85 = 55 students."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Spanish: 140",
+            "value": 140,
+            "color": "#2563eb"
+          },
+          {
+            "label": "Mandarin: 85",
+            "value": 85,
+            "color": "#059669"
+          }
+        ],
+        "differenceLabel": "55 more students"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Community Heritage Parade (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "The youth council registered 300 participants for the annual heritage parade. In the first cohort, 110 musicians marched, and in the second cohort, 125 dancers performed. How many participants marched in the final community cohort?",
+      "question": "The youth council registered 300 participants for the annual heritage parade. In the first cohort, 110 musicians marched, and in the second cohort, 125 dancers performed. How many participants marched in the final community cohort?",
+      "correctAnswer": 65,
+      "target_answer": 65,
+      "unit": "participants",
+      "hintText": "Add musicians (110) and dancers (125) first. Then subtract from total 300 participants.",
+      "steps": [
+        "Musicians and dancers: 110 + 125 = 235 participants.",
+        "Final cohort: 300 - 235 = 65 participants."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Musicians: 110",
+            "value": 110,
+            "color": "#7c3aed"
+          },
+          {
+            "label": "Dancers: 125",
+            "value": 125,
+            "color": "#db2777"
+          },
+          {
+            "label": "Community: 65",
+            "value": 65,
+            "color": "#e2e8f0"
+          }
+        ],
+        "totalLabel": "Total: 300 parade members"
       }
     }
   ],

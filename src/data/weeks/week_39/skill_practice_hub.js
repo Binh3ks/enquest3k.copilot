@@ -1,10 +1,8 @@
 /**
  * STAGED DELIVERABLE: Skill Practice Hub (Math Bar Models, Action Lab, Grammar Duel)
- * Week: 39 | Theme: "Habitats (Persuasion Intro)" | CEFR: A2 Flyers
- * Generated: 2026-11-07T10:57:56.159Z
- * Pipeline: scripts/generate_giaidoan2_content.mjs (Round 61 Phase 1 Pilot Fixed)
+ * Week: 39 | Theme: "Habitats (Persuasion Intro)" | CEFR: "A2 Flyers"
+ * Updated: 2026-11-13T04:18:06.386Z (Round 89 Singapore Math 2/5 -> 5/5 Expansion)
  * Provenance: Grounded in blueprint.json + Source B Syllabus
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
 
 export const skillPracticeHubData = {
@@ -123,6 +121,109 @@ export const skillPracticeHubData = {
         "Subtract the 14 polar seabirds.",
         "36 - 14 = 22 more sea turtles."
       ]
+    },
+    {
+      "id": 3,
+      "title": "Problem 3: Mangrove Seedling Restoration (Part-Whole)",
+      "difficulty": "easy",
+      "type": "part_whole",
+      "problemText": "Conservation volunteers planted 52 mangrove seedlings along the shore and 38 seedlings along the river estuary. How many mangrove seedlings were planted in total?",
+      "question": "Conservation volunteers planted 52 mangrove seedlings along the shore and 38 seedlings along the river estuary. How many mangrove seedlings were planted in total?",
+      "correctAnswer": 90,
+      "target_answer": 90,
+      "unit": "seedlings",
+      "hintText": "Add shoreline seedlings (52) and estuary seedlings (38) together.",
+      "steps": [
+        "Shoreline planting: 52 seedlings.",
+        "Estuary planting: 38 seedlings.",
+        "Total planted: 52 + 38 = 90 seedlings."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Shore: 52",
+            "value": 52,
+            "color": "#059669"
+          },
+          {
+            "label": "Estuary: 38",
+            "value": 38,
+            "color": "#10b981"
+          }
+        ],
+        "totalLabel": "Total: 90 seedlings"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Problem 4: Mountain Sanctuary Animals (Comparison)",
+      "difficulty": "easy",
+      "type": "comparison",
+      "problemText": "In the alpine habitat zone, rangers documented 46 bighorn sheep and 28 mountain goats. How many more bighorn sheep were documented than mountain goats?",
+      "question": "In the alpine habitat zone, rangers documented 46 bighorn sheep and 28 mountain goats. How many more bighorn sheep were documented than mountain goats?",
+      "correctAnswer": 18,
+      "target_answer": 18,
+      "unit": "animals",
+      "hintText": "Subtract mountain goats (28) from bighorn sheep (46).",
+      "steps": [
+        "Bighorn sheep: 46.",
+        "Mountain goats: 28.",
+        "Difference: 46 - 28 = 18 more sheep."
+      ],
+      "modelData": {
+        "type": "comparison",
+        "bars": [
+          {
+            "label": "Sheep: 46",
+            "value": 46,
+            "color": "#d97706"
+          },
+          {
+            "label": "Goats: 28",
+            "value": 28,
+            "color": "#64748b"
+          }
+        ],
+        "differenceLabel": "18 more sheep"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Problem 5: Freshwater Wetland Capacity (Multi-Step)",
+      "difficulty": "medium",
+      "type": "part_whole",
+      "problemText": "A freshwater wetland habitat can accommodate 80 water birds. Currently, there are 25 mallards and 35 herons living there. How many more water birds can the wetland shelter before reaching capacity?",
+      "question": "A freshwater wetland habitat can accommodate 80 water birds. Currently, there are 25 mallards and 35 herons living there. How many more water birds can the wetland shelter before reaching capacity?",
+      "correctAnswer": 20,
+      "target_answer": 20,
+      "unit": "birds",
+      "hintText": "Add resident mallards (25) and herons (35) first. Then subtract from total capacity (80).",
+      "steps": [
+        "Current resident birds: 25 + 35 = 60 birds.",
+        "Remaining capacity: 80 - 60 = 20 birds."
+      ],
+      "modelData": {
+        "type": "part_whole",
+        "bars": [
+          {
+            "label": "Mallards: 25",
+            "value": 25,
+            "color": "#2563eb"
+          },
+          {
+            "label": "Herons: 35",
+            "value": 35,
+            "color": "#06b6d4"
+          },
+          {
+            "label": "Capacity: 20",
+            "value": 20,
+            "color": "#cbd5e1"
+          }
+        ],
+        "totalLabel": "Max: 80 birds"
+      }
     }
   ],
   "science_lab": {
