@@ -1,0 +1,176 @@
+ROUND 92 PACKAGE & COMMIT MANIFEST
+========================================================================
+Timestamp:                 2026-11-13T08:35:24.396Z
+round91_baseline_commit:   69a9f18b10c6dc06068a512f065d02cd20ba0150
+deliverables_commit:       253ddaa848835afbaf319145a288cc060a8b4b5c
+deliverables_clean_check:  PASS (0 uncommitted/untracked changes in Round 92 deliverables)
+manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
+                           Commit 2 ONLY adds docs/review_packages/manifest_round92.txt
+                           (round92_20261113.zip is gitignored via .gitignore; 0 code/artifact delta in Commit 2).
+
+ZIP PACKAGE:
+  Path:    docs/review_packages/round92_20261113.zip
+  Size:    171529 bytes
+  SHA-256: 7772678d211275df1d7a82a2a3ebdf8e58c364cbd47dc16bb9e96b3ecbcebd0e
+
+FIXED STAGED WEEKS INVENTORY:
+  Total Weeks Fixed:       8 (W47, W48, W49, W50, W51, W52, W53, W54)
+  Fixed File per Week:     skill_practice_hub.js (problemText and hintText/steps field alignment)
+  Total Math Questions:    40 (5/5 per week)
+  Generic Fallbacks Found: 0 (verified via station2Adapters.js normalizeBarModelQuestion)
+  Production Boundary:     (none - 0 modifications to production src/data/weeks/ directory)
+
+ROUND 92 SCRIPTS, FIXED HUBS & ARTIFACT HASHES (SHA-256):
+  616648f81579d51f907f480a3dc521a0a34a5ddebf61dadad7e861094f5857c8  scripts/generate_round91_weeks_c.py
+  fc981e140bf7780f0ea762517d8329ae71c146a2385e712270e11f88c48ba108  scripts/round91_weeks_c.py
+  c826814f073df962a3ece6b43ed708b4baa644e6db00523da21eebbd41850d49  scripts/round91_data_generator.py
+  e1c1a079c796b14c151be2340695e1b33d474c30953f9ac19467be34386c3eb2  scripts/verify_round91_staging.mjs
+  7e4f3f39649db0e553106aa585ab00c10c2dc079068eaba8850a5970bc024abd  scripts/verify_round92_math_fields.mjs
+  6add03d265762dad9ecc60d28be93f3e72f4cca10616c6238ae025486239e910  scripts/package_round92.mjs
+  87078253b63d11585fb697dff5f53c4f1c3b8aca306c608e7502f7d8b61a1ff7  docs/agent_artifacts/round92_report.md
+  fa21b62ba15c5a74c1db115957f82ee8f8be46544e6f42ac05b19494c0968487  docs/agent_artifacts/round92_math_verification_raw.txt
+  62bad243fe188786fd217b99c2417e6552e67af203f540d9125a31e32c75732a  docs/agent_artifacts/staging/week_47/skill_practice_hub.js
+  8a4e7434587890942f26ef028f2dd56386b70e968b4679efaa70c7cc81c15c26  docs/agent_artifacts/staging/week_48/skill_practice_hub.js
+  ab7556ba557e1f5df8612ce13e058dc089e0c17e4ebe7f89cb4f62ecb2281f12  docs/agent_artifacts/staging/week_49/skill_practice_hub.js
+  6507e255519ba3b25d6ac5a64c69b024f3b43ba419270dfba4a921e8193f6c48  docs/agent_artifacts/staging/week_50/skill_practice_hub.js
+  a8f828e32a9439f8e1e3791e5d92e79786c450017f512e463da2fba573c3eadf  docs/agent_artifacts/staging/week_51/skill_practice_hub.js
+  44ec6eceebc11ef21f710af4bc476e8ca7799ba07ed40cc291f30293142f4da6  docs/agent_artifacts/staging/week_52/skill_practice_hub.js
+  55967ca532c76737dcfefc186755d25857b67e0847c7a648731ca95cf9b1e7e4  docs/agent_artifacts/staging/week_53/skill_practice_hub.js
+  e4fd88af0e15ffe690ff63f218ee40082878c9e95dbe6b42b5d2ed8b59c18f9c  docs/agent_artifacts/staging/week_54/skill_practice_hub.js
+
+LIVE GIT SCOPE DISCLOSURE (R91 BASELINE 69a9f18b..253ddaa8):
+1. Locked governance files & freeze manifests delta (MUST be none):
+   (none - 0 modifications to locked governance/freeze files)
+2. Production src/data/weeks delta (MUST be none - Staged only):
+   (none - 0 modifications to production src/data/weeks/ directory)
+3. Full Round 92 deliverables delta (R91..deliverables_commit):
+   A	docs/agent_artifacts/round92_math_verification_raw.txt
+   A	docs/agent_artifacts/round92_report.md
+   M	docs/agent_artifacts/staging/week_47/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_48/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_49/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_50/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_51/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_52/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_53/skill_practice_hub.js
+   M	docs/agent_artifacts/staging/week_54/skill_practice_hub.js
+   M	scripts/generate_round91_weeks_c.py
+   A	scripts/package_round92.mjs
+   M	scripts/round91_data_generator.py
+   M	scripts/round91_weeks_c.py
+   M	scripts/verify_round91_staging.mjs
+   A	scripts/verify_round92_math_fields.mjs
+4. Remaining working-tree entries (pre-existing unrelated files left unstaged + current zip/manifest):
+   M docs/Claude_handoff.txt
+   ?? "docs/Claude_handoff copy.txt"
+   ?? docs/OPEN_ITEMS.md
+   ?? docs/agent_artifacts/G1D_SO_DANG_KY_NGUON_SU_THAT_W33.md
+   ?? docs/agent_artifacts/HOTFIX_W35_DOM_EVIDENCE.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.json
+   ?? docs/agent_artifacts/ROUND53_DRY_RUN_PHONETICS_COVERAGE_REPORT.md
+   ?? docs/agent_artifacts/ROUND55_AUDIO_FEASIBILITY_AUDIT.json
+   ?? docs/agent_artifacts/ROUND56_W35_FORENSIC_SCOPE_REPORT.md
+   ?? docs/agent_artifacts/ROUND57_W35_FIELD_LEVEL_DATA_AUDIT.md
+   ?? docs/agent_artifacts/STEP_C_FALLBACK_TABLE.md
+   ?? docs/agent_artifacts/W33_40_COMMITS_AFTER_TAG.csv
+   ?? docs/agent_artifacts/W33_W34_DATA_COMPARISON.md
+   ?? docs/agent_artifacts/W34_AUDIO_COVERAGE_TABLE.md
+   ?? docs/agent_artifacts/W34_HANDOFF_LOGS_2026-10-28.md
+   ?? docs/agent_artifacts/analyze_mcq_recursive.mjs
+   ?? docs/agent_artifacts/analyze_w33_mcq.mjs
+   ?? docs/agent_artifacts/broadcast_studio_scene_proof.png
+   ?? docs/agent_artifacts/build_40_commits_csv.mjs
+   ?? docs/agent_artifacts/doc_inventory.tsv
+   ?? docs/agent_artifacts/exhaustive_production_playtest_report.json
+   ?? docs/agent_artifacts/f7d3_batch1.json
+   ?? docs/agent_artifacts/fallback_scan_raw.json
+   ?? docs/agent_artifacts/fs_trace.cjs
+   ?? docs/agent_artifacts/g1i_raw/m41_git_commit_w34.txt
+   ?? docs/agent_artifacts/g1i_raw/m42_git_log_and_status.txt
+   ?? docs/agent_artifacts/g1i_scripts/
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w33.json
+   ?? docs/agent_artifacts/gate15_v2_audio_log_w34.json
+   ?? docs/agent_artifacts/gate15_w33_local.txt
+   ?? docs/agent_artifacts/gate15_w33_prod.txt
+   ?? docs/agent_artifacts/gate_run_results_1218f5af.json
+   ?? docs/agent_artifacts/gate_run_results_df023efe.json
+   ?? docs/agent_artifacts/gate_run_results_e8dbc532.json
+   ?? docs/agent_artifacts/generate_quality_dump.mjs
+   ?? docs/agent_artifacts/investigation_w34/
+   ?? docs/agent_artifacts/official_wordlists_scanned.json
+   ?? docs/agent_artifacts/oxford_a2_verified_36.json
+   ?? docs/agent_artifacts/oxford_a2_word_levels.json
+   ?? docs/agent_artifacts/oxford_scraped_lemmas.json
+   ?? docs/agent_artifacts/prod_vs_local_73_mp3.json
+   ?? docs/agent_artifacts/round10_diff.patch
+   ?? docs/agent_artifacts/round75_prompt.txt
+   ?? docs/agent_artifacts/round75_prompt_full.txt
+   ?? docs/agent_artifacts/screenshots/audit_all_21_games_results.json
+   ?? docs/agent_artifacts/screenshots/hotfix_w35/
+   ?? docs/agent_artifacts/screenshots/w33/
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_direction_a.png
+   ?? docs/agent_artifacts/screenshots/w34/broadcast_studio_fixed.png
+   ?? docs/agent_artifacts/screenshots/w34/mouse_or_squirrel_closeup.jpg
+   ?? docs/agent_artifacts/screenshots/w34/science_report_hotspot_mouse_ui.png
+   ?? docs/agent_artifacts/test_all_gates.mjs
+   ?? docs/agent_artifacts/test_negative_empty_data_output.txt
+   ?? docs/agent_artifacts/w33_inventory_run1.json
+   ?? docs/agent_artifacts/w33_inventory_run2.json
+   ?? docs/agent_artifacts/w33_orphaned_media_full_list.json
+   ?? docs/agent_artifacts/w33_quality_dump.txt
+   ?? docs/agent_artifacts/w34_audio_comparison.json
+   ?? docs/agent_artifacts/w34_auto_extracted_expected.json
+   ?? docs/agent_artifacts/w34_prod_playtest_report.json
+   ?? docs/agent_artifacts/w34_rigorous_asr_audit_small.json
+   ?? docs/agent_artifacts/w34_whisper_all_73.json
+   ?? docs/agent_artifacts/w34_wip_2026-10-20.patch
+   ?? docs/agent_artifacts/week_inventory.mjs
+   ?? scripts/__pycache__/round91_weeks_b.cpython-311.pyc
+   ?? scripts/__pycache__/round91_weeks_c.cpython-311.pyc
+   ?? scripts/audit_week_audio_readiness.mjs
+   ?? scripts/batch_generate_week_audio.mjs
+   ?? scripts/build_wave1_specs.mjs
+   ?? scripts/build_wave3_specs.mjs
+   ?? scripts/capture_followup_evidence.mjs
+   ?? scripts/capture_hotfix_w35_evidence.mjs
+   ?? scripts/capture_investigation_proofs.mjs
+   ?? scripts/capture_round12_requested_screenshots.mjs
+   ?? scripts/capture_w33_batch1_screenshots.mjs
+   ?? scripts/capture_w34_package_screenshots.mjs
+   ?? scripts/compare_w33_w34_data_metrics.mjs
+   ?? scripts/compare_w33_w34_schemas.mjs
+   ?? scripts/create_w80_generator.py
+   ?? scripts/deep_audio_playtest_prod.mjs
+   ?? scripts/enrich_audio_log.mjs
+   ?? scripts/extract_w34_expected.mjs
+   ?? scripts/fetch_oxford_lemmas_real.py
+   ?? scripts/gen_w127_w129.py
+   ?? scripts/gen_w129_w130.py
+   ?? scripts/gen_w131.py
+   ?? scripts/gen_w134.py
+   ?? scripts/generate_round91_staged_content.py
+   ?? scripts/generate_step_c_table.mjs
+   ?? scripts/generate_w34_all_images.py
+   ?? scripts/generate_w34_audio_coverage_table.mjs
+   ?? scripts/generate_wave3_specs.py
+   ?? scripts/generate_wave3_specs_full.py
+   ?? scripts/migrate_w35_group_a.mjs
+   ?? scripts/package_round56_batch_audio.mjs
+   ?? scripts/package_round56_hotfix.mjs
+   ?? scripts/package_round58_migration.mjs
+   ?? scripts/package_round59.mjs
+   ?? scripts/package_round60.mjs
+   ?? scripts/patch_w80.py
+   ?? scripts/play_15_quests_production_forensics.mjs
+   ?? scripts/playtest_production_exhaustive.mjs
+   ?? scripts/rigorous_w34_audio_asr_audit.py
+   ?? scripts/run_14_gates_logging.mjs
+   ?? scripts/scan_fallbacks_and_defaults.mjs
+   ?? scripts/scan_hardcoded_student_strings.mjs
+   ?? scripts/test_batch_audio_generator.mjs
+   ?? scripts/test_cross_week_duplication.mjs
+   ?? scripts/test_negative_empty_data.mjs
+   ?? scripts/test_parse_source_b.mjs
+   ?? scripts/validate_f7d3_batch1.mjs
+   ?? scripts/verify_broadcast_5scenes.mjs
+========================================================================
