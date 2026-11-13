@@ -1,0 +1,188 @@
+================================================================================
+ROUND 92: SINGAPORE MATH ADAPTER FIELD RESOLUTION AUDIT (W47–W54)
+Timestamp: 2026-11-13T08:26:12.649Z
+Adapter: src/utils/station2Adapters.js -> normalizeBarModelQuestion()
+================================================================================
+
+>>> Week 47: Big Numbers (Place Value) (5 questions) <<<
+  [PASS] Q1: Star Counting in Two Sectors
+         problemText: "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?"
+         hintText:    "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars."
+         answer:      55 stars (bars: 2)
+  [PASS] Q2: Village House Census
+         problemText: "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?"
+         hintText:    "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses."
+         answer:      67 houses (bars: 2)
+  [PASS] Q3: Difference in Star Clusters
+         problemText: "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?"
+         hintText:    "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars."
+         answer:      33 stars (bars: 2)
+  [PASS] Q4: Approaching One Hundred
+         problemText: "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?"
+         hintText:    "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars."
+         answer:      11 stars (bars: 2)
+  [PASS] Q5: Bundles of Ten Sticks
+         problemText: "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?"
+         hintText:    "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks."
+         answer:      67 sticks (bars: 2)
+
+>>> Week 48: Measuring Up (Length) (5 questions) <<<
+  [PASS] Q1: Ribbon Length Comparison
+         problemText: "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?"
+         hintText:    "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm."
+         answer:      17 cm (bars: 2)
+  [PASS] Q2: Total Ribbon for Project
+         problemText: "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?"
+         hintText:    "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm."
+         answer:      77 cm (bars: 2)
+  [PASS] Q3: Desk Length to One Meter
+         problemText: "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?"
+         hintText:    "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm."
+         answer:      32 cm (bars: 2)
+  [PASS] Q4: Sunflower Growth Measurement
+         problemText: "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?"
+         hintText:    "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm."
+         answer:      17 cm (bars: 2)
+  [PASS] Q5: Three Wire Segments
+         problemText: "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?"
+         hintText:    "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm."
+         answer:      75 cm (bars: 3)
+
+>>> Week 49: Future Dreams (Future Tense) (5 questions) <<<
+  [PASS] Q1: Saving for Science Equipment
+         problemText: "Chloe saved 45 dollars in October and 38 dollars in November to buy a science microscope. How many dollars did she save in total?"
+         hintText:    "Step 1: October savings = 45 dollars. Step 2: November savings = 38 dollars. Step 3: Total = 45 + 38 = 83 dollars."
+         answer:      83 dollars (bars: 2)
+  [PASS] Q2: Hours of Pilot Flight Training
+         problemText: "A student pilot completed 56 hours of day flying and 25 hours of night flying. How many total hours of flight training were completed?"
+         hintText:    "Step 1: Day hours = 56. Step 2: Night hours = 25. Step 3: Total = 56 + 25 = 81 hours."
+         answer:      81 hours (bars: 2)
+  [PASS] Q3: Chameleon Tongue Range Difference
+         problemText: "A large chameleon can shoot its tongue 42 cm. A smaller chameleon can shoot its tongue 26 cm. What is the difference in reach between the two tongues?"
+         hintText:    "Step 1: Large chameleon = 42 cm. Step 2: Small chameleon = 26 cm. Step 3: Difference = 42 - 26 = 16 cm."
+         answer:      16 cm (bars: 2)
+  [PASS] Q4: Target Books for Medical Exam
+         problemText: "A medical student must study 90 chapters. She has finished 64 chapters so far. How many chapters are left to complete?"
+         hintText:    "Step 1: Total chapters = 90. Step 2: Finished chapters = 64. Step 3: Remaining = 90 - 64 = 26 chapters."
+         answer:      26 chapters (bars: 2)
+  [PASS] Q5: Engineering Design Models
+         problemText: "An engineering club built 18 bridge models in term one and 27 models in term two. How many models were built across both terms?"
+         hintText:    "Step 1: Term one models = 18. Step 2: Term two models = 27. Step 3: Total = 18 + 27 = 45 models."
+         answer:      45 models (bars: 2)
+
+>>> Week 50: Review Station 1 (Grammar Mix) (5 questions) <<<
+  [PASS] Q1: Electric Car Travel Range
+         problemText: "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?"
+         hintText:    "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km."
+         answer:      85 km (bars: 2)
+  [PASS] Q2: Charging Station Plugs
+         problemText: "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?"
+         hintText:    "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs."
+         answer:      42 plugs (bars: 2)
+  [PASS] Q3: Solar Roof Panel Difference
+         problemText: "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?"
+         hintText:    "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels."
+         answer:      23 panels (bars: 2)
+  [PASS] Q4: Battery Charging Target
+         problemText: "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?"
+         hintText:    "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units."
+         answer:      25 units (bars: 2)
+  [PASS] Q5: Clean School Buses in Fleet
+         problemText: "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?"
+         hintText:    "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses."
+         answer:      47 buses (bars: 2)
+
+>>> Week 51: Review Station 2 (Vocab & CLIL) (5 questions) <<<
+  [PASS] Q1: Moons of the Giant Planets
+         problemText: "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?"
+         hintText:    "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons."
+         answer:      44 moons (bars: 2)
+  [PASS] Q2: Telescope Observation Log
+         problemText: "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?"
+         hintText:    "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters."
+         answer:      83 clusters (bars: 2)
+  [PASS] Q3: Difference in Crater Counts
+         problemText: "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?"
+         hintText:    "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters."
+         answer:      24 craters (bars: 2)
+  [PASS] Q4: Target Planet Observations
+         problemText: "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?"
+         hintText:    "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches."
+         answer:      23 sketches (bars: 2)
+  [PASS] Q5: Asteroid Belt Tracking
+         problemText: "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?"
+         hintText:    "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids."
+         answer:      61 asteroids (bars: 2)
+
+>>> Week 52: Have You Ever" Bingo (Seeding) (5 questions) <<<
+  [PASS] Q1: Bingo Game Points Scored
+         problemText: "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?"
+         hintText:    "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points."
+         answer:      77 points (bars: 2)
+  [PASS] Q2: Travel Passport Stamps
+         problemText: "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?"
+         hintText:    "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps."
+         answer:      44 stamps (bars: 2)
+  [PASS] Q3: Flight Travel Hours Difference
+         problemText: "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?"
+         hintText:    "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours."
+         answer:      16 hours (bars: 2)
+  [PASS] Q4: Bingo Cards Printed
+         problemText: "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?"
+         hintText:    "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards."
+         answer:      23 cards (bars: 2)
+  [PASS] Q5: Museum Badges Collected
+         problemText: "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?"
+         hintText:    "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges."
+         answer:      63 badges (bars: 2)
+
+>>> Week 53: Project 4 Prep - "My Year in Review" (5 questions) <<<
+  [PASS] Q1: Detective Evidence Cards
+         problemText: "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?"
+         hintText:    "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards."
+         answer:      61 cards (bars: 2)
+  [PASS] Q2: Portfolio Binder Pages
+         problemText: "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?"
+         hintText:    "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages."
+         answer:      65 pages (bars: 2)
+  [PASS] Q3: Footprint Length Difference
+         problemText: "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?"
+         hintText:    "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm."
+         answer:      8 cm (bars: 2)
+  [PASS] Q4: Target Portfolio Badges
+         problemText: "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?"
+         hintText:    "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges."
+         answer:      14 badges (bars: 2)
+  [PASS] Q5: Solved Mystery Cases
+         problemText: "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?"
+         hintText:    "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases."
+         answer:      43 cases (bars: 2)
+
+>>> Week 54: PHASE 1 GRADUATION SHOWCASE (5 questions) <<<
+  [PASS] Q1: Graduation Showcase Attendees
+         problemText: "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?"
+         hintText:    "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people."
+         answer:      135 people (bars: 2)
+  [PASS] Q2: Stage Flower Arrangements
+         problemText: "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?"
+         hintText:    "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets."
+         answer:      62 bouquets (bars: 2)
+  [PASS] Q3: Auditorium Chairs Difference
+         problemText: "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?"
+         hintText:    "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs."
+         answer:      25 chairs (bars: 2)
+  [PASS] Q4: Target Graduation Certificates
+         problemText: "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?"
+         hintText:    "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates."
+         answer:      28 certificates (bars: 2)
+  [PASS] Q5: Showcase Photo Souvenirs
+         problemText: "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?"
+         hintText:    "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos."
+         answer:      84 photos (bars: 2)
+
+================================================================================
+AUDIT SUMMARY:
+  Total Questions Audited: 40 / 40
+  Generic Fallback Detections: 0
+  Invalid Answers: 0
+================================================================================

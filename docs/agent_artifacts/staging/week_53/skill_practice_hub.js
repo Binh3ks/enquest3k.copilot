@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 53 | Theme: "Project 4 Prep - \"My Year in Review\"" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Detective Evidence Cards",
+      "problemText": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
       "problem_text": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
+      "problem_en": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
       "correctAnswer": 61,
       "target_answer": 61,
       "answer_unit": "cards",
+      "hintText": "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards.",
       "step_by_step": "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards.",
+      "steps": [
+        "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Portfolio Binder Pages",
+      "problemText": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
       "problem_text": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
+      "problem_en": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
       "correctAnswer": 65,
       "target_answer": 65,
       "answer_unit": "pages",
+      "hintText": "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages.",
       "step_by_step": "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages.",
+      "steps": [
+        "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Footprint Length Difference",
+      "problemText": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
       "problem_text": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
+      "problem_en": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
       "correctAnswer": 8,
       "target_answer": 8,
       "answer_unit": "cm",
+      "hintText": "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm.",
       "step_by_step": "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm.",
+      "steps": [
+        "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Target Portfolio Badges",
+      "problemText": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
       "problem_text": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
+      "problem_en": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
       "correctAnswer": 14,
       "target_answer": 14,
       "answer_unit": "badges",
+      "hintText": "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges.",
       "step_by_step": "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges.",
+      "steps": [
+        "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Solved Mystery Cases",
+      "problemText": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
       "problem_text": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
+      "problem_en": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
       "correctAnswer": 43,
       "target_answer": 43,
       "answer_unit": "cases",
+      "hintText": "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases.",
       "step_by_step": "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases.",
+      "steps": [
+        "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases."
+      ],
       "modelData": {
         "bars": [
           {

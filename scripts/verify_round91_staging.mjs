@@ -197,6 +197,16 @@ async function run() {
         log(`  [FAIL] Math Q${i + 1}: normalized question has no bars.`);
         totalErrors++;
       }
+
+      if (norm.problemText === 'Solve the Bar Model problem below:') {
+        log(`  [FAIL] Math Q${i + 1} ('${q.title}'): problemText fell back to generic string!`);
+        totalErrors++;
+      }
+
+      if (norm.hintText === 'Check the bar model diagram to calculate the target answer!') {
+        log(`  [FAIL] Math Q${i + 1} ('${q.title}'): hintText fell back to generic string!`);
+        totalErrors++;
+      }
     }
     log(`  [PASS] Math questions resolved: ${mathPass}/5 with positive integer answers.`);
 

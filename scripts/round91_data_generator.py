@@ -128,6 +128,29 @@ def normalize_info_exchange(cards, week, theme):
         }
     }
 
+def normalize_math_problems(problems):
+    normalized = []
+    for q in problems:
+        q_copy = dict(q)
+        # Ensure problemText is set
+        text_val = q_copy.get('problemText') or q_copy.get('problem_text') or q_copy.get('problem_en') or q_copy.get('text') or q_copy.get('question')
+        if text_val:
+            q_copy['problemText'] = text_val
+            q_copy['problem_text'] = text_val
+            q_copy['problem_en'] = text_val
+
+        # Ensure hintText and steps are set
+        hint_val = q_copy.get('hintText') or q_copy.get('step_by_step') or q_copy.get('hint') or ''
+        if hint_val:
+            q_copy['hintText'] = hint_val
+            q_copy['step_by_step'] = hint_val
+            if 'steps' not in q_copy or not isinstance(q_copy['steps'], list):
+                q_copy['steps'] = [hint_val]
+        elif 'steps' in q_copy and isinstance(q_copy['steps'], list) and len(q_copy['steps']) > 0:
+            q_copy['hintText'] = ' '.join(q_copy['steps'])
+        normalized.append(q_copy)
+    return normalized
+
 def build_week_files(data):
     w = data['week']
     theme = data['theme']
@@ -144,7 +167,7 @@ def build_week_files(data):
     cambridge_rw = data['cambridge_rw']
     writing = data['writing']
     speaking = data['speaking']
-    math_problems = data['math_problems']
+    math_problems = normalize_math_problems(data['math_problems'])
     action_lab = data['action_lab']
     grammar_drills = data['grammar_drills']
 

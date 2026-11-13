@@ -571,11 +571,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Star Counting in Two Sectors",
+        "problemText": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
         "problem_text": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
+        "problem_en": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
         "correctAnswer": 55,
         "target_answer": 55,
         "answer_unit": "stars",
+        "hintText": "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars.",
         "step_by_step": "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars.",
+        "steps": [
+          "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars."
+        ],
         "modelData": {
           "bars": [
             {
@@ -597,11 +603,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Village House Census",
+        "problemText": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
         "problem_text": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
+        "problem_en": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
         "correctAnswer": 67,
         "target_answer": 67,
         "answer_unit": "houses",
+        "hintText": "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses.",
         "step_by_step": "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses.",
+        "steps": [
+          "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses."
+        ],
         "modelData": {
           "bars": [
             {
@@ -623,11 +635,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Difference in Star Clusters",
+        "problemText": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
         "problem_text": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
+        "problem_en": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
         "correctAnswer": 33,
         "target_answer": 33,
         "answer_unit": "stars",
+        "hintText": "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars.",
         "step_by_step": "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars.",
+        "steps": [
+          "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars."
+        ],
         "modelData": {
           "bars": [
             {
@@ -649,11 +667,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Approaching One Hundred",
+        "problemText": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
         "problem_text": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
+        "problem_en": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
         "correctAnswer": 11,
         "target_answer": 11,
         "answer_unit": "stars",
+        "hintText": "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars.",
         "step_by_step": "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars.",
+        "steps": [
+          "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars."
+        ],
         "modelData": {
           "bars": [
             {
@@ -675,11 +699,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Bundles of Ten Sticks",
+        "problemText": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
         "problem_text": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
+        "problem_en": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
         "correctAnswer": 67,
         "target_answer": 67,
         "answer_unit": "sticks",
+        "hintText": "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks.",
         "step_by_step": "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks.",
+        "steps": [
+          "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks."
+        ],
         "modelData": {
           "bars": [
             {
@@ -1413,11 +1443,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Ribbon Length Comparison",
+        "problemText": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
         "problem_text": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
+        "problem_en": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
         "correctAnswer": 17,
         "target_answer": 17,
         "answer_unit": "cm",
+        "hintText": "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm.",
         "step_by_step": "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm.",
+        "steps": [
+          "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -1439,11 +1475,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Total Ribbon for Project",
+        "problemText": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
         "problem_text": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
+        "problem_en": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
         "correctAnswer": 77,
         "target_answer": 77,
         "answer_unit": "cm",
+        "hintText": "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm.",
         "step_by_step": "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm.",
+        "steps": [
+          "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -1465,11 +1507,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Desk Length to One Meter",
+        "problemText": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
         "problem_text": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
+        "problem_en": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
         "correctAnswer": 32,
         "target_answer": 32,
         "answer_unit": "cm",
+        "hintText": "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm.",
         "step_by_step": "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm.",
+        "steps": [
+          "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -1491,11 +1539,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Sunflower Growth Measurement",
+        "problemText": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
         "problem_text": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
+        "problem_en": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
         "correctAnswer": 17,
         "target_answer": 17,
         "answer_unit": "cm",
+        "hintText": "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm.",
         "step_by_step": "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm.",
+        "steps": [
+          "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -1517,11 +1571,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Three Wire Segments",
+        "problemText": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
         "problem_text": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
+        "problem_en": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
         "correctAnswer": 75,
         "target_answer": 75,
         "answer_unit": "cm",
+        "hintText": "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm.",
         "step_by_step": "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm.",
+        "steps": [
+          "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -2243,11 +2303,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Saving for Science Equipment",
+        "problemText": "Chloe saved 45 dollars in October and 38 dollars in November to buy a science microscope. How many dollars did she save in total?",
         "problem_text": "Chloe saved 45 dollars in October and 38 dollars in November to buy a science microscope. How many dollars did she save in total?",
+        "problem_en": "Chloe saved 45 dollars in October and 38 dollars in November to buy a science microscope. How many dollars did she save in total?",
         "correctAnswer": 83,
         "target_answer": 83,
         "answer_unit": "dollars",
+        "hintText": "Step 1: October savings = 45 dollars. Step 2: November savings = 38 dollars. Step 3: Total = 45 + 38 = 83 dollars.",
         "step_by_step": "Step 1: October savings = 45 dollars. Step 2: November savings = 38 dollars. Step 3: Total = 45 + 38 = 83 dollars.",
+        "steps": [
+          "Step 1: October savings = 45 dollars. Step 2: November savings = 38 dollars. Step 3: Total = 45 + 38 = 83 dollars."
+        ],
         "modelData": {
           "bars": [
             {
@@ -2269,11 +2335,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Hours of Pilot Flight Training",
+        "problemText": "A student pilot completed 56 hours of day flying and 25 hours of night flying. How many total hours of flight training were completed?",
         "problem_text": "A student pilot completed 56 hours of day flying and 25 hours of night flying. How many total hours of flight training were completed?",
+        "problem_en": "A student pilot completed 56 hours of day flying and 25 hours of night flying. How many total hours of flight training were completed?",
         "correctAnswer": 81,
         "target_answer": 81,
         "answer_unit": "hours",
+        "hintText": "Step 1: Day hours = 56. Step 2: Night hours = 25. Step 3: Total = 56 + 25 = 81 hours.",
         "step_by_step": "Step 1: Day hours = 56. Step 2: Night hours = 25. Step 3: Total = 56 + 25 = 81 hours.",
+        "steps": [
+          "Step 1: Day hours = 56. Step 2: Night hours = 25. Step 3: Total = 56 + 25 = 81 hours."
+        ],
         "modelData": {
           "bars": [
             {
@@ -2295,11 +2367,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Chameleon Tongue Range Difference",
+        "problemText": "A large chameleon can shoot its tongue 42 cm. A smaller chameleon can shoot its tongue 26 cm. What is the difference in reach between the two tongues?",
         "problem_text": "A large chameleon can shoot its tongue 42 cm. A smaller chameleon can shoot its tongue 26 cm. What is the difference in reach between the two tongues?",
+        "problem_en": "A large chameleon can shoot its tongue 42 cm. A smaller chameleon can shoot its tongue 26 cm. What is the difference in reach between the two tongues?",
         "correctAnswer": 16,
         "target_answer": 16,
         "answer_unit": "cm",
+        "hintText": "Step 1: Large chameleon = 42 cm. Step 2: Small chameleon = 26 cm. Step 3: Difference = 42 - 26 = 16 cm.",
         "step_by_step": "Step 1: Large chameleon = 42 cm. Step 2: Small chameleon = 26 cm. Step 3: Difference = 42 - 26 = 16 cm.",
+        "steps": [
+          "Step 1: Large chameleon = 42 cm. Step 2: Small chameleon = 26 cm. Step 3: Difference = 42 - 26 = 16 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -2321,11 +2399,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Target Books for Medical Exam",
+        "problemText": "A medical student must study 90 chapters. She has finished 64 chapters so far. How many chapters are left to complete?",
         "problem_text": "A medical student must study 90 chapters. She has finished 64 chapters so far. How many chapters are left to complete?",
+        "problem_en": "A medical student must study 90 chapters. She has finished 64 chapters so far. How many chapters are left to complete?",
         "correctAnswer": 26,
         "target_answer": 26,
         "answer_unit": "chapters",
+        "hintText": "Step 1: Total chapters = 90. Step 2: Finished chapters = 64. Step 3: Remaining = 90 - 64 = 26 chapters.",
         "step_by_step": "Step 1: Total chapters = 90. Step 2: Finished chapters = 64. Step 3: Remaining = 90 - 64 = 26 chapters.",
+        "steps": [
+          "Step 1: Total chapters = 90. Step 2: Finished chapters = 64. Step 3: Remaining = 90 - 64 = 26 chapters."
+        ],
         "modelData": {
           "bars": [
             {
@@ -2347,11 +2431,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Engineering Design Models",
+        "problemText": "An engineering club built 18 bridge models in term one and 27 models in term two. How many models were built across both terms?",
         "problem_text": "An engineering club built 18 bridge models in term one and 27 models in term two. How many models were built across both terms?",
+        "problem_en": "An engineering club built 18 bridge models in term one and 27 models in term two. How many models were built across both terms?",
         "correctAnswer": 45,
         "target_answer": 45,
         "answer_unit": "models",
+        "hintText": "Step 1: Term one models = 18. Step 2: Term two models = 27. Step 3: Total = 18 + 27 = 45 models.",
         "step_by_step": "Step 1: Term one models = 18. Step 2: Term two models = 27. Step 3: Total = 18 + 27 = 45 models.",
+        "steps": [
+          "Step 1: Term one models = 18. Step 2: Term two models = 27. Step 3: Total = 18 + 27 = 45 models."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3076,11 +3166,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Electric Car Travel Range",
+        "problemText": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
         "problem_text": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
+        "problem_en": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
         "correctAnswer": 85,
         "target_answer": 85,
         "answer_unit": "km",
+        "hintText": "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km.",
         "step_by_step": "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km.",
+        "steps": [
+          "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3102,11 +3198,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Charging Station Plugs",
+        "problemText": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
         "problem_text": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
+        "problem_en": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
         "correctAnswer": 42,
         "target_answer": 42,
         "answer_unit": "plugs",
+        "hintText": "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs.",
         "step_by_step": "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs.",
+        "steps": [
+          "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3128,11 +3230,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Solar Roof Panel Difference",
+        "problemText": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
         "problem_text": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
+        "problem_en": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
         "correctAnswer": 23,
         "target_answer": 23,
         "answer_unit": "panels",
+        "hintText": "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels.",
         "step_by_step": "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels.",
+        "steps": [
+          "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3154,11 +3262,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Battery Charging Target",
+        "problemText": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
         "problem_text": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
+        "problem_en": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
         "correctAnswer": 25,
         "target_answer": 25,
         "answer_unit": "units",
+        "hintText": "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units.",
         "step_by_step": "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units.",
+        "steps": [
+          "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3180,11 +3294,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Clean School Buses in Fleet",
+        "problemText": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
         "problem_text": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
+        "problem_en": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
         "correctAnswer": 47,
         "target_answer": 47,
         "answer_unit": "buses",
+        "hintText": "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses.",
         "step_by_step": "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses.",
+        "steps": [
+          "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3902,11 +4022,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Moons of the Giant Planets",
+        "problemText": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
         "problem_text": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
+        "problem_en": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
         "correctAnswer": 44,
         "target_answer": 44,
         "answer_unit": "moons",
+        "hintText": "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons.",
         "step_by_step": "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons.",
+        "steps": [
+          "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3928,11 +4054,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Telescope Observation Log",
+        "problemText": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
         "problem_text": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
+        "problem_en": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
         "correctAnswer": 83,
         "target_answer": 83,
         "answer_unit": "clusters",
+        "hintText": "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters.",
         "step_by_step": "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters.",
+        "steps": [
+          "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3954,11 +4086,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Difference in Crater Counts",
+        "problemText": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
         "problem_text": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
+        "problem_en": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
         "correctAnswer": 24,
         "target_answer": 24,
         "answer_unit": "craters",
+        "hintText": "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters.",
         "step_by_step": "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters.",
+        "steps": [
+          "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters."
+        ],
         "modelData": {
           "bars": [
             {
@@ -3980,11 +4118,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Target Planet Observations",
+        "problemText": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
         "problem_text": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
+        "problem_en": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
         "correctAnswer": 23,
         "target_answer": 23,
         "answer_unit": "sketches",
+        "hintText": "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches.",
         "step_by_step": "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches.",
+        "steps": [
+          "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4006,11 +4150,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Asteroid Belt Tracking",
+        "problemText": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
         "problem_text": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
+        "problem_en": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
         "correctAnswer": 61,
         "target_answer": 61,
         "answer_unit": "asteroids",
+        "hintText": "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids.",
         "step_by_step": "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids.",
+        "steps": [
+          "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4744,11 +4894,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Bingo Game Points Scored",
+        "problemText": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
         "problem_text": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
+        "problem_en": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
         "correctAnswer": 77,
         "target_answer": 77,
         "answer_unit": "points",
+        "hintText": "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points.",
         "step_by_step": "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points.",
+        "steps": [
+          "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4770,11 +4926,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Travel Passport Stamps",
+        "problemText": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
         "problem_text": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
+        "problem_en": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
         "correctAnswer": 44,
         "target_answer": 44,
         "answer_unit": "stamps",
+        "hintText": "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps.",
         "step_by_step": "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps.",
+        "steps": [
+          "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4796,11 +4958,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Flight Travel Hours Difference",
+        "problemText": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
         "problem_text": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
+        "problem_en": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
         "correctAnswer": 16,
         "target_answer": 16,
         "answer_unit": "hours",
+        "hintText": "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours.",
         "step_by_step": "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours.",
+        "steps": [
+          "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4822,11 +4990,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Bingo Cards Printed",
+        "problemText": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
         "problem_text": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
+        "problem_en": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
         "correctAnswer": 23,
         "target_answer": 23,
         "answer_unit": "cards",
+        "hintText": "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards.",
         "step_by_step": "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards.",
+        "steps": [
+          "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards."
+        ],
         "modelData": {
           "bars": [
             {
@@ -4848,11 +5022,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Museum Badges Collected",
+        "problemText": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
         "problem_text": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
+        "problem_en": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
         "correctAnswer": 63,
         "target_answer": 63,
         "answer_unit": "badges",
+        "hintText": "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges.",
         "step_by_step": "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges.",
+        "steps": [
+          "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges."
+        ],
         "modelData": {
           "bars": [
             {
@@ -5581,11 +5761,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Detective Evidence Cards",
+        "problemText": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
         "problem_text": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
+        "problem_en": "Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. How many cards did he examine in total?",
         "correctAnswer": 61,
         "target_answer": 61,
         "answer_unit": "cards",
+        "hintText": "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards.",
         "step_by_step": "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards.",
+        "steps": [
+          "Step 1: Monday cards = 26. Step 2: Tuesday cards = 35. Step 3: Total = 26 + 35 = 61 cards."
+        ],
         "modelData": {
           "bars": [
             {
@@ -5607,11 +5793,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Portfolio Binder Pages",
+        "problemText": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
         "problem_text": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
+        "problem_en": "A student portfolio has 38 writing pages and 27 science lab pages. How many total pages are inside the binder?",
         "correctAnswer": 65,
         "target_answer": 65,
         "answer_unit": "pages",
+        "hintText": "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages.",
         "step_by_step": "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages.",
+        "steps": [
+          "Step 1: Writing = 38 pages. Step 2: Science = 27 pages. Step 3: Total = 38 + 27 = 65 pages."
+        ],
         "modelData": {
           "bars": [
             {
@@ -5633,11 +5825,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Footprint Length Difference",
+        "problemText": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
         "problem_text": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
+        "problem_en": "An adult shoe print measures 30 cm long. A child shoe print measures 22 cm long. What is the difference in length between the two prints?",
         "correctAnswer": 8,
         "target_answer": 8,
         "answer_unit": "cm",
+        "hintText": "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm.",
         "step_by_step": "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm.",
+        "steps": [
+          "Step 1: Adult print = 30 cm. Step 2: Child print = 22 cm. Step 3: Difference = 30 - 22 = 8 cm."
+        ],
         "modelData": {
           "bars": [
             {
@@ -5659,11 +5857,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Target Portfolio Badges",
+        "problemText": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
         "problem_text": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
+        "problem_en": "Grace needs 50 achievement badges for her portfolio collection. She has earned 36 badges so far. How many badges are needed to reach 50?",
         "correctAnswer": 14,
         "target_answer": 14,
         "answer_unit": "badges",
+        "hintText": "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges.",
         "step_by_step": "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges.",
+        "steps": [
+          "Step 1: Target = 50. Step 2: Earned = 36. Step 3: Needed = 50 - 36 = 14 badges."
+        ],
         "modelData": {
           "bars": [
             {
@@ -5685,11 +5889,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Solved Mystery Cases",
+        "problemText": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
         "problem_text": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
+        "problem_en": "The junior detective club solved 19 puzzle cases in semester one and 24 cases in semester two. What was the total number of solved cases?",
         "correctAnswer": 43,
         "target_answer": 43,
         "answer_unit": "cases",
+        "hintText": "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases.",
         "step_by_step": "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases.",
+        "steps": [
+          "Step 1: Semester 1 = 19. Step 2: Semester 2 = 24. Step 3: Total = 19 + 24 = 43 cases."
+        ],
         "modelData": {
           "bars": [
             {
@@ -6418,11 +6628,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 1,
         "title": "Graduation Showcase Attendees",
+        "problemText": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
         "problem_text": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
+        "problem_en": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
         "correctAnswer": 135,
         "target_answer": 135,
         "answer_unit": "people",
+        "hintText": "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people.",
         "step_by_step": "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people.",
+        "steps": [
+          "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people."
+        ],
         "modelData": {
           "bars": [
             {
@@ -6444,11 +6660,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 2,
         "title": "Stage Flower Arrangements",
+        "problemText": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
         "problem_text": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
+        "problem_en": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
         "correctAnswer": 62,
         "target_answer": 62,
         "answer_unit": "bouquets",
+        "hintText": "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets.",
         "step_by_step": "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets.",
+        "steps": [
+          "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets."
+        ],
         "modelData": {
           "bars": [
             {
@@ -6470,11 +6692,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 3,
         "title": "Auditorium Chairs Difference",
+        "problemText": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
         "problem_text": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
+        "problem_en": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
         "correctAnswer": 25,
         "target_answer": 25,
         "answer_unit": "chairs",
+        "hintText": "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs.",
         "step_by_step": "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs.",
+        "steps": [
+          "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs."
+        ],
         "modelData": {
           "bars": [
             {
@@ -6496,11 +6724,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 4,
         "title": "Target Graduation Certificates",
+        "problemText": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
         "problem_text": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
+        "problem_en": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
         "correctAnswer": 28,
         "target_answer": 28,
         "answer_unit": "certificates",
+        "hintText": "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates.",
         "step_by_step": "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates.",
+        "steps": [
+          "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates."
+        ],
         "modelData": {
           "bars": [
             {
@@ -6522,11 +6756,17 @@ ROUND91_WEEKS_C = {
       {
         "id": 5,
         "title": "Showcase Photo Souvenirs",
+        "problemText": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
         "problem_text": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
+        "problem_en": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
         "correctAnswer": 84,
         "target_answer": 84,
         "answer_unit": "photos",
+        "hintText": "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos.",
         "step_by_step": "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos.",
+        "steps": [
+          "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos."
+        ],
         "modelData": {
           "bars": [
             {

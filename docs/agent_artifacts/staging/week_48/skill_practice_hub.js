@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 48 | Theme: "Measuring Up (Length)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Ribbon Length Comparison",
+      "problemText": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
       "problem_text": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
+      "problem_en": "Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 cm long. How many centimeters longer is the blue ribbon?",
       "correctAnswer": 17,
       "target_answer": 17,
       "answer_unit": "cm",
+      "hintText": "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm.",
       "step_by_step": "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm.",
+      "steps": [
+        "Step 1: Blue ribbon = 45 cm. Step 2: Red ribbon = 28 cm. Step 3: Difference = 45 - 28 = 17 cm."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Total Ribbon for Project",
+      "problemText": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
       "problem_text": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
+      "problem_en": "A student needs 35 cm of ribbon for a poster and 42 cm of ribbon for a model. How much ribbon does the student need in total?",
       "correctAnswer": 77,
       "target_answer": 77,
       "answer_unit": "cm",
+      "hintText": "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm.",
       "step_by_step": "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm.",
+      "steps": [
+        "Step 1: Poster ribbon = 35 cm. Step 2: Model ribbon = 42 cm. Step 3: Total = 35 + 42 = 77 cm."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Desk Length to One Meter",
+      "problemText": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
       "problem_text": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
+      "problem_en": "A wooden study desk is 68 cm long. How many more centimeters are needed to make it 100 cm (1 meter) long?",
       "correctAnswer": 32,
       "target_answer": 32,
       "answer_unit": "cm",
+      "hintText": "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm.",
       "step_by_step": "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm.",
+      "steps": [
+        "Step 1: Target = 100 cm. Step 2: Current length = 68 cm. Step 3: Needed = 100 - 68 = 32 cm."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Sunflower Growth Measurement",
+      "problemText": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
       "problem_text": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
+      "problem_en": "A sunflower was 54 cm tall last Monday. By this Monday, it grew to 71 cm tall. How many centimeters did the sunflower grow?",
       "correctAnswer": 17,
       "target_answer": 17,
       "answer_unit": "cm",
+      "hintText": "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm.",
       "step_by_step": "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm.",
+      "steps": [
+        "Step 1: New height = 71 cm. Step 2: Old height = 54 cm. Step 3: Growth = 71 - 54 = 17 cm."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Three Wire Segments",
+      "problemText": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
       "problem_text": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
+      "problem_en": "An electric circuit needs three wire pieces: 20 cm, 25 cm, and 30 cm. What is the total length of wire required?",
       "correctAnswer": 75,
       "target_answer": 75,
       "answer_unit": "cm",
+      "hintText": "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm.",
       "step_by_step": "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm.",
+      "steps": [
+        "Step 1: Wire pieces = 20, 25, 30 cm. Step 2: Sum = 20 + 25 + 30 = 75 cm."
+      ],
       "modelData": {
         "bars": [
           {

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 51 | Theme: "Review Station 2 (Vocab & CLIL)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Moons of the Giant Planets",
+      "problemText": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
       "problem_text": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
+      "problem_en": "Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many moons do these two ice giants have altogether?",
       "correctAnswer": 44,
       "target_answer": 44,
       "answer_unit": "moons",
+      "hintText": "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons.",
       "step_by_step": "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons.",
+      "steps": [
+        "Step 1: Uranus moons = 28. Step 2: Neptune moons = 16. Step 3: Total = 28 + 16 = 44 moons."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Telescope Observation Log",
+      "problemText": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
       "problem_text": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
+      "problem_en": "An observatory logged 36 star clusters in January and 47 star clusters in February. What is the total number of clusters logged?",
       "correctAnswer": 83,
       "target_answer": 83,
       "answer_unit": "clusters",
+      "hintText": "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters.",
       "step_by_step": "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters.",
+      "steps": [
+        "Step 1: January = 36. Step 2: February = 47. Step 3: Total = 36 + 47 = 83 clusters."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Difference in Crater Counts",
+      "problemText": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
       "problem_text": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
+      "problem_en": "Sector Alpha on the Moon has 72 craters. Sector Beta has 48 craters. How many more craters are in Sector Alpha than Sector Beta?",
       "correctAnswer": 24,
       "target_answer": 24,
       "answer_unit": "craters",
+      "hintText": "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters.",
       "step_by_step": "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters.",
+      "steps": [
+        "Step 1: Sector Alpha = 72. Step 2: Sector Beta = 48. Step 3: Difference = 72 - 48 = 24 craters."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Target Planet Observations",
+      "problemText": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
       "problem_text": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
+      "problem_en": "A student astronomer wants to complete 60 planet sketches. She has drawn 37 sketches. How many sketches remain to reach her goal?",
       "correctAnswer": 23,
       "target_answer": 23,
       "answer_unit": "sketches",
+      "hintText": "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches.",
       "step_by_step": "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches.",
+      "steps": [
+        "Step 1: Goal = 60. Step 2: Completed = 37. Step 3: Remaining = 60 - 37 = 23 sketches."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Asteroid Belt Tracking",
+      "problemText": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
       "problem_text": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
+      "problem_en": "Scientists tracked 32 asteroids on Monday and 29 asteroids on Tuesday. How many asteroids were tracked across both days?",
       "correctAnswer": 61,
       "target_answer": 61,
       "answer_unit": "asteroids",
+      "hintText": "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids.",
       "step_by_step": "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids.",
+      "steps": [
+        "Step 1: Monday = 32. Step 2: Tuesday = 29. Step 3: Total = 32 + 29 = 61 asteroids."
+      ],
       "modelData": {
         "bars": [
           {

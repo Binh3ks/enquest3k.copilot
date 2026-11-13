@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 50 | Theme: "Review Station 1 (Grammar Mix)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Electric Car Travel Range",
+      "problemText": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
       "problem_text": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
+      "problem_en": "An electric car traveled 48 km in the morning and 37 km in the afternoon. What was the total distance traveled?",
       "correctAnswer": 85,
       "target_answer": 85,
       "answer_unit": "km",
+      "hintText": "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km.",
       "step_by_step": "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km.",
+      "steps": [
+        "Step 1: Morning distance = 48 km. Step 2: Afternoon distance = 37 km. Step 3: Total = 48 + 37 = 85 km."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Charging Station Plugs",
+      "problemText": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
       "problem_text": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
+      "problem_en": "A city station has 24 standard chargers and 18 ultra-fast chargers. How many charging plugs are available in total?",
       "correctAnswer": 42,
       "target_answer": 42,
       "answer_unit": "plugs",
+      "hintText": "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs.",
       "step_by_step": "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs.",
+      "steps": [
+        "Step 1: Standard = 24. Step 2: Ultra-fast = 18. Step 3: Total = 24 + 18 = 42 plugs."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Solar Roof Panel Difference",
+      "problemText": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
       "problem_text": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
+      "problem_en": "Station East has 65 solar panels. Station West has 42 solar panels. How many more solar panels are at Station East?",
       "correctAnswer": 23,
       "target_answer": 23,
       "answer_unit": "panels",
+      "hintText": "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels.",
       "step_by_step": "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels.",
+      "steps": [
+        "Step 1: Station East = 65 panels. Step 2: Station West = 42 panels. Step 3: Difference = 65 - 42 = 23 panels."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Battery Charging Target",
+      "problemText": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
       "problem_text": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
+      "problem_en": "A car battery needs 80 units of charge. It currently has 55 units. How many units of charge are needed to reach the target?",
       "correctAnswer": 25,
       "target_answer": 25,
       "answer_unit": "units",
+      "hintText": "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units.",
       "step_by_step": "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units.",
+      "steps": [
+        "Step 1: Target = 80 units. Step 2: Current = 55 units. Step 3: Needed = 80 - 55 = 25 units."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Clean School Buses in Fleet",
+      "problemText": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
       "problem_text": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
+      "problem_en": "A school district owns 28 electric buses and plans to add 19 more next month. How many electric buses will the fleet have in total?",
       "correctAnswer": 47,
       "target_answer": 47,
       "answer_unit": "buses",
+      "hintText": "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses.",
       "step_by_step": "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses.",
+      "steps": [
+        "Step 1: Current buses = 28. Step 2: Added buses = 19. Step 3: Total = 28 + 19 = 47 buses."
+      ],
       "modelData": {
         "bars": [
           {

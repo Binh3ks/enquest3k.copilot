@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 52 | Theme: "Have You Ever\" Bingo (Seeding)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Bingo Game Points Scored",
+      "problemText": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
       "problem_text": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
+      "problem_en": "In round one, Harper scored 35 points. In round two, she scored 42 points. How many points did she score in total?",
       "correctAnswer": 77,
       "target_answer": 77,
       "answer_unit": "points",
+      "hintText": "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points.",
       "step_by_step": "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points.",
+      "steps": [
+        "Step 1: Round one = 35 points. Step 2: Round two = 42 points. Step 3: Total = 35 + 42 = 77 points."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Travel Passport Stamps",
+      "problemText": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
       "problem_text": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
+      "problem_en": "A student passport contains 18 national park stamps and 26 museum stamps. How many stamps are in the passport altogether?",
       "correctAnswer": 44,
       "target_answer": 44,
       "answer_unit": "stamps",
+      "hintText": "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps.",
       "step_by_step": "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps.",
+      "steps": [
+        "Step 1: Park stamps = 18. Step 2: Museum stamps = 26. Step 3: Total = 18 + 26 = 44 stamps."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Flight Travel Hours Difference",
+      "problemText": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
       "problem_text": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
+      "problem_en": "Flight A lasted 54 hours across multiple stops. Flight B lasted 38 hours. How many more hours did Flight A take than Flight B?",
       "correctAnswer": 16,
       "target_answer": 16,
       "answer_unit": "hours",
+      "hintText": "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours.",
       "step_by_step": "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours.",
+      "steps": [
+        "Step 1: Flight A = 54 hours. Step 2: Flight B = 38 hours. Step 3: Difference = 54 - 38 = 16 hours."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Bingo Cards Printed",
+      "problemText": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
       "problem_text": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
+      "problem_en": "The teacher needs 75 bingo cards for the grade level. She has printed 52 cards so far. How many cards still need to be printed?",
       "correctAnswer": 23,
       "target_answer": 23,
       "answer_unit": "cards",
+      "hintText": "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards.",
       "step_by_step": "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards.",
+      "steps": [
+        "Step 1: Total needed = 75 cards. Step 2: Printed = 52 cards. Step 3: Remaining = 75 - 52 = 23 cards."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Museum Badges Collected",
+      "problemText": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
       "problem_text": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
+      "problem_en": "Daniel collected 27 science badges and 36 history badges. How many badges did he collect in all?",
       "correctAnswer": 63,
       "target_answer": 63,
       "answer_unit": "badges",
+      "hintText": "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges.",
       "step_by_step": "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges.",
+      "steps": [
+        "Step 1: Science = 27 badges. Step 2: History = 36 badges. Step 3: Total = 27 + 36 = 63 badges."
+      ],
       "modelData": {
         "bars": [
           {

@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 47 | Theme: "Big Numbers (Place Value)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Star Counting in Two Sectors",
+      "problemText": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
       "problem_text": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
+      "problem_en": "Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in the south sector. How many stars did they count in total?",
       "correctAnswer": 55,
       "target_answer": 55,
       "answer_unit": "stars",
+      "hintText": "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars.",
       "step_by_step": "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars.",
+      "steps": [
+        "Step 1: North sector stars = 21. Step 2: South sector stars = 34. Step 3: Total = 21 + 34 = 55 stars."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Village House Census",
+      "problemText": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
       "problem_text": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
+      "problem_en": "A mountain village has 45 stone cottages and 22 wooden cabins. How many houses are there altogether?",
       "correctAnswer": 67,
       "target_answer": 67,
       "answer_unit": "houses",
+      "hintText": "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses.",
       "step_by_step": "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses.",
+      "steps": [
+        "Step 1: Stone cottages = 45. Step 2: Wooden cabins = 22. Step 3: Total houses = 45 + 22 = 67 houses."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Difference in Star Clusters",
+      "problemText": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
       "problem_text": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
+      "problem_en": "Sector A has 78 stars and Sector B has 45 stars. How many more stars are in Sector A than in Sector B?",
       "correctAnswer": 33,
       "target_answer": 33,
       "answer_unit": "stars",
+      "hintText": "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars.",
       "step_by_step": "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars.",
+      "steps": [
+        "Step 1: Sector A = 78 stars. Step 2: Sector B = 45 stars. Step 3: Difference = 78 - 45 = 33 stars."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Approaching One Hundred",
+      "problemText": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
       "problem_text": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
+      "problem_en": "An observatory logged 89 stars before midnight. How many more stars do they need to log to reach 100 stars?",
       "correctAnswer": 11,
       "target_answer": 11,
       "answer_unit": "stars",
+      "hintText": "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars.",
       "step_by_step": "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars.",
+      "steps": [
+        "Step 1: Target = 100 stars. Step 2: Current logged = 89 stars. Step 3: Needed = 100 - 89 = 11 stars."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Bundles of Ten Sticks",
+      "problemText": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
       "problem_text": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
+      "problem_en": "Students made 6 bundles of 10 counting sticks and had 7 single sticks left over. What is the total number of sticks?",
       "correctAnswer": 67,
       "target_answer": 67,
       "answer_unit": "sticks",
+      "hintText": "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks.",
       "step_by_step": "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks.",
+      "steps": [
+        "Step 1: 6 bundles of 10 = 60 sticks. Step 2: 7 single sticks = 7. Step 3: Total = 60 + 7 = 67 sticks."
+      ],
       "modelData": {
         "bars": [
           {

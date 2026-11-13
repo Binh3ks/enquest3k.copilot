@@ -1,7 +1,7 @@
 /**
  * STAGED DELIVERABLE: Round 91 Production Standard
  * Week: 54 | Theme: "PHASE 1 GRADUATION SHOWCASE" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
+ * Generated: 2026-11-13T08:20:57.000Z
  * Pipeline: scripts/round91_data_generator.py
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
@@ -71,11 +71,17 @@ export const skillPracticeHubData = {
     {
       "id": 1,
       "title": "Graduation Showcase Attendees",
+      "problemText": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
       "problem_text": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
+      "problem_en": "There are 50 graduates and 85 parent guests in the school auditorium. How many people are attending the showcase altogether?",
       "correctAnswer": 135,
       "target_answer": 135,
       "answer_unit": "people",
+      "hintText": "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people.",
       "step_by_step": "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people.",
+      "steps": [
+        "Step 1: Graduates = 50. Step 2: Parent guests = 85. Step 3: Total = 50 + 85 = 135 people."
+      ],
       "modelData": {
         "bars": [
           {
@@ -97,11 +103,17 @@ export const skillPracticeHubData = {
     {
       "id": 2,
       "title": "Stage Flower Arrangements",
+      "problemText": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
       "problem_text": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
+      "problem_en": "The stage has 24 red rose bouquets and 38 white lily bouquets. How many flower bouquets decorate the stage in all?",
       "correctAnswer": 62,
       "target_answer": 62,
       "answer_unit": "bouquets",
+      "hintText": "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets.",
       "step_by_step": "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets.",
+      "steps": [
+        "Step 1: Red rose bouquets = 24. Step 2: White lily bouquets = 38. Step 3: Total = 24 + 38 = 62 bouquets."
+      ],
       "modelData": {
         "bars": [
           {
@@ -123,11 +135,17 @@ export const skillPracticeHubData = {
     {
       "id": 3,
       "title": "Auditorium Chairs Difference",
+      "problemText": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
       "problem_text": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
+      "problem_en": "Section A of the auditorium has 90 chairs. Section B has 65 chairs. How many more chairs are in Section A than Section B?",
       "correctAnswer": 25,
       "target_answer": 25,
       "answer_unit": "chairs",
+      "hintText": "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs.",
       "step_by_step": "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs.",
+      "steps": [
+        "Step 1: Section A = 90. Step 2: Section B = 65. Step 3: Difference = 90 - 65 = 25 chairs."
+      ],
       "modelData": {
         "bars": [
           {
@@ -149,11 +167,17 @@ export const skillPracticeHubData = {
     {
       "id": 4,
       "title": "Target Graduation Certificates",
+      "problemText": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
       "problem_text": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
+      "problem_en": "The school office must sign 100 graduation certificates. They have signed 72 certificates so far. How many certificates remain to be signed?",
       "correctAnswer": 28,
       "target_answer": 28,
       "answer_unit": "certificates",
+      "hintText": "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates.",
       "step_by_step": "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates.",
+      "steps": [
+        "Step 1: Total = 100 certificates. Step 2: Signed = 72. Step 3: Remaining = 100 - 72 = 28 certificates."
+      ],
       "modelData": {
         "bars": [
           {
@@ -175,11 +199,17 @@ export const skillPracticeHubData = {
     {
       "id": 5,
       "title": "Showcase Photo Souvenirs",
+      "problemText": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
       "problem_text": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
+      "problem_en": "The media club printed 45 ceremony photos and 39 reception photos. What is the total number of souvenir photos printed?",
       "correctAnswer": 84,
       "target_answer": 84,
       "answer_unit": "photos",
+      "hintText": "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos.",
       "step_by_step": "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos.",
+      "steps": [
+        "Step 1: Ceremony photos = 45. Step 2: Reception photos = 39. Step 3: Total = 45 + 39 = 84 photos."
+      ],
       "modelData": {
         "bars": [
           {
