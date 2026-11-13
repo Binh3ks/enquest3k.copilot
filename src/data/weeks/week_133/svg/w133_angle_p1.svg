@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Complementary angles in right angle ABC">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Right Angle ABC divided by Ray BD</title>
+  <!-- Right angle corner symbol -->
+  <polyline points="190,186 214,186 214,210" fill="none" stroke="#ea580c" stroke-width="2.5"/>
+  <!-- Main rays -->
+  <line x1="190" y1="210" x2="190" y2="45" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="190,38 184,50 196,50" fill="#1e293b"/>
+  <line x1="190" y1="210" x2="430" y2="210" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="437,210 425,204 425,216" fill="#1e293b"/>
+  <line x1="190" y1="210" x2="289.3" y2="78.2" stroke="#2563eb" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="190" cy="210" r="4.5" fill="#1e293b"/>
+  <!-- Arcs -->
+  <path d="M 190 152 A 58 58 0 0 1 224.9 163.7" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 235.7 149.3 A 76 76 0 0 1 266 210" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <!-- Labels -->
+  <text x="168" y="48" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">A</text>
+  <text x="168" y="226" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">B</text>
+  <text x="444" y="215" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">C</text>
+  <text x="297.3" y="72.2" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2563eb">D</text>
+  <text x="202" y="138" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#2563eb">37°</text>
+  <text x="268" y="182" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626">x°</text>
+  <text x="455" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#475569">∠ABC = 90°</text>
+</svg>

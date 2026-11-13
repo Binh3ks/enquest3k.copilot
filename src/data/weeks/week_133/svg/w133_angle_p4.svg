@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Angle M measuring 128 degrees">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Angle M (128°)</title>
+  <line x1="310" y1="200" x2="475" y2="200" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="483,200 470,193 470,207" fill="#1e293b"/>
+  <line x1="310" y1="200" x2="214.6" y2="77.9" stroke="#2563eb" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 366 200 A 56 56 0 0 0 275.5 155.9" fill="#dbeafe" fill-opacity="0.55" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="310" cy="200" r="5" fill="#1e293b"/>
+  <text x="288" y="218" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">M</text>
+  <text x="318" y="132" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#2563eb">128°</text>
+</svg>

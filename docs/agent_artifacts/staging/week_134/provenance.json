@@ -45,7 +45,7 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY"
   ],
-  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "review_status": "MERGED_ROUND86",
   "round83_regeneration": {
     "round": 83,
     "regenerated_at": "2026-11-12T08:26:43.793Z",
@@ -85,5 +85,13 @@
       "docs/agent_artifacts/staging/week_134/skill_practice_hub.js"
     ],
     "notes": "Rewrote flagged non-CLIL vocab definitions/examples, shadowing/dictation sentences, story/RW prompts, writing/speaking frames, and grammar/lab items to genuine CEFR B1+ register while keeping syllabus target words and math untouched."
+  },
+  "round86_production_merge": {
+    "round": 86,
+    "merged_at": "2026-11-13T02:53:51.340Z",
+    "baseline_commit": "9d04116b416d1ba5d2d9fca9a56e98ecde7d4014",
+    "scope": "PRODUCTION_MERGE_WAVE3",
+    "destination": "src/data/weeks/week_134/",
+    "esl_signoff": "Claude C17-b full ESL pedagogy sign-off granted across all 4 weeks"
   }
 }

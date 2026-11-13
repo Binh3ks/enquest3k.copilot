@@ -1,0 +1,126 @@
+========================================================================
+ROUND 86 — LIVE PRODUCTION REGRESSION VERIFICATION (ZERO LITERALS)
+Timestamp: 2026-11-13T02:57:11.906Z
+Target Weeks: W126, W127, W133, W134 (in src/data/weeks/)
+========================================================================
+
+
+========================================================================
+🔍 CHECKING LIVE PRODUCTION WEEK 126 (/Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_126)
+========================================================================
+  ✅ [PASS] Directory exists: src/data/weeks/week_126
+  ✅ [PASS] Loader exists: src/data/weeks/week_126/index.js
+
+--- 5.a: station2Adapters.js Compatibility ---
+  ✅ [PASS] Math questions count === 5 (got 5)
+  ✅ [PASS] BarModelQuest literal fallback-to-10 count === 0 (got 0)
+  ✅ [PASS] normalizeBarModelQuestion normalized all 5 questions correctly (got 5/5)
+  ✅ [PASS] Grammar duel items >= 5 (got 5)
+  ✅ [PASS] normalizeScienceLabStages returned >= 1 stage (got 3)
+  ✅ [PASS] zoneDataMapper maps all 5 zones (storyWorld, knowledgeLab, battleArena, creatorStudio, bossBattle) successfully
+
+--- 5.b: G-GEN-11..16 Quality Gates ---
+  ✅ [PASS] G-GEN-11 Theme/Math Count: theme="From Essay to Speech", mathItems=5/5
+  ✅ [PASS] G-GEN-12 Math/CLIL Schema: validMath=5/5, clilQuestions=3
+  ✅ [PASS] G-GEN-13 Readability/Scope: vocabCount=20/20, clilWords=168 (>= 110)
+  ✅ [PASS] G-GEN-14 Clean English: viLeaks=0, boilerplate=0
+  ✅ [PASS] G-GEN-15 Vocab Coverage: targetCoverage=100% (20/20, min 60%), sbCoverage=0/0
+  ✅ [PASS] G-GEN-16 ESL Anomalies: zero anomalies found (got 0)
+
+--- 5.c: bossRotarySchedule.js Cycle Check ---
+  ✅ [PASS] bossRotarySchedule cycleNumber === 2 (got 2)
+  ✅ [PASS] bossRotarySchedule activeParts populated (got 4/4 parts)
+  ✅ [PASS] getRotaryTaskLabel returned non-empty strings (L="Listening Shield (L3)", RW="Reading & Writing Shield (R2 & R3)", S="Speaking & Passport (S2)")
+
+========================================================================
+🔍 CHECKING LIVE PRODUCTION WEEK 127 (/Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_127)
+========================================================================
+  ✅ [PASS] Directory exists: src/data/weeks/week_127
+  ✅ [PASS] Loader exists: src/data/weeks/week_127/index.js
+
+--- 5.a: station2Adapters.js Compatibility ---
+  ✅ [PASS] Math questions count === 5 (got 5)
+  ✅ [PASS] BarModelQuest literal fallback-to-10 count === 0 (got 0)
+  ✅ [PASS] normalizeBarModelQuestion normalized all 5 questions correctly (got 5/5)
+  ✅ [PASS] Grammar duel items >= 5 (got 5)
+  ✅ [PASS] normalizeScienceLabStages returned >= 1 stage (got 3)
+  ✅ [PASS] zoneDataMapper maps all 5 zones (storyWorld, knowledgeLab, battleArena, creatorStudio, bossBattle) successfully
+
+--- 5.b: G-GEN-11..16 Quality Gates ---
+  ✅ [PASS] G-GEN-11 Theme/Math Count: theme="Rebuttal Practice", mathItems=5/5
+  ✅ [PASS] G-GEN-12 Math/CLIL Schema: validMath=5/5, clilQuestions=3
+  ✅ [PASS] G-GEN-13 Readability/Scope: vocabCount=20/20, clilWords=167 (>= 110)
+  ✅ [PASS] G-GEN-14 Clean English: viLeaks=0, boilerplate=0
+  ✅ [PASS] G-GEN-15 Vocab Coverage: targetCoverage=100% (20/20, min 60%), sbCoverage=5/5
+  ✅ [PASS] G-GEN-16 ESL Anomalies: zero anomalies found (got 0)
+
+--- 5.c: bossRotarySchedule.js Cycle Check ---
+  ✅ [PASS] bossRotarySchedule cycleNumber === 3 (got 3)
+  ✅ [PASS] bossRotarySchedule activeParts populated (got 4/4 parts)
+  ✅ [PASS] getRotaryTaskLabel returned non-empty strings (L="Listening Shield (L4)", RW="Reading & Writing Shield (R4 & R5)", S="Speaking & Passport (S3)")
+
+========================================================================
+🔍 CHECKING LIVE PRODUCTION WEEK 133 (/Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_133)
+========================================================================
+  ✅ [PASS] Directory exists: src/data/weeks/week_133
+  ✅ [PASS] Loader exists: src/data/weeks/week_133/index.js
+
+--- 5.a: station2Adapters.js Compatibility ---
+  ✅ [PASS] Math questions count === 5 (got 5)
+  ✅ [PASS] BarModelQuest literal fallback-to-10 count === 0 (got 0)
+  ✅ [PASS] normalizeBarModelQuestion normalized all 5 questions correctly (got 5/5)
+  ✅ [PASS] Grammar duel items >= 5 (got 5)
+  ✅ [PASS] normalizeScienceLabStages returned >= 1 stage (got 3)
+  ✅ [PASS] zoneDataMapper maps all 5 zones (storyWorld, knowledgeLab, battleArena, creatorStudio, bossBattle) successfully
+
+--- 5.b: G-GEN-11..16 Quality Gates ---
+  ✅ [PASS] G-GEN-11 Theme/Math Count: theme="Deep Research & Data", mathItems=5/5
+  ✅ [PASS] G-GEN-12 Math/CLIL Schema: validMath=5/5, clilQuestions=3
+  ✅ [PASS] G-GEN-13 Readability/Scope: vocabCount=20/20, clilWords=198 (>= 110)
+  ✅ [PASS] G-GEN-14 Clean English: viLeaks=0, boilerplate=0
+  ✅ [PASS] G-GEN-15 Vocab Coverage: targetCoverage=100% (20/20, min 60%), sbCoverage=8/8
+  ✅ [PASS] G-GEN-16 ESL Anomalies: zero anomalies found (got 0)
+
+--- SVG Static Asset Verification ---
+  ✅ [PASS] Static SVG assets exist in both public/ and src/ for Week 133
+
+--- 5.c: bossRotarySchedule.js Cycle Check ---
+  ✅ [PASS] bossRotarySchedule cycleNumber === 1 (got 1)
+  ✅ [PASS] bossRotarySchedule activeParts populated (got 4/4 parts)
+  ✅ [PASS] getRotaryTaskLabel returned non-empty strings (L="Listening Shield (L1 & L2)", RW="Reading & Writing Shield (R1)", S="Speaking & Passport (S1)")
+
+========================================================================
+🔍 CHECKING LIVE PRODUCTION WEEK 134 (/Users/binhnguyen/projects/Engquest3k/src/data/weeks/week_134)
+========================================================================
+  ✅ [PASS] Directory exists: src/data/weeks/week_134
+  ✅ [PASS] Loader exists: src/data/weeks/week_134/index.js
+
+--- 5.a: station2Adapters.js Compatibility ---
+  ✅ [PASS] Math questions count === 5 (got 5)
+  ✅ [PASS] BarModelQuest literal fallback-to-10 count === 0 (got 0)
+  ✅ [PASS] normalizeBarModelQuestion normalized all 5 questions correctly (got 5/5)
+  ✅ [PASS] Grammar duel items >= 5 (got 5)
+  ✅ [PASS] normalizeScienceLabStages returned >= 1 stage (got 3)
+  ✅ [PASS] zoneDataMapper maps all 5 zones (storyWorld, knowledgeLab, battleArena, creatorStudio, bossBattle) successfully
+
+--- 5.b: G-GEN-11..16 Quality Gates ---
+  ✅ [PASS] G-GEN-11 Theme/Math Count: theme="Identifying Fallacies", mathItems=5/5
+  ✅ [PASS] G-GEN-12 Math/CLIL Schema: validMath=5/5, clilQuestions=3
+  ✅ [PASS] G-GEN-13 Readability/Scope: vocabCount=20/20, clilWords=161 (>= 110)
+  ✅ [PASS] G-GEN-14 Clean English: viLeaks=0, boilerplate=0
+  ✅ [PASS] G-GEN-15 Vocab Coverage: targetCoverage=100% (20/20, min 60%), sbCoverage=8/8
+  ✅ [PASS] G-GEN-16 ESL Anomalies: zero anomalies found (got 0)
+
+--- SVG Static Asset Verification ---
+  ✅ [PASS] Static SVG assets exist in both public/ and src/ for Week 134
+
+--- 5.c: bossRotarySchedule.js Cycle Check ---
+  ✅ [PASS] bossRotarySchedule cycleNumber === 2 (got 2)
+  ✅ [PASS] bossRotarySchedule activeParts populated (got 4/4 parts)
+  ✅ [PASS] getRotaryTaskLabel returned non-empty strings (L="Listening Shield (L3)", RW="Reading & Writing Shield (R2 & R3)", S="Speaking & Passport (S2)")
+
+========================================================================
+FINAL RESULT: 70/70 checks passed
+OVERALL STATUS: ALL CHECKS PASSED ✅
+========================================================================
+

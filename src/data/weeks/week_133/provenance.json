@@ -1,0 +1,97 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-10T04:07:29.872Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
+  "week_number": 133,
+  "theme": "Deep Research & Data",
+  "cefr_level": "B1+ Academic",
+  "grammar_focus": "Citation phrases & empirical reporting ('According to a study by...', 'Statistics demonstrate that...', 'Data reveals that...').",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_133/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "•\tWeek 133: Deep Research & Data (Tuần 133: Nghiên cứu Sâu & Dữ liệu) \n\t•\tTopic (ELA): Finding statistics to support arguments. (Chủ đề: Tìm số liệu thống kê để hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Find and cite one statistic about video games (e.g., \"70% of kids play...\"). (Kết quả: Tìm và trích dẫn 1 số liệu về video game.)\n\t•\tSkill Focus: Using data as evidence. (Kỹ năng: Dùng dữ liệu làm bằng chứng.)\n\t•\tGrammar Focus: Citation Phrases: \"According to a study by...\", \"Statistics show that...\". (Ngữ pháp: Cụm từ trích dẫn.)\n\t•\tVocabulary Focus: statistic, percent, study, data, majority, minority, survey, population.\n\t•\tTopic (Math): Geometry: Angles. (Toán: Hình học - Góc.)\n\t•\tKey Learning Outcome (Math): Identify right, acute, and obtuse angles in shapes. (Kết quả: Nhận biết góc vuông, nhọn, tù.)\n\t•\tMath Vocabulary: angle, degree, right angle, acute, obtuse, protractor, measure.",
+    "digital_map_reference": {
+      "map_week": 133,
+      "map_theme": "Research Project 4: AI in Education",
+      "map_clil_module": "Trí tuệ nhân tạo và liêm chính học thuật",
+      "map_grammar_hub": "Soạn thảo tổng quan tài liệu; `discovery_report` độ lệch AI detector",
+      "map_cefr_type": "B1+ Academic · Rotary 1",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Deep Research & Data\") enforced over Digital Map (Source A: \"Research Project 4: AI in Education\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
+  ],
+  "review_status": "MERGED_ROUND86",
+  "round83_regeneration": {
+    "round": 83,
+    "regenerated_at": "2026-11-12T08:26:43.793Z",
+    "baseline_commit": "1e0039adbdf0ac56789b8d11e3e57888f5d00f44",
+    "scope": "STAGING_ONLY_NO_MERGE",
+    "acceptance_spec": "docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_133/reading_hub.js",
+      "docs/agent_artifacts/staging/week_133/skill_practice_hub.js",
+      "docs/agent_artifacts/staging/week_133/svg/w133_angle_p1.svg",
+      "docs/agent_artifacts/staging/week_133/svg/w133_angle_p2.svg",
+      "docs/agent_artifacts/staging/week_133/svg/w133_angle_p3.svg",
+      "docs/agent_artifacts/staging/week_133/svg/w133_angle_p4.svg",
+      "docs/agent_artifacts/staging/week_133/svg/w133_angle_p5.svg"
+    ],
+    "promotion_asset_copy_required": "Copy docs/agent_artifacts/staging/week_133/svg/*.svg to public/images/week133/ upon merge approval"
+  },
+  "round84_b1_register_rewrite": {
+    "round": 84,
+    "rewritten_at": "2026-11-12T09:54:02.083Z",
+    "baseline_commit": "0e7419a6e69b7157d33434da26acbe5d713b4c3b",
+    "scope": "STAGING_ONLY_CLIL_B1_PLUS_REGISTER",
+    "updated_file": "docs/agent_artifacts/staging/week_133/reading_hub.js",
+    "notes": "Rewrote clil_article.content_en and aligned clil_article.check_questions to genuine CEFR B1+ register while preserving 100% (20/20) target vocabulary coverage."
+  },
+  "round85_nonclil_b1_register_rewrite": {
+    "round": 85,
+    "rewritten_at": "2026-11-12T10:29:16.472Z",
+    "baseline_commit": "0347975fb7f84808b23901179b562ba167853774",
+    "scope": "STAGING_ONLY_NON_CLIL_B1_PLUS_REGISTER",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_133/reading_hub.js",
+      "docs/agent_artifacts/staging/week_133/vocab.js",
+      "docs/agent_artifacts/staging/week_133/listening_hub.js",
+      "docs/agent_artifacts/staging/week_133/writing_hub.js",
+      "docs/agent_artifacts/staging/week_133/speaking_hub.js",
+      "docs/agent_artifacts/staging/week_133/skill_practice_hub.js"
+    ],
+    "notes": "Rewrote flagged non-CLIL vocab definitions/examples, shadowing/dictation sentences, story/RW prompts, writing/speaking frames, and grammar/lab items to genuine CEFR B1+ register while keeping syllabus target words and math untouched."
+  },
+  "round86_production_merge": {
+    "round": 86,
+    "merged_at": "2026-11-13T02:53:51.336Z",
+    "baseline_commit": "9d04116b416d1ba5d2d9fca9a56e98ecde7d4014",
+    "scope": "PRODUCTION_MERGE_WAVE3",
+    "destination": "src/data/weeks/week_133/",
+    "esl_signoff": "Claude C17-b full ESL pedagogy sign-off granted across all 4 weeks"
+  }
+}

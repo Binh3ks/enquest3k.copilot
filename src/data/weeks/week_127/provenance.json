@@ -1,0 +1,91 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-10T04:07:29.855Z",
+  "pipeline_script": "scripts/generate_giaidoan2_content.mjs",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
+  "week_number": 127,
+  "theme": "Rebuttal Practice",
+  "cefr_level": "B1+ Academic",
+  "grammar_focus": "Contrast Connectors & Rebuttal Frameworks ('On the contrary', 'However', 'While proponents claim that..., evidence reveals...')",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_127/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "source_b_excerpt": "•\tWeek 127: Rebuttal Practice (Tuần 127: Luyện Phản biện)\n\t•\tTopic (Debate): Disagreeing politely. (Chủ đề: Phản đối lịch sự.)\n\t•\tKey Learning Outcome (ELA): Use \"They say... but I say...\" structure. (Kết quả: Dùng cấu trúc Họ nói... nhưng tôi nói...)\n\t•\tGrammar Focus: Contrast Connectors: \"On the contrary\", \"However\". (Ngữ pháp: Từ nối tương phản.)\n\t•\tVocabulary Focus: disagree, counter, point, false, true.\n\t•\tTopic (Math): Critical Thinking Math. (Toán: Toán tư duy phản biện.)",
+    "digital_map_reference": {
+      "map_week": 127,
+      "map_theme": "B1+ Academic Assessment Mock 1",
+      "map_clil_module": "Khảo sát Năng lực Chuẩn hóa B1+ 1",
+      "map_grammar_hub": "Full Mock B1+ Academic 1: Reading 500–800w passages + Opinion Essay 140–190w",
+      "map_cefr_type": "★ FULL MOCK 20 (B1+)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Rebuttal Practice\") enforced over Digital Map (Source A: \"B1+ Academic Assessment Mock 1\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY"
+  ],
+  "review_status": "MERGED_ROUND86",
+  "round83_regeneration": {
+    "round": 83,
+    "regenerated_at": "2026-11-12T08:26:43.793Z",
+    "baseline_commit": "1e0039adbdf0ac56789b8d11e3e57888f5d00f44",
+    "scope": "STAGING_ONLY_NO_MERGE",
+    "acceptance_spec": "docs/agent_artifacts/round79_wave3_acceptance_spec_v2.md",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_127/reading_hub.js",
+      "docs/agent_artifacts/staging/week_127/skill_practice_hub.js"
+    ]
+  },
+  "round84_b1_register_rewrite": {
+    "round": 84,
+    "rewritten_at": "2026-11-12T09:54:02.082Z",
+    "baseline_commit": "0e7419a6e69b7157d33434da26acbe5d713b4c3b",
+    "scope": "STAGING_ONLY_CLIL_B1_PLUS_REGISTER",
+    "updated_file": "docs/agent_artifacts/staging/week_127/reading_hub.js",
+    "notes": "Rewrote clil_article.content_en and aligned clil_article.check_questions to genuine CEFR B1+ register while preserving 100% (20/20) target vocabulary coverage."
+  },
+  "round85_nonclil_b1_register_rewrite": {
+    "round": 85,
+    "rewritten_at": "2026-11-12T10:29:16.470Z",
+    "baseline_commit": "0347975fb7f84808b23901179b562ba167853774",
+    "scope": "STAGING_ONLY_NON_CLIL_B1_PLUS_REGISTER",
+    "updated_files": [
+      "docs/agent_artifacts/staging/week_127/reading_hub.js",
+      "docs/agent_artifacts/staging/week_127/vocab.js",
+      "docs/agent_artifacts/staging/week_127/listening_hub.js",
+      "docs/agent_artifacts/staging/week_127/writing_hub.js",
+      "docs/agent_artifacts/staging/week_127/speaking_hub.js",
+      "docs/agent_artifacts/staging/week_127/skill_practice_hub.js"
+    ],
+    "notes": "Rewrote flagged non-CLIL vocab definitions/examples, shadowing/dictation sentences, story/RW prompts, writing/speaking frames, and grammar/lab items to genuine CEFR B1+ register while keeping syllabus target words and math untouched."
+  },
+  "round86_production_merge": {
+    "round": 86,
+    "merged_at": "2026-11-13T02:53:51.334Z",
+    "baseline_commit": "9d04116b416d1ba5d2d9fca9a56e98ecde7d4014",
+    "scope": "PRODUCTION_MERGE_WAVE3",
+    "destination": "src/data/weeks/week_127/",
+    "esl_signoff": "Claude C17-b full ESL pedagogy sign-off granted across all 4 weeks"
+  }
+}

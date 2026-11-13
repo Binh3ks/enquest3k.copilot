@@ -1,0 +1,48 @@
+========================================================================================
+🌐 ROUND 86 — REAL-BROWSER PLAYWRIGHT E2E SMOKE PASS (LIVE W126, W127, W133, W134)
+Timestamp: 2026-11-13T03:00:42.466Z | Preview URL: http://127.0.0.1:4186
+Screenshots Dir: /tmp/round86_e2e
+========================================================================================
+
+✅ Vite preview server ready at http://127.0.0.1:4186
+
+## Flow 1: W126 Math Quest (/week/126/task/math_quest)
+  DOM Before START: Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 📐 READY FOR MATH QUEST? ▶ START 🦊 UPGRADE PLAN...
+  [PASS] W126 Math accepts correctAnswer=32 — feedback="🎉 Correct! +25 PTS (1x Streak Bonus)", score="25 PTS"
+  [PASS] W126 Math 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 2: W126 CLIL Fact Finder (/week/126/task/gear4_clil)
+  [PASS] W126 CLIL article renders theme content
+  [PASS] W126 CLIL 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 3: W127 Math Quest (/week/127/task/math_quest)
+  [PASS] W127 Math accepts correctAnswer=12 — feedback="🎉 Correct! +25 PTS (1x Streak Bonus)", score="25 PTS"
+  [PASS] W127 Math 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 4: W127 Action Lab (/week/127/task/science_lab)
+  [PASS] W127 Action Lab renders interactive stage board
+  [PASS] W127 Action Lab 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 5: W133 Math Quest with Static SVG (/week/133/task/math_quest)
+  [PASS] W133 Math SVG asset w133_angle_p1.svg loaded with HTTP 200 — status=200
+  [PASS] W133 Math accepts correctAnswer=53 — feedback="🎉 Correct! +25 PTS (1x Streak Bonus)", score="25 PTS"
+  [PASS] W133 Math 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 6: W133 CLIL Fact Finder (/week/133/task/gear4_clil)
+  [PASS] W133 CLIL renders B1+ research article
+  [PASS] W133 CLIL 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 7: W134 Math Quest with Static SVG (/week/134/task/math_quest)
+  [PASS] W134 Math SVG asset w134_triangle_p1.svg loaded with HTTP 200 — status=200
+  [PASS] W134 Math accepts correctAnswer=2 — feedback="🎉 Correct! +25 PTS (1x Streak Bonus)", score="25 PTS"
+  [PASS] W134 Math 0 fatal runtime/page errors — pageErrors=0
+
+## Flow 8: W134 CLIL Fact Finder (/week/134/task/gear4_clil)
+  [PASS] W134 CLIL renders B1+ Fallacies article
+  [PASS] W134 CLIL 0 fatal runtime/page errors — pageErrors=0
+
+
+========================================================================================
+E2E SUMMARY: 18 PASSED / 0 FAILED
+STATUS: ALL E2E FLOWS PASSED ✅
+========================================================================================

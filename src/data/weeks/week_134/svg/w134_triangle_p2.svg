@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" width="600" height="260" role="img" aria-label="Triangle PQR with perimeter 44 cm, base 12 cm, and equal sides x cm">
+  <rect width="600" height="260" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <title>Triangle PQR Perimeter 44 cm</title>
+  <polygon points="300,42 228,220 372,220" fill="#f0fdf4" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <line x1="270.5" y1="133.6" x2="257.5" y2="128.4" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="342.5" y1="128.4" x2="329.5" y2="133.6" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="300" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e293b">P</text>
+  <text x="210" y="226" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">Q</text>
+  <text x="380" y="226" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">R</text>
+  <text x="228" y="128" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#dc2626">x cm</text>
+  <text x="345" y="128" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#dc2626">x cm</text>
+  <text x="300" y="242" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#2563eb">12 cm</text>
+  <text x="475" y="45" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0f766e">Perimeter = 44 cm</text>
+</svg>
