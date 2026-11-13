@@ -1,8 +1,8 @@
 ROUND 91 PACKAGE & COMMIT MANIFEST
 ========================================================================
-Timestamp:                 2026-11-13T05:39:34.607Z
+Timestamp:                 2026-11-13T05:54:28.699Z
 round90_baseline_commit:   a30de82463e567f4cc49013ef284dec158497012
-deliverables_commit:       0a7d0f3715edc612dfecc67fe85744efa6377eff
+deliverables_commit:       c3c5e349005243a6475db4ba6997e1868f2a7b98
 deliverables_clean_check:  PASS (0 uncommitted/untracked changes in Round 91 deliverables)
 manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commit).
                            Commit 2 ONLY adds docs/review_packages/manifest_round91.txt
@@ -10,8 +10,8 @@ manifest_commit_contract:  Generated strictly AFTER Commit 1 (deliverables_commi
 
 ZIP PACKAGE:
   Path:    docs/review_packages/round91_20261113.zip
-  Size:    387746 bytes
-  SHA-256: ddf6dba2e133a709b118459cc34eb5b279478dfffd32b11bc229adee82d3f970
+  Size:    393450 bytes
+  SHA-256: 23cd7d553077ff30be8b362f17c8778e081f1b92428cb43a3e6102449fd7d37f
 
 STAGED WEEKS INVENTORY:
   Total Weeks Staged:      11 (W40, W42, W44, W47, W48, W49, W50, W51, W52, W53, W54)
@@ -19,123 +19,123 @@ STAGED WEEKS INVENTORY:
   Production Boundary:     (none - 0 modifications to production src/data/weeks/ directory)
 
 ROUND 91 SCRIPTS, STAGED WEEKS & ARTIFACT HASHES (SHA-256):
-  e83097d9968af918f3494a24cccd0643377d6cd4bcab3544e72857a43a3ce9a5  scripts/round91_data_generator.py
-  28757a4a656c1340bdebf2e73ba97f71ddc9a2dc94d826e7349bb00f21c063a8  scripts/round91_weeks_b.py
+  bb732c8b4c6aa02c7f1f25d3f7f1c9a7586cb120615660051fe8e76a39b24c86  scripts/round91_data_generator.py
+  5aa1cadad4ee0bb4b510e90183b3dc6734f4018e6d946a4b1a9420251bd19e03  scripts/round91_weeks_b.py
   9e3c493e750795b2894c8c3f7f7b31f49b1d9a68e8f1f856c6df59856eb03c58  scripts/round91_weeks_c.py
   10eb840171b3fae383ce8304cb70729e268ba4260397ab331ed3ac75d323ea65  scripts/generate_round91_weeks_c.py
   5c376f94fece3fafb05ca6f72be47df7bcfd5c1acab97785c39ac9eeb02e0699  scripts/verify_round91_staging.mjs
   881dc30c0cf47763a4b1f931c702e29bf63d0ee2876d054d529693cdf30fc7e0  scripts/package_round91.mjs
-  26655cba9f86bfdc0c0829119d74ad4668a2122c38de485469be28d819064061  docs/agent_artifacts/round91_report.md
-  ed3f3e9439dd88638cfd36a45b5754a9b2c952d2fd85dd9eae0ed29b0da130ef  docs/agent_artifacts/round91_verification_raw.txt
+  960911d782d39805f92398fc62d82f27750aba51675807e541e5ff9dd7da3b39  docs/agent_artifacts/round91_report.md
+  9fa96d07888b313023cc446d9524890125a9dad024640c746486d815612b5a66  docs/agent_artifacts/round91_verification_raw.txt
   b73fa0737b326ea7a8ba1bda70c32da462ef90eba109cd113b81dbbb370d3dfd  docs/agent_artifacts/staging/week_40/blueprint.json
   315b8f9ded71e95aef8a1c3fc91dbbedebed30bf4d78ec8eb5836535bb207919  docs/agent_artifacts/staging/week_40/gate_validation.log
   3a549250a39ca0bdbb9ea794eb54399e99e7bc2617d1376fd3ddf70aa1b6eccd  docs/agent_artifacts/staging/week_40/index.js
-  b2a5c121925d05c42cad930e290cb23fcdc555a49147002a8d535e50a5b13e10  docs/agent_artifacts/staging/week_40/listening_hub.js
-  281fbb11d283413852985400be64c2a87fffbeccb1ac3b44188e7f5d19d186bf  docs/agent_artifacts/staging/week_40/provenance.json
-  061b6ec852290601e36c0594cd4f84ceaf13baf29130365501ebcff777de143b  docs/agent_artifacts/staging/week_40/reading_hub.js
-  cdf24e8346a70a919e83b26637a404ae4078bfb226b4a2547bf5e1c873556f9f  docs/agent_artifacts/staging/week_40/skill_practice_hub.js
+  650bf2aabf7c4e4c4ea1c5387db6b51e37c8c8a9621cdde9a001d143c224537e  docs/agent_artifacts/staging/week_40/listening_hub.js
+  5e2230f6c6c83d547b5db8f312a33bf35dbbb62d36e29c70aa77d6db2af6ed41  docs/agent_artifacts/staging/week_40/provenance.json
+  dc35a539d0d3767dc89f7904fb3dec1e024180d3440e0bb07a286f4f6477e566  docs/agent_artifacts/staging/week_40/reading_hub.js
+  3aa67ef9cae66006238c83824f5d82ea4b2609450889007f93a002c0188b04c8  docs/agent_artifacts/staging/week_40/skill_practice_hub.js
   b1eae0f0444012d7227f806f0e9f15511e266c945b44d77e0062f67e7a47adb6  docs/agent_artifacts/staging/week_40/source_grounding.json
-  dd7c75876f8f108579bbea17746de3b64e33e5092b403a2f80c77703045fffea  docs/agent_artifacts/staging/week_40/speaking_hub.js
-  eff2757b559108413f4b668a6add3992117246b33a9014b505d858014e22d281  docs/agent_artifacts/staging/week_40/vocab.js
-  f672da823a54d08fe68c82cecbf60318fcece54eb8ec84367bd6e9d67b03c24d  docs/agent_artifacts/staging/week_40/writing_hub.js
+  aab993b349d1553c593be71f94d96ca7d73fbf1b0d333ddb3df943bb40208b67  docs/agent_artifacts/staging/week_40/speaking_hub.js
+  62e2a556d0b53d5ff600fc5d1e6cf8735f90a365727955ba499ae2bb0d3db139  docs/agent_artifacts/staging/week_40/vocab.js
+  8c7c7bddb10261d24543b663949ee8862b296c379c447b4c47b905de76728631  docs/agent_artifacts/staging/week_40/writing_hub.js
   ffa8210f6bf4d1701db143b7865c5d903770a4cfc8770caddcfe2914700bab98  docs/agent_artifacts/staging/week_42/blueprint.json
   0e1caf88c6f42a55b4bef9ff3dad4dc33d52092a53d8b0df0dea5ac1e01f2602  docs/agent_artifacts/staging/week_42/gate_validation.log
   6476277960d420865e195ca680d55b2d3bad90e63f0cf2cadcd77c67968b77b2  docs/agent_artifacts/staging/week_42/index.js
-  0216ab2f1e2ec1ab0d45126f20fe62e990e8cf877535a493ea690621de401faf  docs/agent_artifacts/staging/week_42/listening_hub.js
-  1fd1f38c9449b1af805ebacdc4e6d213de18055c2aef3658813694cfa37c29e7  docs/agent_artifacts/staging/week_42/provenance.json
-  3ce6a3ae9013307a1591c40df110ed45391e98b72f5e99e05785a02f012511e5  docs/agent_artifacts/staging/week_42/reading_hub.js
-  007e86bf6b6c830c0937570d6967904325542e603eec8fcf866dbf314418f165  docs/agent_artifacts/staging/week_42/skill_practice_hub.js
+  b70b1e7de18343724bc8d8aca1504024ea4dfe502f146f89a09371e73f48b948  docs/agent_artifacts/staging/week_42/listening_hub.js
+  7f17c1c8cc902ee717218dea14567209357336deea01b95a400b995457478c5f  docs/agent_artifacts/staging/week_42/provenance.json
+  0cf12d113e551866918e9e066e44e3d302b757e434b2cbf0000c1a80f1277090  docs/agent_artifacts/staging/week_42/reading_hub.js
+  da6f77eff863021df769a78fa7cdab99f48470b0c91020ff9e66a8c9a4eaebbf  docs/agent_artifacts/staging/week_42/skill_practice_hub.js
   087a5d00362f84863e34b9c98c120e61df583d8578244b7f720a6e6872b49dab  docs/agent_artifacts/staging/week_42/source_grounding.json
-  fcd6229d62b929e4ca8e0d7bdfc626b3b6034f44161ad97f24c5c51a6af2a77f  docs/agent_artifacts/staging/week_42/speaking_hub.js
-  7faee42c80637355274e590214807b6f19267bb987f35c33bc1245fa904018df  docs/agent_artifacts/staging/week_42/vocab.js
-  418e8be09eff4f8c0e11c4273d879511870230f93fbc76f50610e86122e81dca  docs/agent_artifacts/staging/week_42/writing_hub.js
+  14d88dc46225a6aa51166722faf0998d68ec237b22187ac84e7b2166f2fde48e  docs/agent_artifacts/staging/week_42/speaking_hub.js
+  e003ddc8a27a38db1ef7bc2c529ec213386d224b649e796a461cf4acfe16faa9  docs/agent_artifacts/staging/week_42/vocab.js
+  14e015810dc211c923f8be3ecb6a5333112f30b03b32d9d8dca90084108a0030  docs/agent_artifacts/staging/week_42/writing_hub.js
   4ea71a9f91b9aa1f26fd7ee68209c541cf68ac7311ae64e3b6c02ac25abd8567  docs/agent_artifacts/staging/week_44/blueprint.json
   d250be60fd504d017e3fe4acad461997e2f39ac8d16d278d0782fd11d132f036  docs/agent_artifacts/staging/week_44/gate_validation.log
   8352d5786728aeee22f7b3b73fdccc419d46028e747314514aa747d477c38503  docs/agent_artifacts/staging/week_44/index.js
-  731b9de05868a34ef278624279502c88c1a2796948b3559bd7a8b566fa877c06  docs/agent_artifacts/staging/week_44/listening_hub.js
-  f58c2abf8d37ab46060a1fe83c9f717f168c082be854e898825213b8c729c76a  docs/agent_artifacts/staging/week_44/provenance.json
-  dc7e8b70f97e413990a922e83331c1a97ce66ec75a4718b77802b96f18c01483  docs/agent_artifacts/staging/week_44/reading_hub.js
-  18e4ae5e3730fe9374d1eb0bef52ce4e46c0d3978907ba5b772df1a6dd9d2b13  docs/agent_artifacts/staging/week_44/skill_practice_hub.js
+  7e58983f5a70083bead9c4c0c8cd9d8a6e1629f468046df925631213b0d843db  docs/agent_artifacts/staging/week_44/listening_hub.js
+  e14e7c6a6de49848e2ccf082d13b4f5758b0c493e7bbc5d489f4d05be068397f  docs/agent_artifacts/staging/week_44/provenance.json
+  ca3906924e0bb0cb18bb14d8840ee9ec1f732549a81a31df5a90446ced8e5fa2  docs/agent_artifacts/staging/week_44/reading_hub.js
+  10a5f038f4cc98921aa0f1936649c1fa551deedebd6ead9e799fb32812684f78  docs/agent_artifacts/staging/week_44/skill_practice_hub.js
   2181bd58ad067455399ee415b9f1bc53249b9a8fa057c3a3b385aee8ada0e5e3  docs/agent_artifacts/staging/week_44/source_grounding.json
-  5912d2d96e8ea5ab4f3b3f2bca4c065069eae1a017c488c2d16d296f732a18ec  docs/agent_artifacts/staging/week_44/speaking_hub.js
-  a588a298f36132eca0f2cf8c727b87c882c5ff28b472f149603ae06ce1e0bd6a  docs/agent_artifacts/staging/week_44/vocab.js
-  10ce753bd2039e4d8f3c31cc593a48d88b52fa1d12a416cd50d9da0acd7fd6bb  docs/agent_artifacts/staging/week_44/writing_hub.js
+  9280d0fbc2a29b691695a3e67ae3dfd437ec9ec9049fa6aa1eb52461ce55b208  docs/agent_artifacts/staging/week_44/speaking_hub.js
+  4fa6fe433ab88929317d62ba853a32c1f5ce99d73e07c7ba6eb0ba1c187072dd  docs/agent_artifacts/staging/week_44/vocab.js
+  a336f5dbb0f52070d60a04c5a8172bc3340076eb9e2931a8c445926b10959a53  docs/agent_artifacts/staging/week_44/writing_hub.js
   245cf45a80e01ee09bdc520d846bbd322eed91658a635d1505913a4835637742  docs/agent_artifacts/staging/week_47/blueprint.json
   48b93fcaf216f5b1209a0d8ebb51b5aa17b65b6f29bec8d2d165500fd31faf87  docs/agent_artifacts/staging/week_47/gate_validation.log
   9d052535e101c1e29a890bcf4b482e266a94f258a7b1f91035e75c4f84fe6bc6  docs/agent_artifacts/staging/week_47/index.js
-  e491f626e6721388bfcc25244b4acf285b3d011204cf0aec2cbc54606d54889c  docs/agent_artifacts/staging/week_47/listening_hub.js
-  909f03d968813934a2403c60e3c6c77a9cdb8052fcebaf40e1a902b7e5446892  docs/agent_artifacts/staging/week_47/provenance.json
-  5ef81493f5cf8ce12e003779484f0fb557e7f42ded95512ff827c49a98d665eb  docs/agent_artifacts/staging/week_47/reading_hub.js
-  e548ba3e3448317578158323f4edb9b39383fabf6d16814328628a9e1ca0dbd2  docs/agent_artifacts/staging/week_47/skill_practice_hub.js
+  5e06f1b355342bbfead5fb6637c17138b50f3bb43926906f412a215390f3072f  docs/agent_artifacts/staging/week_47/listening_hub.js
+  d1aa4a6c1e5ccbfb2994b97039776bc651f7201946d073966055b7c31bd1bbf6  docs/agent_artifacts/staging/week_47/provenance.json
+  b500f147351b0789fbef86ac259bca1f71f8cd58983925038a54453c64a39e57  docs/agent_artifacts/staging/week_47/reading_hub.js
+  2aca37b2011367eed741232700917d164eb4203723020eaa60cb6d1fc5a1edeb  docs/agent_artifacts/staging/week_47/skill_practice_hub.js
   62a7e244c95599ec0e250298a8c135b641135d2257e86aec3c35cfaece672382  docs/agent_artifacts/staging/week_47/source_grounding.json
-  2b5eff1bbc01d77aa4505f82dda41a360062b256cb49794228a2bea613a4fe52  docs/agent_artifacts/staging/week_47/speaking_hub.js
-  640fa57a91455b4362295f93e47585cce6ce83cd0d7e0939638d1c2e1c32f3b9  docs/agent_artifacts/staging/week_47/vocab.js
-  4f8bf9589f6ef92b28426d0ef27bf920b0b9c9ac3934ec3d96d5bc98d3e8fe8d  docs/agent_artifacts/staging/week_47/writing_hub.js
+  e1e5ef4f168fb60b4e517f06faf18ca0d674b4c2567f2974d3b59aea21132719  docs/agent_artifacts/staging/week_47/speaking_hub.js
+  a6fbbd56642d9e957639ef47ec06918b9ce2c536b6884dbd2ce3354db83f73fa  docs/agent_artifacts/staging/week_47/vocab.js
+  df6cc6d4ee827b660b4641c0b43290208d94028549f9796c881a33a7b28e9160  docs/agent_artifacts/staging/week_47/writing_hub.js
   fc9c582b2de5f5da7d6349d1c728185697ebce0e5f71d73fe9ba7a1fa06e3a99  docs/agent_artifacts/staging/week_48/blueprint.json
   2f3291751411c3deb11e036f3799b0566f2f216efaf2946c150c68f8fb6225cd  docs/agent_artifacts/staging/week_48/index.js
-  2f51e36791555166000fddacd8d68f5bdde083f057d2bc275a1c88eb4cb897f8  docs/agent_artifacts/staging/week_48/listening_hub.js
-  181d87bfc544ad6d6e18fc7d6256665827daf8cfd10766986a29497874ac3b65  docs/agent_artifacts/staging/week_48/provenance.json
-  8ddfbb47ba1b29a352378dfb2d849fc0fb08049148a5b6ecc3331967c92a2515  docs/agent_artifacts/staging/week_48/reading_hub.js
-  8ac81c5159f613baf17004f0a5507b8dc3b4f54b3e04082712ae27ed37563b7b  docs/agent_artifacts/staging/week_48/skill_practice_hub.js
-  e696de5af114a162cbeb0a8c358f0bfac7b097e8849d525e59051dee1694ab27  docs/agent_artifacts/staging/week_48/speaking_hub.js
-  3000dccb491b94be563309ebbebec50aa52dc022a6b939341b98e2346d274389  docs/agent_artifacts/staging/week_48/vocab.js
-  af0b347ceced1d6a9837d3415ee9ae8db956911696415b087f14c90a899eaf84  docs/agent_artifacts/staging/week_48/writing_hub.js
+  8ed3e189a4d3611bda4633f0e4160b00e4498af51e55c2fca2ac1526b1a8dc60  docs/agent_artifacts/staging/week_48/listening_hub.js
+  480e0eedc3b87c4c1b754c9e74a5f16f72f1498832894cf1a3539b58bc76bfed  docs/agent_artifacts/staging/week_48/provenance.json
+  ac9adc17dcaf7877ea2f585fa914b5a6abd87e3ad2a88a0c30e57027aed71e27  docs/agent_artifacts/staging/week_48/reading_hub.js
+  d41d93ad12737256e24a165b0daa7cbbaacc3758e4c6d300cae899abfe3d48fd  docs/agent_artifacts/staging/week_48/skill_practice_hub.js
+  cfa753c4e2a8dab97b03e25670731c3021fe85fa9dc586b1526fe6f9a5430933  docs/agent_artifacts/staging/week_48/speaking_hub.js
+  899c8b17894875525491248ef68197233c91bc2da11381db0b289ed489429987  docs/agent_artifacts/staging/week_48/vocab.js
+  eecc90509af8498996e6363ae0fed33fc7ad6526b41724c40bd64ac2fb865140  docs/agent_artifacts/staging/week_48/writing_hub.js
   ab429e0315f87d62189a7be53aa173a0a3d89793696eb17ee83cb4819fe4bb41  docs/agent_artifacts/staging/week_49/blueprint.json
   e37329491414c89c191f8925da4b2a783d3959503d9df34b362e7ac4838cd1c7  docs/agent_artifacts/staging/week_49/index.js
-  80f46c92c6f9909809a9edd43595dfc39f4204f8883ac8adc2e7cae5b2a5c928  docs/agent_artifacts/staging/week_49/listening_hub.js
-  a66df5cdb6b4b4a72332685dd039ec289021e1e6c7977194393b5ce7b03195f6  docs/agent_artifacts/staging/week_49/provenance.json
-  d13343ee2e795bdc734545a4510724b92c6ebd9de6e8bc051ca75fadcb711e3f  docs/agent_artifacts/staging/week_49/reading_hub.js
-  1d170f2f56099227da057f8ee5b11479aaa187af3ae1f9165fb3ee6822062515  docs/agent_artifacts/staging/week_49/skill_practice_hub.js
-  74ffa22744970ac3dbab0bd8c3f9e3e08de83b66b73f5d6fe22756ca5a64fb42  docs/agent_artifacts/staging/week_49/speaking_hub.js
-  ee121d6e4f5282368b7c2e5eec27cffd87026e462c07e1f6c0115e48c6e567b1  docs/agent_artifacts/staging/week_49/vocab.js
-  5cc0cdbe6381f8b0de0a05f80b605159d76d81cef19028126686ba76f1755ee2  docs/agent_artifacts/staging/week_49/writing_hub.js
+  e6f167e27ac92551beb8e7cf13e925b0b4ee265d03fe6540365dbc94577493b5  docs/agent_artifacts/staging/week_49/listening_hub.js
+  99439bf0519e18ea18b8ef0e018a3574811241a45093b3d2490d5efe76e9ad02  docs/agent_artifacts/staging/week_49/provenance.json
+  eef175748b609e380f249c02e44483c6a259f3bb04d8fa2ac8a24efecae10df0  docs/agent_artifacts/staging/week_49/reading_hub.js
+  d35c9e8e0632c883d6944c8492318256a1cc5c1e2b31c3926c4f29e332634099  docs/agent_artifacts/staging/week_49/skill_practice_hub.js
+  e46c287e04ecb8efe53d7c9655b85917b9d945bbd936c4bcec1c104a7573c6cb  docs/agent_artifacts/staging/week_49/speaking_hub.js
+  cd47daab1ea5f2a2394150d39d9fce8eec467c4daec6cc6531aa27bd5ae414f4  docs/agent_artifacts/staging/week_49/vocab.js
+  c462c88354d8903493760758b5fa62875968af7dee9aed499f25e20ffb911ec1  docs/agent_artifacts/staging/week_49/writing_hub.js
   09817a9e113d0142a50f428bbea3038028a2dce049f12b49dd2d96655a8cf6cf  docs/agent_artifacts/staging/week_50/blueprint.json
   2d11fdae9cc2b201fbba802017f3d8bff2c4235440f6057f4bea31e6ec1575f9  docs/agent_artifacts/staging/week_50/index.js
-  64c63d7e2b05c20b2a3189801d6df262bc21230cd3f97eddc19cbe9d682e8c28  docs/agent_artifacts/staging/week_50/listening_hub.js
-  864b0943057397f632b797720d9d3da4af16c729132a4937d920357d8aed0178  docs/agent_artifacts/staging/week_50/provenance.json
-  23a58160883820e69a0044ee3b5108e4f09be06470252a83f9a8e333c80c8f19  docs/agent_artifacts/staging/week_50/reading_hub.js
-  e50a8e9b60af44cc2a619c5a9537131cc17dbc76c75178b2d996e30eba724ed2  docs/agent_artifacts/staging/week_50/skill_practice_hub.js
-  f6522d0ce015f97150e89c8d3c09e35bf7e3eea4d267def010e821597cf8bb50  docs/agent_artifacts/staging/week_50/speaking_hub.js
-  f7de3798681287a2daed342c18a858abfde6bcbe5fe847b66063f8453fb18b55  docs/agent_artifacts/staging/week_50/vocab.js
-  7a2d67da50081b792f52f7931dc4ea0ba6032251c514b028453cf3351c065e5f  docs/agent_artifacts/staging/week_50/writing_hub.js
+  18520e3eb2dc95aee53871f7d50cd843fe28cc5d3d082ce77e49a4455eed422e  docs/agent_artifacts/staging/week_50/listening_hub.js
+  1d6b9ddb69789a57ce9be493f8ac2a8a5ba4b6ea0a16c8a315f7156dded50c34  docs/agent_artifacts/staging/week_50/provenance.json
+  b709123fe95bddcee771226baf56d5f88ac5f7e16b80e875411fa50d023e1985  docs/agent_artifacts/staging/week_50/reading_hub.js
+  c51c52ad9d63bef4d0533fad2e953b21192a12dee4d067a7eb8a4bb803d82e96  docs/agent_artifacts/staging/week_50/skill_practice_hub.js
+  7696254faa5eaaf886ff9663e8c8630323aca8d741cceef03ef9e3a549a0ea04  docs/agent_artifacts/staging/week_50/speaking_hub.js
+  d137155ce0385bf35640a089c047697fefc32a370666a3d96538a3dff47590ea  docs/agent_artifacts/staging/week_50/vocab.js
+  653a701da0ecfa85e1489f75781dd4ad182f5f61f5589a941dcdd9abbeef607f  docs/agent_artifacts/staging/week_50/writing_hub.js
   76c36199e37fb7b1dd7b87bbff30a61b29799ee75dc6ebd60d8f54b9ab3c2c8c  docs/agent_artifacts/staging/week_51/blueprint.json
   63c4ffe7825c3f5b46d518d8df979b7e27dc064c4e04a1d81c29437cc18116e5  docs/agent_artifacts/staging/week_51/index.js
-  ce9ad7641e0cf6ca15237ab26b9ff11edc814e26f722d8c0f0e863b35270828a  docs/agent_artifacts/staging/week_51/listening_hub.js
-  52a7249aa44f69a75de6e533bf0e04cd64ad2651643bbe62c93d4cc57f45e758  docs/agent_artifacts/staging/week_51/provenance.json
-  f6fdaad8f6602c70389075990dff707294faa7320070aa749348230f27be660f  docs/agent_artifacts/staging/week_51/reading_hub.js
-  bd4025353d92d546eed531983a324a9f700fcd28988d07bfb7d982e558fc2780  docs/agent_artifacts/staging/week_51/skill_practice_hub.js
-  afaf979e8471edd4c38040fffccbfb3ddb9cf598642875c1cbb039f69a820eae  docs/agent_artifacts/staging/week_51/speaking_hub.js
-  dfb5a5935c302271dff53131d0d92b2f142c8f3502321500e7322c960096a716  docs/agent_artifacts/staging/week_51/vocab.js
-  d69489761ba14e14874dd4c277b1f1dff55cea6a8543edb28b64c59fd27f3ce0  docs/agent_artifacts/staging/week_51/writing_hub.js
+  82ce479539662e9335ed79b6bf769599d192dbc21e8e2b1b49ec7b5991ff5de2  docs/agent_artifacts/staging/week_51/listening_hub.js
+  7b54321ea06e41efdb81addb6a42f4e68925b80bb0fc4ce85b5fe52b253fcc8d  docs/agent_artifacts/staging/week_51/provenance.json
+  ea48771232aee114cd8eda246c1ca21b8ea3820d978e7f9a2102bf319fe25e26  docs/agent_artifacts/staging/week_51/reading_hub.js
+  e1bc9c91457562b4899c379c4dbc979b6f66be75c2adbc2ac1ed009ea50257c9  docs/agent_artifacts/staging/week_51/skill_practice_hub.js
+  9ea3fa745de03ced43e336ff722064fc96cb6020e3bbe0c76c2b550a8326f40d  docs/agent_artifacts/staging/week_51/speaking_hub.js
+  7e9647bfd1f43075be25e3bc181368cc8dd76570d85f887d1431f56ac90fdff0  docs/agent_artifacts/staging/week_51/vocab.js
+  a28c393a1eecaead08d420b68640094adf62e8d781b172015dd3e23025c3fa59  docs/agent_artifacts/staging/week_51/writing_hub.js
   c4872f7dd2f5189f10c27f7e0334d48ddd3f41d4b1912742b2da858d6f3f29f2  docs/agent_artifacts/staging/week_52/blueprint.json
   f14ab05142226662f6de99fd8dac3fcf03ca35b647d75dc12b2464ab03c323bf  docs/agent_artifacts/staging/week_52/index.js
-  05f9e018b887c98d243ba1a147ec06e9e02f85d5e078aca475972c25285bf228  docs/agent_artifacts/staging/week_52/listening_hub.js
-  6e6fae86a99e50bdbd0fc2ccc6e67b0820ef365609c7cb7a01d4f01755a9e1c4  docs/agent_artifacts/staging/week_52/provenance.json
-  55cc2f07b7600b5a1fc9e71499217112b01709241e10e538a88cd012fe2f66a3  docs/agent_artifacts/staging/week_52/reading_hub.js
-  f35b135773ebe5f47779c17921beb0d9530461de9e8b43dc704e919fc44cce2e  docs/agent_artifacts/staging/week_52/skill_practice_hub.js
-  cd507844f40c43e356f6d3c69ce41aaa7a98e99c0fc879408350103f866dabe8  docs/agent_artifacts/staging/week_52/speaking_hub.js
-  d4afaf47308ee750d1fa3fbec5bb95d36c86d2d36d1565df6b806d028fec2f6b  docs/agent_artifacts/staging/week_52/vocab.js
-  3414287e7beb7b91a284240e0c68462ae8d30950d94d11fafa7dd7d79b73f9c2  docs/agent_artifacts/staging/week_52/writing_hub.js
+  b94eefb5fab70d7b34e4c1a14897f7ab09c423559a18b36fdcedb61da8309748  docs/agent_artifacts/staging/week_52/listening_hub.js
+  cd01dae2d055506ae0176574f42e59227c2c3c6d5937d841d37558cf4d43344b  docs/agent_artifacts/staging/week_52/provenance.json
+  9bfcef2a342f87ed9c3a9310f8c1619df00d9739e4f6a95240e8a902991c3d8f  docs/agent_artifacts/staging/week_52/reading_hub.js
+  865554f55ffd0eefd5dfde974b7a1f9ac7b80b2ddf718e35122e3c97e322c861  docs/agent_artifacts/staging/week_52/skill_practice_hub.js
+  bb45b4d4c62fe03952ac67282f4f07721242a8b05269233b12383193c2d2fbb5  docs/agent_artifacts/staging/week_52/speaking_hub.js
+  474d02f9b91f5924a87d8be27d24be3e8d22ec54144bf46674bcea41c7372362  docs/agent_artifacts/staging/week_52/vocab.js
+  8b7046cd8186c969010510a37d019f42e16be698e485518cdfe5d1e11e22e04b  docs/agent_artifacts/staging/week_52/writing_hub.js
   baf0dbccc14c8bc0bcdf07a420914bea06b6a254ecb7bdd2ae0985426fd3a7c3  docs/agent_artifacts/staging/week_53/blueprint.json
   f644af1a798b07aa1864352c1b940cd6dbdca7b2d582cec2389745beafb7f0bf  docs/agent_artifacts/staging/week_53/index.js
-  16a42c490b1d77322b5ce8642f4045ccf640e4db7bbc59d89d7be82783217808  docs/agent_artifacts/staging/week_53/listening_hub.js
-  4e70c89227c2fe8f5aff3d982d204bee4341534f70f5b61f1f76300137e8215f  docs/agent_artifacts/staging/week_53/provenance.json
-  b32891d702e2b8c45f1e88d8207cb79f6da46172b572cdae58a6ff0222f71687  docs/agent_artifacts/staging/week_53/reading_hub.js
-  fa3c7cec8548501a025a129b127bf941d9215d77cd0d6a97bebef61af6b0a79c  docs/agent_artifacts/staging/week_53/skill_practice_hub.js
-  048d471c62ea834c4d137f779f6cb011de87d8695878c31a85b3ecc54c031799  docs/agent_artifacts/staging/week_53/speaking_hub.js
-  a2092cccee6cbcde67e502598a9727d66296ce439aa6cf620056d431f00c187b  docs/agent_artifacts/staging/week_53/vocab.js
-  929ef2b99c34980407debd389cf5ba7f307f612733a9a0741e2253babcdb97b0  docs/agent_artifacts/staging/week_53/writing_hub.js
+  60dd8755aec958a48fa5500f88c741b53c0ae9c2cbd1be0d0036bad4f29818c1  docs/agent_artifacts/staging/week_53/listening_hub.js
+  8273081daf151ed3a601ae3696980300239004e8155a521a5dfa6b54902b487f  docs/agent_artifacts/staging/week_53/provenance.json
+  9044c393a4c592eee50e257470a834af329346650e26a4ba35fa05e925e15fc2  docs/agent_artifacts/staging/week_53/reading_hub.js
+  33a33e5292fca0306d747ea11e78e1519f675af99a79bf7b8735add6f953aead  docs/agent_artifacts/staging/week_53/skill_practice_hub.js
+  08a0186d41748b8424cea6cde38f6ef52971ee6725c209a74fbb541d5d997be7  docs/agent_artifacts/staging/week_53/speaking_hub.js
+  3ab83164f164b794d4ca03bb82c6c1a6fa3a569f35279907ba0ce9e1eb12516c  docs/agent_artifacts/staging/week_53/vocab.js
+  4b91a352da663aacfc71b9b784eb74225cba0bfd2f553cd5f0f3b4ab4bd01477  docs/agent_artifacts/staging/week_53/writing_hub.js
   3ef6649f3dd944f62cc57f4b52b7446e5c2f8c5e47d956c7c860fb0ac2f8bc87  docs/agent_artifacts/staging/week_54/blueprint.json
   87ed474276cf62e43d68c99cba97cac14aeb86dc5a77ef90284ceee3cf1b6b78  docs/agent_artifacts/staging/week_54/index.js
-  9859db89e283b8fe5b8ac7b7748684ffef247f6b35a64211efe3e88548de0cf1  docs/agent_artifacts/staging/week_54/listening_hub.js
-  0de7de54fde3bce7f0a0646ea708f8c9ee906a099b1db9453be8c78f04080ec3  docs/agent_artifacts/staging/week_54/provenance.json
-  c4d52893b4da54a3ba58d7a0e262674eefd0ff68a1e314738f8d749150c61b54  docs/agent_artifacts/staging/week_54/reading_hub.js
-  913bfe33d27b28fc54dad99ecec00587d18e0dd6e1afcf1531b09b9c725582d2  docs/agent_artifacts/staging/week_54/skill_practice_hub.js
-  9a1129729a9ce6ceba16b273e2abcef0fcc6cb9492fec17d315d085a4d020d9a  docs/agent_artifacts/staging/week_54/speaking_hub.js
-  7531aafefbdf23fa9d379ca029cde677bb32c5c21160a8a38afc30d6b4339185  docs/agent_artifacts/staging/week_54/vocab.js
-  c4aefb7204f4c621244dbda37fbef2d49186591bd38189eb9542f4e9eec198aa  docs/agent_artifacts/staging/week_54/writing_hub.js
+  13320a980618f94d35b3452cc1c0bdef4cecceaf0b21977c20093c6d572b4c7a  docs/agent_artifacts/staging/week_54/listening_hub.js
+  67ba4ae48d25011980894b62cf2a4611ad75433c986abf57286e5b757bb7edbc  docs/agent_artifacts/staging/week_54/provenance.json
+  7975e7e6b0165b5d88102e34e016960a17e0feea76a54068cdb3512010b9058b  docs/agent_artifacts/staging/week_54/reading_hub.js
+  c3e9f10562d4413b0c8602f1fd87a2dbc17cbe354c37f1d8f30af701e4bf6c33  docs/agent_artifacts/staging/week_54/skill_practice_hub.js
+  5e6c5ab3cecf15e08df8055ecd1790428be07d9e213403ebc07665d06a628beb  docs/agent_artifacts/staging/week_54/speaking_hub.js
+  16e2612ccce48b91c404c7d8fb5fb8c06edaedb976a4029dacbf9ca8ab0c7e80  docs/agent_artifacts/staging/week_54/vocab.js
+  cd146d9035d981d3c393745114c2aed6a67ef6c0177cfce0d3c6d050d8f79775  docs/agent_artifacts/staging/week_54/writing_hub.js
 
-LIVE GIT SCOPE DISCLOSURE (R90 BASELINE a30de824..0a7d0f37):
+LIVE GIT SCOPE DISCLOSURE (R90 BASELINE a30de824..c3c5e349):
 1. Locked governance files & freeze manifests delta (MUST be none):
    (none - 0 modifications to locked governance/freeze files)
 2. Production src/data/weeks delta (MUST be none - Staged only):
@@ -240,6 +240,7 @@ LIVE GIT SCOPE DISCLOSURE (R90 BASELINE a30de824..0a7d0f37):
    A	docs/agent_artifacts/staging/week_54/speaking_hub.js
    A	docs/agent_artifacts/staging/week_54/vocab.js
    A	docs/agent_artifacts/staging/week_54/writing_hub.js
+   A	docs/review_packages/manifest_round91.txt
    A	scripts/generate_round91_weeks_c.py
    A	scripts/package_round91.mjs
    A	scripts/round91_data_generator.py
