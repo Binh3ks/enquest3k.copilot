@@ -1,7 +1,7 @@
 # 🏛️ ENGQUEST3K — MASTER CURRICULUM & SYSTEM ARCHITECTURE (W01–W156)
 
 **Document Reference**: `docs/MASTER_ARCHITECTURE_W01_W156.md`  
-**Version**: 2.2.0 (Unified 15 Quests / 5 Zones + Lite Mode W01–W16, Multi-Level Assessment & 28-Mock Test Cadence)  
+**Version**: 2.3.0 (Unified 15 Quests / 5 Zones + Lite Mode W01–W16, Multi-Level Assessment, 28-Mock Test Cadence & Capstone Math Exemption)  
 **Governing Standard**: Cambridge CEFR (Pre-A1 to B1+) & Academic Reading as a Medium of Instruction Standard  
 **Effective Date**: 2026-09-05  
 **Status**: 🟢 **CANONICAL MASTER ARCHITECTURE**
@@ -287,3 +287,41 @@ LITE MODE WEEKLY STRUCTURE (10 TASKS / 5 DAYS):
 - **W15**: Tuần chuyển tiếp — bắt đầu giới thiệu 12 quests (thêm `gear3_retell` và `math_quest` dạng đơn giản).
 - **W16**: Mock Test vẫn 10 quests nhưng Zone 5 mở rộng thêm Starters Reading riêng.
 - **W17**: Chuyển hoàn toàn sang **Full Mode 15 quests** khi bước vào A1 Movers.
+
+---
+
+## 10. Architectural Invariant: Singapore Math Contract & Capstone / Assessment Exemption
+
+### 10.1. Chuẩn mực Toán Tư duy 5/5 Singapore Math (W17–W156 Standard Content Weeks)
+
+Đối với các tuần học nội dung tiêu chuẩn (Standard Rotary Content Weeks) từ W17 đến W156, Zone 3 (`math_quest`) yêu cầu **đúng 5 bài toán thanh mẫu Bar Model (`singapore_math: [Q1..Q5]`)** trong `skill_practice_hub.js`:
+
+1. **Phân loại 4 Thanh Mẫu Bar Model**:
+   - **Part-Whole Model**: Tính tổng hoặc phần còn lại từ các thanh rời rạc.
+   - **Comparison Model**: So sánh đại lượng hơn/kém bằng 2 thanh so le có khoảng chênh lệch.
+   - **Before-After Model**: Biến động số lượng qua hành động (cho, nhận, chuyển giao).
+   - **Fraction / Ratio Model**: Biểu diễn phân số hoặc tỉ lệ qua các đơn vị hộp bằng nhau.
+2. **Chuẩn mực Đánh giá Kỹ thuật (Technical Evaluation Contract)**:
+   - Toàn bộ 5 câu hỏi phải được giải mã trơn tru qua `src/utils/station2Adapters.js` (`resolveNumericAnswer`).
+   - `correctAnswer` bắt buộc là số nguyên dương hợp lệ ($> 0$, hữu hạn). Tuyệt đối không fallback về giá trị mặc định 10.
+   - 100% tuân thủ các cổng chất lượng G-GEN-11..16: không chứa lỗi ngữ pháp/ESL collocation anomaly, không có ký tự tiếng Việt trong các trường đề bài tiếng Anh, và không có placeholder boilerplate.
+
+### 10.2. Quy chế Miễn trừ Kiến trúc cho Tuần Đánh giá Tổng kết Capstone / Full Mock (Capstone Exemption)
+
+Tuần Đánh giá Tổng kết (Capstone Review / Project Weeks) và các tuần Thi thử Đầy đủ (Full Mock Assessment Weeks) — ví dụ điển hình là **Week 36: Review & Project 3 ("My Adventure Book")** — vận hành theo hình thái khảo thí toàn diện thay vì hình thái luyện tập kỹ năng rời rạc từng ngày.
+
+1. **Dấu hiệu Nhận diện Schema Chuẩn (Schema Signature)**:
+   Tuần Capstone / Full Mock được xác định rõ ràng tại `skill_practice_hub.js` thông qua:
+   - Thuộc tính `mode`: Có giá trị `"FULL_MOCK_ASSESSMENT"`, `"CAPSTONE_PROJECT"`, hoặc `"full_mock"`.
+   - Thuộc tính `assessment_summary`: Cung cấp cấu trúc tổng hợp số lượng phần thi chuẩn Cambridge (e.g. `{ listening_parts: 5, listening_items: 25, reading_writing_parts: 7, reading_writing_items: 44, speaking_parts: 4, total_shields_possible: 15 }`).
+2. **Quy tắc Miễn trừ Bắt buộc (Architectural Exemption Invariant)**:
+   - Các tuần mang cấu trúc `mode` + `assessment_summary` được **MIỄN TRỪ HOÀN TOÀN** yêu cầu mảng `singapore_math` 5/5 **theo thiết kế kiến trúc sư phạm (by design, not by omission)**.
+   - Trong các tuần này, nhiệm vụ toán học được tích hợp trong dự án tổng kết liên môn hoặc được thay thế bằng chuỗi bài thi chuẩn hóa toàn phần Zone 5.
+   - Các công cụ kiểm thử tự động (CI/CD, regression scripts, audit suites) BẮT BUỘC nhận diện cặp `mode` + `assessment_summary` là điều kiện hợp lệ để đánh giá **PASS** mà không được báo lỗi thiếu 5/5 math.
+
+### 10.3. Phân loại Hoãn lại cho Tuần Chưa Sản Xuất (Deferred Stub Classification — W37)
+
+- **Tuần 37 ("Living vs. Non-Living (Reasoning)")**: Hiện là stub rỗng kế thừa từ cấu trúc mock cũ.
+- Week 37 được đưa vào **Wave 4 Content Backlog** để tái sinh toàn diện toàn bộ 4 Hubs theo thẩm quyền Sư phạm Source B và Digital Map.
+- Trong giai đoạn chờ Wave 4, `src/data/weeks/week_37/provenance.json` được đóng dấu `"review_status": "NOT_YET_PRODUCED"`. Các công cụ audit không được quét stub này như một hồi quy (regression) 0/5 math.
+

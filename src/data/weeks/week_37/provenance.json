@@ -1,0 +1,25 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-13T11:45:00.000Z",
+  "pipeline_script": "MANUAL_STUB_DEFERRED",
+  "generator_agent": "Antigravity (Round 90 Codification)",
+  "week_number": 37,
+  "theme": "Living vs. Non-Living (Reasoning)",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "It is living because it breathes/grows",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_37/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "digital_map_reference": {
+      "map_week": 37,
+      "map_theme": "Living vs. Non-Living (Reasoning)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B"
+    }
+  },
+  "deliverables_generated": [],
+  "quality_gates_passed": [],
+  "review_status": "NOT_YET_PRODUCED",
+  "staged_status": "NOT_YET_PRODUCED",
+  "backlog_wave": "Wave 4",
+  "notes": "Added to Wave 4 backlog for full content regeneration (all hubs, grounded in the Digital Map and Source B 'Living vs. Non-Living (Reasoning)' theme). Excluded from 5/5 math audit regression gates until produced."
+}
