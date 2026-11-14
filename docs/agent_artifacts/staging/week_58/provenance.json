@@ -1,12 +1,12 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-14T03:28:50.000Z",
-  "pipeline_script": "scripts/round93_data_generator.py",
+  "generated_at": "2026-11-14T04:22:25.047Z",
+  "pipeline_script": "scripts/round94_generator.mjs",
   "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
-  "grammar_focus": "Opinion Expressions: In my opinion, I believe & Equal Grouping / Division",
+  "grammar_focus": "First Conditional (Simple): If we [fix it], it will be [better].",
   "source_inputs": {
     "blueprint_file": "src/data/weeks/week_58/blueprint.json",
     "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
@@ -44,8 +44,16 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY",
     "GATE_15_CLIL_VOCAB_INTEGRATION",
-    "GATE_16_ESL_ANOMALY_ZERO"
+    "GATE_16_ESL_ANOMALY_ZERO",
+    "GATE_SP2_SPEAKING_EXCHANGE_AUTHENTIC"
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
-  "staged_status": "STAGED_FOR_REVIEW"
+  "staged_status": "STAGED_FOR_REVIEW",
+  "verified_at": "2026-11-14T04:22:28.058Z",
+  "audit_summary": {
+    "total_gates_evaluated": 17,
+    "passed_count": 17,
+    "failed_count": 0,
+    "all_passed": true
+  }
 }

@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 71 | Theme: "The Solar System: Planetary Wonders" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 71 | Theme: "Science/ELA: The Solar System / Math: Large Numbers"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 71,
-  "theme": "The Solar System: Planetary Wonders",
+  "theme": "Science/ELA: The Solar System / Math: Large Numbers",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Describe your favorite planet in the solar system. Use superlatives like 'largest', 'coldest', or 'hottest' and mention its distance from the Sun.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Astronomer A",
-      "cues": [
-        "Planet investigated",
-        "Superlative attribute",
-        "Orbital distance (4 digits)",
-        "Calculated difference",
-        "Atmosphere description"
-      ]
-    },
-    "card_b": {
-      "role": "Astronomer B",
-      "cues": [
-        "Planet investigated",
-        "Superlative attribute",
-        "Orbital distance (4 digits)",
-        "Calculated difference",
-        "Atmosphere description"
-      ]
-    },
+    "title": "Elijah and Aria's Space Exploration Exchange",
     "table_a": {
-      "title": "Astronomer A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Astronomer A",
+      "title": "Elijah's Telescope Space Tour",
+      "person": "Elijah",
       "fields": [
         {
-          "id": "f1",
-          "label": "Planet investigated",
-          "cue_prompt": "what / planet investigated?",
-          "cue_word": "planet",
+          "id": "field_a1",
+          "label": "what / Elijah see with telescope?",
+          "cue_prompt": "what / Elijah see with telescope?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Jupiter and its four biggest moons",
           "acceptable_questions": [
-            "What is the planet investigated?",
-            "Can you tell me the planet investigated?"
+            "What did Elijah see with his telescope?",
+            "What planet did he observe?",
+            "What did Elijah view in space?"
           ],
-          "nova_reply": "The planet investigated is recorded for The Solar System: Planetary Wonders."
+          "nova_reply": "Elijah observed planet Jupiter and saw its four biggest glowing moons."
         },
         {
-          "id": "f2",
-          "label": "Superlative attribute",
-          "cue_prompt": "what / superlative attribute?",
-          "cue_word": "superlative",
+          "id": "field_a2",
+          "label": "where / set up telescope?",
+          "cue_prompt": "where / set up telescope?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "On the dark hill behind school",
           "acceptable_questions": [
-            "What is the superlative attribute?",
-            "Can you tell me the superlative attribute?"
+            "Where did he set up the telescope?",
+            "Where was his viewing spot?",
+            "Where did Elijah go to stargaze?"
           ],
-          "nova_reply": "The superlative attribute is recorded for The Solar System: Planetary Wonders."
+          "nova_reply": "He set up his telescope on the dark hill behind the school away from city lights."
         },
         {
-          "id": "f3",
-          "label": "Orbital distance (4 digits)",
-          "cue_prompt": "what / orbital distance (4 digits)?",
-          "cue_word": "orbital",
-          "is_missing": false,
-          "card_value": "Orbital distance (4 digits) verified",
-          "value": "Orbital distance (4 digits) verified",
-          "examiner_question": "What is the orbital distance (4 digits)?",
-          "acceptable_answers": [
-            "It is orbital distance (4 digits).",
-            "Orbital distance (4 digits)."
-          ]
+          "id": "field_a3",
+          "label": "what time / stargazing begin?",
+          "cue_prompt": "what time / stargazing begin?",
+          "cue_word": "what time",
+          "is_missing": true,
+          "value": "At 8:30 PM",
+          "acceptable_questions": [
+            "What time did stargazing begin?",
+            "When did he start looking at stars?",
+            "What time did the viewing start?"
+          ],
+          "nova_reply": "Stargazing began at 8:30 PM when the sky grew completely dark."
         },
         {
-          "id": "f4",
-          "label": "Calculated difference",
-          "cue_prompt": "what / calculated difference?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated difference verified",
-          "value": "Calculated difference verified",
-          "examiner_question": "What is the calculated difference?",
-          "acceptable_answers": [
-            "It is calculated difference.",
-            "Calculated difference."
-          ]
+          "id": "field_a4",
+          "label": "how many / students attended?",
+          "cue_prompt": "how many / students attended?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "16 students from space club",
+          "acceptable_questions": [
+            "How many students attended?",
+            "How many children were there?",
+            "How many students joined the tour?"
+          ],
+          "nova_reply": "Sixteen students from the space science club attended the telescope night."
         },
         {
-          "id": "f5",
-          "label": "Atmosphere description",
-          "cue_prompt": "what / atmosphere description?",
-          "cue_word": "atmosphere",
-          "is_missing": false,
-          "card_value": "Atmosphere description verified",
-          "value": "Atmosphere description verified",
-          "examiner_question": "What is the atmosphere description?",
-          "acceptable_answers": [
-            "It is atmosphere description.",
-            "Atmosphere description."
-          ]
+          "id": "field_a5",
+          "label": "who / taught them constellations?",
+          "cue_prompt": "who / taught them constellations?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Astronomer Dr. Vance",
+          "acceptable_questions": [
+            "Who taught them the constellations?",
+            "Who guided the space tour?",
+            "Who was their astronomy teacher?"
+          ],
+          "nova_reply": "Astronomer Dr. Vance pointed out constellations with a green laser."
         }
       ]
     },
     "table_b": {
-      "title": "Astronomer B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Astronomer B",
+      "title": "Aria's Planet Fact File",
+      "person": "Aria",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Planet investigated",
-          "cue_prompt": "what / planet investigated?",
-          "cue_word": "planet",
+          "id": "field_b1",
+          "label": "what / Aria's favorite planet?",
+          "cue_prompt": "what / Aria's favorite planet?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Planet investigated on file",
-          "value": "Planet investigated on file",
-          "examiner_question": "What is the planet investigated?",
+          "value": "Saturn with its golden rings",
+          "nova_question": "What is Aria's favorite planet in her presentation?",
           "acceptable_answers": [
-            "It is planet investigated.",
-            "Planet investigated."
+            "Saturn with its golden rings",
+            "Saturn.",
+            "Her favorite planet is Saturn with its golden rings.",
+            "Planet Saturn"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Superlative attribute",
-          "cue_prompt": "what / superlative attribute?",
-          "cue_word": "superlative",
+          "id": "field_b2",
+          "label": "how far / Saturn from sun?",
+          "cue_prompt": "how far / Saturn from sun?",
+          "cue_word": "how far",
           "is_missing": false,
-          "card_value": "Superlative attribute on file",
-          "value": "Superlative attribute on file",
-          "examiner_question": "What is the superlative attribute?",
+          "value": "About 1,400,000,000 kilometers",
+          "nova_question": "How far is Saturn from the sun in kilometers?",
           "acceptable_answers": [
-            "It is superlative attribute.",
-            "Superlative attribute."
+            "About 1,400,000,000 kilometers",
+            "1,400,000,000 kilometers",
+            "It is about 1,400,000,000 kilometers from the sun.",
+            "About 1.4 billion kilometers"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Orbital distance (4 digits)",
-          "cue_prompt": "what / orbital distance (4 digits)?",
-          "cue_word": "orbital",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the orbital distance (4 digits)?",
-            "Can you tell me the orbital distance (4 digits)?"
-          ],
-          "nova_reply": "The orbital distance (4 digits) is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / moons does Saturn have?",
+          "cue_prompt": "how many / moons does Saturn have?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "More than 80 moons",
+          "nova_question": "How many moons does Saturn have in her report?",
+          "acceptable_answers": [
+            "More than 80 moons",
+            "Over 80 moons",
+            "It has more than 80 moons.",
+            "80 moons"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Calculated difference",
-          "cue_prompt": "what / calculated difference?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated difference?",
-            "Can you tell me the calculated difference?"
-          ],
-          "nova_reply": "The calculated difference is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what color / planet Saturn?",
+          "cue_prompt": "what color / planet Saturn?",
+          "cue_word": "what color",
+          "is_missing": false,
+          "value": "Pale gold and yellow",
+          "nova_question": "What color is Saturn through a telescope?",
+          "acceptable_answers": [
+            "Pale gold and yellow",
+            "Gold and yellow.",
+            "It looks pale gold and yellow.",
+            "Yellow"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Atmosphere description",
-          "cue_prompt": "what / atmosphere description?",
-          "cue_word": "atmosphere",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the atmosphere description?",
-            "Can you tell me the atmosphere description?"
-          ],
-          "nova_reply": "The atmosphere description is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / helped her build model?",
+          "cue_prompt": "who / helped her build model?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her father with foam rings",
+          "nova_question": "Who helped Aria build her foam planet model?",
+          "acceptable_answers": [
+            "Her father with foam rings",
+            "Her father.",
+            "Her father helped her build it with foam rings.",
+            "Her dad"
+          ]
         }
       ]
     }

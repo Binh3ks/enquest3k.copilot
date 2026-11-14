@@ -15,10 +15,11 @@
     "focus": "Write sentences summarizing data findings (Most/Least)"
   },
   "grammar_focus": {
-    "structure": "Quantifiers: \"The majority of...\", \"Most...\", \"Few",
+    "structure": "Comparative Structures for Data: More than, Fewer than, The most",
     "outcome": "Write sentences summarizing data findings (Most/Least)",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Comparative Structures for Data: More than, Fewer than, The most"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -267,5 +268,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "week_number": 64
 }

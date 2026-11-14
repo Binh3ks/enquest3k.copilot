@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 61 | Theme: "Main Idea Hunter: Volcanic Eruptions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 61 | Theme: "ELA: Main Idea Hunter / Math: Word Problems"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 61,
-  "theme": "Main Idea Hunter: Volcanic Eruptions",
+  "theme": "ELA: Main Idea Hunter / Math: Word Problems",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -110,7 +109,8 @@ export const skillPracticeHubData = {
       "problem_text": "A geology laboratory prepares 4 crates containing 15 volcanic rock samples each. They donate 18 samples to a local school. How many rock samples remain in the laboratory?",
       "problem_en": "A geology laboratory prepares 4 crates containing 15 volcanic rock samples each. They donate 18 samples to a local school. How many rock samples remain in the laboratory?",
       "answer": 42,
-      "step_by_step": "Step 1: Total samples = 4 * 15 = 60. Step 2: Remaining = 60 - 18 = 42 samples."
+      "step_by_step": "Step 1: Total samples = 4 * 15 = 60. Step 2: Remaining = 60 - 18 = 42 samples.",
+      "question": "A geology laboratory prepares 4 crates containing 15 volcanic rock samples each. They donate 18 samples to a local school. How many rock samples remain in the laboratory?"
     },
     {
       "id": 2,
@@ -128,19 +128,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "5 Boxes of 17",
-            "value": 85,
+            "label": "Part A",
+            "value": 8,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 9,
             "color": "#10B981"
           }
         ],
-        "total": 85,
+        "total": 17,
         "unit": "stones",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "A field geologist collects 85 pumice stones and sorts them equally into 5 wooden specimen boxes. How many pumice stones are placed in each box?",
       "problem_en": "A field geologist collects 85 pumice stones and sorts them equally into 5 wooden specimen boxes. How many pumice stones are placed in each box?",
       "answer": 17,
-      "step_by_step": "Step 1: Total = 85. Step 2: Boxes = 5. Step 3: Stones per box = 85 / 5 = 17 stones."
+      "step_by_step": "Step 1: Total = 85. Step 2: Boxes = 5. Step 3: Stones per box = 85 / 5 = 17 stones.",
+      "question": "A field geologist collects 85 pumice stones and sorts them equally into 5 wooden specimen boxes. How many pumice stones are placed in each box?"
     },
     {
       "id": 3,
@@ -173,7 +179,8 @@ export const skillPracticeHubData = {
       "problem_text": "The museum weighs two bags of mineral sand: bag one weighs 35 kilograms and bag two weighs 48 kilograms. What is the total combined mass of the mineral sand?",
       "problem_en": "The museum weighs two bags of mineral sand: bag one weighs 35 kilograms and bag two weighs 48 kilograms. What is the total combined mass of the mineral sand?",
       "answer": 83,
-      "step_by_step": "Step 1: Bag 1 = 35. Step 2: Bag 2 = 48. Step 3: Sum = 35 + 48 = 83 kg."
+      "step_by_step": "Step 1: Bag 1 = 35. Step 2: Bag 2 = 48. Step 3: Sum = 35 + 48 = 83 kg.",
+      "question": "The museum weighs two bags of mineral sand: bag one weighs 35 kilograms and bag two weighs 48 kilograms. What is the total combined mass of the mineral sand?"
     },
     {
       "id": 4,
@@ -199,14 +206,15 @@ export const skillPracticeHubData = {
             "color": "#06B6D4"
           }
         ],
-        "total": 92,
+        "total": 55,
         "unit": "degrees",
         "comparisonType": "difference"
       },
       "problem_text": "At the volcanic vent, the surface temperature was 92 degrees Celsius. Down near the campsite, the temperature was 37 degrees Celsius. What is the temperature difference?",
       "problem_en": "At the volcanic vent, the surface temperature was 92 degrees Celsius. Down near the campsite, the temperature was 37 degrees Celsius. What is the temperature difference?",
       "answer": 55,
-      "step_by_step": "Step 1: Vent = 92. Step 2: Camp = 37. Step 3: Difference = 92 - 37 = 55 degrees."
+      "step_by_step": "Step 1: Vent = 92. Step 2: Camp = 37. Step 3: Difference = 92 - 37 = 55 degrees.",
+      "question": "At the volcanic vent, the surface temperature was 92 degrees Celsius. Down near the campsite, the temperature was 37 degrees Celsius. What is the temperature difference?"
     },
     {
       "id": 5,
@@ -222,9 +230,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "6 Shelves of 14",
-            "value": 84,
-            "color": "#EC4899"
+            "label": "Part A",
+            "value": 42,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 42,
+            "color": "#10B981"
           }
         ],
         "total": 84,
@@ -234,7 +247,8 @@ export const skillPracticeHubData = {
       "problem_text": "The museum archive fills 6 library shelves with geology books. If each shelf holds exactly 14 books, how many geology books are on the shelves altogether?",
       "problem_en": "The museum archive fills 6 library shelves with geology books. If each shelf holds exactly 14 books, how many geology books are on the shelves altogether?",
       "answer": 84,
-      "step_by_step": "Step 1: Shelves = 6. Step 2: Books per shelf = 14. Step 3: Total = 6 * 14 = 84 books."
+      "step_by_step": "Step 1: Shelves = 6. Step 2: Books per shelf = 14. Step 3: Total = 6 * 14 = 84 books.",
+      "question": "The museum archive fills 6 library shelves with geology books. If each shelf holds exactly 14 books, how many geology books are on the shelves altogether?"
     }
   ],
   "science_lab": {

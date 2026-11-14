@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 70 | Theme: "Presentation: Pitching a Green Idea" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 70 | Theme: "ELA: Presentation \"My Green Idea\" / Math: Graph Review"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 70,
-  "theme": "Presentation: Pitching a Green Idea",
+  "theme": "ELA: Presentation \"My Green Idea\" / Math: Graph Review",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Pitching My Green Idea: Speech Script",

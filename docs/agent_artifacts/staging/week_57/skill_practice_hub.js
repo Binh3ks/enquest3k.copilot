@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 57,
-  "theme": "Problem and Solution: Clever Inventions",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -94,9 +93,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Row 1 to 6 (8 each)",
-            "value": 48,
+            "label": "Part A",
+            "value": 24,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 24,
+            "color": "#10B981"
           }
         ],
         "total": 48,
@@ -106,7 +110,8 @@ export const skillPracticeHubData = {
       "problem_text": "An engineering team builds a solar panel with 6 rows of solar cells. Each row contains 8 solar cells. How many solar cells are there on the panel in total?",
       "problem_en": "An engineering team builds a solar panel with 6 rows of solar cells. Each row contains 8 solar cells. How many solar cells are there on the panel in total?",
       "answer": 48,
-      "step_by_step": "Step 1: Number of rows = 6. Step 2: Cells per row = 8. Step 3: Total = 6 * 8 = 48 cells."
+      "step_by_step": "Step 1: Number of rows = 6. Step 2: Cells per row = 8. Step 3: Total = 6 * 8 = 48 cells.",
+      "question": "An engineering team builds a solar panel with 6 rows of solar cells. Each row contains 8 solar cells. How many solar cells are there on the panel in total?"
     },
     {
       "id": 2,
@@ -124,8 +129,13 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "7 Boxes of 5",
-            "value": 35,
+            "label": "Part A",
+            "value": 17,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 18,
             "color": "#10B981"
           }
         ],
@@ -136,7 +146,8 @@ export const skillPracticeHubData = {
       "problem_text": "A technician organizes machine bolts into 7 storage boxes. Each box holds 5 bolts. What is the total product of bolts in all the boxes?",
       "problem_en": "A technician organizes machine bolts into 7 storage boxes. Each box holds 5 bolts. What is the total product of bolts in all the boxes?",
       "answer": 35,
-      "step_by_step": "Step 1: Boxes = 7. Step 2: Bolts per box = 5. Step 3: Product = 7 * 5 = 35 bolts."
+      "step_by_step": "Step 1: Boxes = 7. Step 2: Bolts per box = 5. Step 3: Product = 7 * 5 = 35 bolts.",
+      "question": "A technician organizes machine bolts into 7 storage boxes. Each box holds 5 bolts. What is the total product of bolts in all the boxes?"
     },
     {
       "id": 3,
@@ -154,9 +165,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "9 Packs of 4",
-            "value": 36,
-            "color": "#F59E0B"
+            "label": "Part A",
+            "value": 18,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 18,
+            "color": "#10B981"
           }
         ],
         "total": 36,
@@ -166,7 +182,8 @@ export const skillPracticeHubData = {
       "problem_text": "The robotics club ordered 9 packs of rechargeable batteries. Each pack contains 4 batteries. How many batteries did the club receive?",
       "problem_en": "The robotics club ordered 9 packs of rechargeable batteries. Each pack contains 4 batteries. How many batteries did the club receive?",
       "answer": 36,
-      "step_by_step": "Step 1: Packs = 9. Step 2: Batteries per pack = 4. Step 3: Total = 9 * 4 = 36 batteries."
+      "step_by_step": "Step 1: Packs = 9. Step 2: Batteries per pack = 4. Step 3: Total = 9 * 4 = 36 batteries.",
+      "question": "The robotics club ordered 9 packs of rechargeable batteries. Each pack contains 4 batteries. How many batteries did the club receive?"
     },
     {
       "id": 4,
@@ -184,9 +201,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "8 Bags of 6",
-            "value": 48,
-            "color": "#8B5CF6"
+            "label": "Part A",
+            "value": 24,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 24,
+            "color": "#10B981"
           }
         ],
         "total": 48,
@@ -196,7 +218,8 @@ export const skillPracticeHubData = {
       "problem_text": "An inventor packages plastic gears into 8 bags for classroom kits. If each bag contains 6 gears, how many gears are packaged altogether?",
       "problem_en": "An inventor packages plastic gears into 8 bags for classroom kits. If each bag contains 6 gears, how many gears are packaged altogether?",
       "answer": 48,
-      "step_by_step": "Step 1: Bags = 8. Step 2: Gears per bag = 6. Step 3: Total = 8 * 6 = 48 gears."
+      "step_by_step": "Step 1: Bags = 8. Step 2: Gears per bag = 6. Step 3: Total = 8 * 6 = 48 gears.",
+      "question": "An inventor packages plastic gears into 8 bags for classroom kits. If each bag contains 6 gears, how many gears are packaged altogether?"
     },
     {
       "id": 5,
@@ -214,9 +237,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "5 Trays of 12",
-            "value": 60,
-            "color": "#EC4899"
+            "label": "Part A",
+            "value": 30,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 30,
+            "color": "#10B981"
           }
         ],
         "total": 60,
@@ -226,7 +254,8 @@ export const skillPracticeHubData = {
       "problem_text": "A science laboratory sets up 5 testing trays on the workbench. Each tray contains 12 glass tubes. What is the total count of test tubes?",
       "problem_en": "A science laboratory sets up 5 testing trays on the workbench. Each tray contains 12 glass tubes. What is the total count of test tubes?",
       "answer": 60,
-      "step_by_step": "Step 1: Trays = 5. Step 2: Tubes per tray = 12. Step 3: Total = 5 * 12 = 60 tubes."
+      "step_by_step": "Step 1: Trays = 5. Step 2: Tubes per tray = 12. Step 3: Total = 5 * 12 = 60 tubes.",
+      "question": "A science laboratory sets up 5 testing trays on the workbench. Each tray contains 12 glass tubes. What is the total count of test tubes?"
     }
   ],
   "science_lab": {

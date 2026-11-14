@@ -15,10 +15,11 @@
     "focus": "Write a polite formal request"
   },
   "grammar_focus": {
-    "structure": "Polite Modals (May I, Could you, Would like)",
+    "structure": "Formal Letter Conventions: Dear Sir/Madam, Sincerely, polite requests",
     "outcome": "Write a polite formal request",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Formal Letter Conventions: Dear Sir/Madam, Sincerely, polite requests"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -267,5 +268,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "week_number": 60
 }

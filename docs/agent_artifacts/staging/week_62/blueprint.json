@@ -15,10 +15,11 @@
     "focus": "Paraphrase a text in 3 sentences"
   },
   "grammar_focus": {
-    "structure": "Reported Speech Basic (He said that...)",
+    "structure": "Summarizing: In the beginning..., In the middle..., In the end...",
     "outcome": "Paraphrase a text in 3 sentences",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Summarizing: In the beginning..., In the middle..., In the end..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -242,5 +243,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 62
 }

@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "resource",
+      "word": "plan",
       "pos": "n",
-      "ipa": "/rɪˈzɔːrs/",
-      "definition_en": "A supply of materials, money, or staff that can be used.",
-      "definition_vi": "tài nguyên, nguồn lực",
-      "example_en": "Water is our planet's most precious natural resource.",
-      "example_vi": "Nước là tài nguyên thiên nhiên quý giá nhất của hành tinh chúng ta."
+      "ipa": "/plæn/",
+      "definition_en": "A set of actions decided on beforehand.",
+      "definition_vi": "kế hoạch",
+      "example_en": "Our class made a clear plan to clean the playground.",
+      "example_vi": "Lớp chúng tôi lập kế hoạch rõ ràng để dọn sạch sân chơi."
     },
     {
       "id": 2,
-      "word": "share",
-      "pos": "v",
-      "ipa": "/ʃɛər/",
-      "definition_en": "To divide something equally among two or more people.",
-      "definition_vi": "chia sẻ",
-      "example_en": "We share books fairly in our reading corner.",
-      "example_vi": "Chúng tôi chia sẻ sách công bằng trong góc đọc sách."
+      "word": "step",
+      "pos": "n",
+      "ipa": "/stɛp/",
+      "definition_en": "One of a series of actions taken to achieve a goal.",
+      "definition_vi": "bước đi, biện pháp",
+      "example_en": "The first step was to sort all the recycling bins.",
+      "example_vi": "Bước đầu tiên là phân loại tất cả các thùng tái chế."
     },
     {
       "id": 3,
-      "word": "divide",
+      "word": "improve",
       "pos": "v",
-      "ipa": "/dɪˈvaɪd/",
-      "definition_en": "To separate a total amount into equal groups.",
-      "definition_vi": "chia",
-      "example_en": "Divide forty-eight books among six shelves.",
-      "example_vi": "Chia bốn mươi tám quyển sách cho sáu ngăn kệ."
+      "ipa": "/ɪmˈpruːv/",
+      "definition_en": "To make or become better.",
+      "definition_vi": "cải thiện, nâng cao",
+      "example_en": "Reading every day helps children improve their English skills.",
+      "example_vi": "Đọc sách hàng ngày sẽ cải thiện vốn từ vựng của bạn."
     },
     {
       "id": 4,
-      "word": "quotient",
-      "pos": "n",
-      "ipa": "/ˈkwəʊʃənt/",
-      "definition_en": "The result obtained when one number is divided by another.",
-      "definition_vi": "thương số",
-      "example_en": "The quotient of forty-eight divided by six is eight.",
-      "example_vi": "Thương số của bốn mươi tám chia cho sáu là tám."
+      "word": "better",
+      "pos": "adj",
+      "ipa": "/ˈbɛtər/",
+      "definition_en": "Of a higher quality or more suitable.",
+      "definition_vi": "tốt hơn",
+      "example_en": "A shared schedule will make library time better.",
+      "example_vi": "Một thời gian biểu dùng chung sẽ giúp thời gian đọc sách tốt hơn."
     },
     {
       "id": 5,
-      "word": "opinion",
+      "word": "success",
       "pos": "n",
-      "ipa": "/əˈpɪnjən/",
-      "definition_en": "A personal view or judgment formed about something.",
-      "definition_vi": "quan điểm, ý kiến",
-      "example_en": "In my opinion, every child should have a library card.",
-      "example_vi": "Theo quan điểm của tôi, mọi trẻ em nên có thẻ thư viện."
+      "ipa": "/səkˈsɛs/",
+      "definition_en": "The achievement of an aim or purpose.",
+      "definition_vi": "sự thành công",
+      "example_en": "The school book fair was a wonderful success.",
+      "example_vi": "Hội chợ sách của trường là một thành công tuyệt vời."
     },
     {
       "id": 6,
-      "word": "believe",
+      "word": "fail",
       "pos": "v",
-      "ipa": "/bɪˈliːv/",
-      "definition_en": "To feel sure that something is true or beneficial.",
-      "definition_vi": "tin tưởng",
-      "example_en": "I believe sharing tools builds a stronger community.",
-      "example_vi": "Tôi tin rằng việc chia sẻ dụng cụ sẽ xây dựng một cộng đồng vững mạnh hơn."
+      "ipa": "/feɪl/",
+      "definition_en": "To be unsuccessful in achieving an aim.",
+      "definition_vi": "thất bại, không thành công",
+      "example_en": "If we forget our plan, our effort might fail.",
+      "example_vi": "Nếu quên kế hoạch, nỗ lực của chúng ta có thể không thành công."
     },
     {
       "id": 7,
-      "word": "equal",
-      "pos": "adj",
-      "ipa": "/ˈiːkwəl/",
-      "definition_en": "Being the same in quantity, degree, or value.",
-      "definition_vi": "bằng nhau, công bằng",
-      "example_en": "Each team received an equal share of pencils.",
-      "example_vi": "Mỗi đội nhận được một phần bút chì bằng nhau."
+      "word": "strategy",
+      "pos": "n",
+      "ipa": "/ˈstrætədʒi/",
+      "definition_en": "A smart plan to achieve a goal.",
+      "definition_vi": "chiến lược",
+      "example_en": "Dividing tasks fairly is a great team strategy.",
+      "example_vi": "Chia đều nhiệm vụ là một chiến lược làm việc nhóm tuyệt vời."
     },
     {
       "id": 8,
-      "word": "distribute",
+      "word": "divide",
       "pos": "v",
-      "ipa": "/dɪˈstrɪbjuːt/",
-      "definition_en": "To give a share or portion of something to each member.",
-      "definition_vi": "phân phát",
-      "example_en": "Volunteers distribute warm soup to neighbors.",
-      "example_vi": "Tình nguyện viên phân phát súp nóng cho hàng xóm."
+      "ipa": "/dɪˈvaɪd/",
+      "definition_en": "To separate into equal parts.",
+      "definition_vi": "chia",
+      "example_en": "Divide twelve pencils among three students.",
+      "example_vi": "Chia mười hai chiếc bút chì cho ba học sinh."
     },
     {
       "id": 9,
-      "word": "scarcity",
-      "pos": "n",
-      "ipa": "/ˈskɛəsəti/",
-      "definition_en": "A state of having a shortage of something important.",
-      "definition_vi": "sự khan hiếm",
-      "example_en": "Book scarcity in small villages was solved by mobile vans.",
-      "example_vi": "Sự khan hiếm sách ở các làng nhỏ đã được giải quyết bằng xe lưu động."
+      "word": "share equally",
+      "pos": "phrase",
+      "ipa": "/ʃɛr ˈikwəli/",
+      "definition_en": "To distribute items so everyone has the same.",
+      "definition_vi": "chia đều",
+      "example_en": "Let us share the red apples equally.",
+      "example_vi": "Hãy chia đều những quả táo đỏ."
     },
     {
       "id": 10,
-      "word": "fairly",
-      "pos": "adv",
-      "ipa": "/ˈfɛərli/",
-      "definition_en": "In a just and equal way without favoritism.",
-      "definition_vi": "một cách công bằng",
-      "example_en": "The teacher divided the art paper fairly among students.",
-      "example_vi": "Giáo viên chia giấy vẽ một cách công bằng cho học sinh."
+      "word": "split",
+      "pos": "v",
+      "ipa": "/splɪt/",
+      "definition_en": "To divide something into parts or groups.",
+      "definition_vi": "tách ra, chia phần",
+      "example_en": "Split the class into four equal teams.",
+      "example_vi": "Tách cả lớp thành bốn đội bằng nhau."
     },
     {
       "id": 11,
-      "word": "allocate",
-      "pos": "v",
-      "ipa": "/ˈæləkeɪt/",
-      "definition_en": "To assign a specific portion of resources for a goal.",
-      "definition_vi": "phân bổ",
-      "example_en": "The council decided to allocate funds for school trees.",
-      "example_vi": "Hội đồng quyết định phân bổ ngân sách cho cây xanh trường học."
+      "word": "quotient",
+      "pos": "n",
+      "ipa": "/ˈkwoʊʃənt/",
+      "definition_en": "The result of dividing one number by another.",
+      "definition_vi": "thương số",
+      "example_en": "The quotient of eight divided by two is four.",
+      "example_vi": "Thương số của tám chia hai là bốn."
     },
     {
       "id": 12,
-      "word": "community",
-      "pos": "n",
-      "ipa": "/kəˈmjuːnəti/",
-      "definition_en": "A group of people sharing interests and living space.",
-      "definition_vi": "cộng đồng",
-      "example_en": "A healthy community cares for its elderly neighbors.",
-      "example_vi": "Một cộng đồng lành mạnh luôn quan tâm đến những người hàng xóm cao tuổi."
+      "word": "equal",
+      "pos": "adj",
+      "ipa": "/ˈiːkwəl/",
+      "definition_en": "Being the same in quantity or value.",
+      "definition_vi": "bằng nhau",
+      "example_en": "Each box holds an equal number of chalks.",
+      "example_vi": "Mỗi hộp chứa số lượng phấn bằng nhau."
     },
     {
       "id": 13,
-      "word": "grouping",
-      "pos": "n",
-      "ipa": "/ˈɡruːpɪŋ/",
-      "definition_en": "The act of sorting items into distinct sets.",
-      "definition_vi": "sự nhóm lại",
-      "example_en": "Equal grouping helps us understand basic division.",
-      "example_vi": "Việc chia nhóm bằng nhau giúp chúng ta hiểu phép chia cơ bản."
+      "word": "fair share",
+      "pos": "phrase",
+      "ipa": "/fɛr ʃɛr/",
+      "definition_en": "An equal and honest portion for each person.",
+      "definition_vi": "phần chia công bằng",
+      "example_en": "Every child received a fair share of grapes.",
+      "example_vi": "Mỗi bạn nhỏ đều nhận được một phần nho công bằng."
     },
     {
       "id": 14,
-      "word": "portion",
+      "word": "group",
       "pos": "n",
-      "ipa": "/ˈpɔːrʃən/",
-      "definition_en": "A part of a whole amount given to an individual.",
-      "definition_vi": "khẩu phần, phần chia",
-      "example_en": "Every child received an equal portion of melon.",
-      "example_vi": "Mỗi đứa trẻ nhận được một phần dưa hấu bằng nhau."
+      "ipa": "/ɡruːp/",
+      "definition_en": "A number of people or things gathered together.",
+      "definition_vi": "nhóm",
+      "example_en": "Each study group needs five reading books.",
+      "example_vi": "Mỗi nhóm học tập cần năm cuốn sách đọc."
     },
     {
       "id": 15,
-      "word": "propose",
-      "pos": "v",
-      "ipa": "/prəˈpəʊz/",
-      "definition_en": "To suggest a plan or scheme for consideration.",
-      "definition_vi": "đề xuất",
-      "example_en": "Students propose setting up a community tool library.",
-      "example_vi": "Học sinh đề xuất thành lập một thư viện dụng cụ cộng đồng."
+      "word": "class",
+      "pos": "n",
+      "ipa": "/klæs/",
+      "definition_en": "A group of students learning together.",
+      "definition_vi": "lớp học",
+      "example_en": "Our class planned a playground schedule.",
+      "example_vi": "Lớp chúng tôi đã lên thời khóa biểu cho sân chơi."
     },
     {
       "id": 16,
-      "word": "shortage",
+      "word": "team",
       "pos": "n",
-      "ipa": "/ˈʃɔːrtɪdʒ/",
-      "definition_en": "A situation where there is not enough of something.",
-      "definition_vi": "sự thiếu hụt",
-      "example_en": "A paper shortage stopped printer use for two days.",
-      "example_vi": "Sự thiếu hụt giấy đã làm gián đoạn máy in trong hai ngày."
+      "ipa": "/tiːm/",
+      "definition_en": "A group of people working toward a common goal.",
+      "definition_vi": "đội, nhóm làm việc",
+      "example_en": "The green team gathered all the footballs.",
+      "example_vi": "Đội xanh lá đã thu gom tất cả quả bóng đá."
     },
     {
       "id": 17,
-      "word": "generous",
-      "pos": "adj",
-      "ipa": "/ˈdʒɛnərəs/",
-      "definition_en": "Willing to give more help, time, or goods than expected.",
-      "definition_vi": "hào phóng",
-      "example_en": "Generous neighbors donated forty storybooks.",
-      "example_vi": "Những người hàng xóm hào phóng đã tặng bốn mươi cuốn truyện."
+      "word": "together",
+      "pos": "adv",
+      "ipa": "/təˈɡɛðər/",
+      "definition_en": "With or in proximity to another person.",
+      "definition_vi": "cùng nhau",
+      "example_en": "When we work together, tasks finish faster.",
+      "example_vi": "Khi làm việc cùng nhau, các nhiệm vụ hoàn thành nhanh hơn."
     },
     {
       "id": 18,
-      "word": "balance",
+      "word": "rule",
       "pos": "n",
-      "ipa": "/ˈbæləns/",
-      "definition_en": "An even distribution of weight or resources.",
-      "definition_vi": "sự cân bằng",
-      "example_en": "We must maintain balance between work and recreation.",
-      "example_vi": "Chúng ta phải giữ cân bằng giữa công việc và giải trí."
+      "ipa": "/ruːl/",
+      "definition_en": "A statement of what you must do.",
+      "definition_vi": "luật lệ",
+      "example_en": "A simple sharing rule makes recess peaceful.",
+      "example_vi": "Một quy tắc chia sẻ đơn giản giúp giờ ra chơi êm ấm."
     },
     {
       "id": 19,
-      "word": "shelf",
+      "word": "fruit",
       "pos": "n",
-      "ipa": "/ʃɛlf/",
-      "definition_en": "A flat wooden or metal board used for storing books.",
-      "definition_vi": "ngăn kệ",
-      "example_en": "Each shelf holds eight heavy encyclopedia volumes.",
-      "example_vi": "Mỗi ngăn kệ chứa tám tập bách khoa toàn thư nặng."
+      "ipa": "/fruːt/",
+      "definition_en": "Sweet food that grows on trees or plants.",
+      "definition_vi": "hoa quả",
+      "example_en": "We divided the fresh fruit among four bowls.",
+      "example_vi": "Chúng tôi đã chia hoa quả tươi vào bốn chiếc bát."
     },
     {
       "id": 20,
-      "word": "volunteer",
+      "word": "snack",
       "pos": "n",
-      "ipa": "/ˌvɒlənˈtɪər/",
-      "definition_en": "A person who offers work willingly without payment.",
-      "definition_vi": "tình nguyện viên",
-      "example_en": "Volunteers organized the community food bank.",
-      "example_vi": "Các tình nguyện viên đã sắp xếp ngân hàng thực phẩm cộng đồng."
+      "ipa": "/snæk/",
+      "definition_en": "A small portion of food eaten between meals.",
+      "definition_vi": "món ăn nhẹ",
+      "example_en": "Healthy snacks give students good energy.",
+      "example_vi": "Đồ ăn nhẹ lành mạnh mang lại năng lượng tốt cho học sinh."
     }
   ],
-  "clil_article": {
-    "title_en": "Resource Sharing and Equal Division",
-    "title_vi": "Chia sẻ Tài nguyên và Phép chia Đều",
-    "content_en": "In every community, fair resource management ensures that everyone has enough food, books, and learning tools. When communities face resource scarcity, thoughtful leaders propose sharing systems. In my opinion, sharing resources creates a kinder and more balanced society. I believe that dividing goods equally prevents waste and builds mutual trust. To state an opinion clearly, writers introduce their claims with phrases like 'In my opinion' and 'I believe that'. In mathematics, fair sharing is modeled by division. Division separates a total quantity into equal groups. For instance, when a library receives 48 new science books and wants to arrange them equally onto 6 reading shelves, we divide 48 by 6. The quotient is 8, which means each shelf receives exactly 8 books. Here, 48 is the dividend, 6 is the divisor, and 8 is the quotient. Understanding division concepts helps us distribute community resources fairly and efficiently.",
-    "glossary": [
-      {
-        "word": "resource",
-        "definition_en": "Materials or supplies available for use",
-        "definition_vi": "tài nguyên"
-      },
-      {
-        "word": "divide",
-        "definition_en": "To separate into equal parts",
-        "definition_vi": "chia"
-      },
-      {
-        "word": "quotient",
-        "definition_en": "The answer in a division problem",
-        "definition_vi": "thương số"
-      },
-      {
-        "word": "opinion",
-        "definition_en": "A personal perspective or belief",
-        "definition_vi": "quan điểm"
-      },
-      {
-        "word": "distribute",
-        "definition_en": "To hand out portions to members",
-        "definition_vi": "phân phát"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What does division do to a total quantity?",
-        "options": [
-          "Separates it into equal groups",
-          "Doubles it instantly",
-          "Deletes half of it"
-        ],
-        "answer": "Separates it into equal groups"
-      },
-      {
-        "id": 2,
-        "question_en": "If 48 books are shared equally among 6 shelves, how many books are on each shelf?",
-        "options": [
-          "8 books",
-          "7 books",
-          "9 books"
-        ],
-        "answer": "8 books"
-      },
-      {
-        "id": 3,
-        "question_en": "Which phrase is used to introduce a personal opinion?",
-        "options": [
-          "In my opinion",
-          "Because of",
-          "Therefore"
-        ],
-        "answer": "In my opinion"
-      }
-    ],
-    "text": "In every community, fair resource management ensures that everyone has enough food, books, and learning tools. When communities face resource scarcity, thoughtful leaders propose sharing systems. In my opinion, sharing resources creates a kinder and more balanced society. I believe that dividing goods equally prevents waste and builds mutual trust. To state an opinion clearly, writers introduce their claims with phrases like 'In my opinion' and 'I believe that'. In mathematics, fair sharing is modeled by division. Division separates a total quantity into equal groups. For instance, when a library receives 48 new science books and wants to arrange them equally onto 6 reading shelves, we divide 48 by 6. The quotient is 8, which means each shelf receives exactly 8 books. Here, 48 is the dividend, 6 is the divisor, and 8 is the quotient. Understanding division concepts helps us distribute community resources fairly and efficiently."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "Sharing Resources: The Master Plan",
+    "title_vi": "Chia sẻ Tài nguyên: Kế hoạch Lớn",
+    "content_en": "When students share equipment, problems can happen if there is no plan. If two groups want the same football, an argument begins. To solve this, our class wrote a fair sharing strategy (a smart action plan). First, we identified the problem: there were only six footballs for twelve students. Next, we suggested a clear solution: divide the balls equally. In math, division means sharing equally among groups. If we divide six balls among three teams, each team gets two balls. The number two is the quotient (the result of division). When everyone gets a fair share, our game is a success. If we follow this plan, play will be better and nobody will fail. Good division and teamwork make our playground a happy place.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What was the problem on the playground?",
+        "question_vi": "Vấn đề trên sân chơi là gì?",
+        "options": [
+          "Not enough footballs for everyone",
+          "The grass was too wet",
+          "The school bell was broken"
+        ],
+        "answer": "Not enough footballs for everyone"
+      },
+      {
+        "id": "q2",
+        "question_en": "What does division mean in math?",
+        "question_vi": "Phép chia có nghĩa là gì trong toán học?",
+        "options": [
+          "Sharing equally among groups",
+          "Adding big numbers",
+          "Drawing circles"
+        ],
+        "answer": "Sharing equally among groups"
+      },
+      {
+        "id": "q3",
+        "question_en": "What is the result of division called?",
+        "question_vi": "Kết quả của phép chia được gọi là gì?",
+        "options": [
+          "The quotient",
+          "The sum",
+          "The corner"
+        ],
+        "answer": "The quotient"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "plan",
+        "definition_en": "A decided set of actions to achieve a goal."
+      },
+      {
+        "term": "strategy",
+        "definition_en": "A clever plan for success."
+      },
+      {
+        "term": "divide",
+        "definition_en": "To separate into equal parts."
+      },
+      {
+        "term": "quotient",
+        "definition_en": "The answer when you divide numbers."
+      },
+      {
+        "term": "fair share",
+        "definition_en": "An equal portion for every person."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "Our class made a fair plan to share equipment.",
+      "ipa": "/ˈaʊər klæs meɪd ə fɛr plæn tu ʃɛr ɪˈkwɪpmənt/",
+      "vietnamese": "Lớp chúng tôi lập kế hoạch công bằng để chia sẻ dụng cụ."
+    },
+    {
+      "id": 2,
+      "text": "Each step of the strategy helped our group.",
+      "ipa": "/itʃ stɛp ʌv ðə ˈstrætədʒi hɛlpt ˈaʊər ɡrup/",
+      "vietnamese": "Từng bước của chiến lược đã giúp nhóm chúng tôi."
+    },
+    {
+      "id": 3,
+      "text": "If we share equally, our games will be better.",
+      "ipa": "/ɪf wi ʃɛr ˈikwəli ˈaʊər ɡeɪmz wɪl bi ˈbɛtər/",
+      "vietnamese": "Nếu chúng ta chia sẻ đều, các trò chơi sẽ vui hơn."
+    },
+    {
+      "id": 4,
+      "text": "Division means sharing items into equal groups.",
+      "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups/",
+      "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau."
+    },
+    {
+      "id": 5,
+      "text": "Six footballs divided by three teams equals two.",
+      "ipa": "/sɪks ˈfʊtˌbɔlz dɪˈvaɪdɪd baɪ θri timz ˈikwəlz tu/",
+      "vietnamese": "Sáu quả bóng chia cho ba đội thì bằng hai."
+    },
+    {
+      "id": 6,
+      "text": "The quotient of this division problem is two.",
+      "ipa": "/ðə ˈkwoʊʃənt ʌv ðɪs dɪˈvɪʒən ˈprɑbləm ɪz tu/",
+      "vietnamese": "Thương số của bài toán chia này là hai."
+    },
+    {
+      "id": 7,
+      "text": "Working together makes our school day a success.",
+      "ipa": "/ˈwɜrkɪŋ təˈɡɛðər meɪks ˈaʊər skul deɪ ə səkˈsɛs/",
+      "vietnamese": "Làm việc cùng nhau khiến ngày học của chúng ta thành công."
+    },
+    {
+      "id": 8,
+      "text": "Everyone is happy when they receive a fair share.",
+      "ipa": "/ˈɛvriˌwʌn ɪz ˈhæpi wɛn ðeɪ rəˈsiv ə fɛr ʃɛr/",
+      "vietnamese": "Ai cũng vui khi họ nhận được phần chia công bằng."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Maya",
-        "text": "In my opinion, fair resource sharing builds a stronger community.",
-        "ipa": "/ɪn maɪ əˈpɪnjən, fɛər rɪˈzɔːrs ˈʃɛərɪŋ bɪldz ə ˈstrɒŋɡər kəˈmjuːnəti/"
+        "text": "Our class made a fair plan to share equipment.",
+        "ipa": "/ˈaʊər klæs meɪd ə fɛr plæn tu ʃɛr ɪˈkwɪpmənt/",
+        "vietnamese": "Lớp chúng tôi lập kế hoạch công bằng để chia sẻ dụng cụ."
       },
       {
         "id": 2,
-        "speaker": "Ethan",
-        "text": "Division separates a total quantity into equal groups.",
-        "ipa": "/dɪˈvɪʒən ˈsɛpəreɪts ə ˈtəʊtl ˈkwɒntəti ˈɪntuː ˈiːkwəl ɡruːps/"
+        "text": "Each step of the strategy helped our group.",
+        "ipa": "/itʃ stɛp ʌv ðə ˈstrætədʒi hɛlpt ˈaʊər ɡrup/",
+        "vietnamese": "Từng bước của chiến lược đã giúp nhóm chúng tôi."
       },
       {
         "id": 3,
-        "speaker": "Maya",
-        "text": "Forty-eight books divided by six shelves equals eight books.",
-        "ipa": "/ˈfɔːrti eɪt bʊks dɪˈvaɪdɪd baɪ sɪks ʃɛlvz ˈiːkwəlz eɪt bʊks/"
+        "text": "If we share equally, our games will be better.",
+        "ipa": "/ɪf wi ʃɛr ˈikwəli ˈaʊər ɡeɪmz wɪl bi ˈbɛtər/",
+        "vietnamese": "Nếu chúng ta chia sẻ đều, các trò chơi sẽ vui hơn."
       },
       {
         "id": 4,
-        "speaker": "Ethan",
-        "text": "I believe that sharing learning tools prevents unnecessary waste.",
-        "ipa": "/aɪ bɪˈliːv ðæt ˈʃɛərɪŋ ˈlɜːrnɪŋ tuːlz prɪˈvɛnts ʌnˈnɛsəsəri weɪst/"
+        "text": "Division means sharing items into equal groups.",
+        "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups/",
+        "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau."
       },
       {
         "id": 5,
-        "speaker": "Maya",
-        "text": "The quotient tells us the exact size of each portion.",
-        "ipa": "/ðə ˈkwəʊʃənt tɛlz ʌs ði ɪɡˈzækt saɪz ɒv iːtʃ ˈpɔːrʃən/"
+        "text": "Six footballs divided by three teams equals two.",
+        "ipa": "/sɪks ˈfʊtˌbɔlz dɪˈvaɪdɪd baɪ θri timz ˈikwəlz tu/",
+        "vietnamese": "Sáu quả bóng chia cho ba đội thì bằng hai."
       },
       {
         "id": 6,
-        "speaker": "Ethan",
-        "text": "Volunteers distribute supplies fairly to every neighborhood child.",
-        "ipa": "/ˌvɒlənˈtɪərz dɪˈstrɪbjuːt səˈplaɪz ˈfɛərli tuː ˈɛvri ˈneɪbəhʊd tʃaɪld/"
+        "text": "The quotient of this division problem is two.",
+        "ipa": "/ðə ˈkwoʊʃənt ʌv ðɪs dɪˈvɪʒən ˈprɑbləm ɪz tu/",
+        "vietnamese": "Thương số của bài toán chia này là hai."
       },
       {
         "id": 7,
-        "speaker": "Maya",
-        "text": "We propose a clear plan before dividing community supplies.",
-        "ipa": "/wiː prəˈpəʊz ə klɪər plæn bɪˈfɔːr dɪˈvaɪdɪŋ kəˈmjuːnəti səˈplaɪz/"
+        "text": "Working together makes our school day a success.",
+        "ipa": "/ˈwɜrkɪŋ təˈɡɛðər meɪks ˈaʊər skul deɪ ə səkˈsɛs/",
+        "vietnamese": "Làm việc cùng nhau khiến ngày học của chúng ta thành công."
       },
       {
         "id": 8,
-        "speaker": "Ethan",
-        "text": "Fair distribution gives everyone an equal opportunity to learn.",
-        "ipa": "/fɛər ˌdɪstrɪˈbjuːʃən ɡɪvz ˈɛvriwʌn ən ˈiːkwəl ˌɒpərˈtjuːnəti tuː lɜːrn/"
+        "text": "Everyone is happy when they receive a fair share.",
+        "ipa": "/ˈɛvriˌwʌn ɪz ˈhæpi wɛn ðeɪ rəˈsiv ə fɛr ʃɛr/",
+        "vietnamese": "Ai cũng vui khi họ nhận được phần chia công bằng."
       }
     ]
   },
-  "rw_part1": [
-    {
-      "definition": "The answer obtained after dividing one number by another.",
-      "word": "quotient"
-    },
-    {
-      "definition": "A personal view or feeling rather than a proven fact.",
-      "word": "opinion"
-    },
-    {
-      "definition": "To hand out equal portions to different people.",
-      "word": "distribute"
-    },
-    {
-      "definition": "A wooden board mounted on a wall for books.",
-      "word": "shelf"
-    },
-    {
-      "definition": "A supply of useful materials or equipment.",
-      "word": "resource"
-    }
-  ],
+  "rw_part1": {
+    "word_bank": [
+      "plan",
+      "step",
+      "improve",
+      "better",
+      "success",
+      "fail",
+      "strategy",
+      "divide",
+      "share equally",
+      "split",
+      "quotient",
+      "equal",
+      "fair share",
+      "group",
+      "class",
+      "team",
+      "together",
+      "rule",
+      "fruit",
+      "snack"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "The small hard part produced by a plant to grow new plants.",
+        "target": "seed",
+        "definition": "The small hard part produced by a plant to grow new plants.",
+        "word": "seed",
+        "definition_en": "The small hard part produced by a plant to grow new plants.",
+        "options": [
+          "seed",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "seed"
+      },
+      {
+        "id": 2,
+        "text": "To start to grow from a seed into a tiny shoot.",
+        "target": "sprout",
+        "definition": "To start to grow from a seed into a tiny shoot.",
+        "word": "sprout",
+        "definition_en": "To start to grow from a seed into a tiny shoot.",
+        "options": [
+          "sprout",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sprout"
+      },
+      {
+        "id": 3,
+        "text": "The underground part of a plant that absorbs water.",
+        "target": "root",
+        "definition": "The underground part of a plant that absorbs water.",
+        "word": "root",
+        "definition_en": "The underground part of a plant that absorbs water.",
+        "options": [
+          "root",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "root"
+      },
+      {
+        "id": 4,
+        "text": "The main stem or body of a plant above the ground.",
+        "target": "stem",
+        "definition": "The main stem or body of a plant above the ground.",
+        "word": "stem",
+        "definition_en": "The main stem or body of a plant above the ground.",
+        "options": [
+          "stem",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stem"
+      },
+      {
+        "id": 5,
+        "text": "The top layer of earth in which plants grow.",
+        "target": "soil",
+        "definition": "The top layer of earth in which plants grow.",
+        "word": "soil",
+        "definition_en": "The top layer of earth in which plants grow.",
+        "options": [
+          "soil",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "soil"
+      }
+    ]
+  },
   "rw_part2": {
-    "title": "Planning Resource Distribution",
+    "title": "Tracking Plant Growth Stages",
+    "topic": "Tracking Plant Growth Stages",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Ethan",
+        "prompt": "How much did our bean seedlings grow this week?",
+        "text": "How much did our bean seedlings grow this week?",
+        "options": [
+          "They sprouted new green leaves and grew four centimeters taller.",
+          "My sister baked blueberry muffins yesterday.",
+          "The tennis court is next to the playground."
+        ],
+        "answer": "They sprouted new green leaves and grew four centimeters taller."
+      },
+      {
+        "id": 2,
+        "speaker": "Maya",
+        "prompt": "What do the plant roots absorb from the moist soil?",
+        "text": "What do the plant roots absorb from the moist soil?",
+        "options": [
+          "They absorb water and healthy minerals for the growing stem.",
+          "I bought three stamps at the post office.",
+          "The museum opens at ten o'clock tomorrow."
+        ],
+        "answer": "They absorb water and healthy minerals for the growing stem."
+      },
+      {
+        "id": 3,
+        "speaker": "Ethan",
+        "prompt": "How many seedlings did we plant across our two garden boxes?",
+        "text": "How many seedlings did we plant across our two garden boxes?",
+        "options": [
+          "We planted twenty-four in the first box and eighteen in the second box.",
+          "We played chess in the school library.",
+          "There are seventy pages in my English textbook."
+        ],
+        "answer": "We planted twenty-four in the first box and eighteen in the second box."
+      },
+      {
+        "id": 4,
+        "speaker": "Maya",
+        "prompt": "What is the total number of seedlings in both boxes?",
+        "text": "What is the total number of seedlings in both boxes?",
+        "options": [
+          "Twenty-four plus eighteen gives forty-two seedlings in total.",
+          "I prefer riding my bicycle on sunny mornings.",
+          "The concert finished at nine o'clock."
+        ],
+        "answer": "Twenty-four plus eighteen gives forty-two seedlings in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Ethan",
+        "prompt": "Shall we measure the tallest plant again on Friday afternoon?",
+        "text": "Shall we measure the tallest plant again on Friday afternoon?",
+        "options": [
+          "Yes, we can use our wooden ruler and record the height!",
+          "I do not eat strawberry cake for breakfast.",
+          "The weather forecast predicts heavy fog tonight."
+        ],
+        "answer": "Yes, we can use our wooden ruler and record the height!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Ethan",
-        "text": "In your opinion, how should we share these forty-eight textbooks?"
+        "text": "They sprouted new green leaves and grew four centimeters taller."
       },
       {
         "speaker": "Maya",
-        "text": "I believe we should divide them equally across the six study tables."
+        "text": "They absorb water and healthy minerals for the growing stem."
       },
       {
         "speaker": "Ethan",
-        "text": "What is forty-eight divided by six?"
+        "text": "We planted twenty-four in the first box and eighteen in the second box."
       },
       {
         "speaker": "Maya",
-        "text": "The quotient is eight, so each table gets eight books."
+        "text": "Twenty-four plus eighteen gives forty-two seedlings in total."
       },
       {
         "speaker": "Ethan",
-        "text": "That is completely fair and organized."
+        "text": "Yes, we can use our wooden ruler and record the height!"
       }
     ]
   },
   "rw_part6": {
-    "text": "When a community faces resource shortages, fair sharing provides the best solution. (1) ___ my opinion, sharing textbooks ensures every child has a chance to succeed. Yesterday, our neighborhood center received forty-eight books. Volunteers wanted to (2) ___ them equally among six reading shelves. By using division, they found the (3) ___ was eight books per shelf. I (4) ___ that cooperative teamwork makes our town a better place to live.",
-    "answers": [
-      "In",
-      "distribute",
+    "title": "Maya's Garden Log: Watching Seeds Grow",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Last Monday, our science group planted twenty bean seeds. First, we placed them into dark rich [1]_____ and watered them carefully. After four days, tiny green sprouts pushed [2]_____ through the soil. Strong roots grew down [3]_____ absorb water from the earth. Sunlight gave energy [4]_____ the green leaves to make food. We [5]_____ very proud of our healthy plants.",
+    "answers": {
+      "1": "soil",
+      "2": "up",
+      "3": "to",
+      "4": "to",
+      "5": "are"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "plan",
+      "step",
+      "improve",
+      "better",
+      "success",
+      "fail",
+      "strategy",
+      "divide",
+      "share equally",
+      "split",
       "quotient",
-      "believe"
+      "equal",
+      "fair share",
+      "group",
+      "class",
+      "team",
+      "together",
+      "rule",
+      "fruit",
+      "snack"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "The small hard part produced by a plant to grow new plants.",
+        "target": "seed",
+        "definition": "The small hard part produced by a plant to grow new plants.",
+        "word": "seed",
+        "definition_en": "The small hard part produced by a plant to grow new plants.",
+        "options": [
+          "seed",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "seed"
+      },
+      {
+        "id": 2,
+        "text": "To start to grow from a seed into a tiny shoot.",
+        "target": "sprout",
+        "definition": "To start to grow from a seed into a tiny shoot.",
+        "word": "sprout",
+        "definition_en": "To start to grow from a seed into a tiny shoot.",
+        "options": [
+          "sprout",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sprout"
+      },
+      {
+        "id": 3,
+        "text": "The underground part of a plant that absorbs water.",
+        "target": "root",
+        "definition": "The underground part of a plant that absorbs water.",
+        "word": "root",
+        "definition_en": "The underground part of a plant that absorbs water.",
+        "options": [
+          "root",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "root"
+      },
+      {
+        "id": 4,
+        "text": "The main stem or body of a plant above the ground.",
+        "target": "stem",
+        "definition": "The main stem or body of a plant above the ground.",
+        "word": "stem",
+        "definition_en": "The main stem or body of a plant above the ground.",
+        "options": [
+          "stem",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stem"
+      },
+      {
+        "id": 5,
+        "text": "The top layer of earth in which plants grow.",
+        "target": "soil",
+        "definition": "The top layer of earth in which plants grow.",
+        "word": "soil",
+        "definition_en": "The top layer of earth in which plants grow.",
+        "options": [
+          "soil",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "soil"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "The answer obtained after dividing one number by another.",
-      "word": "quotient"
-    },
-    {
-      "definition": "A personal view or feeling rather than a proven fact.",
-      "word": "opinion"
-    },
-    {
-      "definition": "To hand out equal portions to different people.",
-      "word": "distribute"
-    },
-    {
-      "definition": "A wooden board mounted on a wall for books.",
-      "word": "shelf"
-    },
-    {
-      "definition": "A supply of useful materials or equipment.",
-      "word": "resource"
-    }
-  ],
   "rw_part_2": {
-    "title": "Planning Resource Distribution",
+    "title": "Tracking Plant Growth Stages",
+    "topic": "Tracking Plant Growth Stages",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Ethan",
+        "prompt": "How much did our bean seedlings grow this week?",
+        "text": "How much did our bean seedlings grow this week?",
+        "options": [
+          "They sprouted new green leaves and grew four centimeters taller.",
+          "My sister baked blueberry muffins yesterday.",
+          "The tennis court is next to the playground."
+        ],
+        "answer": "They sprouted new green leaves and grew four centimeters taller."
+      },
+      {
+        "id": 2,
+        "speaker": "Maya",
+        "prompt": "What do the plant roots absorb from the moist soil?",
+        "text": "What do the plant roots absorb from the moist soil?",
+        "options": [
+          "They absorb water and healthy minerals for the growing stem.",
+          "I bought three stamps at the post office.",
+          "The museum opens at ten o'clock tomorrow."
+        ],
+        "answer": "They absorb water and healthy minerals for the growing stem."
+      },
+      {
+        "id": 3,
+        "speaker": "Ethan",
+        "prompt": "How many seedlings did we plant across our two garden boxes?",
+        "text": "How many seedlings did we plant across our two garden boxes?",
+        "options": [
+          "We planted twenty-four in the first box and eighteen in the second box.",
+          "We played chess in the school library.",
+          "There are seventy pages in my English textbook."
+        ],
+        "answer": "We planted twenty-four in the first box and eighteen in the second box."
+      },
+      {
+        "id": 4,
+        "speaker": "Maya",
+        "prompt": "What is the total number of seedlings in both boxes?",
+        "text": "What is the total number of seedlings in both boxes?",
+        "options": [
+          "Twenty-four plus eighteen gives forty-two seedlings in total.",
+          "I prefer riding my bicycle on sunny mornings.",
+          "The concert finished at nine o'clock."
+        ],
+        "answer": "Twenty-four plus eighteen gives forty-two seedlings in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Ethan",
+        "prompt": "Shall we measure the tallest plant again on Friday afternoon?",
+        "text": "Shall we measure the tallest plant again on Friday afternoon?",
+        "options": [
+          "Yes, we can use our wooden ruler and record the height!",
+          "I do not eat strawberry cake for breakfast.",
+          "The weather forecast predicts heavy fog tonight."
+        ],
+        "answer": "Yes, we can use our wooden ruler and record the height!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Ethan",
-        "text": "In your opinion, how should we share these forty-eight textbooks?"
+        "text": "They sprouted new green leaves and grew four centimeters taller."
       },
       {
         "speaker": "Maya",
-        "text": "I believe we should divide them equally across the six study tables."
+        "text": "They absorb water and healthy minerals for the growing stem."
       },
       {
         "speaker": "Ethan",
-        "text": "What is forty-eight divided by six?"
+        "text": "We planted twenty-four in the first box and eighteen in the second box."
       },
       {
         "speaker": "Maya",
-        "text": "The quotient is eight, so each table gets eight books."
+        "text": "Twenty-four plus eighteen gives forty-two seedlings in total."
       },
       {
         "speaker": "Ethan",
-        "text": "That is completely fair and organized."
+        "text": "Yes, we can use our wooden ruler and record the height!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "When a community faces resource shortages, fair sharing provides the best solution. (1) ___ my opinion, sharing textbooks ensures every child has a chance to succeed. Yesterday, our neighborhood center received forty-eight books. Volunteers wanted to (2) ___ them equally among six reading shelves. By using division, they found the (3) ___ was eight books per shelf. I (4) ___ that cooperative teamwork makes our town a better place to live.",
-    "answers": [
-      "In",
-      "distribute",
-      "quotient",
-      "believe"
-    ]
+    "title": "Maya's Garden Log: Watching Seeds Grow",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Last Monday, our science group planted twenty bean seeds. First, we placed them into dark rich [1]_____ and watered them carefully. After four days, tiny green sprouts pushed [2]_____ through the soil. Strong roots grew down [3]_____ absorb water from the earth. Sunlight gave energy [4]_____ the green leaves to make food. We [5]_____ very proud of our healthy plants.",
+    "answers": {
+      "1": "soil",
+      "2": "up",
+      "3": "to",
+      "4": "to",
+      "5": "are"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "The small hard part produced by a plant to grow new plants.",
+        "target": "seed",
+        "definition": "The small hard part produced by a plant to grow new plants.",
+        "word": "seed",
+        "definition_en": "The small hard part produced by a plant to grow new plants.",
+        "options": [
+          "seed",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "seed"
+      },
+      {
+        "id": 2,
+        "text": "To start to grow from a seed into a tiny shoot.",
+        "target": "sprout",
+        "definition": "To start to grow from a seed into a tiny shoot.",
+        "word": "sprout",
+        "definition_en": "To start to grow from a seed into a tiny shoot.",
+        "options": [
+          "sprout",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sprout"
+      },
+      {
+        "id": 3,
+        "text": "The underground part of a plant that absorbs water.",
+        "target": "root",
+        "definition": "The underground part of a plant that absorbs water.",
+        "word": "root",
+        "definition_en": "The underground part of a plant that absorbs water.",
+        "options": [
+          "root",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "root"
+      },
+      {
+        "id": 4,
+        "text": "The main stem or body of a plant above the ground.",
+        "target": "stem",
+        "definition": "The main stem or body of a plant above the ground.",
+        "word": "stem",
+        "definition_en": "The main stem or body of a plant above the ground.",
+        "options": [
+          "stem",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stem"
+      },
+      {
+        "id": 5,
+        "text": "The top layer of earth in which plants grow.",
+        "target": "soil",
+        "definition": "The top layer of earth in which plants grow.",
+        "word": "soil",
+        "definition_en": "The top layer of earth in which plants grow.",
+        "options": [
+          "soil",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "soil"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Tracking Plant Growth Stages",
+      "topic": "Tracking Plant Growth Stages",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Ethan",
+          "prompt": "How much did our bean seedlings grow this week?",
+          "text": "How much did our bean seedlings grow this week?",
+          "options": [
+            "They sprouted new green leaves and grew four centimeters taller.",
+            "My sister baked blueberry muffins yesterday.",
+            "The tennis court is next to the playground."
+          ],
+          "answer": "They sprouted new green leaves and grew four centimeters taller."
+        },
+        {
+          "id": 2,
+          "speaker": "Maya",
+          "prompt": "What do the plant roots absorb from the moist soil?",
+          "text": "What do the plant roots absorb from the moist soil?",
+          "options": [
+            "They absorb water and healthy minerals for the growing stem.",
+            "I bought three stamps at the post office.",
+            "The museum opens at ten o'clock tomorrow."
+          ],
+          "answer": "They absorb water and healthy minerals for the growing stem."
+        },
+        {
+          "id": 3,
+          "speaker": "Ethan",
+          "prompt": "How many seedlings did we plant across our two garden boxes?",
+          "text": "How many seedlings did we plant across our two garden boxes?",
+          "options": [
+            "We planted twenty-four in the first box and eighteen in the second box.",
+            "We played chess in the school library.",
+            "There are seventy pages in my English textbook."
+          ],
+          "answer": "We planted twenty-four in the first box and eighteen in the second box."
+        },
+        {
+          "id": 4,
+          "speaker": "Maya",
+          "prompt": "What is the total number of seedlings in both boxes?",
+          "text": "What is the total number of seedlings in both boxes?",
+          "options": [
+            "Twenty-four plus eighteen gives forty-two seedlings in total.",
+            "I prefer riding my bicycle on sunny mornings.",
+            "The concert finished at nine o'clock."
+          ],
+          "answer": "Twenty-four plus eighteen gives forty-two seedlings in total."
+        },
+        {
+          "id": 5,
+          "speaker": "Ethan",
+          "prompt": "Shall we measure the tallest plant again on Friday afternoon?",
+          "text": "Shall we measure the tallest plant again on Friday afternoon?",
+          "options": [
+            "Yes, we can use our wooden ruler and record the height!",
+            "I do not eat strawberry cake for breakfast.",
+            "The weather forecast predicts heavy fog tonight."
+          ],
+          "answer": "Yes, we can use our wooden ruler and record the height!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Ethan",
+          "text": "They sprouted new green leaves and grew four centimeters taller."
+        },
+        {
+          "speaker": "Maya",
+          "text": "They absorb water and healthy minerals for the growing stem."
+        },
+        {
+          "speaker": "Ethan",
+          "text": "We planted twenty-four in the first box and eighteen in the second box."
+        },
+        {
+          "speaker": "Maya",
+          "text": "Twenty-four plus eighteen gives forty-two seedlings in total."
+        },
+        {
+          "speaker": "Ethan",
+          "text": "Yes, we can use our wooden ruler and record the height!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Maya's Garden Log: Watching Seeds Grow",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Last Monday, our science group planted twenty bean seeds. First, we placed them into dark rich [1]_____ and watered them carefully. After four days, tiny green sprouts pushed [2]_____ through the soil. Strong roots grew down [3]_____ absorb water from the earth. Sunlight gave energy [4]_____ the green leaves to make food. We [5]_____ very proud of our healthy plants.",
+      "answers": {
+        "1": "soil",
+        "2": "up",
+        "3": "to",
+        "4": "to",
+        "5": "are"
+      }
+    }
   }
 };
 export default readingHubData;

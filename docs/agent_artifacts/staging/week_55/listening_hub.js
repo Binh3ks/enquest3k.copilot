@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 55 | Theme: "Cause and Effect: The Chain Reaction" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 55 | Theme: "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 55,
-  "theme": "Cause and Effect: The Chain Reaction",
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Discussing the Science Experiment",
+    "title": "Discussing Cause and Effect in the Domino Line",
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "Why did the wooden blocks fall over so quickly?"
+        "text": "Because the first domino pushed the next one in a chain reaction."
       },
       {
         "speaker": "Mia",
-        "text": "Because the first block pushed the second one in sequence."
+        "text": "Sam tapped the first block gently with his right thumb."
       },
       {
         "speaker": "Lucas",
-        "text": "How many blocks do we need to set up again?"
+        "text": "We need forty red blocks and thirty-five blue blocks."
       },
       {
         "speaker": "Mia",
-        "text": "We have twenty-eight red ones and thirty-five blue ones."
+        "text": "Forty plus thirty-five is equal to seventy-five."
       },
       {
         "speaker": "Lucas",
-        "text": "So we must carry one ten when we add them together!"
+        "text": "Yes, let's record the action from the side of the table!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Mia",
-      "text": "Every action in science has a clear cause and effect.",
-      "ipa": "/ˈɛvri ˈækʃən ɪn ˈsaɪəns hæz ə klɪər kɔːz ænd ɪˈfɛkt/"
+      "text": "Leo set up a long line of domino blocks.",
+      "ipa": "/ˈli.oʊ sɛt ʌp ə lɔŋ laɪn ʌv ˈdɑmɪnoʊ blɑks/",
+      "vietnamese": "Leo đã xếp một hàng dài các khối domino."
     },
     {
       "id": 2,
-      "speaker": "Lucas",
-      "text": "The first block fell because my elbow bumped it.",
-      "ipa": "/ðə fɜːrst blɒk fɛl bɪˈkɒz maɪ ˈɛlbəʊ bʌmpt ɪt/"
+      "text": "He pushed the first block with his finger.",
+      "ipa": "/hi pʊʃt ðə fɜrst blɑk wɪð hɪz ˈfɪŋɡər/",
+      "vietnamese": "Cậu ấy đã đẩy khối đầu tiên bằng ngón tay."
     },
     {
       "id": 3,
-      "speaker": "Mia",
-      "text": "One event triggers another in a continuous chain reaction.",
-      "ipa": "/wʌn ɪˈvɛnt ˈtrɪɡərz əˈnʌðər ɪn ə kənˈtɪnjuəs tʃeɪn riˈækʃən/"
+      "text": "One small action caused a big reaction.",
+      "ipa": "/wʌn smɔl ˈækʃən kɔzd ə bɪɡ riˈækʃən/",
+      "vietnamese": "Một hành động nhỏ đã gây ra phản ứng lớn."
     },
     {
       "id": 4,
-      "speaker": "Lucas",
-      "text": "We connect our two ideas using the conjunction so.",
-      "ipa": "/wiː kəˈnɛkt ˈaʊər tuː aɪˈdɪəz ˈjuːzɪŋ ðə kənˈdʒʌŋkʃən səʊ/"
+      "text": "All the colorful blocks fell down in order.",
+      "ipa": "/ɔl ðə ˈkʌlərfəl blɑks fɛl daʊn ɪn ˈɔrdər/",
+      "vietnamese": "Tất cả các khối màu sắc đã đổ xuống theo thứ tự."
     },
     {
       "id": 5,
-      "speaker": "Mia",
-      "text": "Write the digits in the correct place value column.",
-      "ipa": "/raɪt ðə ˈdɪdʒɪts ɪn ðə kəˈrɛkt pleɪs ˈvæljuː ˈkɒləm/"
+      "text": "We use 'because' to explain the reason.",
+      "ipa": "/wi juz bɪˈkɔz tu ɪkˈspleɪn ðə ˈrizən/",
+      "vietnamese": "Chúng ta dùng 'because' để giải thích lý do."
     },
     {
       "id": 6,
-      "speaker": "Lucas",
-      "text": "Eight plus five is thirteen, so we carry one ten.",
-      "ipa": "/eɪt plʌs faɪv ɪz θɜːrˈtiːn, səʊ wiː ˈkæri wʌn tɛn/"
+      "text": "The sum of eight and seven is fifteen.",
+      "ipa": "/ðə sʌm ʌv eɪt ænd ˈsɛvən ɪz fɪfˈtin/",
+      "vietnamese": "Tổng của tám và bảy là mười lăm."
     },
     {
       "id": 7,
-      "speaker": "Mia",
-      "text": "The total sum of our fallen blocks is sixty-three.",
-      "ipa": "/ðə ˈtəʊtl sʌm ɒv ˈaʊər ˈfɔːlən blɒks ɪz ˈsɪksti θriː/"
+      "text": "Remember to carry over one ten to the left.",
+      "ipa": "/rɪˈmɛmbər tu ˈkæri ˈoʊvər wʌn tɛn tu ðə lɛft/",
+      "vietnamese": "Hãy nhớ chuyển một chục sang cột bên trái."
     },
     {
       "id": 8,
-      "speaker": "Lucas",
-      "text": "Understanding causes helps us solve complex problems.",
-      "ipa": "/ˌʌndərˈstændɪŋ ˈkɔːzɪz hɛlps ʌs sɒlv ˈkɒmplɛks ˈprɒbləmz/"
+      "text": "Following each step helps us solve the problem.",
+      "ipa": "/ˈfɑloʊɪŋ itʃ stɛp hɛlps ʌs sɑlv ðə ˈprɑbləm/",
+      "vietnamese": "Làm theo từng bước giúp chúng ta giải quyết bài toán."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 55. Theme: Cause and Effect: The Chain Reaction.\nSpeaker: Every action in science has a clear cause and effect.\nSpeaker: The first block fell because my elbow bumped it.\nSpeaker: One event triggers another in a continuous chain reaction.\nSpeaker: We connect our two ideas using the conjunction so.\nSpeaker: Write the digits in the correct place value column.\nSpeaker: Eight plus five is thirteen, so we carry one ten.\nSpeaker: The total sum of our fallen blocks is sixty-three.\nSpeaker: Understanding causes helps us solve complex problems."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 55. Theme: ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping.\nSpeaker: Leo set up a long line of domino blocks.\nSpeaker: He pushed the first block with his finger.\nSpeaker: One small action caused a big reaction.\nSpeaker: All the colorful blocks fell down in order.\nSpeaker: We use 'because' to explain the reason.\nSpeaker: The sum of eight and seven is fifteen.\nSpeaker: Remember to carry over one ten to the left.\nSpeaker: Following each step helps us solve the problem."
 };
 export default listeningHubData;

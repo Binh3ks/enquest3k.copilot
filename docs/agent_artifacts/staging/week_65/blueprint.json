@@ -15,14 +15,34 @@
     "focus": "Logic & Data Review"
   },
   "grammar_focus": {
-    "structure": "Văn bản thuyết phục; `broadcast_studio` thuyết trình thành phố xanh",
+    "structure": "Consolidation of Cause, Problem-Solution, and Direction Language",
     "outcome": null,
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Consolidation of Cause, Problem-Solution, and Direction Language"
   },
   "vocabulary_focus": {
     "syllabus_words": [
-      "Review all keywords from Weeks 55-64"
+      "cause",
+      "effect",
+      "problem",
+      "solution",
+      "plan",
+      "step",
+      "review",
+      "practice",
+      "solve",
+      "map",
+      "compass",
+      "graph",
+      "data",
+      "summary",
+      "retell",
+      "symbol",
+      "calculate",
+      "equal",
+      "improve",
+      "success"
     ],
     "total_syllabus_words": 1,
     "target_count": 20,
@@ -110,5 +130,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 65
 }

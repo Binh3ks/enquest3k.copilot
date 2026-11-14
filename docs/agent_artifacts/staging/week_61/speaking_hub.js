@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 61 | Theme: "Main Idea Hunter: Volcanic Eruptions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 61 | Theme: "ELA: Main Idea Hunter / Math: Word Problems"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 61,
-  "theme": "Main Idea Hunter: Volcanic Eruptions",
+  "theme": "ELA: Main Idea Hunter / Math: Word Problems",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Explain the difference between a main idea and supporting details using a natural science topic like volcanoes or earthquakes.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Geology Guide A",
-      "cues": [
-        "Main topic investigated",
-        "Location of magma chamber",
-        "Total rock crates and items",
-        "Calculated remaining samples",
-        "Primary supporting detail"
-      ]
-    },
-    "card_b": {
-      "role": "Geology Guide B",
-      "cues": [
-        "Main topic investigated",
-        "Location of magma chamber",
-        "Total rock crates and items",
-        "Calculated remaining samples",
-        "Primary supporting detail"
-      ]
-    },
+    "title": "Alex and Mia's Science Exhibition Exchange",
     "table_a": {
-      "title": "Geology Guide A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Geology Guide A",
+      "title": "Alex's Volcano Model",
+      "person": "Alex",
       "fields": [
         {
-          "id": "f1",
-          "label": "Main topic investigated",
-          "cue_prompt": "what / main topic investigated?",
-          "cue_word": "main",
+          "id": "field_a1",
+          "label": "what / Alex's model?",
+          "cue_prompt": "what / Alex's model?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "A clay baking-soda volcano",
           "acceptable_questions": [
-            "What is the main topic investigated?",
-            "Can you tell me the main topic investigated?"
+            "What is Alex's model?",
+            "What kind of volcano model did Alex make?",
+            "What was his project?"
           ],
-          "nova_reply": "The main topic investigated is recorded for Main Idea Hunter: Volcanic Eruptions."
+          "nova_reply": "Alex built a clay volcano model that erupts using red vinegar and baking soda."
         },
         {
-          "id": "f2",
-          "label": "Location of magma chamber",
-          "cue_prompt": "what / location of magma chamber?",
-          "cue_word": "location",
+          "id": "field_a2",
+          "label": "where / show the model?",
+          "cue_prompt": "where / show the model?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "In the school science hall",
           "acceptable_questions": [
-            "What is the location of magma chamber?",
-            "Can you tell me the location of magma chamber?"
+            "Where did he show the model?",
+            "Where was his demonstration?",
+            "Where is the volcano display?"
           ],
-          "nova_reply": "The location of magma chamber is recorded for Main Idea Hunter: Volcanic Eruptions."
+          "nova_reply": "He showed the volcano model on Table 4 in the school science hall."
         },
         {
-          "id": "f3",
-          "label": "Total rock crates and items",
-          "cue_prompt": "what / total rock crates and items?",
-          "cue_word": "total",
-          "is_missing": false,
-          "card_value": "Total rock crates and items verified",
-          "value": "Total rock crates and items verified",
-          "examiner_question": "What is the total rock crates and items?",
-          "acceptable_answers": [
-            "It is total rock crates and items.",
-            "Total rock crates and items."
-          ]
+          "id": "field_a3",
+          "label": "how high / volcano model?",
+          "cue_prompt": "how high / volcano model?",
+          "cue_word": "how high",
+          "is_missing": true,
+          "value": "35 centimeters high",
+          "acceptable_questions": [
+            "How high is the volcano model?",
+            "How tall is the model?",
+            "What is the height of his volcano?"
+          ],
+          "nova_reply": "His volcano model stands 35 centimeters high."
         },
         {
-          "id": "f4",
-          "label": "Calculated remaining samples",
-          "cue_prompt": "what / calculated remaining samples?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated remaining samples verified",
-          "value": "Calculated remaining samples verified",
-          "examiner_question": "What is the calculated remaining samples?",
-          "acceptable_answers": [
-            "It is calculated remaining samples.",
-            "Calculated remaining samples."
-          ]
+          "id": "field_a4",
+          "label": "how many / times erupted?",
+          "cue_prompt": "how many / times erupted?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "6 times during the fair",
+          "acceptable_questions": [
+            "How many times did it erupt?",
+            "How many eruptions did he show?",
+            "How many times did he test it?"
+          ],
+          "nova_reply": "Alex made the clay volcano erupt 6 times for the visiting students."
         },
         {
-          "id": "f5",
-          "label": "Primary supporting detail",
-          "cue_prompt": "what / primary supporting detail?",
-          "cue_word": "primary",
-          "is_missing": false,
-          "card_value": "Primary supporting detail verified",
-          "value": "Primary supporting detail verified",
-          "examiner_question": "What is the primary supporting detail?",
-          "acceptable_answers": [
-            "It is primary supporting detail.",
-            "Primary supporting detail."
-          ]
+          "id": "field_a5",
+          "label": "who / helped Alex build it?",
+          "cue_prompt": "who / helped Alex build it?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "His science teacher Mr. Lee",
+          "acceptable_questions": [
+            "Who helped Alex build it?",
+            "Who helped him make the model?",
+            "Who was his teacher?"
+          ],
+          "nova_reply": "His science teacher Mr. Lee helped him mix the safe red foam."
         }
       ]
     },
     "table_b": {
-      "title": "Geology Guide B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Geology Guide B",
+      "title": "Mia's Rock Collection",
+      "person": "Mia",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Main topic investigated",
-          "cue_prompt": "what / main topic investigated?",
-          "cue_word": "main",
+          "id": "field_b1",
+          "label": "what / Mia's collection?",
+          "cue_prompt": "what / Mia's collection?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Main topic investigated on file",
-          "value": "Main topic investigated on file",
-          "examiner_question": "What is the main topic investigated?",
+          "value": "Volcanic rocks and crystals",
+          "nova_question": "What is Mia's science collection about?",
           "acceptable_answers": [
-            "It is main topic investigated.",
-            "Main topic investigated."
+            "Volcanic rocks and crystals",
+            "Volcanic rocks and crystals.",
+            "Her collection is volcanic rocks and crystals.",
+            "Volcanic rocks"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Location of magma chamber",
-          "cue_prompt": "what / location of magma chamber?",
-          "cue_word": "location",
+          "id": "field_b2",
+          "label": "where / find the rocks?",
+          "cue_prompt": "where / find the rocks?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Location of magma chamber on file",
-          "value": "Location of magma chamber on file",
-          "examiner_question": "What is the location of magma chamber?",
+          "value": "Near Black Mountain Trail",
+          "nova_question": "Where did Mia find the volcanic rocks?",
           "acceptable_answers": [
-            "It is location of magma chamber.",
-            "Location of magma chamber."
+            "Near Black Mountain Trail",
+            "On Black Mountain Trail.",
+            "She found them near Black Mountain Trail.",
+            "Black Mountain Trail"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Total rock crates and items",
-          "cue_prompt": "what / total rock crates and items?",
-          "cue_word": "total",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the total rock crates and items?",
-            "Can you tell me the total rock crates and items?"
-          ],
-          "nova_reply": "The total rock crates and items is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / rocks in box?",
+          "cue_prompt": "how many / rocks in box?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "18 labeled rocks",
+          "nova_question": "How many rocks are in her collection box?",
+          "acceptable_answers": [
+            "18 labeled rocks",
+            "Eighteen labeled rocks",
+            "There are 18 labeled rocks.",
+            "18 rocks"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Calculated remaining samples",
-          "cue_prompt": "what / calculated remaining samples?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated remaining samples?",
-            "Can you tell me the calculated remaining samples?"
-          ],
-          "nova_reply": "The calculated remaining samples is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / presentation start?",
+          "cue_prompt": "what time / presentation start?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 1:30 PM",
+          "nova_question": "What time did her rock presentation start?",
+          "acceptable_answers": [
+            "At 1:30 PM",
+            "At 1:30",
+            "It started at 1:30 PM.",
+            "1:30 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Primary supporting detail",
-          "cue_prompt": "what / primary supporting detail?",
-          "cue_word": "primary",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the primary supporting detail?",
-            "Can you tell me the primary supporting detail?"
-          ],
-          "nova_reply": "The primary supporting detail is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / gave her the wooden case?",
+          "cue_prompt": "who / gave her the wooden case?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her aunt Claire",
+          "nova_question": "Who gave Mia the wooden display case?",
+          "acceptable_answers": [
+            "Her aunt Claire",
+            "Aunt Claire",
+            "Her aunt Claire gave it to her.",
+            "Aunt Claire did"
+          ]
         }
       ]
     }

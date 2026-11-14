@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 66 | Theme: "Micro-Debate: Digital Emails vs Handwritten Letters" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 66 | Theme: "Micro-Debate 1: Email vs Handwritten Letters"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 66,
-  "theme": "Micro-Debate: Digital Emails vs Handwritten Letters",
+  "theme": "Micro-Debate 1: Email vs Handwritten Letters",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -102,14 +101,15 @@ export const skillPracticeHubData = {
             "color": "#10B981"
           }
         ],
-        "total": 68,
+        "total": 29,
         "unit": "emails",
         "comparisonType": "difference"
       },
       "problem_text": "A school community sends 68 digital email newsletters and 39 printed paper letters. How many more digital emails than printed letters were sent?",
       "problem_en": "A school community sends 68 digital email newsletters and 39 printed paper letters. How many more digital emails than printed letters were sent?",
       "answer": 29,
-      "step_by_step": "Step 1: Emails = 68. Step 2: Letters = 39. Step 3: Difference = 68 - 39 = 29 emails."
+      "step_by_step": "Step 1: Emails = 68. Step 2: Letters = 39. Step 3: Difference = 68 - 39 = 29 emails.",
+      "question": "A school community sends 68 digital email newsletters and 39 printed paper letters. How many more digital emails than printed letters were sent?"
     },
     {
       "id": 2,
@@ -142,7 +142,8 @@ export const skillPracticeHubData = {
       "problem_text": "Anna sent 45 emails, which is 18 more than Ben sent. How many emails did Ben send?",
       "problem_en": "Anna sent 45 emails, which is 18 more than Ben sent. How many emails did Ben send?",
       "answer": 27,
-      "step_by_step": "Step 1: Anna = 45. Step 2: Difference = 18. Step 3: Ben = 45 - 18 = 27 emails."
+      "step_by_step": "Step 1: Anna = 45. Step 2: Difference = 18. Step 3: Ben = 45 - 18 = 27 emails.",
+      "question": "Anna sent 45 emails, which is 18 more than Ben sent. How many emails did Ben send?"
     },
     {
       "id": 3,
@@ -175,7 +176,8 @@ export const skillPracticeHubData = {
       "problem_text": "Leo wrote 14 handwritten thank-you notes. Maria wrote 3 times as many letters as Leo. How many letters did Maria write?",
       "problem_en": "Leo wrote 14 handwritten thank-you notes. Maria wrote 3 times as many letters as Leo. How many letters did Maria write?",
       "answer": 42,
-      "step_by_step": "Step 1: Leo = 14. Step 2: Maria = 3 * 14 = 42 letters."
+      "step_by_step": "Step 1: Leo = 14. Step 2: Maria = 3 * 14 = 42 letters.",
+      "question": "Leo wrote 14 handwritten thank-you notes. Maria wrote 3 times as many letters as Leo. How many letters did Maria write?"
     },
     {
       "id": 4,
@@ -208,7 +210,8 @@ export const skillPracticeHubData = {
       "problem_text": "A pen-pal club writes 55 digital chat messages and 38 handwritten cards. What is the total count of messages exchanged?",
       "problem_en": "A pen-pal club writes 55 digital chat messages and 38 handwritten cards. What is the total count of messages exchanged?",
       "answer": 93,
-      "step_by_step": "Step 1: Digital = 55. Step 2: Cards = 38. Step 3: Total = 55 + 38 = 93 messages."
+      "step_by_step": "Step 1: Digital = 55. Step 2: Cards = 38. Step 3: Total = 55 + 38 = 93 messages.",
+      "question": "A pen-pal club writes 55 digital chat messages and 38 handwritten cards. What is the total count of messages exchanged?"
     },
     {
       "id": 5,
@@ -234,14 +237,15 @@ export const skillPracticeHubData = {
             "color": "#F97316"
           }
         ],
-        "total": 80,
+        "total": 28,
         "unit": "letters",
         "comparisonType": "difference"
       },
       "problem_text": "The principal's office prepared 80 messages for parents. If 52 messages were sent by email, how many remaining messages must be printed as letters?",
       "problem_en": "The principal's office prepared 80 messages for parents. If 52 messages were sent by email, how many remaining messages must be printed as letters?",
       "answer": 28,
-      "step_by_step": "Step 1: Total = 80. Step 2: Emails = 52. Step 3: Letters = 80 - 52 = 28 letters."
+      "step_by_step": "Step 1: Total = 80. Step 2: Emails = 52. Step 3: Letters = 80 - 52 = 28 letters.",
+      "question": "The principal's office prepared 80 messages for parents. If 52 messages were sent by email, how many remaining messages must be printed as letters?"
     }
   ],
   "science_lab": {

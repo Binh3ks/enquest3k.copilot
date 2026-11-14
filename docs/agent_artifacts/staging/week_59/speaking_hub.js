@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 59 | Theme: "Message in a Bottle: Island Mystery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 59 | Theme: "ELA: Message in a Bottle (Informal Writing) / Math: Remainders"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 59,
-  "theme": "Message in a Bottle: Island Mystery",
+  "theme": "ELA: Message in a Bottle (Informal Writing) / Math: Remainders",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Imagine you found an ancient message in a bottle. Describe what it said, who wrote it, and what clues were inside.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Beachcomber A",
-      "cues": [
-        "Bottle color and material",
-        "Greeting in the letter",
-        "Total shells inside",
-        "Divisor and remainder",
-        "Informal closing phrase"
-      ]
-    },
-    "card_b": {
-      "role": "Beachcomber B",
-      "cues": [
-        "Bottle color and material",
-        "Greeting in the letter",
-        "Total shells inside",
-        "Divisor and remainder",
-        "Informal closing phrase"
-      ]
-    },
+    "title": "Liam and Grace's Island Message Exchange",
     "table_a": {
-      "title": "Beachcomber A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Beachcomber A",
+      "title": "Liam's Island Letter",
+      "person": "Liam",
       "fields": [
         {
-          "id": "f1",
-          "label": "Bottle color and material",
-          "cue_prompt": "what / bottle color and material?",
-          "cue_word": "bottle",
+          "id": "field_a1",
+          "label": "where / find the bottle?",
+          "cue_prompt": "where / find the bottle?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "Near the rocky tide pool",
           "acceptable_questions": [
-            "What is the bottle color and material?",
-            "Can you tell me the bottle color and material?"
+            "Where did Liam find the bottle?",
+            "Where was the bottle found?",
+            "Where did he see the bottle?"
           ],
-          "nova_reply": "The bottle color and material is recorded for Message in a Bottle: Island Mystery."
+          "nova_reply": "Liam found the floating bottle near the rocky tide pool on Sandy Beach."
         },
         {
-          "id": "f2",
-          "label": "Greeting in the letter",
-          "cue_prompt": "what / greeting in the letter?",
-          "cue_word": "greeting",
+          "id": "field_a2",
+          "label": "what / inside the bottle?",
+          "cue_prompt": "what / inside the bottle?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "A rolled paper map and note",
           "acceptable_questions": [
-            "What is the greeting in the letter?",
-            "Can you tell me the greeting in the letter?"
+            "What was inside the bottle?",
+            "What did he find inside?",
+            "What was in the glass bottle?"
           ],
-          "nova_reply": "The greeting in the letter is recorded for Message in a Bottle: Island Mystery."
+          "nova_reply": "Inside the bottle was a rolled paper map and a friendly handwritten note."
         },
         {
-          "id": "f3",
-          "label": "Total shells inside",
-          "cue_prompt": "what / total shells inside?",
-          "cue_word": "total",
-          "is_missing": false,
-          "card_value": "Total shells inside verified",
-          "value": "Total shells inside verified",
-          "examiner_question": "What is the total shells inside?",
-          "acceptable_answers": [
-            "It is total shells inside.",
-            "Total shells inside."
-          ]
+          "id": "field_a3",
+          "label": "who / wrote the message?",
+          "cue_prompt": "who / wrote the message?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "A young sailor named Toby",
+          "acceptable_questions": [
+            "Who wrote the message?",
+            "Who sent the bottle?",
+            "Who was the letter from?"
+          ],
+          "nova_reply": "A young sailor named Toby wrote the message from his sailboat."
         },
         {
-          "id": "f4",
-          "label": "Divisor and remainder",
-          "cue_prompt": "what / divisor and remainder?",
-          "cue_word": "divisor",
-          "is_missing": false,
-          "card_value": "Divisor and remainder verified",
-          "value": "Divisor and remainder verified",
-          "examiner_question": "What is the divisor and remainder?",
-          "acceptable_answers": [
-            "It is divisor and remainder.",
-            "Divisor and remainder."
-          ]
+          "id": "field_a4",
+          "label": "how many / days at sea?",
+          "cue_prompt": "how many / days at sea?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "15 days at sea",
+          "acceptable_questions": [
+            "How many days was the bottle at sea?",
+            "How long was it floating?",
+            "How many days did it take?"
+          ],
+          "nova_reply": "The note said the bottle had floated for 15 days across the bay."
         },
         {
-          "id": "f5",
-          "label": "Informal closing phrase",
-          "cue_prompt": "what / informal closing phrase?",
-          "cue_word": "informal",
-          "is_missing": false,
-          "card_value": "Informal closing phrase verified",
-          "value": "Informal closing phrase verified",
-          "examiner_question": "What is the informal closing phrase?",
-          "acceptable_answers": [
-            "It is informal closing phrase.",
-            "Informal closing phrase."
-          ]
+          "id": "field_a5",
+          "label": "what / Toby's favorite news?",
+          "cue_prompt": "what / Toby's favorite news?",
+          "cue_word": "what",
+          "is_missing": true,
+          "value": "Spotting two playful dolphins",
+          "acceptable_questions": [
+            "What was Toby's favorite news?",
+            "What news did he share?",
+            "What did Toby see?"
+          ],
+          "nova_reply": "His favorite news was spotting two playful dolphins swimming beside his boat."
         }
       ]
     },
     "table_b": {
-      "title": "Beachcomber B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Beachcomber B",
+      "title": "Grace's Beach Discovery",
+      "person": "Grace",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Bottle color and material",
-          "cue_prompt": "what / bottle color and material?",
-          "cue_word": "bottle",
+          "id": "field_b1",
+          "label": "what / Grace's discovery?",
+          "cue_prompt": "what / Grace's discovery?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Bottle color and material on file",
-          "value": "Bottle color and material on file",
-          "examiner_question": "What is the bottle color and material?",
+          "value": "A blue corked glass bottle",
+          "nova_question": "What did Grace discover on the beach?",
           "acceptable_answers": [
-            "It is bottle color and material.",
-            "Bottle color and material."
+            "A blue corked glass bottle",
+            "A blue glass bottle.",
+            "She discovered a blue corked glass bottle.",
+            "Blue glass bottle"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Greeting in the letter",
-          "cue_prompt": "what / greeting in the letter?",
-          "cue_word": "greeting",
+          "id": "field_b2",
+          "label": "where / bottle washed ashore?",
+          "cue_prompt": "where / bottle washed ashore?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Greeting in the letter on file",
-          "value": "Greeting in the letter on file",
-          "examiner_question": "What is the greeting in the letter?",
+          "value": "By the tall white lighthouse",
+          "nova_question": "Where did the bottle wash ashore?",
           "acceptable_answers": [
-            "It is greeting in the letter.",
-            "Greeting in the letter."
+            "By the tall white lighthouse",
+            "By the lighthouse.",
+            "It washed ashore by the tall white lighthouse.",
+            "Near the lighthouse"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Total shells inside",
-          "cue_prompt": "what / total shells inside?",
-          "cue_word": "total",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the total shells inside?",
-            "Can you tell me the total shells inside?"
-          ],
-          "nova_reply": "The total shells inside is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / shells inside?",
+          "cue_prompt": "how many / shells inside?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "5 tiny purple shells",
+          "nova_question": "How many shells were inside the bottle with the note?",
+          "acceptable_answers": [
+            "5 tiny purple shells",
+            "Five tiny purple shells",
+            "There were 5 tiny purple shells.",
+            "5 shells"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Divisor and remainder",
-          "cue_prompt": "what / divisor and remainder?",
-          "cue_word": "divisor",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the divisor and remainder?",
-            "Can you tell me the divisor and remainder?"
-          ],
-          "nova_reply": "The divisor and remainder is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / found the bottle?",
+          "cue_prompt": "what time / found the bottle?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 10:15 AM",
+          "nova_question": "What time did Grace find the bottle?",
+          "acceptable_answers": [
+            "At 10:15 AM",
+            "At 10:15",
+            "She found it at 10:15 AM.",
+            "10:15 AM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Informal closing phrase",
-          "cue_prompt": "what / informal closing phrase?",
-          "cue_word": "informal",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the informal closing phrase?",
-            "Can you tell me the informal closing phrase?"
-          ],
-          "nova_reply": "The informal closing phrase is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / helped Grace read it?",
+          "cue_prompt": "who / helped Grace read it?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her grandfather",
+          "nova_question": "Who helped Grace read the letter?",
+          "acceptable_answers": [
+            "Her grandfather",
+            "Her grandfather helped her.",
+            "Grandfather",
+            "Her granddad"
+          ]
         }
       ]
     }

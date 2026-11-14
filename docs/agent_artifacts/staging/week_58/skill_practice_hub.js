@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -94,19 +93,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Shelf 1 to 6 (8 each)",
-            "value": 48,
+            "label": "Part A",
+            "value": 4,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 4,
+            "color": "#10B981"
           }
         ],
-        "total": 48,
+        "total": 8,
         "unit": "books",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "A school library receives 48 science encyclopedias. The librarian distributes them equally onto 6 reading shelves. How many books are placed on each shelf?",
       "problem_en": "A school library receives 48 science encyclopedias. The librarian distributes them equally onto 6 reading shelves. How many books are placed on each shelf?",
       "answer": 8,
-      "step_by_step": "Step 1: Total books = 48. Step 2: Shelves = 6. Step 3: Books per shelf = 48 / 6 = 8 books."
+      "step_by_step": "Step 1: Total books = 48. Step 2: Shelves = 6. Step 3: Books per shelf = 48 / 6 = 8 books.",
+      "question": "A school library receives 48 science encyclopedias. The librarian distributes them equally onto 6 reading shelves. How many books are placed on each shelf?"
     },
     {
       "id": 2,
@@ -124,19 +129,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "5 Pots of 7",
-            "value": 35,
+            "label": "Part A",
+            "value": 3,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 4,
             "color": "#10B981"
           }
         ],
-        "total": 35,
+        "total": 7,
         "unit": "seeds",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "Ethan has 35 sunflower seeds. He plants an equal number of seeds in each of 5 ceramic pots. How many seeds does Ethan plant in each pot?",
       "problem_en": "Ethan has 35 sunflower seeds. He plants an equal number of seeds in each of 5 ceramic pots. How many seeds does Ethan plant in each pot?",
       "answer": 7,
-      "step_by_step": "Step 1: Seeds = 35. Step 2: Pots = 5. Step 3: Seeds per pot = 35 / 5 = 7 seeds."
+      "step_by_step": "Step 1: Seeds = 35. Step 2: Pots = 5. Step 3: Seeds per pot = 35 / 5 = 7 seeds.",
+      "question": "Ethan has 35 sunflower seeds. He plants an equal number of seeds in each of 5 ceramic pots. How many seeds does Ethan plant in each pot?"
     },
     {
       "id": 3,
@@ -154,19 +165,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "9 Baskets of 6",
-            "value": 54,
-            "color": "#EF4444"
+            "label": "Part A",
+            "value": 3,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 3,
+            "color": "#10B981"
           }
         ],
-        "total": 54,
+        "total": 6,
         "unit": "apples",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "Volunteers collected 54 red apples from an orchard. They packed them equally into 9 gift baskets. How many apples were placed in each basket?",
       "problem_en": "Volunteers collected 54 red apples from an orchard. They packed them equally into 9 gift baskets. How many apples were placed in each basket?",
       "answer": 6,
-      "step_by_step": "Step 1: Apples = 54. Step 2: Baskets = 9. Step 3: Apples per basket = 54 / 9 = 6 apples."
+      "step_by_step": "Step 1: Apples = 54. Step 2: Baskets = 9. Step 3: Apples per basket = 54 / 9 = 6 apples.",
+      "question": "Volunteers collected 54 red apples from an orchard. They packed them equally into 9 gift baskets. How many apples were placed in each basket?"
     },
     {
       "id": 4,
@@ -184,19 +201,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "7 Tables of 6",
-            "value": 42,
-            "color": "#F59E0B"
+            "label": "Part A",
+            "value": 3,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 3,
+            "color": "#10B981"
           }
         ],
-        "total": 42,
+        "total": 6,
         "unit": "pencils",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "An art teacher has 42 colored pencils to distribute among 7 student tables. If each table receives the same number, how many pencils does each table get?",
       "problem_en": "An art teacher has 42 colored pencils to distribute among 7 student tables. If each table receives the same number, how many pencils does each table get?",
       "answer": 6,
-      "step_by_step": "Step 1: Pencils = 42. Step 2: Tables = 7. Step 3: Pencils per table = 42 / 7 = 6 pencils."
+      "step_by_step": "Step 1: Pencils = 42. Step 2: Tables = 7. Step 3: Pencils per table = 42 / 7 = 6 pencils.",
+      "question": "An art teacher has 42 colored pencils to distribute among 7 student tables. If each table receives the same number, how many pencils does each table get?"
     },
     {
       "id": 5,
@@ -214,19 +237,25 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "8 Borders of 9",
-            "value": 72,
-            "color": "#8B5CF6"
+            "label": "Part A",
+            "value": 4,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 5,
+            "color": "#10B981"
           }
         ],
-        "total": 72,
+        "total": 9,
         "unit": "seedlings",
         "comparisonType": "equal_sharing"
       },
       "problem_text": "A botanical garden receives 72 pine seedlings. Gardeners plant them equally along 8 garden borders. How many seedlings are planted along each border?",
       "problem_en": "A botanical garden receives 72 pine seedlings. Gardeners plant them equally along 8 garden borders. How many seedlings are planted along each border?",
       "answer": 9,
-      "step_by_step": "Step 1: Seedlings = 72. Step 2: Borders = 8. Step 3: Seedlings per border = 72 / 8 = 9 seedlings."
+      "step_by_step": "Step 1: Seedlings = 72. Step 2: Borders = 8. Step 3: Seedlings per border = 72 / 8 = 9 seedlings.",
+      "question": "A botanical garden receives 72 pine seedlings. Gardeners plant them equally along 8 garden borders. How many seedlings are planted along each border?"
     }
   ],
   "science_lab": {

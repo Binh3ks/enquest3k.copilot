@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
     "word": "problem",
     "pos": "n",
-    "ipa": "/ˈprɒbləm/",
-    "definition_en": "A difficult situation that needs a practical solution.",
-    "definition_vi": "vấn đề",
-    "example_en": "Heavy school backpacks are a common problem for students.",
-    "example_vi": "Cặp sách nặng là một vấn đề phổ biến với học sinh."
+    "ipa": "/ˈprɑːbləm/",
+    "definition_en": "A difficulty that needs to be resolved.",
+    "definition_vi": "vấn đề, khó khăn",
+    "example_en": "A leaky faucet is a small home problem.",
+    "example_vi": "Vòi nước bị rò rỉ là một vấn đề nhỏ trong nhà."
   },
   {
     "id": 2,
     "word": "solution",
     "pos": "n",
     "ipa": "/səˈluːʃən/",
-    "definition_en": "A clear way of solving a difficult challenge.",
+    "definition_en": "An answer or way to fix a problem.",
     "definition_vi": "giải pháp",
-    "example_en": "Adding wheels to suitcases was a clever solution.",
-    "example_vi": "Thêm bánh xe vào va-li là một giải pháp thông minh."
+    "example_en": "Tightening the screw was the best solution.",
+    "example_vi": "Vặn chặt ốc vít là giải pháp tốt nhất."
   },
   {
     "id": 3,
-    "word": "invent",
+    "word": "fix",
     "pos": "v",
-    "ipa": "/ɪnˈvɛnt/",
-    "definition_en": "To create or design something that did not exist before.",
-    "definition_vi": "phát minh",
-    "example_en": "Engineers invent machines to make tasks easier.",
-    "example_vi": "Các kỹ sư phát minh máy móc để làm công việc dễ dàng hơn."
+    "ipa": "/fɪks/",
+    "definition_en": "To repair or make something work again.",
+    "definition_vi": "sửa chữa",
+    "example_en": "Dad can fix the broken bicycle chain.",
+    "example_vi": "Bố có thể sửa xích xe đạp bị hỏng."
   },
   {
     "id": 4,
-    "word": "multiply",
+    "word": "solve",
     "pos": "v",
-    "ipa": "/ˈmʌltɪplaɪ/",
-    "definition_en": "To add a number to itself a specific number of times.",
-    "definition_vi": "nhân",
-    "example_en": "When you multiply six by eight, you get forty-eight.",
-    "example_vi": "Khi bạn nhân sáu với tám, bạn được bốn mươi tám."
+    "ipa": "/sɑːlv/",
+    "definition_en": "To find an answer to a problem or puzzle.",
+    "definition_vi": "giải quyết",
+    "example_en": "We can solve the math puzzle together.",
+    "example_vi": "Chúng ta có thể cùng nhau giải câu đố toán học."
   },
   {
     "id": 5,
-    "word": "array",
+    "word": "idea",
     "pos": "n",
-    "ipa": "/əˈreɪ/",
-    "definition_en": "An arrangement of objects in equal rows and columns.",
-    "definition_vi": "mảng sắp xếp theo hàng và cột",
-    "example_en": "The solar cells form a neat rectangular array.",
-    "example_vi": "Các pin mặt trời tạo thành một mảng hình chữ nhật gọn gàng."
+    "ipa": "/aɪˈdiːə/",
+    "definition_en": "A thought or plan formed in the mind.",
+    "definition_vi": "ý tưởng",
+    "example_en": "Anna had a clever idea to save water.",
+    "example_vi": "Anna có một ý tưởng thông minh để tiết kiệm nước."
   },
   {
     "id": 6,
-    "word": "equal",
-    "pos": "adj",
-    "ipa": "/ˈiːkwəl/",
-    "definition_en": "The same in amount, size, value, or number.",
-    "definition_vi": "bằng nhau",
-    "example_en": "Divide the clay into six equal portions.",
-    "example_vi": "Chia đất sét thành sáu phần bằng nhau."
+    "word": "suggest",
+    "pos": "v",
+    "ipa": "/səɡˈdʒɛst/",
+    "definition_en": "To put forward an idea for consideration.",
+    "definition_vi": "gợi ý, đề xuất",
+    "example_en": "I suggest we put labels on the storage boxes.",
+    "example_vi": "Tôi gợi ý chúng ta nên dán nhãn lên các hộp chứa đồ."
   },
   {
     "id": 7,
-    "word": "product",
-    "pos": "n",
-    "ipa": "/ˈprɒdʌkt/",
-    "definition_en": "The result obtained by multiplying two numbers.",
-    "definition_vi": "tích số",
-    "example_en": "The product of seven and five is thirty-five.",
-    "example_vi": "Tích của bảy và năm là ba mươi lăm."
+    "word": "broken",
+    "pos": "adj",
+    "ipa": "/ˈbroʊkən/",
+    "definition_en": "Damaged or not working properly.",
+    "definition_vi": "bị hỏng, bị vỡ",
+    "example_en": "Do not sit on the broken wooden chair.",
+    "example_vi": "Đừng ngồi lên chiếc ghế gỗ bị hỏng."
   },
   {
     "id": 8,
-    "word": "device",
-    "pos": "n",
-    "ipa": "/dɪˈvaɪs/",
-    "definition_en": "An object or machine made for a particular purpose.",
-    "definition_vi": "thiết bị",
-    "example_en": "A thermometer is a device that measures temperature.",
-    "example_vi": "Nhiệt kế là thiết bị đo nhiệt độ."
+    "word": "repair",
+    "pos": "v",
+    "ipa": "/rɪˈpɛr/",
+    "definition_en": "To mend something that is broken.",
+    "definition_vi": "sửa chữa, hàn gắn",
+    "example_en": "The mechanic will repair the wagon wheel.",
+    "example_vi": "Người thợ sẽ sửa bánh xe kéo."
   },
   {
     "id": 9,
-    "word": "improve",
+    "word": "multiply",
     "pos": "v",
-    "ipa": "/ɪmˈpruːv/",
-    "definition_en": "To make something better than it was before.",
-    "definition_vi": "cải tiến, nâng cao",
-    "example_en": "We can improve our robot by adding smoother wheels.",
-    "example_vi": "Chúng ta có thể cải tiến rô-bốt bằng cách thêm bánh xe êm hơn."
+    "ipa": "/ˈmʌltɪplaɪ/",
+    "definition_en": "To add a number to itself many times.",
+    "definition_vi": "nhân",
+    "example_en": "Multiply four by three to get twelve.",
+    "example_vi": "Nhân bốn với ba để được mười hai."
   },
   {
     "id": 10,
-    "word": "engineer",
-    "pos": "n",
-    "ipa": "/ˌɛndʒɪˈnɪər/",
-    "definition_en": "A person who designs and builds machines and systems.",
-    "definition_vi": "kỹ sư",
-    "example_en": "The young engineer tested the solar circuit.",
-    "example_vi": "Kỹ sư trẻ đã thử nghiệm mạch điện mặt trời."
+    "word": "times",
+    "pos": "prep",
+    "ipa": "/taɪmz/",
+    "definition_en": "Multiplied by.",
+    "definition_vi": "lần (phép nhân)",
+    "example_en": "Five times two equals ten.",
+    "example_vi": "Năm nhân hai bằng mười."
   },
   {
     "id": 11,
-    "word": "challenge",
-    "pos": "n",
-    "ipa": "/ˈtʃælɪndʒ/",
-    "definition_en": "A new or difficult task that tests ability and skill.",
-    "definition_vi": "thử thách",
-    "example_en": "Carrying water up a hill was our main challenge.",
-    "example_vi": "Mang nước lên đồi là thử thách chính của chúng tôi."
+    "word": "groups of",
+    "pos": "phrase",
+    "ipa": "/ɡrups ʌv/",
+    "definition_en": "Equal sets of items.",
+    "definition_vi": "các nhóm gồm",
+    "example_en": "Three groups of four make twelve apples.",
+    "example_vi": "Ba nhóm bốn quả tạo thành mười hai quả táo."
   },
   {
     "id": 12,
-    "word": "prototype",
+    "word": "product",
     "pos": "n",
-    "ipa": "/ˈprəʊtətaɪp/",
-    "definition_en": "The first experimental model of a new invention.",
-    "definition_vi": "mẫu thử nghiệm đầu tiên",
-    "example_en": "The cardboard prototype showed how the lever works.",
-    "example_vi": "Mẫu thử bằng bìa cứng cho thấy đòn bẩy hoạt động ra sao."
+    "ipa": "/ˈprɑːdʌkt/",
+    "definition_en": "The result of multiplying two numbers.",
+    "definition_vi": "tích số",
+    "example_en": "The product of six and two is twelve.",
+    "example_vi": "Tích của sáu và hai là mười hai."
   },
   {
     "id": 13,
-    "word": "factor",
+    "word": "array",
     "pos": "n",
-    "ipa": "/ˈfæktər/",
-    "definition_en": "A number that is multiplied by another number.",
-    "definition_vi": "thừa số",
-    "example_en": "In six times eight, six and eight are factors.",
-    "example_vi": "Trong phép tính sáu nhân tám, sáu và tám là các thừa số."
+    "ipa": "/əˈreɪ/",
+    "definition_en": "An arrangement of objects in rows and columns.",
+    "definition_vi": "mảng hàng và cột",
+    "example_en": "The stamps were arranged in a neat three-by-four array.",
+    "example_vi": "Những con tem được xếp thành một mảng ba nhân bốn ngay ngắn."
   },
   {
     "id": 14,
-    "word": "efficient",
-    "pos": "adj",
-    "ipa": "/ɪˈfɪʃənt/",
-    "definition_en": "Working well without wasting time, energy, or money.",
-    "definition_vi": "hiệu quả",
-    "example_en": "LED light bulbs are very efficient.",
-    "example_vi": "Bóng đèn LED rất tiết kiệm năng lượng và hiệu quả."
+    "word": "repeated addition",
+    "pos": "phrase",
+    "ipa": "/rɪˈpitɪd əˈdɪʃən/",
+    "definition_en": "Adding the same number over and over.",
+    "definition_vi": "phép cộng lặp lại",
+    "example_en": "We use repeated addition to count equal groups of apples.",
+    "example_vi": "Phép nhân thực chất là phép cộng lặp lại."
   },
   {
     "id": 15,
-    "word": "modify",
-    "pos": "v",
-    "ipa": "/ˈmɒdɪfaɪ/",
-    "definition_en": "To change something slightly to improve it.",
-    "definition_vi": "chỉnh sửa, sửa đổi",
-    "example_en": "We must modify the handle to make it stronger.",
-    "example_vi": "Chúng ta cần sửa đổi tay cầm để nó chắc hơn."
+    "word": "tool",
+    "pos": "n",
+    "ipa": "/tuːl/",
+    "definition_en": "An instrument used to do practical work.",
+    "definition_vi": "dụng cụ",
+    "example_en": "A screwdriver is a useful repair tool.",
+    "example_vi": "Tua vít là một dụng cụ sửa chữa hữu ích."
   },
   {
     "id": 16,
-    "word": "material",
+    "word": "machine",
     "pos": "n",
-    "ipa": "/məˈtɪəriəl/",
-    "definition_en": "A physical substance used to make things.",
-    "definition_vi": "vật liệu",
-    "example_en": "Lightweight plastic is a durable material for toys.",
-    "example_vi": "Nhựa nhẹ là vật liệu bền dùng làm đồ chơi."
+    "ipa": "/məˈʃiːn/",
+    "definition_en": "An apparatus using power to perform work.",
+    "definition_vi": "máy móc",
+    "example_en": "A sewing machine helps mend torn clothes.",
+    "example_vi": "Máy may giúp vá quần áo bị rách."
   },
   {
     "id": 17,
-    "word": "patent",
-    "pos": "n",
-    "ipa": "/ˈpeɪtənt/",
-    "definition_en": "An official right protecting an inventor's new design.",
-    "definition_vi": "bằng sáng chế",
-    "example_en": "The inventor received a patent for her water filter.",
-    "example_vi": "Nhà phát minh đã nhận bằng sáng chế cho bộ lọc nước của mình."
+    "word": "help",
+    "pos": "v",
+    "ipa": "/hɛlp/",
+    "definition_en": "To give assistance or support.",
+    "definition_vi": "giúp đỡ",
+    "example_en": "Good tools help us fix broken toys.",
+    "example_vi": "Dụng cụ tốt giúp chúng ta sửa đồ chơi hỏng."
   },
   {
     "id": 18,
-    "word": "assemble",
+    "word": "build",
     "pos": "v",
-    "ipa": "/əˈsɛmbl/",
-    "definition_en": "To put parts together to form a complete object.",
-    "definition_vi": "lắp ráp",
-    "example_en": "Students assemble miniature wind turbines in class.",
-    "example_vi": "Học sinh lắp ráp các tuabin gió thu nhỏ trong lớp."
+    "ipa": "/bɪld/",
+    "definition_en": "To construct something by putting parts together.",
+    "definition_vi": "xây dựng, lắp ráp",
+    "example_en": "Students build wooden birdhouses in workshop class.",
+    "example_vi": "Học sinh lắp ráp chuồng chim bằng gỗ trong giờ thực hành."
   },
   {
     "id": 19,
-    "word": "creative",
-    "pos": "adj",
-    "ipa": "/kriˈeɪtɪv/",
-    "definition_en": "Having the ability to generate new and original ideas.",
-    "definition_vi": "sáng tạo",
-    "example_en": "Creative thinkers find simple answers to hard problems.",
-    "example_vi": "Những người có tư duy sáng tạo tìm ra câu trả lời đơn giản cho vấn đề khó."
+    "word": "work",
+    "pos": "v",
+    "ipa": "/wɜːrk/",
+    "definition_en": "To function correctly.",
+    "definition_vi": "hoạt động tốt",
+    "example_en": "After oiling the gears, the clock will work.",
+    "example_vi": "Sau khi tra dầu vào bánh răng, đồng hồ sẽ hoạt động tốt."
   },
   {
     "id": 20,
-    "word": "gear",
-    "pos": "n",
-    "ipa": "/ɡɪər/",
-    "definition_en": "A toothed wheel that turns to transfer motion in machines.",
-    "definition_vi": "bánh răng",
-    "example_en": "Bicycle gears make riding up steep slopes easier.",
-    "example_vi": "Bánh răng xe đạp giúp đạp xe lên dốc đứng dễ dàng hơn."
+    "word": "clever",
+    "pos": "adj",
+    "ipa": "/ˈklɛvər/",
+    "definition_en": "Smart and quick at learning or solving things.",
+    "definition_vi": "thông minh, khéo léo",
+    "example_en": "She found a clever solution to carry books.",
+    "example_vi": "Bạn ấy tìm ra giải pháp thông minh để mang sách."
   }
 ];
 export const vocabList = vocab;

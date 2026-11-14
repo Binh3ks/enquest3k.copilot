@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 69 | Theme: "Environmental Protection: Eco-Warriors" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 69 | Theme: "Science/ELA: Environmental Protection / Math: Line Plots"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "environment",
-    "pos": "n",
-    "ipa": "/ɪnˈvaɪrənmənt/",
-    "definition_en": "The natural world of land, sea, plants, and animals.",
-    "definition_vi": "môi trường",
-    "example_en": "We must protect our local forest environment.",
-    "example_vi": "Chúng ta phải bảo vệ môi trường rừng địa phương."
-  },
-  {
-    "id": 2,
     "word": "protect",
     "pos": "v",
     "ipa": "/prəˈtɛkt/",
-    "definition_en": "To keep safe from harm, damage, or pollution.",
+    "definition_en": "To keep safe from harm or damage.",
     "definition_vi": "bảo vệ",
-    "example_en": "Citizens ought to protect wildlife habitats.",
-    "example_vi": "Công dân nên bảo vệ môi trường sống của động vật hoang dã."
+    "example_en": "We must protect wildlife habitats from trash.",
+    "example_vi": "Chúng ta phải bảo vệ môi trường sống của động vật hoang dã khỏi rác thải."
+  },
+  {
+    "id": 2,
+    "word": "save",
+    "pos": "v",
+    "ipa": "/seɪv/",
+    "definition_en": "To prevent something from being wasted or lost.",
+    "definition_vi": "tiết kiệm, cứu lấy",
+    "example_en": "Turn off the tap to save clean water.",
+    "example_vi": "Hãy khóa vòi nước để tiết kiệm nước sạch."
   },
   {
     "id": 3,
-    "word": "pollution",
+    "word": "environment",
     "pos": "n",
-    "ipa": "/pəˈluːʃən/",
-    "definition_en": "Harmful substances released into water, air, or soil.",
-    "definition_vi": "sự ô nhiễm",
-    "example_en": "Plastic trash causes severe ocean pollution.",
-    "example_vi": "Rác thải nhựa gây ô nhiễm đại dương nghiêm trọng."
+    "ipa": "/ɪnˈvaɪrənmənt/",
+    "definition_en": "The natural world of land, sea, and air.",
+    "definition_vi": "môi trường",
+    "example_en": "Planting trees helps our local environment thrive.",
+    "example_vi": "Trồng cây giúp môi trường địa phương của chúng ta phát triển xanh tốt."
   },
   {
     "id": 4,
-    "word": "recycle",
-    "pos": "v",
-    "ipa": "/ˌriːˈsaɪkl/",
-    "definition_en": "To convert waste materials into reusable objects.",
-    "definition_vi": "tái chế",
-    "example_en": "Students recycle paper cartons in blue bins.",
-    "example_vi": "Học sinh tái chế hộp giấy trong các thùng màu xanh."
+    "word": "pollution",
+    "pos": "n",
+    "ipa": "/pəˈluːʃən/",
+    "definition_en": "Harmful substances in the air, water, or land.",
+    "definition_vi": "sự ô nhiễm",
+    "example_en": "Plastic bottles create plastic pollution on beaches.",
+    "example_vi": "Chai nhựa tạo ra ô nhiễm rác thải nhựa trên các bãi biển."
   },
   {
     "id": 5,
-    "word": "conservation",
+    "word": "waste",
     "pos": "n",
-    "ipa": "/ˌkɒnsərˈveɪʃən/",
-    "definition_en": "The prevention of wasteful use of natural resources.",
-    "definition_vi": "sự bảo tồn",
-    "example_en": "Water conservation is essential during dry summers.",
-    "example_vi": "Bảo tồn nguồn nước là điều thiết yếu trong những mùa hè khô hạn."
+    "ipa": "/weɪst/",
+    "definition_en": "Material that is not wanted; trash.",
+    "definition_vi": "chất thải, rác",
+    "example_en": "Throw paper waste into the blue bin.",
+    "example_vi": "Hãy vứt rác thải giấy vào thùng màu xanh dương."
   },
   {
     "id": 6,
-    "word": "habitat",
-    "pos": "n",
-    "ipa": "/ˈhæbɪtæt/",
-    "definition_en": "The natural home or environment of a plant or animal.",
-    "definition_vi": "môi trường sống tự nhiên",
-    "example_en": "Wetlands provide a rich habitat for heron birds.",
-    "example_vi": "Đất ngập nước mang lại môi trường sống phong phú cho chim diệc."
+    "word": "recycle",
+    "pos": "v",
+    "ipa": "/ˌriːˈsaɪkl/",
+    "definition_en": "To convert waste into reusable material.",
+    "definition_vi": "tái chế",
+    "example_en": "We can recycle clean bottles and tin cans.",
+    "example_vi": "Chúng ta có thể tái chế những chiếc chai sạch và lon thiếc."
   },
   {
     "id": 7,
-    "word": "plot",
-    "pos": "n",
-    "ipa": "/plɒt/",
-    "definition_en": "A graph showing data frequency as marks along a number line.",
-    "definition_vi": "biểu đồ điểm (line plot)",
-    "example_en": "The line plot records daily hours spent volunteering.",
-    "example_vi": "Biểu đồ điểm ghi lại số giờ tình nguyện mỗi ngày."
+    "word": "clean",
+    "pos": "adj",
+    "ipa": "/klin/",
+    "definition_en": "Free from dirt, marks, or pollution.",
+    "definition_vi": "sạch sẽ",
+    "example_en": "Keep the forest stream clean for fish.",
+    "example_vi": "Hãy giữ cho con suối trong rừng sạch sẽ cho loài cá."
   },
   {
     "id": 8,
-    "word": "frequency",
-    "pos": "n",
-    "ipa": "/ˈfriːkwənsi/",
-    "definition_en": "The number of times an event or value occurs.",
-    "definition_vi": "tần số, tần suất",
-    "example_en": "Count the frequency of checkmarks above each number.",
-    "example_vi": "Hãy đếm tần số các dấu tích phía trên mỗi con số."
+    "word": "dirty",
+    "pos": "adj",
+    "ipa": "/ˈdɜːrti/",
+    "definition_en": "Covered or marked with an unclean substance.",
+    "definition_vi": "bẩn, ô nhiễm",
+    "example_en": "Never leave dirty plastic bags in the grass.",
+    "example_vi": "Đừng bao giờ để lại túi nilon bẩn trên thảm cỏ."
   },
   {
     "id": 9,
-    "word": "obligation",
+    "word": "plot",
     "pos": "n",
-    "ipa": "/ˌɒblɪˈɡeɪʃən/",
-    "definition_en": "A duty or commitment that one is bound to fulfill.",
-    "definition_vi": "nghĩa vụ, bổn phận",
-    "example_en": "We have an ecological obligation to clean our rivers.",
-    "example_vi": "Chúng ta có bổn phận sinh thái là làm sạch các dòng sông."
+    "ipa": "/plɑːt/",
+    "definition_en": "A diagram showing frequency with marks.",
+    "definition_vi": "biểu đồ điểm",
+    "example_en": "A line plot uses X marks above a line.",
+    "example_vi": "Một biểu đồ điểm dùng các dấu X ở phía trên một đường thẳng."
   },
   {
     "id": 10,
-    "word": "ought",
-    "pos": "v",
-    "ipa": "/ɔːt/",
-    "definition_en": "Used to express moral duty, advice, or correctness.",
-    "definition_vi": "nên, có bổn phận phải",
-    "example_en": "Schools ought to install solar energy panels.",
-    "example_vi": "Các trường học nên lắp đặt pin năng lượng mặt trời."
+    "word": "frequency",
+    "pos": "n",
+    "ipa": "/ˈfriːkwənsi/",
+    "definition_en": "The rate at which something occurs.",
+    "definition_vi": "tần suất",
+    "example_en": "Count the frequency of X marks above number four.",
+    "example_vi": "Hãy đếm tần suất các dấu X phía trên số bốn."
   },
   {
     "id": 11,
-    "word": "sustainable",
-    "pos": "adj",
-    "ipa": "/səˈsteɪnəbl/",
-    "definition_en": "Able to be maintained without depleting natural resources.",
-    "definition_vi": "bền vững",
-    "example_en": "Bamboo is a highly sustainable building material.",
-    "example_vi": "Tre là một vật liệu xây dựng có tính bền vững cao."
+    "word": "line plot",
+    "pos": "phrase",
+    "ipa": "/laɪn plɑt/",
+    "definition_en": "A graph showing frequency of data along a number line.",
+    "definition_vi": "biểu đồ điểm đường",
+    "example_en": "Draw a line plot to track recycled cans.",
+    "example_vi": "Hãy vẽ biểu đồ điểm đường để theo dõi số lon được tái chế."
   },
   {
     "id": 12,
-    "word": "compost",
-    "pos": "n",
-    "ipa": "/ˈkɒmpɒst/",
-    "definition_en": "Decayed organic material used to fertilize soil.",
-    "definition_vi": "phân ủ hữu cơ",
-    "example_en": "Fruit peels and leaves make rich garden compost.",
-    "example_vi": "Vỏ trái cây và lá cây tạo thành phân ủ hữu cơ màu mỡ."
+    "word": "most common",
+    "pos": "phrase",
+    "ipa": "/moʊst ˈkɑmən/",
+    "definition_en": "Happening or seen most often among a group.",
+    "definition_vi": "phổ biến nhất, có tần suất cao nhất",
+    "example_en": "Three bottles was the most common number collected.",
+    "example_vi": "Ba chiếc chai là số lượng được thu gom phổ biến nhất."
   },
   {
     "id": 13,
-    "word": "renewable",
-    "pos": "adj",
-    "ipa": "/rɪˈnjuːəbl/",
-    "definition_en": "Capable of being replenished naturally over short periods.",
-    "definition_vi": "có thể tái tạo",
-    "example_en": "Wind and sunlight are clean renewable energy sources.",
-    "example_vi": "Gió và ánh nắng là các nguồn năng lượng tái tạo sạch."
+    "word": "x-mark",
+    "pos": "n",
+    "ipa": "/ɛks mɑrk/",
+    "definition_en": "An X drawn on a line plot representing one item.",
+    "definition_vi": "dấu X trên biểu đồ điểm",
+    "example_en": "Each x-mark stands for one collected bottle.",
+    "example_vi": "Mỗi dấu X đại diện cho một chiếc chai được thu gom."
   },
   {
     "id": 14,
-    "word": "ecosystem",
+    "word": "earth",
     "pos": "n",
-    "ipa": "/ˈiːkəʊˌsɪstəm/",
-    "definition_en": "A biological community of interacting organisms.",
-    "definition_vi": "hệ sinh thái",
-    "example_en": "Coral reefs form a fragile marine ecosystem.",
-    "example_vi": "Rạn san hô tạo thành một hệ sinh thái biển mỏng manh."
+    "ipa": "/ɜːrθ/",
+    "definition_en": "The round planet on which we live.",
+    "definition_vi": "Trái đất",
+    "example_en": "Every child can help save our green Earth.",
+    "example_vi": "Mỗi bạn nhỏ đều có thể giúp cứu lấy Trái đất xanh của chúng ta."
   },
   {
     "id": 15,
-    "word": "reduction",
-    "pos": "n",
-    "ipa": "/rɪˈdʌkʃən/",
-    "definition_en": "The act of making something smaller or less in amount.",
-    "definition_vi": "sự giảm thiểu",
-    "example_en": "Waste reduction is the first step in going green.",
-    "example_vi": "Giảm thiểu rác thải là bước đầu tiên trong lối sống xanh."
+    "word": "plant",
+    "pos": "v",
+    "ipa": "/plænt/",
+    "definition_en": "To place a seed or sapling in earth to grow.",
+    "definition_vi": "trồng cây",
+    "example_en": "Students plant young trees in the schoolyard.",
+    "example_vi": "Học sinh trồng những cây con trong sân trường."
   },
   {
     "id": 16,
-    "word": "volunteer",
-    "pos": "v",
-    "ipa": "/ˌvɒlənˈtɪər/",
-    "definition_en": "To offer time and effort freely for a good cause.",
-    "definition_vi": "tình nguyện",
-    "example_en": "Students volunteer to collect litter on the beach.",
-    "example_vi": "Học sinh tình nguyện đi nhặt rác trên bãi biển."
+    "word": "tree",
+    "pos": "n",
+    "ipa": "/triː/",
+    "definition_en": "A woody perennial plant with a trunk.",
+    "definition_vi": "cây cối",
+    "example_en": "A tall tree gives shade and clean oxygen.",
+    "example_vi": "Một cái cây cao mang lại bóng mát và khí oxy trong lành."
   },
   {
     "id": 17,
-    "word": "guideline",
+    "word": "water",
     "pos": "n",
-    "ipa": "/ˈɡaɪdlaɪn/",
-    "definition_en": "A general rule, principle, or piece of practical advice.",
-    "definition_vi": "hướng dẫn, chỉ dẫn",
-    "example_en": "Follow the municipal recycling guidelines carefully.",
-    "example_vi": "Hãy làm theo các chỉ dẫn tái chế của thành phố cẩn thận."
+    "ipa": "/ˈwɔːtər/",
+    "definition_en": "Clear liquid essential for plant and animal life.",
+    "definition_vi": "nước",
+    "example_en": "Fresh water is precious for all living things.",
+    "example_vi": "Nước ngọt rất quý giá đối với mọi sinh vật."
   },
   {
     "id": 18,
-    "word": "restore",
-    "pos": "v",
-    "ipa": "/rɪˈstɔːr/",
-    "definition_en": "To bring something back to a healthy original condition.",
-    "definition_vi": "phục hồi",
-    "example_en": "Tree planting will restore the eroded riverbank.",
-    "example_vi": "Trồng cây sẽ phục hồi bờ sông bị xói mòn."
+    "word": "bottle",
+    "pos": "n",
+    "ipa": "/ˈbɑːtl/",
+    "definition_en": "A container typically made of glass or plastic.",
+    "definition_vi": "chiếc chai",
+    "example_en": "Reuse your water bottle instead of buying plastic.",
+    "example_vi": "Hãy tái sử dụng bình nước thay vì mua chai nhựa."
   },
   {
     "id": 19,
-    "word": "impact",
+    "word": "plastic",
     "pos": "n",
-    "ipa": "/ˈɪmpækt/",
-    "definition_en": "The noticeable effect or influence of an action.",
-    "definition_vi": "tác động",
-    "example_en": "Reusing bags has a positive impact on wildlife.",
-    "example_vi": "Tái sử dụng túi mang lại tác động tích cực đối với động vật hoang dã."
+    "ipa": "/ˈplæstɪk/",
+    "definition_en": "Synthetic material that does not rot easily.",
+    "definition_vi": "chất dẻo, nhựa",
+    "example_en": "Avoid single-use plastic when shopping.",
+    "example_vi": "Hãy tránh đồ nhựa dùng một lần khi đi mua sắm."
   },
   {
     "id": 20,
-    "word": "species",
+    "word": "nature",
     "pos": "n",
-    "ipa": "/ˈspiːʃiːz/",
-    "definition_en": "A group of living organisms consisting of similar individuals.",
-    "definition_vi": "loài sinh vật",
-    "example_en": "Hundreds of insect species thrive in the forest.",
-    "example_vi": "Hàng trăm loài côn trùng phát triển mạnh trong rừng."
+    "ipa": "/ˈneɪtʃər/",
+    "definition_en": "The physical world including plants and animals.",
+    "definition_vi": "thiên nhiên",
+    "example_en": "Enjoy the beauty of nature on your hike.",
+    "example_vi": "Hãy tận hưởng vẻ đẹp của thiên nhiên trong chuyến đi bộ."
   }
 ];
 export const vocabList = vocab;

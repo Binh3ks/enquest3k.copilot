@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 64 | Theme: "Data Stories: Reading Pictographs" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 64 | Theme: "ELA: Data Stories / Math: Pictographs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 64,
-  "theme": "Data Stories: Reading Pictographs",
+  "theme": "ELA: Data Stories / Math: Pictographs",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Present a short news broadcast explaining a survey about healthy school snacks or sports. Use data phrases like 'most popular', 'least chosen', and 'twice as many'.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Data Analyst A",
-      "cues": [
-        "Survey topic investigated",
-        "Key scale per icon",
-        "Most popular category",
-        "Least common category",
-        "Calculated difference"
-      ]
-    },
-    "card_b": {
-      "role": "Data Analyst B",
-      "cues": [
-        "Survey topic investigated",
-        "Key scale per icon",
-        "Most popular category",
-        "Least common category",
-        "Calculated difference"
-      ]
-    },
+    "title": "Mason and Ella's Survey Data Exchange",
     "table_a": {
-      "title": "Data Analyst A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Data Analyst A",
+      "title": "Mason's Pet Survey Chart",
+      "person": "Mason",
       "fields": [
         {
-          "id": "f1",
-          "label": "Survey topic investigated",
-          "cue_prompt": "what / survey topic investigated?",
-          "cue_word": "survey",
+          "id": "field_a1",
+          "label": "what / survey topic?",
+          "cue_prompt": "what / survey topic?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Favorite household pets",
           "acceptable_questions": [
-            "What is the survey topic investigated?",
-            "Can you tell me the survey topic investigated?"
+            "What is Mason's survey topic?",
+            "What was his survey about?",
+            "What did Mason survey his classmates about?"
           ],
-          "nova_reply": "The survey topic investigated is recorded for Data Stories: Reading Pictographs."
+          "nova_reply": "Mason surveyed third-grade students about their favorite household pets."
         },
         {
-          "id": "f2",
-          "label": "Key scale per icon",
-          "cue_prompt": "what / key scale per icon?",
-          "cue_word": "key",
+          "id": "field_a2",
+          "label": "what / value of each symbol?",
+          "cue_prompt": "what / value of each symbol?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "1 paw symbol = 2 students",
           "acceptable_questions": [
-            "What is the key scale per icon?",
-            "Can you tell me the key scale per icon?"
+            "What is the value of each symbol?",
+            "What does one paw picture mean?",
+            "What does the key show?"
           ],
-          "nova_reply": "The key scale per icon is recorded for Data Stories: Reading Pictographs."
+          "nova_reply": "In his pictograph key, each paw print symbol stands for 2 student votes."
         },
         {
-          "id": "f3",
-          "label": "Most popular category",
-          "cue_prompt": "what / most popular category?",
-          "cue_word": "most",
-          "is_missing": false,
-          "card_value": "Most popular category verified",
-          "value": "Most popular category verified",
-          "examiner_question": "What is the most popular category?",
-          "acceptable_answers": [
-            "It is most popular category.",
-            "Most popular category."
-          ]
+          "id": "field_a3",
+          "label": "which pet / most popular?",
+          "cue_prompt": "which pet / most popular?",
+          "cue_word": "which pet",
+          "is_missing": true,
+          "value": "Dogs with 16 votes",
+          "acceptable_questions": [
+            "Which pet was the most popular?",
+            "Which pet got the most votes?",
+            "Which animal won the survey?"
+          ],
+          "nova_reply": "Dogs were the most popular pet with 8 symbols, which means 16 votes."
         },
         {
-          "id": "f4",
-          "label": "Least common category",
-          "cue_prompt": "what / least common category?",
-          "cue_word": "least",
-          "is_missing": false,
-          "card_value": "Least common category verified",
-          "value": "Least common category verified",
-          "examiner_question": "What is the least common category?",
-          "acceptable_answers": [
-            "It is least common category.",
-            "Least common category."
-          ]
+          "id": "field_a4",
+          "label": "which pet / least popular?",
+          "cue_prompt": "which pet / least popular?",
+          "cue_word": "which pet",
+          "is_missing": true,
+          "value": "Hamsters with 4 votes",
+          "acceptable_questions": [
+            "Which pet was the least popular?",
+            "Which animal got the fewest votes?",
+            "Which pet had the least number?"
+          ],
+          "nova_reply": "Hamsters were the least popular choice with only 2 symbols, or 4 votes."
         },
         {
-          "id": "f5",
-          "label": "Calculated difference",
-          "cue_prompt": "what / calculated difference?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated difference verified",
-          "value": "Calculated difference verified",
-          "examiner_question": "What is the calculated difference?",
-          "acceptable_answers": [
-            "It is calculated difference.",
-            "Calculated difference."
-          ]
+          "id": "field_a5",
+          "label": "how many / students surveyed?",
+          "cue_prompt": "how many / students surveyed?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "30 students in total",
+          "acceptable_questions": [
+            "How many students did he survey?",
+            "What was the total number of students?",
+            "How many children voted?"
+          ],
+          "nova_reply": "Mason surveyed a total of 30 students in the third grade."
         }
       ]
     },
     "table_b": {
-      "title": "Data Analyst B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Data Analyst B",
+      "title": "Ella's Favorite Fruit Pictograph",
+      "person": "Ella",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Survey topic investigated",
-          "cue_prompt": "what / survey topic investigated?",
-          "cue_word": "survey",
+          "id": "field_b1",
+          "label": "what / Ella's chart topic?",
+          "cue_prompt": "what / Ella's chart topic?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Survey topic investigated on file",
-          "value": "Survey topic investigated on file",
-          "examiner_question": "What is the survey topic investigated?",
+          "value": "Favorite cafeteria fruits",
+          "nova_question": "What is the topic of Ella's pictograph chart?",
           "acceptable_answers": [
-            "It is survey topic investigated.",
-            "Survey topic investigated."
+            "Favorite cafeteria fruits",
+            "Favorite fruits.",
+            "Her chart is about favorite cafeteria fruits.",
+            "Cafeteria fruits"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Key scale per icon",
-          "cue_prompt": "what / key scale per icon?",
-          "cue_word": "key",
+          "id": "field_b2",
+          "label": "what / symbol in the key?",
+          "cue_prompt": "what / symbol in the key?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Key scale per icon on file",
-          "value": "Key scale per icon on file",
-          "examiner_question": "What is the key scale per icon?",
+          "value": "1 fruit basket = 5 students",
+          "nova_question": "What does one fruit basket symbol stand for in her key?",
           "acceptable_answers": [
-            "It is key scale per icon.",
-            "Key scale per icon."
+            "1 fruit basket = 5 students",
+            "Five students.",
+            "It stands for 5 students.",
+            "5 students"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Most popular category",
-          "cue_prompt": "what / most popular category?",
-          "cue_word": "most",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the most popular category?",
-            "Can you tell me the most popular category?"
-          ],
-          "nova_reply": "The most popular category is confirmed in our notes."
+          "id": "field_b3",
+          "label": "which fruit / most popular?",
+          "cue_prompt": "which fruit / most popular?",
+          "cue_word": "which fruit",
+          "is_missing": false,
+          "value": "Strawberries with 25 votes",
+          "nova_question": "Which fruit was the most popular in her survey?",
+          "acceptable_answers": [
+            "Strawberries with 25 votes",
+            "Strawberries.",
+            "Strawberries were the most popular.",
+            "Sweet strawberries"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Least common category",
-          "cue_prompt": "what / least common category?",
-          "cue_word": "least",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the least common category?",
-            "Can you tell me the least common category?"
-          ],
-          "nova_reply": "The least common category is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / displayed chart?",
+          "cue_prompt": "what time / displayed chart?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 11:30 AM",
+          "nova_question": "What time did Ella display her chart in the cafeteria?",
+          "acceptable_answers": [
+            "At 11:30 AM",
+            "At 11:30",
+            "She displayed it at 11:30 AM.",
+            "11:30 AM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Calculated difference",
-          "cue_prompt": "what / calculated difference?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated difference?",
-            "Can you tell me the calculated difference?"
-          ],
-          "nova_reply": "The calculated difference is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / helped count votes?",
+          "cue_prompt": "who / helped count votes?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her classmate Daniel",
+          "nova_question": "Who helped Ella count the student votes?",
+          "acceptable_answers": [
+            "Her classmate Daniel",
+            "Daniel",
+            "Her classmate Daniel helped her count.",
+            "Classmate Daniel"
+          ]
         }
       ]
     }

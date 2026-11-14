@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Fair Sharing in the Community Center",

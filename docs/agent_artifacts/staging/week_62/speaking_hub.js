@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 62 | Theme: "The Movie Trailer: Summarizing Stories" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 62 | Theme: "ELA: The Movie Trailer (Summarizing) / Math: Rounding"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 62,
-  "theme": "The Movie Trailer: Summarizing Stories",
+  "theme": "ELA: The Movie Trailer (Summarizing) / Math: Rounding",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Deliver a 1-minute movie trailer voiceover for your favorite book or film. Paraphrase the plot in three punchy sentences.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Producer A",
-      "cues": [
-        "Film title and genre",
-        "Three-sentence summary",
-        "Friday ticket count",
-        "Friday count rounded to 10",
-        "Audience feedback"
-      ]
-    },
-    "card_b": {
-      "role": "Producer B",
-      "cues": [
-        "Film title and genre",
-        "Three-sentence summary",
-        "Friday ticket count",
-        "Friday count rounded to 10",
-        "Audience feedback"
-      ]
-    },
+    "title": "Noah and Ava's Short Movie Exchange",
     "table_a": {
-      "title": "Producer A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Producer A",
+      "title": "Noah's Cartoon Trailer",
+      "person": "Noah",
       "fields": [
         {
-          "id": "f1",
-          "label": "Film title and genre",
-          "cue_prompt": "what / film title and genre?",
-          "cue_word": "film",
+          "id": "field_a1",
+          "label": "what / movie title?",
+          "cue_prompt": "what / movie title?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "The Brave Little Tugboat",
           "acceptable_questions": [
-            "What is the film title and genre?",
-            "Can you tell me the film title and genre?"
+            "What is the movie title?",
+            "What is Noah's cartoon called?",
+            "What is the name of his movie?"
           ],
-          "nova_reply": "The film title and genre is recorded for The Movie Trailer: Summarizing Stories."
+          "nova_reply": "Noah's cartoon movie trailer is titled 'The Brave Little Tugboat'."
         },
         {
-          "id": "f2",
-          "label": "Three-sentence summary",
-          "cue_prompt": "what / three-sentence summary?",
-          "cue_word": "three-sentence",
+          "id": "field_a2",
+          "label": "who / main character?",
+          "cue_prompt": "who / main character?",
+          "cue_word": "who",
           "is_missing": true,
+          "value": "A red tugboat named Barnaby",
           "acceptable_questions": [
-            "What is the three-sentence summary?",
-            "Can you tell me the three-sentence summary?"
+            "Who is the main character?",
+            "Who is the hero of the story?",
+            "Who stars in the cartoon?"
           ],
-          "nova_reply": "The three-sentence summary is recorded for The Movie Trailer: Summarizing Stories."
+          "nova_reply": "The main character is a cheerful red tugboat named Barnaby."
         },
         {
-          "id": "f3",
-          "label": "Friday ticket count",
-          "cue_prompt": "what / friday ticket count?",
-          "cue_word": "friday",
-          "is_missing": false,
-          "card_value": "Friday ticket count verified",
-          "value": "Friday ticket count verified",
-          "examiner_question": "What is the friday ticket count?",
-          "acceptable_answers": [
-            "It is friday ticket count.",
-            "Friday ticket count."
-          ]
+          "id": "field_a3",
+          "label": "where / story take place?",
+          "cue_prompt": "where / story take place?",
+          "cue_word": "where",
+          "is_missing": true,
+          "value": "In Sunny Cove Harbor",
+          "acceptable_questions": [
+            "Where does the story take place?",
+            "Where is the movie set?",
+            "Where does Barnaby live?"
+          ],
+          "nova_reply": "The story takes place in a busy harbor called Sunny Cove."
         },
         {
-          "id": "f4",
-          "label": "Friday count rounded to 10",
-          "cue_prompt": "what / friday count rounded to 10?",
-          "cue_word": "friday",
-          "is_missing": false,
-          "card_value": "Friday count rounded to 10 verified",
-          "value": "Friday count rounded to 10 verified",
-          "examiner_question": "What is the friday count rounded to 10?",
-          "acceptable_answers": [
-            "It is friday count rounded to 10.",
-            "Friday count rounded to 10."
-          ]
+          "id": "field_a4",
+          "label": "how long / trailer lasts?",
+          "cue_prompt": "how long / trailer lasts?",
+          "cue_word": "how long",
+          "is_missing": true,
+          "value": "90 seconds long",
+          "acceptable_questions": [
+            "How long does the trailer last?",
+            "How long is his trailer?",
+            "What is the length of the trailer?"
+          ],
+          "nova_reply": "His cartoon trailer lasts for exactly 90 seconds."
         },
         {
-          "id": "f5",
-          "label": "Audience feedback",
-          "cue_prompt": "what / audience feedback?",
-          "cue_word": "audience",
-          "is_missing": false,
-          "card_value": "Audience feedback verified",
-          "value": "Audience feedback verified",
-          "examiner_question": "What is the audience feedback?",
-          "acceptable_answers": [
-            "It is audience feedback.",
-            "Audience feedback."
-          ]
+          "id": "field_a5",
+          "label": "how many / students watched it?",
+          "cue_prompt": "how many / students watched it?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "About 80 students (rounded from 78)",
+          "acceptable_questions": [
+            "How many students watched it?",
+            "How many people saw the trailer?",
+            "How many students attended the screening?"
+          ],
+          "nova_reply": "About 80 students watched the trailer in the auditorium (rounded from 78)."
         }
       ]
     },
     "table_b": {
-      "title": "Producer B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Producer B",
+      "title": "Ava's Nature Film",
+      "person": "Ava",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Film title and genre",
-          "cue_prompt": "what / film title and genre?",
-          "cue_word": "film",
+          "id": "field_b1",
+          "label": "what / Ava's film about?",
+          "cue_prompt": "what / Ava's film about?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Film title and genre on file",
-          "value": "Film title and genre on file",
-          "examiner_question": "What is the film title and genre?",
+          "value": "Sea turtles returning to the ocean",
+          "nova_question": "What is Ava's short film about?",
           "acceptable_answers": [
-            "It is film title and genre.",
-            "Film title and genre."
+            "Sea turtles returning to the ocean",
+            "Sea turtles returning to the ocean.",
+            "Her film is about sea turtles returning to the ocean.",
+            "Sea turtles"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Three-sentence summary",
-          "cue_prompt": "what / three-sentence summary?",
-          "cue_word": "three-sentence",
+          "id": "field_b2",
+          "label": "where / film recorded?",
+          "cue_prompt": "where / film recorded?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Three-sentence summary on file",
-          "value": "Three-sentence summary on file",
-          "examiner_question": "What is the three-sentence summary?",
+          "value": "On Shell Bay Beach",
+          "nova_question": "Where was her nature film recorded?",
           "acceptable_answers": [
-            "It is three-sentence summary.",
-            "Three-sentence summary."
+            "On Shell Bay Beach",
+            "At Shell Bay Beach.",
+            "She filmed it on Shell Bay Beach.",
+            "Shell Bay Beach"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Friday ticket count",
-          "cue_prompt": "what / friday ticket count?",
-          "cue_word": "friday",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the friday ticket count?",
-            "Can you tell me the friday ticket count?"
-          ],
-          "nova_reply": "The friday ticket count is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / baby turtles seen?",
+          "cue_prompt": "how many / baby turtles seen?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "42 baby turtles",
+          "nova_question": "How many baby turtles were seen in the film?",
+          "acceptable_answers": [
+            "42 baby turtles",
+            "Forty-two baby turtles",
+            "There were 42 baby turtles.",
+            "42 turtles"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Friday count rounded to 10",
-          "cue_prompt": "what / friday count rounded to 10?",
-          "cue_word": "friday",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the friday count rounded to 10?",
-            "Can you tell me the friday count rounded to 10?"
-          ],
-          "nova_reply": "The friday count rounded to 10 is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / film shown?",
+          "cue_prompt": "what time / film shown?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 2:45 PM",
+          "nova_question": "What time was the film shown in class?",
+          "acceptable_answers": [
+            "At 2:45 PM",
+            "At 2:45",
+            "It was shown at 2:45 PM.",
+            "2:45 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Audience feedback",
-          "cue_prompt": "what / audience feedback?",
-          "cue_word": "audience",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the audience feedback?",
-            "Can you tell me the audience feedback?"
-          ],
-          "nova_reply": "The audience feedback is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / did the voiceover?",
+          "cue_prompt": "who / did the voiceover?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her brother Lucas",
+          "nova_question": "Who did the voiceover for Ava's movie?",
+          "acceptable_answers": [
+            "Her brother Lucas",
+            "Lucas",
+            "Her brother Lucas did the voiceover.",
+            "Brother Lucas"
+          ]
         }
       ]
     }

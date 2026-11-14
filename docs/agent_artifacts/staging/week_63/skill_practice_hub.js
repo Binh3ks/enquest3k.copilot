@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 63 | Theme: "Reading Maps: Navigating the Island" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 63 | Theme: "ELA: Reading Maps / Math: Coordinates"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 63,
-  "theme": "Reading Maps: Navigating the Island",
+  "theme": "ELA: Reading Maps / Math: Coordinates",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -109,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "Explorers hike 5 units east along the x-axis and then 8 units north along the y-axis to reach a lookout tower. What is the total grid distance they walked?",
       "problem_en": "Explorers hike 5 units east along the x-axis and then 8 units north along the y-axis to reach a lookout tower. What is the total grid distance they walked?",
       "answer": 13,
-      "step_by_step": "Step 1: East distance = 5. Step 2: North distance = 8. Step 3: Total = 5 + 8 = 13 units."
+      "step_by_step": "Step 1: East distance = 5. Step 2: North distance = 8. Step 3: Total = 5 + 8 = 13 units.",
+      "question": "Explorers hike 5 units east along the x-axis and then 8 units north along the y-axis to reach a lookout tower. What is the total grid distance they walked?"
     },
     {
       "id": 2,
@@ -143,7 +143,8 @@ export const skillPracticeHubData = {
       "problem_text": "A rectangular tent area on the map is 6 units wide and 9 units long. What is the perimeter around the campground?",
       "problem_en": "A rectangular tent area on the map is 6 units wide and 9 units long. What is the perimeter around the campground?",
       "answer": 30,
-      "step_by_step": "Step 1: Width = 6, Length = 9. Step 2: Perimeter = 2 * (6 + 9) = 2 * 15 = 30 units."
+      "step_by_step": "Step 1: Width = 6, Length = 9. Step 2: Perimeter = 2 * (6 + 9) = 2 * 15 = 30 units.",
+      "question": "A rectangular tent area on the map is 6 units wide and 9 units long. What is the perimeter around the campground?"
     },
     {
       "id": 3,
@@ -159,9 +160,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Area 7 * 8",
-            "value": 56,
-            "color": "#EF4444"
+            "label": "Part A",
+            "value": 28,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 28,
+            "color": "#10B981"
           }
         ],
         "total": 56,
@@ -171,7 +177,8 @@ export const skillPracticeHubData = {
       "problem_text": "A fenced supply yard occupies a rectangular grid space measuring 7 units by 8 units. What is the total area in square units?",
       "problem_en": "A fenced supply yard occupies a rectangular grid space measuring 7 units by 8 units. What is the total area in square units?",
       "answer": 56,
-      "step_by_step": "Step 1: Side 1 = 7. Step 2: Side 2 = 8. Step 3: Area = 7 * 8 = 56 square units."
+      "step_by_step": "Step 1: Side 1 = 7. Step 2: Side 2 = 8. Step 3: Area = 7 * 8 = 56 square units.",
+      "question": "A fenced supply yard occupies a rectangular grid space measuring 7 units by 8 units. What is the total area in square units?"
     },
     {
       "id": 4,
@@ -204,7 +211,8 @@ export const skillPracticeHubData = {
       "problem_text": "From the origin, hikers move 4 units east and 7 units north to reach a hidden spring. How many total grid steps is the spring from (0, 0)?",
       "problem_en": "From the origin, hikers move 4 units east and 7 units north to reach a hidden spring. How many total grid steps is the spring from (0, 0)?",
       "answer": 11,
-      "step_by_step": "Step 1: East = 4. Step 2: North = 7. Step 3: Total steps = 4 + 7 = 11 steps."
+      "step_by_step": "Step 1: East = 4. Step 2: North = 7. Step 3: Total steps = 4 + 7 = 11 steps.",
+      "question": "From the origin, hikers move 4 units east and 7 units north to reach a hidden spring. How many total grid steps is the spring from (0, 0)?"
     },
     {
       "id": 5,
@@ -230,14 +238,15 @@ export const skillPracticeHubData = {
             "color": "#14B8A6"
           }
         ],
-        "total": 20,
+        "total": 12,
         "unit": "units",
         "comparisonType": "part_whole"
       },
       "problem_text": "A mountain peak is plotted at coordinate (x, y). The x-coordinate is 8, and the total sum of the two coordinates is 20. What is the value of the y-coordinate?",
       "problem_en": "A mountain peak is plotted at coordinate (x, y). The x-coordinate is 8, and the total sum of the two coordinates is 20. What is the value of the y-coordinate?",
       "answer": 12,
-      "step_by_step": "Step 1: Sum = 20. Step 2: x = 8. Step 3: y = 20 - 8 = 12."
+      "step_by_step": "Step 1: Sum = 20. Step 2: x = 8. Step 3: y = 20 - 8 = 12.",
+      "question": "A mountain peak is plotted at coordinate (x, y). The x-coordinate is 8, and the total sum of the two coordinates is 20. What is the value of the y-coordinate?"
     }
   ],
   "science_lab": {

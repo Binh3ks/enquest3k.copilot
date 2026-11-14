@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "State your opinion on why students should share classroom supplies. Propose a fair system for dividing resources.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Librarian A",
-      "cues": [
-        "Resource being shared",
-        "Total items received",
-        "Number of recipient groups",
-        "Quotient per group",
-        "Opinion on fair sharing"
-      ]
-    },
-    "card_b": {
-      "role": "Librarian B",
-      "cues": [
-        "Resource being shared",
-        "Total items received",
-        "Number of recipient groups",
-        "Quotient per group",
-        "Opinion on fair sharing"
-      ]
-    },
+    "title": "Ben and Chloe's Sports Equipment Exchange",
     "table_a": {
-      "title": "Librarian A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Librarian A",
+      "title": "Ben's Book Sharing Club",
+      "person": "Ben",
       "fields": [
         {
-          "id": "f1",
-          "label": "Resource being shared",
-          "cue_prompt": "what / resource being shared?",
-          "cue_word": "resource",
+          "id": "field_a1",
+          "label": "what / Ben's sharing club?",
+          "cue_prompt": "what / Ben's sharing club?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "A comic book sharing club",
           "acceptable_questions": [
-            "What is the resource being shared?",
-            "Can you tell me the resource being shared?"
+            "What is Ben's club?",
+            "What kind of club did Ben start?",
+            "What does his club share?"
           ],
-          "nova_reply": "The resource being shared is recorded for Problem and Solution: Sharing Resources."
+          "nova_reply": "Ben started a comic book sharing club for his classmates."
         },
         {
-          "id": "f2",
-          "label": "Total items received",
-          "cue_prompt": "what / total items received?",
-          "cue_word": "total",
+          "id": "field_a2",
+          "label": "how many / books divided?",
+          "cue_prompt": "how many / books divided?",
+          "cue_word": "how many",
           "is_missing": true,
+          "value": "24 comic books",
           "acceptable_questions": [
-            "What is the total items received?",
-            "Can you tell me the total items received?"
+            "How many books did they divide?",
+            "How many comic books are there?",
+            "How many books did he share?"
           ],
-          "nova_reply": "The total items received is recorded for Problem and Solution: Sharing Resources."
+          "nova_reply": "They divided 24 comic books equally among the reading groups."
         },
         {
-          "id": "f3",
-          "label": "Number of recipient groups",
-          "cue_prompt": "what / number of recipient groups?",
-          "cue_word": "number",
-          "is_missing": false,
-          "card_value": "Number of recipient groups verified",
-          "value": "Number of recipient groups verified",
-          "examiner_question": "What is the number of recipient groups?",
-          "acceptable_answers": [
-            "It is number of recipient groups.",
-            "Number of recipient groups."
-          ]
+          "id": "field_a3",
+          "label": "how many / groups in club?",
+          "cue_prompt": "how many / groups in club?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "4 student groups",
+          "acceptable_questions": [
+            "How many groups are in the club?",
+            "How many teams share the books?",
+            "How many groups did they make?"
+          ],
+          "nova_reply": "There are 4 student groups, so each group receives 6 books."
         },
         {
-          "id": "f4",
-          "label": "Quotient per group",
-          "cue_prompt": "what / quotient per group?",
-          "cue_word": "quotient",
-          "is_missing": false,
-          "card_value": "Quotient per group verified",
-          "value": "Quotient per group verified",
-          "examiner_question": "What is the quotient per group?",
-          "acceptable_answers": [
-            "It is quotient per group.",
-            "Quotient per group."
-          ]
+          "id": "field_a4",
+          "label": "where / meet each week?",
+          "cue_prompt": "where / meet each week?",
+          "cue_word": "where",
+          "is_missing": true,
+          "value": "In the school library corner",
+          "acceptable_questions": [
+            "Where do they meet?",
+            "Where does the club meet each week?",
+            "Where is the meeting place?"
+          ],
+          "nova_reply": "The book club meets in the quiet corner of the school library."
         },
         {
-          "id": "f5",
-          "label": "Opinion on fair sharing",
-          "cue_prompt": "what / opinion on fair sharing?",
-          "cue_word": "opinion",
-          "is_missing": false,
-          "card_value": "Opinion on fair sharing verified",
-          "value": "Opinion on fair sharing verified",
-          "examiner_question": "What is the opinion on fair sharing?",
-          "acceptable_answers": [
-            "It is opinion on fair sharing.",
-            "Opinion on fair sharing."
-          ]
+          "id": "field_a5",
+          "label": "who / organized the schedule?",
+          "cue_prompt": "who / organized the schedule?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Mrs. Clark the librarian",
+          "acceptable_questions": [
+            "Who organized the schedule?",
+            "Who helped them make the plan?",
+            "Who is the club leader?"
+          ],
+          "nova_reply": "Mrs. Clark the librarian organized the weekly sharing schedule."
         }
       ]
     },
     "table_b": {
-      "title": "Librarian B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Librarian B",
+      "title": "Chloe's Sports Equipment Plan",
+      "person": "Chloe",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Resource being shared",
-          "cue_prompt": "what / resource being shared?",
-          "cue_word": "resource",
+          "id": "field_b1",
+          "label": "what / equipment shared?",
+          "cue_prompt": "what / equipment shared?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Resource being shared on file",
-          "value": "Resource being shared on file",
-          "examiner_question": "What is the resource being shared?",
+          "value": "Jump ropes and cones",
+          "nova_question": "What sports equipment is shared in Chloe's plan?",
           "acceptable_answers": [
-            "It is resource being shared.",
-            "Resource being shared."
+            "Jump ropes and cones",
+            "Jump ropes and cones.",
+            "They share jump ropes and cones.",
+            "Ropes and cones"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Total items received",
-          "cue_prompt": "what / total items received?",
-          "cue_word": "total",
+          "id": "field_b2",
+          "label": "where / kept during recess?",
+          "cue_prompt": "where / kept during recess?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Total items received on file",
-          "value": "Total items received on file",
-          "examiner_question": "What is the total items received?",
+          "value": "In the blue playground shed",
+          "nova_question": "Where is the equipment kept during recess?",
           "acceptable_answers": [
-            "It is total items received.",
-            "Total items received."
+            "In the blue playground shed",
+            "In the blue shed.",
+            "It is in the blue playground shed.",
+            "Playground shed"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Number of recipient groups",
-          "cue_prompt": "what / number of recipient groups?",
-          "cue_word": "number",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the number of recipient groups?",
-            "Can you tell me the number of recipient groups?"
-          ],
-          "nova_reply": "The number of recipient groups is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / jump ropes?",
+          "cue_prompt": "how many / jump ropes?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "18 jump ropes",
+          "nova_question": "How many jump ropes does her class share?",
+          "acceptable_answers": [
+            "18 jump ropes",
+            "Eighteen jump ropes",
+            "There are 18 jump ropes.",
+            "18 ropes"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Quotient per group",
-          "cue_prompt": "what / quotient per group?",
-          "cue_word": "quotient",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the quotient per group?",
-            "Can you tell me the quotient per group?"
-          ],
-          "nova_reply": "The quotient per group is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / returned to shed?",
+          "cue_prompt": "what time / returned to shed?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 11:45 AM",
+          "nova_question": "What time is the equipment returned to the shed?",
+          "acceptable_answers": [
+            "At 11:45 AM",
+            "At 11:45",
+            "It is returned at 11:45 AM.",
+            "11:45 AM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Opinion on fair sharing",
-          "cue_prompt": "what / opinion on fair sharing?",
-          "cue_word": "opinion",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the opinion on fair sharing?",
-            "Can you tell me the opinion on fair sharing?"
-          ],
-          "nova_reply": "The opinion on fair sharing is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / checks the ropes?",
+          "cue_prompt": "who / checks the ropes?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Coach Evans",
+          "nova_question": "Who checks the ropes at the end of recess?",
+          "acceptable_answers": [
+            "Coach Evans",
+            "Coach Evans checks them.",
+            "Her gym teacher Coach Evans",
+            "Teacher Coach Evans"
+          ]
         }
       ]
     }

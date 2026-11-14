@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 72 | Theme: "Photosynthesis: Plant Energy Factory" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 72 | Theme: "Science/ELA: Photosynthesis / Math: Area & Perimeter"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 72,
-  "theme": "Photosynthesis: Plant Energy Factory",
+  "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Explain the multi-step process of photosynthesis to a younger student. Use sequence words like 'first', 'next', and 'finally', and mention why plants need sunlight.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Botanist A",
-      "cues": [
-        "Biological process explained",
-        "Primary green pigment",
-        "Greenhouse length and width",
-        "Calculated greenhouse area",
-        "Boundary perimeter fence"
-      ]
-    },
-    "card_b": {
-      "role": "Botanist B",
-      "cues": [
-        "Biological process explained",
-        "Primary green pigment",
-        "Greenhouse length and width",
-        "Calculated greenhouse area",
-        "Boundary perimeter fence"
-      ]
-    },
+    "title": "Oliver and Emma's Greenhouse Science Exchange",
     "table_a": {
-      "title": "Botanist A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Botanist A",
+      "title": "Oliver's Greenhouse Experiment",
+      "person": "Oliver",
       "fields": [
         {
-          "id": "f1",
-          "label": "Biological process explained",
-          "cue_prompt": "what / biological process explained?",
-          "cue_word": "biological",
+          "id": "field_a1",
+          "label": "what / Oliver's experiment?",
+          "cue_prompt": "what / Oliver's experiment?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "How sunlight affects plant growth",
           "acceptable_questions": [
-            "What is the biological process explained?",
-            "Can you tell me the biological process explained?"
+            "What is Oliver's experiment?",
+            "What did Oliver test in the greenhouse?",
+            "What was his plant experiment about?"
           ],
-          "nova_reply": "The biological process explained is recorded for Photosynthesis: Plant Energy Factory."
+          "nova_reply": "Oliver tested how different amounts of sunlight affect the speed of bean plant growth."
         },
         {
-          "id": "f2",
-          "label": "Primary green pigment",
-          "cue_prompt": "what / primary green pigment?",
-          "cue_word": "primary",
+          "id": "field_a2",
+          "label": "where / experiment conducted?",
+          "cue_prompt": "where / experiment conducted?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "In the school glass greenhouse",
           "acceptable_questions": [
-            "What is the primary green pigment?",
-            "Can you tell me the primary green pigment?"
+            "Where was the experiment conducted?",
+            "Where did he grow the bean plants?",
+            "Where was his test station?"
           ],
-          "nova_reply": "The primary green pigment is recorded for Photosynthesis: Plant Energy Factory."
+          "nova_reply": "He grew all his test bean plants inside the school glass greenhouse."
         },
         {
-          "id": "f3",
-          "label": "Greenhouse length and width",
-          "cue_prompt": "what / greenhouse length and width?",
-          "cue_word": "greenhouse",
-          "is_missing": false,
-          "card_value": "Greenhouse length and width verified",
-          "value": "Greenhouse length and width verified",
-          "examiner_question": "What is the greenhouse length and width?",
-          "acceptable_answers": [
-            "It is greenhouse length and width.",
-            "Greenhouse length and width."
-          ]
+          "id": "field_a3",
+          "label": "how many / bean plants tested?",
+          "cue_prompt": "how many / bean plants tested?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "12 bean plants in three groups",
+          "acceptable_questions": [
+            "How many bean plants did he test?",
+            "How many plants were in his experiment?",
+            "What was the total number of plants?"
+          ],
+          "nova_reply": "Oliver tested 12 bean plants divided into three equal light groups."
         },
         {
-          "id": "f4",
-          "label": "Calculated greenhouse area",
-          "cue_prompt": "what / calculated greenhouse area?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated greenhouse area verified",
-          "value": "Calculated greenhouse area verified",
-          "examiner_question": "What is the calculated greenhouse area?",
-          "acceptable_answers": [
-            "It is calculated greenhouse area.",
-            "Calculated greenhouse area."
-          ]
+          "id": "field_a4",
+          "label": "how long / experiment lasted?",
+          "cue_prompt": "how long / experiment lasted?",
+          "cue_word": "how long",
+          "is_missing": true,
+          "value": "3 weeks",
+          "acceptable_questions": [
+            "How long did the experiment last?",
+            "How many weeks did he observe the plants?",
+            "What was the duration of his test?"
+          ],
+          "nova_reply": "His plant observation experiment lasted for 3 full weeks."
         },
         {
-          "id": "f5",
-          "label": "Boundary perimeter fence",
-          "cue_prompt": "what / boundary perimeter fence?",
-          "cue_word": "boundary",
-          "is_missing": false,
-          "card_value": "Boundary perimeter fence verified",
-          "value": "Boundary perimeter fence verified",
-          "examiner_question": "What is the boundary perimeter fence?",
-          "acceptable_answers": [
-            "It is boundary perimeter fence.",
-            "Boundary perimeter fence."
-          ]
+          "id": "field_a5",
+          "label": "who / measured the plant heights?",
+          "cue_prompt": "who / measured the plant heights?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Oliver and his partner Lucas",
+          "acceptable_questions": [
+            "Who measured the plant heights?",
+            "Who helped Oliver record the data?",
+            "Who checked the growth with a ruler?"
+          ],
+          "nova_reply": "Oliver and his lab partner Lucas measured the stem heights with a ruler every Monday."
         }
       ]
     },
     "table_b": {
-      "title": "Botanist B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Botanist B",
+      "title": "Emma's Garden Bed Measurements",
+      "person": "Emma",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Biological process explained",
-          "cue_prompt": "what / biological process explained?",
-          "cue_word": "biological",
+          "id": "field_b1",
+          "label": "what / Emma's project?",
+          "cue_prompt": "what / Emma's project?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Biological process explained on file",
-          "value": "Biological process explained on file",
-          "examiner_question": "What is the biological process explained?",
+          "value": "Measuring area and perimeter of garden beds",
+          "nova_question": "What was Emma's math and science garden project about?",
           "acceptable_answers": [
-            "It is biological process explained.",
-            "Biological process explained."
+            "Measuring area and perimeter of garden beds",
+            "Measuring garden beds.",
+            "Her project was measuring the area and perimeter of garden beds.",
+            "Area and perimeter"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Primary green pigment",
-          "cue_prompt": "what / primary green pigment?",
-          "cue_word": "primary",
+          "id": "field_b2",
+          "label": "what / shape of garden bed?",
+          "cue_prompt": "what / shape of garden bed?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Primary green pigment on file",
-          "value": "Primary green pigment on file",
-          "examiner_question": "What is the primary green pigment?",
+          "value": "A rectangle 4 meters by 3 meters",
+          "nova_question": "What shape and dimensions was her main garden bed?",
           "acceptable_answers": [
-            "It is primary green pigment.",
-            "Primary green pigment."
+            "A rectangle 4 meters by 3 meters",
+            "A rectangle.",
+            "It was a rectangle 4 meters long and 3 meters wide.",
+            "Rectangle 4 by 3"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Greenhouse length and width",
-          "cue_prompt": "what / greenhouse length and width?",
-          "cue_word": "greenhouse",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the greenhouse length and width?",
-            "Can you tell me the greenhouse length and width?"
-          ],
-          "nova_reply": "The greenhouse length and width is confirmed in our notes."
+          "id": "field_b3",
+          "label": "what / area of the bed?",
+          "cue_prompt": "what / area of the bed?",
+          "cue_word": "what",
+          "is_missing": false,
+          "value": "12 square meters",
+          "nova_question": "What was the calculated area of the rectangular bed?",
+          "acceptable_answers": [
+            "12 square meters",
+            "Twelve square meters",
+            "The area was 12 square meters.",
+            "12 sq meters"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Calculated greenhouse area",
-          "cue_prompt": "what / calculated greenhouse area?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated greenhouse area?",
-            "Can you tell me the calculated greenhouse area?"
-          ],
-          "nova_reply": "The calculated greenhouse area is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what / perimeter of the fence?",
+          "cue_prompt": "what / perimeter of the fence?",
+          "cue_word": "what",
+          "is_missing": false,
+          "value": "14 meters around the edge",
+          "nova_question": "What was the perimeter distance around the wooden fence?",
+          "acceptable_answers": [
+            "14 meters around the edge",
+            "14 meters",
+            "The perimeter was 14 meters.",
+            "14 m"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Boundary perimeter fence",
-          "cue_prompt": "what / boundary perimeter fence?",
-          "cue_word": "boundary",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the boundary perimeter fence?",
-            "Can you tell me the boundary perimeter fence?"
-          ],
-          "nova_reply": "The boundary perimeter fence is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / helped build the wooden fence?",
+          "cue_prompt": "who / helped build the wooden fence?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her grandfather",
+          "nova_question": "Who helped Emma build the wooden fence around the garden?",
+          "acceptable_answers": [
+            "Her grandfather",
+            "Grandfather",
+            "Her grandfather helped her build it.",
+            "Emma's grandfather"
+          ]
         }
       ]
     }

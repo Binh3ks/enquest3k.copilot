@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 63 | Theme: "Reading Maps: Navigating the Island" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 63 | Theme: "ELA: Reading Maps / Math: Coordinates"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "compass",
+    "word": "North",
     "pos": "n",
-    "ipa": "/ˈkʌmpəs/",
-    "definition_en": "An instrument with a magnetic needle that points north.",
-    "definition_vi": "la bàn",
-    "example_en": "Hold the compass flat to find magnetic north.",
-    "example_vi": "Giữ la bàn nằm phẳng để tìm hướng bắc từ tính."
+    "ipa": "/nɔːrθ/",
+    "definition_en": "The cardinal direction pointing toward the North Pole.",
+    "definition_vi": "hướng Bắc",
+    "example_en": "Walk North along the pebble path.",
+    "example_vi": "Hãy đi về hướng Bắc dọc theo con đường sỏi."
   },
   {
     "id": 2,
-    "word": "coordinate",
+    "word": "South",
     "pos": "n",
-    "ipa": "/kəʊˈɔːrdɪnət/",
-    "definition_en": "A pair of numbers showing an exact position on a grid.",
-    "definition_vi": "tọa độ",
-    "example_en": "The pirate treasure was buried at coordinate (4, 7).",
-    "example_vi": "Kho báu cướp biển được chôn tại tọa độ (4, 7)."
+    "ipa": "/saʊθ/",
+    "definition_en": "The compass direction opposite to North.",
+    "definition_vi": "hướng Nam",
+    "example_en": "The sandy beach is South of the campground.",
+    "example_vi": "Bãi biển đầy cát nằm ở phía Nam của khu cắm trại."
   },
   {
     "id": 3,
-    "word": "north",
-    "pos": "n",
-    "ipa": "/nɔːrθ/",
-    "definition_en": "The cardinal direction toward the North Pole.",
-    "definition_vi": "hướng bắc",
-    "example_en": "Walk five grid units north toward the rocky hills.",
-    "example_vi": "Đi bộ năm ô lưới về hướng bắc về phía những ngọn đồi đá."
-  },
-  {
-    "id": 4,
-    "word": "south",
-    "pos": "n",
-    "ipa": "/saʊθ/",
-    "definition_en": "The cardinal direction opposite north.",
-    "definition_vi": "hướng nam",
-    "example_en": "The calm sandy beach lies to the south.",
-    "example_vi": "Bãi biển cát êm đềm nằm về hướng nam."
-  },
-  {
-    "id": 5,
-    "word": "east",
+    "word": "East",
     "pos": "n",
     "ipa": "/iːst/",
     "definition_en": "The direction where the sun rises in the morning.",
-    "definition_vi": "hướng đông",
-    "example_en": "Sail eight kilometers east across the open bay.",
-    "example_vi": "Chèo thuyền tám cây số về hướng đông qua vịnh nước mở."
+    "definition_vi": "hướng Đông",
+    "example_en": "Turn East to face the rising morning sun.",
+    "example_vi": "Hãy quay về hướng Đông để đón mặt trời sớm."
   },
   {
-    "id": 6,
-    "word": "west",
+    "id": 4,
+    "word": "West",
     "pos": "n",
     "ipa": "/wɛst/",
     "definition_en": "The direction where the sun sets in the evening.",
-    "definition_vi": "hướng tây",
-    "example_en": "Tall pine trees grow on the west side of the island.",
-    "example_vi": "Những cây thông cao lớn mọc ở phía tây hòn đảo."
+    "definition_vi": "hướng Tây",
+    "example_en": "The old lighthouse sits on the West cliff.",
+    "example_vi": "Ngọn hải đăng cổ tọa lạc trên vách đá phía Tây."
+  },
+  {
+    "id": 5,
+    "word": "compass",
+    "pos": "n",
+    "ipa": "/ˈkʌmpəs/",
+    "definition_en": "A navigational tool with a needle pointing North.",
+    "definition_vi": "la bàn",
+    "example_en": "Hold the compass flat in your palm.",
+    "example_vi": "Hãy cầm chiếc la bàn nằm phẳng trong lòng bàn tay."
+  },
+  {
+    "id": 6,
+    "word": "map",
+    "pos": "n",
+    "ipa": "/mæp/",
+    "definition_en": "A visual drawing showing areas of land and paths.",
+    "definition_vi": "bản đồ",
+    "example_en": "Study the island map before starting your hike.",
+    "example_vi": "Hãy nghiên cứu bản đồ hòn đảo trước khi bắt đầu chuyến đi bộ."
   },
   {
     "id": 7,
-    "word": "grid",
+    "word": "key",
     "pos": "n",
-    "ipa": "/ɡrɪd/",
-    "definition_en": "A pattern of evenly spaced intersecting lines on a map.",
-    "definition_vi": "lưới tọa độ",
-    "example_en": "Find the lighthouse on the map grid.",
-    "example_vi": "Hãy tìm ngọn hải đăng trên lưới bản đồ."
+    "ipa": "/kiː/",
+    "definition_en": "A guide on a map explaining symbols and icons.",
+    "definition_vi": "bảng chú giải bản đồ",
+    "example_en": "Check the map key to find where the spring is.",
+    "example_vi": "Kiểm tra bảng chú giải bản đồ để tìm xem con suối ở đâu."
   },
   {
     "id": 8,
-    "word": "axis",
+    "word": "direction",
     "pos": "n",
-    "ipa": "/ˈæksɪs/",
-    "definition_en": "A fixed reference line on a coordinate graph (x or y).",
-    "definition_vi": "trục tọa độ",
-    "example_en": "Read the horizontal number on the x-axis first.",
-    "example_vi": "Hãy đọc số nằm ngang trên trục x trước."
+    "ipa": "/daɪˈrɛkʃən/",
+    "definition_en": "The course along which someone moves or points.",
+    "definition_vi": "phương hướng",
+    "example_en": "Which direction should we walk next?",
+    "example_vi": "Chúng ta nên đi theo hướng nào tiếp theo?"
   },
   {
     "id": 9,
-    "word": "navigate",
-    "pos": "v",
-    "ipa": "/ˈnævɪɡeɪt/",
-    "definition_en": "To plan and direct the course of a ship or journey.",
-    "definition_vi": "định hướng, điều hướng",
-    "example_en": "Explorers navigate through thick jungle using maps.",
-    "example_vi": "Các nhà thám hiểm định hướng qua rừng rậm bằng bản đồ."
+    "word": "straight",
+    "pos": "adv",
+    "ipa": "/streɪt/",
+    "definition_en": "In a direct line without turning.",
+    "definition_vi": "thẳng",
+    "example_en": "Go straight for twenty meters past the oak tree.",
+    "example_vi": "Hãy đi thẳng hai mươi mét qua cây sồi."
   },
   {
     "id": 10,
-    "word": "legend",
-    "pos": "n",
-    "ipa": "/ˈlɛdʒənd/",
-    "definition_en": "A key explaining the symbols and colors used on a map.",
-    "definition_vi": "chú giải bản đồ",
-    "example_en": "The map legend shows that blue dashed lines mean rivers.",
-    "example_vi": "Chú giải bản đồ chỉ ra rằng đường nét đứt màu xanh nghĩa là sông."
+    "word": "turn",
+    "pos": "v",
+    "ipa": "/tɜːrn/",
+    "definition_en": "To change direction of movement.",
+    "definition_vi": "rẽ, quẹo",
+    "example_en": "Turn right at the blue bridge.",
+    "example_vi": "Hãy rẽ phải ở cây cầu màu xanh."
   },
   {
     "id": 11,
-    "word": "cardinal",
-    "pos": "adj",
-    "ipa": "/ˈkɑːrdɪnl/",
-    "definition_en": "Describing the four primary directions: N, S, E, W.",
-    "definition_vi": "phương hướng chính (bắc, nam, đông, tây)",
-    "example_en": "A compass rose displays the four cardinal directions.",
-    "example_vi": "Hình hoa thị la bàn hiển thị bốn hướng chính."
+    "word": "grid",
+    "pos": "n",
+    "ipa": "/ɡrɪd/",
+    "definition_en": "A pattern of straight lines crossing each other.",
+    "definition_vi": "lưới tọa độ",
+    "example_en": "The treasure map is divided by a neat grid.",
+    "example_vi": "Bản đồ kho báu được chia thành một mạng lưới ngay ngắn."
   },
   {
     "id": 12,
-    "word": "distance",
+    "word": "coordinate",
     "pos": "n",
-    "ipa": "/ˈdɪstəns/",
-    "definition_en": "The amount of space between two distinct points.",
-    "definition_vi": "khoảng cách",
-    "example_en": "The total distance walked was thirteen grid units.",
-    "example_vi": "Tổng khoảng cách đã đi là mười ba đơn vị ô lưới."
+    "ipa": "/koʊˈɔːrdənɪt/",
+    "definition_en": "Numbers or letters that mark an exact point on a grid.",
+    "definition_vi": "tọa độ",
+    "example_en": "The campsite sits at coordinate B-three.",
+    "example_vi": "Khu cắm trại nằm ở tọa độ B-ba."
   },
   {
     "id": 13,
-    "word": "landmark",
+    "word": "point",
     "pos": "n",
-    "ipa": "/ˈlændmɑːrk/",
-    "definition_en": "A recognizable natural or built feature easily seen.",
-    "definition_vi": "cột mốc địa danh",
-    "example_en": "The tall watchtower is a famous coastal landmark.",
-    "example_vi": "Tháp canh cao là một cột mốc ven biển nổi tiếng."
+    "ipa": "/pɔɪnt/",
+    "definition_en": "A precise spot or location on a map.",
+    "definition_vi": "điểm",
+    "example_en": "Mark the treasure point with a red star.",
+    "example_vi": "Hãy đánh dấu điểm kho báu bằng một ngôi sao đỏ."
   },
   {
     "id": 14,
-    "word": "horizontal",
-    "pos": "adj",
-    "ipa": "/ˌhɒrɪˈzɒntl/",
-    "definition_en": "Parallel to the horizon, running flat across left to right.",
-    "definition_vi": "nằm ngang",
-    "example_en": "The x-axis is the horizontal line on the coordinate grid.",
-    "example_vi": "Trục x là đường nằm ngang trên lưới tọa độ."
+    "word": "line",
+    "pos": "n",
+    "ipa": "/laɪn/",
+    "definition_en": "A long straight mark connecting two places.",
+    "definition_vi": "đường kẻ, đường thẳng",
+    "example_en": "Follow the dotted line to the old windmill.",
+    "example_vi": "Hãy đi theo đường chấm nét tới chiếc cối xay gió cũ."
   },
   {
     "id": 15,
-    "word": "vertical",
-    "pos": "adj",
-    "ipa": "/ˈvɜːrtɪkl/",
-    "definition_en": "Pointing straight up and down perpendicular to ground.",
-    "definition_vi": "thẳng đứng",
-    "example_en": "The y-axis is the vertical line measuring height.",
-    "example_vi": "Trục y là đường thẳng đứng đo chiều cao."
+    "word": "distance",
+    "pos": "n",
+    "ipa": "/ˈdɪstəns/",
+    "definition_en": "The amount of space between two locations.",
+    "definition_vi": "khoảng cách",
+    "example_en": "The map scale shows the distance in meters.",
+    "example_vi": "Tỷ lệ bản đồ hiển thị khoảng cách theo mét."
   },
   {
     "id": 16,
-    "word": "scale",
+    "word": "island",
     "pos": "n",
-    "ipa": "/skeɪl/",
-    "definition_en": "The ratio between distance on a map and real distance.",
-    "definition_vi": "tỉ lệ bản đồ",
-    "example_en": "One centimeter on the map scale represents one kilometer.",
-    "example_vi": "Một xăng-ti-mét trên tỉ lệ bản đồ tượng trưng cho một cây số."
+    "ipa": "/ˈaɪlənd/",
+    "definition_en": "A piece of land with sea or lake water all around it.",
+    "definition_vi": "hòn đảo",
+    "example_en": "Pine Island has tall cliffs and sandy bays.",
+    "example_vi": "Đảo Cây Thông có những vách đá cao và các vịnh đầy cát."
   },
   {
     "id": 17,
-    "word": "origin",
+    "word": "treasure",
     "pos": "n",
-    "ipa": "/ˈɒrɪdʒɪn/",
-    "definition_en": "The starting point (0, 0) where map axes cross.",
-    "definition_vi": "gốc tọa độ (0, 0)",
-    "example_en": "Begin plotting coordinates from the origin at (0, 0).",
-    "example_vi": "Bắt đầu vẽ tọa độ từ gốc tọa độ tại (0, 0)."
+    "ipa": "/ˈtrɛʒər/",
+    "definition_en": "A collection of precious objects or stones.",
+    "definition_vi": "kho báu",
+    "example_en": "The old legend tells of silver treasure buried here.",
+    "example_vi": "Truyền thuyết xưa kể về kho báu bạc chôn ở đây."
   },
   {
     "id": 18,
-    "word": "symbol",
+    "word": "path",
     "pos": "n",
-    "ipa": "/ˈsɪmbəl/",
-    "definition_en": "A small icon or drawing representing a real feature.",
-    "definition_vi": "ký hiệu",
-    "example_en": "A small tent symbol marks the campsite location.",
-    "example_vi": "Ký hiệu chiếc lều nhỏ đánh dấu vị trí khu cắm trại."
+    "ipa": "/pæθ/",
+    "definition_en": "A track made by people walking outdoors.",
+    "definition_vi": "con đường mòn",
+    "example_en": "Stay on the stone path to protect the plants.",
+    "example_vi": "Hãy đi trên đường đá mòn để bảo vệ cây cỏ."
   },
   {
     "id": 19,
-    "word": "perimeter",
-    "pos": "n",
-    "ipa": "/pəˈrɪmɪtər/",
-    "definition_en": "The total distance around the outside edge of an area.",
-    "definition_vi": "chu vi",
-    "example_en": "Calculate the perimeter of the grid garden border.",
-    "example_vi": "Hãy tính chu vi đường viền khu vườn trên lưới ô."
+    "word": "walk",
+    "pos": "v",
+    "ipa": "/wɔːk/",
+    "definition_en": "To move on foot at a steady pace.",
+    "definition_vi": "đi bộ",
+    "example_en": "Hikers walk two kilometers to the lookout point.",
+    "example_vi": "Những người đi bộ vượt qua hai ki-lô-mét để tới điểm vọng cảnh."
   },
   {
     "id": 20,
-    "word": "area",
-    "pos": "n",
-    "ipa": "/ˈɛəriə/",
-    "definition_en": "The amount of space inside a flat two-dimensional shape.",
-    "definition_vi": "diện tích",
-    "example_en": "The camping zone covers fifty-six square units of area.",
-    "example_vi": "Khu cắm trại bao phủ năm mươi sáu đơn vị diện tích vuông."
+    "word": "find",
+    "pos": "v",
+    "ipa": "/faɪnd/",
+    "definition_en": "To discover or locate something by searching.",
+    "definition_vi": "tìm thấy",
+    "example_en": "Use coordinates to find the hidden cave easily.",
+    "example_vi": "Dùng tọa độ để tìm thấy hang động ẩn giấu một cách dễ dàng."
   }
 ];
 export const vocabList = vocab;

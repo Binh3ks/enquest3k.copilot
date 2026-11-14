@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 69 | Theme: "Environmental Protection: Eco-Warriors" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 69 | Theme: "Science/ELA: Environmental Protection / Math: Line Plots"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 69,
-  "theme": "Environmental Protection: Eco-Warriors",
+  "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -92,9 +91,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "14 Marks * 2 hrs",
-            "value": 28,
+            "label": "Part A",
+            "value": 14,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 14,
+            "color": "#10B981"
           }
         ],
         "total": 28,
@@ -104,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "A conservation line plot has 14 cross marks above the 2-hour tick mark. What is the total number of service hours represented by these marks?",
       "problem_en": "A conservation line plot has 14 cross marks above the 2-hour tick mark. What is the total number of service hours represented by these marks?",
       "answer": 28,
-      "step_by_step": "Step 1: Marks = 14. Step 2: Hours each = 2. Step 3: Total = 14 * 2 = 28 hours."
+      "step_by_step": "Step 1: Marks = 14. Step 2: Hours each = 2. Step 3: Total = 14 * 2 = 28 hours.",
+      "question": "A conservation line plot has 14 cross marks above the 2-hour tick mark. What is the total number of service hours represented by these marks?"
     },
     {
       "id": 2,
@@ -147,7 +152,8 @@ export const skillPracticeHubData = {
       "problem_text": "A forestry line plot records tree seedlings with 4 marks at 10 cm, 7 marks at 12 cm, 9 marks at 14 cm, and 5 marks at 16 cm. How many seedlings were monitored in total?",
       "problem_en": "A forestry line plot records tree seedlings with 4 marks at 10 cm, 7 marks at 12 cm, 9 marks at 14 cm, and 5 marks at 16 cm. How many seedlings were monitored in total?",
       "answer": 25,
-      "step_by_step": "Step 1: Add marks: 4 + 7 + 9 + 5. Step 2: Sum = 25 seedlings."
+      "step_by_step": "Step 1: Add marks: 4 + 7 + 9 + 5. Step 2: Sum = 25 seedlings.",
+      "question": "A forestry line plot records tree seedlings with 4 marks at 10 cm, 7 marks at 12 cm, 9 marks at 14 cm, and 5 marks at 16 cm. How many seedlings were monitored in total?"
     },
     {
       "id": 3,
@@ -180,7 +186,8 @@ export const skillPracticeHubData = {
       "problem_text": "On a recycling line plot, the value with the highest frequency has 18 marks and the value with the lowest frequency has 3 marks. What is the difference in frequency?",
       "problem_en": "On a recycling line plot, the value with the highest frequency has 18 marks and the value with the lowest frequency has 3 marks. What is the difference in frequency?",
       "answer": 15,
-      "step_by_step": "Step 1: High = 18. Step 2: Low = 3. Step 3: Difference = 18 - 3 = 15 marks."
+      "step_by_step": "Step 1: High = 18. Step 2: Low = 3. Step 3: Difference = 18 - 3 = 15 marks.",
+      "question": "On a recycling line plot, the value with the highest frequency has 18 marks and the value with the lowest frequency has 3 marks. What is the difference in frequency?"
     },
     {
       "id": 4,
@@ -218,7 +225,8 @@ export const skillPracticeHubData = {
       "problem_text": "Three teams collect bags of plastic bottles: Team Alpha collects 26 bags, Team Beta collects 34 bags, and Team Gamma collects 28 bags. How many bags did they collect altogether?",
       "problem_en": "Three teams collect bags of plastic bottles: Team Alpha collects 26 bags, Team Beta collects 34 bags, and Team Gamma collects 28 bags. How many bags did they collect altogether?",
       "answer": 88,
-      "step_by_step": "Step 1: Add 26, 34, and 28. Step 2: Sum = 26 + 34 + 28 = 88 bags."
+      "step_by_step": "Step 1: Add 26, 34, and 28. Step 2: Sum = 26 + 34 + 28 = 88 bags.",
+      "question": "Three teams collect bags of plastic bottles: Team Alpha collects 26 bags, Team Beta collects 34 bags, and Team Gamma collects 28 bags. How many bags did they collect altogether?"
     },
     {
       "id": 5,
@@ -251,7 +259,8 @@ export const skillPracticeHubData = {
       "problem_text": "Park rangers test 65 water samples from the creek. If 47 samples pass the purity test, how many samples require further filtration?",
       "problem_en": "Park rangers test 65 water samples from the creek. If 47 samples pass the purity test, how many samples require further filtration?",
       "answer": 18,
-      "step_by_step": "Step 1: Total = 65. Step 2: Passed = 47. Step 3: Filter = 65 - 47 = 18 samples."
+      "step_by_step": "Step 1: Total = 65. Step 2: Passed = 47. Step 3: Filter = 65 - 47 = 18 samples.",
+      "question": "Park rangers test 65 water samples from the creek. If 47 samples pass the purity test, how many samples require further filtration?"
     }
   ],
   "science_lab": {

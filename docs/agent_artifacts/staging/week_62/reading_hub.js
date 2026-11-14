@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 62 | Theme: "The Movie Trailer: Summarizing Stories" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 62 | Theme: "ELA: The Movie Trailer (Summarizing) / Math: Rounding"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 62,
-  "theme": "The Movie Trailer: Summarizing Stories",
+  "theme": "ELA: The Movie Trailer (Summarizing) / Math: Rounding",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
@@ -16,267 +15,202 @@ export const readingHubData = {
       "word": "summary",
       "pos": "n",
       "ipa": "/ˈsʌməri/",
-      "definition_en": "A brief statement giving the main points of a longer story.",
+      "definition_en": "A brief statement giving the main points.",
       "definition_vi": "bản tóm tắt",
-      "example_en": "The movie trailer gave an exciting summary of the film.",
-      "example_vi": "Đoạn giới thiệu phim đã đưa ra bản tóm tắt hấp dẫn về bộ phim."
+      "example_en": "A good movie trailer gives a short summary of the plot.",
+      "example_vi": "Một đoạn giới thiệu phim hay sẽ đưa ra bản tóm tắt ngắn về cốt truyện."
     },
     {
       "id": 2,
-      "word": "trailer",
-      "pos": "n",
-      "ipa": "/ˈtreɪlər/",
-      "definition_en": "A short promotional film previewing an upcoming movie.",
-      "definition_vi": "đoạn giới thiệu phim (trailer)",
-      "example_en": "The adventure trailer made audiences want to watch more.",
-      "example_vi": "Đoạn trailer phiêu lưu khiến khán giả muốn xem nhiều hơn."
+      "word": "short",
+      "pos": "adj",
+      "ipa": "/ʃɔːrt/",
+      "definition_en": "Brief in duration or length.",
+      "definition_vi": "ngắn gọn",
+      "example_en": "Write a short paragraph about the brave pilot.",
+      "example_vi": "Hãy viết một đoạn văn ngắn gọn về người phi công dũng cảm."
     },
     {
       "id": 3,
-      "word": "round",
+      "word": "retell",
       "pos": "v",
-      "ipa": "/raʊnd/",
-      "definition_en": "To adjust a number to the nearest ten or hundred.",
-      "definition_vi": "làm tròn số",
-      "example_en": "We round forty-eight up to fifty.",
-      "example_vi": "Chúng ta làm tròn bốn mươi tám lên năm mươi."
+      "ipa": "/riːˈtɛl/",
+      "definition_en": "To tell a story again in your own words.",
+      "definition_vi": "kể lại",
+      "example_en": "Can you retell the story in three simple sentences?",
+      "example_vi": "Bạn có thể kể lại câu chuyện bằng ba câu đơn giản không?"
     },
     {
       "id": 4,
-      "word": "nearest",
-      "pos": "adj",
-      "ipa": "/ˈnɪərɪst/",
-      "definition_en": "Closest in value, distance, or number.",
-      "definition_vi": "gần nhất",
-      "example_en": "Round each measurement to the nearest ten meters.",
-      "example_vi": "Hãy làm tròn mỗi số đo đến hàng chục mét gần nhất."
+      "word": "story",
+      "pos": "n",
+      "ipa": "/ˈstɔːri/",
+      "definition_en": "An account of imaginary or real people and events.",
+      "definition_vi": "câu chuyện",
+      "example_en": "The story takes place in a magical forest.",
+      "example_vi": "Câu chuyện diễn ra trong một khu rừng kỳ diệu."
     },
     {
       "id": 5,
-      "word": "paraphrase",
-      "pos": "v",
-      "ipa": "/ˈpærəfreɪz/",
-      "definition_en": "To express someone else's ideas in your own words.",
-      "definition_vi": "diễn giải lại bằng lời của mình",
-      "example_en": "Students paraphrase the paragraph in three sentences.",
-      "example_vi": "Học sinh diễn giải lại đoạn văn bằng ba câu."
+      "word": "scene",
+      "pos": "n",
+      "ipa": "/siːn/",
+      "definition_en": "A part of a film or play where action happens.",
+      "definition_vi": "cảnh phim, hoạt cảnh",
+      "example_en": "The opening scene showed a spaceship landing.",
+      "example_vi": "Cảnh mở đầu cho thấy một con tàu vũ trụ đang hạ cánh."
     },
     {
       "id": 6,
-      "word": "estimate",
-      "pos": "v",
-      "ipa": "/ˈɛstɪmeɪt/",
-      "definition_en": "To roughly calculate or judge a value.",
-      "definition_vi": "ước tính",
-      "example_en": "We can estimate the crowd size by rounding numbers.",
-      "example_vi": "Chúng ta có thể ước tính quy mô đám đông bằng cách làm tròn số."
-    },
-    {
-      "id": 7,
-      "word": "audience",
-      "pos": "n",
-      "ipa": "/ˈɔːdiəns/",
-      "definition_en": "The group of people gathered to watch a performance.",
-      "definition_vi": "khán giả",
-      "example_en": "The cinema audience clapped when the hero escaped.",
-      "example_vi": "Khán giả rạp chiếu phim vỗ tay khi người anh hùng trốn thoát."
-    },
-    {
-      "id": 8,
-      "word": "plot",
-      "pos": "n",
-      "ipa": "/plɒt/",
-      "definition_en": "The sequence of main events that make up a story.",
-      "definition_vi": "cốt truyện",
-      "example_en": "The plot centers on a lost submarine mission.",
-      "example_vi": "Cốt truyện tập trung vào một nhiệm vụ tàu ngầm bị mất tích."
-    },
-    {
-      "id": 9,
-      "word": "climax",
-      "pos": "n",
-      "ipa": "/ˈklaɪmæks/",
-      "definition_en": "The most intense, exciting, or important point in a story.",
-      "definition_vi": "cao trào",
-      "example_en": "The story reached its climax during the storm scene.",
-      "example_vi": "Câu chuyện đạt đến cao trào trong cảnh bão táp."
-    },
-    {
-      "id": 10,
-      "word": "approximate",
-      "pos": "adj",
-      "ipa": "/əˈprɒksɪmət/",
-      "definition_en": "Close to the actual amount, but not completely exact.",
-      "definition_vi": "xấp xỉ",
-      "example_en": "Three hundred is the approximate cost of the tickets.",
-      "example_vi": "Ba trăm là chi phí xấp xỉ của các vé."
-    },
-    {
-      "id": 11,
-      "word": "preview",
-      "pos": "n",
-      "ipa": "/ˈpriːvjuː/",
-      "definition_en": "A short look at something before it is officially shown.",
-      "definition_vi": "bản xem trước",
-      "example_en": "We watched an exciting cinema preview yesterday.",
-      "example_vi": "Hôm qua chúng tôi đã xem một bản xem trước hấp dẫn tại rạp."
-    },
-    {
-      "id": 12,
       "word": "character",
       "pos": "n",
       "ipa": "/ˈkærəktər/",
-      "definition_en": "A person or animal in a story, play, or movie.",
+      "definition_en": "A person or animal in a story or movie.",
       "definition_vi": "nhân vật",
-      "example_en": "The main character is an inventive young astronaut.",
-      "example_vi": "Nhân vật chính là một phi hành gia trẻ đầy sáng tạo."
+      "example_en": "The main character is an adventurous robot.",
+      "example_vi": "Nhân vật chính là một chú robot thích phiêu lưu."
+    },
+    {
+      "id": 7,
+      "word": "plot",
+      "pos": "n",
+      "ipa": "/plɑːt/",
+      "definition_en": "The main events of a story or movie.",
+      "definition_vi": "cốt truyện",
+      "example_en": "The plot follows two friends finding a hidden map.",
+      "example_vi": "Cốt truyện theo chân hai người bạn tìm thấy tấm bản đồ ẩn giấu."
+    },
+    {
+      "id": 8,
+      "word": "round",
+      "pos": "v",
+      "ipa": "/raʊnd/",
+      "definition_en": "To change a number to the nearest ten or hundred.",
+      "definition_vi": "làm tròn",
+      "example_en": "Round forty-seven to the nearest ten.",
+      "example_vi": "Làm tròn số bốn mươi bảy đến hàng chục gần nhất."
+    },
+    {
+      "id": 9,
+      "word": "nearest",
+      "pos": "adj",
+      "ipa": "/ˈnɪrɪst/",
+      "definition_en": "Closest in distance or number.",
+      "definition_vi": "gần nhất",
+      "example_en": "Forty-seven is closest to the nearest ten, fifty.",
+      "example_vi": "Số bốn mươi bảy gần nhất với hàng chục là năm mươi."
+    },
+    {
+      "id": 10,
+      "word": "estimate",
+      "pos": "v",
+      "ipa": "/ˈɛstəmeɪt/",
+      "definition_en": "To roughly calculate or judge a value.",
+      "definition_vi": "ước lượng",
+      "example_en": "Estimate how many children watched the film.",
+      "example_vi": "Hãy ước lượng xem có bao nhiêu bạn nhỏ đã xem bộ phim."
+    },
+    {
+      "id": 11,
+      "word": "closer",
+      "pos": "adj",
+      "ipa": "/ˈkloʊsər/",
+      "definition_en": "At a shorter distance in space or time.",
+      "definition_vi": "gần hơn",
+      "example_en": "Walk closer to the whiteboard so you can see.",
+      "example_vi": "Bảy mươi hai gần với bảy mươi hơn là tám mươi."
+    },
+    {
+      "id": 12,
+      "word": "number line",
+      "pos": "phrase",
+      "ipa": "/ˈnʌmbər laɪn/",
+      "definition_en": "A line on which numbers are marked at intervals.",
+      "definition_vi": "trục số",
+      "example_en": "Find sixty-eight on the classroom number line.",
+      "example_vi": "Hãy tìm số sáu mươi tám trên trục số của lớp học."
     },
     {
       "id": 13,
-      "word": "setting",
+      "word": "movie",
       "pos": "n",
-      "ipa": "/ˈsɛtɪŋ/",
-      "definition_en": "The time and place where a story happens.",
-      "definition_vi": "bối cảnh",
-      "example_en": "The setting is a remote lighthouse on a foggy coast.",
-      "example_vi": "Bối cảnh là một ngọn hải đăng xa xôi trên bờ biển sương mù."
+      "ipa": "/ˈmuːvi/",
+      "definition_en": "A cinema film.",
+      "definition_vi": "bộ phim",
+      "example_en": "We watched an exciting movie about sea turtles.",
+      "example_vi": "Chúng tôi đã xem một bộ phim hào hứng về loài rùa biển."
     },
     {
       "id": 14,
-      "word": "conflict",
+      "word": "actor",
       "pos": "n",
-      "ipa": "/ˈkɒnflɪkt/",
-      "definition_en": "A serious struggle or challenge between story characters.",
-      "definition_vi": "xung đột trong truyện",
-      "example_en": "The central conflict involves saving an ancient forest.",
-      "example_vi": "Xung đột trung tâm liên quan đến việc cứu một khu rừng cổ đại."
+      "ipa": "/ˈæktər/",
+      "definition_en": "A person whose profession is acting on screen.",
+      "definition_vi": "diễn viên",
+      "example_en": "The young actor spoke loudly and clearly.",
+      "example_vi": "Diễn viên trẻ nói năng to rõ và dõng dạc."
     },
     {
       "id": 15,
-      "word": "resolution",
+      "word": "beginning",
       "pos": "n",
-      "ipa": "/ˌrɛzəˈluːʃən/",
-      "definition_en": "The conclusion where the main story problem is resolved.",
-      "definition_vi": "kết cục, hướng giải quyết",
-      "example_en": "The story reached a joyful and peaceful resolution.",
-      "example_vi": "Câu chuyện đã đạt đến một kết cục vui vẻ và êm đềm."
+      "ipa": "/bɪˈɡɪnɪŋ/",
+      "definition_en": "The start of something.",
+      "definition_vi": "phần mở đầu",
+      "example_en": "In the beginning, the little ship set sail.",
+      "example_vi": "Ở phần mở đầu, con tàu nhỏ giương buồm ra khơi."
     },
     {
       "id": 16,
-      "word": "tens",
+      "word": "middle",
       "pos": "n",
-      "ipa": "/tɛnz/",
-      "definition_en": "The mathematical place value representing groups of ten.",
-      "definition_vi": "hàng chục",
-      "example_en": "Look at the ones digit to round to the nearest ten.",
-      "example_vi": "Hãy nhìn vào chữ số hàng đơn vị để làm tròn đến hàng chục gần nhất."
+      "ipa": "/ˈmɪdl/",
+      "definition_en": "The central part of a story or film.",
+      "definition_vi": "phần giữa",
+      "example_en": "In the middle, a storm tested the crew.",
+      "example_vi": "Ở phần giữa, một cơn bão đã thử thách các thủy thủ."
     },
     {
       "id": 17,
-      "word": "hundreds",
+      "word": "ending",
       "pos": "n",
-      "ipa": "/ˈhʌndrədz/",
-      "definition_en": "The place value representing groups of one hundred.",
-      "definition_vi": "hàng trăm",
-      "example_en": "Round two hundred sixty-eight to the nearest hundred.",
-      "example_vi": "Làm tròn hai trăm sáu mươi tám đến hàng trăm gần nhất."
+      "ipa": "/ˈɛndɪŋ/",
+      "definition_en": "The final part of a story.",
+      "definition_vi": "phần kết thúc",
+      "example_en": "The happy ending made everyone smile.",
+      "example_vi": "Cái kết có hậu đã làm tất cả mọi người mỉm cười."
     },
     {
       "id": 18,
-      "word": "concise",
-      "pos": "adj",
-      "ipa": "/kənˈsaɪs/",
-      "definition_en": "Giving a lot of information clearly and in few words.",
-      "definition_vi": "ngắn gọn súc tích",
-      "example_en": "A concise summary focuses only on crucial events.",
-      "example_vi": "Một bản tóm tắt ngắn gọn chỉ tập trung vào các sự kiện quan trọng."
+      "word": "watch",
+      "pos": "v",
+      "ipa": "/wɑːtʃ/",
+      "definition_en": "To look at someone or something with attention.",
+      "definition_vi": "xem, theo dõi",
+      "example_en": "Many families watch trailers before choosing a film.",
+      "example_vi": "Nhiều gia đình xem trailer trước khi chọn phim."
     },
     {
       "id": 19,
-      "word": "cinema",
+      "word": "film",
       "pos": "n",
-      "ipa": "/ˈsɪnəmə/",
-      "definition_en": "A movie theater where motion pictures are screened.",
-      "definition_vi": "rạp chiếu phim",
-      "example_en": "The town cinema was packed with enthusiastic viewers.",
-      "example_vi": "Rạp chiếu phim thị trấn chật kín khán giả nhiệt tình."
+      "ipa": "/fɪlm/",
+      "definition_en": "A movie.",
+      "definition_vi": "phim ảnh",
+      "example_en": "The cartoon film lasted for eighty minutes.",
+      "example_vi": "Bộ phim hoạt hình kéo dài tám mươi phút."
     },
     {
       "id": 20,
-      "word": "producer",
-      "pos": "n",
-      "ipa": "/prəˈdjuːsər/",
-      "definition_en": "A person who oversees the making of a movie or play.",
-      "definition_vi": "nhà sản xuất phim",
-      "example_en": "The film producer edited the two-minute trailer.",
-      "example_vi": "Nhà sản xuất phim đã chỉnh sửa đoạn trailer dài hai phút."
+      "word": "exciting",
+      "pos": "adj",
+      "ipa": "/ɪkˈsaɪtɪŋ/",
+      "definition_en": "Making people feel very happy, lively, and eager.",
+      "definition_vi": "hào hứng, hồi hộp",
+      "example_en": "The final chase scene was very exciting.",
+      "example_vi": "Cảnh rượt đuổi cuối cùng rất hồi hộp."
     }
   ],
-  "clil_article": {
-    "title_en": "The Art of Summarizing and Mathematical Rounding",
-    "title_vi": "Nghệ thuật Tóm tắt và Làm tròn Số học",
-    "content_en": "A great movie trailer tells a full story in just two minutes without giving away every minor detail. To create a captivating trailer, film producers summarize the narrative by identifying three core elements: the setting and characters, the central conflict or problem, and the dramatic climax. Skilled writers do the same when they summarize texts in three concise sentences. They paraphrase the author's words, using their own vocabulary to highlight what matters most. In mathematics, rounding numbers works in a very similar way. Instead of stating every single digit, we round numbers to the nearest ten or hundred to create a quick, practical estimate. The rule for rounding is simple: look at the digit to the right of your target place value. If that digit is 5 or greater, round up; if it is 4 or less, round down. For example, 48 rounded to the nearest ten is 50 because 8 is greater than 5. Similarly, 268 rounded to the nearest hundred is 300 because the tens digit 6 is greater than 5. Summarizing narratives and rounding numbers allow us to communicate big ideas clearly and efficiently.",
-    "glossary": [
-      {
-        "word": "summary",
-        "definition_en": "Brief review of main events",
-        "definition_vi": "tóm tắt"
-      },
-      {
-        "word": "trailer",
-        "definition_en": "Short promotional film preview",
-        "definition_vi": "trailer"
-      },
-      {
-        "word": "round",
-        "definition_en": "To adjust to nearest 10 or 100",
-        "definition_vi": "làm tròn"
-      },
-      {
-        "word": "paraphrase",
-        "definition_en": "Express in one's own words",
-        "definition_vi": "diễn giải lại"
-      },
-      {
-        "word": "estimate",
-        "definition_en": "A rough calculation of value",
-        "definition_vi": "ước tính"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What is 48 rounded to the nearest ten?",
-        "options": [
-          "50",
-          "40",
-          "45"
-        ],
-        "answer": "50"
-      },
-      {
-        "id": 2,
-        "question_en": "What does a writer do when paraphrasing a text?",
-        "options": [
-          "Restates ideas using their own words",
-          "Copies every sentence word for word",
-          "Deletes all nouns and verbs"
-        ],
-        "answer": "Restates ideas using their own words"
-      },
-      {
-        "id": 3,
-        "question_en": "What is 268 rounded to the nearest hundred?",
-        "options": [
-          "300",
-          "200",
-          "250"
-        ],
-        "answer": "300"
-      }
-    ],
-    "text": "A great movie trailer tells a full story in just two minutes without giving away every minor detail. To create a captivating trailer, film producers summarize the narrative by identifying three core elements: the setting and characters, the central conflict or problem, and the dramatic climax. Skilled writers do the same when they summarize texts in three concise sentences. They paraphrase the author's words, using their own vocabulary to highlight what matters most. In mathematics, rounding numbers works in a very similar way. Instead of stating every single digit, we round numbers to the nearest ten or hundred to create a quick, practical estimate. The rule for rounding is simple: look at the digit to the right of your target place value. If that digit is 5 or greater, round up; if it is 4 or less, round down. For example, 48 rounded to the nearest ten is 50 because 8 is greater than 5. Similarly, 268 rounded to the nearest hundred is 300 because the tens digit 6 is greater than 5. Summarizing narratives and rounding numbers allow us to communicate big ideas clearly and efficiently."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "The Movie Trailer: Summarizing Stories",
+    "title_vi": "Trailer Phim: Tóm tắt Câu chuyện",
+    "content_en": "A movie trailer is a short preview that retells the main story without giving away the ending. To summarize a film, writers highlight the three main parts: beginning, middle, and end. In the beginning, we meet the main character and see the setting. In the middle, an exciting problem or mystery happens. In the end, the character finds a way to overcome the challenge. Summarizing means keeping only the important plot points and leaving out tiny details. In math, rounding works in a very similar way. When we round a number, we find the nearest ten or hundred to estimate (make a quick reasonable guess). For example, if eighty-eight people watch a film trailer, eighty-eight is closer to ninety on a number line. Therefore, we round eighty-eight to ninety. Summarizing stories and rounding numbers both help us share big ideas quickly.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What are the three main parts of a story summary?",
+        "question_vi": "Ba phần chính của một bản tóm tắt câu chuyện là gì?",
+        "options": [
+          "Beginning, middle, and end",
+          "Numbers, rulers, and pencils",
+          "Breakfast, lunch, and dinner"
+        ],
+        "answer": "Beginning, middle, and end"
+      },
+      {
+        "id": "q2",
+        "question_en": "What does rounding a number help us do in math?",
+        "question_vi": "Làm tròn số giúp chúng ta làm gì trong toán học?",
+        "options": [
+          "Estimate to the nearest ten or hundred",
+          "Delete all the characters",
+          "Turn a triangle into a square"
+        ],
+        "answer": "Estimate to the nearest ten or hundred"
+      },
+      {
+        "id": "q3",
+        "question_en": "What should we do with tiny unimportant details in a summary?",
+        "question_vi": "Chúng ta nên làm gì với những chi tiết vụn vặt không quan trọng trong bản tóm tắt?",
+        "options": [
+          "Leave them out",
+          "Repeat them five times",
+          "Underline them in blue"
+        ],
+        "answer": "Leave them out"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "summary",
+        "definition_en": "A short statement that gives only the main points."
+      },
+      {
+        "term": "retell",
+        "definition_en": "To tell a story again in a simple new way."
+      },
+      {
+        "term": "plot",
+        "definition_en": "The sequence of main events in a story or movie."
+      },
+      {
+        "term": "round",
+        "definition_en": "To adjust a number to the nearest ten or hundred."
+      },
+      {
+        "term": "estimate",
+        "definition_en": "To make a thoughtful, approximate calculation."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "A movie trailer gives a short summary of the story.",
+      "ipa": "/ə ˈmuvi ˈtreɪlər ɡɪvz ə ʃɔrt ˈsʌməri ʌv ðə ˈstɔri/",
+      "vietnamese": "Một đoạn trailer phim đưa ra bản tóm tắt ngắn về câu chuyện."
+    },
+    {
+      "id": 2,
+      "text": "In the beginning, we meet the adventurous main character.",
+      "ipa": "/ɪn ðə bɪˈɡɪnɪŋ wi mit ðə ædˈvɛntʃərəs meɪn ˈkærɪktər/",
+      "vietnamese": "Ở phần mở đầu, chúng ta gặp nhân vật chính thích phiêu lưu."
+    },
+    {
+      "id": 3,
+      "text": "In the middle, an exciting challenge tests the heroes.",
+      "ipa": "/ɪn ðə ˈmɪdəl æn ɪkˈsaɪtɪŋ ˈtʃæləndʒ tɛsts ðə ˈhɪroʊz/",
+      "vietnamese": "Ở phần giữa, một thử thách hồi hộp sẽ thử sức các vị anh hùng."
+    },
+    {
+      "id": 4,
+      "text": "In the end, teamwork helps them solve the mystery.",
+      "ipa": "/ɪn ðə ɛnd ˈtimˌwɜrk hɛlps ðɛm sɑlv ðə ˈmɪstəri/",
+      "vietnamese": "Ở phần kết, tinh thần đồng đội giúp họ giải quyết bí ẩn."
+    },
+    {
+      "id": 5,
+      "text": "Rounding numbers helps us make a quick estimate.",
+      "ipa": "/ˈraʊndɪŋ ˈnʌmbərz hɛlps ʌs meɪk ə kwɪk ˈɛstəmət/",
+      "vietnamese": "Làm tròn các số giúp chúng ta đưa ra ước tính nhanh chóng."
+    },
+    {
+      "id": 6,
+      "text": "Eighty-eight is closer to ninety on the number line.",
+      "ipa": "/ˈeɪti eɪt ɪz ˈkloʊsər tu ˈnaɪnti ɑn ðə ˈnʌmbər laɪn/",
+      "vietnamese": "Tám mươi tám thì gần chín mươi hơn trên trục số."
+    },
+    {
+      "id": 7,
+      "text": "Therefore, we round eighty-eight to the nearest ten.",
+      "ipa": "/ˈðɛrˌfɔr wi raʊnd ˈeɪti eɪt tu ðə ˈnɪrɪst tɛn/",
+      "vietnamese": "Do đó, chúng ta làm tròn tám mươi tám đến hàng chục gần nhất."
+    },
+    {
+      "id": 8,
+      "text": "A good summary shares the big plot points clearly.",
+      "ipa": "/ə ɡʊd ˈsʌməri ʃɛrz ðə bɪɡ plɑt pɔɪnts ˈklɪrli/",
+      "vietnamese": "Một bản tóm tắt tốt sẽ chia sẻ các điểm cốt truyện chính một cách rõ ràng."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Sophia",
-        "text": "A concise summary captures the key plot points in three sentences.",
-        "ipa": "/ə kənˈsaɪs ˈsʌməri ˈkæptʃərz ðə kiː plɒt pɔɪnts ɪn θriː ˈsɛntənsɪz/"
+        "text": "A movie trailer gives a short summary of the story.",
+        "ipa": "/ə ˈmuvi ˈtreɪlər ɡɪvz ə ʃɔrt ˈsʌməri ʌv ðə ˈstɔri/",
+        "vietnamese": "Một đoạn trailer phim đưa ra bản tóm tắt ngắn về câu chuyện."
       },
       {
         "id": 2,
-        "speaker": "Jack",
-        "text": "Paraphrase the narrative using your own natural vocabulary.",
-        "ipa": "/ˈpærəfreɪz ðə ˈnærətɪv ˈjuːzɪŋ jɔːr əʊn ˈnætʃrəl vəʊˈkæbjʊləri/"
+        "text": "In the beginning, we meet the adventurous main character.",
+        "ipa": "/ɪn ðə bɪˈɡɪnɪŋ wi mit ðə ædˈvɛntʃərəs meɪn ˈkærɪktər/",
+        "vietnamese": "Ở phần mở đầu, chúng ta gặp nhân vật chính thích phiêu lưu."
       },
       {
         "id": 3,
-        "speaker": "Sophia",
-        "text": "Forty-eight rounded to the nearest ten equals fifty.",
-        "ipa": "/ˈfɔːrti eɪt ˈraʊndɪd tuː ðə ˈnɪərɪst tɛn ˈiːkwəlz ˈfɪfti/"
+        "text": "In the middle, an exciting challenge tests the heroes.",
+        "ipa": "/ɪn ðə ˈmɪdəl æn ɪkˈsaɪtɪŋ ˈtʃæləndʒ tɛsts ðə ˈhɪroʊz/",
+        "vietnamese": "Ở phần giữa, một thử thách hồi hộp sẽ thử sức các vị anh hùng."
       },
       {
         "id": 4,
-        "speaker": "Jack",
-        "text": "One hundred thirty-four rounded to the nearest ten is one hundred thirty.",
-        "ipa": "/wʌn ˈhʌndrəd ˈθɜːrti fɔːr ˈraʊndɪd tuː ðə ˈnɪərɪst tɛn ɪz wʌn ˈhʌndrəd ˈθɜːrti/"
+        "text": "In the end, teamwork helps them solve the mystery.",
+        "ipa": "/ɪn ðə ɛnd ˈtimˌwɜrk hɛlps ðɛm sɑlv ðə ˈmɪstəri/",
+        "vietnamese": "Ở phần kết, tinh thần đồng đội giúp họ giải quyết bí ẩn."
       },
       {
         "id": 5,
-        "speaker": "Sophia",
-        "text": "Two hundred sixty-eight rounded to the nearest hundred is three hundred.",
-        "ipa": "/tuː ˈhʌndrəd ˈsɪksti eɪt ˈraʊndɪd tuː ðə ˈnɪərɪst ˈhʌndrəd ɪz θriː ˈhʌndrəd/"
+        "text": "Rounding numbers helps us make a quick estimate.",
+        "ipa": "/ˈraʊndɪŋ ˈnʌmbərz hɛlps ʌs meɪk ə kwɪk ˈɛstəmət/",
+        "vietnamese": "Làm tròn các số giúp chúng ta đưa ra ước tính nhanh chóng."
       },
       {
         "id": 6,
-        "speaker": "Jack",
-        "text": "Rounding numbers gives a fast and practical estimate for planning.",
-        "ipa": "/ˈraʊndɪŋ ˈnʌmbərz ɡɪvz ə fɑːst ænd ˈpræktɪkl ˈɛstɪmeɪt fɔːr ˈplænɪŋ/"
+        "text": "Eighty-eight is closer to ninety on the number line.",
+        "ipa": "/ˈeɪti eɪt ɪz ˈkloʊsər tu ˈnaɪnti ɑn ðə ˈnʌmbər laɪn/",
+        "vietnamese": "Tám mươi tám thì gần chín mươi hơn trên trục số."
       },
       {
         "id": 7,
-        "speaker": "Sophia",
-        "text": "The cinema audience cheered as the dramatic climax unfolded.",
-        "ipa": "/ðə ˈsɪnəmə ˈɔːdiəns tʃɪəd æz ðə drəˈmætɪk ˈklaɪmæks ʌnˈfəʊldɪd/"
+        "text": "Therefore, we round eighty-eight to the nearest ten.",
+        "ipa": "/ˈðɛrˌfɔr wi raʊnd ˈeɪti eɪt tu ðə ˈnɪrɪst tɛn/",
+        "vietnamese": "Do đó, chúng ta làm tròn tám mươi tám đến hàng chục gần nhất."
       },
       {
         "id": 8,
-        "speaker": "Jack",
-        "text": "Clear summaries hook viewers and make stories memorable.",
-        "ipa": "/klɪər ˈsʌməriz hʊk ˈvjuːərz ænd meɪk ˈstɔːriz ˈmɛmərəbl/"
+        "text": "A good summary shares the big plot points clearly.",
+        "ipa": "/ə ɡʊd ˈsʌməri ʃɛrz ðə bɪɡ plɑt pɔɪnts ˈklɪrli/",
+        "vietnamese": "Một bản tóm tắt tốt sẽ chia sẻ các điểm cốt truyện chính một cách rõ ràng."
       }
     ]
   },
-  "rw_part1": [
-    {
-      "definition": "A short film preview shown before a feature presentation.",
-      "word": "trailer"
-    },
-    {
-      "definition": "To state another writer's ideas using your own words.",
-      "word": "paraphrase"
-    },
-    {
-      "definition": "To change a number to the closest ten or hundred.",
-      "word": "round"
-    },
-    {
-      "definition": "A brief statement giving the main points of a text.",
-      "word": "summary"
-    },
-    {
-      "definition": "The most exciting and important turning point of a plot.",
-      "word": "climax"
-    }
-  ],
+  "rw_part1": {
+    "word_bank": [
+      "summary",
+      "short",
+      "retell",
+      "story",
+      "scene",
+      "character",
+      "plot",
+      "round",
+      "nearest",
+      "estimate",
+      "closer",
+      "number line",
+      "movie",
+      "actor",
+      "beginning",
+      "middle",
+      "ending",
+      "watch",
+      "film",
+      "exciting"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A rigid bar that turns around a fixed point to lift weight.",
+        "target": "lever",
+        "definition": "A rigid bar that turns around a fixed point to lift weight.",
+        "word": "lever",
+        "definition_en": "A rigid bar that turns around a fixed point to lift weight.",
+        "options": [
+          "lever",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "lever"
+      },
+      {
+        "id": 2,
+        "text": "A wheel with a grooved rim around which a cord passes.",
+        "target": "pulley",
+        "definition": "A wheel with a grooved rim around which a cord passes.",
+        "word": "pulley",
+        "definition_en": "A wheel with a grooved rim around which a cord passes.",
+        "options": [
+          "pulley",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pulley"
+      },
+      {
+        "id": 3,
+        "text": "The fixed point around which a lever pivots.",
+        "target": "pivot",
+        "definition": "The fixed point around which a lever pivots.",
+        "word": "pivot",
+        "definition_en": "The fixed point around which a lever pivots.",
+        "options": [
+          "pivot",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pivot"
+      },
+      {
+        "id": 4,
+        "text": "The force or energy applied to do work with a machine.",
+        "target": "effort",
+        "definition": "The force or energy applied to do work with a machine.",
+        "word": "effort",
+        "definition_en": "The force or energy applied to do work with a machine.",
+        "options": [
+          "effort",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "effort"
+      },
+      {
+        "id": 5,
+        "text": "The heavy weight or object that is lifted or moved.",
+        "target": "load",
+        "definition": "The heavy weight or object that is lifted or moved.",
+        "word": "load",
+        "definition_en": "The heavy weight or object that is lifted or moved.",
+        "options": [
+          "load",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "load"
+      }
+    ]
+  },
   "rw_part2": {
-    "title": "Producing a Story Trailer",
+    "title": "Testing Levers and Pulleys in the Workshop",
+    "topic": "Testing Levers and Pulleys in the Workshop",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Daniel",
+        "prompt": "How does using a fixed pulley make lifting the heavy bucket easier?",
+        "text": "How does using a fixed pulley make lifting the heavy bucket easier?",
+        "options": [
+          "It changes the direction of the pulling effort from up to down.",
+          "I packed my running shoes in my sports bag.",
+          "The library is closed on public holidays."
+        ],
+        "answer": "It changes the direction of the pulling effort from up to down."
+      },
+      {
+        "id": 2,
+        "speaker": "Grace",
+        "prompt": "Where should we place the pivot to lift this heavy rock with less effort?",
+        "text": "Where should we place the pivot to lift this heavy rock with less effort?",
+        "options": [
+          "We should place the pivot closer to the heavy rock on the ground.",
+          "My aunt bakes delicious carrot cupcakes every Friday.",
+          "The flight to London takes eight hours."
+        ],
+        "answer": "We should place the pivot closer to the heavy rock on the ground."
+      },
+      {
+        "id": 3,
+        "speaker": "Daniel",
+        "prompt": "How much weight did our pulley system lift during the third experiment?",
+        "text": "How much weight did our pulley system lift during the third experiment?",
+        "options": [
+          "It lifted thirty kilograms using only fifteen kilograms of applied effort.",
+          "I played badminton with my cousin after school.",
+          "The textbook has one hundred twenty pages."
+        ],
+        "answer": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
+      },
+      {
+        "id": 4,
+        "speaker": "Grace",
+        "prompt": "What is the difference between thirty kilograms and fifteen kilograms?",
+        "text": "What is the difference between thirty kilograms and fifteen kilograms?",
+        "options": [
+          "Thirty minus fifteen leaves a difference of fifteen kilograms.",
+          "I wear my green raincoat when it is cloudy.",
+          "The supermarket sells fresh milk and eggs."
+        ],
+        "answer": "Thirty minus fifteen leaves a difference of fifteen kilograms."
+      },
+      {
+        "id": 5,
+        "speaker": "Daniel",
+        "prompt": "Shall we build a model crane with cardboard and string tonight?",
+        "text": "Shall we build a model crane with cardboard and string tonight?",
+        "options": [
+          "Yes, let's assemble the boom and attach a double pulley!",
+          "No, I never drink cold orange juice at dinner.",
+          "The train leaves platform three at four o'clock."
+        ],
+        "answer": "Yes, let's assemble the boom and attach a double pulley!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Jack",
-        "text": "How many sentences should we use to summarize the plot?"
+        "speaker": "Daniel",
+        "text": "It changes the direction of the pulling effort from up to down."
       },
       {
-        "speaker": "Sophia",
-        "text": "Three concise sentences: introduction, conflict, and climax."
+        "speaker": "Grace",
+        "text": "We should place the pivot closer to the heavy rock on the ground."
       },
       {
-        "speaker": "Jack",
-        "text": "How many tickets did we sell for the premiere?"
+        "speaker": "Daniel",
+        "text": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
       },
       {
-        "speaker": "Sophia",
-        "text": "One hundred thirty-four, which rounds to one hundred thirty."
+        "speaker": "Grace",
+        "text": "Thirty minus fifteen leaves a difference of fifteen kilograms."
       },
       {
-        "speaker": "Jack",
-        "text": "And Saturday's two hundred sixty-eight rounds to three hundred!"
+        "speaker": "Daniel",
+        "text": "Yes, let's assemble the boom and attach a double pulley!"
       }
     ]
   },
   "rw_part6": {
-    "text": "When film producers create an exciting movie (1) ___, they must summarize a long story into two minutes. They choose three key events and (2) ___ them in their own words. In mathematics, we use a similar skill called (3) ___. For instance, 48 rounded to the nearest ten is 50, and 268 rounded to the nearest (4) ___ is 300. Rounding helps us estimate large quantities quickly.",
-    "answers": [
-      "trailer",
-      "paraphrase",
-      "rounding",
-      "hundred"
+    "title": "Grace's Workshop Log: Simple Machines",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Simple machines make hard work much easier [1]_____ do. A lever uses a rigid bar resting [2]_____ a pivot to lift heavy loads. A pulley uses a grooved wheel [3]_____ change the direction of force. With simple machines, humans can build giant towers [4]_____ bridges. Tomorrow our team will test [5]_____ inclined plane to roll heavy crates.",
+    "answers": {
+      "1": "to",
+      "2": "on",
+      "3": "to",
+      "4": "and",
+      "5": "an"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "summary",
+      "short",
+      "retell",
+      "story",
+      "scene",
+      "character",
+      "plot",
+      "round",
+      "nearest",
+      "estimate",
+      "closer",
+      "number line",
+      "movie",
+      "actor",
+      "beginning",
+      "middle",
+      "ending",
+      "watch",
+      "film",
+      "exciting"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A rigid bar that turns around a fixed point to lift weight.",
+        "target": "lever",
+        "definition": "A rigid bar that turns around a fixed point to lift weight.",
+        "word": "lever",
+        "definition_en": "A rigid bar that turns around a fixed point to lift weight.",
+        "options": [
+          "lever",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "lever"
+      },
+      {
+        "id": 2,
+        "text": "A wheel with a grooved rim around which a cord passes.",
+        "target": "pulley",
+        "definition": "A wheel with a grooved rim around which a cord passes.",
+        "word": "pulley",
+        "definition_en": "A wheel with a grooved rim around which a cord passes.",
+        "options": [
+          "pulley",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pulley"
+      },
+      {
+        "id": 3,
+        "text": "The fixed point around which a lever pivots.",
+        "target": "pivot",
+        "definition": "The fixed point around which a lever pivots.",
+        "word": "pivot",
+        "definition_en": "The fixed point around which a lever pivots.",
+        "options": [
+          "pivot",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pivot"
+      },
+      {
+        "id": 4,
+        "text": "The force or energy applied to do work with a machine.",
+        "target": "effort",
+        "definition": "The force or energy applied to do work with a machine.",
+        "word": "effort",
+        "definition_en": "The force or energy applied to do work with a machine.",
+        "options": [
+          "effort",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "effort"
+      },
+      {
+        "id": 5,
+        "text": "The heavy weight or object that is lifted or moved.",
+        "target": "load",
+        "definition": "The heavy weight or object that is lifted or moved.",
+        "word": "load",
+        "definition_en": "The heavy weight or object that is lifted or moved.",
+        "options": [
+          "load",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "load"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "A short film preview shown before a feature presentation.",
-      "word": "trailer"
-    },
-    {
-      "definition": "To state another writer's ideas using your own words.",
-      "word": "paraphrase"
-    },
-    {
-      "definition": "To change a number to the closest ten or hundred.",
-      "word": "round"
-    },
-    {
-      "definition": "A brief statement giving the main points of a text.",
-      "word": "summary"
-    },
-    {
-      "definition": "The most exciting and important turning point of a plot.",
-      "word": "climax"
-    }
-  ],
   "rw_part_2": {
-    "title": "Producing a Story Trailer",
+    "title": "Testing Levers and Pulleys in the Workshop",
+    "topic": "Testing Levers and Pulleys in the Workshop",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Daniel",
+        "prompt": "How does using a fixed pulley make lifting the heavy bucket easier?",
+        "text": "How does using a fixed pulley make lifting the heavy bucket easier?",
+        "options": [
+          "It changes the direction of the pulling effort from up to down.",
+          "I packed my running shoes in my sports bag.",
+          "The library is closed on public holidays."
+        ],
+        "answer": "It changes the direction of the pulling effort from up to down."
+      },
+      {
+        "id": 2,
+        "speaker": "Grace",
+        "prompt": "Where should we place the pivot to lift this heavy rock with less effort?",
+        "text": "Where should we place the pivot to lift this heavy rock with less effort?",
+        "options": [
+          "We should place the pivot closer to the heavy rock on the ground.",
+          "My aunt bakes delicious carrot cupcakes every Friday.",
+          "The flight to London takes eight hours."
+        ],
+        "answer": "We should place the pivot closer to the heavy rock on the ground."
+      },
+      {
+        "id": 3,
+        "speaker": "Daniel",
+        "prompt": "How much weight did our pulley system lift during the third experiment?",
+        "text": "How much weight did our pulley system lift during the third experiment?",
+        "options": [
+          "It lifted thirty kilograms using only fifteen kilograms of applied effort.",
+          "I played badminton with my cousin after school.",
+          "The textbook has one hundred twenty pages."
+        ],
+        "answer": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
+      },
+      {
+        "id": 4,
+        "speaker": "Grace",
+        "prompt": "What is the difference between thirty kilograms and fifteen kilograms?",
+        "text": "What is the difference between thirty kilograms and fifteen kilograms?",
+        "options": [
+          "Thirty minus fifteen leaves a difference of fifteen kilograms.",
+          "I wear my green raincoat when it is cloudy.",
+          "The supermarket sells fresh milk and eggs."
+        ],
+        "answer": "Thirty minus fifteen leaves a difference of fifteen kilograms."
+      },
+      {
+        "id": 5,
+        "speaker": "Daniel",
+        "prompt": "Shall we build a model crane with cardboard and string tonight?",
+        "text": "Shall we build a model crane with cardboard and string tonight?",
+        "options": [
+          "Yes, let's assemble the boom and attach a double pulley!",
+          "No, I never drink cold orange juice at dinner.",
+          "The train leaves platform three at four o'clock."
+        ],
+        "answer": "Yes, let's assemble the boom and attach a double pulley!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Jack",
-        "text": "How many sentences should we use to summarize the plot?"
+        "speaker": "Daniel",
+        "text": "It changes the direction of the pulling effort from up to down."
       },
       {
-        "speaker": "Sophia",
-        "text": "Three concise sentences: introduction, conflict, and climax."
+        "speaker": "Grace",
+        "text": "We should place the pivot closer to the heavy rock on the ground."
       },
       {
-        "speaker": "Jack",
-        "text": "How many tickets did we sell for the premiere?"
+        "speaker": "Daniel",
+        "text": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
       },
       {
-        "speaker": "Sophia",
-        "text": "One hundred thirty-four, which rounds to one hundred thirty."
+        "speaker": "Grace",
+        "text": "Thirty minus fifteen leaves a difference of fifteen kilograms."
       },
       {
-        "speaker": "Jack",
-        "text": "And Saturday's two hundred sixty-eight rounds to three hundred!"
+        "speaker": "Daniel",
+        "text": "Yes, let's assemble the boom and attach a double pulley!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "When film producers create an exciting movie (1) ___, they must summarize a long story into two minutes. They choose three key events and (2) ___ them in their own words. In mathematics, we use a similar skill called (3) ___. For instance, 48 rounded to the nearest ten is 50, and 268 rounded to the nearest (4) ___ is 300. Rounding helps us estimate large quantities quickly.",
-    "answers": [
-      "trailer",
-      "paraphrase",
-      "rounding",
-      "hundred"
-    ]
+    "title": "Grace's Workshop Log: Simple Machines",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Simple machines make hard work much easier [1]_____ do. A lever uses a rigid bar resting [2]_____ a pivot to lift heavy loads. A pulley uses a grooved wheel [3]_____ change the direction of force. With simple machines, humans can build giant towers [4]_____ bridges. Tomorrow our team will test [5]_____ inclined plane to roll heavy crates.",
+    "answers": {
+      "1": "to",
+      "2": "on",
+      "3": "to",
+      "4": "and",
+      "5": "an"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A rigid bar that turns around a fixed point to lift weight.",
+        "target": "lever",
+        "definition": "A rigid bar that turns around a fixed point to lift weight.",
+        "word": "lever",
+        "definition_en": "A rigid bar that turns around a fixed point to lift weight.",
+        "options": [
+          "lever",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "lever"
+      },
+      {
+        "id": 2,
+        "text": "A wheel with a grooved rim around which a cord passes.",
+        "target": "pulley",
+        "definition": "A wheel with a grooved rim around which a cord passes.",
+        "word": "pulley",
+        "definition_en": "A wheel with a grooved rim around which a cord passes.",
+        "options": [
+          "pulley",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pulley"
+      },
+      {
+        "id": 3,
+        "text": "The fixed point around which a lever pivots.",
+        "target": "pivot",
+        "definition": "The fixed point around which a lever pivots.",
+        "word": "pivot",
+        "definition_en": "The fixed point around which a lever pivots.",
+        "options": [
+          "pivot",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pivot"
+      },
+      {
+        "id": 4,
+        "text": "The force or energy applied to do work with a machine.",
+        "target": "effort",
+        "definition": "The force or energy applied to do work with a machine.",
+        "word": "effort",
+        "definition_en": "The force or energy applied to do work with a machine.",
+        "options": [
+          "effort",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "effort"
+      },
+      {
+        "id": 5,
+        "text": "The heavy weight or object that is lifted or moved.",
+        "target": "load",
+        "definition": "The heavy weight or object that is lifted or moved.",
+        "word": "load",
+        "definition_en": "The heavy weight or object that is lifted or moved.",
+        "options": [
+          "load",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "load"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Testing Levers and Pulleys in the Workshop",
+      "topic": "Testing Levers and Pulleys in the Workshop",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Daniel",
+          "prompt": "How does using a fixed pulley make lifting the heavy bucket easier?",
+          "text": "How does using a fixed pulley make lifting the heavy bucket easier?",
+          "options": [
+            "It changes the direction of the pulling effort from up to down.",
+            "I packed my running shoes in my sports bag.",
+            "The library is closed on public holidays."
+          ],
+          "answer": "It changes the direction of the pulling effort from up to down."
+        },
+        {
+          "id": 2,
+          "speaker": "Grace",
+          "prompt": "Where should we place the pivot to lift this heavy rock with less effort?",
+          "text": "Where should we place the pivot to lift this heavy rock with less effort?",
+          "options": [
+            "We should place the pivot closer to the heavy rock on the ground.",
+            "My aunt bakes delicious carrot cupcakes every Friday.",
+            "The flight to London takes eight hours."
+          ],
+          "answer": "We should place the pivot closer to the heavy rock on the ground."
+        },
+        {
+          "id": 3,
+          "speaker": "Daniel",
+          "prompt": "How much weight did our pulley system lift during the third experiment?",
+          "text": "How much weight did our pulley system lift during the third experiment?",
+          "options": [
+            "It lifted thirty kilograms using only fifteen kilograms of applied effort.",
+            "I played badminton with my cousin after school.",
+            "The textbook has one hundred twenty pages."
+          ],
+          "answer": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
+        },
+        {
+          "id": 4,
+          "speaker": "Grace",
+          "prompt": "What is the difference between thirty kilograms and fifteen kilograms?",
+          "text": "What is the difference between thirty kilograms and fifteen kilograms?",
+          "options": [
+            "Thirty minus fifteen leaves a difference of fifteen kilograms.",
+            "I wear my green raincoat when it is cloudy.",
+            "The supermarket sells fresh milk and eggs."
+          ],
+          "answer": "Thirty minus fifteen leaves a difference of fifteen kilograms."
+        },
+        {
+          "id": 5,
+          "speaker": "Daniel",
+          "prompt": "Shall we build a model crane with cardboard and string tonight?",
+          "text": "Shall we build a model crane with cardboard and string tonight?",
+          "options": [
+            "Yes, let's assemble the boom and attach a double pulley!",
+            "No, I never drink cold orange juice at dinner.",
+            "The train leaves platform three at four o'clock."
+          ],
+          "answer": "Yes, let's assemble the boom and attach a double pulley!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Daniel",
+          "text": "It changes the direction of the pulling effort from up to down."
+        },
+        {
+          "speaker": "Grace",
+          "text": "We should place the pivot closer to the heavy rock on the ground."
+        },
+        {
+          "speaker": "Daniel",
+          "text": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
+        },
+        {
+          "speaker": "Grace",
+          "text": "Thirty minus fifteen leaves a difference of fifteen kilograms."
+        },
+        {
+          "speaker": "Daniel",
+          "text": "Yes, let's assemble the boom and attach a double pulley!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Grace's Workshop Log: Simple Machines",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Simple machines make hard work much easier [1]_____ do. A lever uses a rigid bar resting [2]_____ a pivot to lift heavy loads. A pulley uses a grooved wheel [3]_____ change the direction of force. With simple machines, humans can build giant towers [4]_____ bridges. Tomorrow our team will test [5]_____ inclined plane to roll heavy crates.",
+      "answers": {
+        "1": "to",
+        "2": "on",
+        "3": "to",
+        "4": "and",
+        "5": "an"
+      }
+    }
   }
 };
 export default readingHubData;

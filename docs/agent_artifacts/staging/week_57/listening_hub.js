@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 57,
-  "theme": "Problem and Solution: Clever Inventions",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Designing a School Device",
+    "title": "Discovering Patterns and Symmetry in Nature",
     "exchanges": [
       {
         "speaker": "Liam",
-        "text": "What is the main problem with our paper dispenser?"
+        "text": "Yes, the shapes and bright spots match exactly on both sides."
       },
       {
         "speaker": "Chloe",
-        "text": "The sheets get jammed because the tray is too narrow."
+        "text": "We can see spirals in snail shells and sunflower seeds."
       },
       {
         "speaker": "Liam",
-        "text": "How could we solve this mechanical issue?"
+        "text": "Each flower has eight petals, so there are forty petals in total."
       },
       {
         "speaker": "Chloe",
-        "text": "We should modify the guide rails by widening them three millimeters."
+        "text": "Yes, five times eight equals forty petals."
       },
       {
         "speaker": "Liam",
-        "text": "Good idea! We have six rows of four rollers to adjust."
+        "text": "Sure, let's sketch both sides with colorful pencils!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Liam",
-      "text": "Every tough problem can be solved with a clever invention.",
-      "ipa": "/ˈɛvri tʌf ˈprɒbləm kæn biː sɒlvd wɪð ə ˈklɛvər ɪnˈvɛnʃən/"
+      "text": "A broken tool is a problem we can solve.",
+      "ipa": "/ə ˈbroʊkən tul ɪz ə ˈprɑbləm wi kæn sɑlv/",
+      "vietnamese": "Một dụng cụ hỏng là vấn đề chúng ta có thể giải quyết."
     },
     {
       "id": 2,
-      "speaker": "Chloe",
-      "text": "We should use lightweight materials to build the new frame.",
-      "ipa": "/wiː ʃʊd juːz ˈlaɪtweɪt məˈtɪəriəlz tuː bɪld ðə njuː freɪm/"
+      "text": "We should suggest a clever new idea.",
+      "ipa": "/wi ʃʊd səɡˈdʒɛst ə ˈklɛvər nu aɪˈdiə/",
+      "vietnamese": "Chúng ta nên đề xuất một ý tưởng mới thông minh."
     },
     {
       "id": 3,
-      "speaker": "Liam",
-      "text": "An array organizes equal items in rows and columns.",
-      "ipa": "/ən əˈreɪ ˈɔːrɡənaɪzɪz ˈiːkwəl ˈaɪtəmz ɪn rəʊz ænd ˈkɒləmz/"
+      "text": "The mechanic will repair the loose wheel.",
+      "ipa": "/ðə məˈkænɪk wɪl rɪˈpɛr ðə lus wil/",
+      "vietnamese": "Người thợ sẽ sửa chiếc bánh xe bị lỏng."
     },
     {
       "id": 4,
-      "speaker": "Chloe",
-      "text": "Six rows of eight bolts equal forty-eight bolts altogether.",
-      "ipa": "/sɪks rəʊz ɒv eɪt bəʊlts ˈiːkwəl ˈfɔːrti eɪt bəʊlts ˌɔːltəˈɡɛðər/"
+      "text": "Multiplication means repeated addition of equal groups.",
+      "ipa": "/ˌmʌltəpləˈkeɪʃən minz rɪˈpitɪd əˈdɪʃən ʌv ˈikwəl ɡrups/",
+      "vietnamese": "Phép nhân nghĩa là phép cộng lặp lại của các nhóm bằng nhau."
     },
     {
       "id": 5,
-      "speaker": "Liam",
-      "text": "Engineers test their prototype to improve its performance.",
-      "ipa": "/ˌɛndʒɪˈnɪərz tɛst ðɛər ˈprəʊtətaɪp tuː ɪmˈpruːv ɪts pərˈfɔːrməns/"
+      "text": "Three groups of four make twelve pencils.",
+      "ipa": "/θri ɡrups ʌv fɔr meɪk twɛlv ˈpɛnsəlz/",
+      "vietnamese": "Ba nhóm bốn tạo thành mười hai chiếc bút chì."
     },
     {
       "id": 6,
-      "speaker": "Chloe",
-      "text": "We must check the safety rules before using power tools.",
-      "ipa": "/wiː mʌst tʃɛk ðə ˈseɪfti ruːlz bɪˈfɔːr ˈjuːzɪŋ ˈpaʊər tuːlz/"
+      "text": "We can arrange our blocks in a neat array.",
+      "ipa": "/wi kæn əˈreɪndʒ ˈaʊər blɑks ɪn ə nit əˈreɪ/",
+      "vietnamese": "Chúng ta có thể xếp các khối gỗ thành một mảng ngay ngắn."
     },
     {
       "id": 7,
-      "speaker": "Liam",
-      "text": "Multiplying factors gives the total product quickly.",
-      "ipa": "/ˈmʌltɪplaɪɪŋ ˈfæktərz ɡɪvz ðə ˈtəʊtl ˈprɒdʌkt ˈkwɪkli/"
+      "text": "Four times three gives a product of twelve.",
+      "ipa": "/fɔr taɪmz θri ɡɪvz ə ˈprɑdʌkt ʌv twɛlv/",
+      "vietnamese": "Bốn nhân ba cho ra tích số là mười hai."
     },
     {
       "id": 8,
-      "speaker": "Chloe",
-      "text": "Creative solutions make everyday life much easier.",
-      "ipa": "/kriˈeɪtɪv səˈluːʃənz meɪk ˈɛvrideɪ laɪf mʌtʃ ˈiːziər/"
+      "text": "Good tools help people work together and fix things.",
+      "ipa": "/ɡʊd tulz hɛlp ˈpipəl wɜrk təˈɡɛðər ænd fɪks θɪŋz/",
+      "vietnamese": "Dụng cụ tốt giúp mọi người làm việc cùng nhau và sửa chữa đồ vật."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 57. Theme: Problem and Solution: Clever Inventions.\nSpeaker: Every tough problem can be solved with a clever invention.\nSpeaker: We should use lightweight materials to build the new frame.\nSpeaker: An array organizes equal items in rows and columns.\nSpeaker: Six rows of eight bolts equal forty-eight bolts altogether.\nSpeaker: Engineers test their prototype to improve its performance.\nSpeaker: We must check the safety rules before using power tools.\nSpeaker: Multiplying factors gives the total product quickly.\nSpeaker: Creative solutions make everyday life much easier."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 57. Theme: ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts.\nSpeaker: A broken tool is a problem we can solve.\nSpeaker: We should suggest a clever new idea.\nSpeaker: The mechanic will repair the loose wheel.\nSpeaker: Multiplication means repeated addition of equal groups.\nSpeaker: Three groups of four make twelve pencils.\nSpeaker: We can arrange our blocks in a neat array.\nSpeaker: Four times three gives a product of twelve.\nSpeaker: Good tools help people work together and fix things."
 };
 export default listeningHubData;

@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "resource",
+    "word": "plan",
     "pos": "n",
-    "ipa": "/rɪˈzɔːrs/",
-    "definition_en": "A supply of materials, money, or staff that can be used.",
-    "definition_vi": "tài nguyên, nguồn lực",
-    "example_en": "Water is our planet's most precious natural resource.",
-    "example_vi": "Nước là tài nguyên thiên nhiên quý giá nhất của hành tinh chúng ta."
+    "ipa": "/plæn/",
+    "definition_en": "A set of actions decided on beforehand.",
+    "definition_vi": "kế hoạch",
+    "example_en": "Our class made a clear plan to clean the playground.",
+    "example_vi": "Lớp chúng tôi lập kế hoạch rõ ràng để dọn sạch sân chơi."
   },
   {
     "id": 2,
-    "word": "share",
-    "pos": "v",
-    "ipa": "/ʃɛər/",
-    "definition_en": "To divide something equally among two or more people.",
-    "definition_vi": "chia sẻ",
-    "example_en": "We share books fairly in our reading corner.",
-    "example_vi": "Chúng tôi chia sẻ sách công bằng trong góc đọc sách."
+    "word": "step",
+    "pos": "n",
+    "ipa": "/stɛp/",
+    "definition_en": "One of a series of actions taken to achieve a goal.",
+    "definition_vi": "bước đi, biện pháp",
+    "example_en": "The first step was to sort all the recycling bins.",
+    "example_vi": "Bước đầu tiên là phân loại tất cả các thùng tái chế."
   },
   {
     "id": 3,
-    "word": "divide",
+    "word": "improve",
     "pos": "v",
-    "ipa": "/dɪˈvaɪd/",
-    "definition_en": "To separate a total amount into equal groups.",
-    "definition_vi": "chia",
-    "example_en": "Divide forty-eight books among six shelves.",
-    "example_vi": "Chia bốn mươi tám quyển sách cho sáu ngăn kệ."
+    "ipa": "/ɪmˈpruːv/",
+    "definition_en": "To make or become better.",
+    "definition_vi": "cải thiện, nâng cao",
+    "example_en": "Reading every day helps children improve their English skills.",
+    "example_vi": "Đọc sách hàng ngày sẽ cải thiện vốn từ vựng của bạn."
   },
   {
     "id": 4,
-    "word": "quotient",
-    "pos": "n",
-    "ipa": "/ˈkwəʊʃənt/",
-    "definition_en": "The result obtained when one number is divided by another.",
-    "definition_vi": "thương số",
-    "example_en": "The quotient of forty-eight divided by six is eight.",
-    "example_vi": "Thương số của bốn mươi tám chia cho sáu là tám."
+    "word": "better",
+    "pos": "adj",
+    "ipa": "/ˈbɛtər/",
+    "definition_en": "Of a higher quality or more suitable.",
+    "definition_vi": "tốt hơn",
+    "example_en": "A shared schedule will make library time better.",
+    "example_vi": "Một thời gian biểu dùng chung sẽ giúp thời gian đọc sách tốt hơn."
   },
   {
     "id": 5,
-    "word": "opinion",
+    "word": "success",
     "pos": "n",
-    "ipa": "/əˈpɪnjən/",
-    "definition_en": "A personal view or judgment formed about something.",
-    "definition_vi": "quan điểm, ý kiến",
-    "example_en": "In my opinion, every child should have a library card.",
-    "example_vi": "Theo quan điểm của tôi, mọi trẻ em nên có thẻ thư viện."
+    "ipa": "/səkˈsɛs/",
+    "definition_en": "The achievement of an aim or purpose.",
+    "definition_vi": "sự thành công",
+    "example_en": "The school book fair was a wonderful success.",
+    "example_vi": "Hội chợ sách của trường là một thành công tuyệt vời."
   },
   {
     "id": 6,
-    "word": "believe",
+    "word": "fail",
     "pos": "v",
-    "ipa": "/bɪˈliːv/",
-    "definition_en": "To feel sure that something is true or beneficial.",
-    "definition_vi": "tin tưởng",
-    "example_en": "I believe sharing tools builds a stronger community.",
-    "example_vi": "Tôi tin rằng việc chia sẻ dụng cụ sẽ xây dựng một cộng đồng vững mạnh hơn."
+    "ipa": "/feɪl/",
+    "definition_en": "To be unsuccessful in achieving an aim.",
+    "definition_vi": "thất bại, không thành công",
+    "example_en": "If we forget our plan, our effort might fail.",
+    "example_vi": "Nếu quên kế hoạch, nỗ lực của chúng ta có thể không thành công."
   },
   {
     "id": 7,
-    "word": "equal",
-    "pos": "adj",
-    "ipa": "/ˈiːkwəl/",
-    "definition_en": "Being the same in quantity, degree, or value.",
-    "definition_vi": "bằng nhau, công bằng",
-    "example_en": "Each team received an equal share of pencils.",
-    "example_vi": "Mỗi đội nhận được một phần bút chì bằng nhau."
+    "word": "strategy",
+    "pos": "n",
+    "ipa": "/ˈstrætədʒi/",
+    "definition_en": "A smart plan to achieve a goal.",
+    "definition_vi": "chiến lược",
+    "example_en": "Dividing tasks fairly is a great team strategy.",
+    "example_vi": "Chia đều nhiệm vụ là một chiến lược làm việc nhóm tuyệt vời."
   },
   {
     "id": 8,
-    "word": "distribute",
+    "word": "divide",
     "pos": "v",
-    "ipa": "/dɪˈstrɪbjuːt/",
-    "definition_en": "To give a share or portion of something to each member.",
-    "definition_vi": "phân phát",
-    "example_en": "Volunteers distribute warm soup to neighbors.",
-    "example_vi": "Tình nguyện viên phân phát súp nóng cho hàng xóm."
+    "ipa": "/dɪˈvaɪd/",
+    "definition_en": "To separate into equal parts.",
+    "definition_vi": "chia",
+    "example_en": "Divide twelve pencils among three students.",
+    "example_vi": "Chia mười hai chiếc bút chì cho ba học sinh."
   },
   {
     "id": 9,
-    "word": "scarcity",
-    "pos": "n",
-    "ipa": "/ˈskɛəsəti/",
-    "definition_en": "A state of having a shortage of something important.",
-    "definition_vi": "sự khan hiếm",
-    "example_en": "Book scarcity in small villages was solved by mobile vans.",
-    "example_vi": "Sự khan hiếm sách ở các làng nhỏ đã được giải quyết bằng xe lưu động."
+    "word": "share equally",
+    "pos": "phrase",
+    "ipa": "/ʃɛr ˈikwəli/",
+    "definition_en": "To distribute items so everyone has the same.",
+    "definition_vi": "chia đều",
+    "example_en": "Let us share the red apples equally.",
+    "example_vi": "Hãy chia đều những quả táo đỏ."
   },
   {
     "id": 10,
-    "word": "fairly",
-    "pos": "adv",
-    "ipa": "/ˈfɛərli/",
-    "definition_en": "In a just and equal way without favoritism.",
-    "definition_vi": "một cách công bằng",
-    "example_en": "The teacher divided the art paper fairly among students.",
-    "example_vi": "Giáo viên chia giấy vẽ một cách công bằng cho học sinh."
+    "word": "split",
+    "pos": "v",
+    "ipa": "/splɪt/",
+    "definition_en": "To divide something into parts or groups.",
+    "definition_vi": "tách ra, chia phần",
+    "example_en": "Split the class into four equal teams.",
+    "example_vi": "Tách cả lớp thành bốn đội bằng nhau."
   },
   {
     "id": 11,
-    "word": "allocate",
-    "pos": "v",
-    "ipa": "/ˈæləkeɪt/",
-    "definition_en": "To assign a specific portion of resources for a goal.",
-    "definition_vi": "phân bổ",
-    "example_en": "The council decided to allocate funds for school trees.",
-    "example_vi": "Hội đồng quyết định phân bổ ngân sách cho cây xanh trường học."
+    "word": "quotient",
+    "pos": "n",
+    "ipa": "/ˈkwoʊʃənt/",
+    "definition_en": "The result of dividing one number by another.",
+    "definition_vi": "thương số",
+    "example_en": "The quotient of eight divided by two is four.",
+    "example_vi": "Thương số của tám chia hai là bốn."
   },
   {
     "id": 12,
-    "word": "community",
-    "pos": "n",
-    "ipa": "/kəˈmjuːnəti/",
-    "definition_en": "A group of people sharing interests and living space.",
-    "definition_vi": "cộng đồng",
-    "example_en": "A healthy community cares for its elderly neighbors.",
-    "example_vi": "Một cộng đồng lành mạnh luôn quan tâm đến những người hàng xóm cao tuổi."
+    "word": "equal",
+    "pos": "adj",
+    "ipa": "/ˈiːkwəl/",
+    "definition_en": "Being the same in quantity or value.",
+    "definition_vi": "bằng nhau",
+    "example_en": "Each box holds an equal number of chalks.",
+    "example_vi": "Mỗi hộp chứa số lượng phấn bằng nhau."
   },
   {
     "id": 13,
-    "word": "grouping",
-    "pos": "n",
-    "ipa": "/ˈɡruːpɪŋ/",
-    "definition_en": "The act of sorting items into distinct sets.",
-    "definition_vi": "sự nhóm lại",
-    "example_en": "Equal grouping helps us understand basic division.",
-    "example_vi": "Việc chia nhóm bằng nhau giúp chúng ta hiểu phép chia cơ bản."
+    "word": "fair share",
+    "pos": "phrase",
+    "ipa": "/fɛr ʃɛr/",
+    "definition_en": "An equal and honest portion for each person.",
+    "definition_vi": "phần chia công bằng",
+    "example_en": "Every child received a fair share of grapes.",
+    "example_vi": "Mỗi bạn nhỏ đều nhận được một phần nho công bằng."
   },
   {
     "id": 14,
-    "word": "portion",
+    "word": "group",
     "pos": "n",
-    "ipa": "/ˈpɔːrʃən/",
-    "definition_en": "A part of a whole amount given to an individual.",
-    "definition_vi": "khẩu phần, phần chia",
-    "example_en": "Every child received an equal portion of melon.",
-    "example_vi": "Mỗi đứa trẻ nhận được một phần dưa hấu bằng nhau."
+    "ipa": "/ɡruːp/",
+    "definition_en": "A number of people or things gathered together.",
+    "definition_vi": "nhóm",
+    "example_en": "Each study group needs five reading books.",
+    "example_vi": "Mỗi nhóm học tập cần năm cuốn sách đọc."
   },
   {
     "id": 15,
-    "word": "propose",
-    "pos": "v",
-    "ipa": "/prəˈpəʊz/",
-    "definition_en": "To suggest a plan or scheme for consideration.",
-    "definition_vi": "đề xuất",
-    "example_en": "Students propose setting up a community tool library.",
-    "example_vi": "Học sinh đề xuất thành lập một thư viện dụng cụ cộng đồng."
+    "word": "class",
+    "pos": "n",
+    "ipa": "/klæs/",
+    "definition_en": "A group of students learning together.",
+    "definition_vi": "lớp học",
+    "example_en": "Our class planned a playground schedule.",
+    "example_vi": "Lớp chúng tôi đã lên thời khóa biểu cho sân chơi."
   },
   {
     "id": 16,
-    "word": "shortage",
+    "word": "team",
     "pos": "n",
-    "ipa": "/ˈʃɔːrtɪdʒ/",
-    "definition_en": "A situation where there is not enough of something.",
-    "definition_vi": "sự thiếu hụt",
-    "example_en": "A paper shortage stopped printer use for two days.",
-    "example_vi": "Sự thiếu hụt giấy đã làm gián đoạn máy in trong hai ngày."
+    "ipa": "/tiːm/",
+    "definition_en": "A group of people working toward a common goal.",
+    "definition_vi": "đội, nhóm làm việc",
+    "example_en": "The green team gathered all the footballs.",
+    "example_vi": "Đội xanh lá đã thu gom tất cả quả bóng đá."
   },
   {
     "id": 17,
-    "word": "generous",
-    "pos": "adj",
-    "ipa": "/ˈdʒɛnərəs/",
-    "definition_en": "Willing to give more help, time, or goods than expected.",
-    "definition_vi": "hào phóng",
-    "example_en": "Generous neighbors donated forty storybooks.",
-    "example_vi": "Những người hàng xóm hào phóng đã tặng bốn mươi cuốn truyện."
+    "word": "together",
+    "pos": "adv",
+    "ipa": "/təˈɡɛðər/",
+    "definition_en": "With or in proximity to another person.",
+    "definition_vi": "cùng nhau",
+    "example_en": "When we work together, tasks finish faster.",
+    "example_vi": "Khi làm việc cùng nhau, các nhiệm vụ hoàn thành nhanh hơn."
   },
   {
     "id": 18,
-    "word": "balance",
+    "word": "rule",
     "pos": "n",
-    "ipa": "/ˈbæləns/",
-    "definition_en": "An even distribution of weight or resources.",
-    "definition_vi": "sự cân bằng",
-    "example_en": "We must maintain balance between work and recreation.",
-    "example_vi": "Chúng ta phải giữ cân bằng giữa công việc và giải trí."
+    "ipa": "/ruːl/",
+    "definition_en": "A statement of what you must do.",
+    "definition_vi": "luật lệ",
+    "example_en": "A simple sharing rule makes recess peaceful.",
+    "example_vi": "Một quy tắc chia sẻ đơn giản giúp giờ ra chơi êm ấm."
   },
   {
     "id": 19,
-    "word": "shelf",
+    "word": "fruit",
     "pos": "n",
-    "ipa": "/ʃɛlf/",
-    "definition_en": "A flat wooden or metal board used for storing books.",
-    "definition_vi": "ngăn kệ",
-    "example_en": "Each shelf holds eight heavy encyclopedia volumes.",
-    "example_vi": "Mỗi ngăn kệ chứa tám tập bách khoa toàn thư nặng."
+    "ipa": "/fruːt/",
+    "definition_en": "Sweet food that grows on trees or plants.",
+    "definition_vi": "hoa quả",
+    "example_en": "We divided the fresh fruit among four bowls.",
+    "example_vi": "Chúng tôi đã chia hoa quả tươi vào bốn chiếc bát."
   },
   {
     "id": 20,
-    "word": "volunteer",
+    "word": "snack",
     "pos": "n",
-    "ipa": "/ˌvɒlənˈtɪər/",
-    "definition_en": "A person who offers work willingly without payment.",
-    "definition_vi": "tình nguyện viên",
-    "example_en": "Volunteers organized the community food bank.",
-    "example_vi": "Các tình nguyện viên đã sắp xếp ngân hàng thực phẩm cộng đồng."
+    "ipa": "/snæk/",
+    "definition_en": "A small portion of food eaten between meals.",
+    "definition_vi": "món ăn nhẹ",
+    "example_en": "Healthy snacks give students good energy.",
+    "example_vi": "Đồ ăn nhẹ lành mạnh mang lại năng lượng tốt cho học sinh."
   }
 ];
 export const vocabList = vocab;

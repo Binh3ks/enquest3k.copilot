@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 72 | Theme: "Photosynthesis: Plant Energy Factory" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 72 | Theme: "Science/ELA: Photosynthesis / Math: Area & Perimeter"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 72,
-  "theme": "Photosynthesis: Plant Energy Factory",
+  "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Photosynthesis: How Plants Power Our World",

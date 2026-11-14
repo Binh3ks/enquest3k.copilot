@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 57,
-  "theme": "Problem and Solution: Clever Inventions",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Talk about a useful household invention. Explain what problem it solves, how it works, and why it is helpful.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Inventor A",
-      "cues": [
-        "Invention name",
-        "Problem it solves",
-        "Number of components",
-        "Array arrangement",
-        "Target users"
-      ]
-    },
-    "card_b": {
-      "role": "Inventor B",
-      "cues": [
-        "Invention name",
-        "Problem it solves",
-        "Number of components",
-        "Array arrangement",
-        "Target users"
-      ]
-    },
+    "title": "Sam and Lily's Fix-It Invention Exchange",
     "table_a": {
-      "title": "Inventor A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Inventor A",
+      "title": "Sam's Robot Helper",
+      "person": "Sam",
       "fields": [
         {
-          "id": "f1",
-          "label": "Invention name",
-          "cue_prompt": "what / invention name?",
-          "cue_word": "invention",
+          "id": "field_a1",
+          "label": "what / Sam's invention?",
+          "cue_prompt": "what / Sam's invention?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "A rolling tool robot",
           "acceptable_questions": [
-            "What is the invention name?",
-            "Can you tell me the invention name?"
+            "What is Sam's invention?",
+            "What did Sam invent?",
+            "What kind of robot did Sam make?"
           ],
-          "nova_reply": "The invention name is recorded for Problem and Solution: Clever Inventions."
+          "nova_reply": "Sam invented a small rolling robot that carries repair tools."
         },
         {
-          "id": "f2",
-          "label": "Problem it solves",
-          "cue_prompt": "what / problem it solves?",
-          "cue_word": "problem",
+          "id": "field_a2",
+          "label": "what problem / solve?",
+          "cue_prompt": "what problem / solve?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Carrying heavy toolboxes",
           "acceptable_questions": [
-            "What is the problem it solves?",
-            "Can you tell me the problem it solves?"
+            "What problem does it solve?",
+            "What does it help fix?",
+            "Why did he build it?"
           ],
-          "nova_reply": "The problem it solves is recorded for Problem and Solution: Clever Inventions."
+          "nova_reply": "It solves the problem of carrying heavy toolboxes around the workshop."
         },
         {
-          "id": "f3",
-          "label": "Number of components",
-          "cue_prompt": "what / number of components?",
-          "cue_word": "number",
-          "is_missing": false,
-          "card_value": "Number of components verified",
-          "value": "Number of components verified",
-          "examiner_question": "What is the number of components?",
-          "acceptable_answers": [
-            "It is number of components.",
-            "Number of components."
-          ]
+          "id": "field_a3",
+          "label": "how many / wheels on robot?",
+          "cue_prompt": "how many / wheels on robot?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "4 rubber wheels",
+          "acceptable_questions": [
+            "How many wheels does it have?",
+            "How many wheels are on the robot?",
+            "How many wheels did he put on it?"
+          ],
+          "nova_reply": "The robot rolls smoothly on 4 sturdy rubber wheels."
         },
         {
-          "id": "f4",
-          "label": "Array arrangement",
-          "cue_prompt": "what / array arrangement?",
-          "cue_word": "array",
-          "is_missing": false,
-          "card_value": "Array arrangement verified",
-          "value": "Array arrangement verified",
-          "examiner_question": "What is the array arrangement?",
-          "acceptable_answers": [
-            "It is array arrangement.",
-            "Array arrangement."
-          ]
+          "id": "field_a4",
+          "label": "where / test the robot?",
+          "cue_prompt": "where / test the robot?",
+          "cue_word": "where",
+          "is_missing": true,
+          "value": "In the school workshop",
+          "acceptable_questions": [
+            "Where did he test the robot?",
+            "Where was the robot tested?",
+            "Where does it work?"
+          ],
+          "nova_reply": "Sam tested the robot in the school workshop yesterday afternoon."
         },
         {
-          "id": "f5",
-          "label": "Target users",
-          "cue_prompt": "what / target users?",
-          "cue_word": "target",
-          "is_missing": false,
-          "card_value": "Target users verified",
-          "value": "Target users verified",
-          "examiner_question": "What is the target users?",
-          "acceptable_answers": [
-            "It is target users.",
-            "Target users."
-          ]
+          "id": "field_a5",
+          "label": "who / helped Sam build it?",
+          "cue_prompt": "who / helped Sam build it?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "His older brother Alex",
+          "acceptable_questions": [
+            "Who helped Sam build it?",
+            "Who helped him make the robot?",
+            "Who was his partner?"
+          ],
+          "nova_reply": "His older brother Alex helped him connect the robot's electric wires."
         }
       ]
     },
     "table_b": {
-      "title": "Inventor B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Inventor B",
+      "title": "Lily's Solar Light Fix",
+      "person": "Lily",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Invention name",
-          "cue_prompt": "what / invention name?",
-          "cue_word": "invention",
+          "id": "field_b1",
+          "label": "what / Lily's invention?",
+          "cue_prompt": "what / Lily's invention?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Invention name on file",
-          "value": "Invention name on file",
-          "examiner_question": "What is the invention name?",
+          "value": "A solar reading lamp",
+          "nova_question": "What is Lily's new invention?",
           "acceptable_answers": [
-            "It is invention name.",
-            "Invention name."
+            "A solar reading lamp",
+            "A solar reading lamp.",
+            "It is a solar reading lamp.",
+            "Solar lamp"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Problem it solves",
-          "cue_prompt": "what / problem it solves?",
-          "cue_word": "problem",
+          "id": "field_b2",
+          "label": "where / lamp placed?",
+          "cue_prompt": "where / lamp placed?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Problem it solves on file",
-          "value": "Problem it solves on file",
-          "examiner_question": "What is the problem it solves?",
+          "value": "On the outdoor study desk",
+          "nova_question": "Where is her solar reading lamp placed?",
           "acceptable_answers": [
-            "It is problem it solves.",
-            "Problem it solves."
+            "On the outdoor study desk",
+            "On the study desk.",
+            "It is on the outdoor study desk.",
+            "Study desk"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Number of components",
-          "cue_prompt": "what / number of components?",
-          "cue_word": "number",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the number of components?",
-            "Can you tell me the number of components?"
-          ],
-          "nova_reply": "The number of components is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / LED bulbs?",
+          "cue_prompt": "how many / LED bulbs?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "6 bright LED bulbs",
+          "nova_question": "How many LED bulbs are inside the lamp?",
+          "acceptable_answers": [
+            "6 bright LED bulbs",
+            "Six bright LED bulbs",
+            "There are 6 LED bulbs.",
+            "6 bulbs"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Array arrangement",
-          "cue_prompt": "what / array arrangement?",
-          "cue_word": "array",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the array arrangement?",
-            "Can you tell me the array arrangement?"
-          ],
-          "nova_reply": "The array arrangement is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / light turn on?",
+          "cue_prompt": "what time / light turn on?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 6:30 PM",
+          "nova_question": "What time does her solar lamp turn on?",
+          "acceptable_answers": [
+            "At 6:30 PM",
+            "At 6:30",
+            "It turns on at 6:30 PM.",
+            "6:30 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Target users",
-          "cue_prompt": "what / target users?",
-          "cue_word": "target",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the target users?",
-            "Can you tell me the target users?"
-          ],
-          "nova_reply": "The target users is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / tested the light?",
+          "cue_prompt": "who / tested the light?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her friend Maya",
+          "nova_question": "Who tested the solar reading lamp with her?",
+          "acceptable_answers": [
+            "Her friend Maya",
+            "Maya",
+            "Her friend Maya tested it.",
+            "Friend Maya"
+          ]
         }
       ]
     }

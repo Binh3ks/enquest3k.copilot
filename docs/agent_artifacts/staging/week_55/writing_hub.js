@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 55 | Theme: "Cause and Effect: The Chain Reaction" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 55 | Theme: "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 55,
-  "theme": "Cause and Effect: The Chain Reaction",
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "The Chain Reaction Story",

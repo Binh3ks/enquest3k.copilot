@@ -1,8 +1,8 @@
 {
   "week": 55,
-  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)",
-  "title_en": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)",
-  "title_vi": "ELA: Nguyên nhân & Kết quả (Câu",
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
+  "title_en": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
+  "title_vi": "ELA: Nguyên nhân & Kết quả (Câu) / Toán: Phép cộng có nhớ",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
   "week_type": "rotary_practice",
@@ -15,10 +15,11 @@
     "focus": "Write compound sentences using \"because\" and \"so\" to link events"
   },
   "grammar_focus": {
-    "structure": "Conjunctions: \"Because\" (reason) vs. \"So\" (result)",
+    "structure": "Conjunctions of Cause and Effect: because, so, therefore",
     "outcome": "Write compound sentences using \"because\" and \"so\" to link events",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Conjunctions of Cause and Effect: because, so, therefore"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -247,5 +248,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 55
 }

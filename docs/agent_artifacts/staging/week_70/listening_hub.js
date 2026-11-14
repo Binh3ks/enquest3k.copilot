@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 70 | Theme: "Presentation: Pitching a Green Idea" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 70 | Theme: "ELA: Presentation \"My Green Idea\" / Math: Graph Review"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 70,
-  "theme": "Presentation: Pitching a Green Idea",
+  "theme": "ELA: Presentation \"My Green Idea\" / Math: Graph Review",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Pitching the Green Initiative",
+    "title": "Preparing for the Class Presentation",
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "Which discourse marker should open our speech?"
+        "text": "By standing tall, breathing calmly, and making friendly eye contact."
       },
       {
-        "speaker": "Sophia",
-        "text": "'First of all' sets a professional, structured tone."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What is our total paper recycling across all four quarters?"
-      },
-      {
-        "speaker": "Sophia",
-        "text": "Thirty-two plus forty-eight plus twenty-five plus fifteen equals one hundred twenty kg."
+        "speaker": "Mia",
+        "text": "Because visual aids help the audience follow each main idea easily."
       },
       {
         "speaker": "Lucas",
-        "text": "And four bins at eighteen kg each total seventy-two kilograms!"
+        "text": "We practiced for twenty minutes on Monday and twenty-five minutes on Tuesday."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Twenty plus twenty-five equals forty-five minutes of practice."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, we know our parts thoroughly and our poster looks fantastic!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Sophia",
-      "text": "Discourse markers guide your presentation audience through a logical speech.",
-      "ipa": "/ˈdɪskɔːrs ˈmɑːrkərz ɡaɪd jɔːr ˌprɛznˈteɪʃən ˈɔːdiəns θruː ə ˈlɒdʒɪkl spiːtʃ/"
+      "text": "Stand tall and speak with a loud, clear voice.",
+      "ipa": "/stænd tɔl ænd spik wɪð ə laʊd klɪr vɔɪs/",
+      "vietnamese": "Hãy đứng thẳng và nói bằng một giọng to, rõ ràng."
     },
     {
       "id": 2,
-      "speaker": "Lucas",
-      "text": "First of all, solar power reduces carbon emissions across our school campus.",
-      "ipa": "/fɜːrst ɒv ɔːl, ˈsəʊlər ˈpaʊər rɪˈdjuːsɪz ˈkɑːrbən ɪˈmɪʃənz əˈkrɒs ˈaʊər skuːl ˈkæmpəs/"
+      "text": "Look at your audience and smile with confidence.",
+      "ipa": "/lʊk æt jʊər ˈɔdiəns ænd smaɪl wɪð ˈkɑnfədəns/",
+      "vietnamese": "Hãy nhìn vào khán giả và mỉm cười với sự tự tin."
     },
     {
       "id": 3,
-      "speaker": "Sophia",
-      "text": "Furthermore, four recycling bins holding eighteen kilograms each collect seventy-two kilograms.",
-      "ipa": "/ˈfɜːrðərmɔːr, fɔːr ˌriːˈsaɪklɪŋ bɪnz ˈhəʊldɪŋ ˌeɪˈtiːn ˈkɪləɡræmz iːtʃ kəˈlɛkt ˈsɛvnti tuː ˈkɪləɡræmz/"
+      "text": "First of all, our school needs a recycling program.",
+      "ipa": "/fɜrst ʌv ɔl ˈaʊər skul nidz ə ˌriˈsaɪklɪŋ ˈproʊˌɡræm/",
+      "vietnamese": "Trước hết, trường chúng ta cần một chương trình tái chế."
     },
     {
       "id": 4,
-      "speaker": "Lucas",
-      "text": "Thirty-two plus forty-eight plus twenty-five plus fifteen equals one hundred twenty kilograms.",
-      "ipa": "/ˈθɜːrti tuː plʌs ˈfɔːrti eɪt plʌs ˈtwɛnti faɪv plʌs fɪfˈtiːn ˈiːkwəlz wʌn ˈhʌndrəd ˈtwɛnti ˈkɪləɡræmz/"
+      "text": "In addition, our data chart proves that students agree.",
+      "ipa": "/ɪn əˈdɪʃən ˈaʊər ˈdeɪtə tʃɑrt pruvz ðæt ˈstudənts əˈɡri/",
+      "vietnamese": "Ngoài ra, biểu đồ dữ liệu chứng minh rằng các học sinh đều đồng ý."
     },
     {
       "id": 5,
-      "speaker": "Sophia",
-      "text": "The seasonal difference between ninety-five and forty-five is fifty kilowatt-hours.",
-      "ipa": "/ðə ˈsiːzənl ˈdɪfərəns bɪˈtwiːn ˈnaɪnti faɪv ænd ˈfɔːrti faɪv ɪz ˈfɪfti ˈkɪləwɒt ˈaʊərz/"
+      "text": "Finally, installing water refill taps will save hundreds of bottles.",
+      "ipa": "/ˈfaɪnəli ɪnˈstɔlɪŋ ˈwɔtər ˈriˌfɪl tæps wɪl seɪv ˈhʌndrədz ʌv ˈbɑtəlz/",
+      "vietnamese": "Cuối cùng, lắp đặt vòi lấy nước sẽ tiết kiệm hàng trăm chiếc chai."
     },
     {
       "id": 6,
-      "speaker": "Lucas",
-      "text": "To conclude, investing in green technology safeguards our community's future.",
-      "ipa": "/tuː kənˈkluːd, ɪnˈvɛstɪŋ ɪn ɡriːn tɛkˈnɒlədʒi ˈseɪfɡɑːrdz ˈaʊər kəˈmjuːnətiz ˈfjuːtʃər/"
+      "text": "A bar graph helps your audience understand the numbers.",
+      "ipa": "/ə bɑr ɡræf hɛlps jʊər ˈɔdiəns ˌʌndərˈstænd ðə ˈnʌmbərz/",
+      "vietnamese": "Biểu đồ cột giúp khán giả hiểu các con số dễ dàng."
     },
     {
       "id": 7,
-      "speaker": "Sophia",
-      "text": "Reviewing data across multiple charts strengthens public advocacy pitches.",
-      "ipa": "/rɪˈvjuːɪŋ ˈdeɪtə əˈkrɒs ˈmʌltɪpl tʃɑːrts ˈstrɛŋkθənz ˈpʌblɪk ˈædvəkəsi ˈpɪtʃɪz/"
+      "text": "Practice your speech twice in front of a mirror.",
+      "ipa": "/ˈpræktɪs jʊər spitʃ twaɪs ɪn frʌnt ʌv ə ˈmɪrər/",
+      "vietnamese": "Hãy luyện tập bài nói hai lần trước gương."
     },
     {
       "id": 8,
-      "speaker": "Lucas",
-      "text": "Clear delivery and verified numbers inspire people to embrace sustainable habits.",
-      "ipa": "/klɪər dɪˈlɪvəri ænd ˈvɛrɪfaɪd ˈnʌmbərz ɪnˈspaɪər ˈpiːpl tuː ɪmˈbreɪs səˈsteɪnəbl ˈhæbɪts/"
+      "text": "Great presentations inspire everyone to help our green planet.",
+      "ipa": "/ɡreɪt ˌprɛzənˈteɪʃənz ɪnˈspaɪər ˈɛvriˌwʌn tu hɛlp ˈaʊər ɡrin ˈplænət/",
+      "vietnamese": "Những bài thuyết trình xuất sắc truyền cảm hứng cho mọi người giúp hành tinh xanh."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 70. Theme: Presentation: Pitching a Green Idea.\nSpeaker: Discourse markers guide your presentation audience through a logical speech.\nSpeaker: First of all, solar power reduces carbon emissions across our school campus.\nSpeaker: Furthermore, four recycling bins holding eighteen kilograms each collect seventy-two kilograms.\nSpeaker: Thirty-two plus forty-eight plus twenty-five plus fifteen equals one hundred twenty kilograms.\nSpeaker: The seasonal difference between ninety-five and forty-five is fifty kilowatt-hours.\nSpeaker: To conclude, investing in green technology safeguards our community's future.\nSpeaker: Reviewing data across multiple charts strengthens public advocacy pitches.\nSpeaker: Clear delivery and verified numbers inspire people to embrace sustainable habits."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 70. Theme: ELA: Presentation \"My Green Idea\" / Math: Graph Review.\nSpeaker: Stand tall and speak with a loud, clear voice.\nSpeaker: Look at your audience and smile with confidence.\nSpeaker: First of all, our school needs a recycling program.\nSpeaker: In addition, our data chart proves that students agree.\nSpeaker: Finally, installing water refill taps will save hundreds of bottles.\nSpeaker: A bar graph helps your audience understand the numbers.\nSpeaker: Practice your speech twice in front of a mirror.\nSpeaker: Great presentations inspire everyone to help our green planet."
 };
 export default listeningHubData;

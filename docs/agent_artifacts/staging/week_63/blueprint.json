@@ -15,10 +15,11 @@
     "focus": "Describe exact locations using compass points"
   },
   "grammar_focus": {
-    "structure": "Prepositions of Location (North of, to the East of)",
+    "structure": "Giving Directions & Positional Prepositions: Go straight, Turn left/right",
     "outcome": "Describe exact locations using compass points",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Giving Directions & Positional Prepositions: Go straight, Turn left/right"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -310,5 +311,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 63
 }

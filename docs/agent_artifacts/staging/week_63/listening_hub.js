@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 63 | Theme: "Reading Maps: Navigating the Island" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 63 | Theme: "ELA: Reading Maps / Math: Coordinates"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 63,
-  "theme": "Reading Maps: Navigating the Island",
+  "theme": "ELA: Reading Maps / Math: Coordinates",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Navigating with Coordinates",
+    "title": "Navigating with Maps and Compasses",
     "exchanges": [
       {
-        "speaker": "Oliver",
-        "text": "Which direction should we head first from the basecamp?"
+        "speaker": "Lucas",
+        "text": "We check the map grid coordinates and follow the green trail symbol."
       },
       {
         "speaker": "Chloe",
-        "text": "Travel east along the horizontal x-axis for five units."
+        "text": "The red tip always points directly toward magnetic north."
       },
       {
-        "speaker": "Oliver",
-        "text": "And then which cardinal direction do we turn?"
+        "speaker": "Lucas",
+        "text": "One centimeter equals one kilometer, so the lake is five kilometers away."
       },
       {
         "speaker": "Chloe",
-        "text": "Turn north and hike eight units up the vertical y-axis."
+        "text": "Five minus three leaves two kilometers to reach the campsite."
       },
       {
-        "speaker": "Oliver",
-        "text": "That gives thirteen units of total hiking distance!"
+        "speaker": "Lucas",
+        "text": "Yes, let's keep them in the front waterproof pocket!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Oliver",
-      "text": "A magnetic compass needle always aligns toward magnetic north.",
-      "ipa": "/ə mæɡˈnɛtɪk ˈkʌmpəs ˈniːdl ˈɔːlweɪz əˈlaɪnz təˈwɔːrd mæɡˈnɛtɪk nɔːrθ/"
+      "text": "A compass rose shows North, South, East, and West.",
+      "ipa": "/ə ˈkʌmpəs roʊz ʃoʊz nɔrθ saʊθ ist ænd wɛst/",
+      "vietnamese": "Hình hoa thị la bàn chỉ ra các hướng Bắc, Nam, Đông và Tây."
     },
     {
       "id": 2,
-      "speaker": "Chloe",
-      "text": "Coordinates (x, y) identify an exact position on a flat grid.",
-      "ipa": "/kəʊˈɔːrdɪnəts (ɛks, waɪ) aɪˈdɛntɪfaɪ ən ɪɡˈzækt pəˈzɪʃən ɒn ə flæt ɡrɪd/"
+      "text": "Check the map key to understand each symbol.",
+      "ipa": "/tʃɛk ðə mæp ki tu ˌʌndərˈstænd itʃ ˈsɪmbəl/",
+      "vietnamese": "Hãy kiểm tra bảng chú giải bản đồ để hiểu từng ký hiệu."
     },
     {
       "id": 3,
-      "speaker": "Oliver",
-      "text": "Move five units east and eight units north to find the camp.",
-      "ipa": "/muːv faɪv ˈjuːnɪts iːst ænd eɪt ˈjuːnɪts nɔːrθ tuː faɪnd ðə kæmp/"
+      "text": "Walk straight along the path and turn East.",
+      "ipa": "/wɔk streɪt əˈlɔŋ ðə pæθ ænd tɜrn ist/",
+      "vietnamese": "Đi thẳng dọc theo đường mòn và rẽ về hướng Đông."
     },
     {
       "id": 4,
-      "speaker": "Chloe",
-      "text": "Five units plus eight units equals thirteen units of total distance.",
-      "ipa": "/faɪv ˈjuːnɪts plʌs eɪt ˈjuːnɪts ˈiːkwəlz θɜːrˈtiːn ˈjuːnɪts ɒv ˈtəʊtl ˈdɪstəns/"
+      "text": "The old lighthouse sits on the high West cliff.",
+      "ipa": "/ði oʊld ˈlaɪtˌhaʊs sɪts ɑn ðə haɪ wɛst klɪf/",
+      "vietnamese": "Ngọn hải đăng cổ tọa lạc trên vách đá cao phía Tây."
     },
     {
       "id": 5,
-      "speaker": "Oliver",
-      "text": "The rectangular perimeter is two times six plus nine, which is thirty.",
-      "ipa": "/ðə rɛkˈtæŋɡjʊlər pəˈrɪmɪtər ɪz tuː taɪmz sɪks plʌs naɪn, wɪtʃ ɪz ˈθɜːrti/"
+      "text": "A coordinate grid uses letters and numbers together.",
+      "ipa": "/ə koʊˈɔrdənɪt ɡrɪd ˈjuzəz ˈlɛtərz ænd ˈnʌmbərz təˈɡɛðər/",
+      "vietnamese": "Lưới tọa độ dùng cả chữ cái và số kết hợp với nhau."
     },
     {
       "id": 6,
-      "speaker": "Chloe",
-      "text": "Consult the map legend to decipher symbols for paths and springs.",
-      "ipa": "/kənˈsʌlt ðə mæp ˈlɛdʒənd tuː dɪˈsaɪfər ˈsɪmbəlz fɔːr pɑːðz ænd sprɪŋz/"
+      "text": "The secret cave is located at coordinate C-four.",
+      "ipa": "/ðə ˈsikrət keɪv ɪz ˈloʊˌkeɪtəd æt koʊˈɔrdənɪt si fɔr/",
+      "vietnamese": "Hang động bí mật nằm ở tọa độ C-bốn."
     },
     {
       "id": 7,
-      "speaker": "Oliver",
-      "text": "The horizontal x-axis is always read before the vertical y-axis.",
-      "ipa": "/ðə ˌhɒrɪˈzɒntl ˈɛksˌæksɪs ɪz ˈɔːlweɪz rɛd bɪˈfɔːr ðə ˈvɜːrtɪkl ˈwaɪˌæksɪs/"
+      "text": "Following clear directions helps you find the treasure.",
+      "ipa": "/ˈfɑloʊɪŋ klɪr dəˈrɛkʃənz hɛlps ju faɪnd ðə ˈtrɛʒər/",
+      "vietnamese": "Đi theo chỉ dẫn rõ ràng sẽ giúp bạn tìm thấy kho báu."
     },
     {
       "id": 8,
-      "speaker": "Chloe",
-      "text": "Accurate navigation ensures travelers reach their destination securely.",
-      "ipa": "/ˈækjʊrət ˌnævɪˈɡeɪʃən ɪnˈʃʊərz ˈtrævələrz riːtʃ ðɛər ˌdɛstɪˈneɪʃən sɪˈkjʊərli/"
+      "text": "Maps make exploring the outdoors safe and exciting.",
+      "ipa": "/mæps meɪk ɪkˈsplɔrɪŋ ði ˌaʊtˈdɔrz seɪf ænd ɪkˈsaɪtɪŋ/",
+      "vietnamese": "Bản đồ giúp việc khám phá thiên nhiên an toàn và hào hứng."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 63. Theme: Reading Maps: Navigating the Island.\nSpeaker: A magnetic compass needle always aligns toward magnetic north.\nSpeaker: Coordinates (x, y) identify an exact position on a flat grid.\nSpeaker: Move five units east and eight units north to find the camp.\nSpeaker: Five units plus eight units equals thirteen units of total distance.\nSpeaker: The rectangular perimeter is two times six plus nine, which is thirty.\nSpeaker: Consult the map legend to decipher symbols for paths and springs.\nSpeaker: The horizontal x-axis is always read before the vertical y-axis.\nSpeaker: Accurate navigation ensures travelers reach their destination securely."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 63. Theme: ELA: Reading Maps / Math: Coordinates.\nSpeaker: A compass rose shows North, South, East, and West.\nSpeaker: Check the map key to understand each symbol.\nSpeaker: Walk straight along the path and turn East.\nSpeaker: The old lighthouse sits on the high West cliff.\nSpeaker: A coordinate grid uses letters and numbers together.\nSpeaker: The secret cave is located at coordinate C-four.\nSpeaker: Following clear directions helps you find the treasure.\nSpeaker: Maps make exploring the outdoors safe and exciting."
 };
 export default listeningHubData;

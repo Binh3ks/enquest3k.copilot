@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 70 | Theme: "Presentation: Pitching a Green Idea" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 70 | Theme: "ELA: Presentation \"My Green Idea\" / Math: Graph Review"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "presentation",
+    "word": "speech",
     "pos": "n",
-    "ipa": "/ˌprɛznˈteɪʃən/",
-    "definition_en": "A formal speech in which a new idea or product is shown to an audience.",
-    "definition_vi": "bài thuyết trình",
-    "example_en": "She delivered an inspiring presentation on solar cookers.",
-    "example_vi": "Cô ấy đã trình bày một bài thuyết trình đầy cảm hứng về bếp năng lượng mặt trời."
+    "ipa": "/spitʃ/",
+    "definition_en": "A formal talk delivered to an audience.",
+    "definition_vi": "bài phát biểu, bài thuyết trình",
+    "example_en": "Anna gave an inspiring speech about solar panels.",
+    "example_vi": "Anna đã có bài phát biểu đầy cảm hứng về tấm pin mặt trời."
   },
   {
     "id": 2,
-    "word": "pitch",
+    "word": "present",
     "pos": "v",
-    "ipa": "/pɪtʃ/",
-    "definition_en": "To present a business or community idea persuasively.",
-    "definition_vi": "giới thiệu ý tưởng (pitching)",
-    "example_en": "Students pitch their green proposals to the town council.",
-    "example_vi": "Học sinh giới thiệu các đề xuất xanh của mình tới hội đồng thị trấn."
+    "ipa": "/prɪˈzɛnt/",
+    "definition_en": "To introduce or show something to an audience.",
+    "definition_vi": "thuyết trình, trình bày",
+    "example_en": "I will present our green garden poster today.",
+    "example_vi": "Hôm nay tôi sẽ trình bày tấm áp phích vườn xanh của chúng tôi."
   },
   {
     "id": 3,
-    "word": "furthermore",
-    "pos": "adv",
-    "ipa": "/ˈfɜːrðərmɔːr/",
-    "definition_en": "In addition, moreover; used to introduce a fresh supporting point.",
-    "definition_vi": "hơn nữa",
-    "example_en": "Furthermore, solar panels reduce electric bills significantly.",
-    "example_vi": "Hơn nữa, pin mặt trời giúp giảm đáng kể hóa đơn tiền điện."
+    "word": "voice",
+    "pos": "n",
+    "ipa": "/vɔɪs/",
+    "definition_en": "The sound produced in someone's throat.",
+    "definition_vi": "giọng nói",
+    "example_en": "Speak with a confident voice during your talk.",
+    "example_vi": "Hãy nói bằng một giọng tự tin trong suốt bài nói của bạn."
   },
   {
     "id": 4,
-    "word": "conclude",
-    "pos": "v",
-    "ipa": "/kənˈkluːd/",
-    "definition_en": "To bring a speech or essay to a formal finish.",
-    "definition_vi": "kết luận",
-    "example_en": "To conclude, green energy safeguards our community's future.",
-    "example_vi": "Để kết luận, năng lượng xanh bảo vệ tương lai của cộng đồng chúng ta."
+    "word": "loud",
+    "pos": "adj",
+    "ipa": "/laʊd/",
+    "definition_en": "Producing a great volume of sound.",
+    "definition_vi": "to, dõng dạc",
+    "example_en": "Make your voice loud enough for the back row.",
+    "example_vi": "Hãy nói đủ to để hàng ghế phía sau cũng nghe được."
   },
   {
     "id": 5,
-    "word": "discourse",
-    "pos": "n",
-    "ipa": "/ˈdɪskɔːrs/",
-    "definition_en": "Written or spoken communication, especially a formal speech.",
-    "definition_vi": "diễn ngôn, lời phát biểu",
-    "example_en": "Use formal discourse markers to organize your speech.",
-    "example_vi": "Hãy dùng các từ nối diễn ngôn trang trọng để sắp xếp bài nói của bạn."
+    "word": "clear",
+    "pos": "adj",
+    "ipa": "/klɪr/",
+    "definition_en": "Easy to perceive, hear, or understand.",
+    "definition_vi": "rõ ràng, mạch lạc",
+    "example_en": "Pronounce each word in a clear, friendly way.",
+    "example_vi": "Hãy phát âm từng từ một cách rõ ràng và thân thiện."
   },
   {
     "id": 6,
-    "word": "marker",
-    "pos": "n",
-    "ipa": "/ˈmɑːrkər/",
-    "definition_en": "A word or phrase guiding the listener through speech structure.",
-    "definition_vi": "từ chỉ dẫn liên kết",
-    "example_en": "Phrases like 'first of all' act as verbal signposts or markers.",
-    "example_vi": "Những cụm từ như 'first of all' đóng vai trò như các biển chỉ dẫn liên kết."
-  },
-  {
-    "id": 7,
-    "word": "innovative",
-    "pos": "adj",
-    "ipa": "/ˈɪnəveɪtɪv/",
-    "definition_en": "Featuring new, original, and creative methods.",
-    "definition_vi": "mang tính đổi mới, sáng tạo",
-    "example_en": "Rainwater harvesting is an innovative green solution.",
-    "example_vi": "Thu gom nước mưa là một giải pháp xanh đầy sáng tạo."
-  },
-  {
-    "id": 8,
-    "word": "table",
-    "pos": "n",
-    "ipa": "/ˈteɪbl/",
-    "definition_en": "A set of data arranged in orderly rows and columns.",
-    "definition_vi": "bảng số liệu",
-    "example_en": "The energy table summarizes kilowatt savings per month.",
-    "example_vi": "Bảng năng lượng tóm tắt lượng ki-lô-oát tiết kiệm mỗi tháng."
-  },
-  {
-    "id": 9,
-    "word": "recycle",
-    "pos": "v",
-    "ipa": "/ˌriːˈsaɪkl/",
-    "definition_en": "To process used materials so they can be used again.",
-    "definition_vi": "tái chế",
-    "example_en": "Four recycling bins hold eighteen kilograms of paper each.",
-    "example_vi": "Bốn thùng tái chế chứa mười tám ki-lô-gam giấy mỗi thùng."
-  },
-  {
-    "id": 10,
-    "word": "difference",
-    "pos": "n",
-    "ipa": "/ˈdɪfərəns/",
-    "definition_en": "The numerical subtraction gap between two measurements.",
-    "definition_vi": "hiệu số",
-    "example_en": "The difference between ninety-five and forty-five is fifty.",
-    "example_vi": "Hiệu số giữa chín mươi lăm và bốn mươi lăm là năm mươi."
-  },
-  {
-    "id": 11,
-    "word": "proposal",
-    "pos": "n",
-    "ipa": "/prəˈpəʊzəl/",
-    "definition_en": "A formal plan presented for consideration or adoption.",
-    "definition_vi": "đề án, bản đề xuất",
-    "example_en": "The green proposal includes planting one hundred trees.",
-    "example_vi": "Bản đề xuất xanh bao gồm việc trồng một trăm cây xanh."
-  },
-  {
-    "id": 12,
     "word": "audience",
     "pos": "n",
     "ipa": "/ˈɔːdiəns/",
-    "definition_en": "The assembled listeners or viewers at a public presentation.",
-    "definition_vi": "khán giả, thính giả",
-    "example_en": "Make direct eye contact with your presentation audience.",
-    "example_vi": "Hãy giao tiếp bằng mắt trực tiếp với khán giả bài thuyết trình của bạn."
+    "definition_en": "The people who watch or listen to a talk.",
+    "definition_vi": "khán giả, người nghe",
+    "example_en": "Look at your audience and smile as you speak.",
+    "example_vi": "Hãy nhìn vào khán giả và mỉm cười khi bạn phát biểu."
+  },
+  {
+    "id": 7,
+    "word": "listen",
+    "pos": "v",
+    "ipa": "/ˈlɪsən/",
+    "definition_en": "To give one's attention to sound or speech.",
+    "definition_vi": "lắng nghe",
+    "example_en": "The students listen quietly to every speech.",
+    "example_vi": "Các em học sinh lắng nghe trật tự từng bài phát biểu."
+  },
+  {
+    "id": 8,
+    "word": "bar graph",
+    "pos": "phrase",
+    "ipa": "/bɑr ɡræf/",
+    "definition_en": "A chart showing amounts using vertical bars.",
+    "definition_vi": "biểu đồ cột",
+    "example_en": "Point to the bar graph during your speech.",
+    "example_vi": "Hãy chỉ vào biểu đồ cột trong khi thuyết trình."
+  },
+  {
+    "id": 9,
+    "word": "line plot",
+    "pos": "phrase",
+    "ipa": "/laɪn plɑt/",
+    "definition_en": "A graph showing frequency with X marks.",
+    "definition_vi": "biểu đồ điểm đường",
+    "example_en": "Our line plot showed how many trees were saved.",
+    "example_vi": "Biểu đồ điểm đường cho thấy số lượng cây đã được cứu."
+  },
+  {
+    "id": 10,
+    "word": "pictograph",
+    "pos": "n",
+    "ipa": "/ˈpɪktəɡræf/",
+    "definition_en": "A chart that uses pictures to represent numbers.",
+    "definition_vi": "biểu đồ tranh",
+    "example_en": "The pictograph uses leaf symbols for paper bags.",
+    "example_vi": "Biểu đồ tranh dùng các biểu tượng chiếc lá cho túi giấy."
+  },
+  {
+    "id": 11,
+    "word": "chart",
+    "pos": "n",
+    "ipa": "/tʃɑːrt/",
+    "definition_en": "A sheet of information in table or graph form.",
+    "definition_vi": "bảng biểu",
+    "example_en": "Hold up your chart so the class can see the bars.",
+    "example_vi": "Hãy giơ bảng biểu lên để cả lớp nhìn thấy các cột."
+  },
+  {
+    "id": 12,
+    "word": "data",
+    "pos": "n",
+    "ipa": "/ˈdeɪtə/",
+    "definition_en": "Facts or numbers collected together to study.",
+    "definition_vi": "dữ liệu",
+    "example_en": "Use survey data to explain your green idea.",
+    "example_vi": "Hãy dùng dữ liệu khảo sát để giải thích ý tưởng xanh của bạn."
   },
   {
     "id": 13,
-    "word": "persuasive",
-    "pos": "adj",
-    "ipa": "/pərˈsweɪsɪv/",
-    "definition_en": "Able to convince others through appeal to reason.",
-    "definition_vi": "thuyết phục",
-    "example_en": "Her pitch was persuasive and full of clear numbers.",
-    "example_vi": "Bài thuyết trình của cô ấy rất thuyết phục và tràn ngập các con số rõ ràng."
+    "word": "idea",
+    "pos": "n",
+    "ipa": "/aɪˈdiːə/",
+    "definition_en": "A thought or suggestion as to a possible course of action.",
+    "definition_vi": "ý tưởng",
+    "example_en": "Her green idea was a solar oven for cooking.",
+    "example_vi": "Ý tưởng xanh của bạn ấy là một chiếc lò nướng năng lượng mặt trời."
   },
   {
     "id": 14,
-    "word": "statistic",
-    "pos": "n",
-    "ipa": "/stəˈtɪstɪk/",
-    "definition_en": "A piece of data derived from a large numerical sample.",
-    "definition_vi": "số liệu thống kê",
-    "example_en": "Quote a reliable energy statistic during your speech.",
-    "example_vi": "Hãy trích dẫn một số liệu thống kê năng lượng đáng tin cậy trong bài nói."
+    "word": "green",
+    "pos": "adj",
+    "ipa": "/ɡrin/",
+    "definition_en": "Having the fresh color of grass and leaves.",
+    "definition_vi": "xanh, thân thiện môi trường",
+    "example_en": "We need green solutions to cut plastic waste.",
+    "example_vi": "Chúng ta cần các giải pháp xanh để giảm thiểu rác thải nhựa."
   },
   {
     "id": 15,
-    "word": "visual",
-    "pos": "adj",
-    "ipa": "/ˈvɪʒuəl/",
-    "definition_en": "Relating to seeing or sight; pictorial graphics.",
-    "definition_vi": "thuộc trực quan, hình ảnh",
-    "example_en": "Visual slides help the audience follow complex graphs.",
-    "example_vi": "Các trang chiếu trực quan giúp khán giả theo dõi các biểu đồ phức tạp."
+    "word": "talk",
+    "pos": "v",
+    "ipa": "/tɔːk/",
+    "definition_en": "To speak in order to give information.",
+    "definition_vi": "nói, trao đổi",
+    "example_en": "Talk at a steady pace without rushing.",
+    "example_vi": "Hãy nói với nhịp độ đều đặn, không vội vã."
   },
   {
     "id": 16,
-    "word": "deliver",
+    "word": "stand",
     "pos": "v",
-    "ipa": "/dɪˈlɪvər/",
-    "definition_en": "To state, present, or speak words publicly.",
-    "definition_vi": "trình bày, phát biểu",
-    "example_en": "Practice delivering your speech in a steady, confident voice.",
-    "example_vi": "Hãy luyện tập trình bày bài nói của bạn bằng giọng tự tin và điềm tĩnh."
+    "ipa": "/stænd/",
+    "definition_en": "To be in an upright position on the feet.",
+    "definition_vi": "đứng",
+    "example_en": "Stand tall with both feet on the floor.",
+    "example_vi": "Hãy đứng thẳng với cả hai bàn chân chạm sàn."
   },
   {
     "id": 17,
-    "word": "summarize",
+    "word": "look",
     "pos": "v",
-    "ipa": "/ˈsʌməraɪz/",
-    "definition_en": "To give a brief statement of the main points.",
-    "definition_vi": "tóm tắt lại",
-    "example_en": "Summarize your three arguments in the final slide.",
-    "example_vi": "Hãy tóm tắt ba luận điểm của bạn trong trang chiếu cuối cùng."
+    "ipa": "/lʊk/",
+    "definition_en": "To direct one's gaze toward someone.",
+    "definition_vi": "nhìn, hướng ánh mắt",
+    "example_en": "Look directly at your classmates across the room.",
+    "example_vi": "Hãy nhìn thẳng vào các bạn cùng lớp khắp khán phòng."
   },
   {
     "id": 18,
-    "word": "effective",
-    "pos": "adj",
-    "ipa": "/ɪˈfɛktɪv/",
-    "definition_en": "Successful in producing a desired result.",
-    "definition_vi": "hiệu quả",
-    "example_en": "Composting food waste is an effective green strategy.",
-    "example_vi": "Ủ phân hữu cơ từ rác thải thực phẩm là một chiến lược xanh hiệu quả."
+    "word": "smile",
+    "pos": "v",
+    "ipa": "/smaɪl/",
+    "definition_en": "To form one's features into an expression of pleasure.",
+    "definition_vi": "mỉm cười",
+    "example_en": "A warm smile makes your speech friendly.",
+    "example_vi": "Một nụ cười ấm áp giúp bài nói của bạn thân thiện hơn."
   },
   {
     "id": 19,
-    "word": "renewable",
-    "pos": "adj",
-    "ipa": "/rɪˈnjuːəbl/",
-    "definition_en": "Energy from a source that is not depleted when used.",
-    "definition_vi": "tái tạo",
-    "example_en": "Solar power is the cleanest renewable energy.",
-    "example_vi": "Năng lượng mặt trời là nguồn năng lượng tái tạo sạch nhất."
+    "word": "practice",
+    "pos": "v",
+    "ipa": "/ˈpræktɪs/",
+    "definition_en": "To do something often to become better at it.",
+    "definition_vi": "luyện tập",
+    "example_en": "Practice your speech in front of a mirror.",
+    "example_vi": "Hãy luyện tập bài phát biểu trước gương."
   },
   {
     "id": 20,
-    "word": "initiative",
+    "word": "project",
     "pos": "n",
-    "ipa": "/ɪˈnɪʃətɪv/",
-    "definition_en": "An act or strategy intended to resolve a problem.",
-    "definition_vi": "sáng kiến",
-    "example_en": "Our green rooftop initiative gained widespread support.",
-    "example_vi": "Sáng kiến mái nhà xanh của chúng tôi đã nhận được sự ủng hộ rộng rãi."
+    "ipa": "/ˈprɑːdʒɛkt/",
+    "definition_en": "A piece of school work done carefully over time.",
+    "definition_vi": "dự án",
+    "example_en": "Our green project won first prize at the fair.",
+    "example_vi": "Dự án xanh của chúng tôi đã đạt giải nhất tại hội chợ."
   }
 ];
 export const vocabList = vocab;

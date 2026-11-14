@@ -15,10 +15,11 @@
     "focus": "Write a descriptive paragraph about a planet"
   },
   "grammar_focus": {
-    "structure": "Superlative Adjectives: \"The biggest\", \"The furthest\", \"The hottest",
+    "structure": "Superlative Adjectives: The biggest, The furthest, The hottest",
     "outcome": "Write a descriptive paragraph about a planet",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Superlative Adjectives: The biggest, The furthest, The hottest"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -264,5 +265,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 71
 }

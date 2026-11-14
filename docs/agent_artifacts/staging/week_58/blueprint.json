@@ -1,8 +1,8 @@
 {
   "week": 58,
-  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts  / Toán: Khái niệm Phép chia)",
-  "title_en": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts  / Toán: Khái niệm Phép chia)",
-  "title_vi": "ELA: Vấn đề & Giải pháp (Đoạn văn",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
+  "title_en": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
+  "title_vi": "ELA: Vấn đề & Giải pháp (Đoạn văn) / Toán: Khái niệm Phép chia",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
   "week_type": "rotary_practice",
@@ -15,10 +15,11 @@
     "focus": "Write a paragraph: Problem -> Solution Steps -> Result"
   },
   "grammar_focus": {
-    "structure": "First Conditional (Simple): \"If we [fix it], it will be [better]",
+    "structure": "First Conditional (Simple): If we [fix it], it will be [better].",
     "outcome": "Write a paragraph: Problem -> Solution Steps -> Result",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "First Conditional (Simple): If we [fix it], it will be [better]."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -248,5 +249,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 58
 }

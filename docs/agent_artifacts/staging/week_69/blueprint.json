@@ -15,10 +15,11 @@
     "focus": "Write a persuasive paragraph giving advice on environment"
   },
   "grammar_focus": {
-    "structure": "Modals of Obligation: \"Should\", \"Must\", \"Have to",
+    "structure": "Modals of Obligation: Should, Must, Have to for environmental care",
     "outcome": "Write a persuasive paragraph giving advice on environment",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Modals of Obligation: Should, Must, Have to for environmental care"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -270,5 +271,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 69
 }

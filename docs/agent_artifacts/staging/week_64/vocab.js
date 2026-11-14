@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 64 | Theme: "Data Stories: Reading Pictographs" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 64 | Theme: "ELA: Data Stories / Math: Pictographs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "pictograph",
+    "word": "chart",
     "pos": "n",
-    "ipa": "/ˈpɪktəɡrɑːf/",
-    "definition_en": "A chart or graph that uses picture symbols to represent data.",
-    "definition_vi": "biểu đồ tranh",
-    "example_en": "The pictograph shows how many books each class read.",
-    "example_vi": "Biểu đồ tranh cho thấy mỗi lớp đã đọc bao nhiêu quyển sách."
+    "ipa": "/tʃɑːrt/",
+    "definition_en": "A visual display of information or data.",
+    "definition_vi": "biểu đồ",
+    "example_en": "The wall chart showed our favorite school sports.",
+    "example_vi": "Biểu đồ trên tường hiển thị các môn thể thao yêu thích ở trường."
   },
   {
     "id": 2,
-    "word": "data",
+    "word": "graph",
     "pos": "n",
-    "ipa": "/ˈdeɪtə/",
-    "definition_en": "Facts and statistics collected together for reference or analysis.",
-    "definition_vi": "dữ liệu, số liệu",
-    "example_en": "We organized the survey data in a colorful table.",
-    "example_vi": "Chúng tôi sắp xếp dữ liệu khảo sát trong một bảng nhiều màu sắc."
+    "ipa": "/ɡræf/",
+    "definition_en": "A drawing or chart that shows numbers clearly.",
+    "definition_vi": "đồ thị",
+    "example_en": "Our class drew a colorful bar graph.",
+    "example_vi": "Lớp chúng tôi đã vẽ một biểu đồ cột đầy màu sắc."
   },
   {
     "id": 3,
-    "word": "symbol",
-    "pos": "n",
-    "ipa": "/ˈsɪmbəl/",
-    "definition_en": "A picture or icon representing a specific quantity in a key.",
-    "definition_vi": "biểu tượng, ký hiệu",
-    "example_en": "Each book symbol represents five real books.",
-    "example_vi": "Mỗi biểu tượng cuốn sách đại diện cho năm cuốn sách thật."
+    "word": "show",
+    "pos": "v",
+    "ipa": "/ʃoʊ/",
+    "definition_en": "To display or make visible.",
+    "definition_vi": "thể hiện, cho thấy",
+    "example_en": "The symbols show how many books each student read.",
+    "example_vi": "Các biểu tượng cho thấy mỗi học sinh đã đọc bao nhiêu cuốn sách."
   },
   {
     "id": 4,
-    "word": "key",
+    "word": "data",
     "pos": "n",
-    "ipa": "/kiː/",
-    "definition_en": "The explanatory guide telling what each pictograph icon equals.",
-    "definition_vi": "chú giải quy đổi giá trị",
-    "example_en": "Always read the graph key before counting symbols.",
-    "example_vi": "Luôn đọc chú giải biểu đồ trước khi đếm các biểu tượng."
+    "ipa": "/ˈdeɪtə/",
+    "definition_en": "Facts or numbers collected together to study.",
+    "definition_vi": "dữ liệu",
+    "example_en": "We collected data about our favorite fruits.",
+    "example_vi": "Chúng tôi đã thu thập dữ liệu về các loại trái cây yêu thích."
   },
   {
     "id": 5,
     "word": "popular",
     "pos": "adj",
-    "ipa": "/ˈpɒpjələr/",
-    "definition_en": "Liked, enjoyed, or chosen by many people.",
-    "definition_vi": "phổ biến, được ưa chuộng",
-    "example_en": "Football was the most popular sport among fourth graders.",
-    "example_vi": "Bóng đá là môn thể thao được ưa chuộng nhất trong học sinh lớp bốn."
+    "ipa": "/ˈpɑːpjələr/",
+    "definition_en": "Liked or admired by many people.",
+    "definition_vi": "phổ biến, được ưa thích",
+    "example_en": "Apples were the most popular fruit in class.",
+    "example_vi": "Táo là loại trái cây được ưa thích nhất trong lớp."
   },
   {
     "id": 6,
     "word": "least",
     "pos": "adj",
     "ipa": "/liːst/",
-    "definition_en": "Smallest in amount, degree, or significance.",
+    "definition_en": "Smallest in amount or importance.",
     "definition_vi": "ít nhất",
-    "example_en": "Track and field had the least number of votes.",
-    "example_vi": "Điền kinh có số phiếu bầu ít nhất."
+    "example_en": "Plums were the least chosen snack.",
+    "example_vi": "Mận là món ăn nhẹ được chọn ít nhất."
   },
   {
     "id": 7,
-    "word": "twice",
-    "pos": "adv",
-    "ipa": "/twaɪs/",
-    "definition_en": "Two times as many or two times in quantity.",
-    "definition_vi": "gấp đôi",
-    "example_en": "Room Four read twice as many books as Room Two.",
-    "example_vi": "Phòng Bốn đọc số sách gấp đôi Phòng Hai."
+    "word": "number",
+    "pos": "n",
+    "ipa": "/ˈnʌmbər/",
+    "definition_en": "A word or symbol that tells how many there are.",
+    "definition_vi": "con số, số lượng",
+    "example_en": "Write the total number beside each row.",
+    "example_vi": "Hãy viết tổng số bên cạnh mỗi hàng."
   },
   {
     "id": 8,
-    "word": "compare",
-    "pos": "v",
-    "ipa": "/kəmˈpɛər/",
-    "definition_en": "To estimate, measure, or note the similarity or dissimilarity.",
-    "definition_vi": "so sánh",
-    "example_en": "We compare data findings using bar charts.",
-    "example_vi": "Chúng tôi so sánh các phát hiện dữ liệu bằng biểu đồ cột."
+    "word": "information",
+    "pos": "n",
+    "ipa": "/ˌɪnfərˈmeɪʃən/",
+    "definition_en": "Facts provided or learned about something.",
+    "definition_vi": "thông tin",
+    "example_en": "A pictograph gives clear information at a glance.",
+    "example_vi": "Một biểu đồ tranh cung cấp thông tin rõ ràng chỉ qua một cái nhìn."
   },
   {
     "id": 9,
-    "word": "survey",
+    "word": "pictograph",
     "pos": "n",
-    "ipa": "/ˈsɜːrveɪ/",
-    "definition_en": "An investigation of the opinions or choices of a group.",
-    "definition_vi": "cuộc khảo sát",
-    "example_en": "Our school survey asked students about their favorite lunch.",
-    "example_vi": "Cuộc khảo sát trường học hỏi học sinh về bữa trưa yêu thích."
+    "ipa": "/ˈpɪktəɡræf/",
+    "definition_en": "A chart that uses pictures to represent numbers.",
+    "definition_vi": "biểu đồ tranh",
+    "example_en": "In our pictograph, one star means five points.",
+    "example_vi": "Trong biểu đồ tranh của chúng tôi, một ngôi sao có nghĩa là năm điểm."
   },
   {
     "id": 10,
-    "word": "represent",
-    "pos": "v",
-    "ipa": "/ˌrɛprɪˈzɛnt/",
-    "definition_en": "To stand for or correspond to a specific value.",
-    "definition_vi": "đại diện cho, tượng trưng cho",
-    "example_en": "One apple icon represents ten kilograms of fruit.",
-    "example_vi": "Một biểu tượng quả táo đại diện cho mười ki-lô-gam trái cây."
+    "word": "symbol",
+    "pos": "n",
+    "ipa": "/ˈsɪmbəl/",
+    "definition_en": "A mark or character used as a representation.",
+    "definition_vi": "biểu tượng",
+    "example_en": "Each book symbol stands for two library visits.",
+    "example_vi": "Mỗi biểu tượng cuốn sách đại diện cho hai lần đến thư viện."
   },
   {
     "id": 11,
-    "word": "category",
-    "pos": "n",
-    "ipa": "/ˈkætəɡəri/",
-    "definition_en": "A class or division of things having shared characteristics.",
-    "definition_vi": "hạng mục, thể loại",
-    "example_en": "Science fiction was our highest reading category.",
-    "example_vi": "Khoa học viễn tưởng là thể loại đọc nhiều nhất của chúng tôi."
+    "word": "count by",
+    "pos": "phrase",
+    "ipa": "/kaʊnt baɪ/",
+    "definition_en": "To count in increments such as twos or fives.",
+    "definition_vi": "đếm cách (theo số)",
+    "example_en": "We count by twos to tally the pictures quickly.",
+    "example_vi": "Chúng ta đếm cách hai để kiểm đếm các hình ảnh nhanh chóng."
   },
   {
     "id": 12,
-    "word": "frequency",
+    "word": "total",
     "pos": "n",
-    "ipa": "/ˈfriːkwənsi/",
-    "definition_en": "The rate at which something occurs over a sample period.",
-    "definition_vi": "tần suất",
-    "example_en": "Check the frequency of each response in the tally table.",
-    "example_vi": "Kiểm tra tần suất của từng câu trả lời trong bảng kiểm đếm."
+    "ipa": "/ˈtoʊtl/",
+    "definition_en": "The whole number or amount.",
+    "definition_vi": "tổng cộng",
+    "example_en": "The total number of votes was thirty-six.",
+    "example_vi": "Tổng số phiếu bầu là ba mươi sáu."
   },
   {
     "id": 13,
-    "word": "interpret",
+    "word": "compare",
     "pos": "v",
-    "ipa": "/ɪnˈtɜːrprɪt/",
-    "definition_en": "To explain and extract the meaning of complex data.",
-    "definition_vi": "diễn giải, thông hiểu số liệu",
-    "example_en": "Students interpret the graph to write a data story.",
-    "example_vi": "Học sinh diễn giải biểu đồ để viết một câu chuyện dữ liệu."
+    "ipa": "/kəmˈpɛr/",
+    "definition_en": "To look at two things to see how they are alike or different.",
+    "definition_vi": "so sánh",
+    "example_en": "Compare the rows to see which sport won.",
+    "example_vi": "Hãy so sánh các hàng để xem môn thể thao nào chiến thắng."
   },
   {
     "id": 14,
-    "word": "tally",
-    "pos": "n",
-    "ipa": "/ˈtæli/",
-    "definition_en": "A record of scores or votes kept with hatch marks.",
-    "definition_vi": "bảng kiểm đếm",
-    "example_en": "Keep a neat tally mark for every student vote.",
-    "example_vi": "Hãy ghi dấu kiểm đếm gọn gàng cho mỗi phiếu của học sinh."
+    "word": "most",
+    "pos": "adj",
+    "ipa": "/moʊst/",
+    "definition_en": "Greatest in amount or degree.",
+    "definition_vi": "nhiều nhất",
+    "example_en": "Soccer received the most votes from boys and girls.",
+    "example_vi": "Bóng đá nhận được nhiều phiếu bầu nhất từ các bạn nam và nữ."
   },
   {
     "id": 15,
-    "word": "scale",
-    "pos": "n",
-    "ipa": "/skeɪl/",
-    "definition_en": "The numerical interval represented by each picture symbol.",
-    "definition_vi": "tỉ lệ quy đổi",
-    "example_en": "The scale of the pictograph is five items per star.",
-    "example_vi": "Tỉ lệ của biểu đồ tranh là năm mục trên mỗi ngôi sao."
+    "word": "favorite",
+    "pos": "adj",
+    "ipa": "/ˈfeɪvərɪt/",
+    "definition_en": "Preferred before all others.",
+    "definition_vi": "yêu thích",
+    "example_en": "Swimming is my favorite summer hobby.",
+    "example_vi": "Bơi lội là sở thích mùa hè yêu thích nhất của tôi."
   },
   {
     "id": 16,
-    "word": "majority",
+    "word": "fruit",
     "pos": "n",
-    "ipa": "/məˈdʒɒrəti/",
-    "definition_en": "The greater number or larger part of a whole group.",
-    "definition_vi": "đa số",
-    "example_en": "A clear majority of children voted for the nature park.",
-    "example_vi": "Một đa số rõ ràng trẻ em đã bỏ phiếu cho công viên thiên nhiên."
+    "ipa": "/fruːt/",
+    "definition_en": "The sweet product of a tree or other plant.",
+    "definition_vi": "trái cây",
+    "example_en": "Oranges are sweet, juicy fruit.",
+    "example_vi": "Cam là loại trái cây ngọt ngào và mọng nước."
   },
   {
     "id": 17,
-    "word": "minority",
+    "word": "sport",
     "pos": "n",
-    "ipa": "/maɪˈnɒrəti/",
-    "definition_en": "The smaller number or part, representing less than half.",
-    "definition_vi": "thiểu số",
-    "example_en": "A small minority preferred indoor board games.",
-    "example_vi": "Một thiểu số nhỏ ưa chuộng các trò chơi cờ trong nhà."
+    "ipa": "/spɔːrt/",
+    "definition_en": "A game or physical match that people play for fun.",
+    "definition_vi": "môn thể thao",
+    "example_en": "Basketball is a fast-paced school sport.",
+    "example_vi": "Bóng rổ là một môn thể thao trường học có nhịp độ nhanh."
   },
   {
     "id": 18,
-    "word": "display",
-    "pos": "v",
-    "ipa": "/dɪˈspleɪ/",
-    "definition_en": "To show information prominently on a poster or screen.",
-    "definition_vi": "trưng bày, hiển thị",
-    "example_en": "Display the finished pictograph on the bulletin board.",
-    "example_vi": "Hãy hiển thị biểu đồ tranh đã hoàn thành lên bảng tin."
+    "word": "book",
+    "pos": "n",
+    "ipa": "/bʊk/",
+    "definition_en": "A written or printed work consisting of pages.",
+    "definition_vi": "cuốn sách",
+    "example_en": "Each child chose a comic book to read.",
+    "example_vi": "Mỗi bạn nhỏ đều chọn một cuốn truyện tranh để đọc."
   },
   {
     "id": 19,
-    "word": "conclusion",
+    "word": "survey",
     "pos": "n",
-    "ipa": "/kənˈkluːʒən/",
-    "definition_en": "A decision or summary reached after reviewing facts.",
-    "definition_vi": "kết luận",
-    "example_en": "Our conclusion is that students want more sports clubs.",
-    "example_vi": "Kết luận của chúng tôi là học sinh muốn có thêm các câu lạc bộ thể thao."
+    "ipa": "/ˈsɜːrveɪ/",
+    "definition_en": "An investigation of the opinions of people.",
+    "definition_vi": "cuộc khảo sát",
+    "example_en": "Our class survey had twenty-five questions.",
+    "example_vi": "Cuộc khảo sát của lớp chúng tôi có hai mươi lăm câu hỏi."
   },
   {
     "id": 20,
-    "word": "chart",
+    "word": "student",
     "pos": "n",
-    "ipa": "/tʃɑːrt/",
-    "definition_en": "A graphical representation of data in rows or bars.",
-    "definition_vi": "biểu đồ",
-    "example_en": "The wall chart makes comparing numbers very easy.",
-    "example_vi": "Biểu đồ treo tường giúp việc so sánh các con số rất dễ dàng."
+    "ipa": "/ˈstuːdnt/",
+    "definition_en": "A person who is studying at a school.",
+    "definition_vi": "học sinh",
+    "example_en": "Every student voted for their top choice.",
+    "example_vi": "Mỗi học sinh đều đã bỏ phiếu cho lựa chọn hàng đầu của mình."
   }
 ];
 export const vocabList = vocab;

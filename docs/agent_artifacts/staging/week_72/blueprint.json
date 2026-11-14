@@ -15,10 +15,11 @@
     "focus": "Explain the process of photosynthesis"
   },
   "grammar_focus": {
-    "structure": "Passive Voice (Intro - Simple Present): \"Sunlight is absorbed",
+    "structure": "Passive Voice (Intro - Simple Present): Sunlight is absorbed, Water is taken in",
     "outcome": "Explain the process of photosynthesis",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Passive Voice (Intro - Simple Present): Sunlight is absorbed, Water is taken in"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -265,5 +266,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "week_number": 72
 }

@@ -1,10 +1,10 @@
 {
   "provenance_version": "1.1.0",
-  "generated_at": "2026-11-14T03:28:50.000Z",
-  "pipeline_script": "scripts/round93_data_generator.py",
+  "generated_at": "2026-11-14T04:22:25.047Z",
+  "pipeline_script": "scripts/round94_generator.mjs",
   "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
   "week_number": 55,
-  "theme": "Cause and Effect: The Chain Reaction",
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
   "cefr_level": "A2 Flyers",
   "grammar_focus": "Conjunctions of Cause and Effect: because, so, therefore",
   "source_inputs": {
@@ -44,8 +44,16 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY",
     "GATE_15_CLIL_VOCAB_INTEGRATION",
-    "GATE_16_ESL_ANOMALY_ZERO"
+    "GATE_16_ESL_ANOMALY_ZERO",
+    "GATE_SP2_SPEAKING_EXCHANGE_AUTHENTIC"
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
-  "staged_status": "STAGED_FOR_REVIEW"
+  "staged_status": "STAGED_FOR_REVIEW",
+  "verified_at": "2026-11-14T04:22:28.051Z",
+  "audit_summary": {
+    "total_gates_evaluated": 17,
+    "passed_count": 17,
+    "failed_count": 0,
+    "all_passed": true
+  }
 }

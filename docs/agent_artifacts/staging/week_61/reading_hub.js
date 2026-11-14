@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 61 | Theme: "Main Idea Hunter: Volcanic Eruptions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 61 | Theme: "ELA: Main Idea Hunter / Math: Word Problems"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 61,
-  "theme": "Main Idea Hunter: Volcanic Eruptions",
+  "theme": "ELA: Main Idea Hunter / Math: Word Problems",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "volcano",
-      "pos": "n",
-      "ipa": "/vɒlˈkeɪnəʊ/",
-      "definition_en": "A mountain with an opening through which lava and ash erupt.",
-      "definition_vi": "núi lửa",
-      "example_en": "Mount Rainier is a large dormant volcano.",
-      "example_vi": "Núi Rainier là một ngọn núi lửa lớn đang ngủ say."
+      "word": "main idea",
+      "pos": "phrase",
+      "ipa": "/meɪn aɪˈdiːə/",
+      "definition_en": "The most important point that a writer makes.",
+      "definition_vi": "ý chính",
+      "example_en": "The main idea is that volcanoes build new land.",
+      "example_vi": "Ý chính là núi lửa tạo nên vùng đất mới."
     },
     {
       "id": 2,
-      "word": "magma",
-      "pos": "n",
-      "ipa": "/ˈmæɡmə/",
-      "definition_en": "Hot melted rock beneath the surface of the Earth.",
-      "definition_vi": "mắc-ma (đá nóng chảy dưới lòng đất)",
-      "example_en": "Magma collects in a chamber deep underground.",
-      "example_vi": "Mắc-ma tích tụ trong một buồng sâu dưới lòng đất."
-    },
-    {
-      "id": 3,
-      "word": "lava",
-      "pos": "n",
-      "ipa": "/ˈlɑːvə/",
-      "definition_en": "Hot melted liquid rock that flows out of a volcano.",
-      "definition_vi": "dung nham (đá nóng chảy trên mặt đất)",
-      "example_en": "Red lava flowed down the dark mountain slope.",
-      "example_vi": "Dung nham đỏ chảy xuống sườn núi tối."
-    },
-    {
-      "id": 4,
-      "word": "erupt",
-      "pos": "v",
-      "ipa": "/ɪˈrʌpt/",
-      "definition_en": "To explode and throw out fire, ash, and melted rock.",
-      "definition_vi": "phun trào",
-      "example_en": "The volcano can erupt with enormous power.",
-      "example_vi": "Núi lửa có thể phun trào với sức mạnh khổng lồ."
-    },
-    {
-      "id": 5,
-      "word": "ash",
-      "pos": "n",
-      "ipa": "/æʃ/",
-      "definition_en": "The grey powder that remains after something burns.",
-      "definition_vi": "tro bụi núi lửa",
-      "example_en": "Volcanic ash blanketed the surrounding fields.",
-      "example_vi": "Tro núi lửa phủ trắng các cánh đồng xung quanh."
-    },
-    {
-      "id": 6,
-      "word": "chamber",
-      "pos": "n",
-      "ipa": "/ˈtʃeɪmbər/",
-      "definition_en": "An enclosed subterranean cavity or space.",
-      "definition_vi": "buồng chứa",
-      "example_en": "High pressure builds inside the magma chamber.",
-      "example_vi": "Áp suất cao tích tụ bên trong buồng mắc-ma."
-    },
-    {
-      "id": 7,
       "word": "detail",
       "pos": "n",
       "ipa": "/ˈdiːteɪl/",
-      "definition_en": "An individual fact, feature, or piece of information.",
+      "definition_en": "A small fact or piece of information.",
       "definition_vi": "chi tiết",
-      "example_en": "Supporting details explain the main idea of a text.",
-      "example_vi": "Các chi tiết bổ trợ giải thích ý chính của bài đọc."
+      "example_en": "Each paragraph gives a detail about hot lava.",
+      "example_vi": "Mỗi đoạn văn cung cấp một chi tiết về nham thạch nóng."
     },
     {
-      "id": 8,
-      "word": "topic",
-      "pos": "n",
-      "ipa": "/ˈtɒpɪk/",
-      "definition_en": "The general subject that a text or paragraph is about.",
-      "definition_vi": "chủ đề",
-      "example_en": "The topic of the article is Earth science.",
-      "example_vi": "Chủ đề của bài báo là khoa học Trái Đất."
-    },
-    {
-      "id": 9,
-      "word": "crust",
-      "pos": "n",
-      "ipa": "/krʌst/",
-      "definition_en": "The hard solid outer layer of our planet Earth.",
-      "definition_vi": "vỏ Trái Đất",
-      "example_en": "Tectonic plates move slowly across Earth's crust.",
-      "example_vi": "Các mảng kiến tạo di chuyển chậm trên vỏ Trái Đất."
-    },
-    {
-      "id": 10,
-      "word": "pressure",
-      "pos": "n",
-      "ipa": "/ˈprɛʃər/",
-      "definition_en": "Continuous physical force exerted against an object.",
-      "definition_vi": "áp suất",
-      "example_en": "Rising gas pressure forces magma upward.",
-      "example_vi": "Áp suất khí tăng ép mắc-ma trào lên trên."
-    },
-    {
-      "id": 11,
-      "word": "geologist",
-      "pos": "n",
-      "ipa": "/dʒiˈɒlədʒɪst/",
-      "definition_en": "A scientist who studies rocks and the history of Earth.",
-      "definition_vi": "nhà địa chất học",
-      "example_en": "The geologist measured ground vibrations with sensors.",
-      "example_vi": "Nhà địa chất đã đo độ rung của mặt đất bằng cảm biến."
-    },
-    {
-      "id": 12,
-      "word": "vent",
-      "pos": "n",
-      "ipa": "/vɛnt/",
-      "definition_en": "An opening that allows gas or liquid to escape.",
-      "definition_vi": "lỗ thoát, miệng thoát khí",
-      "example_en": "Steam escaped from a narrow rock vent.",
-      "example_vi": "Hơi nước thoát ra từ một lỗ đá hẹp."
-    },
-    {
-      "id": 13,
-      "word": "dormant",
-      "pos": "adj",
-      "ipa": "/ˈdɔːrmənt/",
-      "definition_en": "Not active right now, but capable of erupting later.",
-      "definition_vi": "ngủ say, tạm ngừng hoạt động",
-      "example_en": "The volcano remained dormant for three centuries.",
-      "example_vi": "Ngọn núi lửa đã ngủ say trong suốt ba thế kỷ."
-    },
-    {
-      "id": 14,
-      "word": "active",
-      "pos": "adj",
-      "ipa": "/ˈæktɪv/",
-      "definition_en": "Currently showing signs of volcanic activity or eruption.",
-      "definition_vi": "đang hoạt động",
-      "example_en": "Scientists monitor active volcanoes day and night.",
-      "example_vi": "Các nhà khoa học theo dõi các ngọn núi lửa đang hoạt động ngày đêm."
-    },
-    {
-      "id": 15,
-      "word": "crater",
-      "pos": "n",
-      "ipa": "/ˈkreɪtər/",
-      "definition_en": "A large bowl-shaped hollow at the top of a volcano.",
-      "definition_vi": "miệng núi lửa",
-      "example_en": "Smoke drifted from the deep mountain crater.",
-      "example_vi": "Khói bốc lên từ miệng núi lửa sâu trên núi."
-    },
-    {
-      "id": 16,
-      "word": "mineral",
-      "pos": "n",
-      "ipa": "/ˈmɪnərəl/",
-      "definition_en": "A valuable natural substance formed in the earth.",
-      "definition_vi": "khoáng vật, khoáng chất",
-      "example_en": "Volcanic soil is full of rich minerals for crops.",
-      "example_vi": "Đất núi lửa chứa nhiều khoáng chất màu mỡ cho cây trồng."
-    },
-    {
-      "id": 17,
-      "word": "tremor",
-      "pos": "n",
-      "ipa": "/ˈtrɛmər/",
-      "definition_en": "A small shaking movement of the ground.",
-      "definition_vi": "chấn động nhẹ",
-      "example_en": "Minor tremors warn geologists before an eruption.",
-      "example_vi": "Những chấn động nhỏ cảnh báo các nhà địa chất trước đợt phun trào."
-    },
-    {
-      "id": 18,
-      "word": "identify",
-      "pos": "v",
-      "ipa": "/aɪˈdɛntɪfaɪ/",
-      "definition_en": "To recognize and state what something is.",
-      "definition_vi": "nhận diện, xác định",
-      "example_en": "Students identify the main idea in each paragraph.",
-      "example_vi": "Học sinh xác định ý chính trong mỗi đoạn văn."
-    },
-    {
-      "id": 19,
+      "id": 3,
       "word": "support",
       "pos": "v",
       "ipa": "/səˈpɔːrt/",
-      "definition_en": "To provide evidence or details that back up a claim.",
-      "definition_vi": "bổ trợ, củng cố",
-      "example_en": "Three facts support the author's primary conclusion.",
-      "example_vi": "Ba sự thật bổ trợ cho kết luận chính của tác giả."
+      "definition_en": "To give facts that back up a main idea.",
+      "definition_vi": "hỗ trợ, bổ trợ cho ý chính",
+      "example_en": "Strong facts support the main idea of the story.",
+      "example_vi": "Những sự thật vững chắc bổ trợ cho ý chính của câu chuyện."
+    },
+    {
+      "id": 4,
+      "word": "topic",
+      "pos": "n",
+      "ipa": "/ˈtɑːpɪk/",
+      "definition_en": "The general subject of a text or discussion.",
+      "definition_vi": "chủ đề",
+      "example_en": "Our science topic this week is active volcanoes.",
+      "example_vi": "Chủ đề khoa học tuần này của chúng tôi là núi lửa đang hoạt động."
+    },
+    {
+      "id": 5,
+      "word": "important",
+      "pos": "adj",
+      "ipa": "/ɪmˈpɔːrtənt/",
+      "definition_en": "Having great value, importance, or meaning.",
+      "definition_vi": "quan trọng",
+      "example_en": "Underline the most important sentence in the text.",
+      "example_vi": "Hãy gạch chân câu văn quan trọng nhất trong bài."
+    },
+    {
+      "id": 6,
+      "word": "about",
+      "pos": "prep",
+      "ipa": "/əˈbaʊt/",
+      "definition_en": "On the subject of.",
+      "definition_vi": "về (chủ đề gì)",
+      "example_en": "The reading is about how hot ash shapes rocks.",
+      "example_vi": "Bài đọc viết về cách tro nóng tạo hình cho đất đá."
+    },
+    {
+      "id": 7,
+      "word": "title",
+      "pos": "n",
+      "ipa": "/ˈtaɪtl/",
+      "definition_en": "The name of a book, article, or story.",
+      "definition_vi": "tiêu đề",
+      "example_en": "The title of the chapter is 'Volcano Hunters'.",
+      "example_vi": "Tiêu đề của chương là 'Những người săn núi lửa'."
+    },
+    {
+      "id": 8,
+      "word": "word problem",
+      "pos": "phrase",
+      "ipa": "/wɜrd ˈprɑbləm/",
+      "definition_en": "A math question written in everyday sentences.",
+      "definition_vi": "bài toán đố",
+      "example_en": "Read the word problem twice before calculating.",
+      "example_vi": "Hãy đọc bài toán đố hai lần trước khi tính toán."
+    },
+    {
+      "id": 9,
+      "word": "understand",
+      "pos": "v",
+      "ipa": "/ˌʌndərˈstænd/",
+      "definition_en": "To comprehend the meaning of something.",
+      "definition_vi": "thấu hiểu",
+      "example_en": "Circle the numbers so you understand the problem.",
+      "example_vi": "Hãy khoanh tròn các số để bạn hiểu bài toán."
+    },
+    {
+      "id": 10,
+      "word": "plan",
+      "pos": "v",
+      "ipa": "/plæn/",
+      "definition_en": "To decide which steps to take.",
+      "definition_vi": "lên kế hoạch",
+      "example_en": "Plan which operation to use first.",
+      "example_vi": "Hãy lên kế hoạch xem nên dùng phép tính nào trước."
+    },
+    {
+      "id": 11,
+      "word": "solve",
+      "pos": "v",
+      "ipa": "/sɑːlv/",
+      "definition_en": "To find the right answer to a puzzle or problem.",
+      "definition_vi": "giải bài",
+      "example_en": "Step three is to solve the equation carefully.",
+      "example_vi": "Bước ba là cẩn thận giải phép tính."
+    },
+    {
+      "id": 12,
+      "word": "check",
+      "pos": "v",
+      "ipa": "/tʃɛk/",
+      "definition_en": "To examine something to ensure it is correct.",
+      "definition_vi": "kiểm tra lại",
+      "example_en": "Always check your answer by working backwards.",
+      "example_vi": "Luôn luôn kiểm tra lại câu trả lời bằng phép tính ngược."
+    },
+    {
+      "id": 13,
+      "word": "volcano",
+      "pos": "n",
+      "ipa": "/vɑːlˈkeɪnoʊ/",
+      "definition_en": "A mountain with a crater that erupts magma.",
+      "definition_vi": "núi lửa",
+      "example_en": "Steam rose high above the active volcano.",
+      "example_vi": "Khói trắng bốc lên cao phía trên ngọn núi lửa đang hoạt động."
+    },
+    {
+      "id": 14,
+      "word": "mountain",
+      "pos": "n",
+      "ipa": "/ˈmaʊntn/",
+      "definition_en": "A large steep natural elevation of earth.",
+      "definition_vi": "ngọn núi",
+      "example_en": "The snowy mountain peak looked majestic.",
+      "example_vi": "Đỉnh núi phủ tuyết trông thật hùng vĩ."
+    },
+    {
+      "id": 15,
+      "word": "rock",
+      "pos": "n",
+      "ipa": "/rɑːk/",
+      "definition_en": "A solid mineral forming part of the earth.",
+      "definition_vi": "hòn đá, đất đá",
+      "example_en": "Cooled lava turns into hard black rock.",
+      "example_vi": "Dung nham nguội đi biến thành đá đen cứng."
+    },
+    {
+      "id": 16,
+      "word": "smoke",
+      "pos": "n",
+      "ipa": "/smoʊk/",
+      "definition_en": "A grey vapor produced by burning material.",
+      "definition_vi": "khói",
+      "example_en": "Grey smoke drifted into the clouds.",
+      "example_vi": "Khói xám bay lơ lửng vào những đám mây."
+    },
+    {
+      "id": 17,
+      "word": "fire",
+      "pos": "n",
+      "ipa": "/ˈfaɪər/",
+      "definition_en": "Combustion producing heat and light.",
+      "definition_vi": "lửa",
+      "example_en": "Orange fire glowed inside the crater.",
+      "example_vi": "Ngọn lửa cam rực sáng bên trong miệng núi lửa."
+    },
+    {
+      "id": 18,
+      "word": "ash",
+      "pos": "n",
+      "ipa": "/æʃ/",
+      "definition_en": "Grey powder left behind after a fire.",
+      "definition_vi": "tro núi lửa",
+      "example_en": "Fine volcanic ash settled across the forest.",
+      "example_vi": "Lớp tro núi lửa mịn phủ đầy khắp khu rừng."
+    },
+    {
+      "id": 19,
+      "word": "earth",
+      "pos": "n",
+      "ipa": "/ɜːrθ/",
+      "definition_en": "The planet on which we live; also soil.",
+      "definition_vi": "trái đất, mặt đất",
+      "example_en": "The earth rumbled before the eruption.",
+      "example_vi": "Mặt đất rung chuyển trước khi núi lửa phun trào."
     },
     {
       "id": 20,
-      "word": "pumice",
-      "pos": "n",
-      "ipa": "/ˈpʌmɪs/",
-      "definition_en": "A very light grey volcanic rock full of tiny holes.",
-      "definition_vi": "đá bọt núi lửa",
-      "example_en": "Pumice stone floats on top of fresh water.",
-      "example_vi": "Đá bọt có thể nổi trên mặt nước ngọt."
+      "word": "erupt",
+      "pos": "v",
+      "ipa": "/ɪˈrʌpt/",
+      "definition_en": "To explode and shoot out lava and ash.",
+      "definition_vi": "phun trào",
+      "example_en": "The volcano may erupt after many quiet years.",
+      "example_vi": "Ngọn núi lửa có thể phun trào sau nhiều năm yên tĩnh."
     }
   ],
-  "clil_article": {
-    "title_en": "Hunting the Main Idea: The Anatomy of a Volcano",
-    "title_vi": "Săn tìm Ý chính: Cấu tạo của Núi lửa",
-    "content_en": "When reading scientific articles, skilled readers distinguish between the main idea and supporting details. The main idea is the central point or primary message that the author wants readers to understand. Supporting details are the specific facts, examples, and numbers that explain or prove the main idea. In Earth science, a text might have the main idea: 'Volcanoes form where magma rises through fractures in Earth's crust.' The author then supports this with details: deep underground, molten rock called magma collects in a magma chamber; rising gas pressure forces the magma upward through a vertical vent; and when the volcano erupts, magma breaches the surface as lava and volcanic ash. In mathematics, we also separate main totals from component parts using multi-step word problems. For example, if a geology laboratory prepares 4 crates containing 15 rock samples each, and then donates 18 samples to a high school, how many samples remain? First, multiply 4 by 15 to get 60 total samples. Second, subtract 18 from 60 to find that 42 rock samples remain. Identifying central ideas and calculating step-by-step numbers are essential tools for young scientists.",
-    "glossary": [
-      {
-        "word": "volcano",
-        "definition_en": "Mountain erupting lava and ash",
-        "definition_vi": "núi lửa"
-      },
-      {
-        "word": "magma",
-        "definition_en": "Underground melted rock",
-        "definition_vi": "mắc-ma"
-      },
-      {
-        "word": "lava",
-        "definition_en": "Melted rock on the surface",
-        "definition_vi": "dung nham"
-      },
-      {
-        "word": "detail",
-        "definition_en": "Fact supporting a main idea",
-        "definition_vi": "chi tiết"
-      },
-      {
-        "word": "pressure",
-        "definition_en": "Force pushing against a boundary",
-        "definition_vi": "áp suất"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What is the difference between magma and lava?",
-        "options": [
-          "Magma is underground; lava is on the surface",
-          "Magma is cold; lava is frozen",
-          "Magma is water; lava is gas"
-        ],
-        "answer": "Magma is underground; lava is on the surface"
-      },
-      {
-        "id": 2,
-        "question_en": "If a lab has 4 crates of 15 samples and donates 18, how many remain?",
-        "options": [
-          "42 samples",
-          "32 samples",
-          "52 samples"
-        ],
-        "answer": "42 samples"
-      },
-      {
-        "id": 3,
-        "question_en": "What role do supporting details play in a reading text?",
-        "options": [
-          "They prove and explain the main idea",
-          "They hide the author's message",
-          "They introduce unrelated stories"
-        ],
-        "answer": "They prove and explain the main idea"
-      }
-    ],
-    "text": "When reading scientific articles, skilled readers distinguish between the main idea and supporting details. The main idea is the central point or primary message that the author wants readers to understand. Supporting details are the specific facts, examples, and numbers that explain or prove the main idea. In Earth science, a text might have the main idea: 'Volcanoes form where magma rises through fractures in Earth's crust.' The author then supports this with details: deep underground, molten rock called magma collects in a magma chamber; rising gas pressure forces the magma upward through a vertical vent; and when the volcano erupts, magma breaches the surface as lava and volcanic ash. In mathematics, we also separate main totals from component parts using multi-step word problems. For example, if a geology laboratory prepares 4 crates containing 15 rock samples each, and then donates 18 samples to a high school, how many samples remain? First, multiply 4 by 15 to get 60 total samples. Second, subtract 18 from 60 to find that 42 rock samples remain. Identifying central ideas and calculating step-by-step numbers are essential tools for young scientists."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "Main Idea Hunter: Volcano Wonders",
+    "title_vi": "Thợ săn Ý chính: Kỳ quan Núi lửa",
+    "content_en": "When reading about nature, good readers act like detectives hunting for the main idea. The main idea is the big central point (the most important thought) in a paragraph. Supporting details are smaller facts that explain and support that big point. For example, read this paragraph: 'Volcanoes are powerful mountains on Earth. Deep underground, melted rock called magma boils with heat. When pressure builds, the volcano can erupt (shoot out lava and ash). Clouds of smoke rise high into the blue sky.' The topic is volcanoes, and the main idea is that volcanoes are powerful active mountains. The details about magma, smoke, and ash support that idea. In math, solving a word problem follows similar clear steps: first understand the problem, plan your operation, solve the math, and check your answer. Finding the main idea helps you understand science texts and word problems with ease.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What is the main idea of a paragraph?",
+        "question_vi": "Ý chính của một đoạn văn là gì?",
+        "options": [
+          "The most important central point",
+          "The very last word",
+          "A random number"
+        ],
+        "answer": "The most important central point"
+      },
+      {
+        "id": "q2",
+        "question_en": "What supports the main idea in a text?",
+        "question_vi": "Điều gì bổ trợ cho ý chính trong một bài đọc?",
+        "options": [
+          "Supporting details and facts",
+          "Empty drawings",
+          "A red pen mark"
+        ],
+        "answer": "Supporting details and facts"
+      },
+      {
+        "id": "q3",
+        "question_en": "What is the final step in solving a math word problem?",
+        "question_vi": "Bước cuối cùng khi giải một bài toán đố là gì?",
+        "options": [
+          "Check your answer",
+          "Forget the question",
+          "Close your notebook"
+        ],
+        "answer": "Check your answer"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "main idea",
+        "definition_en": "The central thought or message of a paragraph."
+      },
+      {
+        "term": "detail",
+        "definition_en": "A small specific fact that supports the main idea."
+      },
+      {
+        "term": "erupt",
+        "definition_en": "To explode and shoot out melted rock, smoke, and ash."
+      },
+      {
+        "term": "word problem",
+        "definition_en": "A math question expressed in sentences."
+      },
+      {
+        "term": "check",
+        "definition_en": "To test your answer to be sure it is correct."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "The main idea is the most important sentence in a text.",
+      "ipa": "/ðə meɪn aɪˈdiə ɪz ðə moʊst ɪmˈpɔrtənt ˈsɛntəns ɪn ə tɛkst/",
+      "vietnamese": "Ý chính là câu văn quan trọng nhất trong bài đọc."
+    },
+    {
+      "id": 2,
+      "text": "Supporting details give interesting facts about the topic.",
+      "ipa": "/səˈpɔrtɪŋ ˈditeɪlz ɡɪv ˈɪntrəstɪŋ fækts əˈbaʊt ðə ˈtɑpɪk/",
+      "vietnamese": "Các chi tiết bổ trợ cung cấp những sự thật thú vị về chủ đề."
+    },
+    {
+      "id": 3,
+      "text": "Hot magma can erupt from the deep volcano crater.",
+      "ipa": "/hɑt ˈmæɡmə kæn ɪˈrʌpt frʌm ðə dip vɑlˈkeɪnoʊ ˈkreɪtər/",
+      "vietnamese": "Dung nham nóng có thể phun trào từ miệng núi lửa sâu thẳm."
+    },
+    {
+      "id": 4,
+      "text": "Grey ash and dark smoke drifted into the clouds.",
+      "ipa": "/ɡreɪ æʃ ænd dɑrk smoʊk ˈdrɪftəd ˈɪntu ðə klaʊdz/",
+      "vietnamese": "Tro xám và khói đen bay lơ lửng vào những đám mây."
+    },
+    {
+      "id": 5,
+      "text": "First understand the word problem before you start calculating.",
+      "ipa": "/fɜrst ˌʌndərˈstænd ðə wɜrd ˈprɑbləm bɪˈfɔr ju stɑrt ˈkælkjəˌleɪtɪŋ/",
+      "vietnamese": "Đầu tiên hãy hiểu bài toán đố trước khi bắt đầu tính toán."
+    },
+    {
+      "id": 6,
+      "text": "Make a clear plan and choose the right operation.",
+      "ipa": "/meɪk ə klɪr plæn ænd tʃuz ðə raɪt ˌɑpəˈreɪʃən/",
+      "vietnamese": "Hãy lên kế hoạch rõ ràng và chọn đúng phép tính."
+    },
+    {
+      "id": 7,
+      "text": "Solve each equation carefully step by step.",
+      "ipa": "/sɑlv itʃ ɪˈkweɪʒən ˈkɛrfəli stɛp baɪ stɛp/",
+      "vietnamese": "Hãy giải từng phương trình cẩn thận theo từng bước."
+    },
+    {
+      "id": 8,
+      "text": "Always check your answer to make sure it is correct.",
+      "ipa": "/ˈɔlˌweɪz tʃɛk jʊər ˈænsər tu meɪk ʃʊr ɪt ɪz kəˈrɛkt/",
+      "vietnamese": "Luôn luôn kiểm tra lại câu trả lời để đảm bảo nó chính xác."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Maya",
-        "text": "The main idea expresses the central message of a text.",
-        "ipa": "/ðə meɪn aɪˈdɪə ɪkˈsprɛsɪz ðə ˈsɛntrəl ˈmɛsɪdʒ ɒv ə tɛkst/"
+        "text": "The main idea is the most important sentence in a text.",
+        "ipa": "/ðə meɪn aɪˈdiə ɪz ðə moʊst ɪmˈpɔrtənt ˈsɛntəns ɪn ə tɛkst/",
+        "vietnamese": "Ý chính là câu văn quan trọng nhất trong bài đọc."
       },
       {
         "id": 2,
-        "speaker": "Liam",
-        "text": "Supporting details provide facts, examples, and exact measurements.",
-        "ipa": "/səˈpɔːrtɪŋ ˈdiːteɪlz prəˈvaɪd fækts, ɪɡˈzɑːmplz, ænd ɪɡˈzækt ˈmɛʒərmənts/"
+        "text": "Supporting details give interesting facts about the topic.",
+        "ipa": "/səˈpɔrtɪŋ ˈditeɪlz ɡɪv ˈɪntrəstɪŋ fækts əˈbaʊt ðə ˈtɑpɪk/",
+        "vietnamese": "Các chi tiết bổ trợ cung cấp những sự thật thú vị về chủ đề."
       },
       {
         "id": 3,
-        "speaker": "Maya",
-        "text": "Magma is molten rock trapped inside a subterranean chamber.",
-        "ipa": "/ˈmæɡmə ɪz ˈməʊltən rɒk træpt ɪnˈsaɪd ə ˌsʌbtəˈreɪniən ˈtʃeɪmbər/"
+        "text": "Hot magma can erupt from the deep volcano crater.",
+        "ipa": "/hɑt ˈmæɡmə kæn ɪˈrʌpt frʌm ðə dip vɑlˈkeɪnoʊ ˈkreɪtər/",
+        "vietnamese": "Dung nham nóng có thể phun trào từ miệng núi lửa sâu thẳm."
       },
       {
         "id": 4,
-        "speaker": "Liam",
-        "text": "When a volcano erupts, glowing lava flows down slopes.",
-        "ipa": "/wɛn ə vɒlˈkeɪnəʊ ɪˈrʌpts, ˈɡləʊɪŋ ˈlɑːvə fləʊz daʊn sləʊps/"
+        "text": "Grey ash and dark smoke drifted into the clouds.",
+        "ipa": "/ɡreɪ æʃ ænd dɑrk smoʊk ˈdrɪftəd ˈɪntu ðə klaʊdz/",
+        "vietnamese": "Tro xám và khói đen bay lơ lửng vào những đám mây."
       },
       {
         "id": 5,
-        "speaker": "Maya",
-        "text": "Four crates of fifteen rocks equal sixty rock specimens.",
-        "ipa": "/fɔːr kreɪts ɒv fɪfˈtiːn rɒks ˈiːkwəl ˈsɪksti rɒk ˈspɛsɪmɪnz/"
+        "text": "First understand the word problem before you start calculating.",
+        "ipa": "/fɜrst ˌʌndərˈstænd ðə wɜrd ˈprɑbləm bɪˈfɔr ju stɑrt ˈkælkjəˌleɪtɪŋ/",
+        "vietnamese": "Đầu tiên hãy hiểu bài toán đố trước khi bắt đầu tính toán."
       },
       {
         "id": 6,
-        "speaker": "Liam",
-        "text": "Subtracting eighteen donated rocks leaves forty-two in the archive.",
-        "ipa": "/səbˈtræktɪŋ ˌeɪˈtiːn dəʊˈneɪtɪd rɒks liːvz ˈfɔːrti tuː ɪn ði ˈɑːrkaɪv/"
+        "text": "Make a clear plan and choose the right operation.",
+        "ipa": "/meɪk ə klɪr plæn ænd tʃuz ðə raɪt ˌɑpəˈreɪʃən/",
+        "vietnamese": "Hãy lên kế hoạch rõ ràng và chọn đúng phép tính."
       },
       {
         "id": 7,
-        "speaker": "Maya",
-        "text": "Geologists examine seismic tremors before an eruption takes place.",
-        "ipa": "/dʒiˈɒlədʒɪsts ɪɡˈzæmɪn ˈsaɪzmɪk ˈtrɛmərz bɪˈfɔːr ən ɪˈrʌpʃən teɪks pleɪs/"
+        "text": "Solve each equation carefully step by step.",
+        "ipa": "/sɑlv itʃ ɪˈkweɪʒən ˈkɛrfəli stɛp baɪ stɛp/",
+        "vietnamese": "Hãy giải từng phương trình cẩn thận theo từng bước."
       },
       {
         "id": 8,
-        "speaker": "Liam",
-        "text": "Careful readers hunt the main idea before writing summaries.",
-        "ipa": "/ˈkɛəfl ˈriːdərz hʌnt ðə meɪn aɪˈdɪə bɪˈfɔːr ˈraɪtɪŋ ˈsʌməriz/"
+        "text": "Always check your answer to make sure it is correct.",
+        "ipa": "/ˈɔlˌweɪz tʃɛk jʊər ˈænsər tu meɪk ʃʊr ɪt ɪz kəˈrɛkt/",
+        "vietnamese": "Luôn luôn kiểm tra lại câu trả lời để đảm bảo nó chính xác."
       }
     ]
   },
-  "rw_part1": [
-    {
-      "definition": "A mountain that can explode and throw out lava.",
-      "word": "volcano"
-    },
-    {
-      "definition": "Hot liquid rock that flows onto the ground surface.",
-      "word": "lava"
-    },
-    {
-      "definition": "Melted liquid rock while it is still underground.",
-      "word": "magma"
-    },
-    {
-      "definition": "The most important central point of a written text.",
-      "word": "main idea"
-    },
-    {
-      "definition": "A scientist who investigates rocks and Earth's crust.",
-      "word": "geologist"
-    }
-  ],
+  "rw_part1": {
+    "word_bank": [
+      "main idea",
+      "detail",
+      "support",
+      "topic",
+      "important",
+      "about",
+      "title",
+      "word problem",
+      "understand",
+      "plan",
+      "solve",
+      "check",
+      "volcano",
+      "mountain",
+      "rock",
+      "smoke",
+      "fire",
+      "ash",
+      "earth",
+      "erupt"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A push or pull that can cause an object to move.",
+        "target": "force",
+        "definition": "A push or pull that can cause an object to move.",
+        "word": "force",
+        "definition_en": "A push or pull that can cause an object to move.",
+        "options": [
+          "force",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "force"
+      },
+      {
+        "id": 2,
+        "text": "To press against something to move it away from you.",
+        "target": "push",
+        "definition": "To press against something to move it away from you.",
+        "word": "push",
+        "definition_en": "To press against something to move it away from you.",
+        "options": [
+          "push",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "push"
+      },
+      {
+        "id": 3,
+        "text": "To hold something and move it toward you.",
+        "target": "pull",
+        "definition": "To hold something and move it toward you.",
+        "word": "pull",
+        "definition_en": "To hold something and move it toward you.",
+        "options": [
+          "pull",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pull"
+      },
+      {
+        "id": 4,
+        "text": "The act or process of moving from one place to another.",
+        "target": "motion",
+        "definition": "The act or process of moving from one place to another.",
+        "word": "motion",
+        "definition_en": "The act or process of moving from one place to another.",
+        "options": [
+          "motion",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "motion"
+      },
+      {
+        "id": 5,
+        "text": "The resistance that one surface encounters when moving over another.",
+        "target": "friction",
+        "definition": "The resistance that one surface encounters when moving over another.",
+        "word": "friction",
+        "definition_en": "The resistance that one surface encounters when moving over another.",
+        "options": [
+          "friction",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "friction"
+      }
+    ]
+  },
   "rw_part2": {
-    "title": "Discussing Volcanic Rock Samples",
+    "title": "Investigating Push, Pull, and Friction",
+    "topic": "Investigating Push, Pull, and Friction",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Oliver",
+        "prompt": "Why did the toy car stop faster on the thick wool carpet?",
+        "text": "Why did the toy car stop faster on the thick wool carpet?",
+        "options": [
+          "Because the rough fibers created much more friction against the wheels.",
+          "I forgot my blue water bottle at swimming practice.",
+          "The train reached the station at three o'clock."
+        ],
+        "answer": "Because the rough fibers created much more friction against the wheels."
+      },
+      {
+        "id": 2,
+        "speaker": "Emma",
+        "prompt": "Which force is acting when we slide a wooden sled down a snowy hill?",
+        "text": "Which force is acting when we slide a wooden sled down a snowy hill?",
+        "options": [
+          "Gravity pulls the sled downward while snow creates low friction.",
+          "My father drives a green delivery van every morning.",
+          "The museum has ten ancient Roman coins."
+        ],
+        "answer": "Gravity pulls the sled downward while snow creates low friction."
+      },
+      {
+        "id": 3,
+        "speaker": "Oliver",
+        "prompt": "How many toy cars did we test on our four wooden ramps?",
+        "text": "How many toy cars did we test on our four wooden ramps?",
+        "options": [
+          "We tested six cars on each ramp, so there were twenty-four trials in total.",
+          "I had toast and strawberry jam for breakfast.",
+          "The tennis match finished after two hours."
+        ],
+        "answer": "We tested six cars on each ramp, so there were twenty-four trials in total."
+      },
+      {
+        "id": 4,
+        "speaker": "Emma",
+        "prompt": "What fraction of the ramp was covered with rough sandpaper?",
+        "text": "What fraction of the ramp was covered with rough sandpaper?",
+        "options": [
+          "Exactly one half of the wooden ramp had sandpaper attached.",
+          "I wear wool socks during cold winter days.",
+          "The post office is near the public library."
+        ],
+        "answer": "Exactly one half of the wooden ramp had sandpaper attached."
+      },
+      {
+        "id": 5,
+        "speaker": "Oliver",
+        "prompt": "Shall we graph our distance results on the science whiteboard?",
+        "text": "Shall we graph our distance results on the science whiteboard?",
+        "options": [
+          "Yes, let's draw clear bars to compare smooth and rough surfaces!",
+          "I do not want apple pie for dessert.",
+          "The bus stopped at the central park gates."
+        ],
+        "answer": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Maya",
-        "text": "What is the primary topic of this geology article?"
+        "speaker": "Oliver",
+        "text": "Because the rough fibers created much more friction against the wheels."
       },
       {
-        "speaker": "Liam",
-        "text": "How rising underground pressure causes volcanic eruptions."
+        "speaker": "Emma",
+        "text": "Gravity pulls the sled downward while snow creates low friction."
       },
       {
-        "speaker": "Maya",
-        "text": "Can you give one supporting detail from paragraph two?"
+        "speaker": "Oliver",
+        "text": "We tested six cars on each ramp, so there were twenty-four trials in total."
       },
       {
-        "speaker": "Liam",
-        "text": "Four crates of fifteen specimens give sixty rock samples."
+        "speaker": "Emma",
+        "text": "Exactly one half of the wooden ramp had sandpaper attached."
       },
       {
-        "speaker": "Maya",
-        "text": "And subtracting eighteen leaves forty-two in the museum!"
+        "speaker": "Oliver",
+        "text": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Deep beneath Earth's crust, high temperatures melt solid rock into liquid (1) ___. When gas pressure increases, the magma pushes upward through a vertical (2) ___. As soon as it breaks through the crater, the hot melted rock is called (3) ___. Skilled readers look for the main idea first, and then identify three supporting (4) ___ that provide facts and numbers.",
-    "answers": [
-      "magma",
-      "vent",
-      "lava",
-      "details"
+    "title": "Oliver's Lab Notes: Forces in Motion",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Every day we use different forces [1]_____ move things. When you push a heavy door, it swings open [2]_____ front of you. When you pull a wagon, you apply force [3]_____ bring it forward. Friction is the force that slows down moving objects [4]_____ rough surfaces. Understanding forces helps engineers design safer vehicles [5]_____ our modern highways.",
+    "answers": {
+      "1": "to",
+      "2": "in",
+      "3": "to",
+      "4": "on",
+      "5": "for"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "main idea",
+      "detail",
+      "support",
+      "topic",
+      "important",
+      "about",
+      "title",
+      "word problem",
+      "understand",
+      "plan",
+      "solve",
+      "check",
+      "volcano",
+      "mountain",
+      "rock",
+      "smoke",
+      "fire",
+      "ash",
+      "earth",
+      "erupt"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A push or pull that can cause an object to move.",
+        "target": "force",
+        "definition": "A push or pull that can cause an object to move.",
+        "word": "force",
+        "definition_en": "A push or pull that can cause an object to move.",
+        "options": [
+          "force",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "force"
+      },
+      {
+        "id": 2,
+        "text": "To press against something to move it away from you.",
+        "target": "push",
+        "definition": "To press against something to move it away from you.",
+        "word": "push",
+        "definition_en": "To press against something to move it away from you.",
+        "options": [
+          "push",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "push"
+      },
+      {
+        "id": 3,
+        "text": "To hold something and move it toward you.",
+        "target": "pull",
+        "definition": "To hold something and move it toward you.",
+        "word": "pull",
+        "definition_en": "To hold something and move it toward you.",
+        "options": [
+          "pull",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pull"
+      },
+      {
+        "id": 4,
+        "text": "The act or process of moving from one place to another.",
+        "target": "motion",
+        "definition": "The act or process of moving from one place to another.",
+        "word": "motion",
+        "definition_en": "The act or process of moving from one place to another.",
+        "options": [
+          "motion",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "motion"
+      },
+      {
+        "id": 5,
+        "text": "The resistance that one surface encounters when moving over another.",
+        "target": "friction",
+        "definition": "The resistance that one surface encounters when moving over another.",
+        "word": "friction",
+        "definition_en": "The resistance that one surface encounters when moving over another.",
+        "options": [
+          "friction",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "friction"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "A mountain that can explode and throw out lava.",
-      "word": "volcano"
-    },
-    {
-      "definition": "Hot liquid rock that flows onto the ground surface.",
-      "word": "lava"
-    },
-    {
-      "definition": "Melted liquid rock while it is still underground.",
-      "word": "magma"
-    },
-    {
-      "definition": "The most important central point of a written text.",
-      "word": "main idea"
-    },
-    {
-      "definition": "A scientist who investigates rocks and Earth's crust.",
-      "word": "geologist"
-    }
-  ],
   "rw_part_2": {
-    "title": "Discussing Volcanic Rock Samples",
+    "title": "Investigating Push, Pull, and Friction",
+    "topic": "Investigating Push, Pull, and Friction",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Oliver",
+        "prompt": "Why did the toy car stop faster on the thick wool carpet?",
+        "text": "Why did the toy car stop faster on the thick wool carpet?",
+        "options": [
+          "Because the rough fibers created much more friction against the wheels.",
+          "I forgot my blue water bottle at swimming practice.",
+          "The train reached the station at three o'clock."
+        ],
+        "answer": "Because the rough fibers created much more friction against the wheels."
+      },
+      {
+        "id": 2,
+        "speaker": "Emma",
+        "prompt": "Which force is acting when we slide a wooden sled down a snowy hill?",
+        "text": "Which force is acting when we slide a wooden sled down a snowy hill?",
+        "options": [
+          "Gravity pulls the sled downward while snow creates low friction.",
+          "My father drives a green delivery van every morning.",
+          "The museum has ten ancient Roman coins."
+        ],
+        "answer": "Gravity pulls the sled downward while snow creates low friction."
+      },
+      {
+        "id": 3,
+        "speaker": "Oliver",
+        "prompt": "How many toy cars did we test on our four wooden ramps?",
+        "text": "How many toy cars did we test on our four wooden ramps?",
+        "options": [
+          "We tested six cars on each ramp, so there were twenty-four trials in total.",
+          "I had toast and strawberry jam for breakfast.",
+          "The tennis match finished after two hours."
+        ],
+        "answer": "We tested six cars on each ramp, so there were twenty-four trials in total."
+      },
+      {
+        "id": 4,
+        "speaker": "Emma",
+        "prompt": "What fraction of the ramp was covered with rough sandpaper?",
+        "text": "What fraction of the ramp was covered with rough sandpaper?",
+        "options": [
+          "Exactly one half of the wooden ramp had sandpaper attached.",
+          "I wear wool socks during cold winter days.",
+          "The post office is near the public library."
+        ],
+        "answer": "Exactly one half of the wooden ramp had sandpaper attached."
+      },
+      {
+        "id": 5,
+        "speaker": "Oliver",
+        "prompt": "Shall we graph our distance results on the science whiteboard?",
+        "text": "Shall we graph our distance results on the science whiteboard?",
+        "options": [
+          "Yes, let's draw clear bars to compare smooth and rough surfaces!",
+          "I do not want apple pie for dessert.",
+          "The bus stopped at the central park gates."
+        ],
+        "answer": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Maya",
-        "text": "What is the primary topic of this geology article?"
+        "speaker": "Oliver",
+        "text": "Because the rough fibers created much more friction against the wheels."
       },
       {
-        "speaker": "Liam",
-        "text": "How rising underground pressure causes volcanic eruptions."
+        "speaker": "Emma",
+        "text": "Gravity pulls the sled downward while snow creates low friction."
       },
       {
-        "speaker": "Maya",
-        "text": "Can you give one supporting detail from paragraph two?"
+        "speaker": "Oliver",
+        "text": "We tested six cars on each ramp, so there were twenty-four trials in total."
       },
       {
-        "speaker": "Liam",
-        "text": "Four crates of fifteen specimens give sixty rock samples."
+        "speaker": "Emma",
+        "text": "Exactly one half of the wooden ramp had sandpaper attached."
       },
       {
-        "speaker": "Maya",
-        "text": "And subtracting eighteen leaves forty-two in the museum!"
+        "speaker": "Oliver",
+        "text": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Deep beneath Earth's crust, high temperatures melt solid rock into liquid (1) ___. When gas pressure increases, the magma pushes upward through a vertical (2) ___. As soon as it breaks through the crater, the hot melted rock is called (3) ___. Skilled readers look for the main idea first, and then identify three supporting (4) ___ that provide facts and numbers.",
-    "answers": [
-      "magma",
-      "vent",
-      "lava",
-      "details"
-    ]
+    "title": "Oliver's Lab Notes: Forces in Motion",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Every day we use different forces [1]_____ move things. When you push a heavy door, it swings open [2]_____ front of you. When you pull a wagon, you apply force [3]_____ bring it forward. Friction is the force that slows down moving objects [4]_____ rough surfaces. Understanding forces helps engineers design safer vehicles [5]_____ our modern highways.",
+    "answers": {
+      "1": "to",
+      "2": "in",
+      "3": "to",
+      "4": "on",
+      "5": "for"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A push or pull that can cause an object to move.",
+        "target": "force",
+        "definition": "A push or pull that can cause an object to move.",
+        "word": "force",
+        "definition_en": "A push or pull that can cause an object to move.",
+        "options": [
+          "force",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "force"
+      },
+      {
+        "id": 2,
+        "text": "To press against something to move it away from you.",
+        "target": "push",
+        "definition": "To press against something to move it away from you.",
+        "word": "push",
+        "definition_en": "To press against something to move it away from you.",
+        "options": [
+          "push",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "push"
+      },
+      {
+        "id": 3,
+        "text": "To hold something and move it toward you.",
+        "target": "pull",
+        "definition": "To hold something and move it toward you.",
+        "word": "pull",
+        "definition_en": "To hold something and move it toward you.",
+        "options": [
+          "pull",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pull"
+      },
+      {
+        "id": 4,
+        "text": "The act or process of moving from one place to another.",
+        "target": "motion",
+        "definition": "The act or process of moving from one place to another.",
+        "word": "motion",
+        "definition_en": "The act or process of moving from one place to another.",
+        "options": [
+          "motion",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "motion"
+      },
+      {
+        "id": 5,
+        "text": "The resistance that one surface encounters when moving over another.",
+        "target": "friction",
+        "definition": "The resistance that one surface encounters when moving over another.",
+        "word": "friction",
+        "definition_en": "The resistance that one surface encounters when moving over another.",
+        "options": [
+          "friction",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "friction"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Investigating Push, Pull, and Friction",
+      "topic": "Investigating Push, Pull, and Friction",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Oliver",
+          "prompt": "Why did the toy car stop faster on the thick wool carpet?",
+          "text": "Why did the toy car stop faster on the thick wool carpet?",
+          "options": [
+            "Because the rough fibers created much more friction against the wheels.",
+            "I forgot my blue water bottle at swimming practice.",
+            "The train reached the station at three o'clock."
+          ],
+          "answer": "Because the rough fibers created much more friction against the wheels."
+        },
+        {
+          "id": 2,
+          "speaker": "Emma",
+          "prompt": "Which force is acting when we slide a wooden sled down a snowy hill?",
+          "text": "Which force is acting when we slide a wooden sled down a snowy hill?",
+          "options": [
+            "Gravity pulls the sled downward while snow creates low friction.",
+            "My father drives a green delivery van every morning.",
+            "The museum has ten ancient Roman coins."
+          ],
+          "answer": "Gravity pulls the sled downward while snow creates low friction."
+        },
+        {
+          "id": 3,
+          "speaker": "Oliver",
+          "prompt": "How many toy cars did we test on our four wooden ramps?",
+          "text": "How many toy cars did we test on our four wooden ramps?",
+          "options": [
+            "We tested six cars on each ramp, so there were twenty-four trials in total.",
+            "I had toast and strawberry jam for breakfast.",
+            "The tennis match finished after two hours."
+          ],
+          "answer": "We tested six cars on each ramp, so there were twenty-four trials in total."
+        },
+        {
+          "id": 4,
+          "speaker": "Emma",
+          "prompt": "What fraction of the ramp was covered with rough sandpaper?",
+          "text": "What fraction of the ramp was covered with rough sandpaper?",
+          "options": [
+            "Exactly one half of the wooden ramp had sandpaper attached.",
+            "I wear wool socks during cold winter days.",
+            "The post office is near the public library."
+          ],
+          "answer": "Exactly one half of the wooden ramp had sandpaper attached."
+        },
+        {
+          "id": 5,
+          "speaker": "Oliver",
+          "prompt": "Shall we graph our distance results on the science whiteboard?",
+          "text": "Shall we graph our distance results on the science whiteboard?",
+          "options": [
+            "Yes, let's draw clear bars to compare smooth and rough surfaces!",
+            "I do not want apple pie for dessert.",
+            "The bus stopped at the central park gates."
+          ],
+          "answer": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Oliver",
+          "text": "Because the rough fibers created much more friction against the wheels."
+        },
+        {
+          "speaker": "Emma",
+          "text": "Gravity pulls the sled downward while snow creates low friction."
+        },
+        {
+          "speaker": "Oliver",
+          "text": "We tested six cars on each ramp, so there were twenty-four trials in total."
+        },
+        {
+          "speaker": "Emma",
+          "text": "Exactly one half of the wooden ramp had sandpaper attached."
+        },
+        {
+          "speaker": "Oliver",
+          "text": "Yes, let's draw clear bars to compare smooth and rough surfaces!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Oliver's Lab Notes: Forces in Motion",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Every day we use different forces [1]_____ move things. When you push a heavy door, it swings open [2]_____ front of you. When you pull a wagon, you apply force [3]_____ bring it forward. Friction is the force that slows down moving objects [4]_____ rough surfaces. Understanding forces helps engineers design safer vehicles [5]_____ our modern highways.",
+      "answers": {
+        "1": "to",
+        "2": "in",
+        "3": "to",
+        "4": "on",
+        "5": "for"
+      }
+    }
   }
 };
 export default readingHubData;

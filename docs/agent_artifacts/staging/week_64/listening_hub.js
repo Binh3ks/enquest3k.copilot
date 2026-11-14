@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 64 | Theme: "Data Stories: Reading Pictographs" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 64 | Theme: "ELA: Data Stories / Math: Pictographs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 64,
-  "theme": "Data Stories: Reading Pictographs",
+  "theme": "ELA: Data Stories / Math: Pictographs",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Analyzing Survey Pictographs",
+    "title": "Exploring Forest and River Habitats",
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "What does each symbol represent on our school chart?"
+        "speaker": "Sam",
+        "text": "They have thick waterproof fur and webbed feet for fast swimming."
       },
       {
-        "speaker": "Emma",
-        "text": "The key states that each star icon equals five books."
+        "speaker": "Lily",
+        "text": "Trees provide shelter and food, while animals spread seeds across the soil."
       },
       {
-        "speaker": "Lucas",
-        "text": "Which category was the most popular among students?"
+        "speaker": "Sam",
+        "text": "They observed eighteen bird species and twelve amphibian species."
       },
       {
-        "speaker": "Emma",
-        "text": "Adventure books, with eight stars totaling forty books."
+        "speaker": "Lily",
+        "text": "Eighteen plus twelve equals thirty species in total."
       },
       {
-        "speaker": "Lucas",
-        "text": "And Poetry was the least chosen with only fifteen books."
+        "speaker": "Sam",
+        "text": "Yes, let's display the food web and animal photographs!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Lucas",
-      "text": "A pictograph uses picture symbols to tell a clear data story.",
-      "ipa": "/ə ˈpɪktəɡrɑːf ˈjuːzɪz ˈpɪktʃər ˈsɪmbəlz tuː tɛl ə klɪər ˈdeɪtə ˈstɔːri/"
+      "text": "A pictograph uses symbols to show interesting data.",
+      "ipa": "/ə ˈpɪktəˌɡræf ˈjuzəz ˈsɪmbəlz tu ʃoʊ ˈɪntrəstɪŋ ˈdeɪtə/",
+      "vietnamese": "Biểu đồ tranh dùng các biểu tượng để thể hiện dữ liệu thú vị."
     },
     {
       "id": 2,
-      "speaker": "Emma",
-      "text": "Always check the key to find what each icon represents.",
-      "ipa": "/ˈɔːlweɪz tʃɛk ðə kiː tuː faɪnd wɒt iːtʃ ˈaɪkɒn ˌrɛprɪˈzɛnts/"
+      "text": "Always read the key to find the symbol value.",
+      "ipa": "/ˈɔlˌweɪz rid ðə ki tu faɪnd ðə ˈsɪmbəl ˈvælju/",
+      "vietnamese": "Luôn luôn đọc bảng chú giải để tìm giá trị của biểu tượng."
     },
     {
       "id": 3,
-      "speaker": "Lucas",
-      "text": "Eight star symbols at five books each equal forty books.",
-      "ipa": "/eɪt stɑːr ˈsɪmbəlz æt faɪv bʊks iːtʃ ˈiːkwəl ˈfɔːrti bʊks/"
+      "text": "One picture symbol stands for two votes in class.",
+      "ipa": "/wʌn ˈpɪktʃər ˈsɪmbəl stændz fɔr tu voʊts ɪn klæs/",
+      "vietnamese": "Một biểu tượng hình ảnh đại diện cho hai phiếu bầu trong lớp."
     },
     {
       "id": 4,
-      "speaker": "Emma",
-      "text": "Adventure was the most popular genre chosen in our survey.",
-      "ipa": "/ədˈvɛntʃər wɒz ðə məʊst ˈpɒpjələr ˈʒɑːnrə ˈtʃəʊzn ɪn ˈaʊər ˈsɜːrveɪ/"
+      "text": "We count by twos to find the total quickly.",
+      "ipa": "/wi kaʊnt baɪ tuz tu faɪnd ðə ˈtoʊtəl ˈkwɪkli/",
+      "vietnamese": "Chúng ta đếm cách hai để tìm tổng số một cách nhanh chóng."
     },
     {
       "id": 5,
-      "speaker": "Lucas",
-      "text": "Poetry had the least votes with only three star symbols.",
-      "ipa": "/ˈpəʊɪtri hæd ðə liːst vəʊts wɪð ˈəʊnli θriː stɑːr ˈsɪmbəlz/"
+      "text": "Apples were the most popular fruit in our survey.",
+      "ipa": "/ˈæpəlz wɜr ðə moʊst ˈpɑpjələr frut ɪn ˈaʊər ˈsɜrveɪ/",
+      "vietnamese": "Táo là loại trái cây được yêu thích nhất trong khảo sát của chúng tôi."
     },
     {
       "id": 6,
-      "speaker": "Emma",
-      "text": "The difference between forty books and fifteen books is twenty-five.",
-      "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈfɔːrti bʊks ænd fɪfˈtiːn bʊks ɪz ˈtwɛnti faɪv/"
+      "text": "Pears received the least number of student votes.",
+      "ipa": "/pɛrz rəˈsivd ðə list ˈnʌmbər ʌv ˈstudənt voʊts/",
+      "vietnamese": "Lê nhận được số lượng phiếu bầu ít nhất từ các bạn học sinh."
     },
     {
       "id": 7,
-      "speaker": "Lucas",
-      "text": "Comparatives and superlatives highlight the biggest trends in data.",
-      "ipa": "/kəmˈpærətɪvz ænd suːˈpɜːrlətɪvz ˈhaɪlaɪt ðə ˈbɪɡɪst trɛndz ɪn ˈdeɪtə/"
+      "text": "Compare the rows to see which group is bigger.",
+      "ipa": "/kəmˈpɛr ðə roʊz tu si wɪtʃ ɡrup ɪz ˈbɪɡər/",
+      "vietnamese": "Hãy so sánh các hàng để xem nhóm nào lớn hơn."
     },
     {
       "id": 8,
-      "speaker": "Emma",
-      "text": "Visual charts help communities make smart, informed decisions.",
-      "ipa": "/ˈvɪʒuəl tʃɑːrts hɛlp kəˈmjuːnətiz meɪk smɑːrt, ɪnˈfɔːrmd dɪˈsɪʒənz/"
+      "text": "Data charts help us tell clear stories with numbers.",
+      "ipa": "/ˈdeɪtə tʃɑrts hɛlp ʌs tɛl klɪr ˈstɔriz wɪð ˈnʌmbərz/",
+      "vietnamese": "Biểu đồ dữ liệu giúp chúng ta kể những câu chuyện rõ ràng với các con số."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 64. Theme: Data Stories: Reading Pictographs.\nSpeaker: A pictograph uses picture symbols to tell a clear data story.\nSpeaker: Always check the key to find what each icon represents.\nSpeaker: Eight star symbols at five books each equal forty books.\nSpeaker: Adventure was the most popular genre chosen in our survey.\nSpeaker: Poetry had the least votes with only three star symbols.\nSpeaker: The difference between forty books and fifteen books is twenty-five.\nSpeaker: Comparatives and superlatives highlight the biggest trends in data.\nSpeaker: Visual charts help communities make smart, informed decisions."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 64. Theme: ELA: Data Stories / Math: Pictographs.\nSpeaker: A pictograph uses symbols to show interesting data.\nSpeaker: Always read the key to find the symbol value.\nSpeaker: One picture symbol stands for two votes in class.\nSpeaker: We count by twos to find the total quickly.\nSpeaker: Apples were the most popular fruit in our survey.\nSpeaker: Pears received the least number of student votes.\nSpeaker: Compare the rows to see which group is bigger.\nSpeaker: Data charts help us tell clear stories with numbers."
 };
 export default listeningHubData;

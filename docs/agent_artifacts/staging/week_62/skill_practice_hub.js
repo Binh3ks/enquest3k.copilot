@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 62 | Theme: "The Movie Trailer: Summarizing Stories" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 62 | Theme: "ELA: The Movie Trailer (Summarizing) / Math: Rounding"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 62,
-  "theme": "The Movie Trailer: Summarizing Stories",
+  "theme": "ELA: The Movie Trailer (Summarizing) / Math: Rounding",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -111,7 +110,8 @@ export const skillPracticeHubData = {
       "problem_text": "A movie theater sells 48 tickets for the morning trailer screening. What is 48 rounded to the nearest ten?",
       "problem_en": "A movie theater sells 48 tickets for the morning trailer screening. What is 48 rounded to the nearest ten?",
       "answer": 50,
-      "step_by_step": "Step 1: Ones digit is 8. Step 2: Since 8 >= 5, round up. Step 3: Result = 50."
+      "step_by_step": "Step 1: Ones digit is 8. Step 2: Since 8 >= 5, round up. Step 3: Result = 50.",
+      "question": "A movie theater sells 48 tickets for the morning trailer screening. What is 48 rounded to the nearest ten?"
     },
     {
       "id": 2,
@@ -146,7 +146,8 @@ export const skillPracticeHubData = {
       "problem_text": "The afternoon screening has 134 audience members seated in the hall. What is 134 rounded to the nearest ten?",
       "problem_en": "The afternoon screening has 134 audience members seated in the hall. What is 134 rounded to the nearest ten?",
       "answer": 130,
-      "step_by_step": "Step 1: Ones digit is 4. Step 2: Since 4 < 5, round down. Step 3: Result = 130."
+      "step_by_step": "Step 1: Ones digit is 4. Step 2: Since 4 < 5, round down. Step 3: Result = 130.",
+      "question": "The afternoon screening has 134 audience members seated in the hall. What is 134 rounded to the nearest ten?"
     },
     {
       "id": 3,
@@ -181,7 +182,8 @@ export const skillPracticeHubData = {
       "problem_text": "Saturday evening ticket sales reach 268 admissions. What is 268 rounded to the nearest hundred?",
       "problem_en": "Saturday evening ticket sales reach 268 admissions. What is 268 rounded to the nearest hundred?",
       "answer": 300,
-      "step_by_step": "Step 1: Tens digit is 6. Step 2: Since 6 >= 5, round up to next hundred. Step 3: Result = 300."
+      "step_by_step": "Step 1: Tens digit is 6. Step 2: Since 6 >= 5, round up to next hundred. Step 3: Result = 300.",
+      "question": "Saturday evening ticket sales reach 268 admissions. What is 268 rounded to the nearest hundred?"
     },
     {
       "id": 4,
@@ -216,7 +218,8 @@ export const skillPracticeHubData = {
       "problem_text": "The cinema concession stand sells 415 popcorn tubs over the weekend. What is 415 rounded to the nearest hundred?",
       "problem_en": "The cinema concession stand sells 415 popcorn tubs over the weekend. What is 415 rounded to the nearest hundred?",
       "answer": 400,
-      "step_by_step": "Step 1: Tens digit is 1. Step 2: Since 1 < 5, round down. Step 3: Result = 400."
+      "step_by_step": "Step 1: Tens digit is 1. Step 2: Since 1 < 5, round down. Step 3: Result = 400.",
+      "question": "The cinema concession stand sells 415 popcorn tubs over the weekend. What is 415 rounded to the nearest hundred?"
     },
     {
       "id": 5,
@@ -251,7 +254,8 @@ export const skillPracticeHubData = {
       "problem_text": "A student film festival issues 783 participant badges. What is 783 rounded to the nearest ten?",
       "problem_en": "A student film festival issues 783 participant badges. What is 783 rounded to the nearest ten?",
       "answer": 780,
-      "step_by_step": "Step 1: Ones digit is 3. Step 2: Since 3 < 5, round down. Step 3: Result = 780."
+      "step_by_step": "Step 1: Ones digit is 3. Step 2: Since 3 < 5, round down. Step 3: Result = 780.",
+      "question": "A student film festival issues 783 participant badges. What is 783 rounded to the nearest ten?"
     }
   ],
   "science_lab": {

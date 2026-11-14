@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 56 | Theme: "Cause and Effect: The Community Garden" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 56 | Theme: "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 56,
-  "theme": "Cause and Effect: The Community Garden",
+  "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -104,14 +103,15 @@ export const skillPracticeHubData = {
             "color": "#F59E0B"
           }
         ],
-        "total": 72,
+        "total": 34,
         "unit": "seedlings",
         "comparisonType": "difference"
       },
       "problem_text": "A community garden has 72 tomato seedlings. Volunteers transplant 38 seedlings into large pots. How many seedlings remain in the nursery bed?",
       "problem_en": "A community garden has 72 tomato seedlings. Volunteers transplant 38 seedlings into large pots. How many seedlings remain in the nursery bed?",
       "answer": 34,
-      "step_by_step": "Step 1: Total = 72. Step 2: Transplanted = 38. Step 3: Remaining = 72 - 38 = 34 seedlings."
+      "step_by_step": "Step 1: Total = 72. Step 2: Transplanted = 38. Step 3: Remaining = 72 - 38 = 34 seedlings.",
+      "question": "A community garden has 72 tomato seedlings. Volunteers transplant 38 seedlings into large pots. How many seedlings remain in the nursery bed?"
     },
     {
       "id": 2,
@@ -139,14 +139,15 @@ export const skillPracticeHubData = {
             "color": "#EF4444"
           }
         ],
-        "total": 85,
+        "total": 38,
         "unit": "cans",
         "comparisonType": "difference"
       },
       "problem_text": "The gardening shed had 85 watering cans. Community members took 47 cans to water the fruit trees. How many watering cans were left in the shed?",
       "problem_en": "The gardening shed had 85 watering cans. Community members took 47 cans to water the fruit trees. How many watering cans were left in the shed?",
       "answer": 38,
-      "step_by_step": "Step 1: Starting cans = 85. Step 2: Cans taken = 47. Step 3: Difference = 85 - 47 = 38 cans."
+      "step_by_step": "Step 1: Starting cans = 85. Step 2: Cans taken = 47. Step 3: Difference = 85 - 47 = 38 cans.",
+      "question": "The gardening shed had 85 watering cans. Community members took 47 cans to water the fruit trees. How many watering cans were left in the shed?"
     },
     {
       "id": 3,
@@ -174,14 +175,15 @@ export const skillPracticeHubData = {
             "color": "#8B5CF6"
           }
         ],
-        "total": 91,
+        "total": 35,
         "unit": "kilograms",
         "comparisonType": "difference"
       },
       "problem_text": "Farmer Joe harvested 91 kilograms of pumpkins. He sold 56 kilograms at the weekend market. How many kilograms of pumpkins did he keep?",
       "problem_en": "Farmer Joe harvested 91 kilograms of pumpkins. He sold 56 kilograms at the weekend market. How many kilograms of pumpkins did he keep?",
       "answer": 35,
-      "step_by_step": "Step 1: Harvested = 91 kg. Step 2: Sold = 56 kg. Step 3: Kept = 91 - 56 = 35 kg."
+      "step_by_step": "Step 1: Harvested = 91 kg. Step 2: Sold = 56 kg. Step 3: Kept = 91 - 56 = 35 kg.",
+      "question": "Farmer Joe harvested 91 kilograms of pumpkins. He sold 56 kilograms at the weekend market. How many kilograms of pumpkins did he keep?"
     },
     {
       "id": 4,
@@ -209,14 +211,15 @@ export const skillPracticeHubData = {
             "color": "#EC4899"
           }
         ],
-        "total": 64,
+        "total": 35,
         "unit": "stakes",
         "comparisonType": "difference"
       },
       "problem_text": "Noah prepared 64 wooden stakes to support bean plants. After using 29 stakes, how many stakes did he have left in his cart?",
       "problem_en": "Noah prepared 64 wooden stakes to support bean plants. After using 29 stakes, how many stakes did he have left in his cart?",
       "answer": 35,
-      "step_by_step": "Step 1: Prepared = 64. Step 2: Used = 29. Step 3: Remaining = 64 - 29 = 35 stakes."
+      "step_by_step": "Step 1: Prepared = 64. Step 2: Used = 29. Step 3: Remaining = 64 - 29 = 35 stakes.",
+      "question": "Noah prepared 64 wooden stakes to support bean plants. After using 29 stakes, how many stakes did he have left in his cart?"
     },
     {
       "id": 5,
@@ -244,14 +247,15 @@ export const skillPracticeHubData = {
             "color": "#14B8A6"
           }
         ],
-        "total": 80,
+        "total": 37,
         "unit": "pots",
         "comparisonType": "difference"
       },
       "problem_text": "A greenhouse ordered 80 terracotta pots. During delivery, 43 pots were unpacked and placed on tables. How many pots remained in the packing crates?",
       "problem_en": "A greenhouse ordered 80 terracotta pots. During delivery, 43 pots were unpacked and placed on tables. How many pots remained in the packing crates?",
       "answer": 37,
-      "step_by_step": "Step 1: Ordered = 80. Step 2: Unpacked = 43. Step 3: Crates = 80 - 43 = 37 pots."
+      "step_by_step": "Step 1: Ordered = 80. Step 2: Unpacked = 43. Step 3: Crates = 80 - 43 = 37 pots.",
+      "question": "A greenhouse ordered 80 terracotta pots. During delivery, 43 pots were unpacked and placed on tables. How many pots remained in the packing crates?"
     }
   ],
   "science_lab": {

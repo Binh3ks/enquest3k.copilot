@@ -1,4 +1,4 @@
-// Index wrapper for Week 65 (Staging Round 93)
+// Index wrapper for Week 65 (Round 94 Staging)
 import vocabList from './vocab.js';
 import { readingHubData as readingHub } from './reading_hub.js';
 import { listeningHubData as listeningHub } from './listening_hub.js';
@@ -6,16 +6,24 @@ import { writingHubData as writingHub } from './writing_hub.js';
 import { speakingHubData as speakingHub } from './speaking_hub.js';
 import { skillPracticeHubData as skillPracticeHub } from './skill_practice_hub.js';
 
-const normalizedVocab = Array.isArray(vocabList) ? vocabList : (vocabList?.vocab || []);
-const new_words = { vocab: normalizedVocab, vocab_list: normalizedVocab };
+const normalizedVocab = (vocabList && vocabList.vocab) ? vocabList.vocab : (Array.isArray(vocabList) ? vocabList : []);
+const new_words = normalizedVocab.map((item, idx) => ({
+  id: item.id || idx + 1,
+  word: item.word || '',
+  phonetic: item.ipa || item.phonetic || '',
+  meaning: item.definition_vi || item.meaning || '',
+  english_meaning: item.definition_en || item.english_meaning || '',
+  example: item.example_en || item.example || '',
+  example_vi: item.example_vi || '',
+  image: item.image || '',
+  audio_url: item.audio_url || null
+}));
 
 export const weekData = {
   weekId: 65,
-  theme: readingHub.theme || "Cycle 2.1 Review: Logic and Data Mastery",
-  title: readingHub.theme || "Cycle 2.1 Review: Logic and Data Mastery",
-  weekTitle_en: readingHub.theme || "Cycle 2.1 Review: Logic and Data Mastery",
-  title_vi: "\u00d4n t\u1eadp Chu tr\u00ecnh 2.1: B\u1eadc th\u1ea7y Logic v\u00e0 D\u1eef li\u1ec7u",
-  cefr_level: readingHub.cefr_level || "A2 Flyers",
+  weekNumber: 65,
+  theme: "Review & Consolidation (Cycle 2.1)",
+  cefr_level: "A2 Flyers",
 
   cue_card_info_exchange: speakingHub.info_exchange_cards || null,
   cue_card_prompts: Array.isArray(speakingHub.cue_card_prompts) ? speakingHub.cue_card_prompts : [],

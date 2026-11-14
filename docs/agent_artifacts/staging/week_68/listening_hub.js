@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 68 | Theme: "Developing Strong Reasons: Evidence and Data" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 68 | Theme: "ELA: Strong Reasons / Math: Bar Graphs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 68,
-  "theme": "Developing Strong Reasons: Evidence and Data",
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Interpreting Bar Graph Data",
+    "title": "Using Evidence and Data to Build Strong Reasons",
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "How many students voted for the chess club on the bar graph?"
+        "text": "Because authentic survey data provides verifiable proof for your opinions."
       },
       {
-        "speaker": "Chloe",
-        "text": "Specifically, sixty-five students chose chess."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What was the difference between chess and drama votes?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Sixty-five minus forty-two equals twenty-three votes."
+        "speaker": "Lily",
+        "text": "It showed clearly that sixty-five students want more books in the library."
       },
       {
         "speaker": "Lucas",
-        "text": "And the sum of all three sports bars is one hundred thirty!"
+        "text": "Seventy-five girls and sixty boys returned completed survey forms."
+      },
+      {
+        "speaker": "Lily",
+        "text": "Seventy-five plus sixty equals one hundred thirty-five participants."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, let's explain the statistics with clear voices and diagrams!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Lucas",
-      "text": "Strong reasons turn personal opinions into persuasive arguments.",
-      "ipa": "/strɒŋ ˈriːznz tɜːrn ˈpɜːrsənl əˈpɪnjənz ˈɪntuː pərˈsweɪsɪv ˈɑːrɡjʊmənts/"
+      "text": "Good writers support their opinions with true facts.",
+      "ipa": "/ɡʊd ˈraɪtərz səˈpɔrt ðɛr əˈpɪnjənz wɪð tru fækts/",
+      "vietnamese": "Những người viết giỏi luôn củng cố quan điểm bằng sự thật chính xác."
     },
     {
       "id": 2,
-      "speaker": "Chloe",
-      "text": "Specifically, sixty-five students chose chess as their preferred after-school club.",
-      "ipa": "/spəˈsɪfɪkli, ˈsɪksti faɪv ˈstjuːdnts tʃəʊz tʃɛs æz ðɛər prɪˈfɜːrd ˈɑːftər skuːl klʌb/"
+      "text": "Furthermore, adding examples makes your point very clear.",
+      "ipa": "/ˈfɜrðərˌmɔr ˈædɪŋ ɪɡˈzæmpəlz meɪks jʊər pɔɪnt ˈvɛri klɪr/",
+      "vietnamese": "Hơn nữa, thêm ví dụ sẽ làm cho luận điểm của bạn rất rõ ràng."
     },
     {
       "id": 3,
-      "speaker": "Lucas",
-      "text": "The difference between sixty-five and forty-two is twenty-three votes.",
-      "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈsɪksti faɪv ænd ˈfɔːrti tuː ɪz ˈtwɛnti θriː vəʊts/"
+      "text": "In addition, we use bar graphs to prove our findings.",
+      "ipa": "/ɪn əˈdɪʃən wi juz bɑr ɡræfs tu pruv ˈaʊər ˈfaɪndɪŋz/",
+      "vietnamese": "Ngoài ra, chúng ta dùng biểu đồ cột để chứng minh những phát hiện của mình."
     },
     {
       "id": 4,
-      "speaker": "Chloe",
-      "text": "Thirty-five plus forty plus fifty-five gives one hundred thirty participants.",
-      "ipa": "/ˈθɜːrti faɪv plʌs ˈfɔːrti plʌs ˈfɪfti faɪv ɡɪvz wʌn ˈhʌndrəd ˈθɜːrti pɑːrˈtɪsɪpənts/"
+      "text": "The scale on the side counts up by fives.",
+      "ipa": "/ðə skeɪl ɑn ðə saɪd kaʊnts ʌp baɪ faɪvz/",
+      "vietnamese": "Thang đo ở bên cạnh đếm tăng lên theo khoảng năm đơn vị."
     },
     {
       "id": 5,
-      "speaker": "Lucas",
-      "text": "Bar graphs display numerical comparisons clearly against a measured axis scale.",
-      "ipa": "/bɑːr ɡrɑːfs dɪˈspleɪ njuːˈmɛrɪkl kəmˈpærɪsnz ˈklɪərli əˈɡɛnst ə ˈmɛʒəd ˈæksɪs skeɪl/"
+      "text": "The height of the bar shows thirty student votes.",
+      "ipa": "/ðə haɪt ʌv ðə bɑr ʃoʊz ˈθɜrti ˈstudənt voʊts/",
+      "vietnamese": "Chiều cao của cột thể hiện ba mươi phiếu bầu của học sinh."
     },
     {
       "id": 6,
-      "speaker": "Chloe",
-      "text": "In addition, connectors like for instance illustrate points with authentic facts.",
-      "ipa": "/ɪn əˈdɪʃən, kəˈnɛktərz laɪk fɔːr ˈɪnstəns ˈɪləstreɪt pɔɪnts wɪð ɔːˈθɛntɪk fækts/"
+      "text": "Skip counting helps us read big numbers quickly.",
+      "ipa": "/skɪp ˈkaʊntɪŋ hɛlps ʌs rid bɪɡ ˈnʌmbərz ˈkwɪkli/",
+      "vietnamese": "Đếm cách quãng giúp chúng ta đọc các số lớn một cách nhanh chóng."
     },
     {
       "id": 7,
-      "speaker": "Lucas",
-      "text": "Examine the axis interval to determine the exact numerical value of each bar.",
-      "ipa": "/ɪɡˈzæmɪn ði ˈæksɪs ˈɪntərvəl tuː dɪˈtɜːrmɪn ði ɪɡˈzækt njuːˈmɛrɪkl ˈvæljuː ɒv iːtʃ bɑːr/"
+      "text": "Compare the heights to find the tallest bar.",
+      "ipa": "/kəmˈpɛr ðə haɪts tu faɪnd ðə ˈtɔləst bɑr/",
+      "vietnamese": "Hãy so sánh các chiều cao để tìm ra chiếc cột cao nhất."
     },
     {
       "id": 8,
-      "speaker": "Chloe",
-      "text": "Verifiable evidence convinces leaders to support student-led initiatives.",
-      "ipa": "/ˈvɛrɪfaɪəbl ˈɛvɪdəns kənˈvɪnsɪz ˈliːdərz tuː səˈpɔːrt ˈstjuːdnt lɛd ɪˈnɪʃətɪvz/"
+      "text": "True data makes every argument strong and convincing.",
+      "ipa": "/tru ˈdeɪtə meɪks ˈɛvri ˈɑrɡjəmənt strɔŋ ænd kənˈvɪnsɪŋ/",
+      "vietnamese": "Dữ liệu chính xác làm cho mọi lập luận trở nên mạnh mẽ và thuyết phục."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 68. Theme: Developing Strong Reasons: Evidence and Data.\nSpeaker: Strong reasons turn personal opinions into persuasive arguments.\nSpeaker: Specifically, sixty-five students chose chess as their preferred after-school club.\nSpeaker: The difference between sixty-five and forty-two is twenty-three votes.\nSpeaker: Thirty-five plus forty plus fifty-five gives one hundred thirty participants.\nSpeaker: Bar graphs display numerical comparisons clearly against a measured axis scale.\nSpeaker: In addition, connectors like for instance illustrate points with authentic facts.\nSpeaker: Examine the axis interval to determine the exact numerical value of each bar.\nSpeaker: Verifiable evidence convinces leaders to support student-led initiatives."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 68. Theme: ELA: Strong Reasons / Math: Bar Graphs.\nSpeaker: Good writers support their opinions with true facts.\nSpeaker: Furthermore, adding examples makes your point very clear.\nSpeaker: In addition, we use bar graphs to prove our findings.\nSpeaker: The scale on the side counts up by fives.\nSpeaker: The height of the bar shows thirty student votes.\nSpeaker: Skip counting helps us read big numbers quickly.\nSpeaker: Compare the heights to find the tallest bar.\nSpeaker: True data makes every argument strong and convincing."
 };
 export default listeningHubData;

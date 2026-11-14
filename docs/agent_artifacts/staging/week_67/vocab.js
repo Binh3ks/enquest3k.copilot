@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 67 | Theme: "The OREO Structure: Persuasive Power" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 67 | Theme: "ELA: The OREO Structure / Math: Measuring Mass"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
     "word": "opinion",
     "pos": "n",
     "ipa": "/əˈpɪnjən/",
-    "definition_en": "A personal view, judgment, or belief about a topic.",
-    "definition_vi": "quan điểm",
-    "example_en": "State your clear opinion in the opening sentence.",
-    "example_vi": "Hãy nêu rõ quan điểm của bạn trong câu mở đầu."
+    "definition_en": "A personal belief or judgment about a topic.",
+    "definition_vi": "ý kiến, quan điểm",
+    "example_en": "In my opinion, apples make the best snack.",
+    "example_vi": "Theo ý kiến của tôi, táo là món ăn nhẹ tốt nhất."
   },
   {
     "id": 2,
-    "word": "reason",
-    "pos": "n",
-    "ipa": "/ˈriːzən/",
-    "definition_en": "A statement offered in explanation or justification.",
-    "definition_vi": "lý do",
-    "example_en": "Support your opinion with a strong, convincing reason.",
-    "example_vi": "Hãy củng cố quan điểm của bạn bằng một lý do vững chắc và thuyết phục."
+    "word": "believe",
+    "pos": "v",
+    "ipa": "/bɪˈliːv/",
+    "definition_en": "To hold something as true or real.",
+    "definition_vi": "tin rằng",
+    "example_en": "I believe that outdoor play helps students focus.",
+    "example_vi": "Tôi tin rằng vui chơi ngoài trời giúp học sinh tập trung."
   },
   {
     "id": 3,
-    "word": "example",
-    "pos": "n",
-    "ipa": "/ɪɡˈzɑːmpl/",
-    "definition_en": "A specific fact, story, or case illustrating a point.",
-    "definition_vi": "ví dụ",
-    "example_en": "Give a real-world example to prove your argument.",
-    "example_vi": "Hãy đưa ra một ví dụ thực tế để chứng minh cho lập luận của bạn."
+    "word": "think",
+    "pos": "v",
+    "ipa": "/θɪŋk/",
+    "definition_en": "To have a particular belief or idea.",
+    "definition_vi": "nghĩ rằng",
+    "example_en": "We think having more library books is important.",
+    "example_vi": "Chúng tôi nghĩ rằng có thêm sách thư viện là điều quan trọng."
   },
   {
     "id": 4,
-    "word": "mass",
-    "pos": "n",
-    "ipa": "/mæs/",
-    "definition_en": "The amount of physical matter contained in an object.",
-    "definition_vi": "khối lượng",
-    "example_en": "We measure the mass of flour using a digital scale.",
-    "example_vi": "Chúng tôi đo khối lượng của bột mì bằng cân điện tử."
+    "word": "agree",
+    "pos": "v",
+    "ipa": "/əˈɡriː/",
+    "definition_en": "To have the same opinion as another person.",
+    "definition_vi": "đồng ý",
+    "example_en": "Many students agree that art class is relaxing.",
+    "example_vi": "Nhiều học sinh đồng ý rằng giờ học vẽ rất thư giãn."
   },
   {
     "id": 5,
-    "word": "gram",
-    "pos": "n",
-    "ipa": "/ɡræm/",
-    "definition_en": "A metric unit of mass equal to one-thousandth of a kilogram.",
-    "definition_vi": "gam (g)",
-    "example_en": "Three packets of baking soda weigh seven hundred fifty grams.",
-    "example_vi": "Ba gói bột nở nặng bảy trăm năm mươi gam."
+    "word": "disagree",
+    "pos": "v",
+    "ipa": "/ˌdɪsəˈɡriː/",
+    "definition_en": "To have a different opinion from someone.",
+    "definition_vi": "không đồng ý, bất đồng",
+    "example_en": "You can disagree with a friend and still be kind.",
+    "example_vi": "Bạn có thể bất đồng ý kiến một cách lịch sự trong buổi thảo luận lớp."
   },
   {
     "id": 6,
-    "word": "kilogram",
+    "word": "reason",
     "pos": "n",
-    "ipa": "/ˈkɪləɡræm/",
-    "definition_en": "A standard unit of mass equal to one thousand grams.",
-    "definition_vi": "ki-lô-gam (kg)",
-    "example_en": "One kilogram equals one thousand grams.",
-    "example_vi": "Một ki-lô-gam bằng một nghìn gam."
+    "ipa": "/ˈriːzən/",
+    "definition_en": "A fact that explains why something happened or is true.",
+    "definition_vi": "lý do",
+    "example_en": "Give a strong reason why we should plant a tree.",
+    "example_vi": "Hãy đưa ra một lý do mạnh mẽ vì sao chúng ta nên trồng cây."
   },
   {
     "id": 7,
-    "word": "persuade",
-    "pos": "v",
-    "ipa": "/pərˈsweɪd/",
-    "definition_en": "To convince someone to adopt a certain viewpoint.",
-    "definition_vi": "thuyết phục",
-    "example_en": "Use the OREO framework to persuade your classmates.",
-    "example_vi": "Hãy dùng khung OREO để thuyết phục các bạn cùng lớp."
+    "word": "example",
+    "pos": "n",
+    "ipa": "/ɪɡˈzæmpəl/",
+    "definition_en": "A specific fact showing what something is like.",
+    "definition_vi": "ví dụ",
+    "example_en": "For example, carrots have vitamins for healthy eyes.",
+    "example_vi": "Ví dụ, cà rốt có nhiều vitamin tốt cho mắt sáng."
   },
   {
     "id": 8,
-    "word": "restate",
-    "pos": "v",
-    "ipa": "/riːˈsteɪt/",
-    "definition_en": "To state something again in new or stronger words.",
-    "definition_vi": "khẳng định lại, nhắc lại",
-    "example_en": "Restate your main opinion in the concluding sentence.",
-    "example_vi": "Hãy khẳng định lại quan điểm chính trong câu kết luận."
+    "word": "mass",
+    "pos": "n",
+    "ipa": "/mæs/",
+    "definition_en": "The amount of matter in an object.",
+    "definition_vi": "khối lượng",
+    "example_en": "We measure the mass of heavy parcels.",
+    "example_vi": "Chúng tôi đo khối lượng của các kiện hàng nặng."
   },
   {
     "id": 9,
-    "word": "scale",
+    "word": "gram",
     "pos": "n",
-    "ipa": "/skeɪl/",
-    "definition_en": "An instrument used for weighing objects accurately.",
-    "definition_vi": "cái cân",
-    "example_en": "Place the bag of organic apples onto the balance scale.",
-    "example_vi": "Đặt túi táo hữu cơ lên bàn cân thăng bằng."
+    "ipa": "/ɡræm/",
+    "definition_en": "A metric unit of mass for light items.",
+    "definition_vi": "gam (g)",
+    "example_en": "A paperclip has a mass of about one gram.",
+    "example_vi": "Một chiếc kẹp giấy có khối lượng khoảng một gam."
   },
   {
     "id": 10,
-    "word": "convince",
-    "pos": "v",
-    "ipa": "/kənˈvɪns/",
-    "definition_en": "To make someone feel certain that a claim is true.",
-    "definition_vi": "làm cho tin phục",
-    "example_en": "Factual evidence will convince doubtful readers.",
-    "example_vi": "Bằng chứng xác thực sẽ thuyết phục những độc giả còn hoài nghi."
+    "word": "kilogram",
+    "pos": "n",
+    "ipa": "/ˈkɪləɡræm/",
+    "definition_en": "A metric unit of mass equal to 1,000 grams.",
+    "definition_vi": "ki-lô-gam (kg)",
+    "example_en": "One thousand grams equal one kilogram.",
+    "example_vi": "Một nghìn gam bằng một ki-lô-gam."
   },
   {
     "id": 11,
-    "word": "evidence",
+    "word": "scale",
     "pos": "n",
-    "ipa": "/ˈɛvɪdəns/",
-    "definition_en": "Body of verifiable facts indicating whether a claim is true.",
-    "definition_vi": "bằng chứng",
-    "example_en": "Statistical evidence strengthens persuasive essays.",
-    "example_vi": "Bằng chứng thống kê làm tăng sức thuyết phục của bài luận."
+    "ipa": "/skeɪl/",
+    "definition_en": "An instrument used for weighing objects.",
+    "definition_vi": "chiếc cân",
+    "example_en": "Place the melon on the kitchen scale.",
+    "example_vi": "Đặt quả dưa lên chiếc cân nhà bếp."
   },
   {
     "id": 12,
-    "word": "weigh",
-    "pos": "v",
-    "ipa": "/weɪ/",
-    "definition_en": "To measure how heavy an object or person is.",
-    "definition_vi": "cân trọng lượng",
-    "example_en": "We weigh each parcel before shipping it by mail.",
-    "example_vi": "Chúng tôi cân từng bưu kiện trước khi chuyển phát qua đường bưu điện."
+    "word": "heavy",
+    "pos": "adj",
+    "ipa": "/ˈhɛvi/",
+    "definition_en": "Of great weight; difficult to lift.",
+    "definition_vi": "nặng",
+    "example_en": "The big pumpkin was too heavy to carry alone.",
+    "example_vi": "Quả bí ngô lớn quá nặng để một mình mang vác."
   },
   {
     "id": 13,
-    "word": "structure",
-    "pos": "n",
-    "ipa": "/ˈstrʌktʃər/",
-    "definition_en": "The logical arrangement of parts in an essay or building.",
-    "definition_vi": "cấu trúc",
-    "example_en": "The OREO structure keeps your writing focused.",
-    "example_vi": "Cấu trúc OREO giúp bài viết của bạn luôn tập trung."
+    "word": "light",
+    "pos": "adj",
+    "ipa": "/laɪt/",
+    "definition_en": "Of little weight; easy to lift.",
+    "definition_vi": "nhẹ",
+    "example_en": "A dry leaf is light and floats on the pond.",
+    "example_vi": "Chiếc lá khô rất nhẹ và nổi trên mặt ao."
   },
   {
     "id": 14,
-    "word": "balance",
-    "pos": "n",
-    "ipa": "/ˈbæləns/",
-    "definition_en": "A state where opposing weights or forces are equal.",
-    "definition_vi": "sự cân bằng",
-    "example_en": "The pan scale tipped until both sides reached balance.",
-    "example_vi": "Cán cân nghiêng cho đến khi cả hai bên đạt được sự cân bằng."
+    "word": "explain",
+    "pos": "v",
+    "ipa": "/ɪkˈspleɪn/",
+    "definition_en": "To make an idea clear to someone.",
+    "definition_vi": "giải thích",
+    "example_en": "Explain your opinion clearly in three sentences.",
+    "example_vi": "Hãy giải thích quan điểm của bạn rõ ràng trong ba câu."
   },
   {
     "id": 15,
-    "word": "effective",
+    "word": "strong",
     "pos": "adj",
-    "ipa": "/ɪˈfɛktɪv/",
-    "definition_en": "Successful in producing a desired or intended result.",
-    "definition_vi": "hiệu quả",
-    "example_en": "Sharing personal stories is an effective technique.",
-    "example_vi": "Chia sẻ câu chuyện cá nhân là một kỹ thuật hiệu quả."
+    "ipa": "/strɔːŋ/",
+    "definition_en": "Having great power or being very solid and convincing.",
+    "definition_vi": "chắc chắn, có sức thuyết phục",
+    "example_en": "Use strong facts to convince the class.",
+    "example_vi": "Hãy dùng những sự thật có sức thuyết phục để thuyết phục cả lớp."
   },
   {
     "id": 16,
-    "word": "flour",
-    "pos": "n",
-    "ipa": "/ˈflaʊər/",
-    "definition_en": "A powder made by grinding wheat grains used in baking.",
-    "definition_vi": "bột mì",
-    "example_en": "We bought three bags of whole wheat flour.",
-    "example_vi": "Chúng tôi đã mua ba túi bột mì nguyên cám."
+    "word": "weigh",
+    "pos": "v",
+    "ipa": "/weɪ/",
+    "definition_en": "To find out how heavy something is.",
+    "definition_vi": "cân",
+    "example_en": "The grocer will weigh the fresh apples for us.",
+    "example_vi": "Người bán hàng sẽ cân táo tươi cho chúng tôi."
   },
   {
     "id": 17,
-    "word": "parcel",
+    "word": "fruit",
     "pos": "n",
-    "ipa": "/ˈpɑːrsl/",
-    "definition_en": "An item wrapped in paper for postal delivery.",
-    "definition_vi": "bưu kiện",
-    "example_en": "The post office weighed a two-kilogram parcel.",
-    "example_vi": "Bưu điện đã cân một bưu kiện nặng hai ki-lô-gam."
+    "ipa": "/fruːt/",
+    "definition_en": "The sweet edible part of a plant.",
+    "definition_vi": "trái cây",
+    "example_en": "Apples and bananas are popular fruits.",
+    "example_vi": "Táo và chuối là những loại trái cây phổ biến."
   },
   {
     "id": 18,
-    "word": "statement",
+    "word": "box",
     "pos": "n",
-    "ipa": "/ˈsteɪtmənt/",
-    "definition_en": "A definite or clear expression of something in writing.",
-    "definition_vi": "câu khẳng định, tuyên bố",
-    "example_en": "Write a powerful opinion statement to open the paragraph.",
-    "example_vi": "Hãy viết một câu tuyên bố quan điểm mạnh mẽ để mở đầu đoạn văn."
+    "ipa": "/bɑːks/",
+    "definition_en": "A container with straight sides for keeping things.",
+    "definition_vi": "chiếc hộp",
+    "example_en": "The wooden box held twelve kilograms of potatoes.",
+    "example_vi": "Chiếc hộp gỗ chứa mười hai ki-lô-gam khoai tây."
   },
   {
     "id": 19,
-    "word": "ingredient",
+    "word": "food",
     "pos": "n",
-    "ipa": "/ɪnˈɡriːdiənt/",
-    "definition_en": "Any of the foods or substances combined to make a dish.",
-    "definition_vi": "nguyên liệu",
-    "example_en": "Measure each baking ingredient with precision.",
-    "example_vi": "Hãy đo từng nguyên liệu làm bánh với độ chính xác cao."
+    "ipa": "/fuːd/",
+    "definition_en": "Things that people and animals eat to live and grow.",
+    "definition_vi": "thức ăn, thực phẩm",
+    "example_en": "Healthy food gives children energy to learn.",
+    "example_vi": "Thực phẩm lành mạnh mang lại cho trẻ em năng lượng để học tập."
   },
   {
     "id": 20,
-    "word": "conclusion",
+    "word": "balance",
     "pos": "n",
-    "ipa": "/kənˈkluːʒən/",
-    "definition_en": "The closing section where the main argument is finalized.",
-    "definition_vi": "kết luận",
-    "example_en": "The conclusion reinforces the author's primary stance.",
-    "example_vi": "Phần kết luận củng cố lập trường chính của tác giả."
+    "ipa": "/ˈbæləns/",
+    "definition_en": "An apparatus using two pans for weighing.",
+    "definition_vi": "cân đòn, sự thăng bằng",
+    "example_en": "The two pans on the balance scale were even.",
+    "example_vi": "Hai chiếc đĩa trên cân đòn đã thăng bằng."
   }
 ];
 export const vocabList = vocab;

@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 66 | Theme: "Micro-Debate: Digital Emails vs Handwritten Letters" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 66 | Theme: "Micro-Debate 1: Email vs Handwritten Letters"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 66,
-  "theme": "Micro-Debate: Digital Emails vs Handwritten Letters",
+  "theme": "Micro-Debate 1: Email vs Handwritten Letters",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Debating Communication Mediums",
+    "title": "Comparing Letters and Emails",
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "Why do you argue that email is the superior medium?"
+        "speaker": "Leo",
+        "text": "Because letters feel personal, warm, and fun to open in the mailbox."
       },
       {
-        "speaker": "Emma",
-        "text": "Because it is instantaneous and saves resources."
+        "speaker": "Ava",
+        "text": "It delivers important school messages instantly across any distance."
       },
       {
-        "speaker": "Lucas",
-        "text": "What is the counter-argument for paper letters?"
+        "speaker": "Leo",
+        "text": "We sent eighteen handwritten letters and twenty-four electronic emails."
       },
       {
-        "speaker": "Emma",
-        "text": "Letters express heartfelt emotion and serve as keepsakes."
+        "speaker": "Ava",
+        "text": "Eighteen plus twenty-four gives forty-two messages in total."
       },
       {
-        "speaker": "Lucas",
-        "text": "And the difference between sixty-eight and thirty-nine is twenty-nine!"
+        "speaker": "Leo",
+        "text": "Yes, let's write a polite letter and mail it at the local post office!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Lucas",
-      "text": "Digital email delivers messages instantly across global computer networks.",
-      "ipa": "/ˈdɪdʒɪtl ˈiːmeɪl dɪˈlɪvərz ˈmɛsɪdʒɪz ˈɪnstəntli əˈkrɒs ˈɡləʊbl kəmˈpjuːtər ˈnɛtwɜːrks/"
+      "text": "In my opinion, an email is much faster to send.",
+      "ipa": "/ɪn maɪ əˈpɪnjən æn ˈimeɪl ɪz mʌtʃ ˈfæstər tu sɛnd/",
+      "vietnamese": "Theo ý kiến của tôi, một email được gửi nhanh hơn rất nhiều."
     },
     {
       "id": 2,
-      "speaker": "Emma",
-      "text": "While email is faster, handwritten letters feel far more personal.",
-      "ipa": "/waɪl ˈiːmeɪl ɪz ˈfɑːstər, ˌhændˈrɪtn ˈlɛtərz fiːl fɑːr mɔːr ˈpɜːrsənl/"
+      "text": "A paper letter travels slower but feels very personal.",
+      "ipa": "/ə ˈpeɪpər ˈlɛtər ˈtrævəlz ˈsloʊər bʌt filz ˈvɛri ˈpɜrsənəl/",
+      "vietnamese": "Một bức thư giấy đi chậm hơn nhưng mang lại cảm giác rất gần gũi."
     },
     {
       "id": 3,
-      "speaker": "Lucas",
-      "text": "The difference between sixty-eight emails and thirty-nine letters is twenty-nine.",
-      "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈsɪksti eɪt ˈiːmeɪlz ænd ˈθɜːrti naɪn ˈlɛtərz ɪz ˈtwɛnti naɪn/"
+      "text": "I agree that digital messages save paper and trees.",
+      "ipa": "/aɪ əˈɡri ðæt ˈdɪdʒətəl ˈmɛsədʒəz seɪv ˈpeɪpər ænd triz/",
+      "vietnamese": "Tôi đồng ý rằng tin nhắn kỹ thuật số tiết kiệm giấy và cây xanh."
     },
     {
       "id": 4,
-      "speaker": "Emma",
-      "text": "Grandparents treasure handwritten birthday cards as precious keepsakes.",
-      "ipa": "/ˈɡrænpeərənts ˈtrɛʒər ˌhændˈrɪtn ˈbɜːrθdeɪ kɑːrdz æz ˈprɛʃəs ˈkiːpseɪks/"
+      "text": "You can delete old emails with a single click.",
+      "ipa": "/ju kæn dɪˈlit oʊld ˈimeɪlz wɪð ə ˈsɪŋɡəl klɪk/",
+      "vietnamese": "Bạn có thể xóa các email cũ chỉ với một cú nhấp chuột."
     },
     {
       "id": 5,
-      "speaker": "Lucas",
-      "text": "Anna sent forty-five emails, which was eighteen more than Ben sent.",
-      "ipa": "/ˈænə sɛnt ˈfɔːrti faɪv ˈiːmeɪlz, wɪtʃ wɒz ˌeɪˈtiːn mɔːr ðæn bɛn sɛnt/"
+      "text": "Grandmother loves to keep handwritten letters in a box.",
+      "ipa": "/ˈɡrændˌmʌðər lʌvz tu kip ˈhændˌrɪtən ˈlɛtərz ɪn ə bɑks/",
+      "vietnamese": "Bà thích giữ những bức thư viết tay trong một chiếc hộp."
     },
     {
       "id": 6,
-      "speaker": "Emma",
-      "text": "Persuasive debaters support their arguments with balanced factual evidence.",
-      "ipa": "/pərˈsweɪsɪv dɪˈbeɪtərz səˈpɔːrt ðɛər ˈɑːrɡjʊmənts wɪð ˈbælənst ˈfæktʃuəl ˈɛvɪdəns/"
+      "text": "Writing carefully with pen and ink takes patience.",
+      "ipa": "/ˈraɪtɪŋ ˈkɛrfəli wɪð pɛn ænd ɪŋk teɪks ˈpeɪʃəns/",
+      "vietnamese": "Viết cẩn thận bằng bút mực đòi hỏi sự kiên nhẫn."
     },
     {
       "id": 7,
-      "speaker": "Lucas",
-      "text": "Contrasting connectives help speakers present nuanced perspectives.",
-      "ipa": "/kənˈtrɑːstɪŋ kəˈnɛktɪvz hɛlp ˈspiːkərz prɪˈzɛnt ˈnjuːɑːnst pərˈspɛktɪvz/"
+      "text": "A class debate helps us listen to both viewpoints.",
+      "ipa": "/ə klæs dɪˈbeɪt hɛlps ʌs ˈlɪsən tu boʊθ ˈvjuˌpɔɪnts/",
+      "vietnamese": "Một buổi tranh luận trong lớp giúp chúng ta lắng nghe cả hai quan điểm."
     },
     {
       "id": 8,
-      "speaker": "Emma",
-      "text": "Both communication formats offer unique advantages in modern life.",
-      "ipa": "/bəʊθ kəˌmjuːnɪˈkeɪʃən ˈfɔːrmæts ˈɒfər juːˈniːk ədˈvɑːntɪdʒɪz ɪn ˈmɒdərn laɪf/"
+      "text": "Both ways of sending messages are useful and fun.",
+      "ipa": "/boʊθ weɪz ʌv ˈsɛndɪŋ ˈmɛsədʒəz ɑr ˈjusfəl ænd fʌn/",
+      "vietnamese": "Cả hai cách gửi tin nhắn đều hữu ích và thú vị."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 66. Theme: Micro-Debate: Digital Emails vs Handwritten Letters.\nSpeaker: Digital email delivers messages instantly across global computer networks.\nSpeaker: While email is faster, handwritten letters feel far more personal.\nSpeaker: The difference between sixty-eight emails and thirty-nine letters is twenty-nine.\nSpeaker: Grandparents treasure handwritten birthday cards as precious keepsakes.\nSpeaker: Anna sent forty-five emails, which was eighteen more than Ben sent.\nSpeaker: Persuasive debaters support their arguments with balanced factual evidence.\nSpeaker: Contrasting connectives help speakers present nuanced perspectives.\nSpeaker: Both communication formats offer unique advantages in modern life."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 66. Theme: Micro-Debate 1: Email vs Handwritten Letters.\nSpeaker: In my opinion, an email is much faster to send.\nSpeaker: A paper letter travels slower but feels very personal.\nSpeaker: I agree that digital messages save paper and trees.\nSpeaker: You can delete old emails with a single click.\nSpeaker: Grandmother loves to keep handwritten letters in a box.\nSpeaker: Writing carefully with pen and ink takes patience.\nSpeaker: A class debate helps us listen to both viewpoints.\nSpeaker: Both ways of sending messages are useful and fun."
 };
 export default listeningHubData;

@@ -15,10 +15,11 @@
     "focus": "Deliver a 1-minute persuasive speech using OREO"
   },
   "grammar_focus": {
-    "structure": "Speaking Transitions: \"First of all...\", \"Finally",
+    "structure": "Speaking Transitions: First of all..., In addition..., Finally...",
     "outcome": "Deliver a 1-minute persuasive speech using OREO",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Speaking Transitions: First of all..., In addition..., Finally..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -244,5 +245,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 70
 }

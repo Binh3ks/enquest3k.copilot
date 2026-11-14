@@ -15,10 +15,11 @@
     "focus": "Identify and label parts: Opinion, Reason, Example, Opinion Restated"
   },
   "grammar_focus": {
-    "structure": "Opinion Phrases: \"I strongly believe...\", \"In my view",
+    "structure": "The OREO Persuasive Structure: Opinion -> Reason -> Example -> Opinion restated",
     "outcome": "Identify and label parts: Opinion, Reason, Example, Opinion Restated",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "The OREO Persuasive Structure: Opinion -> Reason -> Example -> Opinion restated"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -245,5 +246,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 67
 }

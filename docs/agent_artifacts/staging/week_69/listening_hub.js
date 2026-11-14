@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 69 | Theme: "Environmental Protection: Eco-Warriors" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 69 | Theme: "Science/ELA: Environmental Protection / Math: Line Plots"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 69,
-  "theme": "Environmental Protection: Eco-Warriors",
+  "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Discussing Environmental Service",
+    "title": "Persuading the Community to Clean the Park",
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "How many hours of creek cleanup did our students log?"
+        "speaker": "Oliver",
+        "text": "By explaining how clean parks protect wildlife and create safe play areas."
       },
       {
-        "speaker": "Sophia",
-        "text": "Fourteen students logged two hours each, making twenty-eight hours."
+        "speaker": "Emma",
+        "text": "We used strong phrases like 'join together', 'protect nature', and 'take action'."
       },
       {
-        "speaker": "Lucas",
-        "text": "How many seedlings did we measure on the line plot?"
+        "speaker": "Oliver",
+        "text": "Thirty-five adults and twenty-eight students signed the volunteer list."
       },
       {
-        "speaker": "Sophia",
-        "text": "Four, seven, nine, and five, which equals twenty-five seedlings."
+        "speaker": "Emma",
+        "text": "Thirty-five plus twenty-eight equals sixty-three volunteers in total."
       },
       {
-        "speaker": "Lucas",
-        "text": "Citizens ought to help us maintain the park every weekend!"
+        "speaker": "Oliver",
+        "text": "Yes, let's ask the shopkeepers to display them in their front windows!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Sophia",
-      "text": "Every active citizen has a moral obligation to protect the environment.",
-      "ipa": "/ˈɛvri ˈæktɪv ˈsɪtɪzən hæz ə ˈmɒrəl ˌɒblɪˈɡeɪʃən tuː prəˈtɛkt ði ɪnˈvaɪrənmənt/"
+      "text": "We must protect our environment from plastic pollution.",
+      "ipa": "/wi mʌst prəˈtɛkt ˈaʊər ɪnˈvaɪrənmənt frʌm ˈplæstɪk pəˈluʃən/",
+      "vietnamese": "Chúng ta phải bảo vệ môi trường khỏi ô nhiễm rác thải nhựa."
     },
     {
       "id": 2,
-      "speaker": "Lucas",
-      "text": "We must reduce single-use plastic trash to preserve marine wildlife.",
-      "ipa": "/wiː mʌst rɪˈdjuːs ˈsɪŋɡl juːs ˈplæstɪk træʃ tuː prɪˈzɜːrv məˈriːn ˈwaɪldlaɪf/"
+      "text": "Students should save clean water and recycle cans.",
+      "ipa": "/ˈstudənts ʃʊd seɪv klin ˈwɔtər ænd ˌriˈsaɪkəl kænz/",
+      "vietnamese": "Học sinh nên tiết kiệm nước sạch và tái chế các vỏ lon."
     },
     {
       "id": 3,
-      "speaker": "Sophia",
-      "text": "Fourteen students volunteered two hours each, totaling twenty-eight hours.",
-      "ipa": "/ˌfɔːrˈtiːn ˈstjuːdnts ˌvɒlənˈtɪəd tuː ˈaʊərz iːtʃ, ˈtəʊtlɪŋ ˈtwɛnti eɪt ˈaʊərz/"
+      "text": "Never leave dirty waste behind in the green park.",
+      "ipa": "/ˈnɛvər liv ˈdɜrti weɪst bɪˈhaɪnd ɪn ðə ɡrin pɑrk/",
+      "vietnamese": "Đừng bao giờ để lại rác bẩn trong công viên xanh."
     },
     {
       "id": 4,
-      "speaker": "Lucas",
-      "text": "Line plots illustrate the frequency of observations across a continuous number line.",
-      "ipa": "/laɪn plɒts ˈɪləstreɪt ðə ˈfriːkwənsi ɒv ˌɒbzərˈveɪʃənz əˈkrɒs ə kənˈtɪnjuəs ˈnʌmbər laɪn/"
+      "text": "A line plot uses X marks along a number line.",
+      "ipa": "/ə laɪn plɑt ˈjuzəz ɛks mɑrks əˈlɔŋ ə ˈnʌmbər laɪn/",
+      "vietnamese": "Biểu đồ điểm dùng các dấu X dọc theo một trục số."
     },
     {
       "id": 5,
-      "speaker": "Sophia",
-      "text": "Four plus seven plus nine plus five equals twenty-five monitored seedlings.",
-      "ipa": "/fɔːr plʌs ˈsɛvn plʌs naɪn plʌs faɪv ˈiːkwəlz ˈtwɛnti faɪv ˈmɒnɪtəd ˈsiːdlɪŋz/"
+      "text": "Each x-mark stands for one collected plastic bottle.",
+      "ipa": "/itʃ ɛks mɑrk stændz fɔr wʌn kəˈlɛktəd ˈplæstɪk ˈbɑtəl/",
+      "vietnamese": "Mỗi dấu X đại diện cho một chiếc chai nhựa được thu gom."
     },
     {
       "id": 6,
-      "speaker": "Lucas",
-      "text": "Communities ought to separate organic scraps for municipal soil composting.",
-      "ipa": "/kəˈmjuːnətiz ɔːt tuː ˈsɛpəreɪt ɔːrˈɡænɪk skræps fɔːr mjuːˈnɪsɪpl sɔɪl ˈkɒmpɒstɪŋ/"
+      "text": "The number with the most X marks has the highest frequency.",
+      "ipa": "/ðə ˈnʌmbər wɪð ðə moʊst ɛks mɑrks hæz ðə ˈhaɪəst ˈfrikwənsi/",
+      "vietnamese": "Con số có nhiều dấu X nhất có tần suất cao nhất."
     },
     {
       "id": 7,
-      "speaker": "Sophia",
-      "text": "Careful data tracking reveals the positive impact of restoration projects.",
-      "ipa": "/ˈkɛəfl ˈdeɪtə ˈtrækɪŋ rɪˈviːlz ðə ˈpɒzətɪv ˈɪmpækt ɒv ˌrɛstəˈreɪʃən ˈprɒdʒɛkts/"
+      "text": "Three bottles was the most common count in our survey.",
+      "ipa": "/θri ˈbɑtəlz wʌz ðə moʊst ˈkɑmən kaʊnt ɪn ˈaʊər ˈsɜrveɪ/",
+      "vietnamese": "Ba chiếc chai là số lượng phổ biến nhất trong cuộc khảo sát của chúng tôi."
     },
     {
       "id": 8,
-      "speaker": "Lucas",
-      "text": "Sustainable habits ensure healthy natural resources for future generations.",
-      "ipa": "/səˈsteɪnəbl ˈhæbɪts ɪnˈʃʊər ˈhɛlθi ˈnætʃrəl rɪˈzɔːrsɪz fɔːr ˈfjuːtʃər ˌdʒɛnəˈreɪʃənz/"
+      "text": "Working together keeps our Earth beautiful and healthy.",
+      "ipa": "/ˈwɜrkɪŋ təˈɡɛðər kips ˈaʊər ɜrθ ˈbjutəfəl ænd ˈhɛlθi/",
+      "vietnamese": "Làm việc cùng nhau sẽ giữ cho Trái đất xinh đẹp và trong lành."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 69. Theme: Environmental Protection: Eco-Warriors.\nSpeaker: Every active citizen has a moral obligation to protect the environment.\nSpeaker: We must reduce single-use plastic trash to preserve marine wildlife.\nSpeaker: Fourteen students volunteered two hours each, totaling twenty-eight hours.\nSpeaker: Line plots illustrate the frequency of observations across a continuous number line.\nSpeaker: Four plus seven plus nine plus five equals twenty-five monitored seedlings.\nSpeaker: Communities ought to separate organic scraps for municipal soil composting.\nSpeaker: Careful data tracking reveals the positive impact of restoration projects.\nSpeaker: Sustainable habits ensure healthy natural resources for future generations."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 69. Theme: Science/ELA: Environmental Protection / Math: Line Plots.\nSpeaker: We must protect our environment from plastic pollution.\nSpeaker: Students should save clean water and recycle cans.\nSpeaker: Never leave dirty waste behind in the green park.\nSpeaker: A line plot uses X marks along a number line.\nSpeaker: Each x-mark stands for one collected plastic bottle.\nSpeaker: The number with the most X marks has the highest frequency.\nSpeaker: Three bottles was the most common count in our survey.\nSpeaker: Working together keeps our Earth beautiful and healthy."
 };
 export default listeningHubData;

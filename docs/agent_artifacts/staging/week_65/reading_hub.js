@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 65,
-  "theme": "Cycle 2.1 Review: Logic and Data Mastery",
+  "theme": "Review & Consolidation (Cycle 2.1)",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "review",
+      "word": "cause",
       "pos": "n",
-      "ipa": "/rɪˈvjuː/",
-      "definition_en": "A formal assessment or examination of what has been learned.",
-      "definition_vi": "sự ôn tập, tổng duyệt",
-      "example_en": "Today we complete our Cycle 2.1 comprehensive review.",
-      "example_vi": "Hôm nay chúng ta hoàn thành bài tổng duyệt toàn diện Chu trình 2.1."
+      "ipa": "/kɔːz/",
+      "definition_en": "The reason why an event happens.",
+      "definition_vi": "nguyên nhân",
+      "example_en": "A flat tire was the cause of the bike delay.",
+      "example_vi": "Lốp xẹp là nguyên nhân làm xe đạp bị trễ."
     },
     {
       "id": 2,
-      "word": "consolidate",
-      "pos": "v",
-      "ipa": "/kənˈsɒlɪdeɪt/",
-      "definition_en": "To combine and strengthen learned knowledge into a whole.",
-      "definition_vi": "củng cố kiến thức",
-      "example_en": "Review games consolidate our reading and grammar skills.",
-      "example_vi": "Các trò chơi ôn tập củng cố kỹ năng đọc và ngữ pháp của chúng tôi."
+      "word": "effect",
+      "pos": "n",
+      "ipa": "/ɪˈfɛkt/",
+      "definition_en": "A change resulting from an event.",
+      "definition_vi": "kết quả, hiệu ứng",
+      "example_en": "Clear thinking is one effect of good sleep.",
+      "example_vi": "Tư duy sáng suốt là một tác động của giấc ngủ ngon."
     },
     {
       "id": 3,
-      "word": "logic",
+      "word": "problem",
       "pos": "n",
-      "ipa": "/ˈlɒdʒɪk/",
-      "definition_en": "Reasoning conducted according to strict principles of validity.",
-      "definition_vi": "tư duy logic",
-      "example_en": "Clear logic helps us solve challenging word problems.",
-      "example_vi": "Tư duy logic rõ ràng giúp chúng ta giải các bài toán đố hóc búa."
+      "ipa": "/ˈprɑːbləm/",
+      "definition_en": "A matter or situation that is difficult to deal with.",
+      "definition_vi": "vấn đề",
+      "example_en": "Every math problem has a step to solve it.",
+      "example_vi": "Mỗi bài toán đều có một bước để giải quyết."
     },
     {
       "id": 4,
-      "word": "mastery",
+      "word": "solution",
       "pos": "n",
-      "ipa": "/ˈmɑːstəri/",
-      "definition_en": "Comprehensive knowledge or skill in a particular subject.",
-      "definition_vi": "sự tinh thông, làm chủ",
-      "example_en": "She demonstrated complete mastery of division concepts.",
-      "example_vi": "Cô ấy đã thể hiện sự tinh thông hoàn toàn về các khái niệm phép chia."
+      "ipa": "/səˈluːʃən/",
+      "definition_en": "A means of solving a problem.",
+      "definition_vi": "giải pháp",
+      "example_en": "Good teamwork gave us a quick solution to the puzzle.",
+      "example_vi": "Làm việc cùng nhau đã mang lại một giải pháp nhanh chóng."
     },
     {
       "id": 5,
-      "word": "conjunction",
+      "word": "plan",
       "pos": "n",
-      "ipa": "/kənˈdʒʌŋkʃən/",
-      "definition_en": "A word used to connect clauses or sentences (so, because).",
-      "definition_vi": "liên từ",
-      "example_en": "Use the conjunction therefore to show a formal result.",
-      "example_vi": "Hãy dùng liên từ therefore để chỉ một kết quả trang trọng."
+      "ipa": "/plæn/",
+      "definition_en": "A set of steps worked out to do something well.",
+      "definition_vi": "kế hoạch",
+      "example_en": "A clear study plan leads to good grades.",
+      "example_vi": "Một kế hoạch học tập rõ ràng sẽ mang lại điểm số tốt."
     },
     {
       "id": 6,
-      "word": "expression",
+      "word": "step",
       "pos": "n",
-      "ipa": "/ɪkˈsprɛʃən/",
-      "definition_en": "A combination of numbers, operators, and grouping symbols.",
-      "definition_vi": "biểu thức",
-      "example_en": "Evaluate the arithmetic expression with care.",
-      "example_vi": "Hãy tính giá trị biểu thức số học một cách cẩn thận."
+      "ipa": "/stɛp/",
+      "definition_en": "One action in a series.",
+      "definition_vi": "bước",
+      "example_en": "Follow each step on the review worksheet.",
+      "example_vi": "Hãy làm theo từng bước trên phiếu ôn tập."
     },
     {
       "id": 7,
-      "word": "priority",
-      "pos": "n",
-      "ipa": "/praɪˈɒrəti/",
-      "definition_en": "The condition of being regarded as more important.",
-      "definition_vi": "thứ tự ưu tiên",
-      "example_en": "Parentheses take top priority in math calculations.",
-      "example_vi": "Dấu ngoặc đơn có thứ tự ưu tiên cao nhất trong tính toán."
+      "word": "review",
+      "pos": "v",
+      "ipa": "/rɪˈvjuː/",
+      "definition_en": "To study lessons again to remember them clearly.",
+      "definition_vi": "ôn tập, rà soát lại",
+      "example_en": "Review your vocabulary words before the quiz.",
+      "example_vi": "Hãy ôn lại các từ vựng trước bài kiểm tra."
     },
     {
       "id": 8,
-      "word": "coordinate",
-      "pos": "n",
-      "ipa": "/kəʊˈɔːrdɪnət/",
-      "definition_en": "A number pair defining a position on a grid.",
-      "definition_vi": "tọa độ",
-      "example_en": "Plot the coordinate pair on the graph axes.",
-      "example_vi": "Hãy vẽ cặp tọa độ lên các trục đồ thị."
+      "word": "practice",
+      "pos": "v",
+      "ipa": "/ˈpræktɪs/",
+      "definition_en": "To do something often to become better at it.",
+      "definition_vi": "luyện tập",
+      "example_en": "Practice speaking English with your partner.",
+      "example_vi": "Hãy luyện nói tiếng Anh cùng bạn cùng bàn của bạn."
     },
     {
       "id": 9,
-      "word": "perimeter",
-      "pos": "n",
-      "ipa": "/pəˈrɪmɪtər/",
-      "definition_en": "The continuous line forming the boundary of a closed shape.",
-      "definition_vi": "chu vi",
-      "example_en": "The perimeter of the rectangle is thirty units.",
-      "example_vi": "Chu vi của hình chữ nhật là ba mươi đơn vị."
+      "word": "solve",
+      "pos": "v",
+      "ipa": "/sɑːlv/",
+      "definition_en": "To find an answer to an explanation.",
+      "definition_vi": "giải quyết",
+      "example_en": "We can solve the logic puzzle with clues.",
+      "example_vi": "Chúng ta có thể giải câu đố logic bằng các manh mối."
     },
     {
       "id": 10,
-      "word": "remainder",
+      "word": "map",
       "pos": "n",
-      "ipa": "/rɪˈmeɪndər/",
-      "definition_en": "The leftover number when an amount cannot divide evenly.",
-      "definition_vi": "số dư",
-      "example_en": "Twenty-nine divided by six leaves a remainder of five.",
-      "example_vi": "Hai mươi chín chia cho sáu để lại số dư là năm."
+      "ipa": "/mæp/",
+      "definition_en": "A drawing of an area showing physical features.",
+      "definition_vi": "bản đồ",
+      "example_en": "Find North on the school map.",
+      "example_vi": "Hãy tìm hướng Bắc trên bản đồ trường học."
     },
     {
       "id": 11,
-      "word": "synthesis",
+      "word": "compass",
       "pos": "n",
-      "ipa": "/ˈsɪnθəsɪs/",
-      "definition_en": "Combining different ideas to form a coherent whole.",
-      "definition_vi": "sự tổng hợp",
-      "example_en": "This essay is a synthesis of three science articles.",
-      "example_vi": "Bài luận này là sự tổng hợp của ba bài báo khoa học."
+      "ipa": "/ˈkʌmpəs/",
+      "definition_en": "An instrument with a magnetic needle.",
+      "definition_vi": "la bàn",
+      "example_en": "A magnetic compass shows hikers the right way to walk.",
+      "example_vi": "La bàn giúp người lữ hành định hướng an toàn."
     },
     {
       "id": 12,
-      "word": "challenge",
+      "word": "graph",
       "pos": "n",
-      "ipa": "/ˈtʃælɪndʒ/",
-      "definition_en": "A task that tests mental power or technical ability.",
-      "definition_vi": "thử thách",
-      "example_en": "The math tournament offered an exciting challenge.",
-      "example_vi": "Giải đấu toán học đã mang lại một thử thách đầy hào hứng."
+      "ipa": "/ɡræf/",
+      "definition_en": "A visual chart showing numbers and amounts.",
+      "definition_vi": "biểu đồ",
+      "example_en": "Look at the bar graph to see the tallest bar.",
+      "example_vi": "Hãy nhìn vào biểu đồ cột để thấy cột cao nhất."
     },
     {
       "id": 13,
-      "word": "strategy",
+      "word": "data",
       "pos": "n",
-      "ipa": "/ˈstrætədʒi/",
-      "definition_en": "A plan of action designed to achieve an overall aim.",
-      "definition_vi": "chiến lược",
-      "example_en": "Break word problems into steps as your main strategy.",
-      "example_vi": "Chia các bài toán lời văn thành các bước là chiến lược chính của bạn."
+      "ipa": "/ˈdeɪtə/",
+      "definition_en": "Facts or numbers collected together to study.",
+      "definition_vi": "dữ liệu",
+      "example_en": "The survey data shows student reading hours.",
+      "example_vi": "Dữ liệu khảo sát thể hiện số giờ đọc sách của học sinh."
     },
     {
       "id": 14,
-      "word": "operation",
+      "word": "summary",
       "pos": "n",
-      "ipa": "/ˌɒpəˈreɪʃən/",
-      "definition_en": "A calculation such as addition, subtraction, or multiplication.",
-      "definition_vi": "phép toán",
-      "example_en": "Remember the correct order of operations.",
-      "example_vi": "Hãy nhớ thứ tự thực hiện các phép toán chính xác."
+      "ipa": "/ˈsʌməri/",
+      "definition_en": "A short statement of the main points.",
+      "definition_vi": "tóm tắt",
+      "example_en": "Write a summary of the chapter in five lines.",
+      "example_vi": "Hãy viết một bản tóm tắt chương sách trong năm dòng."
     },
     {
       "id": 15,
-      "word": "accuracy",
-      "pos": "n",
-      "ipa": "/ˈækjʊrəsi/",
-      "definition_en": "The quality of being correct, exact, and error-free.",
-      "definition_vi": "độ chính xác",
-      "example_en": "Check your calculations to ensure full accuracy.",
-      "example_vi": "Hãy kiểm tra lại các phép tính của bạn để đảm bảo độ chính xác tuyệt đối."
+      "word": "retell",
+      "pos": "v",
+      "ipa": "/riːˈtɛl/",
+      "definition_en": "To tell again in a new way.",
+      "definition_vi": "kể lại",
+      "example_en": "Retell the fable using beginning, middle, and end.",
+      "example_vi": "Kể lại truyện ngụ ngôn bằng phần mở đầu, phần giữa và phần kết."
     },
     {
       "id": 16,
-      "word": "evidence",
+      "word": "symbol",
       "pos": "n",
-      "ipa": "/ˈɛvɪdəns/",
-      "definition_en": "Factual details that support a claim or conclusion.",
-      "definition_vi": "bằng chứng",
-      "example_en": "Provide textual evidence for each reading answer.",
-      "example_vi": "Hãy đưa ra bằng chứng từ văn bản cho mỗi câu trả lời đọc hiểu."
+      "ipa": "/ˈsɪmbəl/",
+      "definition_en": "A sign or image used to stand for something.",
+      "definition_vi": "biểu tượng",
+      "example_en": "The star symbol means top achievement.",
+      "example_vi": "Biểu tượng ngôi sao có nghĩa là thành tích xuất sắc."
     },
     {
       "id": 17,
-      "word": "conclude",
+      "word": "calculate",
       "pos": "v",
-      "ipa": "/kənˈkluːd/",
-      "definition_en": "To finish or arrive at a reasoned judgment.",
-      "definition_vi": "kết luận",
-      "example_en": "We conclude that careful planning ensures success.",
-      "example_vi": "Chúng tôi kết luận rằng sự chuẩn bị kỹ lưỡng đảm bảo thành công."
+      "ipa": "/ˈkælkjəleɪt/",
+      "definition_en": "To find an answer using numbers and math.",
+      "definition_vi": "tính toán",
+      "example_en": "Calculate the total score for both teams.",
+      "example_vi": "Hãy tính tổng điểm cho cả hai đội."
     },
     {
       "id": 18,
-      "word": "formula",
-      "pos": "n",
-      "ipa": "/ˈfɔːrmjʊlə/",
-      "definition_en": "A mathematical rule expressed in symbols.",
-      "definition_vi": "công thức",
-      "example_en": "Use the perimeter formula two times length plus width.",
-      "example_vi": "Hãy dùng công thức chu vi bằng hai lần dài cộng rộng."
+      "word": "equal",
+      "pos": "adj",
+      "ipa": "/ˈiːkwəl/",
+      "definition_en": "The same in value or amount.",
+      "definition_vi": "bằng nhau",
+      "example_en": "Four groups have an equal number of apples.",
+      "example_vi": "Bốn nhóm có số lượng táo bằng nhau."
     },
     {
       "id": 19,
-      "word": "competence",
-      "pos": "n",
-      "ipa": "/ˈkɒmpɪtəns/",
-      "definition_en": "The ability to do something successfully and efficiently.",
-      "definition_vi": "năng lực",
-      "example_en": "Students showed great competence in English and math.",
-      "example_vi": "Học sinh đã thể hiện năng lực tuyệt vời trong cả Tiếng Anh và Toán."
+      "word": "improve",
+      "pos": "v",
+      "ipa": "/ɪmˈpruːv/",
+      "definition_en": "To make or become better.",
+      "definition_vi": "cải thiện",
+      "example_en": "Reviewing your notes often makes your memory better.",
+      "example_vi": "Ôn tập thường xuyên sẽ cải thiện trí nhớ của bạn."
     },
     {
       "id": 20,
-      "word": "celebrate",
-      "pos": "v",
-      "ipa": "/ˈsɛlɪbreɪt/",
-      "definition_en": "To acknowledge a notable achievement with joyful activities.",
-      "definition_vi": "ăn mừng, kỷ niệm",
-      "example_en": "We celebrate our progress at the end of every rotary cycle.",
-      "example_vi": "Chúng tôi ăn mừng tiến bộ của mình vào cuối mỗi chu trình xoay vòng."
+      "word": "success",
+      "pos": "n",
+      "ipa": "/səkˈsɛs/",
+      "definition_en": "The accomplishment of an aim.",
+      "definition_vi": "thành công",
+      "example_en": "Hard work brings proud school success.",
+      "example_vi": "Làm việc chăm chỉ mang lại thành công vẻ vang ở trường."
     }
   ],
-  "clil_article": {
-    "title_en": "Synthesizing Language Patterns and Mixed Math Operations",
-    "title_vi": "Tổng hợp Mẫu Ngôn ngữ và Phép tính Hỗn hợp",
-    "content_en": "A comprehensive review and consolidation allow young learners to connect separate skills into a unified synthesis of critical thinking and mathematical mastery. Throughout Cycle 2.1, students tackled every academic challenge with clear logic and systematic strategy. In language arts, students explored cause and effect using connecting conjunctions like 'because' and 'therefore', gathered evidence to support arguments, and learned how to conclude essays with persuasive competence. In mathematics, this review unites all four basic operations, from coordinate grid navigation and calculating boundary perimeter to division with a leftover remainder. Solving multi-step arithmetic expressions requires strict adherence to calculation priority and parentheses rules, using each formula with high accuracy. For example, in the expression (36 + 24) / 5, we evaluate parentheses first: 36 + 24 = 60, and then divide 60 by 5 to obtain 12. In another expression, 4 * 15 - 18, multiplication comes before subtraction: 4 * 15 = 60, and 60 - 18 = 42. Combining linguistic clarity with mathematical rigor builds durable competence, giving students every reason to celebrate their learning achievements.",
-    "glossary": [
-      {
-        "word": "review",
-        "definition_en": "Assessment of past lessons",
-        "definition_vi": "ôn tập"
-      },
-      {
-        "word": "consolidate",
-        "definition_en": "To strengthen and unite skills",
-        "definition_vi": "củng cố"
-      },
-      {
-        "word": "logic",
-        "definition_en": "Valid and sound reasoning",
-        "definition_vi": "tư duy logic"
-      },
-      {
-        "word": "priority",
-        "definition_en": "Higher status in sequence",
-        "definition_vi": "thứ tự ưu tiên"
-      },
-      {
-        "word": "synthesis",
-        "definition_en": "Combining parts into a whole",
-        "definition_vi": "tổng hợp"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What is the value of (36 + 24) / 5?",
-        "options": [
-          "12",
-          "15",
-          "10"
-        ],
-        "answer": "12"
-      },
-      {
-        "id": 2,
-        "question_en": "Which conjunction is used to express a formal cause-and-effect result?",
-        "options": [
-          "Therefore",
-          "Or",
-          "Unless"
-        ],
-        "answer": "Therefore"
-      },
-      {
-        "id": 3,
-        "question_en": "In the expression 4 * 15 - 18, which operation is performed first?",
-        "options": [
-          "Multiplication (4 * 15)",
-          "Subtraction (15 - 18)",
-          "Either one"
-        ],
-        "answer": "Multiplication (4 * 15)"
-      }
-    ],
-    "text": "A comprehensive review and consolidation allow young learners to connect separate skills into a unified synthesis of critical thinking and mathematical mastery. Throughout Cycle 2.1, students tackled every academic challenge with clear logic and systematic strategy. In language arts, students explored cause and effect using connecting conjunctions like 'because' and 'therefore', gathered evidence to support arguments, and learned how to conclude essays with persuasive competence. In mathematics, this review unites all four basic operations, from coordinate grid navigation and calculating boundary perimeter to division with a leftover remainder. Solving multi-step arithmetic expressions requires strict adherence to calculation priority and parentheses rules, using each formula with high accuracy. For example, in the expression (36 + 24) / 5, we evaluate parentheses first: 36 + 24 = 60, and then divide 60 by 5 to obtain 12. In another expression, 4 * 15 - 18, multiplication comes before subtraction: 4 * 15 = 60, and 60 - 18 = 42. Combining linguistic clarity with mathematical rigor builds durable competence, giving students every reason to celebrate their learning achievements."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "The Mid-Year Science and Math Fair",
+    "title_vi": "Hội chợ Khoa học và Toán học Giữa năm",
+    "content_en": "At the end of ten weeks, third-grade students held a fun science fair. Reviewing and practicing helps students master key concepts (the big ideas of each unit). At Station One, students explained cause and effect using falling domino blocks. At Station Two, young inventors showed a clear problem and suggested a smart solution. They displayed neat tool arrays and showed how to divide blocks equally. At Station Three, students showed how to read a map with a compass. They also showed how to find grid coordinates. At Station Four, children showed colorful pictographs and shared short data summaries with parents. Reviewing these skills gives students confidence in reading and math. When students connect ideas step by step, their hard work brings proud success.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What does reviewing and practicing help students do?",
+        "question_vi": "Việc ôn tập và luyện tập giúp học sinh làm gì?",
+        "options": [
+          "Master key concepts with confidence",
+          "Forget all their lessons",
+          "Stay home from school"
+        ],
+        "answer": "Master key concepts with confidence"
+      },
+      {
+        "id": "q2",
+        "question_en": "What did students demonstrate at Station Three?",
+        "question_vi": "Học sinh đã trình diễn điều gì tại Trạm Ba?",
+        "options": [
+          "Reading a map with a compass and grid coordinates",
+          "Baking bread in an oven",
+          "Singing loud songs"
+        ],
+        "answer": "Reading a map with a compass and grid coordinates"
+      },
+      {
+        "id": "q3",
+        "question_en": "What kind of charts did children present at Station Four?",
+        "question_vi": "Trẻ em đã trình bày loại biểu đồ nào tại Trạm Bốn?",
+        "options": [
+          "Pictographs and data summaries",
+          "Blank paper sheets",
+          "Calendar pages"
+        ],
+        "answer": "Pictographs and data summaries"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "review",
+        "definition_en": "To study and look over learned material again."
+      },
+      {
+        "term": "concept",
+        "definition_en": "An important general idea or principle."
+      },
+      {
+        "term": "array",
+        "definition_en": "An orderly arrangement of items in rows and columns."
+      },
+      {
+        "term": "coordinate",
+        "definition_en": "Grid numbers and letters marking a specific point."
+      },
+      {
+        "term": "success",
+        "definition_en": "Achieving a desired and happy outcome."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "Reviewing and practicing helps students master key concepts.",
+      "ipa": "/rɪˈvjuɪŋ ænd ˈpræktəsɪŋ hɛlps ˈstudənts ˈmæstər ki ˈkɑnsɛpts/",
+      "vietnamese": "Việc ôn tập và luyện tập giúp học sinh nắm vững các khái niệm then chốt."
+    },
+    {
+      "id": 2,
+      "text": "Students explained cause and effect using domino lines.",
+      "ipa": "/ˈstudənts ɪkˈspleɪnd kɔz ænd ɪˈfɛkt ˈjuzɪŋ ˈdɑmɪnoʊ laɪnz/",
+      "vietnamese": "Các em học sinh đã giải thích nguyên nhân và kết quả bằng hàng domino."
+    },
+    {
+      "id": 3,
+      "text": "Every problem has a clever and practical solution.",
+      "ipa": "/ˈɛvri ˈprɑbləm hæz ə ˈklɛvər ænd ˈpræktəkəl səˈluʃən/",
+      "vietnamese": "Mỗi vấn đề đều có một giải pháp thông minh và thực tế."
+    },
+    {
+      "id": 4,
+      "text": "Division means sharing items into equal groups fairly.",
+      "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups ˈfɛrli/",
+      "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau một cách công bằng."
+    },
+    {
+      "id": 5,
+      "text": "A compass rose points toward North, South, East, and West.",
+      "ipa": "/ə ˈkʌmpəs roʊz pɔɪnts təˈwɔrd nɔrθ saʊθ ist ænd wɛst/",
+      "vietnamese": "La bàn chỉ về các hướng Bắc, Nam, Đông và Tây."
+    },
+    {
+      "id": 6,
+      "text": "Grid coordinates help you locate exact points easily.",
+      "ipa": "/ɡrɪd koʊˈɔrdənɪts hɛlp ju ˈloʊkeɪt ɪɡˈzækt pɔɪnts ˈizəli/",
+      "vietnamese": "Tọa độ lưới giúp bạn xác định các điểm chính xác một cách dễ dàng."
+    },
+    {
+      "id": 7,
+      "text": "Pictographs use symbols to tell clear data stories.",
+      "ipa": "/ˈpɪktəˌɡræfs juz ˈsɪmbəlz tu tɛl klɪr ˈdeɪtə ˈstɔriz/",
+      "vietnamese": "Biểu đồ tranh dùng các biểu tượng để kể những câu chuyện dữ liệu rõ ràng."
+    },
+    {
+      "id": 8,
+      "text": "Connecting ideas step by step makes learning a great success.",
+      "ipa": "/kəˈnɛktɪŋ aɪˈdiəz stɛp baɪ stɛp meɪks ˈlɜrnɪŋ ə ɡreɪt səkˈsɛs/",
+      "vietnamese": "Kết nối các ý tưởng từng bước giúp việc học tập trở thành một thành công lớn."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Leo",
-        "text": "Consolidation unites reading, writing, and arithmetic into a single system.",
-        "ipa": "/kənˌsɒlɪˈdeɪʃən juːˈnaɪts ˈriːdɪŋ, ˈraɪtɪŋ, ænd əˈrɪθmətɪk ˈɪntuː ə ˈsɪŋɡl ˈsɪstəm/"
+        "text": "Reviewing and practicing helps students master key concepts.",
+        "ipa": "/rɪˈvjuɪŋ ænd ˈpræktəsɪŋ hɛlps ˈstudənts ˈmæstər ki ˈkɑnsɛpts/",
+        "vietnamese": "Việc ôn tập và luyện tập giúp học sinh nắm vững các khái niệm then chốt."
+      },
+      {
+        "id": 2,
+        "text": "Students explained cause and effect using domino lines.",
+        "ipa": "/ˈstudənts ɪkˈspleɪnd kɔz ænd ɪˈfɛkt ˈjuzɪŋ ˈdɑmɪnoʊ laɪnz/",
+        "vietnamese": "Các em học sinh đã giải thích nguyên nhân và kết quả bằng hàng domino."
+      },
+      {
+        "id": 3,
+        "text": "Every problem has a clever and practical solution.",
+        "ipa": "/ˈɛvri ˈprɑbləm hæz ə ˈklɛvər ænd ˈpræktəkəl səˈluʃən/",
+        "vietnamese": "Mỗi vấn đề đều có một giải pháp thông minh và thực tế."
+      },
+      {
+        "id": 4,
+        "text": "Division means sharing items into equal groups fairly.",
+        "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups ˈfɛrli/",
+        "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau một cách công bằng."
+      },
+      {
+        "id": 5,
+        "text": "A compass rose points toward North, South, East, and West.",
+        "ipa": "/ə ˈkʌmpəs roʊz pɔɪnts təˈwɔrd nɔrθ saʊθ ist ænd wɛst/",
+        "vietnamese": "La bàn chỉ về các hướng Bắc, Nam, Đông và Tây."
+      },
+      {
+        "id": 6,
+        "text": "Grid coordinates help you locate exact points easily.",
+        "ipa": "/ɡrɪd koʊˈɔrdənɪts hɛlp ju ˈloʊkeɪt ɪɡˈzækt pɔɪnts ˈizəli/",
+        "vietnamese": "Tọa độ lưới giúp bạn xác định các điểm chính xác một cách dễ dàng."
+      },
+      {
+        "id": 7,
+        "text": "Pictographs use symbols to tell clear data stories.",
+        "ipa": "/ˈpɪktəˌɡræfs juz ˈsɪmbəlz tu tɛl klɪr ˈdeɪtə ˈstɔriz/",
+        "vietnamese": "Biểu đồ tranh dùng các biểu tượng để kể những câu chuyện dữ liệu rõ ràng."
+      },
+      {
+        "id": 8,
+        "text": "Connecting ideas step by step makes learning a great success.",
+        "ipa": "/kəˈnɛktɪŋ aɪˈdiəz stɛp baɪ stɛp meɪks ˈlɜrnɪŋ ə ɡreɪt səkˈsɛs/",
+        "vietnamese": "Kết nối các ý tưởng từng bước giúp việc học tập trở thành một thành công lớn."
+      }
+    ]
+  },
+  "rw_part1": {
+    "word_bank": [
+      "cause",
+      "effect",
+      "problem",
+      "solution",
+      "plan",
+      "step",
+      "review",
+      "practice",
+      "solve",
+      "map",
+      "compass",
+      "graph",
+      "data",
+      "summary",
+      "retell",
+      "symbol",
+      "calculate",
+      "equal",
+      "improve",
+      "success"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A scientific test done to discover what happens.",
+        "target": "experiment",
+        "definition": "A scientific test done to discover what happens.",
+        "word": "experiment",
+        "definition_en": "A scientific test done to discover what happens.",
+        "options": [
+          "experiment",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "experiment"
+      },
+      {
+        "id": 2,
+        "text": "Something that happens as a consequence of an action.",
+        "target": "result",
+        "definition": "Something that happens as a consequence of an action.",
+        "word": "result",
+        "definition_en": "Something that happens as a consequence of an action.",
+        "options": [
+          "result",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "result"
+      },
+      {
+        "id": 3,
+        "text": "A copy or representation of something to show how it works.",
+        "target": "model",
+        "definition": "A copy or representation of something to show how it works.",
+        "word": "model",
+        "definition_en": "A copy or representation of something to show how it works.",
+        "options": [
+          "model",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "model"
+      },
+      {
+        "id": 4,
+        "text": "To find the answer to a question or problem.",
+        "target": "solve",
+        "definition": "To find the answer to a question or problem.",
+        "word": "solve",
+        "definition_en": "To find the answer to a question or problem.",
+        "options": [
+          "solve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "solve"
+      },
+      {
+        "id": 5,
+        "text": "To make something better through study and regular practice.",
+        "target": "improve",
+        "definition": "To make something better through study and regular practice.",
+        "word": "improve",
+        "definition_en": "To make something better through study and regular practice.",
+        "options": [
+          "improve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "improve"
+      }
+    ]
+  },
+  "rw_part2": {
+    "title": "Consolidating Science Discoveries and Stories",
+    "topic": "Consolidating Science Discoveries and Stories",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "Which science project helped you understand forces and motion best?",
+        "text": "Which science project helped you understand forces and motion best?",
+        "options": [
+          "The friction experiment testing toy cars on carpet and smooth wood.",
+          "I rode my bicycle around the neighborhood park.",
+          "The movie was two hours and ten minutes long."
+        ],
+        "answer": "The friction experiment testing toy cars on carpet and smooth wood."
       },
       {
         "id": 2,
         "speaker": "Mia",
-        "text": "Parentheses always take top priority in multi-step math calculations.",
-        "ipa": "/pəˈrɛnθəsiːz ˈɔːlweɪz teɪk tɒp praɪˈɒrəti ɪn ˈmʌlti stɛp mæθ ˌkælkjʊˈleɪʃənz/"
+        "prompt": "How did combining science facts with stories improve our presentations?",
+        "text": "How did combining science facts with stories improve our presentations?",
+        "options": [
+          "It made complex ideas easy to remember and exciting to share with friends.",
+          "My uncle drives a blue delivery truck on weekdays.",
+          "The library has six large wooden bookshelves."
+        ],
+        "answer": "It made complex ideas easy to remember and exciting to share with friends."
       },
       {
         "id": 3,
-        "speaker": "Leo",
-        "text": "Thirty-six plus twenty-four equals sixty, and sixty divided by five is twelve.",
-        "ipa": "/ˈθɜːrti sɪks plʌs ˈtwɛnti fɔːr ˈiːkwəlz ˈsɪksti, ænd ˈsɪksti dɪˈvaɪdɪd baɪ faɪv ɪz twɛlv/"
+        "speaker": "Lucas",
+        "prompt": "How many review questions did our study team complete today?",
+        "text": "How many review questions did our study team complete today?",
+        "options": [
+          "We completed twenty-five math problems and fifteen science questions.",
+          "I ate vegetable soup and brown bread for lunch.",
+          "The train arrives at station platform two."
+        ],
+        "answer": "We completed twenty-five math problems and fifteen science questions."
       },
       {
         "id": 4,
         "speaker": "Mia",
-        "text": "Four times fifteen minus eighteen leaves forty-two precisely.",
-        "ipa": "/fɔːr taɪmz fɪfˈtiːn ˈmaɪnəs ˌeɪˈtiːn liːvz ˈfɔːrti tuː prɪˈsaɪsli/"
+        "prompt": "What is the total number of review tasks finished across both subjects?",
+        "text": "What is the total number of review tasks finished across both subjects?",
+        "options": [
+          "Twenty-five plus fifteen equals forty review tasks in total.",
+          "I wear my green jacket during cold weather.",
+          "The supermarket is closed on public holidays."
+        ],
+        "answer": "Twenty-five plus fifteen equals forty review tasks in total."
       },
       {
         "id": 5,
-        "speaker": "Leo",
-        "text": "Formal writing employs polite phrases like Yours sincerely and Dear Mayor.",
-        "ipa": "/ˈfɔːrməl ˈraɪtɪŋ ɪmˈplɔɪz pəˈlaɪt ˈfreɪzɪz laɪk jɔːrz sɪnˈsɪərli ænd dɪər ˈmɛər/"
-      },
-      {
-        "id": 6,
-        "speaker": "Mia",
-        "text": "Conjunctions like therefore and because connect causes to their outcomes.",
-        "ipa": "/kənˈdʒʌŋkʃənz laɪk ˈðɛərfɔːr ænd bɪˈkɒz kəˈnɛkt ˈkɔːzɪz tuː ðɛər ˈaʊtkʌmz/"
-      },
-      {
-        "id": 7,
-        "speaker": "Leo",
-        "text": "Systematic review turns new concepts into lasting academic mastery.",
-        "ipa": "/ˌsɪstəˈmætɪk rɪˈvjuː tɜːrnz njuː ˈkɒnsɛpts ˈɪntuː ˈlɑːstɪŋ ˌækəˈdɛmɪk ˈmɑːstəri/"
-      },
-      {
-        "id": 8,
-        "speaker": "Mia",
-        "text": "We celebrate our growth with pride after completing each rotary cycle.",
-        "ipa": "/wiː ˈsɛlɪbreɪt ˈaʊər ɡrəʊθ wɪð praɪd ˈɑːftər kəmˈpliːtɪŋ iːtʃ ˈrəʊtəri ˈsaɪkl/"
+        "speaker": "Lucas",
+        "prompt": "Shall we organize our review notes into a colorful study binder?",
+        "text": "Shall we organize our review notes into a colorful study binder?",
+        "options": [
+          "Yes, let's tab each section clearly by topic and date!",
+          "I do not like drinking warm milk with honey.",
+          "The bus stopped near the central sports stadium."
+        ],
+        "answer": "Yes, let's tab each section clearly by topic and date!"
       }
-    ]
-  },
-  "rw_part1": [
-    {
-      "definition": "To combine and strengthen learned skills together.",
-      "word": "consolidate"
-    },
-    {
-      "definition": "Sound reasoning based on strict facts and rules.",
-      "word": "logic"
-    },
-    {
-      "definition": "Complete skill and thorough understanding of a topic.",
-      "word": "mastery"
-    },
-    {
-      "definition": "Curved symbols ( ) having highest calculation priority.",
-      "word": "parentheses"
-    },
-    {
-      "definition": "A formal assessment reviewing past lessons.",
-      "word": "review"
-    }
-  ],
-  "rw_part2": {
-    "title": "Reviewing Rotary Cycle Concepts",
+    ],
     "exchanges": [
       {
-        "speaker": "Leo",
-        "text": "What is the first step in evaluating (36 + 24) / 5?"
+        "speaker": "Lucas",
+        "text": "The friction experiment testing toy cars on carpet and smooth wood."
       },
       {
         "speaker": "Mia",
-        "text": "Calculate the addition inside parentheses to get sixty."
+        "text": "It made complex ideas easy to remember and exciting to share with friends."
       },
       {
-        "speaker": "Leo",
-        "text": "And what is sixty divided by five?"
+        "speaker": "Lucas",
+        "text": "We completed twenty-five math problems and fifteen science questions."
       },
       {
         "speaker": "Mia",
-        "text": "The quotient is twelve."
+        "text": "Twenty-five plus fifteen equals forty review tasks in total."
       },
       {
-        "speaker": "Leo",
-        "text": "Our order of operations logic is completely sound."
+        "speaker": "Lucas",
+        "text": "Yes, let's tab each section clearly by topic and date!"
       }
     ]
   },
   "rw_part6": {
-    "text": "At the conclusion of each learning cycle, students complete a comprehensive (1) ___. They combine reading comprehension with logical thinking to (2) ___ their knowledge. In mathematics, they evaluate complex expressions by following the correct order of (3) ___. For example, (36 + 24) / 5 equals 12 because parentheses have top priority. Systematic practice leads to true academic (4) ___.",
-    "answers": [
+    "title": "Mia's Study Review: Science and Stories",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Reviewing our lessons helps us connect ideas [1]_____ solve new problems. This term, we studied forces, simple machines, [2]_____ natural habitats. We also read exciting folk tales [3]_____ different parts of the world. By practicing every week, our vocabulary grew [4]_____ lot stronger. Teamwork and curiosity make learning an enjoyable journey [5]_____ all students.",
+    "answers": {
+      "1": "and",
+      "2": "and",
+      "3": "from",
+      "4": "a",
+      "5": "for"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "cause",
+      "effect",
+      "problem",
+      "solution",
+      "plan",
+      "step",
       "review",
-      "consolidate",
-      "operations",
-      "mastery"
+      "practice",
+      "solve",
+      "map",
+      "compass",
+      "graph",
+      "data",
+      "summary",
+      "retell",
+      "symbol",
+      "calculate",
+      "equal",
+      "improve",
+      "success"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A scientific test done to discover what happens.",
+        "target": "experiment",
+        "definition": "A scientific test done to discover what happens.",
+        "word": "experiment",
+        "definition_en": "A scientific test done to discover what happens.",
+        "options": [
+          "experiment",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "experiment"
+      },
+      {
+        "id": 2,
+        "text": "Something that happens as a consequence of an action.",
+        "target": "result",
+        "definition": "Something that happens as a consequence of an action.",
+        "word": "result",
+        "definition_en": "Something that happens as a consequence of an action.",
+        "options": [
+          "result",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "result"
+      },
+      {
+        "id": 3,
+        "text": "A copy or representation of something to show how it works.",
+        "target": "model",
+        "definition": "A copy or representation of something to show how it works.",
+        "word": "model",
+        "definition_en": "A copy or representation of something to show how it works.",
+        "options": [
+          "model",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "model"
+      },
+      {
+        "id": 4,
+        "text": "To find the answer to a question or problem.",
+        "target": "solve",
+        "definition": "To find the answer to a question or problem.",
+        "word": "solve",
+        "definition_en": "To find the answer to a question or problem.",
+        "options": [
+          "solve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "solve"
+      },
+      {
+        "id": 5,
+        "text": "To make something better through study and regular practice.",
+        "target": "improve",
+        "definition": "To make something better through study and regular practice.",
+        "word": "improve",
+        "definition_en": "To make something better through study and regular practice.",
+        "options": [
+          "improve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "improve"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "To combine and strengthen learned skills together.",
-      "word": "consolidate"
-    },
-    {
-      "definition": "Sound reasoning based on strict facts and rules.",
-      "word": "logic"
-    },
-    {
-      "definition": "Complete skill and thorough understanding of a topic.",
-      "word": "mastery"
-    },
-    {
-      "definition": "Curved symbols ( ) having highest calculation priority.",
-      "word": "parentheses"
-    },
-    {
-      "definition": "A formal assessment reviewing past lessons.",
-      "word": "review"
-    }
-  ],
   "rw_part_2": {
-    "title": "Reviewing Rotary Cycle Concepts",
+    "title": "Consolidating Science Discoveries and Stories",
+    "topic": "Consolidating Science Discoveries and Stories",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "Which science project helped you understand forces and motion best?",
+        "text": "Which science project helped you understand forces and motion best?",
+        "options": [
+          "The friction experiment testing toy cars on carpet and smooth wood.",
+          "I rode my bicycle around the neighborhood park.",
+          "The movie was two hours and ten minutes long."
+        ],
+        "answer": "The friction experiment testing toy cars on carpet and smooth wood."
+      },
+      {
+        "id": 2,
+        "speaker": "Mia",
+        "prompt": "How did combining science facts with stories improve our presentations?",
+        "text": "How did combining science facts with stories improve our presentations?",
+        "options": [
+          "It made complex ideas easy to remember and exciting to share with friends.",
+          "My uncle drives a blue delivery truck on weekdays.",
+          "The library has six large wooden bookshelves."
+        ],
+        "answer": "It made complex ideas easy to remember and exciting to share with friends."
+      },
+      {
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "How many review questions did our study team complete today?",
+        "text": "How many review questions did our study team complete today?",
+        "options": [
+          "We completed twenty-five math problems and fifteen science questions.",
+          "I ate vegetable soup and brown bread for lunch.",
+          "The train arrives at station platform two."
+        ],
+        "answer": "We completed twenty-five math problems and fifteen science questions."
+      },
+      {
+        "id": 4,
+        "speaker": "Mia",
+        "prompt": "What is the total number of review tasks finished across both subjects?",
+        "text": "What is the total number of review tasks finished across both subjects?",
+        "options": [
+          "Twenty-five plus fifteen equals forty review tasks in total.",
+          "I wear my green jacket during cold weather.",
+          "The supermarket is closed on public holidays."
+        ],
+        "answer": "Twenty-five plus fifteen equals forty review tasks in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "Shall we organize our review notes into a colorful study binder?",
+        "text": "Shall we organize our review notes into a colorful study binder?",
+        "options": [
+          "Yes, let's tab each section clearly by topic and date!",
+          "I do not like drinking warm milk with honey.",
+          "The bus stopped near the central sports stadium."
+        ],
+        "answer": "Yes, let's tab each section clearly by topic and date!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Leo",
-        "text": "What is the first step in evaluating (36 + 24) / 5?"
+        "speaker": "Lucas",
+        "text": "The friction experiment testing toy cars on carpet and smooth wood."
       },
       {
         "speaker": "Mia",
-        "text": "Calculate the addition inside parentheses to get sixty."
+        "text": "It made complex ideas easy to remember and exciting to share with friends."
       },
       {
-        "speaker": "Leo",
-        "text": "And what is sixty divided by five?"
+        "speaker": "Lucas",
+        "text": "We completed twenty-five math problems and fifteen science questions."
       },
       {
         "speaker": "Mia",
-        "text": "The quotient is twelve."
+        "text": "Twenty-five plus fifteen equals forty review tasks in total."
       },
       {
-        "speaker": "Leo",
-        "text": "Our order of operations logic is completely sound."
+        "speaker": "Lucas",
+        "text": "Yes, let's tab each section clearly by topic and date!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "At the conclusion of each learning cycle, students complete a comprehensive (1) ___. They combine reading comprehension with logical thinking to (2) ___ their knowledge. In mathematics, they evaluate complex expressions by following the correct order of (3) ___. For example, (36 + 24) / 5 equals 12 because parentheses have top priority. Systematic practice leads to true academic (4) ___.",
-    "answers": [
-      "review",
-      "consolidate",
-      "operations",
-      "mastery"
-    ]
+    "title": "Mia's Study Review: Science and Stories",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Reviewing our lessons helps us connect ideas [1]_____ solve new problems. This term, we studied forces, simple machines, [2]_____ natural habitats. We also read exciting folk tales [3]_____ different parts of the world. By practicing every week, our vocabulary grew [4]_____ lot stronger. Teamwork and curiosity make learning an enjoyable journey [5]_____ all students.",
+    "answers": {
+      "1": "and",
+      "2": "and",
+      "3": "from",
+      "4": "a",
+      "5": "for"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A scientific test done to discover what happens.",
+        "target": "experiment",
+        "definition": "A scientific test done to discover what happens.",
+        "word": "experiment",
+        "definition_en": "A scientific test done to discover what happens.",
+        "options": [
+          "experiment",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "experiment"
+      },
+      {
+        "id": 2,
+        "text": "Something that happens as a consequence of an action.",
+        "target": "result",
+        "definition": "Something that happens as a consequence of an action.",
+        "word": "result",
+        "definition_en": "Something that happens as a consequence of an action.",
+        "options": [
+          "result",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "result"
+      },
+      {
+        "id": 3,
+        "text": "A copy or representation of something to show how it works.",
+        "target": "model",
+        "definition": "A copy or representation of something to show how it works.",
+        "word": "model",
+        "definition_en": "A copy or representation of something to show how it works.",
+        "options": [
+          "model",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "model"
+      },
+      {
+        "id": 4,
+        "text": "To find the answer to a question or problem.",
+        "target": "solve",
+        "definition": "To find the answer to a question or problem.",
+        "word": "solve",
+        "definition_en": "To find the answer to a question or problem.",
+        "options": [
+          "solve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "solve"
+      },
+      {
+        "id": 5,
+        "text": "To make something better through study and regular practice.",
+        "target": "improve",
+        "definition": "To make something better through study and regular practice.",
+        "word": "improve",
+        "definition_en": "To make something better through study and regular practice.",
+        "options": [
+          "improve",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "improve"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Consolidating Science Discoveries and Stories",
+      "topic": "Consolidating Science Discoveries and Stories",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Lucas",
+          "prompt": "Which science project helped you understand forces and motion best?",
+          "text": "Which science project helped you understand forces and motion best?",
+          "options": [
+            "The friction experiment testing toy cars on carpet and smooth wood.",
+            "I rode my bicycle around the neighborhood park.",
+            "The movie was two hours and ten minutes long."
+          ],
+          "answer": "The friction experiment testing toy cars on carpet and smooth wood."
+        },
+        {
+          "id": 2,
+          "speaker": "Mia",
+          "prompt": "How did combining science facts with stories improve our presentations?",
+          "text": "How did combining science facts with stories improve our presentations?",
+          "options": [
+            "It made complex ideas easy to remember and exciting to share with friends.",
+            "My uncle drives a blue delivery truck on weekdays.",
+            "The library has six large wooden bookshelves."
+          ],
+          "answer": "It made complex ideas easy to remember and exciting to share with friends."
+        },
+        {
+          "id": 3,
+          "speaker": "Lucas",
+          "prompt": "How many review questions did our study team complete today?",
+          "text": "How many review questions did our study team complete today?",
+          "options": [
+            "We completed twenty-five math problems and fifteen science questions.",
+            "I ate vegetable soup and brown bread for lunch.",
+            "The train arrives at station platform two."
+          ],
+          "answer": "We completed twenty-five math problems and fifteen science questions."
+        },
+        {
+          "id": 4,
+          "speaker": "Mia",
+          "prompt": "What is the total number of review tasks finished across both subjects?",
+          "text": "What is the total number of review tasks finished across both subjects?",
+          "options": [
+            "Twenty-five plus fifteen equals forty review tasks in total.",
+            "I wear my green jacket during cold weather.",
+            "The supermarket is closed on public holidays."
+          ],
+          "answer": "Twenty-five plus fifteen equals forty review tasks in total."
+        },
+        {
+          "id": 5,
+          "speaker": "Lucas",
+          "prompt": "Shall we organize our review notes into a colorful study binder?",
+          "text": "Shall we organize our review notes into a colorful study binder?",
+          "options": [
+            "Yes, let's tab each section clearly by topic and date!",
+            "I do not like drinking warm milk with honey.",
+            "The bus stopped near the central sports stadium."
+          ],
+          "answer": "Yes, let's tab each section clearly by topic and date!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Lucas",
+          "text": "The friction experiment testing toy cars on carpet and smooth wood."
+        },
+        {
+          "speaker": "Mia",
+          "text": "It made complex ideas easy to remember and exciting to share with friends."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "We completed twenty-five math problems and fifteen science questions."
+        },
+        {
+          "speaker": "Mia",
+          "text": "Twenty-five plus fifteen equals forty review tasks in total."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Yes, let's tab each section clearly by topic and date!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Mia's Study Review: Science and Stories",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Reviewing our lessons helps us connect ideas [1]_____ solve new problems. This term, we studied forces, simple machines, [2]_____ natural habitats. We also read exciting folk tales [3]_____ different parts of the world. By practicing every week, our vocabulary grew [4]_____ lot stronger. Teamwork and curiosity make learning an enjoyable journey [5]_____ all students.",
+      "answers": {
+        "1": "and",
+        "2": "and",
+        "3": "from",
+        "4": "a",
+        "5": "for"
+      }
+    }
   }
 };
 export default readingHubData;

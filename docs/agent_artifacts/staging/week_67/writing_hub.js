@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 67 | Theme: "The OREO Structure: Persuasive Power" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 67 | Theme: "ELA: The OREO Structure / Math: Measuring Mass"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 67,
-  "theme": "The OREO Structure: Persuasive Power",
+  "theme": "ELA: The OREO Structure / Math: Measuring Mass",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "The OREO Persuasive Letter for School Nutrition",

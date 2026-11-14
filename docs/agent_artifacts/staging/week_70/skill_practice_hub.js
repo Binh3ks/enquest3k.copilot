@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 70 | Theme: "Presentation: Pitching a Green Idea" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 70 | Theme: "ELA: Presentation \"My Green Idea\" / Math: Graph Review"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 70,
-  "theme": "Presentation: Pitching a Green Idea",
+  "theme": "ELA: Presentation \"My Green Idea\" / Math: Graph Review",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -119,7 +118,8 @@ export const skillPracticeHubData = {
       "problem_text": "A school recycling table records 32 kg in Quarter 1, 48 kg in Quarter 2, 25 kg in Quarter 3, and 15 kg in Quarter 4. What is the total mass of paper recycled across all four quarters?",
       "problem_en": "A school recycling table records 32 kg in Quarter 1, 48 kg in Quarter 2, 25 kg in Quarter 3, and 15 kg in Quarter 4. What is the total mass of paper recycled across all four quarters?",
       "answer": 120,
-      "step_by_step": "Step 1: Add 32, 48, 25, and 15. Step 2: Sum = 32 + 48 + 25 + 15 = 120 kg."
+      "step_by_step": "Step 1: Add 32, 48, 25, and 15. Step 2: Sum = 32 + 48 + 25 + 15 = 120 kg.",
+      "question": "A school recycling table records 32 kg in Quarter 1, 48 kg in Quarter 2, 25 kg in Quarter 3, and 15 kg in Quarter 4. What is the total mass of paper recycled across all four quarters?"
     },
     {
       "id": 2,
@@ -152,7 +152,8 @@ export const skillPracticeHubData = {
       "problem_text": "A solar panel bar chart records peak production of 95 kWh in July and 45 kWh in December. What is the seasonal difference in kilowatt-hours produced?",
       "problem_en": "A solar panel bar chart records peak production of 95 kWh in July and 45 kWh in December. What is the seasonal difference in kilowatt-hours produced?",
       "answer": 50,
-      "step_by_step": "Step 1: July = 95. Step 2: December = 45. Step 3: Difference = 95 - 45 = 50 kWh."
+      "step_by_step": "Step 1: July = 95. Step 2: December = 45. Step 3: Difference = 95 - 45 = 50 kWh.",
+      "question": "A solar panel bar chart records peak production of 95 kWh in July and 45 kWh in December. What is the seasonal difference in kilowatt-hours produced?"
     },
     {
       "id": 3,
@@ -168,9 +169,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "4 Bins * 18 kg",
-            "value": 72,
-            "color": "#EC4899"
+            "label": "Part A",
+            "value": 36,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 36,
+            "color": "#10B981"
           }
         ],
         "total": 72,
@@ -180,7 +186,8 @@ export const skillPracticeHubData = {
       "problem_text": "The school places 4 paper recycling bins in hallways. If each bin holds 18 kilograms of paper, what is their total combined capacity?",
       "problem_en": "The school places 4 paper recycling bins in hallways. If each bin holds 18 kilograms of paper, what is their total combined capacity?",
       "answer": 72,
-      "step_by_step": "Step 1: Bins = 4. Step 2: Capacity each = 18 kg. Step 3: Total = 4 * 18 = 72 kg."
+      "step_by_step": "Step 1: Bins = 4. Step 2: Capacity each = 18 kg. Step 3: Total = 4 * 18 = 72 kg.",
+      "question": "The school places 4 paper recycling bins in hallways. If each bin holds 18 kilograms of paper, what is their total combined capacity?"
     },
     {
       "id": 4,
@@ -213,7 +220,8 @@ export const skillPracticeHubData = {
       "problem_text": "A community center expected an electricity bill of 150 dollars. Thanks to rooftop solar panels, their bill was reduced by 65 dollars. How much did they pay?",
       "problem_en": "A community center expected an electricity bill of 150 dollars. Thanks to rooftop solar panels, their bill was reduced by 65 dollars. How much did they pay?",
       "answer": 85,
-      "step_by_step": "Step 1: Expected = 150. Step 2: Saved = 65. Step 3: Paid = 150 - 65 = 85 dollars."
+      "step_by_step": "Step 1: Expected = 150. Step 2: Saved = 65. Step 3: Paid = 150 - 65 = 85 dollars.",
+      "question": "A community center expected an electricity bill of 150 dollars. Thanks to rooftop solar panels, their bill was reduced by 65 dollars. How much did they pay?"
     },
     {
       "id": 5,
@@ -251,7 +259,8 @@ export const skillPracticeHubData = {
       "problem_text": "Eco-volunteers plant 28 cedar trees on Friday, 34 on Saturday, and 38 on Sunday. How many trees were planted over the three-day weekend?",
       "problem_en": "Eco-volunteers plant 28 cedar trees on Friday, 34 on Saturday, and 38 on Sunday. How many trees were planted over the three-day weekend?",
       "answer": 100,
-      "step_by_step": "Step 1: Add 28, 34, and 38. Step 2: Sum = 28 + 34 + 38 = 100 trees."
+      "step_by_step": "Step 1: Add 28, 34, and 38. Step 2: Sum = 28 + 34 + 38 = 100 trees.",
+      "question": "Eco-volunteers plant 28 cedar trees on Friday, 34 on Saturday, and 38 on Sunday. How many trees were planted over the three-day weekend?"
     }
   ],
   "science_lab": {

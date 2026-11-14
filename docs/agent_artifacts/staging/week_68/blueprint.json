@@ -15,10 +15,11 @@
     "focus": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph"
   },
   "grammar_focus": {
-    "structure": "Connectors of Addition: \"Furthermore\", \"In addition\", \"For example",
+    "structure": "Connectors of Addition & Evidence: Furthermore, In addition, For example",
     "outcome": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Connectors of Addition & Evidence: Furthermore, In addition, For example"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -223,5 +224,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "week_number": 68
 }

@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 65,
-  "theme": "Cycle 2.1 Review: Logic and Data Mastery",
+  "theme": "Review & Consolidation (Cycle 2.1)",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Deliver a 1-minute speech reflecting on your favorite learning achievement during this study cycle. Explain the skill, how you practiced it, and why it matters.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Review Leader A",
-      "cues": [
-        "Cycle topic reviewed",
-        "Grammar pattern mastered",
-        "Math expression evaluated",
-        "Calculated final score",
-        "Reflection on progress"
-      ]
-    },
-    "card_b": {
-      "role": "Review Leader B",
-      "cues": [
-        "Cycle topic reviewed",
-        "Grammar pattern mastered",
-        "Math expression evaluated",
-        "Calculated final score",
-        "Reflection on progress"
-      ]
-    },
+    "title": "Henry and Ruby's Review Fair Exchange",
     "table_a": {
-      "title": "Review Leader A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Review Leader A",
+      "title": "Henry's Science Fair Booth",
+      "person": "Henry",
       "fields": [
         {
-          "id": "f1",
-          "label": "Cycle topic reviewed",
-          "cue_prompt": "what / cycle topic reviewed?",
-          "cue_word": "cycle",
+          "id": "field_a1",
+          "label": "what / Henry's fair booth?",
+          "cue_prompt": "what / Henry's fair booth?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "The Cause & Effect Domino Booth",
           "acceptable_questions": [
-            "What is the cycle topic reviewed?",
-            "Can you tell me the cycle topic reviewed?"
+            "What is Henry's fair booth?",
+            "What did Henry display at the fair?",
+            "What was his station called?"
           ],
-          "nova_reply": "The cycle topic reviewed is recorded for Cycle 2.1 Review: Logic and Data Mastery."
+          "nova_reply": "Henry ran the Cause and Effect Domino Demonstration Booth at the science fair."
         },
         {
-          "id": "f2",
-          "label": "Grammar pattern mastered",
-          "cue_prompt": "what / grammar pattern mastered?",
-          "cue_word": "grammar",
+          "id": "field_a2",
+          "label": "where / booth located?",
+          "cue_prompt": "where / booth located?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "By the main auditorium doors",
           "acceptable_questions": [
-            "What is the grammar pattern mastered?",
-            "Can you tell me the grammar pattern mastered?"
+            "Where is his booth located?",
+            "Where was his table set up?",
+            "Where in the fair was Henry?"
           ],
-          "nova_reply": "The grammar pattern mastered is recorded for Cycle 2.1 Review: Logic and Data Mastery."
+          "nova_reply": "His demonstration booth was located right beside the main auditorium doors."
         },
         {
-          "id": "f3",
-          "label": "Math expression evaluated",
-          "cue_prompt": "what / math expression evaluated?",
-          "cue_word": "math",
-          "is_missing": false,
-          "card_value": "Math expression evaluated verified",
-          "value": "Math expression evaluated verified",
-          "examiner_question": "What is the math expression evaluated?",
-          "acceptable_answers": [
-            "It is math expression evaluated.",
-            "Math expression evaluated."
-          ]
+          "id": "field_a3",
+          "label": "how many / dominoes set up?",
+          "cue_prompt": "how many / dominoes set up?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "200 colorful dominoes",
+          "acceptable_questions": [
+            "How many dominoes did he set up?",
+            "How many tiles were on his table?",
+            "How many blocks did he use?"
+          ],
+          "nova_reply": "Henry set up 200 colorful dominoes in a double-spiral track."
         },
         {
-          "id": "f4",
-          "label": "Calculated final score",
-          "cue_prompt": "what / calculated final score?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated final score verified",
-          "value": "Calculated final score verified",
-          "examiner_question": "What is the calculated final score?",
-          "acceptable_answers": [
-            "It is calculated final score.",
-            "Calculated final score."
-          ]
+          "id": "field_a4",
+          "label": "how long / presentation took?",
+          "cue_prompt": "how long / presentation took?",
+          "cue_word": "how long",
+          "is_missing": true,
+          "value": "5 minutes per group",
+          "acceptable_questions": [
+            "How long did his presentation take?",
+            "How many minutes was each talk?",
+            "How long was each demonstration?"
+          ],
+          "nova_reply": "Each demonstration talk lasted 5 minutes for visiting parents."
         },
         {
-          "id": "f5",
-          "label": "Reflection on progress",
-          "cue_prompt": "what / reflection on progress?",
-          "cue_word": "reflection",
-          "is_missing": false,
-          "card_value": "Reflection on progress verified",
-          "value": "Reflection on progress verified",
-          "examiner_question": "What is the reflection on progress?",
-          "acceptable_answers": [
-            "It is reflection on progress.",
-            "Reflection on progress."
-          ]
+          "id": "field_a5",
+          "label": "who / was Henry's partner?",
+          "cue_prompt": "who / was Henry's partner?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "His friend Jack",
+          "acceptable_questions": [
+            "Who was Henry's partner?",
+            "Who worked with Henry?",
+            "Who helped him at the booth?"
+          ],
+          "nova_reply": "His classmate Jack was his presentation partner."
         }
       ]
     },
     "table_b": {
-      "title": "Review Leader B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Review Leader B",
+      "title": "Ruby's Math Challenge Station",
+      "person": "Ruby",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Cycle topic reviewed",
-          "cue_prompt": "what / cycle topic reviewed?",
-          "cue_word": "cycle",
+          "id": "field_b1",
+          "label": "what / Ruby's station topic?",
+          "cue_prompt": "what / Ruby's station topic?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Cycle topic reviewed on file",
-          "value": "Cycle topic reviewed on file",
-          "examiner_question": "What is the cycle topic reviewed?",
+          "value": "The Map Coordinate Puzzle",
+          "nova_question": "What was the topic of Ruby's math station?",
           "acceptable_answers": [
-            "It is cycle topic reviewed.",
-            "Cycle topic reviewed."
+            "The Map Coordinate Puzzle",
+            "Map coordinates.",
+            "Her station was the Map Coordinate Puzzle.",
+            "Coordinate puzzle"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Grammar pattern mastered",
-          "cue_prompt": "what / grammar pattern mastered?",
-          "cue_word": "grammar",
+          "id": "field_b2",
+          "label": "where / station placed?",
+          "cue_prompt": "where / station placed?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Grammar pattern mastered on file",
-          "value": "Grammar pattern mastered on file",
-          "examiner_question": "What is the grammar pattern mastered?",
+          "value": "In the center of the gym",
+          "nova_question": "Where was Ruby's challenge station placed?",
           "acceptable_answers": [
-            "It is grammar pattern mastered.",
-            "Grammar pattern mastered."
+            "In the center of the gym",
+            "In the gym center.",
+            "It was placed in the center of the gym.",
+            "Gym center"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Math expression evaluated",
-          "cue_prompt": "what / math expression evaluated?",
-          "cue_word": "math",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the math expression evaluated?",
-            "Can you tell me the math expression evaluated?"
-          ],
-          "nova_reply": "The math expression evaluated is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / puzzle cards?",
+          "cue_prompt": "how many / puzzle cards?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "25 coordinate cards",
+          "nova_question": "How many puzzle cards did she prepare for visitors?",
+          "acceptable_answers": [
+            "25 coordinate cards",
+            "Twenty-five coordinate cards",
+            "She prepared 25 cards.",
+            "25 cards"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Calculated final score",
-          "cue_prompt": "what / calculated final score?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated final score?",
-            "Can you tell me the calculated final score?"
-          ],
-          "nova_reply": "The calculated final score is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / station opened?",
+          "cue_prompt": "what time / station opened?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 9:15 AM",
+          "nova_question": "What time did Ruby's math station open?",
+          "acceptable_answers": [
+            "At 9:15 AM",
+            "At 9:15",
+            "It opened at 9:15 AM.",
+            "9:15 AM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Reflection on progress",
-          "cue_prompt": "what / reflection on progress?",
-          "cue_word": "reflection",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the reflection on progress?",
-            "Can you tell me the reflection on progress?"
-          ],
-          "nova_reply": "The reflection on progress is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / won the top prize?",
+          "cue_prompt": "who / won the top prize?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "A student named Leo",
+          "nova_question": "Who won the top prize at her puzzle station?",
+          "acceptable_answers": [
+            "A student named Leo",
+            "Leo",
+            "Leo won the top prize.",
+            "Student Leo"
+          ]
         }
       ]
     }

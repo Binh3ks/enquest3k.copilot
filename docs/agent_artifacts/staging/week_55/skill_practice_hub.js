@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 55 | Theme: "Cause and Effect: The Chain Reaction" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 55 | Theme: "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 55,
-  "theme": "Cause and Effect: The Chain Reaction",
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -111,7 +110,8 @@ export const skillPracticeHubData = {
       "problem_text": "Lucas set up 28 blue dominoes in row one. Mia set up 35 red dominoes in row two. How many domino blocks did they set up altogether?",
       "problem_en": "Lucas set up 28 blue dominoes in row one. Mia set up 35 red dominoes in row two. How many domino blocks did they set up altogether?",
       "answer": 63,
-      "step_by_step": "Step 1: Row one = 28. Step 2: Row two = 35. Step 3: Sum = 28 + 35 = 63 dominoes."
+      "step_by_step": "Step 1: Row one = 28. Step 2: Row two = 35. Step 3: Sum = 28 + 35 = 63 dominoes.",
+      "question": "Lucas set up 28 blue dominoes in row one. Mia set up 35 red dominoes in row two. How many domino blocks did they set up altogether?"
     },
     {
       "id": 2,
@@ -146,7 +146,8 @@ export const skillPracticeHubData = {
       "problem_text": "Grade Four earned 47 merit badges on Monday and 26 badges on Tuesday. What is the total sum of badges earned?",
       "problem_en": "Grade Four earned 47 merit badges on Monday and 26 badges on Tuesday. What is the total sum of badges earned?",
       "answer": 73,
-      "step_by_step": "Step 1: Monday badges = 47. Step 2: Tuesday badges = 26. Step 3: Total = 47 + 26 = 73 badges."
+      "step_by_step": "Step 1: Monday badges = 47. Step 2: Tuesday badges = 26. Step 3: Total = 47 + 26 = 73 badges.",
+      "question": "Grade Four earned 47 merit badges on Monday and 26 badges on Tuesday. What is the total sum of badges earned?"
     },
     {
       "id": 3,
@@ -181,7 +182,8 @@ export const skillPracticeHubData = {
       "problem_text": "The science room has 58 square blocks in a green box and 39 rectangular blocks in a yellow box. How many wooden blocks are there in total?",
       "problem_en": "The science room has 58 square blocks in a green box and 39 rectangular blocks in a yellow box. How many wooden blocks are there in total?",
       "answer": 97,
-      "step_by_step": "Step 1: Green box = 58. Step 2: Yellow box = 39. Step 3: Total = 58 + 39 = 97 blocks."
+      "step_by_step": "Step 1: Green box = 58. Step 2: Yellow box = 39. Step 3: Total = 58 + 39 = 97 blocks.",
+      "question": "The science room has 58 square blocks in a green box and 39 rectangular blocks in a yellow box. How many wooden blocks are there in total?"
     },
     {
       "id": 4,
@@ -216,7 +218,8 @@ export const skillPracticeHubData = {
       "problem_text": "The science team collected 64 test tubes in week one and 28 test tubes in week two. How many test tubes did they collect altogether?",
       "problem_en": "The science team collected 64 test tubes in week one and 28 test tubes in week two. How many test tubes did they collect altogether?",
       "answer": 92,
-      "step_by_step": "Step 1: Week one = 64. Step 2: Week two = 28. Step 3: Total = 64 + 28 = 92 test tubes."
+      "step_by_step": "Step 1: Week one = 64. Step 2: Week two = 28. Step 3: Total = 64 + 28 = 92 test tubes.",
+      "question": "The science team collected 64 test tubes in week one and 28 test tubes in week two. How many test tubes did they collect altogether?"
     },
     {
       "id": 5,
@@ -255,7 +258,8 @@ export const skillPracticeHubData = {
       "problem_text": "A teacher prepares three bundles of craft sticks: 25 sticks, 38 sticks, and 19 sticks. What is the total number of sticks?",
       "problem_en": "A teacher prepares three bundles of craft sticks: 25 sticks, 38 sticks, and 19 sticks. What is the total number of sticks?",
       "answer": 82,
-      "step_by_step": "Step 1: Add 25, 38, and 19. Step 2: Sum = 25 + 38 + 19 = 82 sticks."
+      "step_by_step": "Step 1: Add 25, 38, and 19. Step 2: Sum = 25 + 38 + 19 = 82 sticks.",
+      "question": "A teacher prepares three bundles of craft sticks: 25 sticks, 38 sticks, and 19 sticks. What is the total number of sticks?"
     }
   ],
   "science_lab": {

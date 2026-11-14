@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 66 | Theme: "Micro-Debate: Digital Emails vs Handwritten Letters" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 66 | Theme: "Micro-Debate 1: Email vs Handwritten Letters"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 66,
-  "theme": "Micro-Debate: Digital Emails vs Handwritten Letters",
+  "theme": "Micro-Debate 1: Email vs Handwritten Letters",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "debate",
-      "pos": "n",
-      "ipa": "/dɪˈbeɪt/",
-      "definition_en": "A formal discussion on a particular topic in which opposing arguments are put forward.",
-      "definition_vi": "cuộc tranh luận",
-      "example_en": "Our class held an exciting debate on digital communication.",
-      "example_vi": "Lớp chúng tôi đã tổ chức một cuộc tranh luận sôi nổi về giao tiếp kỹ thuật số."
+      "word": "faster",
+      "pos": "adj",
+      "ipa": "/ˈfæstər/",
+      "definition_en": "Moving or happening at a higher speed.",
+      "definition_vi": "nhanh hơn",
+      "example_en": "An email is faster than sending a paper letter.",
+      "example_vi": "Email thì nhanh hơn gửi một bức thư giấy."
     },
     {
       "id": 2,
-      "word": "argument",
-      "pos": "n",
-      "ipa": "/ˈɑːrɡjʊmənt/",
-      "definition_en": "A reason or set of reasons given with the aim of persuading others.",
-      "definition_vi": "luận điểm, lý lẽ",
-      "example_en": "Her strongest argument was that handwritten notes feel personal.",
-      "example_vi": "Luận điểm mạnh nhất của cô ấy là những lá thư viết tay mang lại cảm giác thân tình."
+      "word": "slower",
+      "pos": "adj",
+      "ipa": "/ˈsloʊər/",
+      "definition_en": "Moving or operating at less speed.",
+      "definition_vi": "chậm hơn",
+      "example_en": "A paper letter travels slower through the postal van.",
+      "example_vi": "Thư giấy di chuyển chậm hơn qua xe bưu điện."
     },
     {
       "id": 3,
-      "word": "handwritten",
-      "pos": "adj",
-      "ipa": "/ˌhændˈrɪtn/",
-      "definition_en": "Written with a pen or pencil by hand, not typed on a keyboard.",
-      "definition_vi": "viết tay",
-      "example_en": "A handwritten letter shows care and genuine effort.",
-      "example_vi": "Một bức thư viết tay thể hiện sự quan tâm và nỗ lực chân thành."
-    },
-    {
-      "id": 4,
-      "word": "digital",
-      "pos": "adj",
-      "ipa": "/ˈdɪdʒɪtl/",
-      "definition_en": "Relating to computer technology and electronic communication.",
-      "definition_vi": "kỹ thuật số",
-      "example_en": "Digital emails arrive in inboxes within seconds.",
-      "example_vi": "Thư điện tử kỹ thuật số đến hộp thư đến chỉ trong vài giây."
-    },
-    {
-      "id": 5,
-      "word": "instant",
-      "pos": "adj",
-      "ipa": "/ˈɪnstənt/",
-      "definition_en": "Happening immediately without any perceptible delay.",
-      "definition_vi": "ngay lập tức",
-      "example_en": "Email provides instant delivery across the globe.",
-      "example_vi": "Email cung cấp khả năng gửi đi ngay lập tức trên toàn cầu."
-    },
-    {
-      "id": 6,
       "word": "personal",
       "pos": "adj",
       "ipa": "/ˈpɜːrsənl/",
-      "definition_en": "Belonging to or affecting a particular person; warm and sincere.",
-      "definition_vi": "mang tính cá nhân, thân tình",
-      "example_en": "A card with a personal drawing makes grandmothers smile.",
-      "example_vi": "Một tấm thiệp với hình vẽ cá nhân khiến các bà mỉm cười."
+      "definition_en": "Belonging to or made by a particular person.",
+      "definition_vi": "mang tính cá nhân, riêng tư",
+      "example_en": "Handwritten letters feel warm and personal.",
+      "example_vi": "Những bức thư viết tay mang lại cảm giác ấm áp và gần gũi."
+    },
+    {
+      "id": 4,
+      "word": "easy",
+      "pos": "adj",
+      "ipa": "/ˈiːzi/",
+      "definition_en": "Achieved without great effort.",
+      "definition_vi": "dễ dàng",
+      "example_en": "Typing a message on a keyboard is easy.",
+      "example_vi": "Gõ tin nhắn trên bàn phím rất dễ dàng."
+    },
+    {
+      "id": 5,
+      "word": "hard",
+      "pos": "adj",
+      "ipa": "/hɑːrd/",
+      "definition_en": "Not easy to do; needing careful work.",
+      "definition_vi": "khó khăn, vất vả",
+      "example_en": "Writing neatly for three pages can be hard.",
+      "example_vi": "Viết nắn nót suốt ba trang giấy có thể khá vất vả."
+    },
+    {
+      "id": 6,
+      "word": "keep",
+      "pos": "v",
+      "ipa": "/kiːp/",
+      "definition_en": "To have and keep something safely.",
+      "definition_vi": "giữ lại, cất giữ",
+      "example_en": "I keep letters from my grandmother in a wooden box.",
+      "example_vi": "Tôi giữ những bức thư của bà trong một chiếc hộp gỗ."
     },
     {
       "id": 7,
-      "word": "persuade",
+      "word": "delete",
       "pos": "v",
-      "ipa": "/pərˈsweɪd/",
-      "definition_en": "To cause someone to believe or do something through reasoning.",
-      "definition_vi": "thuyết phục",
-      "example_en": "Speakers use facts to persuade the debate judges.",
-      "example_vi": "Các diễn giả sử dụng sự thật để thuyết phục ban giám khảo tranh luận."
+      "ipa": "/dɪˈliːt/",
+      "definition_en": "To remove or erase stored electronic data.",
+      "definition_vi": "xóa đi",
+      "example_en": "You can delete old emails with one click.",
+      "example_vi": "Bạn có thể xóa các email cũ chỉ với một cú nhấp chuột."
     },
     {
       "id": 8,
-      "word": "difference",
+      "word": "debate",
       "pos": "n",
-      "ipa": "/ˈdɪfərəns/",
-      "definition_en": "The amount by which one number or value exceeds another.",
-      "definition_vi": "sự khác biệt, hiệu số",
-      "example_en": "The difference between sixty-eight emails and thirty-nine letters is twenty-nine.",
-      "example_vi": "Hiệu số giữa sáu mươi tám email và ba mươi chín lá thư là hai mươi chín."
+      "ipa": "/dɪˈbeɪt/",
+      "definition_en": "A friendly discussion where people share different ideas.",
+      "definition_vi": "cuộc tranh luận",
+      "example_en": "Our class had a friendly debate about sending letters.",
+      "example_vi": "Lớp chúng tôi đã tổ chức một cuộc tranh luận hào hứng về giao tiếp."
     },
     {
       "id": 9,
-      "word": "opinion",
+      "word": "email",
       "pos": "n",
-      "ipa": "/əˈpɪnjən/",
-      "definition_en": "A personal view or judgment about a topic.",
-      "definition_vi": "quan điểm",
-      "example_en": "In my opinion, both communication methods have value.",
-      "example_vi": "Theo quan điểm của tôi, cả hai phương thức giao tiếp đều có giá trị."
+      "ipa": "/ˈiːmeɪl/",
+      "definition_en": "A letter or note sent from one computer to another.",
+      "definition_vi": "thư điện tử",
+      "example_en": "Send an email to ask about library opening hours.",
+      "example_vi": "Hãy gửi một email để hỏi về giờ mở cửa thư viện."
     },
     {
       "id": 10,
-      "word": "convenient",
-      "pos": "adj",
-      "ipa": "/kənˈviːniənt/",
-      "definition_en": "Fitting in well with a person's needs, easy to use.",
-      "definition_vi": "tiện lợi",
-      "example_en": "Typing on a smartphone is very convenient.",
-      "example_vi": "Gõ phím trên điện thoại thông minh rất tiện lợi."
+      "word": "letter",
+      "pos": "n",
+      "ipa": "/ˈlɛtər/",
+      "definition_en": "A written message on paper.",
+      "definition_vi": "bức thư",
+      "example_en": "Grandpa sent a birthday letter with a stamp.",
+      "example_vi": "Ông đã gửi một bức thư mừng sinh nhật có dán tem."
     },
     {
       "id": 11,
-      "word": "keepsake",
-      "pos": "n",
-      "ipa": "/ˈkiːpseɪk/",
-      "definition_en": "A small item kept in memory of the person who gave it.",
-      "definition_vi": "kỷ vật",
-      "example_en": "Grandpa saved the handwritten birthday card as a keepsake.",
-      "example_vi": "Ông nội đã lưu giữ tấm thiệp sinh nhật viết tay làm kỷ vật."
+      "word": "write",
+      "pos": "v",
+      "ipa": "/raɪt/",
+      "definition_en": "To compose text on paper or screen.",
+      "definition_vi": "viết",
+      "example_en": "Children write cards to thank their teachers.",
+      "example_vi": "Các bạn nhỏ viết thiệp để cảm ơn thầy cô."
     },
     {
       "id": 12,
-      "word": "envelope",
-      "pos": "n",
-      "ipa": "/ˈɛnvələʊp/",
-      "definition_en": "A flat paper container used for enclosing a letter.",
-      "definition_vi": "phong bì",
-      "example_en": "Stick a postage stamp in the corner of the envelope.",
-      "example_vi": "Dán một con tem bưu chính vào góc phong bì."
+      "word": "send",
+      "pos": "v",
+      "ipa": "/sɛnd/",
+      "definition_en": "To cause to go or be taken to a destination.",
+      "definition_vi": "gửi đi",
+      "example_en": "Click send when your message is complete.",
+      "example_vi": "Hãy bấm gửi khi tin nhắn của bạn đã hoàn tất."
     },
     {
       "id": 13,
-      "word": "inbox",
+      "word": "computer",
       "pos": "n",
-      "ipa": "/ˈɪnbɒks/",
-      "definition_en": "An electronic folder where incoming email messages arrive.",
-      "definition_vi": "hộp thư đến",
-      "example_en": "Check your digital inbox for the teacher's notice.",
-      "example_vi": "Hãy kiểm tra hộp thư đến kỹ thuật số của bạn để xem thông báo của giáo viên."
+      "ipa": "/kəmˈpjuːtər/",
+      "definition_en": "An electronic machine used for learning, typing, and games.",
+      "definition_vi": "máy tính",
+      "example_en": "Students typed their speeches on the classroom computer.",
+      "example_vi": "Học sinh gõ bài phát biểu trên máy tính của lớp học."
     },
     {
       "id": 14,
-      "word": "contrast",
-      "pos": "v",
-      "ipa": "/kənˈtrɑːst/",
-      "definition_en": "To compare in such a way as to emphasize differences.",
-      "definition_vi": "đối chiếu, tương phản",
-      "example_en": "We contrast the speed of email with the warmth of letters.",
-      "example_vi": "Chúng tôi đối chiếu tốc độ của email với sự ấm áp của thư tay."
+      "word": "paper",
+      "pos": "n",
+      "ipa": "/ˈpeɪpər/",
+      "definition_en": "Thin white sheets used for writing or drawing.",
+      "definition_vi": "giấy",
+      "example_en": "Fold the blue paper neatly into an envelope.",
+      "example_vi": "Gấp tờ giấy xanh ngay ngắn thành chiếc phong bì."
     },
     {
       "id": 15,
-      "word": "delivery",
+      "word": "stamp",
       "pos": "n",
-      "ipa": "/dɪˈlɪvəri/",
-      "definition_en": "The action of delivering letters, parcels, or messages.",
-      "definition_vi": "sự vận chuyển, chuyển phát",
-      "example_en": "Postal delivery takes three to five business days.",
-      "example_vi": "Chuyển phát bưu điện mất từ ba đến năm ngày làm việc."
+      "ipa": "/stæmp/",
+      "definition_en": "A small adhesive label affixed to mail.",
+      "definition_vi": "con tem",
+      "example_en": "Stick a postage stamp on the upper right corner.",
+      "example_vi": "Dán một con tem bưu điện vào góc trên bên phải."
     },
     {
       "id": 16,
-      "word": "penmanship",
+      "word": "message",
       "pos": "n",
-      "ipa": "/ˈpɛnmənʃɪp/",
-      "definition_en": "The art or skill of writing neatly by hand.",
-      "definition_vi": "nét chữ viết tay",
-      "example_en": "Good penmanship makes letters easy and pleasant to read.",
-      "example_vi": "Nét chữ đẹp làm cho những lá thư dễ đọc và dễ chịu."
+      "ipa": "/ˈmɛsɪdʒ/",
+      "definition_en": "A verbal or written piece of information.",
+      "definition_vi": "tin nhắn, thông điệp",
+      "example_en": "A polite message brightens someone's day.",
+      "example_vi": "Một tin nhắn lịch sự làm ngày của ai đó vui hơn."
     },
     {
       "id": 17,
-      "word": "efficient",
-      "pos": "adj",
-      "ipa": "/ɪˈfɪʃənt/",
-      "definition_en": "Achieving maximum productivity with minimum wasted effort.",
-      "definition_vi": "hiệu quả cao",
-      "example_en": "Electronic mail is the most efficient way to share files.",
-      "example_vi": "Thư điện tử là cách hiệu quả nhất để chia sẻ tệp tin."
+      "word": "friend",
+      "pos": "n",
+      "ipa": "/frɛnd/",
+      "definition_en": "A person with whom one has a bond of affection.",
+      "definition_vi": "người bạn",
+      "example_en": "Writing to a pen pal friend is fun.",
+      "example_vi": "Viết thư cho bạn qua thư rất là vui."
     },
     {
       "id": 18,
-      "word": "stationery",
-      "pos": "n",
-      "ipa": "/ˈsteɪʃənəri/",
-      "definition_en": "Writing paper, matching envelopes, and desk supplies.",
-      "definition_vi": "văn phòng phẩm, giấy viết thư",
-      "example_en": "She bought textured floral stationery for thank-you notes.",
-      "example_vi": "Cô ấy đã mua giấy viết thư in hoa văn để viết thư cảm ơn."
+      "word": "read",
+      "pos": "v",
+      "ipa": "/rid/",
+      "definition_en": "To look at and comprehend written words.",
+      "definition_vi": "đọc",
+      "example_en": "I love to read handwritten notes over again.",
+      "example_vi": "Tôi thích đọc đi đọc lại những mẩu giấy viết tay."
     },
     {
       "id": 19,
-      "word": "postage",
+      "word": "opinion",
       "pos": "n",
-      "ipa": "/ˈpəʊstɪdʒ/",
-      "definition_en": "The fee paid for sending a letter or package by mail.",
-      "definition_vi": "cước bưu chính",
-      "example_en": "Postage stamps cost less than a dollar.",
-      "example_vi": "Tem bưu chính có giá chưa tới một đô-la."
+      "ipa": "/əˈpɪnjən/",
+      "definition_en": "A view or judgment formed about something.",
+      "definition_vi": "ý kiến, quan điểm",
+      "example_en": "In my opinion, both ways of communicating have value.",
+      "example_vi": "Theo ý kiến của tôi, cả hai cách giao tiếp đều có giá trị."
     },
     {
       "id": 20,
-      "word": "conclude",
+      "word": "agree",
       "pos": "v",
-      "ipa": "/kənˈkluːd/",
-      "definition_en": "To summarize and end a debate or speech.",
-      "definition_vi": "kết luận",
-      "example_en": "Both debaters concluded with mutual respect.",
-      "example_vi": "Cả hai người tranh luận đều kết luận với sự tôn trọng lẫn nhau."
+      "ipa": "/əˈɡriː/",
+      "definition_en": "To have the same opinion as another person.",
+      "definition_vi": "đồng ý",
+      "example_en": "I agree that emails are faster for urgent news.",
+      "example_vi": "Tôi đồng ý rằng email nhanh hơn cho các tin tức khẩn cấp."
     }
   ],
-  "clil_article": {
-    "title_en": "The Micro-Debate: Digital Speed vs Handwritten Warmth",
-    "title_vi": "Cuộc Tranh luận nhỏ: Tốc độ Kỹ thuật số vs Sự Ấm áp của Thư tay",
-    "content_en": "In modern society, digital technology allows people to send electronic mail instantly to any computer inbox across the globe. However, traditional handwritten letters continue to hold deep personal significance. In a classroom micro-debate, speakers present structured arguments and contrast differing communication styles using words like 'while' and 'although': 'While digital email is undeniably faster, more convenient, and highly efficient for urgent delivery, a handwritten note on textured stationery shows dedicated penmanship and can be treasured as a lifelong keepsake.' A persuasive debater avoids merely stating an unsupported opinion; they pay attention to postage delivery facts and support their claims with concrete numbers. To conclude their presentation, speakers calculate the difference between communication choices. For example, if a community youth club sends 68 digital email newsletters and puts 39 paper letters inside an envelope with postage during an outreach campaign, how many more emails than letters did they send? We subtract 39 from 68: 68 - 39 = 29. Therefore, the club sent 29 more digital emails than printed letters. Debating both sides of a communication issue teaches students critical empathy, persuasive writing, and precise numerical reasoning.",
-    "glossary": [
-      {
-        "word": "debate",
-        "definition_en": "Formal discussion with opposing views",
-        "definition_vi": "tranh luận"
-      },
-      {
-        "word": "argument",
-        "definition_en": "Reasoned point supporting a claim",
-        "definition_vi": "luận điểm"
-      },
-      {
-        "word": "handwritten",
-        "definition_en": "Composed by pen on paper",
-        "definition_vi": "viết tay"
-      },
-      {
-        "word": "digital",
-        "definition_en": "Electronic computer technology",
-        "definition_vi": "kỹ thuật số"
-      },
-      {
-        "word": "difference",
-        "definition_en": "Amount by which quantities differ",
-        "definition_vi": "hiệu số"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What is the main advantage of digital email mentioned in the debate?",
-        "options": [
-          "Speed and convenience",
-          "It smells like old paper",
-          "It requires postage stamps"
-        ],
-        "answer": "Speed and convenience"
-      },
-      {
-        "id": 2,
-        "question_en": "Why do some people prefer handwritten letters?",
-        "options": [
-          "They feel personal and serve as keepsakes",
-          "They take two weeks to arrive",
-          "They cost more money"
-        ],
-        "answer": "They feel personal and serve as keepsakes"
-      },
-      {
-        "id": 3,
-        "question_en": "If a club sends 68 emails and 39 letters, what is the difference?",
-        "options": [
-          "29 messages",
-          "39 messages",
-          "19 messages"
-        ],
-        "answer": "29 messages"
-      }
-    ],
-    "text": "In modern society, digital technology allows people to send electronic mail instantly to any computer inbox across the globe. However, traditional handwritten letters continue to hold deep personal significance. In a classroom micro-debate, speakers present structured arguments and contrast differing communication styles using words like 'while' and 'although': 'While digital email is undeniably faster, more convenient, and highly efficient for urgent delivery, a handwritten note on textured stationery shows dedicated penmanship and can be treasured as a lifelong keepsake.' A persuasive debater avoids merely stating an unsupported opinion; they pay attention to postage delivery facts and support their claims with concrete numbers. To conclude their presentation, speakers calculate the difference between communication choices. For example, if a community youth club sends 68 digital email newsletters and puts 39 paper letters inside an envelope with postage during an outreach campaign, how many more emails than letters did they send? We subtract 39 from 68: 68 - 39 = 29. Therefore, the club sent 29 more digital emails than printed letters. Debating both sides of a communication issue teaches students critical empathy, persuasive writing, and precise numerical reasoning."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "Micro-Debate: Digital Emails vs Handwritten Letters",
+    "title_vi": "Tranh luận nhỏ: Email Kỹ thuật số hay Thư viết tay",
+    "content_en": "How do you prefer to send a message to a friend? In our third-grade debate, students explored the differences between digital emails and handwritten paper letters. Team One argued that emails are much faster and easy to send. With a computer, a message reaches someone across the world in two seconds. It saves paper, and you can delete old junk mail instantly. Team Two argued that handwritten letters are more personal and thoughtful. When someone writes on paper with a pen, it shows extra care. A letter travels slower in the mail, but people can keep it in a keepsake box for years. Both teams gave great reasons. In my opinion, emails are best for quick school news, while handwritten letters make wonderful birthday treasures. Debating helps students share opinions respectfully and listen to other points of view.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "Why did Team One say emails are very useful?",
+        "question_vi": "Tại sao Đội Một cho rằng email rất hữu ích?",
+        "options": [
+          "They are faster and easy to send",
+          "They are drawn in purple ink",
+          "They make loud drum sounds"
+        ],
+        "answer": "They are faster and easy to send"
+      },
+      {
+        "id": "q2",
+        "question_en": "Why did Team Two love handwritten paper letters?",
+        "question_vi": "Tại sao Đội Hai lại yêu thích những bức thư giấy viết tay?",
+        "options": [
+          "They feel warm, personal, and can be kept for years",
+          "They fly away in the wind",
+          "They are only for teachers"
+        ],
+        "answer": "They feel warm, personal, and can be kept for years"
+      },
+      {
+        "id": "q3",
+        "question_en": "What skill does debating teach students?",
+        "question_vi": "Kỹ năng tranh luận dạy cho học sinh điều gì?",
+        "options": [
+          "Sharing opinions respectfully and listening to others",
+          "Running very fast in gym class",
+          "Drawing squares on the board"
+        ],
+        "answer": "Sharing opinions respectfully and listening to others"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "debate",
+        "definition_en": "A formal discussion with reasons supporting both sides."
+      },
+      {
+        "term": "faster",
+        "definition_en": "Happening with greater speed."
+      },
+      {
+        "term": "personal",
+        "definition_en": "Showing individual care and human warmth."
+      },
+      {
+        "term": "opinion",
+        "definition_en": "A personal belief or feeling about a topic."
+      },
+      {
+        "term": "keep",
+        "definition_en": "To save and store safely over time."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "In my opinion, an email is much faster to send.",
+      "ipa": "/ɪn maɪ əˈpɪnjən æn ˈimeɪl ɪz mʌtʃ ˈfæstər tu sɛnd/",
+      "vietnamese": "Theo ý kiến của tôi, một email được gửi nhanh hơn rất nhiều."
+    },
+    {
+      "id": 2,
+      "text": "A paper letter travels slower but feels very personal.",
+      "ipa": "/ə ˈpeɪpər ˈlɛtər ˈtrævəlz ˈsloʊər bʌt filz ˈvɛri ˈpɜrsənəl/",
+      "vietnamese": "Một bức thư giấy đi chậm hơn nhưng mang lại cảm giác rất gần gũi."
+    },
+    {
+      "id": 3,
+      "text": "I agree that digital messages save paper and trees.",
+      "ipa": "/aɪ əˈɡri ðæt ˈdɪdʒətəl ˈmɛsədʒəz seɪv ˈpeɪpər ænd triz/",
+      "vietnamese": "Tôi đồng ý rằng tin nhắn kỹ thuật số tiết kiệm giấy và cây xanh."
+    },
+    {
+      "id": 4,
+      "text": "You can delete old emails with a single click.",
+      "ipa": "/ju kæn dɪˈlit oʊld ˈimeɪlz wɪð ə ˈsɪŋɡəl klɪk/",
+      "vietnamese": "Bạn có thể xóa các email cũ chỉ với một cú nhấp chuột."
+    },
+    {
+      "id": 5,
+      "text": "Grandmother loves to keep handwritten letters in a box.",
+      "ipa": "/ˈɡrændˌmʌðər lʌvz tu kip ˈhændˌrɪtən ˈlɛtərz ɪn ə bɑks/",
+      "vietnamese": "Bà thích giữ những bức thư viết tay trong một chiếc hộp."
+    },
+    {
+      "id": 6,
+      "text": "Writing carefully with pen and ink takes patience.",
+      "ipa": "/ˈraɪtɪŋ ˈkɛrfəli wɪð pɛn ænd ɪŋk teɪks ˈpeɪʃəns/",
+      "vietnamese": "Viết cẩn thận bằng bút mực đòi hỏi sự kiên nhẫn."
+    },
+    {
+      "id": 7,
+      "text": "A class debate helps us listen to both viewpoints.",
+      "ipa": "/ə klæs dɪˈbeɪt hɛlps ʌs ˈlɪsən tu boʊθ ˈvjuˌpɔɪnts/",
+      "vietnamese": "Một buổi tranh luận trong lớp giúp chúng ta lắng nghe cả hai quan điểm."
+    },
+    {
+      "id": 8,
+      "text": "Both ways of sending messages are useful and fun.",
+      "ipa": "/boʊθ weɪz ʌv ˈsɛndɪŋ ˈmɛsədʒəz ɑr ˈjusfəl ænd fʌn/",
+      "vietnamese": "Cả hai cách gửi tin nhắn đều hữu ích và thú vị."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Lucas",
-        "text": "Digital email delivers messages instantly across global computer networks.",
-        "ipa": "/ˈdɪdʒɪtl ˈiːmeɪl dɪˈlɪvərz ˈmɛsɪdʒɪz ˈɪnstəntli əˈkrɒs ˈɡləʊbl kəmˈpjuːtər ˈnɛtwɜːrks/"
+        "text": "In my opinion, an email is much faster to send.",
+        "ipa": "/ɪn maɪ əˈpɪnjən æn ˈimeɪl ɪz mʌtʃ ˈfæstər tu sɛnd/",
+        "vietnamese": "Theo ý kiến của tôi, một email được gửi nhanh hơn rất nhiều."
       },
       {
         "id": 2,
-        "speaker": "Emma",
-        "text": "While email is faster, handwritten letters feel far more personal.",
-        "ipa": "/waɪl ˈiːmeɪl ɪz ˈfɑːstər, ˌhændˈrɪtn ˈlɛtərz fiːl fɑːr mɔːr ˈpɜːrsənl/"
+        "text": "A paper letter travels slower but feels very personal.",
+        "ipa": "/ə ˈpeɪpər ˈlɛtər ˈtrævəlz ˈsloʊər bʌt filz ˈvɛri ˈpɜrsənəl/",
+        "vietnamese": "Một bức thư giấy đi chậm hơn nhưng mang lại cảm giác rất gần gũi."
       },
       {
         "id": 3,
-        "speaker": "Lucas",
-        "text": "The difference between sixty-eight emails and thirty-nine letters is twenty-nine.",
-        "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈsɪksti eɪt ˈiːmeɪlz ænd ˈθɜːrti naɪn ˈlɛtərz ɪz ˈtwɛnti naɪn/"
+        "text": "I agree that digital messages save paper and trees.",
+        "ipa": "/aɪ əˈɡri ðæt ˈdɪdʒətəl ˈmɛsədʒəz seɪv ˈpeɪpər ænd triz/",
+        "vietnamese": "Tôi đồng ý rằng tin nhắn kỹ thuật số tiết kiệm giấy và cây xanh."
       },
       {
         "id": 4,
-        "speaker": "Emma",
-        "text": "Grandparents treasure handwritten birthday cards as precious keepsakes.",
-        "ipa": "/ˈɡrænpeərənts ˈtrɛʒər ˌhændˈrɪtn ˈbɜːrθdeɪ kɑːrdz æz ˈprɛʃəs ˈkiːpseɪks/"
+        "text": "You can delete old emails with a single click.",
+        "ipa": "/ju kæn dɪˈlit oʊld ˈimeɪlz wɪð ə ˈsɪŋɡəl klɪk/",
+        "vietnamese": "Bạn có thể xóa các email cũ chỉ với một cú nhấp chuột."
       },
       {
         "id": 5,
-        "speaker": "Lucas",
-        "text": "Anna sent forty-five emails, which was eighteen more than Ben sent.",
-        "ipa": "/ˈænə sɛnt ˈfɔːrti faɪv ˈiːmeɪlz, wɪtʃ wɒz ˌeɪˈtiːn mɔːr ðæn bɛn sɛnt/"
+        "text": "Grandmother loves to keep handwritten letters in a box.",
+        "ipa": "/ˈɡrændˌmʌðər lʌvz tu kip ˈhændˌrɪtən ˈlɛtərz ɪn ə bɑks/",
+        "vietnamese": "Bà thích giữ những bức thư viết tay trong một chiếc hộp."
       },
       {
         "id": 6,
-        "speaker": "Emma",
-        "text": "Persuasive debaters support their arguments with balanced factual evidence.",
-        "ipa": "/pərˈsweɪsɪv dɪˈbeɪtərz səˈpɔːrt ðɛər ˈɑːrɡjʊmənts wɪð ˈbælənst ˈfæktʃuəl ˈɛvɪdəns/"
+        "text": "Writing carefully with pen and ink takes patience.",
+        "ipa": "/ˈraɪtɪŋ ˈkɛrfəli wɪð pɛn ænd ɪŋk teɪks ˈpeɪʃəns/",
+        "vietnamese": "Viết cẩn thận bằng bút mực đòi hỏi sự kiên nhẫn."
       },
       {
         "id": 7,
-        "speaker": "Lucas",
-        "text": "Contrasting connectives help speakers present nuanced perspectives.",
-        "ipa": "/kənˈtrɑːstɪŋ kəˈnɛktɪvz hɛlp ˈspiːkərz prɪˈzɛnt ˈnjuːɑːnst pərˈspɛktɪvz/"
+        "text": "A class debate helps us listen to both viewpoints.",
+        "ipa": "/ə klæs dɪˈbeɪt hɛlps ʌs ˈlɪsən tu boʊθ ˈvjuˌpɔɪnts/",
+        "vietnamese": "Một buổi tranh luận trong lớp giúp chúng ta lắng nghe cả hai quan điểm."
       },
       {
         "id": 8,
-        "speaker": "Emma",
-        "text": "Both communication formats offer unique advantages in modern life.",
-        "ipa": "/bəʊθ kəˌmjuːnɪˈkeɪʃən ˈfɔːrmæts ˈɒfər juːˈniːk ədˈvɑːntɪdʒɪz ɪn ˈmɒdərn laɪf/"
+        "text": "Both ways of sending messages are useful and fun.",
+        "ipa": "/boʊθ weɪz ʌv ˈsɛndɪŋ ˈmɛsədʒəz ɑr ˈjusfəl ænd fʌn/",
+        "vietnamese": "Cả hai cách gửi tin nhắn đều hữu ích và thú vị."
       }
     ]
   },
-  "rw_part1": [
-    {
-      "definition": "A formal discussion between two opposing viewpoints.",
-      "word": "debate"
-    },
-    {
-      "definition": "Written with pen and paper rather than typed.",
-      "word": "handwritten"
-    },
-    {
-      "definition": "A meaningful small item preserved as a memory.",
-      "word": "keepsake"
-    },
-    {
-      "definition": "An electronic mail message sent by computer.",
-      "word": "email"
-    },
-    {
-      "definition": "The amount by which one total is greater than another.",
-      "word": "difference"
-    }
-  ],
+  "rw_part1": {
+    "word_bank": [
+      "faster",
+      "slower",
+      "personal",
+      "easy",
+      "hard",
+      "keep",
+      "delete",
+      "debate",
+      "email",
+      "letter",
+      "write",
+      "send",
+      "computer",
+      "paper",
+      "stamp",
+      "message",
+      "friend",
+      "read",
+      "opinion",
+      "agree"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A written message sent by post in an envelope.",
+        "target": "letter",
+        "definition": "A written message sent by post in an envelope.",
+        "word": "letter",
+        "definition_en": "A written message sent by post in an envelope.",
+        "options": [
+          "letter",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "letter"
+      },
+      {
+        "id": 2,
+        "text": "A digital message sent electronically over computer networks.",
+        "target": "email",
+        "definition": "A digital message sent electronically over computer networks.",
+        "word": "email",
+        "definition_en": "A digital message sent electronically over computer networks.",
+        "options": [
+          "email",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "email"
+      },
+      {
+        "id": 3,
+        "text": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "target": "stamp",
+        "definition": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "word": "stamp",
+        "definition_en": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "options": [
+          "stamp",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stamp"
+      },
+      {
+        "id": 4,
+        "text": "A flat paper container used for sending letters.",
+        "target": "envelope",
+        "definition": "A flat paper container used for sending letters.",
+        "word": "envelope",
+        "definition_en": "A flat paper container used for sending letters.",
+        "options": [
+          "envelope",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "envelope"
+      },
+      {
+        "id": 5,
+        "text": "To share information or feelings through speaking or writing.",
+        "target": "communicate",
+        "definition": "To share information or feelings through speaking or writing.",
+        "word": "communicate",
+        "definition_en": "To share information or feelings through speaking or writing.",
+        "options": [
+          "communicate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "communicate"
+      }
+    ]
+  },
   "rw_part2": {
-    "title": "Debating Communication Mediums",
+    "title": "Comparing Letters and Emails",
+    "topic": "Comparing Letters and Emails",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Leo",
+        "prompt": "Why do people still enjoy sending handwritten letters to pen pals?",
+        "text": "Why do people still enjoy sending handwritten letters to pen pals?",
+        "options": [
+          "Because letters feel personal, warm, and fun to open in the mailbox.",
+          "I left my sports shoes in the gym locker.",
+          "The train reached the station thirty minutes early."
+        ],
+        "answer": "Because letters feel personal, warm, and fun to open in the mailbox."
+      },
+      {
+        "id": 2,
+        "speaker": "Ava",
+        "prompt": "What is the main advantage of sending an email to a teacher?",
+        "text": "What is the main advantage of sending an email to a teacher?",
+        "options": [
+          "It delivers important school messages instantly across any distance.",
+          "My brother plays violin in the youth orchestra.",
+          "The supermarket has fresh apples from France."
+        ],
+        "answer": "It delivers important school messages instantly across any distance."
+      },
+      {
+        "id": 3,
+        "speaker": "Leo",
+        "prompt": "How many letters and emails did our class send to our partner school?",
+        "text": "How many letters and emails did our class send to our partner school?",
+        "options": [
+          "We sent eighteen handwritten letters and twenty-four electronic emails.",
+          "I had a tuna sandwich and an apple for lunch.",
+          "The art gallery has five exhibition halls."
+        ],
+        "answer": "We sent eighteen handwritten letters and twenty-four electronic emails."
+      },
+      {
+        "id": 4,
+        "speaker": "Ava",
+        "prompt": "What is the total number of communications sent to the partner school?",
+        "text": "What is the total number of communications sent to the partner school?",
+        "options": [
+          "Eighteen plus twenty-four gives forty-two messages in total.",
+          "I wear my blue sweater on chilly mornings.",
+          "The football match finished at four o'clock."
+        ],
+        "answer": "Eighteen plus twenty-four gives forty-two messages in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Leo",
+        "prompt": "Shall we write a thank-you letter to the postmaster on Friday?",
+        "text": "Shall we write a thank-you letter to the postmaster on Friday?",
+        "options": [
+          "Yes, let's write a polite letter and mail it at the local post office!",
+          "I do not want cold lemonade with my lunch.",
+          "The bus leaves from the corner of Maple Street."
+        ],
+        "answer": "Yes, let's write a polite letter and mail it at the local post office!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "Why do you argue that email is the superior medium?"
+        "speaker": "Leo",
+        "text": "Because letters feel personal, warm, and fun to open in the mailbox."
       },
       {
-        "speaker": "Emma",
-        "text": "Because it is instantaneous and saves resources."
+        "speaker": "Ava",
+        "text": "It delivers important school messages instantly across any distance."
       },
       {
-        "speaker": "Lucas",
-        "text": "What is the counter-argument for paper letters?"
+        "speaker": "Leo",
+        "text": "We sent eighteen handwritten letters and twenty-four electronic emails."
       },
       {
-        "speaker": "Emma",
-        "text": "Letters express heartfelt emotion and serve as keepsakes."
+        "speaker": "Ava",
+        "text": "Eighteen plus twenty-four gives forty-two messages in total."
       },
       {
-        "speaker": "Lucas",
-        "text": "And the difference between sixty-eight and thirty-nine is twenty-nine!"
+        "speaker": "Leo",
+        "text": "Yes, let's write a polite letter and mail it at the local post office!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Yesterday our class held a lively micro-(1) ___ about digital communication. Lucas argued that emails are fast and convenient. (2) ___ contrast, Emma defended handwritten letters, arguing that they feel much more (3) ___. She pointed out that people keep letters as lifelong keepsakes. In math, they calculated that sixty-eight emails minus thirty-nine letters equals a (4) ___ of twenty-nine messages.",
-    "answers": [
-      "debate",
-      "In",
+    "title": "Ava's Writing Diary: Letters and Emails",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "People communicate in many different ways [1]_____ share thoughts and news. When you write a friendly letter, you place [2]_____ inside a paper envelope. You stick a postage stamp on top [3]_____ drop it into a mailbox. Emails travel much faster because they move [4]_____ the internet in seconds. Both letters and emails connect people [5]_____ live far apart.",
+    "answers": {
+      "1": "to",
+      "2": "it",
+      "3": "and",
+      "4": "across",
+      "5": "who"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "faster",
+      "slower",
       "personal",
-      "difference"
+      "easy",
+      "hard",
+      "keep",
+      "delete",
+      "debate",
+      "email",
+      "letter",
+      "write",
+      "send",
+      "computer",
+      "paper",
+      "stamp",
+      "message",
+      "friend",
+      "read",
+      "opinion",
+      "agree"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A written message sent by post in an envelope.",
+        "target": "letter",
+        "definition": "A written message sent by post in an envelope.",
+        "word": "letter",
+        "definition_en": "A written message sent by post in an envelope.",
+        "options": [
+          "letter",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "letter"
+      },
+      {
+        "id": 2,
+        "text": "A digital message sent electronically over computer networks.",
+        "target": "email",
+        "definition": "A digital message sent electronically over computer networks.",
+        "word": "email",
+        "definition_en": "A digital message sent electronically over computer networks.",
+        "options": [
+          "email",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "email"
+      },
+      {
+        "id": 3,
+        "text": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "target": "stamp",
+        "definition": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "word": "stamp",
+        "definition_en": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "options": [
+          "stamp",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stamp"
+      },
+      {
+        "id": 4,
+        "text": "A flat paper container used for sending letters.",
+        "target": "envelope",
+        "definition": "A flat paper container used for sending letters.",
+        "word": "envelope",
+        "definition_en": "A flat paper container used for sending letters.",
+        "options": [
+          "envelope",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "envelope"
+      },
+      {
+        "id": 5,
+        "text": "To share information or feelings through speaking or writing.",
+        "target": "communicate",
+        "definition": "To share information or feelings through speaking or writing.",
+        "word": "communicate",
+        "definition_en": "To share information or feelings through speaking or writing.",
+        "options": [
+          "communicate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "communicate"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "A formal discussion between two opposing viewpoints.",
-      "word": "debate"
-    },
-    {
-      "definition": "Written with pen and paper rather than typed.",
-      "word": "handwritten"
-    },
-    {
-      "definition": "A meaningful small item preserved as a memory.",
-      "word": "keepsake"
-    },
-    {
-      "definition": "An electronic mail message sent by computer.",
-      "word": "email"
-    },
-    {
-      "definition": "The amount by which one total is greater than another.",
-      "word": "difference"
-    }
-  ],
   "rw_part_2": {
-    "title": "Debating Communication Mediums",
+    "title": "Comparing Letters and Emails",
+    "topic": "Comparing Letters and Emails",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Leo",
+        "prompt": "Why do people still enjoy sending handwritten letters to pen pals?",
+        "text": "Why do people still enjoy sending handwritten letters to pen pals?",
+        "options": [
+          "Because letters feel personal, warm, and fun to open in the mailbox.",
+          "I left my sports shoes in the gym locker.",
+          "The train reached the station thirty minutes early."
+        ],
+        "answer": "Because letters feel personal, warm, and fun to open in the mailbox."
+      },
+      {
+        "id": 2,
+        "speaker": "Ava",
+        "prompt": "What is the main advantage of sending an email to a teacher?",
+        "text": "What is the main advantage of sending an email to a teacher?",
+        "options": [
+          "It delivers important school messages instantly across any distance.",
+          "My brother plays violin in the youth orchestra.",
+          "The supermarket has fresh apples from France."
+        ],
+        "answer": "It delivers important school messages instantly across any distance."
+      },
+      {
+        "id": 3,
+        "speaker": "Leo",
+        "prompt": "How many letters and emails did our class send to our partner school?",
+        "text": "How many letters and emails did our class send to our partner school?",
+        "options": [
+          "We sent eighteen handwritten letters and twenty-four electronic emails.",
+          "I had a tuna sandwich and an apple for lunch.",
+          "The art gallery has five exhibition halls."
+        ],
+        "answer": "We sent eighteen handwritten letters and twenty-four electronic emails."
+      },
+      {
+        "id": 4,
+        "speaker": "Ava",
+        "prompt": "What is the total number of communications sent to the partner school?",
+        "text": "What is the total number of communications sent to the partner school?",
+        "options": [
+          "Eighteen plus twenty-four gives forty-two messages in total.",
+          "I wear my blue sweater on chilly mornings.",
+          "The football match finished at four o'clock."
+        ],
+        "answer": "Eighteen plus twenty-four gives forty-two messages in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Leo",
+        "prompt": "Shall we write a thank-you letter to the postmaster on Friday?",
+        "text": "Shall we write a thank-you letter to the postmaster on Friday?",
+        "options": [
+          "Yes, let's write a polite letter and mail it at the local post office!",
+          "I do not want cold lemonade with my lunch.",
+          "The bus leaves from the corner of Maple Street."
+        ],
+        "answer": "Yes, let's write a polite letter and mail it at the local post office!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Lucas",
-        "text": "Why do you argue that email is the superior medium?"
+        "speaker": "Leo",
+        "text": "Because letters feel personal, warm, and fun to open in the mailbox."
       },
       {
-        "speaker": "Emma",
-        "text": "Because it is instantaneous and saves resources."
+        "speaker": "Ava",
+        "text": "It delivers important school messages instantly across any distance."
       },
       {
-        "speaker": "Lucas",
-        "text": "What is the counter-argument for paper letters?"
+        "speaker": "Leo",
+        "text": "We sent eighteen handwritten letters and twenty-four electronic emails."
       },
       {
-        "speaker": "Emma",
-        "text": "Letters express heartfelt emotion and serve as keepsakes."
+        "speaker": "Ava",
+        "text": "Eighteen plus twenty-four gives forty-two messages in total."
       },
       {
-        "speaker": "Lucas",
-        "text": "And the difference between sixty-eight and thirty-nine is twenty-nine!"
+        "speaker": "Leo",
+        "text": "Yes, let's write a polite letter and mail it at the local post office!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Yesterday our class held a lively micro-(1) ___ about digital communication. Lucas argued that emails are fast and convenient. (2) ___ contrast, Emma defended handwritten letters, arguing that they feel much more (3) ___. She pointed out that people keep letters as lifelong keepsakes. In math, they calculated that sixty-eight emails minus thirty-nine letters equals a (4) ___ of twenty-nine messages.",
-    "answers": [
-      "debate",
-      "In",
-      "personal",
-      "difference"
-    ]
+    "title": "Ava's Writing Diary: Letters and Emails",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "People communicate in many different ways [1]_____ share thoughts and news. When you write a friendly letter, you place [2]_____ inside a paper envelope. You stick a postage stamp on top [3]_____ drop it into a mailbox. Emails travel much faster because they move [4]_____ the internet in seconds. Both letters and emails connect people [5]_____ live far apart.",
+    "answers": {
+      "1": "to",
+      "2": "it",
+      "3": "and",
+      "4": "across",
+      "5": "who"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A written message sent by post in an envelope.",
+        "target": "letter",
+        "definition": "A written message sent by post in an envelope.",
+        "word": "letter",
+        "definition_en": "A written message sent by post in an envelope.",
+        "options": [
+          "letter",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "letter"
+      },
+      {
+        "id": 2,
+        "text": "A digital message sent electronically over computer networks.",
+        "target": "email",
+        "definition": "A digital message sent electronically over computer networks.",
+        "word": "email",
+        "definition_en": "A digital message sent electronically over computer networks.",
+        "options": [
+          "email",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "email"
+      },
+      {
+        "id": 3,
+        "text": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "target": "stamp",
+        "definition": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "word": "stamp",
+        "definition_en": "A small adhesive piece of paper stuck to an envelope to pay for postage.",
+        "options": [
+          "stamp",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "stamp"
+      },
+      {
+        "id": 4,
+        "text": "A flat paper container used for sending letters.",
+        "target": "envelope",
+        "definition": "A flat paper container used for sending letters.",
+        "word": "envelope",
+        "definition_en": "A flat paper container used for sending letters.",
+        "options": [
+          "envelope",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "envelope"
+      },
+      {
+        "id": 5,
+        "text": "To share information or feelings through speaking or writing.",
+        "target": "communicate",
+        "definition": "To share information or feelings through speaking or writing.",
+        "word": "communicate",
+        "definition_en": "To share information or feelings through speaking or writing.",
+        "options": [
+          "communicate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "communicate"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Comparing Letters and Emails",
+      "topic": "Comparing Letters and Emails",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Leo",
+          "prompt": "Why do people still enjoy sending handwritten letters to pen pals?",
+          "text": "Why do people still enjoy sending handwritten letters to pen pals?",
+          "options": [
+            "Because letters feel personal, warm, and fun to open in the mailbox.",
+            "I left my sports shoes in the gym locker.",
+            "The train reached the station thirty minutes early."
+          ],
+          "answer": "Because letters feel personal, warm, and fun to open in the mailbox."
+        },
+        {
+          "id": 2,
+          "speaker": "Ava",
+          "prompt": "What is the main advantage of sending an email to a teacher?",
+          "text": "What is the main advantage of sending an email to a teacher?",
+          "options": [
+            "It delivers important school messages instantly across any distance.",
+            "My brother plays violin in the youth orchestra.",
+            "The supermarket has fresh apples from France."
+          ],
+          "answer": "It delivers important school messages instantly across any distance."
+        },
+        {
+          "id": 3,
+          "speaker": "Leo",
+          "prompt": "How many letters and emails did our class send to our partner school?",
+          "text": "How many letters and emails did our class send to our partner school?",
+          "options": [
+            "We sent eighteen handwritten letters and twenty-four electronic emails.",
+            "I had a tuna sandwich and an apple for lunch.",
+            "The art gallery has five exhibition halls."
+          ],
+          "answer": "We sent eighteen handwritten letters and twenty-four electronic emails."
+        },
+        {
+          "id": 4,
+          "speaker": "Ava",
+          "prompt": "What is the total number of communications sent to the partner school?",
+          "text": "What is the total number of communications sent to the partner school?",
+          "options": [
+            "Eighteen plus twenty-four gives forty-two messages in total.",
+            "I wear my blue sweater on chilly mornings.",
+            "The football match finished at four o'clock."
+          ],
+          "answer": "Eighteen plus twenty-four gives forty-two messages in total."
+        },
+        {
+          "id": 5,
+          "speaker": "Leo",
+          "prompt": "Shall we write a thank-you letter to the postmaster on Friday?",
+          "text": "Shall we write a thank-you letter to the postmaster on Friday?",
+          "options": [
+            "Yes, let's write a polite letter and mail it at the local post office!",
+            "I do not want cold lemonade with my lunch.",
+            "The bus leaves from the corner of Maple Street."
+          ],
+          "answer": "Yes, let's write a polite letter and mail it at the local post office!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Leo",
+          "text": "Because letters feel personal, warm, and fun to open in the mailbox."
+        },
+        {
+          "speaker": "Ava",
+          "text": "It delivers important school messages instantly across any distance."
+        },
+        {
+          "speaker": "Leo",
+          "text": "We sent eighteen handwritten letters and twenty-four electronic emails."
+        },
+        {
+          "speaker": "Ava",
+          "text": "Eighteen plus twenty-four gives forty-two messages in total."
+        },
+        {
+          "speaker": "Leo",
+          "text": "Yes, let's write a polite letter and mail it at the local post office!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Ava's Writing Diary: Letters and Emails",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "People communicate in many different ways [1]_____ share thoughts and news. When you write a friendly letter, you place [2]_____ inside a paper envelope. You stick a postage stamp on top [3]_____ drop it into a mailbox. Emails travel much faster because they move [4]_____ the internet in seconds. Both letters and emails connect people [5]_____ live far apart.",
+      "answers": {
+        "1": "to",
+        "2": "it",
+        "3": "and",
+        "4": "across",
+        "5": "who"
+      }
+    }
   }
 };
 export default readingHubData;

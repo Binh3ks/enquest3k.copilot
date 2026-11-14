@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 56 | Theme: "Cause and Effect: The Community Garden" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 56 | Theme: "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 56,
-  "theme": "Cause and Effect: The Community Garden",
+  "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Discussing Garden Care",
+    "title": "Observing Melting Ice and Evaporation",
     "exchanges": [
       {
         "speaker": "Noah",
-        "text": "Why are the tomato leaves wilting this afternoon?"
+        "text": "Because the sun warmed the air and raised the temperature."
       },
       {
         "speaker": "Emma",
-        "text": "Because the hot summer sun evaporated all soil moisture."
+        "text": "The warm air caused evaporation and dried the ground."
       },
       {
         "speaker": "Noah",
-        "text": "How many seedlings do we need to water right now?"
+        "text": "Let's fill four trays with twelve cubes each."
       },
       {
         "speaker": "Emma",
-        "text": "Seventy-two in total, but thirty-eight are already watered."
+        "text": "Four times twelve equals forty-eight cubes in total."
       },
       {
         "speaker": "Noah",
-        "text": "So thirty-four seedlings still need fresh water from the barrel."
+        "text": "Yes, let's write every change in the science logbook!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Emma",
-      "text": "Plants wilt when soil loses its natural moisture.",
-      "ipa": "/plɑːnts wɪlt wɛn sɔɪl ˈluːzɪz ɪts ˈnætʃrəl ˈmɔɪstʃər/"
+      "text": "Dry weather made the garden soil very thirsty.",
+      "ipa": "/draɪ ˈwɛðər meɪd ðə ˈɡɑrdən sɔɪl ˈvɛri ˈθɜrsti/",
+      "vietnamese": "Thời tiết khô hanh khiến đất vườn rất khát nước."
     },
     {
       "id": 2,
-      "speaker": "Noah",
-      "text": "We borrow one ten to subtract larger numbers neatly.",
-      "ipa": "/wiː ˈbɒrəʊ wʌn tɛn tuː səbˈtrækt ˈlɑːrdʒər ˈnʌmbərz ˈniːtli/"
+      "text": "The wilting leaves were due to no rain.",
+      "ipa": "/ðə ˈwɪltɪŋ livz wɜr du tu noʊ reɪn/",
+      "vietnamese": "Những chiếc lá héo là do không có mưa."
     },
     {
       "id": 3,
-      "speaker": "Emma",
-      "text": "The difference between seventy-two and thirty-eight is thirty-four.",
-      "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈsɛvnti tuː ænd ˈθɜːrti eɪt ɪz ˈθɜːrti fɔːr/"
+      "text": "Consequently, the children brought big watering cans.",
+      "ipa": "/ˈkɑnsəkwəntli ðə ˈtʃɪldrən brɔt bɪɡ ˈwɔtərɪŋ kænz/",
+      "vietnamese": "Kết quả là các em nhỏ đã mang những bình tưới lớn tới."
     },
     {
       "id": 4,
-      "speaker": "Noah",
-      "text": "Drip irrigation saves precious water during a dry season.",
-      "ipa": "/drɪp ˌɪrɪˈɡeɪʃən seɪvz ˈprɛʃəs ˈwɔːtər ˈdjʊərɪŋ ə draɪ ˈsiːzn/"
+      "text": "First, they watered each small green plant.",
+      "ipa": "/fɜrst ðeɪ ˈwɔtərd itʃ smɔl ɡrin plænt/",
+      "vietnamese": "Đầu tiên, các em tưới nước cho từng cây xanh nhỏ."
     },
     {
       "id": 5,
-      "speaker": "Emma",
-      "text": "Our community works together to grow fresh vegetables.",
-      "ipa": "/ˈaʊər kəˈmjuːnəti wɜːrks təˈɡɛðər tuː ɡrəʊ frɛʃ ˈvɛdʒtəblz/"
+      "text": "This careful work led to fresh sweet fruit.",
+      "ipa": "/ðɪs ˈkɛrfəl wɜrk lɛd tu frɛʃ swit frut/",
+      "vietnamese": "Công việc cẩn thận này đã mang lại quả ngọt tươi ngon."
     },
     {
       "id": 6,
-      "speaker": "Noah",
-      "text": "Regrouping tens into ones makes column subtraction simple.",
-      "ipa": "/riːˈɡruːpɪŋ tɛnz ˈɪntuː wʌnz meɪks ˈkɒləm səbˈtrækʃən ˈsɪmpl/"
+      "text": "Finally, red tomatoes grew on every vine.",
+      "ipa": "/ˈfaɪnəli rɛd təˈmeɪtoʊz ɡru ɑn ˈɛvri vaɪn/",
+      "vietnamese": "Cuối cùng, những quả cà chua đỏ đã lớn trên từng cành."
     },
     {
       "id": 7,
-      "speaker": "Emma",
-      "text": "Because we watered the roots, green sprouts grew rapidly.",
-      "ipa": "/bɪˈkɒz wiː ˈwɔːtəd ðə ruːts, ɡriːn spraʊts ɡruː ˈræpɪdli/"
+      "text": "Remember to borrow one ten when subtracting.",
+      "ipa": "/rɪˈmɛmbər tu ˈbɑroʊ wʌn tɛn wɛn səbˈtræktɪŋ/",
+      "vietnamese": "Hãy nhớ mượn một chục khi làm phép trừ."
     },
     {
       "id": 8,
-      "speaker": "Noah",
-      "text": "Every small garden action produces a visible result.",
-      "ipa": "/ˈɛvri smɔːl ˈɡɑːrdən ˈækʃən prəˈdjuːsɪz ə ˈvɪzəbl rɪˈzʌlt/"
+      "text": "Regrouping numbers makes difficult math problems easy.",
+      "ipa": "/riˈɡrupɪŋ ˈnʌmbərz meɪks ˈdɪfəkəlt mæθ ˈprɑbləmz ˈizi/",
+      "vietnamese": "Đổi nhóm các số giúp các bài toán khó trở nên dễ dàng."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 56. Theme: Cause and Effect: The Community Garden.\nSpeaker: Plants wilt when soil loses its natural moisture.\nSpeaker: We borrow one ten to subtract larger numbers neatly.\nSpeaker: The difference between seventy-two and thirty-eight is thirty-four.\nSpeaker: Drip irrigation saves precious water during a dry season.\nSpeaker: Our community works together to grow fresh vegetables.\nSpeaker: Regrouping tens into ones makes column subtraction simple.\nSpeaker: Because we watered the roots, green sprouts grew rapidly.\nSpeaker: Every small garden action produces a visible result."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 56. Theme: ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping.\nSpeaker: Dry weather made the garden soil very thirsty.\nSpeaker: The wilting leaves were due to no rain.\nSpeaker: Consequently, the children brought big watering cans.\nSpeaker: First, they watered each small green plant.\nSpeaker: This careful work led to fresh sweet fruit.\nSpeaker: Finally, red tomatoes grew on every vine.\nSpeaker: Remember to borrow one ten when subtracting.\nSpeaker: Regrouping numbers makes difficult math problems easy."
 };
 export default listeningHubData;

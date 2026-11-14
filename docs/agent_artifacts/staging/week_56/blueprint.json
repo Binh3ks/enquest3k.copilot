@@ -1,8 +1,8 @@
 {
   "week": 56,
-  "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping  / Toán: Phép trừ có nhớ)",
-  "title_en": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping  / Toán: Phép trừ có nhớ)",
-  "title_vi": "ELA: Nguyên nhân & Kết quả (Đoạn văn",
+  "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping",
+  "title_en": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping",
+  "title_vi": "ELA: Nguyên nhân & Kết quả (Đoạn văn) / Toán: Phép trừ có nhớ",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
   "week_type": "full_mock",
@@ -15,10 +15,11 @@
     "focus": "Write a paragraph structured as: Effect -> Cause 1 -> Cause 2"
   },
   "grammar_focus": {
-    "structure": "Sentence Connectors: \"This leads to...\", \"As a result",
+    "structure": "Sentence Connectors: This leads to..., As a result...",
     "outcome": "Write a paragraph structured as: Effect -> Cause 1 -> Cause 2",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Sentence Connectors: This leads to..., As a result..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -246,5 +247,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "week_number": 56
 }

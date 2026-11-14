@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 68 | Theme: "Developing Strong Reasons: Evidence and Data" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 68 | Theme: "ELA: Strong Reasons / Math: Bar Graphs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 68,
-  "theme": "Developing Strong Reasons: Evidence and Data",
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "reason",
-      "pos": "n",
-      "ipa": "/ˈriːzən/",
-      "definition_en": "A logical explanation that justifies an opinion or action.",
-      "definition_vi": "lý do",
-      "example_en": "Give three strong reasons to back up your recommendation.",
-      "example_vi": "Hãy đưa ra ba lý do vững chắc để củng cố lời khuyên của bạn."
-    },
-    {
-      "id": 2,
-      "word": "evidence",
-      "pos": "n",
-      "ipa": "/ˈɛvɪdəns/",
-      "definition_en": "Facts, figures, and details that prove a statement true.",
-      "definition_vi": "bằng chứng",
-      "example_en": "The bar graph provides visual evidence of student choices.",
-      "example_vi": "Biểu đồ cột cung cấp bằng chứng trực quan về lựa chọn của học sinh."
-    },
-    {
-      "id": 3,
-      "word": "specifically",
-      "pos": "adv",
-      "ipa": "/spəˈsɪfɪkli/",
-      "definition_en": "In a clear, exact, and detailed manner.",
-      "definition_vi": "cụ thể là",
-      "example_en": "Specifically, sixty-five students voted for the chess club.",
-      "example_vi": "Cụ thể là có sáu mươi lăm học sinh đã bỏ phiếu cho câu lạc bộ cờ vua."
-    },
-    {
-      "id": 4,
-      "word": "interval",
-      "pos": "n",
-      "ipa": "/ˈɪntərvəl/",
-      "definition_en": "The fixed numerical gap between grid lines on a graph axis.",
-      "definition_vi": "khoảng chia tỉ lệ",
-      "example_en": "The vertical axis has an interval of five units.",
-      "example_vi": "Trục thẳng đứng có khoảng chia tỉ lệ là năm đơn vị."
-    },
-    {
-      "id": 5,
-      "word": "addition",
-      "pos": "n",
-      "ipa": "/əˈdɪʃən/",
-      "definition_en": "The phrase 'in addition' used to add another supporting point.",
-      "definition_vi": "thêm vào đó",
-      "example_en": "In addition, cycling saves bus fare for families.",
-      "example_vi": "Thêm vào đó, việc đi xe đạp giúp các gia đình tiết kiệm tiền vé xe buýt."
-    },
-    {
-      "id": 6,
-      "word": "instance",
-      "pos": "n",
-      "ipa": "/ˈɪnstəns/",
-      "definition_en": "An example or single occurrence of something.",
-      "definition_vi": "ví dụ, trường hợp",
-      "example_en": "For instance, our school planted thirty maple trees.",
-      "example_vi": "Ví dụ như trường chúng tôi đã trồng ba mươi cây phong."
-    },
-    {
-      "id": 7,
-      "word": "scale",
-      "pos": "n",
-      "ipa": "/skeɪl/",
-      "definition_en": "The series of numbers placed at fixed intervals along a graph axis.",
-      "definition_vi": "thang đo",
-      "example_en": "Read the bar height against the vertical scale.",
-      "example_vi": "Hãy đọc chiều cao của cột so với thang đo thẳng đứng."
-    },
-    {
-      "id": 8,
-      "word": "difference",
-      "pos": "n",
-      "ipa": "/ˈdɪfərəns/",
-      "definition_en": "The numerical subtraction result between two bar heights.",
-      "definition_vi": "hiệu số giữa các cột",
-      "example_en": "The difference between sixty-five and forty-two is twenty-three.",
-      "example_vi": "Hiệu số giữa sáu mươi lăm và bốn mươi hai là hai mươi ba."
-    },
-    {
-      "id": 9,
-      "word": "persuasive",
-      "pos": "adj",
-      "ipa": "/pərˈsweɪsɪv/",
-      "definition_en": "Good at making people agree through sound arguments.",
-      "definition_vi": "mang tính thuyết phục",
-      "example_en": "A persuasive writer relies on verifiable statistics.",
-      "example_vi": "Một người viết có sức thuyết phục luôn dựa vào các số liệu thống kê có thể kiểm chứng."
-    },
-    {
-      "id": 10,
-      "word": "height",
-      "pos": "n",
-      "ipa": "/haɪt/",
-      "definition_en": "The vertical measurement from the base to top of a bar.",
-      "definition_vi": "chiều cao",
-      "example_en": "The height of the blue bar reaches forty-five units.",
-      "example_vi": "Chiều cao của cột màu xanh đạt bốn mươi lăm đơn vị."
-    },
-    {
-      "id": 11,
-      "word": "justify",
-      "pos": "v",
-      "ipa": "/ˈdʒʌstɪfaɪ/",
-      "definition_en": "To show or prove to be right or reasonable.",
-      "definition_vi": "chứng minh là hợp lý",
-      "example_en": "Survey numbers justify spending money on library books.",
-      "example_vi": "Số liệu khảo sát chứng minh rằng việc chi tiền mua sách thư viện là hoàn toàn hợp lý."
-    },
-    {
-      "id": 12,
-      "word": "compare",
-      "pos": "v",
-      "ipa": "/kəmˈpɛər/",
-      "definition_en": "To examine differences and similarities between quantities.",
-      "definition_vi": "so sánh",
-      "example_en": "Compare the three bars to find the overall leader.",
-      "example_vi": "Hãy so sánh ba cột để tìm ra hạng mục dẫn đầu toàn diện."
-    },
-    {
-      "id": 13,
-      "word": "category",
-      "pos": "n",
-      "ipa": "/ˈkætəɡəri/",
-      "definition_en": "A distinct group or division shown on the horizontal axis.",
-      "definition_vi": "hạng mục",
-      "example_en": "Each bar represents a unique extracurricular category.",
-      "example_vi": "Mỗi cột đại diện cho một hạng mục ngoại khóa riêng biệt."
-    },
-    {
-      "id": 14,
-      "word": "axis",
-      "pos": "n",
-      "ipa": "/ˈæksɪs/",
-      "definition_en": "A reference line on a chart used to plot measurements.",
-      "definition_vi": "trục đồ thị",
-      "example_en": "Categories are listed on the horizontal axis.",
-      "example_vi": "Các hạng mục được liệt kê trên trục nằm ngang."
-    },
-    {
-      "id": 15,
       "word": "support",
       "pos": "v",
       "ipa": "/səˈpɔːrt/",
-      "definition_en": "To uphold or strengthen an argument with facts.",
-      "definition_vi": "củng cố, hỗ trợ",
-      "example_en": "Two solid reasons support our request for playground balls.",
-      "example_vi": "Hai lý do vững chắc củng cố yêu cầu của chúng tôi về bóng chơi ở sân trường."
+      "definition_en": "To give facts that back up an argument.",
+      "definition_vi": "hỗ trợ, củng cố",
+      "example_en": "Good evidence will support your main claim.",
+      "example_vi": "Bằng chứng tốt sẽ củng cố cho khẳng định chính của bạn."
+    },
+    {
+      "id": 2,
+      "word": "detail",
+      "pos": "n",
+      "ipa": "/ˈdiːteɪl/",
+      "definition_en": "A specific fact or piece of information.",
+      "definition_vi": "chi tiết",
+      "example_en": "Add a detail showing the exact number of votes.",
+      "example_vi": "Hãy thêm một chi tiết cho thấy số lượng phiếu bầu chính xác."
+    },
+    {
+      "id": 3,
+      "word": "fact",
+      "pos": "n",
+      "ipa": "/fækt/",
+      "definition_en": "A piece of information known to be true.",
+      "definition_vi": "sự thật, dữ kiện",
+      "example_en": "It is a proven fact that trees clean our air.",
+      "example_vi": "Đó là một sự thật đã được chứng minh rằng cây xanh làm sạch không khí."
+    },
+    {
+      "id": 4,
+      "word": "true",
+      "pos": "adj",
+      "ipa": "/truː/",
+      "definition_en": "In accordance with fact or reality.",
+      "definition_vi": "đúng, chính xác",
+      "example_en": "The bar graph shows true data from our class survey.",
+      "example_vi": "Biểu đồ cột thể hiện dữ liệu chính xác từ cuộc khảo sát của lớp chúng tôi."
+    },
+    {
+      "id": 5,
+      "word": "prove",
+      "pos": "v",
+      "ipa": "/pruːv/",
+      "definition_en": "To demonstrate the truth or existence of something.",
+      "definition_vi": "chứng minh",
+      "example_en": "Use survey numbers to prove your point.",
+      "example_vi": "Hãy dùng các con số khảo sát để chứng minh quan điểm của bạn."
+    },
+    {
+      "id": 6,
+      "word": "clear",
+      "pos": "adj",
+      "ipa": "/klɪr/",
+      "definition_en": "Easy to see, hear, or understand clearly.",
+      "definition_vi": "rõ ràng",
+      "example_en": "Write in a clear voice so everyone hears.",
+      "example_vi": "Hãy nói bằng một giọng nói rõ ràng để mọi người đều nghe thấy."
+    },
+    {
+      "id": 7,
+      "word": "bar graph",
+      "pos": "phrase",
+      "ipa": "/bɑr ɡræf/",
+      "definition_en": "A diagram using rectangular bars to show data.",
+      "definition_vi": "biểu đồ cột",
+      "example_en": "A scaled bar graph makes comparing numbers simple.",
+      "example_vi": "Biểu đồ cột có thang đo giúp việc so sánh các con số trở nên đơn giản."
+    },
+    {
+      "id": 8,
+      "word": "scale",
+      "pos": "n",
+      "ipa": "/skeɪl/",
+      "definition_en": "A series of marks at regular intervals on a graph.",
+      "definition_vi": "thang đo",
+      "example_en": "The scale counts up by fives on the side axis.",
+      "example_vi": "Thang đo đếm tăng lên theo khoảng năm đơn vị ở trục bên."
+    },
+    {
+      "id": 9,
+      "word": "height",
+      "pos": "n",
+      "ipa": "/haɪt/",
+      "definition_en": "The measurement from base to top.",
+      "definition_vi": "chiều cao",
+      "example_en": "The height of each bar shows the number of votes.",
+      "example_vi": "Chiều cao của mỗi cột thể hiện số phiếu bầu."
+    },
+    {
+      "id": 10,
+      "word": "value",
+      "pos": "n",
+      "ipa": "/ˈvæljuː/",
+      "definition_en": "The numerical amount denoted by a mark.",
+      "definition_vi": "giá trị",
+      "example_en": "Read the value where the bar reaches the line.",
+      "example_vi": "Đọc giá trị tại nơi cột chạm tới đường kẻ."
+    },
+    {
+      "id": 11,
+      "word": "compare",
+      "pos": "v",
+      "ipa": "/kəmˈpɛr/",
+      "definition_en": "To look at two things to see how they are alike.",
+      "definition_vi": "so sánh",
+      "example_en": "Compare the green bar with the red bar.",
+      "example_vi": "So sánh cột màu xanh lá với cột màu đỏ."
+    },
+    {
+      "id": 12,
+      "word": "skip counting",
+      "pos": "phrase",
+      "ipa": "/skɪp ˈkaʊntɪŋ/",
+      "definition_en": "Counting by a number other than one.",
+      "definition_vi": "đếm cách quãng",
+      "example_en": "Skip counting by tens helps read tall graphs quickly.",
+      "example_vi": "Đếm cách mười giúp đọc các biểu đồ cao một cách nhanh chóng."
+    },
+    {
+      "id": 13,
+      "word": "reason",
+      "pos": "n",
+      "ipa": "/ˈriːzən/",
+      "definition_en": "An explanation that supports a point of view.",
+      "definition_vi": "lý do",
+      "example_en": "Give two strong reasons in your paragraph.",
+      "example_vi": "Hãy đưa ra hai lý do mạnh mẽ trong đoạn văn của bạn."
+    },
+    {
+      "id": 14,
+      "word": "example",
+      "pos": "n",
+      "ipa": "/ɪɡˈzæmpəl/",
+      "definition_en": "A fact or story that shows what something is like.",
+      "definition_vi": "ví dụ minh họa",
+      "example_en": "She gave a colorful example from recess.",
+      "example_vi": "Cô bé đã đưa ra một ví dụ sinh động từ giờ ra chơi."
+    },
+    {
+      "id": 15,
+      "word": "information",
+      "pos": "n",
+      "ipa": "/ˌɪnfərˈmeɪʃən/",
+      "definition_en": "Facts provided or learned about something.",
+      "definition_vi": "thông tin",
+      "example_en": "The bar chart gives helpful facts and information.",
+      "example_vi": "Biểu đồ cung cấp thông tin chính xác về các lượt đến thư viện."
     },
     {
       "id": 16,
-      "word": "convincing",
-      "pos": "adj",
-      "ipa": "/kənˈvɪnsɪŋ/",
-      "definition_en": "Leaving no doubt, credible and plausible.",
-      "definition_vi": "thuyết phục, đáng tin",
-      "example_en": "The scientific study offered convincing proof.",
-      "example_vi": "Nghiên cứu khoa học đã đưa ra bằng chứng đầy thuyết phục."
+      "word": "sport",
+      "pos": "n",
+      "ipa": "/spɔːrt/",
+      "definition_en": "A game or sport match that people play for fun.",
+      "definition_vi": "môn thể thao",
+      "example_en": "Basketball is a very popular sport.",
+      "example_vi": "Bóng rổ là một môn thể thao rất phổ biến."
     },
     {
       "id": 17,
-      "word": "statistic",
+      "word": "hobby",
       "pos": "n",
-      "ipa": "/stəˈtɪstɪk/",
-      "definition_en": "A factual piece of numerical data from a study.",
-      "definition_vi": "số liệu thống kê",
-      "example_en": "Cite a compelling statistic in your body paragraph.",
-      "example_vi": "Hãy trích dẫn một số liệu thống kê hấp dẫn trong đoạn thân bài của bạn."
+      "ipa": "/ˈhɑːbi/",
+      "definition_en": "An activity done for fun when you are not working.",
+      "definition_vi": "sở thích",
+      "example_en": "Drawing is my favorite weekend hobby.",
+      "example_vi": "Vẽ tranh là sở thích cuối tuần yêu thích nhất của tôi."
     },
     {
       "id": 18,
-      "word": "total",
+      "word": "club",
       "pos": "n",
-      "ipa": "/ˈtəʊtl/",
-      "definition_en": "The whole sum obtained by adding all quantities together.",
-      "definition_vi": "tổng số",
-      "example_en": "The total of thirty-five, forty, and fifty-five is one hundred thirty.",
-      "example_vi": "Tổng của ba mươi lăm, bốn mươi và năm mươi lăm là một trăm ba mươi."
+      "ipa": "/klʌb/",
+      "definition_en": "A group of students who meet for a shared activity.",
+      "definition_vi": "câu lạc bộ",
+      "example_en": "Twenty students joined the chess club.",
+      "example_vi": "Hai mươi học sinh đã tham gia câu lạc bộ cờ vua."
     },
     {
       "id": 19,
-      "word": "claim",
-      "pos": "n",
-      "ipa": "/kleɪm/",
-      "definition_en": "An assertion that something is true or beneficial.",
-      "definition_vi": "luận điểm khẳng định",
-      "example_en": "Support every major claim with verifiable survey facts.",
-      "example_vi": "Hãy củng cố mọi luận điểm lớn bằng các sự thật khảo sát có thể kiểm chứng."
+      "word": "count",
+      "pos": "v",
+      "ipa": "/kaʊnt/",
+      "definition_en": "To determine the total number of items.",
+      "definition_vi": "đếm",
+      "example_en": "Count the marks carefully before drawing the bar.",
+      "example_vi": "Hãy đếm các ký hiệu cẩn thận trước khi vẽ cột."
     },
     {
       "id": 20,
-      "word": "conclude",
-      "pos": "v",
-      "ipa": "/kənˈkluːd/",
-      "definition_en": "To reach a logical decision based on gathered evidence.",
-      "definition_vi": "kết luận",
-      "example_en": "We conclude that after-school clubs improve student wellness.",
-      "example_vi": "Chúng tôi kết luận rằng các câu lạc bộ sau giờ học nâng cao sức khỏe học sinh."
+      "word": "student",
+      "pos": "n",
+      "ipa": "/ˈstuːdnt/",
+      "definition_en": "A learner attending school.",
+      "definition_vi": "học sinh",
+      "example_en": "Every student worked hard on the class project.",
+      "example_vi": "Mỗi học sinh đều tham gia vào dự án vẽ biểu đồ."
     }
   ],
-  "clil_article": {
-    "title_en": "Building Strong Reasons with Evidence and Bar Graphs",
-    "title_vi": "Xây dựng Lý do Đanh thép bằng Bằng chứng và Biểu đồ Cột",
-    "content_en": "In persuasive writing, simply expressing an opinion is never enough to win an argument. Writers must construct strong, bulletproof reasons supported by concrete evidence and authentic data. To guide readers through a logical train of thought, skilled authors employ reasoning connectors: 'For instance' introduces specific cases, 'In addition' layers an extra supporting point, and 'Specifically' presents precise numbers. A bar graph is an indispensable tool for displaying comparative evidence. Unlike pictographs that count icons, a bar graph uses solid vertical or horizontal bars whose lengths correspond directly to an axis scale. Reading bar graphs accurately requires checking the axis intervals. For example, if a vertical axis marks intervals of 5 or 10 units, a bar reaching the 45-mark represents 45 participants. If Club A has 45 members and Club B has 28 members, the difference is 45 - 28 = 17 members. When summing data across three school clubs with 35, 40, and 55 members, the total combined participation is 35 + 40 + 55 = 130 students. Connecting numerical facts from bar graphs to persuasive reasoning creates essays that inform, inspire, and convince readers.",
-    "glossary": [
-      {
-        "word": "reason",
-        "definition_en": "Explanation justifying an opinion",
-        "definition_vi": "lý do"
-      },
-      {
-        "word": "evidence",
-        "definition_en": "Verifiable factual data",
-        "definition_vi": "bằng chứng"
-      },
-      {
-        "word": "specifically",
-        "definition_en": "In exact and precise detail",
-        "definition_vi": "cụ thể là"
-      },
-      {
-        "word": "interval",
-        "definition_en": "Numerical spacing on a graph axis",
-        "definition_vi": "khoảng chia"
-      },
-      {
-        "word": "difference",
-        "definition_en": "Subtraction gap between quantities",
-        "definition_vi": "hiệu số"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "Which transitional phrase is used to introduce an exact numerical detail?",
-        "options": [
-          "Specifically",
-          "Suddenly",
-          "Maybe"
-        ],
-        "answer": "Specifically"
-      },
-      {
-        "id": 2,
-        "question_en": "What is the difference between a bar at 45 and a bar at 28?",
-        "options": [
-          "17 units",
-          "27 units",
-          "13 units"
-        ],
-        "answer": "17 units"
-      },
-      {
-        "id": 3,
-        "question_en": "What is the total of three bars measuring 35, 40, and 55?",
-        "options": [
-          "130",
-          "120",
-          "140"
-        ],
-        "answer": "130"
-      }
-    ],
-    "text": "In persuasive writing, simply expressing an opinion is never enough to win an argument. Writers must construct strong, bulletproof reasons supported by concrete evidence and authentic data. To guide readers through a logical train of thought, skilled authors employ reasoning connectors: 'For instance' introduces specific cases, 'In addition' layers an extra supporting point, and 'Specifically' presents precise numbers. A bar graph is an indispensable tool for displaying comparative evidence. Unlike pictographs that count icons, a bar graph uses solid vertical or horizontal bars whose lengths correspond directly to an axis scale. Reading bar graphs accurately requires checking the axis intervals. For example, if a vertical axis marks intervals of 5 or 10 units, a bar reaching the 45-mark represents 45 participants. If Club A has 45 members and Club B has 28 members, the difference is 45 - 28 = 17 members. When summing data across three school clubs with 35, 40, and 55 members, the total combined participation is 35 + 40 + 55 = 130 students. Connecting numerical facts from bar graphs to persuasive reasoning creates essays that inform, inspire, and convince readers."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "Using Bar Graphs to Support Facts",
+    "title_vi": "Dùng Biểu đồ Cột để Củng cố Sự thật",
+    "content_en": "When you write an opinion essay, you must support your ideas with clear facts. Readers believe an argument when they see true evidence. We use connectors of addition like 'Furthermore', 'In addition', and 'For example' to link our supporting details together. In math, a scaled bar graph is one of the best tools to prove a point. A bar graph uses rectangular bars to show data. On a scaled graph, the scale along the side counts by twos, fives, or tens (using skip counting). The height of each bar shows the exact value of each group. For example, if twenty students joined the reading club and only five joined the singing club, the reading bar reaches twenty on the scale. In addition, the graph proves that reading is the most popular activity. Combining strong reasons with true bar graphs makes your writing powerful and clear.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What words help link supporting facts together?",
+        "question_vi": "Những từ nào giúp liên kết các sự thật bổ trợ lại với nhau?",
+        "options": [
+          "Furthermore, In addition, and For example",
+          "Goodbye, Never, and Stop",
+          "Red, Yellow, and Blue"
+        ],
+        "answer": "Furthermore, In addition, and For example"
+      },
+      {
+        "id": "q2",
+        "question_en": "What shows the value of a category on a bar graph?",
+        "question_vi": "Điều gì thể hiện giá trị của một danh mục trên biểu đồ cột?",
+        "options": [
+          "The height of each bar",
+          "The color of the frame",
+          "The weight of the paper"
+        ],
+        "answer": "The height of each bar"
+      },
+      {
+        "id": "q3",
+        "question_en": "How does a scaled graph count numbers on the side?",
+        "question_vi": "Biểu đồ có thang đo đếm các số ở bên cạnh như thế nào?",
+        "options": [
+          "By skip counting by twos, fives, or tens",
+          "By writing letters of the alphabet",
+          "By drawing circles only"
+        ],
+        "answer": "By skip counting by twos, fives, or tens"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "support",
+        "definition_en": "To provide evidence that backs up an idea."
+      },
+      {
+        "term": "bar graph",
+        "definition_en": "A visual chart using bars to compare data."
+      },
+      {
+        "term": "scale",
+        "definition_en": "The numbered marks used for measuring on a graph."
+      },
+      {
+        "term": "height",
+        "definition_en": "The vertical measure showing quantity on a bar graph."
+      },
+      {
+        "term": "prove",
+        "definition_en": "To show that a statement is true using facts."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "Good writers support their opinions with true facts.",
+      "ipa": "/ɡʊd ˈraɪtərz səˈpɔrt ðɛr əˈpɪnjənz wɪð tru fækts/",
+      "vietnamese": "Những người viết giỏi luôn củng cố quan điểm bằng sự thật chính xác."
+    },
+    {
+      "id": 2,
+      "text": "Furthermore, adding examples makes your point very clear.",
+      "ipa": "/ˈfɜrðərˌmɔr ˈædɪŋ ɪɡˈzæmpəlz meɪks jʊər pɔɪnt ˈvɛri klɪr/",
+      "vietnamese": "Hơn nữa, thêm ví dụ sẽ làm cho luận điểm của bạn rất rõ ràng."
+    },
+    {
+      "id": 3,
+      "text": "In addition, we use bar graphs to prove our findings.",
+      "ipa": "/ɪn əˈdɪʃən wi juz bɑr ɡræfs tu pruv ˈaʊər ˈfaɪndɪŋz/",
+      "vietnamese": "Ngoài ra, chúng ta dùng biểu đồ cột để chứng minh những phát hiện của mình."
+    },
+    {
+      "id": 4,
+      "text": "The scale on the side counts up by fives.",
+      "ipa": "/ðə skeɪl ɑn ðə saɪd kaʊnts ʌp baɪ faɪvz/",
+      "vietnamese": "Thang đo ở bên cạnh đếm tăng lên theo khoảng năm đơn vị."
+    },
+    {
+      "id": 5,
+      "text": "The height of the bar shows thirty student votes.",
+      "ipa": "/ðə haɪt ʌv ðə bɑr ʃoʊz ˈθɜrti ˈstudənt voʊts/",
+      "vietnamese": "Chiều cao của cột thể hiện ba mươi phiếu bầu của học sinh."
+    },
+    {
+      "id": 6,
+      "text": "Skip counting helps us read big numbers quickly.",
+      "ipa": "/skɪp ˈkaʊntɪŋ hɛlps ʌs rid bɪɡ ˈnʌmbərz ˈkwɪkli/",
+      "vietnamese": "Đếm cách quãng giúp chúng ta đọc các số lớn một cách nhanh chóng."
+    },
+    {
+      "id": 7,
+      "text": "Compare the heights to find the tallest bar.",
+      "ipa": "/kəmˈpɛr ðə haɪts tu faɪnd ðə ˈtɔləst bɑr/",
+      "vietnamese": "Hãy so sánh các chiều cao để tìm ra chiếc cột cao nhất."
+    },
+    {
+      "id": 8,
+      "text": "True data makes every argument strong and convincing.",
+      "ipa": "/tru ˈdeɪtə meɪks ˈɛvri ˈɑrɡjəmənt strɔŋ ænd kənˈvɪnsɪŋ/",
+      "vietnamese": "Dữ liệu chính xác làm cho mọi lập luận trở nên mạnh mẽ và thuyết phục."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Lucas",
-        "text": "Strong reasons turn personal opinions into persuasive arguments.",
-        "ipa": "/strɒŋ ˈriːznz tɜːrn ˈpɜːrsənl əˈpɪnjənz ˈɪntuː pərˈsweɪsɪv ˈɑːrɡjʊmənts/"
+        "text": "Good writers support their opinions with true facts.",
+        "ipa": "/ɡʊd ˈraɪtərz səˈpɔrt ðɛr əˈpɪnjənz wɪð tru fækts/",
+        "vietnamese": "Những người viết giỏi luôn củng cố quan điểm bằng sự thật chính xác."
       },
       {
         "id": 2,
-        "speaker": "Chloe",
-        "text": "Specifically, sixty-five students chose chess as their preferred after-school club.",
-        "ipa": "/spəˈsɪfɪkli, ˈsɪksti faɪv ˈstjuːdnts tʃəʊz tʃɛs æz ðɛər prɪˈfɜːrd ˈɑːftər skuːl klʌb/"
+        "text": "Furthermore, adding examples makes your point very clear.",
+        "ipa": "/ˈfɜrðərˌmɔr ˈædɪŋ ɪɡˈzæmpəlz meɪks jʊər pɔɪnt ˈvɛri klɪr/",
+        "vietnamese": "Hơn nữa, thêm ví dụ sẽ làm cho luận điểm của bạn rất rõ ràng."
+      },
+      {
+        "id": 3,
+        "text": "In addition, we use bar graphs to prove our findings.",
+        "ipa": "/ɪn əˈdɪʃən wi juz bɑr ɡræfs tu pruv ˈaʊər ˈfaɪndɪŋz/",
+        "vietnamese": "Ngoài ra, chúng ta dùng biểu đồ cột để chứng minh những phát hiện của mình."
+      },
+      {
+        "id": 4,
+        "text": "The scale on the side counts up by fives.",
+        "ipa": "/ðə skeɪl ɑn ðə saɪd kaʊnts ʌp baɪ faɪvz/",
+        "vietnamese": "Thang đo ở bên cạnh đếm tăng lên theo khoảng năm đơn vị."
+      },
+      {
+        "id": 5,
+        "text": "The height of the bar shows thirty student votes.",
+        "ipa": "/ðə haɪt ʌv ðə bɑr ʃoʊz ˈθɜrti ˈstudənt voʊts/",
+        "vietnamese": "Chiều cao của cột thể hiện ba mươi phiếu bầu của học sinh."
+      },
+      {
+        "id": 6,
+        "text": "Skip counting helps us read big numbers quickly.",
+        "ipa": "/skɪp ˈkaʊntɪŋ hɛlps ʌs rid bɪɡ ˈnʌmbərz ˈkwɪkli/",
+        "vietnamese": "Đếm cách quãng giúp chúng ta đọc các số lớn một cách nhanh chóng."
+      },
+      {
+        "id": 7,
+        "text": "Compare the heights to find the tallest bar.",
+        "ipa": "/kəmˈpɛr ðə haɪts tu faɪnd ðə ˈtɔləst bɑr/",
+        "vietnamese": "Hãy so sánh các chiều cao để tìm ra chiếc cột cao nhất."
+      },
+      {
+        "id": 8,
+        "text": "True data makes every argument strong and convincing.",
+        "ipa": "/tru ˈdeɪtə meɪks ˈɛvri ˈɑrɡjəmənt strɔŋ ænd kənˈvɪnsɪŋ/",
+        "vietnamese": "Dữ liệu chính xác làm cho mọi lập luận trở nên mạnh mẽ và thuyết phục."
+      }
+    ]
+  },
+  "rw_part1": {
+    "word_bank": [
+      "support",
+      "detail",
+      "fact",
+      "true",
+      "prove",
+      "clear",
+      "bar graph",
+      "scale",
+      "height",
+      "value",
+      "compare",
+      "skip counting",
+      "reason",
+      "example",
+      "information",
+      "sport",
+      "hobby",
+      "club",
+      "count",
+      "student"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A cause or explanation for an action, event, or belief.",
+        "target": "reason",
+        "definition": "A cause or explanation for an action, event, or belief.",
+        "word": "reason",
+        "definition_en": "A cause or explanation for an action, event, or belief.",
+        "options": [
+          "reason",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "reason"
+      },
+      {
+        "id": 2,
+        "text": "Facts or information indicating whether a belief is true.",
+        "target": "evidence",
+        "definition": "Facts or information indicating whether a belief is true.",
+        "word": "evidence",
+        "definition_en": "Facts or information indicating whether a belief is true.",
+        "options": [
+          "evidence",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "evidence"
+      },
+      {
+        "id": 3,
+        "text": "Facts and statistics collected together for reference or analysis.",
+        "target": "data",
+        "definition": "Facts and statistics collected together for reference or analysis.",
+        "word": "data",
+        "definition_en": "Facts and statistics collected together for reference or analysis.",
+        "options": [
+          "data",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "data"
+      },
+      {
+        "id": 4,
+        "text": "A sheet of information in the form of a diagram, table, or graph.",
+        "target": "chart",
+        "definition": "A sheet of information in the form of a diagram, table, or graph.",
+        "word": "chart",
+        "definition_en": "A sheet of information in the form of a diagram, table, or graph.",
+        "options": [
+          "chart",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "chart"
+      },
+      {
+        "id": 5,
+        "text": "To cause someone to believe firmly in the truth of something.",
+        "target": "convince",
+        "definition": "To cause someone to believe firmly in the truth of something.",
+        "word": "convince",
+        "definition_en": "To cause someone to believe firmly in the truth of something.",
+        "options": [
+          "convince",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "convince"
+      }
+    ]
+  },
+  "rw_part2": {
+    "title": "Using Evidence and Data to Build Strong Reasons",
+    "topic": "Using Evidence and Data to Build Strong Reasons",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "Why is data important when presenting an argument to the school council?",
+        "text": "Why is data important when presenting an argument to the school council?",
+        "options": [
+          "Because authentic survey data provides verifiable proof for your opinions.",
+          "I bought new running shoes at the department store.",
+          "The train reached the station thirty minutes late."
+        ],
+        "answer": "Because authentic survey data provides verifiable proof for your opinions."
+      },
+      {
+        "id": 2,
+        "speaker": "Lily",
+        "prompt": "How did the bar chart support our proposal for a new reading corner?",
+        "text": "How did the bar chart support our proposal for a new reading corner?",
+        "options": [
+          "It showed clearly that sixty-five students want more books in the library.",
+          "My father drives a silver delivery van on weekdays.",
+          "The supermarket sells fresh milk and cheese."
+        ],
+        "answer": "It showed clearly that sixty-five students want more books in the library."
       },
       {
         "id": 3,
         "speaker": "Lucas",
-        "text": "The difference between sixty-five and forty-two is twenty-three votes.",
-        "ipa": "/ðə ˈdɪfərəns bɪˈtwiːn ˈsɪksti faɪv ænd ˈfɔːrti tuː ɪz ˈtwɛnti θriː vəʊts/"
+        "prompt": "How many students participated in our school survey overall?",
+        "text": "How many students participated in our school survey overall?",
+        "options": [
+          "Seventy-five girls and sixty boys returned completed survey forms.",
+          "I had a cheese toastie and an apple for lunch.",
+          "The art gallery has five exhibition rooms."
+        ],
+        "answer": "Seventy-five girls and sixty boys returned completed survey forms."
       },
       {
         "id": 4,
-        "speaker": "Chloe",
-        "text": "Thirty-five plus forty plus fifty-five gives one hundred thirty participants.",
-        "ipa": "/ˈθɜːrti faɪv plʌs ˈfɔːrti plʌs ˈfɪfti faɪv ɡɪvz wʌn ˈhʌndrəd ˈθɜːrti pɑːrˈtɪsɪpənts/"
+        "speaker": "Lily",
+        "prompt": "What is the total number of survey participants across both groups?",
+        "text": "What is the total number of survey participants across both groups?",
+        "options": [
+          "Seventy-five plus sixty equals one hundred thirty-five participants.",
+          "I wear my blue baseball cap on sunny afternoons.",
+          "The soccer match ended in a draw."
+        ],
+        "answer": "Seventy-five plus sixty equals one hundred thirty-five participants."
       },
       {
         "id": 5,
         "speaker": "Lucas",
-        "text": "Bar graphs display numerical comparisons clearly against a measured axis scale.",
-        "ipa": "/bɑːr ɡrɑːfs dɪˈspleɪ njuːˈmɛrɪkl kəmˈpærɪsnz ˈklɪərli əˈɡɛnst ə ˈmɛʒəd ˈæksɪs skeɪl/"
-      },
-      {
-        "id": 6,
-        "speaker": "Chloe",
-        "text": "In addition, connectors like for instance illustrate points with authentic facts.",
-        "ipa": "/ɪn əˈdɪʃən, kəˈnɛktərz laɪk fɔːr ˈɪnstəns ˈɪləstreɪt pɔɪnts wɪð ɔːˈθɛntɪk fækts/"
-      },
-      {
-        "id": 7,
-        "speaker": "Lucas",
-        "text": "Examine the axis interval to determine the exact numerical value of each bar.",
-        "ipa": "/ɪɡˈzæmɪn ði ˈæksɪs ˈɪntərvəl tuː dɪˈtɜːrmɪn ði ɪɡˈzækt njuːˈmɛrɪkl ˈvæljuː ɒv iːtʃ bɑːr/"
-      },
-      {
-        "id": 8,
-        "speaker": "Chloe",
-        "text": "Verifiable evidence convinces leaders to support student-led initiatives.",
-        "ipa": "/ˈvɛrɪfaɪəbl ˈɛvɪdəns kənˈvɪnsɪz ˈliːdərz tuː səˈpɔːrt ˈstjuːdnt lɛd ɪˈnɪʃətɪvz/"
+        "prompt": "Shall we present our evidence chart during the assembly tomorrow?",
+        "text": "Shall we present our evidence chart during the assembly tomorrow?",
+        "options": [
+          "Yes, let's explain the statistics with clear voices and diagrams!",
+          "I do not like chocolate pudding after dinner.",
+          "The bus stopped near the central railway station."
+        ],
+        "answer": "Yes, let's explain the statistics with clear voices and diagrams!"
       }
-    ]
-  },
-  "rw_part1": [
-    {
-      "definition": "In an exact, detailed, and precise manner.",
-      "word": "specifically"
-    },
-    {
-      "definition": "Facts and numbers showing that an argument is true.",
-      "word": "evidence"
-    },
-    {
-      "definition": "The numerical spacing between marks on a graph axis.",
-      "word": "interval"
-    },
-    {
-      "definition": "An explanation that supports and proves an opinion.",
-      "word": "reason"
-    },
-    {
-      "definition": "A chart showing data as solid rectangular columns.",
-      "word": "bar graph"
-    }
-  ],
-  "rw_part2": {
-    "title": "Interpreting Bar Graph Data",
+    ],
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "How many students voted for the chess club on the bar graph?"
+        "text": "Because authentic survey data provides verifiable proof for your opinions."
       },
       {
-        "speaker": "Chloe",
-        "text": "Specifically, sixty-five students chose chess."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What was the difference between chess and drama votes?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Sixty-five minus forty-two equals twenty-three votes."
+        "speaker": "Lily",
+        "text": "It showed clearly that sixty-five students want more books in the library."
       },
       {
         "speaker": "Lucas",
-        "text": "And the sum of all three sports bars is one hundred thirty!"
+        "text": "Seventy-five girls and sixty boys returned completed survey forms."
+      },
+      {
+        "speaker": "Lily",
+        "text": "Seventy-five plus sixty equals one hundred thirty-five participants."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, let's explain the statistics with clear voices and diagrams!"
       }
     ]
   },
   "rw_part6": {
-    "text": "When writers build persuasive essays, they support their claims with strong (1) ___. They introduce numerical facts using the word '(2) ___' and connect ideas with 'In addition'. In mathematics, a (3) ___ graph displays information using solid columns. By checking the axis (4) ___, readers calculate exact totals and differences to substantiate their written claims.",
-    "answers": [
-      "reasons",
-      "specifically",
-      "bar",
-      "intervals"
+    "title": "Lily's Research Diary: Strong Reasons",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "When you want to convince people, you need [1]_____ use strong evidence. Facts, survey data, and examples turn personal feelings [2]_____ persuasive arguments. Last week, our class conducted [3]_____ survey about playground activities. We organized the numerical results [4]_____ a colorful bar graph. Presenting real data helped the principal understand [5]_____ ideas clearly.",
+    "answers": {
+      "1": "to",
+      "2": "into",
+      "3": "a",
+      "4": "on",
+      "5": "our"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "support",
+      "detail",
+      "fact",
+      "true",
+      "prove",
+      "clear",
+      "bar graph",
+      "scale",
+      "height",
+      "value",
+      "compare",
+      "skip counting",
+      "reason",
+      "example",
+      "information",
+      "sport",
+      "hobby",
+      "club",
+      "count",
+      "student"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A cause or explanation for an action, event, or belief.",
+        "target": "reason",
+        "definition": "A cause or explanation for an action, event, or belief.",
+        "word": "reason",
+        "definition_en": "A cause or explanation for an action, event, or belief.",
+        "options": [
+          "reason",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "reason"
+      },
+      {
+        "id": 2,
+        "text": "Facts or information indicating whether a belief is true.",
+        "target": "evidence",
+        "definition": "Facts or information indicating whether a belief is true.",
+        "word": "evidence",
+        "definition_en": "Facts or information indicating whether a belief is true.",
+        "options": [
+          "evidence",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "evidence"
+      },
+      {
+        "id": 3,
+        "text": "Facts and statistics collected together for reference or analysis.",
+        "target": "data",
+        "definition": "Facts and statistics collected together for reference or analysis.",
+        "word": "data",
+        "definition_en": "Facts and statistics collected together for reference or analysis.",
+        "options": [
+          "data",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "data"
+      },
+      {
+        "id": 4,
+        "text": "A sheet of information in the form of a diagram, table, or graph.",
+        "target": "chart",
+        "definition": "A sheet of information in the form of a diagram, table, or graph.",
+        "word": "chart",
+        "definition_en": "A sheet of information in the form of a diagram, table, or graph.",
+        "options": [
+          "chart",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "chart"
+      },
+      {
+        "id": 5,
+        "text": "To cause someone to believe firmly in the truth of something.",
+        "target": "convince",
+        "definition": "To cause someone to believe firmly in the truth of something.",
+        "word": "convince",
+        "definition_en": "To cause someone to believe firmly in the truth of something.",
+        "options": [
+          "convince",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "convince"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "In an exact, detailed, and precise manner.",
-      "word": "specifically"
-    },
-    {
-      "definition": "Facts and numbers showing that an argument is true.",
-      "word": "evidence"
-    },
-    {
-      "definition": "The numerical spacing between marks on a graph axis.",
-      "word": "interval"
-    },
-    {
-      "definition": "An explanation that supports and proves an opinion.",
-      "word": "reason"
-    },
-    {
-      "definition": "A chart showing data as solid rectangular columns.",
-      "word": "bar graph"
-    }
-  ],
   "rw_part_2": {
-    "title": "Interpreting Bar Graph Data",
+    "title": "Using Evidence and Data to Build Strong Reasons",
+    "topic": "Using Evidence and Data to Build Strong Reasons",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "Why is data important when presenting an argument to the school council?",
+        "text": "Why is data important when presenting an argument to the school council?",
+        "options": [
+          "Because authentic survey data provides verifiable proof for your opinions.",
+          "I bought new running shoes at the department store.",
+          "The train reached the station thirty minutes late."
+        ],
+        "answer": "Because authentic survey data provides verifiable proof for your opinions."
+      },
+      {
+        "id": 2,
+        "speaker": "Lily",
+        "prompt": "How did the bar chart support our proposal for a new reading corner?",
+        "text": "How did the bar chart support our proposal for a new reading corner?",
+        "options": [
+          "It showed clearly that sixty-five students want more books in the library.",
+          "My father drives a silver delivery van on weekdays.",
+          "The supermarket sells fresh milk and cheese."
+        ],
+        "answer": "It showed clearly that sixty-five students want more books in the library."
+      },
+      {
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "How many students participated in our school survey overall?",
+        "text": "How many students participated in our school survey overall?",
+        "options": [
+          "Seventy-five girls and sixty boys returned completed survey forms.",
+          "I had a cheese toastie and an apple for lunch.",
+          "The art gallery has five exhibition rooms."
+        ],
+        "answer": "Seventy-five girls and sixty boys returned completed survey forms."
+      },
+      {
+        "id": 4,
+        "speaker": "Lily",
+        "prompt": "What is the total number of survey participants across both groups?",
+        "text": "What is the total number of survey participants across both groups?",
+        "options": [
+          "Seventy-five plus sixty equals one hundred thirty-five participants.",
+          "I wear my blue baseball cap on sunny afternoons.",
+          "The soccer match ended in a draw."
+        ],
+        "answer": "Seventy-five plus sixty equals one hundred thirty-five participants."
+      },
+      {
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "Shall we present our evidence chart during the assembly tomorrow?",
+        "text": "Shall we present our evidence chart during the assembly tomorrow?",
+        "options": [
+          "Yes, let's explain the statistics with clear voices and diagrams!",
+          "I do not like chocolate pudding after dinner.",
+          "The bus stopped near the central railway station."
+        ],
+        "answer": "Yes, let's explain the statistics with clear voices and diagrams!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "How many students voted for the chess club on the bar graph?"
+        "text": "Because authentic survey data provides verifiable proof for your opinions."
       },
       {
-        "speaker": "Chloe",
-        "text": "Specifically, sixty-five students chose chess."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What was the difference between chess and drama votes?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "Sixty-five minus forty-two equals twenty-three votes."
+        "speaker": "Lily",
+        "text": "It showed clearly that sixty-five students want more books in the library."
       },
       {
         "speaker": "Lucas",
-        "text": "And the sum of all three sports bars is one hundred thirty!"
+        "text": "Seventy-five girls and sixty boys returned completed survey forms."
+      },
+      {
+        "speaker": "Lily",
+        "text": "Seventy-five plus sixty equals one hundred thirty-five participants."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, let's explain the statistics with clear voices and diagrams!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "When writers build persuasive essays, they support their claims with strong (1) ___. They introduce numerical facts using the word '(2) ___' and connect ideas with 'In addition'. In mathematics, a (3) ___ graph displays information using solid columns. By checking the axis (4) ___, readers calculate exact totals and differences to substantiate their written claims.",
-    "answers": [
-      "reasons",
-      "specifically",
-      "bar",
-      "intervals"
-    ]
+    "title": "Lily's Research Diary: Strong Reasons",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "When you want to convince people, you need [1]_____ use strong evidence. Facts, survey data, and examples turn personal feelings [2]_____ persuasive arguments. Last week, our class conducted [3]_____ survey about playground activities. We organized the numerical results [4]_____ a colorful bar graph. Presenting real data helped the principal understand [5]_____ ideas clearly.",
+    "answers": {
+      "1": "to",
+      "2": "into",
+      "3": "a",
+      "4": "on",
+      "5": "our"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A cause or explanation for an action, event, or belief.",
+        "target": "reason",
+        "definition": "A cause or explanation for an action, event, or belief.",
+        "word": "reason",
+        "definition_en": "A cause or explanation for an action, event, or belief.",
+        "options": [
+          "reason",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "reason"
+      },
+      {
+        "id": 2,
+        "text": "Facts or information indicating whether a belief is true.",
+        "target": "evidence",
+        "definition": "Facts or information indicating whether a belief is true.",
+        "word": "evidence",
+        "definition_en": "Facts or information indicating whether a belief is true.",
+        "options": [
+          "evidence",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "evidence"
+      },
+      {
+        "id": 3,
+        "text": "Facts and statistics collected together for reference or analysis.",
+        "target": "data",
+        "definition": "Facts and statistics collected together for reference or analysis.",
+        "word": "data",
+        "definition_en": "Facts and statistics collected together for reference or analysis.",
+        "options": [
+          "data",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "data"
+      },
+      {
+        "id": 4,
+        "text": "A sheet of information in the form of a diagram, table, or graph.",
+        "target": "chart",
+        "definition": "A sheet of information in the form of a diagram, table, or graph.",
+        "word": "chart",
+        "definition_en": "A sheet of information in the form of a diagram, table, or graph.",
+        "options": [
+          "chart",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "chart"
+      },
+      {
+        "id": 5,
+        "text": "To cause someone to believe firmly in the truth of something.",
+        "target": "convince",
+        "definition": "To cause someone to believe firmly in the truth of something.",
+        "word": "convince",
+        "definition_en": "To cause someone to believe firmly in the truth of something.",
+        "options": [
+          "convince",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "convince"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Using Evidence and Data to Build Strong Reasons",
+      "topic": "Using Evidence and Data to Build Strong Reasons",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Lucas",
+          "prompt": "Why is data important when presenting an argument to the school council?",
+          "text": "Why is data important when presenting an argument to the school council?",
+          "options": [
+            "Because authentic survey data provides verifiable proof for your opinions.",
+            "I bought new running shoes at the department store.",
+            "The train reached the station thirty minutes late."
+          ],
+          "answer": "Because authentic survey data provides verifiable proof for your opinions."
+        },
+        {
+          "id": 2,
+          "speaker": "Lily",
+          "prompt": "How did the bar chart support our proposal for a new reading corner?",
+          "text": "How did the bar chart support our proposal for a new reading corner?",
+          "options": [
+            "It showed clearly that sixty-five students want more books in the library.",
+            "My father drives a silver delivery van on weekdays.",
+            "The supermarket sells fresh milk and cheese."
+          ],
+          "answer": "It showed clearly that sixty-five students want more books in the library."
+        },
+        {
+          "id": 3,
+          "speaker": "Lucas",
+          "prompt": "How many students participated in our school survey overall?",
+          "text": "How many students participated in our school survey overall?",
+          "options": [
+            "Seventy-five girls and sixty boys returned completed survey forms.",
+            "I had a cheese toastie and an apple for lunch.",
+            "The art gallery has five exhibition rooms."
+          ],
+          "answer": "Seventy-five girls and sixty boys returned completed survey forms."
+        },
+        {
+          "id": 4,
+          "speaker": "Lily",
+          "prompt": "What is the total number of survey participants across both groups?",
+          "text": "What is the total number of survey participants across both groups?",
+          "options": [
+            "Seventy-five plus sixty equals one hundred thirty-five participants.",
+            "I wear my blue baseball cap on sunny afternoons.",
+            "The soccer match ended in a draw."
+          ],
+          "answer": "Seventy-five plus sixty equals one hundred thirty-five participants."
+        },
+        {
+          "id": 5,
+          "speaker": "Lucas",
+          "prompt": "Shall we present our evidence chart during the assembly tomorrow?",
+          "text": "Shall we present our evidence chart during the assembly tomorrow?",
+          "options": [
+            "Yes, let's explain the statistics with clear voices and diagrams!",
+            "I do not like chocolate pudding after dinner.",
+            "The bus stopped near the central railway station."
+          ],
+          "answer": "Yes, let's explain the statistics with clear voices and diagrams!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Lucas",
+          "text": "Because authentic survey data provides verifiable proof for your opinions."
+        },
+        {
+          "speaker": "Lily",
+          "text": "It showed clearly that sixty-five students want more books in the library."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Seventy-five girls and sixty boys returned completed survey forms."
+        },
+        {
+          "speaker": "Lily",
+          "text": "Seventy-five plus sixty equals one hundred thirty-five participants."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Yes, let's explain the statistics with clear voices and diagrams!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Lily's Research Diary: Strong Reasons",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "When you want to convince people, you need [1]_____ use strong evidence. Facts, survey data, and examples turn personal feelings [2]_____ persuasive arguments. Last week, our class conducted [3]_____ survey about playground activities. We organized the numerical results [4]_____ a colorful bar graph. Presenting real data helped the principal understand [5]_____ ideas clearly.",
+      "answers": {
+        "1": "to",
+        "2": "into",
+        "3": "a",
+        "4": "on",
+        "5": "our"
+      }
+    }
   }
 };
 export default readingHubData;

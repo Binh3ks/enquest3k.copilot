@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 69 | Theme: "Environmental Protection: Eco-Warriors" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 69 | Theme: "Science/ELA: Environmental Protection / Math: Line Plots"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 69,
-  "theme": "Environmental Protection: Eco-Warriors",
+  "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "The Eco-Warriors Environmental Action Plan",

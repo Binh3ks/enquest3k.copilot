@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 68 | Theme: "Developing Strong Reasons: Evidence and Data" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 68 | Theme: "ELA: Strong Reasons / Math: Bar Graphs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 68,
-  "theme": "Developing Strong Reasons: Evidence and Data",
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Building Strong Reasons with Bar Graph Evidence",
@@ -23,7 +22,7 @@ export const writingHubData = {
       "reason",
       "evidence",
       "specifically",
-      "interval",
+      "step",
       "addition",
       "instance",
       "difference",

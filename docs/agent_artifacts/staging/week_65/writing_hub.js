@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 65,
-  "theme": "Cycle 2.1 Review: Logic and Data Mastery",
+  "theme": "Review & Consolidation (Cycle 2.1)",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Cycle 2.1 Reflection and Synthesis Essay",

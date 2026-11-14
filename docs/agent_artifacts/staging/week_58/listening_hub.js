@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 58 | Theme: "Problem and Solution: Sharing Resources" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 58 | Theme: "ELA: Problem & Solution (Paragraph) / Math: Division Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 58,
-  "theme": "Problem and Solution: Sharing Resources",
+  "theme": "ELA: Problem & Solution (Paragraph) / Math: Division Concepts",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Planning Resource Distribution",
+    "title": "Tracking Plant Growth Stages",
     "exchanges": [
       {
         "speaker": "Ethan",
-        "text": "In your opinion, how should we share these forty-eight textbooks?"
+        "text": "They sprouted new green leaves and grew four centimeters taller."
       },
       {
         "speaker": "Maya",
-        "text": "I believe we should divide them equally across the six study tables."
+        "text": "They absorb water and healthy minerals for the growing stem."
       },
       {
         "speaker": "Ethan",
-        "text": "What is forty-eight divided by six?"
+        "text": "We planted twenty-four in the first box and eighteen in the second box."
       },
       {
         "speaker": "Maya",
-        "text": "The quotient is eight, so each table gets eight books."
+        "text": "Twenty-four plus eighteen gives forty-two seedlings in total."
       },
       {
         "speaker": "Ethan",
-        "text": "That is completely fair and organized."
+        "text": "Yes, we can use our wooden ruler and record the height!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Maya",
-      "text": "In my opinion, fair resource sharing builds a stronger community.",
-      "ipa": "/ɪn maɪ əˈpɪnjən, fɛər rɪˈzɔːrs ˈʃɛərɪŋ bɪldz ə ˈstrɒŋɡər kəˈmjuːnəti/"
+      "text": "Our class made a fair plan to share equipment.",
+      "ipa": "/ˈaʊər klæs meɪd ə fɛr plæn tu ʃɛr ɪˈkwɪpmənt/",
+      "vietnamese": "Lớp chúng tôi lập kế hoạch công bằng để chia sẻ dụng cụ."
     },
     {
       "id": 2,
-      "speaker": "Ethan",
-      "text": "Division separates a total quantity into equal groups.",
-      "ipa": "/dɪˈvɪʒən ˈsɛpəreɪts ə ˈtəʊtl ˈkwɒntəti ˈɪntuː ˈiːkwəl ɡruːps/"
+      "text": "Each step of the strategy helped our group.",
+      "ipa": "/itʃ stɛp ʌv ðə ˈstrætədʒi hɛlpt ˈaʊər ɡrup/",
+      "vietnamese": "Từng bước của chiến lược đã giúp nhóm chúng tôi."
     },
     {
       "id": 3,
-      "speaker": "Maya",
-      "text": "Forty-eight books divided by six shelves equals eight books.",
-      "ipa": "/ˈfɔːrti eɪt bʊks dɪˈvaɪdɪd baɪ sɪks ʃɛlvz ˈiːkwəlz eɪt bʊks/"
+      "text": "If we share equally, our games will be better.",
+      "ipa": "/ɪf wi ʃɛr ˈikwəli ˈaʊər ɡeɪmz wɪl bi ˈbɛtər/",
+      "vietnamese": "Nếu chúng ta chia sẻ đều, các trò chơi sẽ vui hơn."
     },
     {
       "id": 4,
-      "speaker": "Ethan",
-      "text": "I believe that sharing learning tools prevents unnecessary waste.",
-      "ipa": "/aɪ bɪˈliːv ðæt ˈʃɛərɪŋ ˈlɜːrnɪŋ tuːlz prɪˈvɛnts ʌnˈnɛsəsəri weɪst/"
+      "text": "Division means sharing items into equal groups.",
+      "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups/",
+      "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau."
     },
     {
       "id": 5,
-      "speaker": "Maya",
-      "text": "The quotient tells us the exact size of each portion.",
-      "ipa": "/ðə ˈkwəʊʃənt tɛlz ʌs ði ɪɡˈzækt saɪz ɒv iːtʃ ˈpɔːrʃən/"
+      "text": "Six footballs divided by three teams equals two.",
+      "ipa": "/sɪks ˈfʊtˌbɔlz dɪˈvaɪdɪd baɪ θri timz ˈikwəlz tu/",
+      "vietnamese": "Sáu quả bóng chia cho ba đội thì bằng hai."
     },
     {
       "id": 6,
-      "speaker": "Ethan",
-      "text": "Volunteers distribute supplies fairly to every neighborhood child.",
-      "ipa": "/ˌvɒlənˈtɪərz dɪˈstrɪbjuːt səˈplaɪz ˈfɛərli tuː ˈɛvri ˈneɪbəhʊd tʃaɪld/"
+      "text": "The quotient of this division problem is two.",
+      "ipa": "/ðə ˈkwoʊʃənt ʌv ðɪs dɪˈvɪʒən ˈprɑbləm ɪz tu/",
+      "vietnamese": "Thương số của bài toán chia này là hai."
     },
     {
       "id": 7,
-      "speaker": "Maya",
-      "text": "We propose a clear plan before dividing community supplies.",
-      "ipa": "/wiː prəˈpəʊz ə klɪər plæn bɪˈfɔːr dɪˈvaɪdɪŋ kəˈmjuːnəti səˈplaɪz/"
+      "text": "Working together makes our school day a success.",
+      "ipa": "/ˈwɜrkɪŋ təˈɡɛðər meɪks ˈaʊər skul deɪ ə səkˈsɛs/",
+      "vietnamese": "Làm việc cùng nhau khiến ngày học của chúng ta thành công."
     },
     {
       "id": 8,
-      "speaker": "Ethan",
-      "text": "Fair distribution gives everyone an equal opportunity to learn.",
-      "ipa": "/fɛər ˌdɪstrɪˈbjuːʃən ɡɪvz ˈɛvriwʌn ən ˈiːkwəl ˌɒpərˈtjuːnəti tuː lɜːrn/"
+      "text": "Everyone is happy when they receive a fair share.",
+      "ipa": "/ˈɛvriˌwʌn ɪz ˈhæpi wɛn ðeɪ rəˈsiv ə fɛr ʃɛr/",
+      "vietnamese": "Ai cũng vui khi họ nhận được phần chia công bằng."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 58. Theme: Problem and Solution: Sharing Resources.\nSpeaker: In my opinion, fair resource sharing builds a stronger community.\nSpeaker: Division separates a total quantity into equal groups.\nSpeaker: Forty-eight books divided by six shelves equals eight books.\nSpeaker: I believe that sharing learning tools prevents unnecessary waste.\nSpeaker: The quotient tells us the exact size of each portion.\nSpeaker: Volunteers distribute supplies fairly to every neighborhood child.\nSpeaker: We propose a clear plan before dividing community supplies.\nSpeaker: Fair distribution gives everyone an equal opportunity to learn."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 58. Theme: ELA: Problem & Solution (Paragraph) / Math: Division Concepts.\nSpeaker: Our class made a fair plan to share equipment.\nSpeaker: Each step of the strategy helped our group.\nSpeaker: If we share equally, our games will be better.\nSpeaker: Division means sharing items into equal groups.\nSpeaker: Six footballs divided by three teams equals two.\nSpeaker: The quotient of this division problem is two.\nSpeaker: Working together makes our school day a success.\nSpeaker: Everyone is happy when they receive a fair share."
 };
 export default listeningHubData;

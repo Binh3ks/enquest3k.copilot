@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 62 | Theme: "The Movie Trailer: Summarizing Stories" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 62 | Theme: "ELA: The Movie Trailer (Summarizing) / Math: Rounding"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
     "word": "summary",
     "pos": "n",
     "ipa": "/ˈsʌməri/",
-    "definition_en": "A brief statement giving the main points of a longer story.",
+    "definition_en": "A brief statement giving the main points.",
     "definition_vi": "bản tóm tắt",
-    "example_en": "The movie trailer gave an exciting summary of the film.",
-    "example_vi": "Đoạn giới thiệu phim đã đưa ra bản tóm tắt hấp dẫn về bộ phim."
+    "example_en": "A good movie trailer gives a short summary of the plot.",
+    "example_vi": "Một đoạn giới thiệu phim hay sẽ đưa ra bản tóm tắt ngắn về cốt truyện."
   },
   {
     "id": 2,
-    "word": "trailer",
-    "pos": "n",
-    "ipa": "/ˈtreɪlər/",
-    "definition_en": "A short promotional film previewing an upcoming movie.",
-    "definition_vi": "đoạn giới thiệu phim (trailer)",
-    "example_en": "The adventure trailer made audiences want to watch more.",
-    "example_vi": "Đoạn trailer phiêu lưu khiến khán giả muốn xem nhiều hơn."
+    "word": "short",
+    "pos": "adj",
+    "ipa": "/ʃɔːrt/",
+    "definition_en": "Brief in duration or length.",
+    "definition_vi": "ngắn gọn",
+    "example_en": "Write a short paragraph about the brave pilot.",
+    "example_vi": "Hãy viết một đoạn văn ngắn gọn về người phi công dũng cảm."
   },
   {
     "id": 3,
-    "word": "round",
+    "word": "retell",
     "pos": "v",
-    "ipa": "/raʊnd/",
-    "definition_en": "To adjust a number to the nearest ten or hundred.",
-    "definition_vi": "làm tròn số",
-    "example_en": "We round forty-eight up to fifty.",
-    "example_vi": "Chúng ta làm tròn bốn mươi tám lên năm mươi."
+    "ipa": "/riːˈtɛl/",
+    "definition_en": "To tell a story again in your own words.",
+    "definition_vi": "kể lại",
+    "example_en": "Can you retell the story in three simple sentences?",
+    "example_vi": "Bạn có thể kể lại câu chuyện bằng ba câu đơn giản không?"
   },
   {
     "id": 4,
-    "word": "nearest",
-    "pos": "adj",
-    "ipa": "/ˈnɪərɪst/",
-    "definition_en": "Closest in value, distance, or number.",
-    "definition_vi": "gần nhất",
-    "example_en": "Round each measurement to the nearest ten meters.",
-    "example_vi": "Hãy làm tròn mỗi số đo đến hàng chục mét gần nhất."
+    "word": "story",
+    "pos": "n",
+    "ipa": "/ˈstɔːri/",
+    "definition_en": "An account of imaginary or real people and events.",
+    "definition_vi": "câu chuyện",
+    "example_en": "The story takes place in a magical forest.",
+    "example_vi": "Câu chuyện diễn ra trong một khu rừng kỳ diệu."
   },
   {
     "id": 5,
-    "word": "paraphrase",
-    "pos": "v",
-    "ipa": "/ˈpærəfreɪz/",
-    "definition_en": "To express someone else's ideas in your own words.",
-    "definition_vi": "diễn giải lại bằng lời của mình",
-    "example_en": "Students paraphrase the paragraph in three sentences.",
-    "example_vi": "Học sinh diễn giải lại đoạn văn bằng ba câu."
+    "word": "scene",
+    "pos": "n",
+    "ipa": "/siːn/",
+    "definition_en": "A part of a film or play where action happens.",
+    "definition_vi": "cảnh phim, hoạt cảnh",
+    "example_en": "The opening scene showed a spaceship landing.",
+    "example_vi": "Cảnh mở đầu cho thấy một con tàu vũ trụ đang hạ cánh."
   },
   {
     "id": 6,
-    "word": "estimate",
-    "pos": "v",
-    "ipa": "/ˈɛstɪmeɪt/",
-    "definition_en": "To roughly calculate or judge a value.",
-    "definition_vi": "ước tính",
-    "example_en": "We can estimate the crowd size by rounding numbers.",
-    "example_vi": "Chúng ta có thể ước tính quy mô đám đông bằng cách làm tròn số."
-  },
-  {
-    "id": 7,
-    "word": "audience",
-    "pos": "n",
-    "ipa": "/ˈɔːdiəns/",
-    "definition_en": "The group of people gathered to watch a performance.",
-    "definition_vi": "khán giả",
-    "example_en": "The cinema audience clapped when the hero escaped.",
-    "example_vi": "Khán giả rạp chiếu phim vỗ tay khi người anh hùng trốn thoát."
-  },
-  {
-    "id": 8,
-    "word": "plot",
-    "pos": "n",
-    "ipa": "/plɒt/",
-    "definition_en": "The sequence of main events that make up a story.",
-    "definition_vi": "cốt truyện",
-    "example_en": "The plot centers on a lost submarine mission.",
-    "example_vi": "Cốt truyện tập trung vào một nhiệm vụ tàu ngầm bị mất tích."
-  },
-  {
-    "id": 9,
-    "word": "climax",
-    "pos": "n",
-    "ipa": "/ˈklaɪmæks/",
-    "definition_en": "The most intense, exciting, or important point in a story.",
-    "definition_vi": "cao trào",
-    "example_en": "The story reached its climax during the storm scene.",
-    "example_vi": "Câu chuyện đạt đến cao trào trong cảnh bão táp."
-  },
-  {
-    "id": 10,
-    "word": "approximate",
-    "pos": "adj",
-    "ipa": "/əˈprɒksɪmət/",
-    "definition_en": "Close to the actual amount, but not completely exact.",
-    "definition_vi": "xấp xỉ",
-    "example_en": "Three hundred is the approximate cost of the tickets.",
-    "example_vi": "Ba trăm là chi phí xấp xỉ của các vé."
-  },
-  {
-    "id": 11,
-    "word": "preview",
-    "pos": "n",
-    "ipa": "/ˈpriːvjuː/",
-    "definition_en": "A short look at something before it is officially shown.",
-    "definition_vi": "bản xem trước",
-    "example_en": "We watched an exciting cinema preview yesterday.",
-    "example_vi": "Hôm qua chúng tôi đã xem một bản xem trước hấp dẫn tại rạp."
-  },
-  {
-    "id": 12,
     "word": "character",
     "pos": "n",
     "ipa": "/ˈkærəktər/",
-    "definition_en": "A person or animal in a story, play, or movie.",
+    "definition_en": "A person or animal in a story or movie.",
     "definition_vi": "nhân vật",
-    "example_en": "The main character is an inventive young astronaut.",
-    "example_vi": "Nhân vật chính là một phi hành gia trẻ đầy sáng tạo."
+    "example_en": "The main character is an adventurous robot.",
+    "example_vi": "Nhân vật chính là một chú robot thích phiêu lưu."
+  },
+  {
+    "id": 7,
+    "word": "plot",
+    "pos": "n",
+    "ipa": "/plɑːt/",
+    "definition_en": "The main events of a story or movie.",
+    "definition_vi": "cốt truyện",
+    "example_en": "The plot follows two friends finding a hidden map.",
+    "example_vi": "Cốt truyện theo chân hai người bạn tìm thấy tấm bản đồ ẩn giấu."
+  },
+  {
+    "id": 8,
+    "word": "round",
+    "pos": "v",
+    "ipa": "/raʊnd/",
+    "definition_en": "To change a number to the nearest ten or hundred.",
+    "definition_vi": "làm tròn",
+    "example_en": "Round forty-seven to the nearest ten.",
+    "example_vi": "Làm tròn số bốn mươi bảy đến hàng chục gần nhất."
+  },
+  {
+    "id": 9,
+    "word": "nearest",
+    "pos": "adj",
+    "ipa": "/ˈnɪrɪst/",
+    "definition_en": "Closest in distance or number.",
+    "definition_vi": "gần nhất",
+    "example_en": "Forty-seven is closest to the nearest ten, fifty.",
+    "example_vi": "Số bốn mươi bảy gần nhất với hàng chục là năm mươi."
+  },
+  {
+    "id": 10,
+    "word": "estimate",
+    "pos": "v",
+    "ipa": "/ˈɛstəmeɪt/",
+    "definition_en": "To roughly calculate or judge a value.",
+    "definition_vi": "ước lượng",
+    "example_en": "Estimate how many children watched the film.",
+    "example_vi": "Hãy ước lượng xem có bao nhiêu bạn nhỏ đã xem bộ phim."
+  },
+  {
+    "id": 11,
+    "word": "closer",
+    "pos": "adj",
+    "ipa": "/ˈkloʊsər/",
+    "definition_en": "At a shorter distance in space or time.",
+    "definition_vi": "gần hơn",
+    "example_en": "Walk closer to the whiteboard so you can see.",
+    "example_vi": "Bảy mươi hai gần với bảy mươi hơn là tám mươi."
+  },
+  {
+    "id": 12,
+    "word": "number line",
+    "pos": "phrase",
+    "ipa": "/ˈnʌmbər laɪn/",
+    "definition_en": "A line on which numbers are marked at intervals.",
+    "definition_vi": "trục số",
+    "example_en": "Find sixty-eight on the classroom number line.",
+    "example_vi": "Hãy tìm số sáu mươi tám trên trục số của lớp học."
   },
   {
     "id": 13,
-    "word": "setting",
+    "word": "movie",
     "pos": "n",
-    "ipa": "/ˈsɛtɪŋ/",
-    "definition_en": "The time and place where a story happens.",
-    "definition_vi": "bối cảnh",
-    "example_en": "The setting is a remote lighthouse on a foggy coast.",
-    "example_vi": "Bối cảnh là một ngọn hải đăng xa xôi trên bờ biển sương mù."
+    "ipa": "/ˈmuːvi/",
+    "definition_en": "A cinema film.",
+    "definition_vi": "bộ phim",
+    "example_en": "We watched an exciting movie about sea turtles.",
+    "example_vi": "Chúng tôi đã xem một bộ phim hào hứng về loài rùa biển."
   },
   {
     "id": 14,
-    "word": "conflict",
+    "word": "actor",
     "pos": "n",
-    "ipa": "/ˈkɒnflɪkt/",
-    "definition_en": "A serious struggle or challenge between story characters.",
-    "definition_vi": "xung đột trong truyện",
-    "example_en": "The central conflict involves saving an ancient forest.",
-    "example_vi": "Xung đột trung tâm liên quan đến việc cứu một khu rừng cổ đại."
+    "ipa": "/ˈæktər/",
+    "definition_en": "A person whose profession is acting on screen.",
+    "definition_vi": "diễn viên",
+    "example_en": "The young actor spoke loudly and clearly.",
+    "example_vi": "Diễn viên trẻ nói năng to rõ và dõng dạc."
   },
   {
     "id": 15,
-    "word": "resolution",
+    "word": "beginning",
     "pos": "n",
-    "ipa": "/ˌrɛzəˈluːʃən/",
-    "definition_en": "The conclusion where the main story problem is resolved.",
-    "definition_vi": "kết cục, hướng giải quyết",
-    "example_en": "The story reached a joyful and peaceful resolution.",
-    "example_vi": "Câu chuyện đã đạt đến một kết cục vui vẻ và êm đềm."
+    "ipa": "/bɪˈɡɪnɪŋ/",
+    "definition_en": "The start of something.",
+    "definition_vi": "phần mở đầu",
+    "example_en": "In the beginning, the little ship set sail.",
+    "example_vi": "Ở phần mở đầu, con tàu nhỏ giương buồm ra khơi."
   },
   {
     "id": 16,
-    "word": "tens",
+    "word": "middle",
     "pos": "n",
-    "ipa": "/tɛnz/",
-    "definition_en": "The mathematical place value representing groups of ten.",
-    "definition_vi": "hàng chục",
-    "example_en": "Look at the ones digit to round to the nearest ten.",
-    "example_vi": "Hãy nhìn vào chữ số hàng đơn vị để làm tròn đến hàng chục gần nhất."
+    "ipa": "/ˈmɪdl/",
+    "definition_en": "The central part of a story or film.",
+    "definition_vi": "phần giữa",
+    "example_en": "In the middle, a storm tested the crew.",
+    "example_vi": "Ở phần giữa, một cơn bão đã thử thách các thủy thủ."
   },
   {
     "id": 17,
-    "word": "hundreds",
+    "word": "ending",
     "pos": "n",
-    "ipa": "/ˈhʌndrədz/",
-    "definition_en": "The place value representing groups of one hundred.",
-    "definition_vi": "hàng trăm",
-    "example_en": "Round two hundred sixty-eight to the nearest hundred.",
-    "example_vi": "Làm tròn hai trăm sáu mươi tám đến hàng trăm gần nhất."
+    "ipa": "/ˈɛndɪŋ/",
+    "definition_en": "The final part of a story.",
+    "definition_vi": "phần kết thúc",
+    "example_en": "The happy ending made everyone smile.",
+    "example_vi": "Cái kết có hậu đã làm tất cả mọi người mỉm cười."
   },
   {
     "id": 18,
-    "word": "concise",
-    "pos": "adj",
-    "ipa": "/kənˈsaɪs/",
-    "definition_en": "Giving a lot of information clearly and in few words.",
-    "definition_vi": "ngắn gọn súc tích",
-    "example_en": "A concise summary focuses only on crucial events.",
-    "example_vi": "Một bản tóm tắt ngắn gọn chỉ tập trung vào các sự kiện quan trọng."
+    "word": "watch",
+    "pos": "v",
+    "ipa": "/wɑːtʃ/",
+    "definition_en": "To look at someone or something with attention.",
+    "definition_vi": "xem, theo dõi",
+    "example_en": "Many families watch trailers before choosing a film.",
+    "example_vi": "Nhiều gia đình xem trailer trước khi chọn phim."
   },
   {
     "id": 19,
-    "word": "cinema",
+    "word": "film",
     "pos": "n",
-    "ipa": "/ˈsɪnəmə/",
-    "definition_en": "A movie theater where motion pictures are screened.",
-    "definition_vi": "rạp chiếu phim",
-    "example_en": "The town cinema was packed with enthusiastic viewers.",
-    "example_vi": "Rạp chiếu phim thị trấn chật kín khán giả nhiệt tình."
+    "ipa": "/fɪlm/",
+    "definition_en": "A movie.",
+    "definition_vi": "phim ảnh",
+    "example_en": "The cartoon film lasted for eighty minutes.",
+    "example_vi": "Bộ phim hoạt hình kéo dài tám mươi phút."
   },
   {
     "id": 20,
-    "word": "producer",
-    "pos": "n",
-    "ipa": "/prəˈdjuːsər/",
-    "definition_en": "A person who oversees the making of a movie or play.",
-    "definition_vi": "nhà sản xuất phim",
-    "example_en": "The film producer edited the two-minute trailer.",
-    "example_vi": "Nhà sản xuất phim đã chỉnh sửa đoạn trailer dài hai phút."
+    "word": "exciting",
+    "pos": "adj",
+    "ipa": "/ɪkˈsaɪtɪŋ/",
+    "definition_en": "Making people feel very happy, lively, and eager.",
+    "definition_vi": "hào hứng, hồi hộp",
+    "example_en": "The final chase scene was very exciting.",
+    "example_vi": "Cảnh rượt đuổi cuối cùng rất hồi hộp."
   }
 ];
 export const vocabList = vocab;

@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 67 | Theme: "The OREO Structure: Persuasive Power" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 67 | Theme: "ELA: The OREO Structure / Math: Measuring Mass"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 67,
-  "theme": "The OREO Structure: Persuasive Power",
+  "theme": "ELA: The OREO Structure / Math: Measuring Mass",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Deliver a 1-minute persuasive speech using the OREO structure. State your opinion on a school rule, give a reason, share an example, and restate your opinion.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Speaker A (Nutrition)",
-      "cues": [
-        "Persuasive topic chosen",
-        "Stated opinion",
-        "Core reason provided",
-        "Concrete example given",
-        "Ingredient mass measured"
-      ]
-    },
-    "card_b": {
-      "role": "Speaker B (Nutrition)",
-      "cues": [
-        "Persuasive topic chosen",
-        "Stated opinion",
-        "Core reason provided",
-        "Concrete example given",
-        "Ingredient mass measured"
-      ]
-    },
+    "title": "Daniel and Hannah's Persuasive Speech Exchange",
     "table_a": {
-      "title": "Speaker A (Nutrition)'s Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Speaker A (Nutrition)",
+      "title": "Daniel's Healthy Food Speech",
+      "person": "Daniel",
       "fields": [
         {
-          "id": "f1",
-          "label": "Persuasive topic chosen",
-          "cue_prompt": "what / persuasive topic chosen?",
-          "cue_word": "persuasive",
+          "id": "field_a1",
+          "label": "what / Daniel's speech topic?",
+          "cue_prompt": "what / Daniel's speech topic?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Free fruit at school recess",
           "acceptable_questions": [
-            "What is the persuasive topic chosen?",
-            "Can you tell me the persuasive topic chosen?"
+            "What is Daniel's speech topic?",
+            "What did Daniel speak about?",
+            "What was his persuasive speech about?"
           ],
-          "nova_reply": "The persuasive topic chosen is recorded for The OREO Structure: Persuasive Power."
+          "nova_reply": "Daniel gave a persuasive speech about providing free fresh fruit at morning recess."
         },
         {
-          "id": "f2",
-          "label": "Stated opinion",
-          "cue_prompt": "what / stated opinion?",
-          "cue_word": "stated",
+          "id": "field_a2",
+          "label": "what / his main reason?",
+          "cue_prompt": "what / his main reason?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Fruit gives natural vitamins and energy",
           "acceptable_questions": [
-            "What is the stated opinion?",
-            "Can you tell me the stated opinion?"
+            "What was his main reason?",
+            "Why does he want free fruit?",
+            "What reason did Daniel give?"
           ],
-          "nova_reply": "The stated opinion is recorded for The OREO Structure: Persuasive Power."
+          "nova_reply": "His main reason was that fresh fruit gives students natural vitamins and sustained energy."
         },
         {
-          "id": "f3",
-          "label": "Core reason provided",
-          "cue_prompt": "what / core reason provided?",
-          "cue_word": "core",
-          "is_missing": false,
-          "card_value": "Core reason provided verified",
-          "value": "Core reason provided verified",
-          "examiner_question": "What is the core reason provided?",
-          "acceptable_answers": [
-            "It is core reason provided.",
-            "Core reason provided."
-          ]
+          "id": "field_a3",
+          "label": "how many / kilograms of apples?",
+          "cue_prompt": "how many / kilograms of apples?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "15 kilograms for the class",
+          "acceptable_questions": [
+            "How many kilograms of apples did they need?",
+            "How much mass was the fruit box?",
+            "How many kilograms were requested?"
+          ],
+          "nova_reply": "He calculated that the third grade needs 15 kilograms of apples every week."
         },
         {
-          "id": "f4",
-          "label": "Concrete example given",
-          "cue_prompt": "what / concrete example given?",
-          "cue_word": "concrete",
-          "is_missing": false,
-          "card_value": "Concrete example given verified",
-          "value": "Concrete example given verified",
-          "examiner_question": "What is the concrete example given?",
-          "acceptable_answers": [
-            "It is concrete example given.",
-            "Concrete example given."
-          ]
+          "id": "field_a4",
+          "label": "where / Daniel give speech?",
+          "cue_prompt": "where / Daniel give speech?",
+          "cue_word": "where",
+          "is_missing": true,
+          "value": "In the school cafeteria",
+          "acceptable_questions": [
+            "Where did he give the speech?",
+            "Where was his presentation held?",
+            "Where did Daniel speak?"
+          ],
+          "nova_reply": "Daniel gave his speech on stage in the school cafeteria during assembly."
         },
         {
-          "id": "f5",
-          "label": "Ingredient mass measured",
-          "cue_prompt": "what / ingredient mass measured?",
-          "cue_word": "ingredient",
-          "is_missing": false,
-          "card_value": "Ingredient mass measured verified",
-          "value": "Ingredient mass measured verified",
-          "examiner_question": "What is the ingredient mass measured?",
-          "acceptable_answers": [
-            "It is ingredient mass measured.",
-            "Ingredient mass measured."
-          ]
+          "id": "field_a5",
+          "label": "who / supported his idea?",
+          "cue_prompt": "who / supported his idea?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Nurse Sarah and Coach Evans",
+          "acceptable_questions": [
+            "Who supported his idea?",
+            "Who agreed with Daniel?",
+            "Who backed his proposal?"
+          ],
+          "nova_reply": "Both school nurse Sarah and gym teacher Coach Evans strongly supported his proposal."
         }
       ]
     },
     "table_b": {
-      "title": "Speaker B (Nutrition)'s Info Card",
-      "subtitle": "Partner Card",
-      "person": "Speaker B (Nutrition)",
+      "title": "Hannah's Snack Debate Card",
+      "person": "Hannah",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Persuasive topic chosen",
-          "cue_prompt": "what / persuasive topic chosen?",
-          "cue_word": "persuasive",
+          "id": "field_b1",
+          "label": "what / Hannah's favorite snack?",
+          "cue_prompt": "what / Hannah's favorite snack?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Persuasive topic chosen on file",
-          "value": "Persuasive topic chosen on file",
-          "examiner_question": "What is the persuasive topic chosen?",
+          "value": "Crunchy baby carrots",
+          "nova_question": "What is Hannah's favorite healthy snack in her presentation?",
           "acceptable_answers": [
-            "It is persuasive topic chosen.",
-            "Persuasive topic chosen."
+            "Crunchy baby carrots",
+            "Baby carrots.",
+            "Her favorite snack is crunchy baby carrots.",
+            "Carrots"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Stated opinion",
-          "cue_prompt": "what / stated opinion?",
-          "cue_word": "stated",
+          "id": "field_b2",
+          "label": "where / bought the vegetables?",
+          "cue_prompt": "where / bought the vegetables?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Stated opinion on file",
-          "value": "Stated opinion on file",
-          "examiner_question": "What is the stated opinion?",
+          "value": "At the weekend farmers market",
+          "nova_question": "Where did her family buy the fresh vegetables?",
           "acceptable_answers": [
-            "It is stated opinion.",
-            "Stated opinion."
+            "At the weekend farmers market",
+            "At the farmers market.",
+            "They bought them at the weekend farmers market.",
+            "Farmers market"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Core reason provided",
-          "cue_prompt": "what / core reason provided?",
-          "cue_word": "core",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the core reason provided?",
-            "Can you tell me the core reason provided?"
-          ],
-          "nova_reply": "The core reason provided is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how heavy / box of carrots?",
+          "cue_prompt": "how heavy / box of carrots?",
+          "cue_word": "how heavy",
+          "is_missing": false,
+          "value": "3 kilograms",
+          "nova_question": "How heavy was the wooden box of carrots on the scale?",
+          "acceptable_answers": [
+            "3 kilograms",
+            "Three kilograms",
+            "It weighed 3 kilograms.",
+            "3 kg"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Concrete example given",
-          "cue_prompt": "what / concrete example given?",
-          "cue_word": "concrete",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the concrete example given?",
-            "Can you tell me the concrete example given?"
-          ],
-          "nova_reply": "The concrete example given is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / shared with friends?",
+          "cue_prompt": "what time / shared with friends?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 10:00 AM recess",
+          "nova_question": "What time did she share the carrots with her friends?",
+          "acceptable_answers": [
+            "At 10:00 AM recess",
+            "At 10:00 AM.",
+            "She shared them at 10:00 AM recess.",
+            "10:00 AM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Ingredient mass measured",
-          "cue_prompt": "what / ingredient mass measured?",
-          "cue_word": "ingredient",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the ingredient mass measured?",
-            "Can you tell me the ingredient mass measured?"
-          ],
-          "nova_reply": "The ingredient mass measured is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / helped her weigh the box?",
+          "cue_prompt": "who / helped her weigh the box?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her mother",
+          "nova_question": "Who helped Hannah weigh the carrot box on the balance scale?",
+          "acceptable_answers": [
+            "Her mother",
+            "Mother",
+            "Her mother helped her weigh it.",
+            "Hannah's mother"
+          ]
         }
       ]
     }

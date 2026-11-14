@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 68 | Theme: "Developing Strong Reasons: Evidence and Data" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 68 | Theme: "ELA: Strong Reasons / Math: Bar Graphs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 68,
-  "theme": "Developing Strong Reasons: Evidence and Data",
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -109,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "On a school bar graph, the Chess Club bar reaches 65 votes and the Drama Club bar reaches 42 votes. What is the difference in votes between the two clubs?",
       "problem_en": "On a school bar graph, the Chess Club bar reaches 65 votes and the Drama Club bar reaches 42 votes. What is the difference in votes between the two clubs?",
       "answer": 23,
-      "step_by_step": "Step 1: Chess = 65. Step 2: Drama = 42. Step 3: Difference = 65 - 42 = 23 votes."
+      "step_by_step": "Step 1: Chess = 65. Step 2: Drama = 42. Step 3: Difference = 65 - 42 = 23 votes.",
+      "question": "On a school bar graph, the Chess Club bar reaches 65 votes and the Drama Club bar reaches 42 votes. What is the difference in votes between the two clubs?"
     },
     {
       "id": 2,
@@ -147,7 +147,8 @@ export const skillPracticeHubData = {
       "problem_text": "A sports bar chart displays 35 runners, 40 basketball players, and 55 soccer players. What is the total combined participation across all three sports?",
       "problem_en": "A sports bar chart displays 35 runners, 40 basketball players, and 55 soccer players. What is the total combined participation across all three sports?",
       "answer": 130,
-      "step_by_step": "Step 1: Add 35, 40, and 55. Step 2: Sum = 35 + 40 + 55 = 130 players."
+      "step_by_step": "Step 1: Add 35, 40, and 55. Step 2: Sum = 35 + 40 + 55 = 130 players.",
+      "question": "A sports bar chart displays 35 runners, 40 basketball players, and 55 soccer players. What is the total combined participation across all three sports?"
     },
     {
       "id": 3,
@@ -163,9 +164,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Grade 5 (80)",
-            "value": 80,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 40,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 40,
+            "color": "#10B981"
           }
         ],
         "total": 80,
@@ -175,7 +181,8 @@ export const skillPracticeHubData = {
       "problem_text": "A reading bar chart has a vertical scale with intervals of 10. If the fifth-grade bar reaches the 80-unit mark, how many books did they read?",
       "problem_en": "A reading bar chart has a vertical scale with intervals of 10. If the fifth-grade bar reaches the 80-unit mark, how many books did they read?",
       "answer": 80,
-      "step_by_step": "Step 1: Bar height reaches 80. Step 2: Total = 80 books."
+      "step_by_step": "Step 1: Bar height reaches 80. Step 2: Total = 80 books.",
+      "question": "A reading bar chart has a vertical scale with intervals of 10. If the fifth-grade bar reaches the 80-unit mark, how many books did they read?"
     },
     {
       "id": 4,
@@ -213,7 +220,8 @@ export const skillPracticeHubData = {
       "problem_text": "Students submit 24 drawings, 36 paintings, and 48 clay sculptures for the art fair. What is the total number of submitted art projects?",
       "problem_en": "Students submit 24 drawings, 36 paintings, and 48 clay sculptures for the art fair. What is the total number of submitted art projects?",
       "answer": 108,
-      "step_by_step": "Step 1: Add 24, 36, and 48. Step 2: Total = 24 + 36 + 48 = 108 projects."
+      "step_by_step": "Step 1: Add 24, 36, and 48. Step 2: Total = 24 + 36 + 48 = 108 projects.",
+      "question": "Students submit 24 drawings, 36 paintings, and 48 clay sculptures for the art fair. What is the total number of submitted art projects?"
     },
     {
       "id": 5,
@@ -246,7 +254,8 @@ export const skillPracticeHubData = {
       "problem_text": "A library bar graph shows 94 science books and 67 history books checked out. What is the difference in checked-out books between the two sections?",
       "problem_en": "A library bar graph shows 94 science books and 67 history books checked out. What is the difference in checked-out books between the two sections?",
       "answer": 27,
-      "step_by_step": "Step 1: Science = 94. Step 2: History = 67. Step 3: Difference = 94 - 67 = 27 books."
+      "step_by_step": "Step 1: Science = 94. Step 2: History = 67. Step 3: Difference = 94 - 67 = 27 books.",
+      "question": "A library bar graph shows 94 science books and 67 history books checked out. What is the difference in checked-out books between the two sections?"
     }
   ],
   "science_lab": {
@@ -299,10 +308,10 @@ export const skillPracticeHubData = {
         "instruction": "Match each bar chart element to its analytical function.",
         "items": [
           {
-            "label": "Vertical axis scale with interval of 10",
+            "label": "Vertical axis scale with step of 10",
             "target": "quantity_measurement",
-            "name": "Vertical axis scale with interval of 10",
-            "text": "Vertical axis scale with interval of 10",
+            "name": "Vertical axis scale with step of 10",
+            "text": "Vertical axis scale with step of 10",
             "type": "quantity_measurement",
             "description": ""
           },

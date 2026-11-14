@@ -1,287 +1,221 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 63 | Theme: "Reading Maps: Navigating the Island" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 63 | Theme: "ELA: Reading Maps / Math: Coordinates"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 63,
-  "theme": "Reading Maps: Navigating the Island",
+  "theme": "ELA: Reading Maps / Math: Coordinates",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
-      "word": "compass",
+      "word": "North",
       "pos": "n",
-      "ipa": "/ˈkʌmpəs/",
-      "definition_en": "An instrument with a magnetic needle that points north.",
-      "definition_vi": "la bàn",
-      "example_en": "Hold the compass flat to find magnetic north.",
-      "example_vi": "Giữ la bàn nằm phẳng để tìm hướng bắc từ tính."
+      "ipa": "/nɔːrθ/",
+      "definition_en": "The cardinal direction pointing toward the North Pole.",
+      "definition_vi": "hướng Bắc",
+      "example_en": "Walk North along the pebble path.",
+      "example_vi": "Hãy đi về hướng Bắc dọc theo con đường sỏi."
     },
     {
       "id": 2,
-      "word": "coordinate",
+      "word": "South",
       "pos": "n",
-      "ipa": "/kəʊˈɔːrdɪnət/",
-      "definition_en": "A pair of numbers showing an exact position on a grid.",
-      "definition_vi": "tọa độ",
-      "example_en": "The pirate treasure was buried at coordinate (4, 7).",
-      "example_vi": "Kho báu cướp biển được chôn tại tọa độ (4, 7)."
+      "ipa": "/saʊθ/",
+      "definition_en": "The compass direction opposite to North.",
+      "definition_vi": "hướng Nam",
+      "example_en": "The sandy beach is South of the campground.",
+      "example_vi": "Bãi biển đầy cát nằm ở phía Nam của khu cắm trại."
     },
     {
       "id": 3,
-      "word": "north",
-      "pos": "n",
-      "ipa": "/nɔːrθ/",
-      "definition_en": "The cardinal direction toward the North Pole.",
-      "definition_vi": "hướng bắc",
-      "example_en": "Walk five grid units north toward the rocky hills.",
-      "example_vi": "Đi bộ năm ô lưới về hướng bắc về phía những ngọn đồi đá."
-    },
-    {
-      "id": 4,
-      "word": "south",
-      "pos": "n",
-      "ipa": "/saʊθ/",
-      "definition_en": "The cardinal direction opposite north.",
-      "definition_vi": "hướng nam",
-      "example_en": "The calm sandy beach lies to the south.",
-      "example_vi": "Bãi biển cát êm đềm nằm về hướng nam."
-    },
-    {
-      "id": 5,
-      "word": "east",
+      "word": "East",
       "pos": "n",
       "ipa": "/iːst/",
       "definition_en": "The direction where the sun rises in the morning.",
-      "definition_vi": "hướng đông",
-      "example_en": "Sail eight kilometers east across the open bay.",
-      "example_vi": "Chèo thuyền tám cây số về hướng đông qua vịnh nước mở."
+      "definition_vi": "hướng Đông",
+      "example_en": "Turn East to face the rising morning sun.",
+      "example_vi": "Hãy quay về hướng Đông để đón mặt trời sớm."
     },
     {
-      "id": 6,
-      "word": "west",
+      "id": 4,
+      "word": "West",
       "pos": "n",
       "ipa": "/wɛst/",
       "definition_en": "The direction where the sun sets in the evening.",
-      "definition_vi": "hướng tây",
-      "example_en": "Tall pine trees grow on the west side of the island.",
-      "example_vi": "Những cây thông cao lớn mọc ở phía tây hòn đảo."
+      "definition_vi": "hướng Tây",
+      "example_en": "The old lighthouse sits on the West cliff.",
+      "example_vi": "Ngọn hải đăng cổ tọa lạc trên vách đá phía Tây."
+    },
+    {
+      "id": 5,
+      "word": "compass",
+      "pos": "n",
+      "ipa": "/ˈkʌmpəs/",
+      "definition_en": "A navigational tool with a needle pointing North.",
+      "definition_vi": "la bàn",
+      "example_en": "Hold the compass flat in your palm.",
+      "example_vi": "Hãy cầm chiếc la bàn nằm phẳng trong lòng bàn tay."
+    },
+    {
+      "id": 6,
+      "word": "map",
+      "pos": "n",
+      "ipa": "/mæp/",
+      "definition_en": "A visual drawing showing areas of land and paths.",
+      "definition_vi": "bản đồ",
+      "example_en": "Study the island map before starting your hike.",
+      "example_vi": "Hãy nghiên cứu bản đồ hòn đảo trước khi bắt đầu chuyến đi bộ."
     },
     {
       "id": 7,
-      "word": "grid",
+      "word": "key",
       "pos": "n",
-      "ipa": "/ɡrɪd/",
-      "definition_en": "A pattern of evenly spaced intersecting lines on a map.",
-      "definition_vi": "lưới tọa độ",
-      "example_en": "Find the lighthouse on the map grid.",
-      "example_vi": "Hãy tìm ngọn hải đăng trên lưới bản đồ."
+      "ipa": "/kiː/",
+      "definition_en": "A guide on a map explaining symbols and icons.",
+      "definition_vi": "bảng chú giải bản đồ",
+      "example_en": "Check the map key to find where the spring is.",
+      "example_vi": "Kiểm tra bảng chú giải bản đồ để tìm xem con suối ở đâu."
     },
     {
       "id": 8,
-      "word": "axis",
+      "word": "direction",
       "pos": "n",
-      "ipa": "/ˈæksɪs/",
-      "definition_en": "A fixed reference line on a coordinate graph (x or y).",
-      "definition_vi": "trục tọa độ",
-      "example_en": "Read the horizontal number on the x-axis first.",
-      "example_vi": "Hãy đọc số nằm ngang trên trục x trước."
+      "ipa": "/daɪˈrɛkʃən/",
+      "definition_en": "The course along which someone moves or points.",
+      "definition_vi": "phương hướng",
+      "example_en": "Which direction should we walk next?",
+      "example_vi": "Chúng ta nên đi theo hướng nào tiếp theo?"
     },
     {
       "id": 9,
-      "word": "navigate",
-      "pos": "v",
-      "ipa": "/ˈnævɪɡeɪt/",
-      "definition_en": "To plan and direct the course of a ship or journey.",
-      "definition_vi": "định hướng, điều hướng",
-      "example_en": "Explorers navigate through thick jungle using maps.",
-      "example_vi": "Các nhà thám hiểm định hướng qua rừng rậm bằng bản đồ."
+      "word": "straight",
+      "pos": "adv",
+      "ipa": "/streɪt/",
+      "definition_en": "In a direct line without turning.",
+      "definition_vi": "thẳng",
+      "example_en": "Go straight for twenty meters past the oak tree.",
+      "example_vi": "Hãy đi thẳng hai mươi mét qua cây sồi."
     },
     {
       "id": 10,
-      "word": "legend",
-      "pos": "n",
-      "ipa": "/ˈlɛdʒənd/",
-      "definition_en": "A key explaining the symbols and colors used on a map.",
-      "definition_vi": "chú giải bản đồ",
-      "example_en": "The map legend shows that blue dashed lines mean rivers.",
-      "example_vi": "Chú giải bản đồ chỉ ra rằng đường nét đứt màu xanh nghĩa là sông."
+      "word": "turn",
+      "pos": "v",
+      "ipa": "/tɜːrn/",
+      "definition_en": "To change direction of movement.",
+      "definition_vi": "rẽ, quẹo",
+      "example_en": "Turn right at the blue bridge.",
+      "example_vi": "Hãy rẽ phải ở cây cầu màu xanh."
     },
     {
       "id": 11,
-      "word": "cardinal",
-      "pos": "adj",
-      "ipa": "/ˈkɑːrdɪnl/",
-      "definition_en": "Describing the four primary directions: N, S, E, W.",
-      "definition_vi": "phương hướng chính (bắc, nam, đông, tây)",
-      "example_en": "A compass rose displays the four cardinal directions.",
-      "example_vi": "Hình hoa thị la bàn hiển thị bốn hướng chính."
+      "word": "grid",
+      "pos": "n",
+      "ipa": "/ɡrɪd/",
+      "definition_en": "A pattern of straight lines crossing each other.",
+      "definition_vi": "lưới tọa độ",
+      "example_en": "The treasure map is divided by a neat grid.",
+      "example_vi": "Bản đồ kho báu được chia thành một mạng lưới ngay ngắn."
     },
     {
       "id": 12,
-      "word": "distance",
+      "word": "coordinate",
       "pos": "n",
-      "ipa": "/ˈdɪstəns/",
-      "definition_en": "The amount of space between two distinct points.",
-      "definition_vi": "khoảng cách",
-      "example_en": "The total distance walked was thirteen grid units.",
-      "example_vi": "Tổng khoảng cách đã đi là mười ba đơn vị ô lưới."
+      "ipa": "/koʊˈɔːrdənɪt/",
+      "definition_en": "Numbers or letters that mark an exact point on a grid.",
+      "definition_vi": "tọa độ",
+      "example_en": "The campsite sits at coordinate B-three.",
+      "example_vi": "Khu cắm trại nằm ở tọa độ B-ba."
     },
     {
       "id": 13,
-      "word": "landmark",
+      "word": "point",
       "pos": "n",
-      "ipa": "/ˈlændmɑːrk/",
-      "definition_en": "A recognizable natural or built feature easily seen.",
-      "definition_vi": "cột mốc địa danh",
-      "example_en": "The tall watchtower is a famous coastal landmark.",
-      "example_vi": "Tháp canh cao là một cột mốc ven biển nổi tiếng."
+      "ipa": "/pɔɪnt/",
+      "definition_en": "A precise spot or location on a map.",
+      "definition_vi": "điểm",
+      "example_en": "Mark the treasure point with a red star.",
+      "example_vi": "Hãy đánh dấu điểm kho báu bằng một ngôi sao đỏ."
     },
     {
       "id": 14,
-      "word": "horizontal",
-      "pos": "adj",
-      "ipa": "/ˌhɒrɪˈzɒntl/",
-      "definition_en": "Parallel to the horizon, running flat across left to right.",
-      "definition_vi": "nằm ngang",
-      "example_en": "The x-axis is the horizontal line on the coordinate grid.",
-      "example_vi": "Trục x là đường nằm ngang trên lưới tọa độ."
+      "word": "line",
+      "pos": "n",
+      "ipa": "/laɪn/",
+      "definition_en": "A long straight mark connecting two places.",
+      "definition_vi": "đường kẻ, đường thẳng",
+      "example_en": "Follow the dotted line to the old windmill.",
+      "example_vi": "Hãy đi theo đường chấm nét tới chiếc cối xay gió cũ."
     },
     {
       "id": 15,
-      "word": "vertical",
-      "pos": "adj",
-      "ipa": "/ˈvɜːrtɪkl/",
-      "definition_en": "Pointing straight up and down perpendicular to ground.",
-      "definition_vi": "thẳng đứng",
-      "example_en": "The y-axis is the vertical line measuring height.",
-      "example_vi": "Trục y là đường thẳng đứng đo chiều cao."
+      "word": "distance",
+      "pos": "n",
+      "ipa": "/ˈdɪstəns/",
+      "definition_en": "The amount of space between two locations.",
+      "definition_vi": "khoảng cách",
+      "example_en": "The map scale shows the distance in meters.",
+      "example_vi": "Tỷ lệ bản đồ hiển thị khoảng cách theo mét."
     },
     {
       "id": 16,
-      "word": "scale",
+      "word": "island",
       "pos": "n",
-      "ipa": "/skeɪl/",
-      "definition_en": "The ratio between distance on a map and real distance.",
-      "definition_vi": "tỉ lệ bản đồ",
-      "example_en": "One centimeter on the map scale represents one kilometer.",
-      "example_vi": "Một xăng-ti-mét trên tỉ lệ bản đồ tượng trưng cho một cây số."
+      "ipa": "/ˈaɪlənd/",
+      "definition_en": "A piece of land with sea or lake water all around it.",
+      "definition_vi": "hòn đảo",
+      "example_en": "Pine Island has tall cliffs and sandy bays.",
+      "example_vi": "Đảo Cây Thông có những vách đá cao và các vịnh đầy cát."
     },
     {
       "id": 17,
-      "word": "origin",
+      "word": "treasure",
       "pos": "n",
-      "ipa": "/ˈɒrɪdʒɪn/",
-      "definition_en": "The starting point (0, 0) where map axes cross.",
-      "definition_vi": "gốc tọa độ (0, 0)",
-      "example_en": "Begin plotting coordinates from the origin at (0, 0).",
-      "example_vi": "Bắt đầu vẽ tọa độ từ gốc tọa độ tại (0, 0)."
+      "ipa": "/ˈtrɛʒər/",
+      "definition_en": "A collection of precious objects or stones.",
+      "definition_vi": "kho báu",
+      "example_en": "The old legend tells of silver treasure buried here.",
+      "example_vi": "Truyền thuyết xưa kể về kho báu bạc chôn ở đây."
     },
     {
       "id": 18,
-      "word": "symbol",
+      "word": "path",
       "pos": "n",
-      "ipa": "/ˈsɪmbəl/",
-      "definition_en": "A small icon or drawing representing a real feature.",
-      "definition_vi": "ký hiệu",
-      "example_en": "A small tent symbol marks the campsite location.",
-      "example_vi": "Ký hiệu chiếc lều nhỏ đánh dấu vị trí khu cắm trại."
+      "ipa": "/pæθ/",
+      "definition_en": "A track made by people walking outdoors.",
+      "definition_vi": "con đường mòn",
+      "example_en": "Stay on the stone path to protect the plants.",
+      "example_vi": "Hãy đi trên đường đá mòn để bảo vệ cây cỏ."
     },
     {
       "id": 19,
-      "word": "perimeter",
-      "pos": "n",
-      "ipa": "/pəˈrɪmɪtər/",
-      "definition_en": "The total distance around the outside edge of an area.",
-      "definition_vi": "chu vi",
-      "example_en": "Calculate the perimeter of the grid garden border.",
-      "example_vi": "Hãy tính chu vi đường viền khu vườn trên lưới ô."
+      "word": "walk",
+      "pos": "v",
+      "ipa": "/wɔːk/",
+      "definition_en": "To move on foot at a steady pace.",
+      "definition_vi": "đi bộ",
+      "example_en": "Hikers walk two kilometers to the lookout point.",
+      "example_vi": "Những người đi bộ vượt qua hai ki-lô-mét để tới điểm vọng cảnh."
     },
     {
       "id": 20,
-      "word": "area",
-      "pos": "n",
-      "ipa": "/ˈɛəriə/",
-      "definition_en": "The amount of space inside a flat two-dimensional shape.",
-      "definition_vi": "diện tích",
-      "example_en": "The camping zone covers fifty-six square units of area.",
-      "example_vi": "Khu cắm trại bao phủ năm mươi sáu đơn vị diện tích vuông."
+      "word": "find",
+      "pos": "v",
+      "ipa": "/faɪnd/",
+      "definition_en": "To discover or locate something by searching.",
+      "definition_vi": "tìm thấy",
+      "example_en": "Use coordinates to find the hidden cave easily.",
+      "example_vi": "Dùng tọa độ để tìm thấy hang động ẩn giấu một cách dễ dàng."
     }
   ],
-  "clil_article": {
-    "title_en": "Navigating with Compass Directions and Grid Coordinates",
-    "title_vi": "Định hướng với La bàn và Lưới Tọa độ",
-    "content_en": "Maps allow explorers, navigators, and hikers to travel safely across unfamiliar terrain without getting lost. Every accurate map includes three essential navigation tools: a compass rose showing the cardinal directions (North, South, East, and West), a map legend defining symbols, and a coordinate grid. When reading a coordinate pair like (4, 7), navigators always read horizontal movement along the x-axis first, followed by vertical movement along the y-axis. From the origin (0, 0), move 4 units east along the horizontal axis, and then move 7 units north along the vertical axis. In mathematics, we calculate distances and perimeters across grids. For example, if a team hikes 5 units east and then 8 units north to reach a mountain shelter, the total distance walked is 5 + 8 = 13 units. If they map out a rectangular campground that is 6 units wide by 9 units long, the perimeter of the camp is 2 * (6 + 9) = 30 units, and the enclosed area is 6 * 9 = 54 square units. Understanding cardinal directions and coordinate grids turns geography and geometry into practical life skills.",
-    "glossary": [
-      {
-        "word": "compass",
-        "definition_en": "Instrument pointing magnetic north",
-        "definition_vi": "la bàn"
-      },
-      {
-        "word": "coordinate",
-        "definition_en": "Number pair (x, y) on a grid",
-        "definition_vi": "tọa độ"
-      },
-      {
-        "word": "legend",
-        "definition_en": "Key explaining map symbols",
-        "definition_vi": "chú giải"
-      },
-      {
-        "word": "cardinal",
-        "definition_en": "Four main directions (N, S, E, W)",
-        "definition_vi": "hướng chính"
-      },
-      {
-        "word": "perimeter",
-        "definition_en": "Distance around outside edge",
-        "definition_vi": "chu vi"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "In the coordinate pair (4, 7), which number represents the horizontal x-axis?",
-        "options": [
-          "4",
-          "7",
-          "Both"
-        ],
-        "answer": "4"
-      },
-      {
-        "id": 2,
-        "question_en": "What is the total distance if you walk 5 units east and 8 units north?",
-        "options": [
-          "13 units",
-          "40 units",
-          "3 units"
-        ],
-        "answer": "13 units"
-      },
-      {
-        "id": 3,
-        "question_en": "What is the perimeter of a rectangle that is 6 units wide and 9 units long?",
-        "options": [
-          "30 units",
-          "54 units",
-          "15 units"
-        ],
-        "answer": "30 units"
-      }
-    ],
-    "text": "Maps allow explorers, navigators, and hikers to travel safely across unfamiliar terrain without getting lost. Every accurate map includes three essential navigation tools: a compass rose showing the cardinal directions (North, South, East, and West), a map legend defining symbols, and a coordinate grid. When reading a coordinate pair like (4, 7), navigators always read horizontal movement along the x-axis first, followed by vertical movement along the y-axis. From the origin (0, 0), move 4 units east along the horizontal axis, and then move 7 units north along the vertical axis. In mathematics, we calculate distances and perimeters across grids. For example, if a team hikes 5 units east and then 8 units north to reach a mountain shelter, the total distance walked is 5 + 8 = 13 units. If they map out a rectangular campground that is 6 units wide by 9 units long, the perimeter of the camp is 2 * (6 + 9) = 30 units, and the enclosed area is 6 * 9 = 54 square units. Understanding cardinal directions and coordinate grids turns geography and geometry into practical life skills."
-  },
   "story_scenes": [
     {
       "scene": 1,
       "title": "The Old Island Map",
-      "narration": "Oliver and Chloe spread an ancient parchment map across a wooden table.",
+      "narration": "Oliver and Chloe spread an ancient paper map across a wooden table.",
       "dialogue": [
         {
           "speaker": "Oliver",
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "How to Read Maps and Coordinates",
+    "title_vi": "Cách Đọc Bản đồ và Tọa độ",
+    "content_en": "Reading a map is a skill that helps explorers navigate the outdoors with confidence. Every good map has three helpful tools: a compass rose, a map key, and a grid. A compass rose shows the four cardinal directions: North, South, East, and West. The map key (a box explaining symbols) tells you what pictures mean, like a tree icon for a park or a tent icon for a campsite. When giving directions, we say 'Go straight' or 'Turn right at the crossroads'. In math, a map grid uses coordinates (letters and numbers marking exact spots) to locate places. The bottom line goes across, and the side line goes up. For example, if the library is at column B and row three, its coordinate is (B, 3). Using direction words and math coordinates makes finding your way simple and fun.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What does a compass rose show on a map?",
+        "question_vi": "La bàn trên bản đồ chỉ ra điều gì?",
+        "options": [
+          "The four cardinal directions: North, South, East, and West",
+          "The price of food at the store",
+          "The names of all the characters"
+        ],
+        "answer": "The four cardinal directions: North, South, East, and West"
+      },
+      {
+        "id": "q2",
+        "question_en": "What does a map key explain?",
+        "question_vi": "Bảng chú giải bản đồ giải thích điều gì?",
+        "options": [
+          "The meaning of symbols and icons",
+          "How to draw triangles",
+          "How to spell numbers"
+        ],
+        "answer": "The meaning of symbols and icons"
+      },
+      {
+        "id": "q3",
+        "question_en": "What do coordinates help us locate on a grid?",
+        "question_vi": "Tọa độ giúp chúng ta xác định vị trí của điều gì trên lưới?",
+        "options": [
+          "Exact places and points",
+          "Only wild animals",
+          "The color of the paper"
+        ],
+        "answer": "Exact places and points"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "compass",
+        "definition_en": "A tool showing North, South, East, and West."
+      },
+      {
+        "term": "map key",
+        "definition_en": "A guide that explains what symbols on a map represent."
+      },
+      {
+        "term": "direction",
+        "definition_en": "The path or line along which something faces or moves."
+      },
+      {
+        "term": "coordinate",
+        "definition_en": "A pair of letters and numbers showing an exact grid point."
+      },
+      {
+        "term": "grid",
+        "definition_en": "A network of crossing horizontal and vertical lines."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "A compass rose shows North, South, East, and West.",
+      "ipa": "/ə ˈkʌmpəs roʊz ʃoʊz nɔrθ saʊθ ist ænd wɛst/",
+      "vietnamese": "Hình hoa thị la bàn chỉ ra các hướng Bắc, Nam, Đông và Tây."
+    },
+    {
+      "id": 2,
+      "text": "Check the map key to understand each symbol.",
+      "ipa": "/tʃɛk ðə mæp ki tu ˌʌndərˈstænd itʃ ˈsɪmbəl/",
+      "vietnamese": "Hãy kiểm tra bảng chú giải bản đồ để hiểu từng ký hiệu."
+    },
+    {
+      "id": 3,
+      "text": "Walk straight along the path and turn East.",
+      "ipa": "/wɔk streɪt əˈlɔŋ ðə pæθ ænd tɜrn ist/",
+      "vietnamese": "Đi thẳng dọc theo đường mòn và rẽ về hướng Đông."
+    },
+    {
+      "id": 4,
+      "text": "The old lighthouse sits on the high West cliff.",
+      "ipa": "/ði oʊld ˈlaɪtˌhaʊs sɪts ɑn ðə haɪ wɛst klɪf/",
+      "vietnamese": "Ngọn hải đăng cổ tọa lạc trên vách đá cao phía Tây."
+    },
+    {
+      "id": 5,
+      "text": "A coordinate grid uses letters and numbers together.",
+      "ipa": "/ə koʊˈɔrdənɪt ɡrɪd ˈjuzəz ˈlɛtərz ænd ˈnʌmbərz təˈɡɛðər/",
+      "vietnamese": "Lưới tọa độ dùng cả chữ cái và số kết hợp với nhau."
+    },
+    {
+      "id": 6,
+      "text": "The secret cave is located at coordinate C-four.",
+      "ipa": "/ðə ˈsikrət keɪv ɪz ˈloʊˌkeɪtəd æt koʊˈɔrdənɪt si fɔr/",
+      "vietnamese": "Hang động bí mật nằm ở tọa độ C-bốn."
+    },
+    {
+      "id": 7,
+      "text": "Following clear directions helps you find the treasure.",
+      "ipa": "/ˈfɑloʊɪŋ klɪr dəˈrɛkʃənz hɛlps ju faɪnd ðə ˈtrɛʒər/",
+      "vietnamese": "Đi theo chỉ dẫn rõ ràng sẽ giúp bạn tìm thấy kho báu."
+    },
+    {
+      "id": 8,
+      "text": "Maps make exploring the outdoors safe and exciting.",
+      "ipa": "/mæps meɪk ɪkˈsplɔrɪŋ ði ˌaʊtˈdɔrz seɪf ænd ɪkˈsaɪtɪŋ/",
+      "vietnamese": "Bản đồ giúp việc khám phá thiên nhiên an toàn và hào hứng."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Oliver",
-        "text": "A magnetic compass needle always aligns toward magnetic north.",
-        "ipa": "/ə mæɡˈnɛtɪk ˈkʌmpəs ˈniːdl ˈɔːlweɪz əˈlaɪnz təˈwɔːrd mæɡˈnɛtɪk nɔːrθ/"
+        "text": "A compass rose shows North, South, East, and West.",
+        "ipa": "/ə ˈkʌmpəs roʊz ʃoʊz nɔrθ saʊθ ist ænd wɛst/",
+        "vietnamese": "Hình hoa thị la bàn chỉ ra các hướng Bắc, Nam, Đông và Tây."
+      },
+      {
+        "id": 2,
+        "text": "Check the map key to understand each symbol.",
+        "ipa": "/tʃɛk ðə mæp ki tu ˌʌndərˈstænd itʃ ˈsɪmbəl/",
+        "vietnamese": "Hãy kiểm tra bảng chú giải bản đồ để hiểu từng ký hiệu."
+      },
+      {
+        "id": 3,
+        "text": "Walk straight along the path and turn East.",
+        "ipa": "/wɔk streɪt əˈlɔŋ ðə pæθ ænd tɜrn ist/",
+        "vietnamese": "Đi thẳng dọc theo đường mòn và rẽ về hướng Đông."
+      },
+      {
+        "id": 4,
+        "text": "The old lighthouse sits on the high West cliff.",
+        "ipa": "/ði oʊld ˈlaɪtˌhaʊs sɪts ɑn ðə haɪ wɛst klɪf/",
+        "vietnamese": "Ngọn hải đăng cổ tọa lạc trên vách đá cao phía Tây."
+      },
+      {
+        "id": 5,
+        "text": "A coordinate grid uses letters and numbers together.",
+        "ipa": "/ə koʊˈɔrdənɪt ɡrɪd ˈjuzəz ˈlɛtərz ænd ˈnʌmbərz təˈɡɛðər/",
+        "vietnamese": "Lưới tọa độ dùng cả chữ cái và số kết hợp với nhau."
+      },
+      {
+        "id": 6,
+        "text": "The secret cave is located at coordinate C-four.",
+        "ipa": "/ðə ˈsikrət keɪv ɪz ˈloʊˌkeɪtəd æt koʊˈɔrdənɪt si fɔr/",
+        "vietnamese": "Hang động bí mật nằm ở tọa độ C-bốn."
+      },
+      {
+        "id": 7,
+        "text": "Following clear directions helps you find the treasure.",
+        "ipa": "/ˈfɑloʊɪŋ klɪr dəˈrɛkʃənz hɛlps ju faɪnd ðə ˈtrɛʒər/",
+        "vietnamese": "Đi theo chỉ dẫn rõ ràng sẽ giúp bạn tìm thấy kho báu."
+      },
+      {
+        "id": 8,
+        "text": "Maps make exploring the outdoors safe and exciting.",
+        "ipa": "/mæps meɪk ɪkˈsplɔrɪŋ ði ˌaʊtˈdɔrz seɪf ænd ɪkˈsaɪtɪŋ/",
+        "vietnamese": "Bản đồ giúp việc khám phá thiên nhiên an toàn và hào hứng."
+      }
+    ]
+  },
+  "rw_part1": {
+    "word_bank": [
+      "North",
+      "South",
+      "East",
+      "West",
+      "compass",
+      "map",
+      "key",
+      "direction",
+      "straight",
+      "turn",
+      "grid",
+      "coordinate",
+      "point",
+      "line",
+      "distance",
+      "island",
+      "treasure",
+      "path",
+      "walk",
+      "find"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "target": "map",
+        "definition": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "word": "map",
+        "definition_en": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "options": [
+          "map",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "map"
+      },
+      {
+        "id": 2,
+        "text": "An instrument with a magnetic needle that points north.",
+        "target": "compass",
+        "definition": "An instrument with a magnetic needle that points north.",
+        "word": "compass",
+        "definition_en": "An instrument with a magnetic needle that points north.",
+        "options": [
+          "compass",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "compass"
+      },
+      {
+        "id": 3,
+        "text": "The cardinal direction pointing toward the North Pole.",
+        "target": "north",
+        "definition": "The cardinal direction pointing toward the North Pole.",
+        "word": "north",
+        "definition_en": "The cardinal direction pointing toward the North Pole.",
+        "options": [
+          "north",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "north"
+      },
+      {
+        "id": 4,
+        "text": "A picture or letter that stands for something on a map.",
+        "target": "symbol",
+        "definition": "A picture or letter that stands for something on a map.",
+        "word": "symbol",
+        "definition_en": "A picture or letter that stands for something on a map.",
+        "options": [
+          "symbol",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symbol"
+      },
+      {
+        "id": 5,
+        "text": "A pattern of straight lines crossing to form squares on a map.",
+        "target": "grid",
+        "definition": "A pattern of straight lines crossing to form squares on a map.",
+        "word": "grid",
+        "definition_en": "A pattern of straight lines crossing to form squares on a map.",
+        "options": [
+          "grid",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "grid"
+      }
+    ]
+  },
+  "rw_part2": {
+    "title": "Navigating with Maps and Compasses",
+    "topic": "Navigating with Maps and Compasses",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "How can we find the mountain campsite on this topographical map?",
+        "text": "How can we find the mountain campsite on this topographical map?",
+        "options": [
+          "We check the map grid coordinates and follow the green trail symbol.",
+          "I bought a pair of running socks at the shopping mall.",
+          "The movie was two hours and fifteen minutes long."
+        ],
+        "answer": "We check the map grid coordinates and follow the green trail symbol."
       },
       {
         "id": 2,
         "speaker": "Chloe",
-        "text": "Coordinates (x, y) identify an exact position on a flat grid.",
-        "ipa": "/kəʊˈɔːrdɪnəts (ɛks, waɪ) aɪˈdɛntɪfaɪ ən ɪɡˈzækt pəˈzɪʃən ɒn ə flæt ɡrɪd/"
+        "prompt": "Which direction does the magnetic needle of our compass point?",
+        "text": "Which direction does the magnetic needle of our compass point?",
+        "options": [
+          "The red tip always points directly toward magnetic north.",
+          "My brother enjoys playing chess with grandfather.",
+          "There are four windows inside the science laboratory."
+        ],
+        "answer": "The red tip always points directly toward magnetic north."
       },
       {
         "id": 3,
-        "speaker": "Oliver",
-        "text": "Move five units east and eight units north to find the camp.",
-        "ipa": "/muːv faɪv ˈjuːnɪts iːst ænd eɪt ˈjuːnɪts nɔːrθ tuː faɪnd ðə kæmp/"
+        "speaker": "Lucas",
+        "prompt": "How far is the forest lake according to the map scale?",
+        "text": "How far is the forest lake according to the map scale?",
+        "options": [
+          "One centimeter equals one kilometer, so the lake is five kilometers away.",
+          "I ate cheese and crackers during break time.",
+          "The train leaves the station at ten o'clock."
+        ],
+        "answer": "One centimeter equals one kilometer, so the lake is five kilometers away."
       },
       {
         "id": 4,
         "speaker": "Chloe",
-        "text": "Five units plus eight units equals thirteen units of total distance.",
-        "ipa": "/faɪv ˈjuːnɪts plʌs eɪt ˈjuːnɪts ˈiːkwəlz θɜːrˈtiːn ˈjuːnɪts ɒv ˈtəʊtl ˈdɪstəns/"
+        "prompt": "If we walk three kilometers before lunch, how far is left to travel?",
+        "text": "If we walk three kilometers before lunch, how far is left to travel?",
+        "options": [
+          "Five minus three leaves two kilometers to reach the campsite.",
+          "I wear my warm winter scarf on windy days.",
+          "The museum is closed on Monday morning."
+        ],
+        "answer": "Five minus three leaves two kilometers to reach the campsite."
       },
       {
         "id": 5,
-        "speaker": "Oliver",
-        "text": "The rectangular perimeter is two times six plus nine, which is thirty.",
-        "ipa": "/ðə rɛkˈtæŋɡjʊlər pəˈrɪmɪtər ɪz tuː taɪmz sɪks plʌs naɪn, wɪtʃ ɪz ˈθɜːrti/"
-      },
-      {
-        "id": 6,
-        "speaker": "Chloe",
-        "text": "Consult the map legend to decipher symbols for paths and springs.",
-        "ipa": "/kənˈsʌlt ðə mæp ˈlɛdʒənd tuː dɪˈsaɪfər ˈsɪmbəlz fɔːr pɑːðz ænd sprɪŋz/"
-      },
-      {
-        "id": 7,
-        "speaker": "Oliver",
-        "text": "The horizontal x-axis is always read before the vertical y-axis.",
-        "ipa": "/ðə ˌhɒrɪˈzɒntl ˈɛksˌæksɪs ɪz ˈɔːlweɪz rɛd bɪˈfɔːr ðə ˈvɜːrtɪkl ˈwaɪˌæksɪs/"
-      },
-      {
-        "id": 8,
-        "speaker": "Chloe",
-        "text": "Accurate navigation ensures travelers reach their destination securely.",
-        "ipa": "/ˈækjʊrət ˌnævɪˈɡeɪʃən ɪnˈʃʊərz ˈtrævələrz riːtʃ ðɛər ˌdɛstɪˈneɪʃən sɪˈkjʊərli/"
+        "speaker": "Lucas",
+        "prompt": "Shall we pack our compass and paper map in our hiking backpack?",
+        "text": "Shall we pack our compass and paper map in our hiking backpack?",
+        "options": [
+          "Yes, let's keep them in the front waterproof pocket!",
+          "I do not like drinking warm milk before bed.",
+          "The bus stopped near the central railway bridge."
+        ],
+        "answer": "Yes, let's keep them in the front waterproof pocket!"
       }
-    ]
-  },
-  "rw_part1": [
-    {
-      "definition": "An instrument with a magnetic needle that points north.",
-      "word": "compass"
-    },
-    {
-      "definition": "A pair of numbers giving an exact position on a map.",
-      "word": "coordinate"
-    },
-    {
-      "definition": "The explanation of symbols and markings on a map.",
-      "word": "legend"
-    },
-    {
-      "definition": "The total length of the boundary around a shape.",
-      "word": "perimeter"
-    },
-    {
-      "definition": "The horizontal reference line on a coordinate plane.",
-      "word": "x-axis"
-    }
-  ],
-  "rw_part2": {
-    "title": "Navigating with Coordinates",
+    ],
     "exchanges": [
       {
-        "speaker": "Oliver",
-        "text": "Which direction should we head first from the basecamp?"
+        "speaker": "Lucas",
+        "text": "We check the map grid coordinates and follow the green trail symbol."
       },
       {
         "speaker": "Chloe",
-        "text": "Travel east along the horizontal x-axis for five units."
+        "text": "The red tip always points directly toward magnetic north."
       },
       {
-        "speaker": "Oliver",
-        "text": "And then which cardinal direction do we turn?"
+        "speaker": "Lucas",
+        "text": "One centimeter equals one kilometer, so the lake is five kilometers away."
       },
       {
         "speaker": "Chloe",
-        "text": "Turn north and hike eight units up the vertical y-axis."
+        "text": "Five minus three leaves two kilometers to reach the campsite."
       },
       {
-        "speaker": "Oliver",
-        "text": "That gives thirteen units of total hiking distance!"
+        "speaker": "Lucas",
+        "text": "Yes, let's keep them in the front waterproof pocket!"
       }
     ]
   },
   "rw_part6": {
-    "text": "When hikers plan an expedition, they rely on a reliable map and (1) ___. The compass rose displays the cardinal directions: North, South, East, and West. On a grid map, every landmark has an exact (2) ___ written as an x and y pair. For example, moving 5 units east and 8 units north gives a total (3) ___ of 13 units. In addition, the (4) ___ around a 6 by 9 campground is 30 units.",
-    "answers": [
+    "title": "Chloe's Explorer Journal: Reading Maps",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Learning to read a map is an essential skill [1]_____ every traveler. Maps show symbols for hills, rivers, [2]_____ hiking trails. A compass needle always points toward [3]_____ north direction. By checking the map scale, hikers can calculate distances [4]_____ kilometers. Yesterday our class planned a safe route [5]_____ the nature reserve.",
+    "answers": {
+      "1": "for",
+      "2": "and",
+      "3": "the",
+      "4": "in",
+      "5": "through"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "North",
+      "South",
+      "East",
+      "West",
       "compass",
+      "map",
+      "key",
+      "direction",
+      "straight",
+      "turn",
+      "grid",
       "coordinate",
+      "point",
+      "line",
       "distance",
-      "perimeter"
+      "island",
+      "treasure",
+      "path",
+      "walk",
+      "find"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "target": "map",
+        "definition": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "word": "map",
+        "definition_en": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "options": [
+          "map",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "map"
+      },
+      {
+        "id": 2,
+        "text": "An instrument with a magnetic needle that points north.",
+        "target": "compass",
+        "definition": "An instrument with a magnetic needle that points north.",
+        "word": "compass",
+        "definition_en": "An instrument with a magnetic needle that points north.",
+        "options": [
+          "compass",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "compass"
+      },
+      {
+        "id": 3,
+        "text": "The cardinal direction pointing toward the North Pole.",
+        "target": "north",
+        "definition": "The cardinal direction pointing toward the North Pole.",
+        "word": "north",
+        "definition_en": "The cardinal direction pointing toward the North Pole.",
+        "options": [
+          "north",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "north"
+      },
+      {
+        "id": 4,
+        "text": "A picture or letter that stands for something on a map.",
+        "target": "symbol",
+        "definition": "A picture or letter that stands for something on a map.",
+        "word": "symbol",
+        "definition_en": "A picture or letter that stands for something on a map.",
+        "options": [
+          "symbol",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symbol"
+      },
+      {
+        "id": 5,
+        "text": "A pattern of straight lines crossing to form squares on a map.",
+        "target": "grid",
+        "definition": "A pattern of straight lines crossing to form squares on a map.",
+        "word": "grid",
+        "definition_en": "A pattern of straight lines crossing to form squares on a map.",
+        "options": [
+          "grid",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "grid"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "An instrument with a magnetic needle that points north.",
-      "word": "compass"
-    },
-    {
-      "definition": "A pair of numbers giving an exact position on a map.",
-      "word": "coordinate"
-    },
-    {
-      "definition": "The explanation of symbols and markings on a map.",
-      "word": "legend"
-    },
-    {
-      "definition": "The total length of the boundary around a shape.",
-      "word": "perimeter"
-    },
-    {
-      "definition": "The horizontal reference line on a coordinate plane.",
-      "word": "x-axis"
-    }
-  ],
   "rw_part_2": {
-    "title": "Navigating with Coordinates",
+    "title": "Navigating with Maps and Compasses",
+    "topic": "Navigating with Maps and Compasses",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "How can we find the mountain campsite on this topographical map?",
+        "text": "How can we find the mountain campsite on this topographical map?",
+        "options": [
+          "We check the map grid coordinates and follow the green trail symbol.",
+          "I bought a pair of running socks at the shopping mall.",
+          "The movie was two hours and fifteen minutes long."
+        ],
+        "answer": "We check the map grid coordinates and follow the green trail symbol."
+      },
+      {
+        "id": 2,
+        "speaker": "Chloe",
+        "prompt": "Which direction does the magnetic needle of our compass point?",
+        "text": "Which direction does the magnetic needle of our compass point?",
+        "options": [
+          "The red tip always points directly toward magnetic north.",
+          "My brother enjoys playing chess with grandfather.",
+          "There are four windows inside the science laboratory."
+        ],
+        "answer": "The red tip always points directly toward magnetic north."
+      },
+      {
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "How far is the forest lake according to the map scale?",
+        "text": "How far is the forest lake according to the map scale?",
+        "options": [
+          "One centimeter equals one kilometer, so the lake is five kilometers away.",
+          "I ate cheese and crackers during break time.",
+          "The train leaves the station at ten o'clock."
+        ],
+        "answer": "One centimeter equals one kilometer, so the lake is five kilometers away."
+      },
+      {
+        "id": 4,
+        "speaker": "Chloe",
+        "prompt": "If we walk three kilometers before lunch, how far is left to travel?",
+        "text": "If we walk three kilometers before lunch, how far is left to travel?",
+        "options": [
+          "Five minus three leaves two kilometers to reach the campsite.",
+          "I wear my warm winter scarf on windy days.",
+          "The museum is closed on Monday morning."
+        ],
+        "answer": "Five minus three leaves two kilometers to reach the campsite."
+      },
+      {
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "Shall we pack our compass and paper map in our hiking backpack?",
+        "text": "Shall we pack our compass and paper map in our hiking backpack?",
+        "options": [
+          "Yes, let's keep them in the front waterproof pocket!",
+          "I do not like drinking warm milk before bed.",
+          "The bus stopped near the central railway bridge."
+        ],
+        "answer": "Yes, let's keep them in the front waterproof pocket!"
+      }
+    ],
     "exchanges": [
       {
-        "speaker": "Oliver",
-        "text": "Which direction should we head first from the basecamp?"
+        "speaker": "Lucas",
+        "text": "We check the map grid coordinates and follow the green trail symbol."
       },
       {
         "speaker": "Chloe",
-        "text": "Travel east along the horizontal x-axis for five units."
+        "text": "The red tip always points directly toward magnetic north."
       },
       {
-        "speaker": "Oliver",
-        "text": "And then which cardinal direction do we turn?"
+        "speaker": "Lucas",
+        "text": "One centimeter equals one kilometer, so the lake is five kilometers away."
       },
       {
         "speaker": "Chloe",
-        "text": "Turn north and hike eight units up the vertical y-axis."
+        "text": "Five minus three leaves two kilometers to reach the campsite."
       },
       {
-        "speaker": "Oliver",
-        "text": "That gives thirteen units of total hiking distance!"
+        "speaker": "Lucas",
+        "text": "Yes, let's keep them in the front waterproof pocket!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "When hikers plan an expedition, they rely on a reliable map and (1) ___. The compass rose displays the cardinal directions: North, South, East, and West. On a grid map, every landmark has an exact (2) ___ written as an x and y pair. For example, moving 5 units east and 8 units north gives a total (3) ___ of 13 units. In addition, the (4) ___ around a 6 by 9 campground is 30 units.",
-    "answers": [
-      "compass",
-      "coordinate",
-      "distance",
-      "perimeter"
-    ]
+    "title": "Chloe's Explorer Journal: Reading Maps",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Learning to read a map is an essential skill [1]_____ every traveler. Maps show symbols for hills, rivers, [2]_____ hiking trails. A compass needle always points toward [3]_____ north direction. By checking the map scale, hikers can calculate distances [4]_____ kilometers. Yesterday our class planned a safe route [5]_____ the nature reserve.",
+    "answers": {
+      "1": "for",
+      "2": "and",
+      "3": "the",
+      "4": "in",
+      "5": "through"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "target": "map",
+        "definition": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "word": "map",
+        "definition_en": "A drawing or picture of an area showing roads, rivers, and cities.",
+        "options": [
+          "map",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "map"
+      },
+      {
+        "id": 2,
+        "text": "An instrument with a magnetic needle that points north.",
+        "target": "compass",
+        "definition": "An instrument with a magnetic needle that points north.",
+        "word": "compass",
+        "definition_en": "An instrument with a magnetic needle that points north.",
+        "options": [
+          "compass",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "compass"
+      },
+      {
+        "id": 3,
+        "text": "The cardinal direction pointing toward the North Pole.",
+        "target": "north",
+        "definition": "The cardinal direction pointing toward the North Pole.",
+        "word": "north",
+        "definition_en": "The cardinal direction pointing toward the North Pole.",
+        "options": [
+          "north",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "north"
+      },
+      {
+        "id": 4,
+        "text": "A picture or letter that stands for something on a map.",
+        "target": "symbol",
+        "definition": "A picture or letter that stands for something on a map.",
+        "word": "symbol",
+        "definition_en": "A picture or letter that stands for something on a map.",
+        "options": [
+          "symbol",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symbol"
+      },
+      {
+        "id": 5,
+        "text": "A pattern of straight lines crossing to form squares on a map.",
+        "target": "grid",
+        "definition": "A pattern of straight lines crossing to form squares on a map.",
+        "word": "grid",
+        "definition_en": "A pattern of straight lines crossing to form squares on a map.",
+        "options": [
+          "grid",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "grid"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Navigating with Maps and Compasses",
+      "topic": "Navigating with Maps and Compasses",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Lucas",
+          "prompt": "How can we find the mountain campsite on this topographical map?",
+          "text": "How can we find the mountain campsite on this topographical map?",
+          "options": [
+            "We check the map grid coordinates and follow the green trail symbol.",
+            "I bought a pair of running socks at the shopping mall.",
+            "The movie was two hours and fifteen minutes long."
+          ],
+          "answer": "We check the map grid coordinates and follow the green trail symbol."
+        },
+        {
+          "id": 2,
+          "speaker": "Chloe",
+          "prompt": "Which direction does the magnetic needle of our compass point?",
+          "text": "Which direction does the magnetic needle of our compass point?",
+          "options": [
+            "The red tip always points directly toward magnetic north.",
+            "My brother enjoys playing chess with grandfather.",
+            "There are four windows inside the science laboratory."
+          ],
+          "answer": "The red tip always points directly toward magnetic north."
+        },
+        {
+          "id": 3,
+          "speaker": "Lucas",
+          "prompt": "How far is the forest lake according to the map scale?",
+          "text": "How far is the forest lake according to the map scale?",
+          "options": [
+            "One centimeter equals one kilometer, so the lake is five kilometers away.",
+            "I ate cheese and crackers during break time.",
+            "The train leaves the station at ten o'clock."
+          ],
+          "answer": "One centimeter equals one kilometer, so the lake is five kilometers away."
+        },
+        {
+          "id": 4,
+          "speaker": "Chloe",
+          "prompt": "If we walk three kilometers before lunch, how far is left to travel?",
+          "text": "If we walk three kilometers before lunch, how far is left to travel?",
+          "options": [
+            "Five minus three leaves two kilometers to reach the campsite.",
+            "I wear my warm winter scarf on windy days.",
+            "The museum is closed on Monday morning."
+          ],
+          "answer": "Five minus three leaves two kilometers to reach the campsite."
+        },
+        {
+          "id": 5,
+          "speaker": "Lucas",
+          "prompt": "Shall we pack our compass and paper map in our hiking backpack?",
+          "text": "Shall we pack our compass and paper map in our hiking backpack?",
+          "options": [
+            "Yes, let's keep them in the front waterproof pocket!",
+            "I do not like drinking warm milk before bed.",
+            "The bus stopped near the central railway bridge."
+          ],
+          "answer": "Yes, let's keep them in the front waterproof pocket!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Lucas",
+          "text": "We check the map grid coordinates and follow the green trail symbol."
+        },
+        {
+          "speaker": "Chloe",
+          "text": "The red tip always points directly toward magnetic north."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "One centimeter equals one kilometer, so the lake is five kilometers away."
+        },
+        {
+          "speaker": "Chloe",
+          "text": "Five minus three leaves two kilometers to reach the campsite."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Yes, let's keep them in the front waterproof pocket!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Chloe's Explorer Journal: Reading Maps",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Learning to read a map is an essential skill [1]_____ every traveler. Maps show symbols for hills, rivers, [2]_____ hiking trails. A compass needle always points toward [3]_____ north direction. By checking the map scale, hikers can calculate distances [4]_____ kilometers. Yesterday our class planned a safe route [5]_____ the nature reserve.",
+      "answers": {
+        "1": "for",
+        "2": "and",
+        "3": "the",
+        "4": "in",
+        "5": "through"
+      }
+    }
   }
 };
 export default readingHubData;

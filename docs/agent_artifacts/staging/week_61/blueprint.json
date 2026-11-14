@@ -15,10 +15,11 @@
     "focus": "Distinguish Main Idea vs. Details"
   },
   "grammar_focus": {
-    "structure": "Subject + Verb Identification (Core sentence)",
+    "structure": "Identifying Main Idea & Supporting Details: The text is mainly about...",
     "outcome": "Distinguish Main Idea vs. Details",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Identifying Main Idea & Supporting Details: The text is mainly about..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -244,5 +245,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 61
 }

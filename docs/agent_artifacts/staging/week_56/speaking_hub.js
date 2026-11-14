@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 56 | Theme: "Cause and Effect: The Community Garden" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 56 | Theme: "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 56,
-  "theme": "Cause and Effect: The Community Garden",
+  "theme": "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Describe a time when you solved a problem with plants or pets. Explain the cause of the problem, the action you took, and the result.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Gardener A",
-      "cues": [
-        "Garden location",
-        "Total seedlings planted",
-        "Main problem faced",
-        "Watering method used",
-        "Seedlings saved"
-      ]
-    },
-    "card_b": {
-      "role": "Gardener B",
-      "cues": [
-        "Garden location",
-        "Total seedlings planted",
-        "Main problem faced",
-        "Watering method used",
-        "Seedlings saved"
-      ]
-    },
+    "title": "David and Maya's Garden Project Exchange",
     "table_a": {
-      "title": "Gardener A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Gardener A",
+      "title": "David's School Garden",
+      "person": "David",
       "fields": [
         {
-          "id": "f1",
-          "label": "Garden location",
-          "cue_prompt": "what / garden location?",
-          "cue_word": "garden",
+          "id": "field_a1",
+          "label": "where / David's garden?",
+          "cue_prompt": "where / David's garden?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "Behind the school cafeteria",
           "acceptable_questions": [
-            "What is the garden location?",
-            "Can you tell me the garden location?"
+            "Where is David's garden?",
+            "Where did David make the garden?",
+            "Where is his garden located?"
           ],
-          "nova_reply": "The garden location is recorded for Cause and Effect: The Community Garden."
+          "nova_reply": "David's garden is located right behind the school cafeteria."
         },
         {
-          "id": "f2",
-          "label": "Total seedlings planted",
-          "cue_prompt": "what / total seedlings planted?",
-          "cue_word": "total",
+          "id": "field_a2",
+          "label": "what vegetables / plant?",
+          "cue_prompt": "what vegetables / plant?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Tomatoes and carrots",
           "acceptable_questions": [
-            "What is the total seedlings planted?",
-            "Can you tell me the total seedlings planted?"
+            "What vegetables did he plant?",
+            "What did David grow?",
+            "What kind of vegetables are in the garden?"
           ],
-          "nova_reply": "The total seedlings planted is recorded for Cause and Effect: The Community Garden."
+          "nova_reply": "David planted sweet red tomatoes and crunchy orange carrots."
         },
         {
-          "id": "f3",
-          "label": "Main problem faced",
-          "cue_prompt": "what / main problem faced?",
-          "cue_word": "main",
-          "is_missing": false,
-          "card_value": "Main problem faced verified",
-          "value": "Main problem faced verified",
-          "examiner_question": "What is the main problem faced?",
-          "acceptable_answers": [
-            "It is main problem faced.",
-            "Main problem faced."
-          ]
+          "id": "field_a3",
+          "label": "when / water the plants?",
+          "cue_prompt": "when / water the plants?",
+          "cue_word": "when",
+          "is_missing": true,
+          "value": "At 8:00 AM every morning",
+          "acceptable_questions": [
+            "When does David water the plants?",
+            "What time does he water them?",
+            "When do they water the garden?"
+          ],
+          "nova_reply": "He waters the plants at 8:00 AM every morning before class."
         },
         {
-          "id": "f4",
-          "label": "Watering method used",
-          "cue_prompt": "what / watering method used?",
-          "cue_word": "watering",
-          "is_missing": false,
-          "card_value": "Watering method used verified",
-          "value": "Watering method used verified",
-          "examiner_question": "What is the watering method used?",
-          "acceptable_answers": [
-            "It is watering method used.",
-            "Watering method used."
-          ]
+          "id": "field_a4",
+          "label": "how many / tomato plants?",
+          "cue_prompt": "how many / tomato plants?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "25 tomato plants",
+          "acceptable_questions": [
+            "How many tomato plants are there?",
+            "How many plants did he grow?",
+            "How many tomatoes did they plant?"
+          ],
+          "nova_reply": "There are 25 healthy tomato plants growing in his garden bed."
         },
         {
-          "id": "f5",
-          "label": "Seedlings saved",
-          "cue_prompt": "what / seedlings saved?",
-          "cue_word": "seedlings",
-          "is_missing": false,
-          "card_value": "Seedlings saved verified",
-          "value": "Seedlings saved verified",
-          "examiner_question": "What is the seedlings saved?",
-          "acceptable_answers": [
-            "It is seedlings saved.",
-            "Seedlings saved."
-          ]
+          "id": "field_a5",
+          "label": "who / helped David?",
+          "cue_prompt": "who / helped David?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "His teacher Mrs. Green",
+          "acceptable_questions": [
+            "Who helped David?",
+            "Who helped him in the garden?",
+            "Who worked with David?"
+          ],
+          "nova_reply": "His science teacher Mrs. Green helped him set up the watering cans."
         }
       ]
     },
     "table_b": {
-      "title": "Gardener B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Gardener B",
+      "title": "Maya's Vegetable Patch",
+      "person": "Maya",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Garden location",
-          "cue_prompt": "what / garden location?",
-          "cue_word": "garden",
+          "id": "field_b1",
+          "label": "what / Maya's favorite plant?",
+          "cue_prompt": "what / Maya's favorite plant?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Garden location on file",
-          "value": "Garden location on file",
-          "examiner_question": "What is the garden location?",
+          "value": "Green bean plants",
+          "nova_question": "What is Maya's favorite plant in her vegetable patch?",
           "acceptable_answers": [
-            "It is garden location.",
-            "Garden location."
+            "Green bean plants",
+            "Green bean plants.",
+            "Her favorite plant is green bean plants.",
+            "Green beans"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Total seedlings planted",
-          "cue_prompt": "what / total seedlings planted?",
-          "cue_word": "total",
+          "id": "field_b2",
+          "label": "where / patch located?",
+          "cue_prompt": "where / patch located?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Total seedlings planted on file",
-          "value": "Total seedlings planted on file",
-          "examiner_question": "What is the total seedlings planted?",
+          "value": "Next to the sunny playground",
+          "nova_question": "Where is Maya's vegetable patch located?",
           "acceptable_answers": [
-            "It is total seedlings planted.",
-            "Total seedlings planted."
+            "Next to the sunny playground",
+            "Next to the playground.",
+            "It is next to the sunny playground.",
+            "Near the playground"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Main problem faced",
-          "cue_prompt": "what / main problem faced?",
-          "cue_word": "main",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the main problem faced?",
-            "Can you tell me the main problem faced?"
-          ],
-          "nova_reply": "The main problem faced is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / bean pods picked?",
+          "cue_prompt": "how many / bean pods picked?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "60 bean pods",
+          "nova_question": "How many bean pods did Maya pick yesterday?",
+          "acceptable_answers": [
+            "60 bean pods",
+            "Sixty bean pods",
+            "She picked 60 bean pods.",
+            "60 pods"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Watering method used",
-          "cue_prompt": "what / watering method used?",
-          "cue_word": "watering",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the watering method used?",
-            "Can you tell me the watering method used?"
-          ],
-          "nova_reply": "The watering method used is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / pick beans?",
+          "cue_prompt": "what time / pick beans?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 3:45 PM",
+          "nova_question": "What time did she pick the beans?",
+          "acceptable_answers": [
+            "At 3:45 PM",
+            "At 3:45",
+            "She picked them at 3:45 PM.",
+            "3:45 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Seedlings saved",
-          "cue_prompt": "what / seedlings saved?",
-          "cue_word": "seedlings",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the seedlings saved?",
-            "Can you tell me the seedlings saved?"
-          ],
-          "nova_reply": "The seedlings saved is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / ate the fresh beans?",
+          "cue_prompt": "who / ate the fresh beans?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her family at dinner",
+          "nova_question": "Who ate the fresh beans from her patch?",
+          "acceptable_answers": [
+            "Her family at dinner",
+            "Her family",
+            "Her family ate them at dinner.",
+            "Maya's family"
+          ]
         }
       ]
     }

@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 60 | Theme: "The Mayor's Request: Civic Action" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 60 | Theme: "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 60,
-  "theme": "The Mayor's Request: Civic Action",
+  "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -110,7 +109,8 @@ export const skillPracticeHubData = {
       "problem_text": "A town council calculates lighting costs using the expression 15 + 4 * 6. Following the correct order of operations, what is the final calculated cost?",
       "problem_en": "A town council calculates lighting costs using the expression 15 + 4 * 6. Following the correct order of operations, what is the final calculated cost?",
       "answer": 39,
-      "step_by_step": "Step 1: Multiplication first: 4 * 6 = 24. Step 2: Addition: 15 + 24 = 39."
+      "step_by_step": "Step 1: Multiplication first: 4 * 6 = 24. Step 2: Addition: 15 + 24 = 39.",
+      "question": "A town council calculates lighting costs using the expression 15 + 4 * 6. Following the correct order of operations, what is the final calculated cost?"
     },
     {
       "id": 2,
@@ -127,9 +127,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "(24 - 8) = 16",
-            "value": 16,
-            "color": "#F59E0B"
+            "label": "Part A",
+            "value": 4,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 4,
+            "color": "#10B981"
           }
         ],
         "total": 8,
@@ -139,7 +144,8 @@ export const skillPracticeHubData = {
       "problem_text": "The parks department evaluates the expression (24 - 8) / 2 to determine the number of swing sets. What is the value of this expression?",
       "problem_en": "The parks department evaluates the expression (24 - 8) / 2 to determine the number of swing sets. What is the value of this expression?",
       "answer": 8,
-      "step_by_step": "Step 1: Parentheses first: 24 - 8 = 16. Step 2: Division: 16 / 2 = 8."
+      "step_by_step": "Step 1: Parentheses first: 24 - 8 = 16. Step 2: Division: 16 / 2 = 8.",
+      "question": "The parks department evaluates the expression (24 - 8) / 2 to determine the number of swing sets. What is the value of this expression?"
     },
     {
       "id": 3,
@@ -173,7 +179,8 @@ export const skillPracticeHubData = {
       "problem_text": "A park planner calculates bench funding with the expression 50 - 5 * 7. Following the order of operations, what is the evaluated result?",
       "problem_en": "A park planner calculates bench funding with the expression 50 - 5 * 7. Following the order of operations, what is the evaluated result?",
       "answer": 15,
-      "step_by_step": "Step 1: Multiply: 5 * 7 = 35. Step 2: Subtract: 50 - 35 = 15."
+      "step_by_step": "Step 1: Multiply: 5 * 7 = 35. Step 2: Subtract: 50 - 35 = 15.",
+      "question": "A park planner calculates bench funding with the expression 50 - 5 * 7. Following the order of operations, what is the evaluated result?"
     },
     {
       "id": 4,
@@ -190,9 +197,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "3 Groups of 18",
-            "value": 54,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 27,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 27,
+            "color": "#10B981"
           }
         ],
         "total": 54,
@@ -202,7 +214,8 @@ export const skillPracticeHubData = {
       "problem_text": "Evaluate the expression 3 * (12 + 6) to find the total number of cedar seedlings ordered by the civic club.",
       "problem_en": "Evaluate the expression 3 * (12 + 6) to find the total number of cedar seedlings ordered by the civic club.",
       "answer": 54,
-      "step_by_step": "Step 1: Parentheses first: 12 + 6 = 18. Step 2: Multiply: 3 * 18 = 54."
+      "step_by_step": "Step 1: Parentheses first: 12 + 6 = 18. Step 2: Multiply: 3 * 18 = 54.",
+      "question": "Evaluate the expression 3 * (12 + 6) to find the total number of cedar seedlings ordered by the civic club."
     },
     {
       "id": 5,
@@ -236,7 +249,8 @@ export const skillPracticeHubData = {
       "problem_text": "The municipal safety depot calculates high-visibility vests with the expression 18 + 36 / 4. What is the value of this expression?",
       "problem_en": "The municipal safety depot calculates high-visibility vests with the expression 18 + 36 / 4. What is the value of this expression?",
       "answer": 27,
-      "step_by_step": "Step 1: Division first: 36 / 4 = 9. Step 2: Addition: 18 + 9 = 27."
+      "step_by_step": "Step 1: Division first: 36 / 4 = 9. Step 2: Addition: 18 + 9 = 27.",
+      "question": "The municipal safety depot calculates high-visibility vests with the expression 18 + 36 / 4. What is the value of this expression?"
     }
   ],
   "science_lab": {

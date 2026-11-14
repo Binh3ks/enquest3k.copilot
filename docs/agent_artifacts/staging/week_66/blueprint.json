@@ -1,7 +1,7 @@
 {
   "week": 66,
-  "theme": "Micro-Debate 1: \"Email vs Handwritten Letters",
-  "title_en": "Micro-Debate 1: \"Email vs Handwritten Letters",
+  "theme": "Micro-Debate 1: Email vs Handwritten Letters",
+  "title_en": "Micro-Debate 1: Email vs Handwritten Letters",
   "title_vi": "Tranh luận nhỏ 1: Email hay Thư tay",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
@@ -15,10 +15,11 @@
     "focus": "Which is better?"
   },
   "grammar_focus": {
-    "structure": "Modals, Comparatives, Because/So",
+    "structure": "Expressing Opinions in Debates: In my opinion..., I agree because..., I disagree because...",
     "outcome": null,
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Expressing Opinions in Debates: In my opinion..., I agree because..., I disagree because..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -242,5 +243,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 66
 }

@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 62 | Theme: "The Movie Trailer: Summarizing Stories" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 62 | Theme: "ELA: The Movie Trailer (Summarizing) / Math: Rounding"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 62,
-  "theme": "The Movie Trailer: Summarizing Stories",
+  "theme": "ELA: The Movie Trailer (Summarizing) / Math: Rounding",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Producing a Story Trailer",
+    "title": "Testing Levers and Pulleys in the Workshop",
     "exchanges": [
       {
-        "speaker": "Jack",
-        "text": "How many sentences should we use to summarize the plot?"
+        "speaker": "Daniel",
+        "text": "It changes the direction of the pulling effort from up to down."
       },
       {
-        "speaker": "Sophia",
-        "text": "Three concise sentences: introduction, conflict, and climax."
+        "speaker": "Grace",
+        "text": "We should place the pivot closer to the heavy rock on the ground."
       },
       {
-        "speaker": "Jack",
-        "text": "How many tickets did we sell for the premiere?"
+        "speaker": "Daniel",
+        "text": "It lifted thirty kilograms using only fifteen kilograms of applied effort."
       },
       {
-        "speaker": "Sophia",
-        "text": "One hundred thirty-four, which rounds to one hundred thirty."
+        "speaker": "Grace",
+        "text": "Thirty minus fifteen leaves a difference of fifteen kilograms."
       },
       {
-        "speaker": "Jack",
-        "text": "And Saturday's two hundred sixty-eight rounds to three hundred!"
+        "speaker": "Daniel",
+        "text": "Yes, let's assemble the boom and attach a double pulley!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Sophia",
-      "text": "A concise summary captures the key plot points in three sentences.",
-      "ipa": "/ə kənˈsaɪs ˈsʌməri ˈkæptʃərz ðə kiː plɒt pɔɪnts ɪn θriː ˈsɛntənsɪz/"
+      "text": "A movie trailer gives a short summary of the story.",
+      "ipa": "/ə ˈmuvi ˈtreɪlər ɡɪvz ə ʃɔrt ˈsʌməri ʌv ðə ˈstɔri/",
+      "vietnamese": "Một đoạn trailer phim đưa ra bản tóm tắt ngắn về câu chuyện."
     },
     {
       "id": 2,
-      "speaker": "Jack",
-      "text": "Paraphrase the narrative using your own natural vocabulary.",
-      "ipa": "/ˈpærəfreɪz ðə ˈnærətɪv ˈjuːzɪŋ jɔːr əʊn ˈnætʃrəl vəʊˈkæbjʊləri/"
+      "text": "In the beginning, we meet the adventurous main character.",
+      "ipa": "/ɪn ðə bɪˈɡɪnɪŋ wi mit ðə ædˈvɛntʃərəs meɪn ˈkærɪktər/",
+      "vietnamese": "Ở phần mở đầu, chúng ta gặp nhân vật chính thích phiêu lưu."
     },
     {
       "id": 3,
-      "speaker": "Sophia",
-      "text": "Forty-eight rounded to the nearest ten equals fifty.",
-      "ipa": "/ˈfɔːrti eɪt ˈraʊndɪd tuː ðə ˈnɪərɪst tɛn ˈiːkwəlz ˈfɪfti/"
+      "text": "In the middle, an exciting challenge tests the heroes.",
+      "ipa": "/ɪn ðə ˈmɪdəl æn ɪkˈsaɪtɪŋ ˈtʃæləndʒ tɛsts ðə ˈhɪroʊz/",
+      "vietnamese": "Ở phần giữa, một thử thách hồi hộp sẽ thử sức các vị anh hùng."
     },
     {
       "id": 4,
-      "speaker": "Jack",
-      "text": "One hundred thirty-four rounded to the nearest ten is one hundred thirty.",
-      "ipa": "/wʌn ˈhʌndrəd ˈθɜːrti fɔːr ˈraʊndɪd tuː ðə ˈnɪərɪst tɛn ɪz wʌn ˈhʌndrəd ˈθɜːrti/"
+      "text": "In the end, teamwork helps them solve the mystery.",
+      "ipa": "/ɪn ðə ɛnd ˈtimˌwɜrk hɛlps ðɛm sɑlv ðə ˈmɪstəri/",
+      "vietnamese": "Ở phần kết, tinh thần đồng đội giúp họ giải quyết bí ẩn."
     },
     {
       "id": 5,
-      "speaker": "Sophia",
-      "text": "Two hundred sixty-eight rounded to the nearest hundred is three hundred.",
-      "ipa": "/tuː ˈhʌndrəd ˈsɪksti eɪt ˈraʊndɪd tuː ðə ˈnɪərɪst ˈhʌndrəd ɪz θriː ˈhʌndrəd/"
+      "text": "Rounding numbers helps us make a quick estimate.",
+      "ipa": "/ˈraʊndɪŋ ˈnʌmbərz hɛlps ʌs meɪk ə kwɪk ˈɛstəmət/",
+      "vietnamese": "Làm tròn các số giúp chúng ta đưa ra ước tính nhanh chóng."
     },
     {
       "id": 6,
-      "speaker": "Jack",
-      "text": "Rounding numbers gives a fast and practical estimate for planning.",
-      "ipa": "/ˈraʊndɪŋ ˈnʌmbərz ɡɪvz ə fɑːst ænd ˈpræktɪkl ˈɛstɪmeɪt fɔːr ˈplænɪŋ/"
+      "text": "Eighty-eight is closer to ninety on the number line.",
+      "ipa": "/ˈeɪti eɪt ɪz ˈkloʊsər tu ˈnaɪnti ɑn ðə ˈnʌmbər laɪn/",
+      "vietnamese": "Tám mươi tám thì gần chín mươi hơn trên trục số."
     },
     {
       "id": 7,
-      "speaker": "Sophia",
-      "text": "The cinema audience cheered as the dramatic climax unfolded.",
-      "ipa": "/ðə ˈsɪnəmə ˈɔːdiəns tʃɪəd æz ðə drəˈmætɪk ˈklaɪmæks ʌnˈfəʊldɪd/"
+      "text": "Therefore, we round eighty-eight to the nearest ten.",
+      "ipa": "/ˈðɛrˌfɔr wi raʊnd ˈeɪti eɪt tu ðə ˈnɪrɪst tɛn/",
+      "vietnamese": "Do đó, chúng ta làm tròn tám mươi tám đến hàng chục gần nhất."
     },
     {
       "id": 8,
-      "speaker": "Jack",
-      "text": "Clear summaries hook viewers and make stories memorable.",
-      "ipa": "/klɪər ˈsʌməriz hʊk ˈvjuːərz ænd meɪk ˈstɔːriz ˈmɛmərəbl/"
+      "text": "A good summary shares the big plot points clearly.",
+      "ipa": "/ə ɡʊd ˈsʌməri ʃɛrz ðə bɪɡ plɑt pɔɪnts ˈklɪrli/",
+      "vietnamese": "Một bản tóm tắt tốt sẽ chia sẻ các điểm cốt truyện chính một cách rõ ràng."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 62. Theme: The Movie Trailer: Summarizing Stories.\nSpeaker: A concise summary captures the key plot points in three sentences.\nSpeaker: Paraphrase the narrative using your own natural vocabulary.\nSpeaker: Forty-eight rounded to the nearest ten equals fifty.\nSpeaker: One hundred thirty-four rounded to the nearest ten is one hundred thirty.\nSpeaker: Two hundred sixty-eight rounded to the nearest hundred is three hundred.\nSpeaker: Rounding numbers gives a fast and practical estimate for planning.\nSpeaker: The cinema audience cheered as the dramatic climax unfolded.\nSpeaker: Clear summaries hook viewers and make stories memorable."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 62. Theme: ELA: The Movie Trailer (Summarizing) / Math: Rounding.\nSpeaker: A movie trailer gives a short summary of the story.\nSpeaker: In the beginning, we meet the adventurous main character.\nSpeaker: In the middle, an exciting challenge tests the heroes.\nSpeaker: In the end, teamwork helps them solve the mystery.\nSpeaker: Rounding numbers helps us make a quick estimate.\nSpeaker: Eighty-eight is closer to ninety on the number line.\nSpeaker: Therefore, we round eighty-eight to the nearest ten.\nSpeaker: A good summary shares the big plot points clearly."
 };
 export default listeningHubData;

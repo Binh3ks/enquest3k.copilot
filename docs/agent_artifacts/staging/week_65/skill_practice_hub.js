@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 65,
-  "theme": "Cycle 2.1 Review: Logic and Data Mastery",
+  "theme": "Review & Consolidation (Cycle 2.1)",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -93,9 +92,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "(36 + 24) = 60",
-            "value": 60,
+            "label": "Part A",
+            "value": 6,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 6,
+            "color": "#10B981"
           }
         ],
         "total": 12,
@@ -105,7 +109,8 @@ export const skillPracticeHubData = {
       "problem_text": "Evaluate the mathematical expression (36 + 24) / 5 following the correct order of operations.",
       "problem_en": "Evaluate the mathematical expression (36 + 24) / 5 following the correct order of operations.",
       "answer": 12,
-      "step_by_step": "Step 1: Parentheses first: 36 + 24 = 60. Step 2: Divide: 60 / 5 = 12."
+      "step_by_step": "Step 1: Parentheses first: 36 + 24 = 60. Step 2: Divide: 60 / 5 = 12.",
+      "question": "Evaluate the mathematical expression (36 + 24) / 5 following the correct order of operations."
     },
     {
       "id": 2,
@@ -139,7 +144,8 @@ export const skillPracticeHubData = {
       "problem_text": "Calculate the value of the expression 4 * 15 - 18 using mathematical priority rules.",
       "problem_en": "Calculate the value of the expression 4 * 15 - 18 using mathematical priority rules.",
       "answer": 42,
-      "step_by_step": "Step 1: Multiply first: 4 * 15 = 60. Step 2: Subtract: 60 - 18 = 42."
+      "step_by_step": "Step 1: Multiply first: 4 * 15 = 60. Step 2: Subtract: 60 - 18 = 42.",
+      "question": "Calculate the value of the expression 4 * 15 - 18 using mathematical priority rules."
     },
     {
       "id": 3,
@@ -173,7 +179,8 @@ export const skillPracticeHubData = {
       "problem_text": "Evaluate the arithmetic expression 75 - 8 * 6 following the proper order of operations.",
       "problem_en": "Evaluate the arithmetic expression 75 - 8 * 6 following the proper order of operations.",
       "answer": 27,
-      "step_by_step": "Step 1: Multiply: 8 * 6 = 48. Step 2: Subtract: 75 - 48 = 27."
+      "step_by_step": "Step 1: Multiply: 8 * 6 = 48. Step 2: Subtract: 75 - 48 = 27.",
+      "question": "Evaluate the arithmetic expression 75 - 8 * 6 following the proper order of operations."
     },
     {
       "id": 4,
@@ -190,9 +197,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "3 * 30",
-            "value": 90,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 45,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 45,
+            "color": "#10B981"
           }
         ],
         "total": 90,
@@ -202,7 +214,8 @@ export const skillPracticeHubData = {
       "problem_text": "What is the value of the mathematical expression 3 * (14 + 16)?",
       "problem_en": "What is the value of the mathematical expression 3 * (14 + 16)?",
       "answer": 90,
-      "step_by_step": "Step 1: Parentheses first: 14 + 16 = 30. Step 2: Multiply: 3 * 30 = 90."
+      "step_by_step": "Step 1: Parentheses first: 14 + 16 = 30. Step 2: Multiply: 3 * 30 = 90.",
+      "question": "What is the value of the mathematical expression 3 * (14 + 16)?"
     },
     {
       "id": 5,
@@ -236,7 +249,8 @@ export const skillPracticeHubData = {
       "problem_text": "Evaluate the expression 96 / 8 + 25 following standard mathematical priority.",
       "problem_en": "Evaluate the expression 96 / 8 + 25 following standard mathematical priority.",
       "answer": 37,
-      "step_by_step": "Step 1: Division first: 96 / 8 = 12. Step 2: Add: 12 + 25 = 37."
+      "step_by_step": "Step 1: Division first: 96 / 8 = 12. Step 2: Add: 12 + 25 = 37.",
+      "question": "Evaluate the expression 96 / 8 + 25 following standard mathematical priority."
     }
   ],
   "science_lab": {

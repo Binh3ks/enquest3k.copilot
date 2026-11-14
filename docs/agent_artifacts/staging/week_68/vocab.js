@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 68 | Theme: "Developing Strong Reasons: Evidence and Data" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 68 | Theme: "ELA: Strong Reasons / Math: Bar Graphs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "reason",
-    "pos": "n",
-    "ipa": "/ˈriːzən/",
-    "definition_en": "A logical explanation that justifies an opinion or action.",
-    "definition_vi": "lý do",
-    "example_en": "Give three strong reasons to back up your recommendation.",
-    "example_vi": "Hãy đưa ra ba lý do vững chắc để củng cố lời khuyên của bạn."
-  },
-  {
-    "id": 2,
-    "word": "evidence",
-    "pos": "n",
-    "ipa": "/ˈɛvɪdəns/",
-    "definition_en": "Facts, figures, and details that prove a statement true.",
-    "definition_vi": "bằng chứng",
-    "example_en": "The bar graph provides visual evidence of student choices.",
-    "example_vi": "Biểu đồ cột cung cấp bằng chứng trực quan về lựa chọn của học sinh."
-  },
-  {
-    "id": 3,
-    "word": "specifically",
-    "pos": "adv",
-    "ipa": "/spəˈsɪfɪkli/",
-    "definition_en": "In a clear, exact, and detailed manner.",
-    "definition_vi": "cụ thể là",
-    "example_en": "Specifically, sixty-five students voted for the chess club.",
-    "example_vi": "Cụ thể là có sáu mươi lăm học sinh đã bỏ phiếu cho câu lạc bộ cờ vua."
-  },
-  {
-    "id": 4,
-    "word": "interval",
-    "pos": "n",
-    "ipa": "/ˈɪntərvəl/",
-    "definition_en": "The fixed numerical gap between grid lines on a graph axis.",
-    "definition_vi": "khoảng chia tỉ lệ",
-    "example_en": "The vertical axis has an interval of five units.",
-    "example_vi": "Trục thẳng đứng có khoảng chia tỉ lệ là năm đơn vị."
-  },
-  {
-    "id": 5,
-    "word": "addition",
-    "pos": "n",
-    "ipa": "/əˈdɪʃən/",
-    "definition_en": "The phrase 'in addition' used to add another supporting point.",
-    "definition_vi": "thêm vào đó",
-    "example_en": "In addition, cycling saves bus fare for families.",
-    "example_vi": "Thêm vào đó, việc đi xe đạp giúp các gia đình tiết kiệm tiền vé xe buýt."
-  },
-  {
-    "id": 6,
-    "word": "instance",
-    "pos": "n",
-    "ipa": "/ˈɪnstəns/",
-    "definition_en": "An example or single occurrence of something.",
-    "definition_vi": "ví dụ, trường hợp",
-    "example_en": "For instance, our school planted thirty maple trees.",
-    "example_vi": "Ví dụ như trường chúng tôi đã trồng ba mươi cây phong."
-  },
-  {
-    "id": 7,
-    "word": "scale",
-    "pos": "n",
-    "ipa": "/skeɪl/",
-    "definition_en": "The series of numbers placed at fixed intervals along a graph axis.",
-    "definition_vi": "thang đo",
-    "example_en": "Read the bar height against the vertical scale.",
-    "example_vi": "Hãy đọc chiều cao của cột so với thang đo thẳng đứng."
-  },
-  {
-    "id": 8,
-    "word": "difference",
-    "pos": "n",
-    "ipa": "/ˈdɪfərəns/",
-    "definition_en": "The numerical subtraction result between two bar heights.",
-    "definition_vi": "hiệu số giữa các cột",
-    "example_en": "The difference between sixty-five and forty-two is twenty-three.",
-    "example_vi": "Hiệu số giữa sáu mươi lăm và bốn mươi hai là hai mươi ba."
-  },
-  {
-    "id": 9,
-    "word": "persuasive",
-    "pos": "adj",
-    "ipa": "/pərˈsweɪsɪv/",
-    "definition_en": "Good at making people agree through sound arguments.",
-    "definition_vi": "mang tính thuyết phục",
-    "example_en": "A persuasive writer relies on verifiable statistics.",
-    "example_vi": "Một người viết có sức thuyết phục luôn dựa vào các số liệu thống kê có thể kiểm chứng."
-  },
-  {
-    "id": 10,
-    "word": "height",
-    "pos": "n",
-    "ipa": "/haɪt/",
-    "definition_en": "The vertical measurement from the base to top of a bar.",
-    "definition_vi": "chiều cao",
-    "example_en": "The height of the blue bar reaches forty-five units.",
-    "example_vi": "Chiều cao của cột màu xanh đạt bốn mươi lăm đơn vị."
-  },
-  {
-    "id": 11,
-    "word": "justify",
-    "pos": "v",
-    "ipa": "/ˈdʒʌstɪfaɪ/",
-    "definition_en": "To show or prove to be right or reasonable.",
-    "definition_vi": "chứng minh là hợp lý",
-    "example_en": "Survey numbers justify spending money on library books.",
-    "example_vi": "Số liệu khảo sát chứng minh rằng việc chi tiền mua sách thư viện là hoàn toàn hợp lý."
-  },
-  {
-    "id": 12,
-    "word": "compare",
-    "pos": "v",
-    "ipa": "/kəmˈpɛər/",
-    "definition_en": "To examine differences and similarities between quantities.",
-    "definition_vi": "so sánh",
-    "example_en": "Compare the three bars to find the overall leader.",
-    "example_vi": "Hãy so sánh ba cột để tìm ra hạng mục dẫn đầu toàn diện."
-  },
-  {
-    "id": 13,
-    "word": "category",
-    "pos": "n",
-    "ipa": "/ˈkætəɡəri/",
-    "definition_en": "A distinct group or division shown on the horizontal axis.",
-    "definition_vi": "hạng mục",
-    "example_en": "Each bar represents a unique extracurricular category.",
-    "example_vi": "Mỗi cột đại diện cho một hạng mục ngoại khóa riêng biệt."
-  },
-  {
-    "id": 14,
-    "word": "axis",
-    "pos": "n",
-    "ipa": "/ˈæksɪs/",
-    "definition_en": "A reference line on a chart used to plot measurements.",
-    "definition_vi": "trục đồ thị",
-    "example_en": "Categories are listed on the horizontal axis.",
-    "example_vi": "Các hạng mục được liệt kê trên trục nằm ngang."
-  },
-  {
-    "id": 15,
     "word": "support",
     "pos": "v",
     "ipa": "/səˈpɔːrt/",
-    "definition_en": "To uphold or strengthen an argument with facts.",
-    "definition_vi": "củng cố, hỗ trợ",
-    "example_en": "Two solid reasons support our request for playground balls.",
-    "example_vi": "Hai lý do vững chắc củng cố yêu cầu của chúng tôi về bóng chơi ở sân trường."
+    "definition_en": "To give facts that back up an argument.",
+    "definition_vi": "hỗ trợ, củng cố",
+    "example_en": "Good evidence will support your main claim.",
+    "example_vi": "Bằng chứng tốt sẽ củng cố cho khẳng định chính của bạn."
+  },
+  {
+    "id": 2,
+    "word": "detail",
+    "pos": "n",
+    "ipa": "/ˈdiːteɪl/",
+    "definition_en": "A specific fact or piece of information.",
+    "definition_vi": "chi tiết",
+    "example_en": "Add a detail showing the exact number of votes.",
+    "example_vi": "Hãy thêm một chi tiết cho thấy số lượng phiếu bầu chính xác."
+  },
+  {
+    "id": 3,
+    "word": "fact",
+    "pos": "n",
+    "ipa": "/fækt/",
+    "definition_en": "A piece of information known to be true.",
+    "definition_vi": "sự thật, dữ kiện",
+    "example_en": "It is a proven fact that trees clean our air.",
+    "example_vi": "Đó là một sự thật đã được chứng minh rằng cây xanh làm sạch không khí."
+  },
+  {
+    "id": 4,
+    "word": "true",
+    "pos": "adj",
+    "ipa": "/truː/",
+    "definition_en": "In accordance with fact or reality.",
+    "definition_vi": "đúng, chính xác",
+    "example_en": "The bar graph shows true data from our class survey.",
+    "example_vi": "Biểu đồ cột thể hiện dữ liệu chính xác từ cuộc khảo sát của lớp chúng tôi."
+  },
+  {
+    "id": 5,
+    "word": "prove",
+    "pos": "v",
+    "ipa": "/pruːv/",
+    "definition_en": "To demonstrate the truth or existence of something.",
+    "definition_vi": "chứng minh",
+    "example_en": "Use survey numbers to prove your point.",
+    "example_vi": "Hãy dùng các con số khảo sát để chứng minh quan điểm của bạn."
+  },
+  {
+    "id": 6,
+    "word": "clear",
+    "pos": "adj",
+    "ipa": "/klɪr/",
+    "definition_en": "Easy to see, hear, or understand clearly.",
+    "definition_vi": "rõ ràng",
+    "example_en": "Write in a clear voice so everyone hears.",
+    "example_vi": "Hãy nói bằng một giọng nói rõ ràng để mọi người đều nghe thấy."
+  },
+  {
+    "id": 7,
+    "word": "bar graph",
+    "pos": "phrase",
+    "ipa": "/bɑr ɡræf/",
+    "definition_en": "A diagram using rectangular bars to show data.",
+    "definition_vi": "biểu đồ cột",
+    "example_en": "A scaled bar graph makes comparing numbers simple.",
+    "example_vi": "Biểu đồ cột có thang đo giúp việc so sánh các con số trở nên đơn giản."
+  },
+  {
+    "id": 8,
+    "word": "scale",
+    "pos": "n",
+    "ipa": "/skeɪl/",
+    "definition_en": "A series of marks at regular intervals on a graph.",
+    "definition_vi": "thang đo",
+    "example_en": "The scale counts up by fives on the side axis.",
+    "example_vi": "Thang đo đếm tăng lên theo khoảng năm đơn vị ở trục bên."
+  },
+  {
+    "id": 9,
+    "word": "height",
+    "pos": "n",
+    "ipa": "/haɪt/",
+    "definition_en": "The measurement from base to top.",
+    "definition_vi": "chiều cao",
+    "example_en": "The height of each bar shows the number of votes.",
+    "example_vi": "Chiều cao của mỗi cột thể hiện số phiếu bầu."
+  },
+  {
+    "id": 10,
+    "word": "value",
+    "pos": "n",
+    "ipa": "/ˈvæljuː/",
+    "definition_en": "The numerical amount denoted by a mark.",
+    "definition_vi": "giá trị",
+    "example_en": "Read the value where the bar reaches the line.",
+    "example_vi": "Đọc giá trị tại nơi cột chạm tới đường kẻ."
+  },
+  {
+    "id": 11,
+    "word": "compare",
+    "pos": "v",
+    "ipa": "/kəmˈpɛr/",
+    "definition_en": "To look at two things to see how they are alike.",
+    "definition_vi": "so sánh",
+    "example_en": "Compare the green bar with the red bar.",
+    "example_vi": "So sánh cột màu xanh lá với cột màu đỏ."
+  },
+  {
+    "id": 12,
+    "word": "skip counting",
+    "pos": "phrase",
+    "ipa": "/skɪp ˈkaʊntɪŋ/",
+    "definition_en": "Counting by a number other than one.",
+    "definition_vi": "đếm cách quãng",
+    "example_en": "Skip counting by tens helps read tall graphs quickly.",
+    "example_vi": "Đếm cách mười giúp đọc các biểu đồ cao một cách nhanh chóng."
+  },
+  {
+    "id": 13,
+    "word": "reason",
+    "pos": "n",
+    "ipa": "/ˈriːzən/",
+    "definition_en": "An explanation that supports a point of view.",
+    "definition_vi": "lý do",
+    "example_en": "Give two strong reasons in your paragraph.",
+    "example_vi": "Hãy đưa ra hai lý do mạnh mẽ trong đoạn văn của bạn."
+  },
+  {
+    "id": 14,
+    "word": "example",
+    "pos": "n",
+    "ipa": "/ɪɡˈzæmpəl/",
+    "definition_en": "A fact or story that shows what something is like.",
+    "definition_vi": "ví dụ minh họa",
+    "example_en": "She gave a colorful example from recess.",
+    "example_vi": "Cô bé đã đưa ra một ví dụ sinh động từ giờ ra chơi."
+  },
+  {
+    "id": 15,
+    "word": "information",
+    "pos": "n",
+    "ipa": "/ˌɪnfərˈmeɪʃən/",
+    "definition_en": "Facts provided or learned about something.",
+    "definition_vi": "thông tin",
+    "example_en": "The bar chart gives helpful facts and information.",
+    "example_vi": "Biểu đồ cung cấp thông tin chính xác về các lượt đến thư viện."
   },
   {
     "id": 16,
-    "word": "convincing",
-    "pos": "adj",
-    "ipa": "/kənˈvɪnsɪŋ/",
-    "definition_en": "Leaving no doubt, credible and plausible.",
-    "definition_vi": "thuyết phục, đáng tin",
-    "example_en": "The scientific study offered convincing proof.",
-    "example_vi": "Nghiên cứu khoa học đã đưa ra bằng chứng đầy thuyết phục."
+    "word": "sport",
+    "pos": "n",
+    "ipa": "/spɔːrt/",
+    "definition_en": "A game or sport match that people play for fun.",
+    "definition_vi": "môn thể thao",
+    "example_en": "Basketball is a very popular sport.",
+    "example_vi": "Bóng rổ là một môn thể thao rất phổ biến."
   },
   {
     "id": 17,
-    "word": "statistic",
+    "word": "hobby",
     "pos": "n",
-    "ipa": "/stəˈtɪstɪk/",
-    "definition_en": "A factual piece of numerical data from a study.",
-    "definition_vi": "số liệu thống kê",
-    "example_en": "Cite a compelling statistic in your body paragraph.",
-    "example_vi": "Hãy trích dẫn một số liệu thống kê hấp dẫn trong đoạn thân bài của bạn."
+    "ipa": "/ˈhɑːbi/",
+    "definition_en": "An activity done for fun when you are not working.",
+    "definition_vi": "sở thích",
+    "example_en": "Drawing is my favorite weekend hobby.",
+    "example_vi": "Vẽ tranh là sở thích cuối tuần yêu thích nhất của tôi."
   },
   {
     "id": 18,
-    "word": "total",
+    "word": "club",
     "pos": "n",
-    "ipa": "/ˈtəʊtl/",
-    "definition_en": "The whole sum obtained by adding all quantities together.",
-    "definition_vi": "tổng số",
-    "example_en": "The total of thirty-five, forty, and fifty-five is one hundred thirty.",
-    "example_vi": "Tổng của ba mươi lăm, bốn mươi và năm mươi lăm là một trăm ba mươi."
+    "ipa": "/klʌb/",
+    "definition_en": "A group of students who meet for a shared activity.",
+    "definition_vi": "câu lạc bộ",
+    "example_en": "Twenty students joined the chess club.",
+    "example_vi": "Hai mươi học sinh đã tham gia câu lạc bộ cờ vua."
   },
   {
     "id": 19,
-    "word": "claim",
-    "pos": "n",
-    "ipa": "/kleɪm/",
-    "definition_en": "An assertion that something is true or beneficial.",
-    "definition_vi": "luận điểm khẳng định",
-    "example_en": "Support every major claim with verifiable survey facts.",
-    "example_vi": "Hãy củng cố mọi luận điểm lớn bằng các sự thật khảo sát có thể kiểm chứng."
+    "word": "count",
+    "pos": "v",
+    "ipa": "/kaʊnt/",
+    "definition_en": "To determine the total number of items.",
+    "definition_vi": "đếm",
+    "example_en": "Count the marks carefully before drawing the bar.",
+    "example_vi": "Hãy đếm các ký hiệu cẩn thận trước khi vẽ cột."
   },
   {
     "id": 20,
-    "word": "conclude",
-    "pos": "v",
-    "ipa": "/kənˈkluːd/",
-    "definition_en": "To reach a logical decision based on gathered evidence.",
-    "definition_vi": "kết luận",
-    "example_en": "We conclude that after-school clubs improve student wellness.",
-    "example_vi": "Chúng tôi kết luận rằng các câu lạc bộ sau giờ học nâng cao sức khỏe học sinh."
+    "word": "student",
+    "pos": "n",
+    "ipa": "/ˈstuːdnt/",
+    "definition_en": "A learner attending school.",
+    "definition_vi": "học sinh",
+    "example_en": "Every student worked hard on the class project.",
+    "example_vi": "Mỗi học sinh đều tham gia vào dự án vẽ biểu đồ."
   }
 ];
 export const vocabList = vocab;

@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 72 | Theme: "Photosynthesis: Plant Energy Factory" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 72 | Theme: "Science/ELA: Photosynthesis / Math: Area & Perimeter"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 72,
-  "theme": "Photosynthesis: Plant Energy Factory",
+  "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
       "word": "photosynthesis",
       "pos": "n",
-      "ipa": "/ˌfəʊtəʊˈsɪnθəsɪs/",
-      "definition_en": "The biological process by which green plants make food from sunlight, water, and carbon dioxide.",
+      "ipa": "/ˌfoʊtoʊˈsɪnθəsɪs/",
+      "definition_en": "The process by which green plants make food.",
       "definition_vi": "quang hợp",
-      "example_en": "Photosynthesis produces glucose sugar and fresh oxygen.",
-      "example_vi": "Quang hợp tạo ra đường glu-cô-zơ và khí ô-xy trong lành."
+      "example_en": "Photosynthesis takes place in green leaves.",
+      "example_vi": "Quá trình quang hợp diễn ra bên trong những chiếc lá xanh."
     },
     {
       "id": 2,
-      "word": "chlorophyll",
-      "pos": "n",
-      "ipa": "/ˈklɒrəfɪl/",
-      "definition_en": "The green pigment in plant leaves that absorbs sunlight.",
-      "definition_vi": "diệp lục",
-      "example_en": "Chlorophyll gives plant leaves their vibrant green color.",
-      "example_vi": "Diệp lục mang lại cho lá cây màu xanh tràn đầy sức sống."
-    },
-    {
-      "id": 3,
       "word": "sunlight",
       "pos": "n",
       "ipa": "/ˈsʌnlaɪt/",
-      "definition_en": "Light and warmth radiated directly from the Sun.",
+      "definition_en": "Light that comes directly from the sun.",
       "definition_vi": "ánh sáng mặt trời",
-      "example_en": "Leaves absorb sunlight to fuel the chemical reaction.",
-      "example_vi": "Lá cây hấp thụ ánh sáng mặt trời để cung cấp năng lượng cho phản ứng hóa học."
+      "example_en": "Bright sunlight gives energy to green plants.",
+      "example_vi": "Ánh nắng mặt trời chói chang mang lại năng lượng cho cây xanh."
+    },
+    {
+      "id": 3,
+      "word": "water",
+      "pos": "n",
+      "ipa": "/ˈwɔːtər/",
+      "definition_en": "Clear liquid absorbed by roots from soil.",
+      "definition_vi": "nước",
+      "example_en": "Roots take in water from the cool ground.",
+      "example_vi": "Rễ cây hút nước từ trong lòng đất mát mẻ."
     },
     {
       "id": 4,
-      "word": "perimeter",
-      "pos": "n",
-      "ipa": "/pəˈrɪmɪtər/",
-      "definition_en": "The total boundary distance around the outside of a flat shape.",
-      "definition_vi": "chu vi",
-      "example_en": "The perimeter of the rectangular greenhouse is forty meters.",
-      "example_vi": "Chu vi của nhà kính hình chữ nhật là bốn mươi mét."
+      "word": "carbon dioxide",
+      "pos": "phrase",
+      "ipa": "/ˈkɑːrbən daɪˈɑːksaɪd/",
+      "definition_en": "A gas in the air absorbed by green leaves.",
+      "definition_vi": "khí các-bô-níc (CO2)",
+      "example_en": "Leaves take in carbon dioxide through tiny pores.",
+      "example_vi": "Lá cây hấp thụ khí các-bô-níc qua các lỗ khí nhỏ."
     },
     {
       "id": 5,
-      "word": "area",
+      "word": "oxygen",
       "pos": "n",
-      "ipa": "/ˈɛəriə/",
-      "definition_en": "The measure of surface space enclosed within a boundary.",
-      "definition_vi": "diện tích",
-      "example_en": "The garden bed has an area of ninety-six square meters.",
-      "example_vi": "Luống vườn có diện tích chín mươi sáu mét vuông."
+      "ipa": "/ˈɑːksɪdʒən/",
+      "definition_en": "A gas produced by plants that animals breathe.",
+      "definition_vi": "khí ô-xy (O2)",
+      "example_en": "Plants make oxygen and release it into the air.",
+      "example_vi": "Cây xanh tạo ra khí ô-xy và giải phóng vào không khí."
     },
     {
       "id": 6,
-      "word": "glucose",
+      "word": "energy",
       "pos": "n",
-      "ipa": "/ˈɡluːkəʊs/",
-      "definition_en": "A simple sugar produced by plants as chemical energy.",
-      "definition_vi": "đường glu-cô-zơ",
-      "example_en": "Plants store glucose sugar in their roots and stems.",
-      "example_vi": "Cây xanh tích trữ đường glu-cô-zơ trong rễ và thân."
+      "ipa": "/ˈɛnərdʒi/",
+      "definition_en": "Power derived from sunlight to do work.",
+      "definition_vi": "năng lượng",
+      "example_en": "Light energy is converted into plant food.",
+      "example_vi": "Năng lượng ánh sáng được chuyển hóa thành thức ăn cho cây."
     },
     {
       "id": 7,
-      "word": "oxygen",
-      "pos": "n",
-      "ipa": "/ˈɒksɪdʒən/",
-      "definition_en": "A colorless gas produced by plants that animals breathe.",
-      "definition_vi": "khí ô-xy",
-      "example_en": "Photosynthesis releases clean oxygen into the air.",
-      "example_vi": "Quang hợp giải phóng khí ô-xy sạch vào không khí."
-    },
-    {
-      "id": 8,
-      "word": "stomata",
-      "pos": "n",
-      "ipa": "/stəˈmɑːtə/",
-      "definition_en": "Microscopic pores on leaf surfaces that take in carbon dioxide.",
-      "definition_vi": "khí khổng (lỗ thở trên lá)",
-      "example_en": "Carbon dioxide enters the leaf through tiny stomata.",
-      "example_vi": "Khí các-bon-níc đi vào lá qua các khí khổng li ti."
-    },
-    {
-      "id": 9,
-      "word": "dimension",
-      "pos": "n",
-      "ipa": "/daɪˈmɛnʃən/",
-      "definition_en": "A measurable extent of a shape, such as length or width.",
-      "definition_vi": "kích thước (dài, rộng)",
-      "example_en": "Measure the dimensions of the rectangular flower bed.",
-      "example_vi": "Hãy đo các kích thước của luống hoa hình chữ nhật."
-    },
-    {
-      "id": 10,
       "word": "absorb",
       "pos": "v",
       "ipa": "/əbˈzɔːrb/",
       "definition_en": "To take in or soak up energy, liquid, or gas.",
-      "definition_vi": "hấp thụ",
-      "example_en": "Roots absorb water and dissolved minerals from soil.",
-      "example_vi": "Rễ cây hấp thụ nước và các khoáng chất hòa tan từ đất."
+      "definition_vi": "hấp thụ, hút",
+      "example_en": "Green leaves absorb light from the morning sun.",
+      "example_vi": "Những chiếc lá xanh hấp thụ ánh sáng từ mặt trời buổi sớm."
+    },
+    {
+      "id": 8,
+      "word": "make",
+      "pos": "v",
+      "ipa": "/meɪk/",
+      "definition_en": "To create or produce something.",
+      "definition_vi": "tạo ra, sản xuất",
+      "example_en": "Plants make sugar to help stems grow strong.",
+      "example_vi": "Cây cối tạo ra đường để giúp thân cây phát triển khỏe mạnh."
+    },
+    {
+      "id": 9,
+      "word": "area",
+      "pos": "n",
+      "ipa": "/ˈɛriə/",
+      "definition_en": "The amount of space inside a flat boundary.",
+      "definition_vi": "diện tích",
+      "example_en": "The area of the rectangular garden is twenty square meters.",
+      "example_vi": "Diện tích của khu vườn hình chữ nhật là hai mươi mét vuông."
+    },
+    {
+      "id": 10,
+      "word": "perimeter",
+      "pos": "n",
+      "ipa": "/pəˈrɪmɪtər/",
+      "definition_en": "The continuous distance around the outside edge.",
+      "definition_vi": "chu vi",
+      "example_en": "Measure the perimeter of the garden fence.",
+      "example_vi": "Hãy đo chu vi của hàng rào khu vườn."
     },
     {
       "id": 11,
-      "word": "process",
-      "pos": "n",
-      "ipa": "/ˈprəʊsɛs/",
-      "definition_en": "A series of systematic actions taken to achieve an end.",
-      "definition_vi": "quy trình",
-      "example_en": "Photosynthesis is a multi-step biochemical process.",
-      "example_vi": "Quang hợp là một quy trình hóa sinh nhiều bước."
+      "word": "inside",
+      "pos": "prep",
+      "ipa": "/ɪnˈsaɪd/",
+      "definition_en": "The inner part or area of a boundary.",
+      "definition_vi": "bên trong",
+      "example_en": "We plant carrot seeds inside the garden border.",
+      "example_vi": "Chúng tôi gieo hạt cà rốt bên trong ranh giới vườn."
     },
     {
       "id": 12,
-      "word": "sequence",
-      "pos": "n",
-      "ipa": "/ˈsiːkwəns/",
-      "definition_en": "The particular order in which events or steps occur.",
-      "definition_vi": "trình tự",
-      "example_en": "Describe the sequence: first light is absorbed, then food is made.",
-      "example_vi": "Hãy mô tả trình tự: đầu tiên ánh sáng được hấp thụ, sau đó thức ăn được tạo ra."
+      "word": "around",
+      "pos": "prep",
+      "ipa": "/əˈraʊnd/",
+      "definition_en": "Along the outer edge or perimeter.",
+      "definition_vi": "xung quanh",
+      "example_en": "Walk around the square garden bed.",
+      "example_vi": "Hãy đi bộ xung quanh luống vườn hình vuông."
     },
     {
       "id": 13,
-      "word": "formula",
-      "pos": "n",
-      "ipa": "/ˈfɔːrmjʊlə/",
-      "definition_en": "A mathematical rule or chemical recipe in symbols.",
-      "definition_vi": "công thức",
-      "example_en": "Use the formula length times width to calculate area.",
-      "example_vi": "Hãy dùng công thức chiều dài nhân chiều rộng để tính diện tích."
+      "word": "square units",
+      "pos": "phrase",
+      "ipa": "/skwɛr ˈjunɪts/",
+      "definition_en": "Units used to measure area.",
+      "definition_vi": "đơn vị vuông",
+      "example_en": "Area is always measured in square units.",
+      "example_vi": "Diện tích luôn luôn được đo bằng các đơn vị vuông."
     },
     {
       "id": 14,
-      "word": "square",
-      "pos": "adj",
-      "ipa": "/skwɛər/",
-      "definition_en": "Used for units of area measurement (e.g. square meters).",
-      "definition_vi": "vuông (mét vuông)",
-      "example_en": "The plot covers ninety-six square meters of rich soil.",
-      "example_vi": "Mảnh đất bao phủ chín mươi sáu mét vuông đất màu mỡ."
+      "word": "measure",
+      "pos": "v",
+      "ipa": "/ˈmɛʒər/",
+      "definition_en": "To find the size, area, or perimeter of something.",
+      "definition_vi": "đo đạc",
+      "example_en": "Measure the sides with a wooden meter ruler.",
+      "example_vi": "Hãy đo các cạnh bằng thước mét gỗ."
     },
     {
       "id": 15,
-      "word": "carbon",
+      "word": "leaf",
       "pos": "n",
-      "ipa": "/ˈkɑːrbən/",
-      "definition_en": "A chemical element present in carbon dioxide gas.",
-      "definition_vi": "các-bon",
-      "example_en": "Leaves capture carbon dioxide from the surrounding breeze.",
-      "example_vi": "Lá cây hấp thụ khí các-bon-níc từ làn gió xung quanh."
+      "ipa": "/lif/",
+      "definition_en": "A flat green part of a plant growing from a stem.",
+      "definition_vi": "chiếc lá",
+      "example_en": "Each green leaf acts like a food factory.",
+      "example_vi": "Mỗi chiếc lá xanh hoạt động như một nhà máy thức ăn."
     },
     {
       "id": 16,
-      "word": "boundary",
+      "word": "plant",
       "pos": "n",
-      "ipa": "/ˈbaʊndəri/",
-      "definition_en": "A line marking the limits of an area or garden.",
-      "definition_vi": "ranh giới, đường biên",
-      "example_en": "A wooden fence encloses the garden boundary.",
-      "example_vi": "Một hàng rào gỗ bao quanh ranh giới khu vườn."
+      "ipa": "/plænt/",
+      "definition_en": "A living organism that absorbs water and sunlight.",
+      "definition_vi": "cây cối, thực vật",
+      "example_en": "A tomato plant needs six hours of sunlight.",
+      "example_vi": "Một cây cà chua cần sáu giờ ánh nắng mặt trời."
     },
     {
       "id": 17,
-      "word": "release",
-      "pos": "v",
-      "ipa": "/rɪˈliːs/",
-      "definition_en": "To allow a gas or substance to escape into the air.",
-      "definition_vi": "giải phóng, thải ra",
-      "example_en": "Green leaves release moisture and oxygen daily.",
-      "example_vi": "Lá xanh giải phóng hơi ẩm và ô-xy mỗi ngày."
+      "word": "green",
+      "pos": "adj",
+      "ipa": "/ɡrin/",
+      "definition_en": "The color of living grass or leaves.",
+      "definition_vi": "xanh lá cây",
+      "example_en": "Green leaves contain special pigments.",
+      "example_vi": "Những chiếc lá xanh chứa sắc tố đặc biệt."
     },
     {
       "id": 18,
-      "word": "convert",
-      "pos": "v",
-      "ipa": "/kənˈvɜːrt/",
-      "definition_en": "To change something into a different chemical form.",
-      "definition_vi": "chuyển đổi",
-      "example_en": "Chloroplasts convert solar energy into chemical energy.",
-      "example_vi": "Lục lạp chuyển đổi năng lượng mặt trời thành năng lượng hóa học."
+      "word": "food",
+      "pos": "n",
+      "ipa": "/fuːd/",
+      "definition_en": "Sugar and nutrients that plants produce.",
+      "definition_vi": "thức ăn, dinh dưỡng",
+      "example_en": "Sunlight is turned into sugar food for stems.",
+      "example_vi": "Ánh sáng mặt trời được biến thành đường dinh dưỡng cho thân cây."
     },
     {
       "id": 19,
-      "word": "rectangle",
-      "pos": "n",
-      "ipa": "/ˈrɛktæŋɡl/",
-      "definition_en": "A four-sided flat shape with four right angles.",
-      "definition_vi": "hình chữ nhật",
-      "example_en": "The greenhouse is built in the shape of a rectangle.",
-      "example_vi": "Nhà kính được xây dựng theo hình dạng một hình chữ nhật."
+      "word": "grow",
+      "pos": "v",
+      "ipa": "/ɡroʊ/",
+      "definition_en": "To increase in physical size over time.",
+      "definition_vi": "lớn lên, phát triển",
+      "example_en": "Healthy plants grow tall in warm soil.",
+      "example_vi": "Cây khỏe mạnh sẽ lớn nhanh trong đất ấm áp."
     },
     {
       "id": 20,
-      "word": "enclosure",
+      "word": "garden",
       "pos": "n",
-      "ipa": "/ɪnˈkləʊʒər/",
-      "definition_en": "An area sealed off with an artificial or natural barrier.",
-      "definition_vi": "khu vực có rào chắn bao quanh",
-      "example_en": "The botanical enclosure safeguards tropical plants.",
-      "example_vi": "Khu vực rào chắn thực vật học bảo vệ các loài cây nhiệt đới."
+      "ipa": "/ˈɡɑːrdən/",
+      "definition_en": "A piece of ground used for growing plants.",
+      "definition_vi": "khu vườn",
+      "example_en": "Our school garden produces beans and melons.",
+      "example_vi": "Vườn trường chúng tôi trồng được đậu và dưa gang."
     }
   ],
-  "clil_article": {
-    "title_en": "Photosynthesis Process Sequencing and Garden Geometry",
-    "title_vi": "Trình tự Quy trình Quang hợp và Hình học Vườn ươm",
-    "content_en": "Photosynthesis is the fundamental biological engine that sustains nearly all life on planet Earth. Through a precise sequence of chemical steps, green plants harness energy from the Sun to manufacture their own food. Writers explain this process using sequential signal words: First, green chlorophyll pigments inside leaf cells absorb radiant sunlight; Next, plant roots draw water up from the soil while microscopic leaf pores called stomata absorb carbon dioxide from the surrounding air; Finally, plant cells convert these inputs into glucose sugar for plant nutrition and release life-sustaining oxygen gas into the atmosphere. In botanical horticulture, managing plant health requires precise geometry calculations for garden beds and greenhouses. The area of a rectangular garden is calculated by multiplying its length by its width (Area = Length * Width), expressed in square meters. The perimeter is the total fencing distance around the boundary, calculated as twice the sum of length and width (Perimeter = 2 * (Length + Width)). For example, if a community greenhouse measures 12 meters in length by 8 meters in width, its area is 12 * 8 = 96 square meters, and its boundary perimeter is 2 * (12 + 8) = 40 meters. Calculating area and perimeter ensures plants have adequate soil space and sunlight to photosynthesize effectively.",
-    "glossary": [
-      {
-        "word": "photosynthesis",
-        "definition_en": "Plant food-making using sunlight",
-        "definition_vi": "quang hợp"
-      },
-      {
-        "word": "chlorophyll",
-        "definition_en": "Green light-absorbing leaf pigment",
-        "definition_vi": "diệp lục"
-      },
-      {
-        "word": "area",
-        "definition_en": "Enclosed surface space (L * W)",
-        "definition_vi": "diện tích"
-      },
-      {
-        "word": "perimeter",
-        "definition_en": "Total distance around edge (2*(L+W))",
-        "definition_vi": "chu vi"
-      },
-      {
-        "word": "glucose",
-        "definition_en": "Plant sugar energy product",
-        "definition_vi": "đường glu-cô-zơ"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "What is the green pigment in leaves that absorbs sunlight?",
-        "options": [
-          "Chlorophyll",
-          "Glucose",
-          "Oxygen"
-        ],
-        "answer": "Chlorophyll"
-      },
-      {
-        "id": 2,
-        "question_en": "What is the area of a garden measuring 12 meters long by 8 meters wide?",
-        "options": [
-          "96 square meters",
-          "40 square meters",
-          "20 square meters"
-        ],
-        "answer": "96 square meters"
-      },
-      {
-        "id": 3,
-        "question_en": "What is the perimeter of a garden 12 meters long by 8 meters wide?",
-        "options": [
-          "40 meters",
-          "96 meters",
-          "24 meters"
-        ],
-        "answer": "40 meters"
-      }
-    ],
-    "text": "Photosynthesis is the fundamental biological engine that sustains nearly all life on planet Earth. Through a precise sequence of chemical steps, green plants harness energy from the Sun to manufacture their own food. Writers explain this process using sequential signal words: First, green chlorophyll pigments inside leaf cells absorb radiant sunlight; Next, plant roots draw water up from the soil while microscopic leaf pores called stomata absorb carbon dioxide from the surrounding air; Finally, plant cells convert these inputs into glucose sugar for plant nutrition and release life-sustaining oxygen gas into the atmosphere. In botanical horticulture, managing plant health requires precise geometry calculations for garden beds and greenhouses. The area of a rectangular garden is calculated by multiplying its length by its width (Area = Length * Width), expressed in square meters. The perimeter is the total fencing distance around the boundary, calculated as twice the sum of length and width (Perimeter = 2 * (Length + Width)). For example, if a community greenhouse measures 12 meters in length by 8 meters in width, its area is 12 * 8 = 96 square meters, and its boundary perimeter is 2 * (12 + 8) = 40 meters. Calculating area and perimeter ensures plants have adequate soil space and sunlight to photosynthesize effectively."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "How Plants Make Food: Photosynthesis",
+    "title_vi": "Cây Cối Tạo Thức Ăn Thế Nào: Quá trình Quang hợp",
+    "content_en": "Plants are amazing living organisms that make their own food every sunny day. This biological process is called photosynthesis (how green plants make food using light). Green leaves absorb bright sunlight from the sky. Roots absorb cool water from the garden soil. Tiny pores in each leaf take in carbon dioxide (a natural gas in the air). The green leaves use light energy to combine water and gas to make sugar. This sugar helps the plant grow tall stems and sweet fruit. Plants also produce fresh oxygen and release it into the surrounding air. Animals and humans need this oxygen to breathe every day. In math, farmers measure the garden beds. The perimeter is the distance around the edge, and the area is the space inside measured in square units. Healthy plants make our world green and clean.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What is photosynthesis?",
+        "question_vi": "Quá trình quang hợp là gì?",
+        "options": [
+          "How green plants make food using light",
+          "How birds fly south in winter",
+          "How fish swim in the ocean"
+        ],
+        "answer": "How green plants make food using light"
+      },
+      {
+        "id": "q2",
+        "question_en": "What gas do plants release for humans and animals to breathe?",
+        "question_vi": "Cây cối giải phóng khí gì để con người và động vật hô hấp?",
+        "options": [
+          "Oxygen",
+          "Steam",
+          "Smoke"
+        ],
+        "answer": "Oxygen"
+      },
+      {
+        "id": "q3",
+        "question_en": "What is the difference between area and perimeter?",
+        "question_vi": "Sự khác biệt giữa diện tích và chu vi là gì?",
+        "options": [
+          "Perimeter is the distance around, area is the space inside",
+          "Area is always cold, perimeter is hot",
+          "They are the exact same thing"
+        ],
+        "answer": "Perimeter is the distance around, area is the space inside"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "photosynthesis",
+        "definition_en": "The process green plants use to make food from sunlight, water, and air."
+      },
+      {
+        "term": "absorb",
+        "definition_en": "To take in liquid, gas, or light energy."
+      },
+      {
+        "term": "oxygen",
+        "definition_en": "A gas released by plants that living creatures breathe."
+      },
+      {
+        "term": "area",
+        "definition_en": "The amount of surface space inside a flat shape."
+      },
+      {
+        "term": "perimeter",
+        "definition_en": "The total distance around the boundary of a shape."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "Photosynthesis is the process green plants use to make food.",
+      "ipa": "/ˌfoʊtoʊˈsɪnθəsəs ɪz ðə ˈprɑˌsɛs ɡrin plænts juz tu meɪk fud/",
+      "vietnamese": "Quang hợp là quá trình cây xanh dùng để tạo ra thức ăn."
+    },
+    {
+      "id": 2,
+      "text": "Green leaves absorb sunlight and water from the ground.",
+      "ipa": "/ɡrin livz əbˈzɔrb ˈsʌnˌlaɪt ænd ˈwɔtər frʌm ðə ɡraʊnd/",
+      "vietnamese": "Những chiếc lá xanh hấp thụ ánh nắng và nước từ mặt đất."
+    },
+    {
+      "id": 3,
+      "text": "Leaves take in carbon dioxide through tiny open pores.",
+      "ipa": "/livz teɪk ɪn ˈkɑrbən daɪˈɑkˌsaɪd θru ˈtaɪni ˈoʊpən pɔrz/",
+      "vietnamese": "Lá cây hấp thụ khí các-bô-níc qua các lỗ khí nhỏ."
+    },
+    {
+      "id": 4,
+      "text": "Light energy is turned into sweet sugar for stems.",
+      "ipa": "/laɪt ˈɛnərdʒi ɪz tɜrnd ˈɪntu swit ˈʃʊɡər fɔr stɛmz/",
+      "vietnamese": "Năng lượng ánh sáng được chuyển thành đường ngọt cho thân cây."
+    },
+    {
+      "id": 5,
+      "text": "Plants produce fresh oxygen and release it into the air.",
+      "ipa": "/plænts prəˈdus frɛʃ ˈɑksədʒən ænd rɪˈlis ɪt ˈɪntu ði ɛr/",
+      "vietnamese": "Cây cối tạo ra khí oxy trong lành và giải phóng vào không khí."
+    },
+    {
+      "id": 6,
+      "text": "The perimeter is the total distance around the garden bed.",
+      "ipa": "/ðə pəˈrɪmətər ɪz ðə ˈtoʊtəl ˈdɪstəns əˈraʊnd ðə ˈɡɑrdən bɛd/",
+      "vietnamese": "Chu vi là tổng khoảng cách xung quanh luống vườn."
+    },
+    {
+      "id": 7,
+      "text": "The area is the space inside, measured in square units.",
+      "ipa": "/ði ˈɛriə ɪz ðə speɪs ɪnˈsaɪd ˈmɛʒərd ɪn skwɛr ˈjunɪts/",
+      "vietnamese": "Diện tích là không gian bên trong, được đo bằng các đơn vị vuông."
+    },
+    {
+      "id": 8,
+      "text": "Green plants make our world healthy, fresh, and beautiful.",
+      "ipa": "/ɡrin plænts meɪk ˈaʊər wɜrld ˈhɛlθi frɛʃ ænd ˈbjutəfəl/",
+      "vietnamese": "Cây xanh làm cho thế giới của chúng ta trong lành, tươi mới và tươi đẹp."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
-        "speaker": "Sophia",
-        "text": "Photosynthesis converts solar sunlight, water, and carbon dioxide into glucose sugar.",
-        "ipa": "/ˌfəʊtəʊˈsɪnθəsɪs kənˈvɜːrts ˈsəʊlər ˈsʌnlaɪt, ˈwɔːtər, ænd ˈkɑːrbən daɪˈɒksaɪd ˈɪntuː ˈɡluːkəʊs ˈʃʊɡər/"
+        "text": "Photosynthesis is the process green plants use to make food.",
+        "ipa": "/ˌfoʊtoʊˈsɪnθəsəs ɪz ðə ˈprɑˌsɛs ɡrin plænts juz tu meɪk fud/",
+        "vietnamese": "Quang hợp là quá trình cây xanh dùng để tạo ra thức ăn."
       },
       {
         "id": 2,
-        "speaker": "Lucas",
-        "text": "Green chlorophyll inside plant leaves absorbs light energy efficiently.",
-        "ipa": "/ɡriːn ˈklɒrəfɪl ɪnˈsaɪd plɑːnt liːvz əbˈzɔːrbz laɪt ˈɛnərdʒi ɪˈfɪʃəntli/"
+        "text": "Green leaves absorb sunlight and water from the ground.",
+        "ipa": "/ɡrin livz əbˈzɔrb ˈsʌnˌlaɪt ænd ˈwɔtər frʌm ðə ɡraʊnd/",
+        "vietnamese": "Những chiếc lá xanh hấp thụ ánh nắng và nước từ mặt đất."
       },
       {
         "id": 3,
-        "speaker": "Sophia",
-        "text": "The area of a twelve by eight greenhouse is ninety-six square meters.",
-        "ipa": "/ði ˈɛəriə ɒv ə twɛlv baɪ eɪt ˈɡriːnhaʊs ɪz ˈnaɪnti sɪks skwɛər ˈmiːtərz/"
+        "text": "Leaves take in carbon dioxide through tiny open pores.",
+        "ipa": "/livz teɪk ɪn ˈkɑrbən daɪˈɑkˌsaɪd θru ˈtaɪni ˈoʊpən pɔrz/",
+        "vietnamese": "Lá cây hấp thụ khí các-bô-níc qua các lỗ khí nhỏ."
       },
       {
         "id": 4,
-        "speaker": "Lucas",
-        "text": "Two times twelve plus eight gives forty meters of boundary perimeter.",
-        "ipa": "/tuː taɪmz twɛlv plʌs eɪt ɡɪvz ˈfɔːrti ˈmiːtərz ɒv ˈbaʊndəri pəˈrɪmɪtər/"
+        "text": "Light energy is turned into sweet sugar for stems.",
+        "ipa": "/laɪt ˈɛnərdʒi ɪz tɜrnd ˈɪntu swit ˈʃʊɡər fɔr stɛmz/",
+        "vietnamese": "Năng lượng ánh sáng được chuyển thành đường ngọt cho thân cây."
       },
       {
         "id": 5,
-        "speaker": "Sophia",
-        "text": "First sunlight is captured, next water rises, and finally oxygen is released.",
-        "ipa": "/fɜːrst ˈsʌnlaɪt ɪz ˈkæptʃəd, nɛkst ˈwɔːtər ˈraɪzɪz, ænd ˈfaɪnəli ˈɒksɪdʒən ɪz rɪˈliːst/"
+        "text": "Plants produce fresh oxygen and release it into the air.",
+        "ipa": "/plænts prəˈdus frɛʃ ˈɑksədʒən ænd rɪˈlis ɪt ˈɪntu ði ɛr/",
+        "vietnamese": "Cây cối tạo ra khí oxy trong lành và giải phóng vào không khí."
       },
       {
         "id": 6,
-        "speaker": "Lucas",
-        "text": "Microscopic stomata pores allow carbon dioxide to enter plant leaves.",
-        "ipa": "/ˌmaɪkrəˈskɒpɪk stəˈmɑːtə pɔːrz əˈlaʊ ˈkɑːrbən daɪˈɒksaɪd tuː ˈɛntər plɑːnt liːvz/"
+        "text": "The perimeter is the total distance around the garden bed.",
+        "ipa": "/ðə pəˈrɪmətər ɪz ðə ˈtoʊtəl ˈdɪstəns əˈraʊnd ðə ˈɡɑrdən bɛd/",
+        "vietnamese": "Chu vi là tổng khoảng cách xung quanh luống vườn."
       },
       {
         "id": 7,
-        "speaker": "Sophia",
-        "text": "Accurate geometry calculations ensure garden beds have ample growth space.",
-        "ipa": "/ˈækjʊrət dʒiˈɒmɪtri ˌkælkjʊˈleɪʃənz ɪnˈʃʊər ˈɡɑːrdən bɛdz hæv ˈæmpl ɡrəʊθ speɪs/"
+        "text": "The area is the space inside, measured in square units.",
+        "ipa": "/ði ˈɛriə ɪz ðə speɪs ɪnˈsaɪd ˈmɛʒərd ɪn skwɛr ˈjunɪts/",
+        "vietnamese": "Diện tích là không gian bên trong, được đo bằng các đơn vị vuông."
       },
       {
         "id": 8,
-        "speaker": "Lucas",
-        "text": "Science and mathematics work together to illuminate how nature thrives.",
-        "ipa": "/ˈsaɪəns ænd ˌmæθəˈmætɪks wɜːrk təˈɡɛðər tuː ɪˈljuːmɪneɪt haʊ ˈneɪtʃər θraɪvz/"
+        "text": "Green plants make our world healthy, fresh, and beautiful.",
+        "ipa": "/ɡrin plænts meɪk ˈaʊər wɜrld ˈhɛlθi frɛʃ ænd ˈbjutəfəl/",
+        "vietnamese": "Cây xanh làm cho thế giới của chúng ta trong lành, tươi mới và tươi đẹp."
       }
     ]
   },
-  "rw_part1": [
-    {
-      "definition": "The biological process by which plants produce glucose from sunlight.",
-      "word": "photosynthesis"
-    },
-    {
-      "definition": "The green substance in leaves that absorbs solar rays.",
-      "word": "chlorophyll"
-    },
-    {
-      "definition": "The total surface space enclosed within a boundary.",
-      "word": "area"
-    },
-    {
-      "definition": "The complete distance around the outside edge of a shape.",
-      "word": "perimeter"
-    },
-    {
-      "definition": "A four-sided shape with four right angles.",
-      "word": "rectangle"
-    }
-  ],
+  "rw_part1": {
+    "word_bank": [
+      "photosynthesis",
+      "sunlight",
+      "water",
+      "carbon dioxide",
+      "oxygen",
+      "energy",
+      "absorb",
+      "make",
+      "area",
+      "perimeter",
+      "inside",
+      "around",
+      "square units",
+      "measure",
+      "leaf",
+      "plant",
+      "green",
+      "food",
+      "grow",
+      "garden"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "An event where skills, qualities, or products are exhibited.",
+        "target": "showcase",
+        "definition": "An event where skills, qualities, or products are exhibited.",
+        "word": "showcase",
+        "definition_en": "An event where skills, qualities, or products are exhibited.",
+        "options": [
+          "showcase",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "showcase"
+      },
+      {
+        "id": 2,
+        "text": "A culminating project, experience, or achievement in school.",
+        "target": "capstone",
+        "definition": "A culminating project, experience, or achievement in school.",
+        "word": "capstone",
+        "definition_en": "A culminating project, experience, or achievement in school.",
+        "options": [
+          "capstone",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "capstone"
+      },
+      {
+        "id": 3,
+        "text": "To acknowledge a significant happy day or event with a gathering.",
+        "target": "celebrate",
+        "definition": "To acknowledge a significant happy day or event with a gathering.",
+        "word": "celebrate",
+        "definition_en": "To acknowledge a significant happy day or event with a gathering.",
+        "options": [
+          "celebrate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "celebrate"
+      },
+      {
+        "id": 4,
+        "text": "The accomplishment of an aim or intended purpose.",
+        "target": "success",
+        "definition": "The accomplishment of an aim or intended purpose.",
+        "word": "success",
+        "definition_en": "The accomplishment of an aim or intended purpose.",
+        "options": [
+          "success",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "success"
+      },
+      {
+        "id": 5,
+        "text": "The ability to do something well, gained through training.",
+        "target": "skill",
+        "definition": "The ability to do something well, gained through training.",
+        "word": "skill",
+        "definition_en": "The ability to do something well, gained through training.",
+        "options": [
+          "skill",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "skill"
+      }
+    ]
+  },
   "rw_part2": {
-    "title": "Explaining Photosynthesis and Area",
+    "title": "Celebrating Our Primary Capstone Showcase",
+    "topic": "Celebrating Our Primary Capstone Showcase",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "What was your favorite project in our whole primary showcase?",
+        "text": "What was your favorite project in our whole primary showcase?",
+        "options": [
+          "The interactive science lab demonstrating renewable solar energy and circuits.",
+          "I wore my black leather shoes to church.",
+          "The train leaves platform three at four o'clock."
+        ],
+        "answer": "The interactive science lab demonstrating renewable solar energy and circuits."
+      },
+      {
+        "id": 2,
+        "speaker": "Mia",
+        "prompt": "How much did our English speaking and writing improve this year?",
+        "text": "How much did our English speaking and writing improve this year?",
+        "options": [
+          "We learned hundreds of academic words and can now present with strong confidence.",
+          "My sister baked apple pie for our neighbors.",
+          "The supermarket sells fresh milk and butter."
+        ],
+        "answer": "We learned hundreds of academic words and can now present with strong confidence."
+      },
+      {
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "How many guests attended our graduation showcase exhibition?",
+        "text": "How many guests attended our graduation showcase exhibition?",
+        "options": [
+          "Forty-five parents and thirty-five teachers gathered in the assembly hall.",
+          "I had vegetable noodles and green tea for lunch.",
+          "The library is closed on Sunday morning."
+        ],
+        "answer": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+      },
+      {
+        "id": 4,
+        "speaker": "Mia",
+        "prompt": "What is the total number of guests who attended the celebration?",
+        "text": "What is the total number of guests who attended the celebration?",
+        "options": [
+          "Forty-five plus thirty-five equals eighty guests in total.",
+          "I wear my green raincoat when it rains.",
+          "The museum is closed on public holidays."
+        ],
+        "answer": "Forty-five plus thirty-five equals eighty guests in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "Are you excited to step forward into secondary school next autumn?",
+        "text": "Are you excited to step forward into secondary school next autumn?",
+        "options": [
+          "Yes, we are proud of our primary success and ready for new challenges!",
+          "I do not like drinking warm orange juice.",
+          "The bus leaves from the corner of Elm Street."
+        ],
+        "answer": "Yes, we are proud of our primary success and ready for new challenges!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "What are the key sequential steps of photosynthesis?"
+        "text": "The interactive science lab demonstrating renewable solar energy and circuits."
       },
       {
-        "speaker": "Sophia",
-        "text": "First, light is absorbed; next, water enters; finally, oxygen is released."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What is the area of our twelve by eight greenhouse?"
-      },
-      {
-        "speaker": "Sophia",
-        "text": "Twelve times eight equals ninety-six square meters."
+        "speaker": "Mia",
+        "text": "We learned hundreds of academic words and can now present with strong confidence."
       },
       {
         "speaker": "Lucas",
-        "text": "And the perimeter is twice twelve plus eight, which equals forty meters!"
+        "text": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Forty-five plus thirty-five equals eighty guests in total."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, we are proud of our primary success and ready for new challenges!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Green plants produce their own food through a process called (1) ___. First, green (2) ___ in leaves absorbs sunlight. Next, stomata absorb carbon dioxide while roots draw water. Finally, plants produce glucose and release oxygen. In greenhouse design, gardeners calculate (3) ___ by multiplying length by width, and find the (4) ___ to install boundary fences.",
-    "answers": [
+    "title": "Lucas's Capstone Reflection: Looking Ahead",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Completing primary school is a memorable milestone [1]_____ celebrate with friends. Today our class presented our capstone showcase [2]_____ parents and teachers. We displayed posters about science, mathematics, [3]_____ world literature. Everyone spoke with confidence and shared [4]_____ proud learning achievements. We are excited to step forward [5]_____ secondary school with strong skills.",
+    "answers": {
+      "1": "to",
+      "2": "to",
+      "3": "and",
+      "4": "their",
+      "5": "into"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
       "photosynthesis",
-      "chlorophyll",
+      "sunlight",
+      "water",
+      "carbon dioxide",
+      "oxygen",
+      "energy",
+      "absorb",
+      "make",
       "area",
-      "perimeter"
+      "perimeter",
+      "inside",
+      "around",
+      "square units",
+      "measure",
+      "leaf",
+      "plant",
+      "green",
+      "food",
+      "grow",
+      "garden"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "An event where skills, qualities, or products are exhibited.",
+        "target": "showcase",
+        "definition": "An event where skills, qualities, or products are exhibited.",
+        "word": "showcase",
+        "definition_en": "An event where skills, qualities, or products are exhibited.",
+        "options": [
+          "showcase",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "showcase"
+      },
+      {
+        "id": 2,
+        "text": "A culminating project, experience, or achievement in school.",
+        "target": "capstone",
+        "definition": "A culminating project, experience, or achievement in school.",
+        "word": "capstone",
+        "definition_en": "A culminating project, experience, or achievement in school.",
+        "options": [
+          "capstone",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "capstone"
+      },
+      {
+        "id": 3,
+        "text": "To acknowledge a significant happy day or event with a gathering.",
+        "target": "celebrate",
+        "definition": "To acknowledge a significant happy day or event with a gathering.",
+        "word": "celebrate",
+        "definition_en": "To acknowledge a significant happy day or event with a gathering.",
+        "options": [
+          "celebrate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "celebrate"
+      },
+      {
+        "id": 4,
+        "text": "The accomplishment of an aim or intended purpose.",
+        "target": "success",
+        "definition": "The accomplishment of an aim or intended purpose.",
+        "word": "success",
+        "definition_en": "The accomplishment of an aim or intended purpose.",
+        "options": [
+          "success",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "success"
+      },
+      {
+        "id": 5,
+        "text": "The ability to do something well, gained through training.",
+        "target": "skill",
+        "definition": "The ability to do something well, gained through training.",
+        "word": "skill",
+        "definition_en": "The ability to do something well, gained through training.",
+        "options": [
+          "skill",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "skill"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "The biological process by which plants produce glucose from sunlight.",
-      "word": "photosynthesis"
-    },
-    {
-      "definition": "The green substance in leaves that absorbs solar rays.",
-      "word": "chlorophyll"
-    },
-    {
-      "definition": "The total surface space enclosed within a boundary.",
-      "word": "area"
-    },
-    {
-      "definition": "The complete distance around the outside edge of a shape.",
-      "word": "perimeter"
-    },
-    {
-      "definition": "A four-sided shape with four right angles.",
-      "word": "rectangle"
-    }
-  ],
   "rw_part_2": {
-    "title": "Explaining Photosynthesis and Area",
+    "title": "Celebrating Our Primary Capstone Showcase",
+    "topic": "Celebrating Our Primary Capstone Showcase",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Lucas",
+        "prompt": "What was your favorite project in our whole primary showcase?",
+        "text": "What was your favorite project in our whole primary showcase?",
+        "options": [
+          "The interactive science lab demonstrating renewable solar energy and circuits.",
+          "I wore my black leather shoes to church.",
+          "The train leaves platform three at four o'clock."
+        ],
+        "answer": "The interactive science lab demonstrating renewable solar energy and circuits."
+      },
+      {
+        "id": 2,
+        "speaker": "Mia",
+        "prompt": "How much did our English speaking and writing improve this year?",
+        "text": "How much did our English speaking and writing improve this year?",
+        "options": [
+          "We learned hundreds of academic words and can now present with strong confidence.",
+          "My sister baked apple pie for our neighbors.",
+          "The supermarket sells fresh milk and butter."
+        ],
+        "answer": "We learned hundreds of academic words and can now present with strong confidence."
+      },
+      {
+        "id": 3,
+        "speaker": "Lucas",
+        "prompt": "How many guests attended our graduation showcase exhibition?",
+        "text": "How many guests attended our graduation showcase exhibition?",
+        "options": [
+          "Forty-five parents and thirty-five teachers gathered in the assembly hall.",
+          "I had vegetable noodles and green tea for lunch.",
+          "The library is closed on Sunday morning."
+        ],
+        "answer": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+      },
+      {
+        "id": 4,
+        "speaker": "Mia",
+        "prompt": "What is the total number of guests who attended the celebration?",
+        "text": "What is the total number of guests who attended the celebration?",
+        "options": [
+          "Forty-five plus thirty-five equals eighty guests in total.",
+          "I wear my green raincoat when it rains.",
+          "The museum is closed on public holidays."
+        ],
+        "answer": "Forty-five plus thirty-five equals eighty guests in total."
+      },
+      {
+        "id": 5,
+        "speaker": "Lucas",
+        "prompt": "Are you excited to step forward into secondary school next autumn?",
+        "text": "Are you excited to step forward into secondary school next autumn?",
+        "options": [
+          "Yes, we are proud of our primary success and ready for new challenges!",
+          "I do not like drinking warm orange juice.",
+          "The bus leaves from the corner of Elm Street."
+        ],
+        "answer": "Yes, we are proud of our primary success and ready for new challenges!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Lucas",
-        "text": "What are the key sequential steps of photosynthesis?"
+        "text": "The interactive science lab demonstrating renewable solar energy and circuits."
       },
       {
-        "speaker": "Sophia",
-        "text": "First, light is absorbed; next, water enters; finally, oxygen is released."
-      },
-      {
-        "speaker": "Lucas",
-        "text": "What is the area of our twelve by eight greenhouse?"
-      },
-      {
-        "speaker": "Sophia",
-        "text": "Twelve times eight equals ninety-six square meters."
+        "speaker": "Mia",
+        "text": "We learned hundreds of academic words and can now present with strong confidence."
       },
       {
         "speaker": "Lucas",
-        "text": "And the perimeter is twice twelve plus eight, which equals forty meters!"
+        "text": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+      },
+      {
+        "speaker": "Mia",
+        "text": "Forty-five plus thirty-five equals eighty guests in total."
+      },
+      {
+        "speaker": "Lucas",
+        "text": "Yes, we are proud of our primary success and ready for new challenges!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Green plants produce their own food through a process called (1) ___. First, green (2) ___ in leaves absorbs sunlight. Next, stomata absorb carbon dioxide while roots draw water. Finally, plants produce glucose and release oxygen. In greenhouse design, gardeners calculate (3) ___ by multiplying length by width, and find the (4) ___ to install boundary fences.",
-    "answers": [
-      "photosynthesis",
-      "chlorophyll",
-      "area",
-      "perimeter"
-    ]
+    "title": "Lucas's Capstone Reflection: Looking Ahead",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Completing primary school is a memorable milestone [1]_____ celebrate with friends. Today our class presented our capstone showcase [2]_____ parents and teachers. We displayed posters about science, mathematics, [3]_____ world literature. Everyone spoke with confidence and shared [4]_____ proud learning achievements. We are excited to step forward [5]_____ secondary school with strong skills.",
+    "answers": {
+      "1": "to",
+      "2": "to",
+      "3": "and",
+      "4": "their",
+      "5": "into"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "An event where skills, qualities, or products are exhibited.",
+        "target": "showcase",
+        "definition": "An event where skills, qualities, or products are exhibited.",
+        "word": "showcase",
+        "definition_en": "An event where skills, qualities, or products are exhibited.",
+        "options": [
+          "showcase",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "showcase"
+      },
+      {
+        "id": 2,
+        "text": "A culminating project, experience, or achievement in school.",
+        "target": "capstone",
+        "definition": "A culminating project, experience, or achievement in school.",
+        "word": "capstone",
+        "definition_en": "A culminating project, experience, or achievement in school.",
+        "options": [
+          "capstone",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "capstone"
+      },
+      {
+        "id": 3,
+        "text": "To acknowledge a significant happy day or event with a gathering.",
+        "target": "celebrate",
+        "definition": "To acknowledge a significant happy day or event with a gathering.",
+        "word": "celebrate",
+        "definition_en": "To acknowledge a significant happy day or event with a gathering.",
+        "options": [
+          "celebrate",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "celebrate"
+      },
+      {
+        "id": 4,
+        "text": "The accomplishment of an aim or intended purpose.",
+        "target": "success",
+        "definition": "The accomplishment of an aim or intended purpose.",
+        "word": "success",
+        "definition_en": "The accomplishment of an aim or intended purpose.",
+        "options": [
+          "success",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "success"
+      },
+      {
+        "id": 5,
+        "text": "The ability to do something well, gained through training.",
+        "target": "skill",
+        "definition": "The ability to do something well, gained through training.",
+        "word": "skill",
+        "definition_en": "The ability to do something well, gained through training.",
+        "options": [
+          "skill",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "skill"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Celebrating Our Primary Capstone Showcase",
+      "topic": "Celebrating Our Primary Capstone Showcase",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Lucas",
+          "prompt": "What was your favorite project in our whole primary showcase?",
+          "text": "What was your favorite project in our whole primary showcase?",
+          "options": [
+            "The interactive science lab demonstrating renewable solar energy and circuits.",
+            "I wore my black leather shoes to church.",
+            "The train leaves platform three at four o'clock."
+          ],
+          "answer": "The interactive science lab demonstrating renewable solar energy and circuits."
+        },
+        {
+          "id": 2,
+          "speaker": "Mia",
+          "prompt": "How much did our English speaking and writing improve this year?",
+          "text": "How much did our English speaking and writing improve this year?",
+          "options": [
+            "We learned hundreds of academic words and can now present with strong confidence.",
+            "My sister baked apple pie for our neighbors.",
+            "The supermarket sells fresh milk and butter."
+          ],
+          "answer": "We learned hundreds of academic words and can now present with strong confidence."
+        },
+        {
+          "id": 3,
+          "speaker": "Lucas",
+          "prompt": "How many guests attended our graduation showcase exhibition?",
+          "text": "How many guests attended our graduation showcase exhibition?",
+          "options": [
+            "Forty-five parents and thirty-five teachers gathered in the assembly hall.",
+            "I had vegetable noodles and green tea for lunch.",
+            "The library is closed on Sunday morning."
+          ],
+          "answer": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+        },
+        {
+          "id": 4,
+          "speaker": "Mia",
+          "prompt": "What is the total number of guests who attended the celebration?",
+          "text": "What is the total number of guests who attended the celebration?",
+          "options": [
+            "Forty-five plus thirty-five equals eighty guests in total.",
+            "I wear my green raincoat when it rains.",
+            "The museum is closed on public holidays."
+          ],
+          "answer": "Forty-five plus thirty-five equals eighty guests in total."
+        },
+        {
+          "id": 5,
+          "speaker": "Lucas",
+          "prompt": "Are you excited to step forward into secondary school next autumn?",
+          "text": "Are you excited to step forward into secondary school next autumn?",
+          "options": [
+            "Yes, we are proud of our primary success and ready for new challenges!",
+            "I do not like drinking warm orange juice.",
+            "The bus leaves from the corner of Elm Street."
+          ],
+          "answer": "Yes, we are proud of our primary success and ready for new challenges!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Lucas",
+          "text": "The interactive science lab demonstrating renewable solar energy and circuits."
+        },
+        {
+          "speaker": "Mia",
+          "text": "We learned hundreds of academic words and can now present with strong confidence."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Forty-five parents and thirty-five teachers gathered in the assembly hall."
+        },
+        {
+          "speaker": "Mia",
+          "text": "Forty-five plus thirty-five equals eighty guests in total."
+        },
+        {
+          "speaker": "Lucas",
+          "text": "Yes, we are proud of our primary success and ready for new challenges!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Lucas's Capstone Reflection: Looking Ahead",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Completing primary school is a memorable milestone [1]_____ celebrate with friends. Today our class presented our capstone showcase [2]_____ parents and teachers. We displayed posters about science, mathematics, [3]_____ world literature. Everyone spoke with confidence and shared [4]_____ proud learning achievements. We are excited to step forward [5]_____ secondary school with strong skills.",
+      "answers": {
+        "1": "to",
+        "2": "to",
+        "3": "and",
+        "4": "their",
+        "5": "into"
+      }
+    }
   }
 };
 export default readingHubData;

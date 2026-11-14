@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 63 | Theme: "Reading Maps: Navigating the Island" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 63 | Theme: "ELA: Reading Maps / Math: Coordinates"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 63,
-  "theme": "Reading Maps: Navigating the Island",
+  "theme": "ELA: Reading Maps / Math: Coordinates",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Explain how to give someone directions using compass points and map grid coordinates instead of left and right.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Navigator A",
-      "cues": [
-        "Starting coordinate",
-        "Units moved east",
-        "Units moved north",
-        "Destination coordinate",
-        "Total distance walked"
-      ]
-    },
-    "card_b": {
-      "role": "Navigator B",
-      "cues": [
-        "Starting coordinate",
-        "Units moved east",
-        "Units moved north",
-        "Destination coordinate",
-        "Total distance walked"
-      ]
-    },
+    "title": "Ethan and Zoe's Map Exploration Exchange",
     "table_a": {
-      "title": "Navigator A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Navigator A",
+      "title": "Ethan's Treasure Map",
+      "person": "Ethan",
       "fields": [
         {
-          "id": "f1",
-          "label": "Starting coordinate",
-          "cue_prompt": "what / starting coordinate?",
-          "cue_word": "starting",
+          "id": "field_a1",
+          "label": "where / Ethan's map show?",
+          "cue_prompt": "where / Ethan's map show?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "Pine Tree Island",
           "acceptable_questions": [
-            "What is the starting coordinate?",
-            "Can you tell me the starting coordinate?"
+            "Where does Ethan's map show?",
+            "What island is on the map?",
+            "Where is his treasure map located?"
           ],
-          "nova_reply": "The starting coordinate is recorded for Reading Maps: Navigating the Island."
+          "nova_reply": "Ethan's treasure map shows the trails and hills of Pine Tree Island."
         },
         {
-          "id": "f2",
-          "label": "Units moved east",
-          "cue_prompt": "what / units moved east?",
-          "cue_word": "units",
+          "id": "field_a2",
+          "label": "what / coordinate of treasure?",
+          "cue_prompt": "what / coordinate of treasure?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "Grid point D-5",
           "acceptable_questions": [
-            "What is the units moved east?",
-            "Can you tell me the units moved east?"
+            "What is the coordinate of the treasure?",
+            "Where is the treasure marked on the grid?",
+            "What is the treasure coordinate?"
           ],
-          "nova_reply": "The units moved east is recorded for Reading Maps: Navigating the Island."
+          "nova_reply": "The hidden treasure point is marked at grid coordinate D-5."
         },
         {
-          "id": "f3",
-          "label": "Units moved north",
-          "cue_prompt": "what / units moved north?",
-          "cue_word": "units",
-          "is_missing": false,
-          "card_value": "Units moved north verified",
-          "value": "Units moved north verified",
-          "examiner_question": "What is the units moved north?",
-          "acceptable_answers": [
-            "It is units moved north.",
-            "Units moved north."
-          ]
+          "id": "field_a3",
+          "label": "which direction / walk from dock?",
+          "cue_prompt": "which direction / walk from dock?",
+          "cue_word": "which direction",
+          "is_missing": true,
+          "value": "Walk North, then turn East",
+          "acceptable_questions": [
+            "Which direction should you walk?",
+            "Which direction do we walk from the dock?",
+            "How do we walk from the boat dock?"
+          ],
+          "nova_reply": "You walk North along the main trail for ten minutes, then turn East at the big rock."
         },
         {
-          "id": "f4",
-          "label": "Destination coordinate",
-          "cue_prompt": "what / destination coordinate?",
-          "cue_word": "destination",
-          "is_missing": false,
-          "card_value": "Destination coordinate verified",
-          "value": "Destination coordinate verified",
-          "examiner_question": "What is the destination coordinate?",
-          "acceptable_answers": [
-            "It is destination coordinate.",
-            "Destination coordinate."
-          ]
+          "id": "field_a4",
+          "label": "how far / distance to cave?",
+          "cue_prompt": "how far / distance to cave?",
+          "cue_word": "how far",
+          "is_missing": true,
+          "value": "500 meters",
+          "acceptable_questions": [
+            "How far is the cave?",
+            "What is the distance to the cave?",
+            "How many meters is it?"
+          ],
+          "nova_reply": "The map scale shows the distance to the cave is exactly 500 meters."
         },
         {
-          "id": "f5",
-          "label": "Total distance walked",
-          "cue_prompt": "what / total distance walked?",
-          "cue_word": "total",
-          "is_missing": false,
-          "card_value": "Total distance walked verified",
-          "value": "Total distance walked verified",
-          "examiner_question": "What is the total distance walked?",
-          "acceptable_answers": [
-            "It is total distance walked.",
-            "Total distance walked."
-          ]
+          "id": "field_a5",
+          "label": "who / drew the map?",
+          "cue_prompt": "who / drew the map?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Captain Barnaby in 1920",
+          "acceptable_questions": [
+            "Who drew the map?",
+            "Who made the treasure map?",
+            "Who was the map maker?"
+          ],
+          "nova_reply": "An old sea explorer named Captain Barnaby drew the map in 1920."
         }
       ]
     },
     "table_b": {
-      "title": "Navigator B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Navigator B",
+      "title": "Zoe's Camping Map",
+      "person": "Zoe",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Starting coordinate",
-          "cue_prompt": "what / starting coordinate?",
-          "cue_word": "starting",
+          "id": "field_b1",
+          "label": "what / Zoe's map?",
+          "cue_prompt": "what / Zoe's map?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Starting coordinate on file",
-          "value": "Starting coordinate on file",
-          "examiner_question": "What is the starting coordinate?",
+          "value": "The Blue Lake Camp Map",
+          "nova_question": "What is the title of Zoe's camping map?",
           "acceptable_answers": [
-            "It is starting coordinate.",
-            "Starting coordinate."
+            "The Blue Lake Camp Map",
+            "The Blue Lake Camp Map.",
+            "Her map is the Blue Lake Camp Map.",
+            "Blue Lake Camp Map"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Units moved east",
-          "cue_prompt": "what / units moved east?",
-          "cue_word": "units",
+          "id": "field_b2",
+          "label": "where / campsite located?",
+          "cue_prompt": "where / campsite located?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Units moved east on file",
-          "value": "Units moved east on file",
-          "examiner_question": "What is the units moved east?",
+          "value": "At grid coordinate B-2",
+          "nova_question": "Where is the campsite located on her grid?",
           "acceptable_answers": [
-            "It is units moved east.",
-            "Units moved east."
+            "At grid coordinate B-2",
+            "At B-2.",
+            "It is located at grid coordinate B-2.",
+            "Grid coordinate B-2"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Units moved north",
-          "cue_prompt": "what / units moved north?",
-          "cue_word": "units",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the units moved north?",
-            "Can you tell me the units moved north?"
-          ],
-          "nova_reply": "The units moved north is confirmed in our notes."
+          "id": "field_b3",
+          "label": "which direction / to the lake?",
+          "cue_prompt": "which direction / to the lake?",
+          "cue_word": "which direction",
+          "is_missing": false,
+          "value": "Walk South for 200 meters",
+          "nova_question": "Which direction do campers walk to reach the lake?",
+          "acceptable_answers": [
+            "Walk South for 200 meters",
+            "South.",
+            "They walk South for 200 meters.",
+            "South 200 meters"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Destination coordinate",
-          "cue_prompt": "what / destination coordinate?",
-          "cue_word": "destination",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the destination coordinate?",
-            "Can you tell me the destination coordinate?"
-          ],
-          "nova_reply": "The destination coordinate is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / campfire starts?",
+          "cue_prompt": "what time / campfire starts?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 7:00 PM",
+          "nova_question": "What time does the evening campfire start?",
+          "acceptable_answers": [
+            "At 7:00 PM",
+            "At 7:00",
+            "The campfire starts at 7:00 PM.",
+            "7:00 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Total distance walked",
-          "cue_prompt": "what / total distance walked?",
-          "cue_word": "total",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the total distance walked?",
-            "Can you tell me the total distance walked?"
-          ],
-          "nova_reply": "The total distance walked is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / is the camp leader?",
+          "cue_prompt": "who / is the camp leader?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Ranger Dan",
+          "nova_question": "Who is the camp leader marked on the map key?",
+          "acceptable_answers": [
+            "Ranger Dan",
+            "Ranger Dan.",
+            "The camp leader is Ranger Dan.",
+            "Ranger Dan is"
+          ]
         }
       ]
     }

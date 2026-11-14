@@ -1,8 +1,8 @@
 {
   "week": 57,
-  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)",
-  "title_en": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts  / Toán: Khái niệm Phép nhân)",
-  "title_vi": "ELA: Vấn đề & Giải pháp (Câu",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
+  "title_en": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
+  "title_vi": "ELA: Vấn đề & Giải pháp (Câu) / Toán: Khái niệm Phép nhân",
   "cefr_level": "A2 Flyers",
   "cefr_stage": 1,
   "week_type": "rotary_practice",
@@ -15,10 +15,11 @@
     "focus": "Write sentences proposing a solution using modals"
   },
   "grammar_focus": {
-    "structure": "Modals of Possibility: \"We can...\", \"We could...\", \"We should",
+    "structure": "Modals of Possibility: We can..., We could..., We should...",
     "outcome": "Write sentences proposing a solution using modals",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Modals of Possibility: We can..., We could..., We should..."
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -271,5 +272,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 57
 }

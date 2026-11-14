@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 72 | Theme: "Photosynthesis: Plant Energy Factory" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 72 | Theme: "Science/ELA: Photosynthesis / Math: Area & Perimeter"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 72,
-  "theme": "Photosynthesis: Plant Energy Factory",
+  "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -92,9 +91,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Area 12 * 8",
-            "value": 96,
+            "label": "Part A",
+            "value": 48,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 48,
+            "color": "#10B981"
           }
         ],
         "total": 96,
@@ -104,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "A botanical greenhouse has a rectangular garden bed that is 12 meters long and 8 meters wide. What is the area of the garden bed in square meters?",
       "problem_en": "A botanical greenhouse has a rectangular garden bed that is 12 meters long and 8 meters wide. What is the area of the garden bed in square meters?",
       "answer": 96,
-      "step_by_step": "Step 1: Length = 12. Step 2: Width = 8. Step 3: Area = 12 * 8 = 96 square meters."
+      "step_by_step": "Step 1: Length = 12. Step 2: Width = 8. Step 3: Area = 12 * 8 = 96 square meters.",
+      "question": "A botanical greenhouse has a rectangular garden bed that is 12 meters long and 8 meters wide. What is the area of the garden bed in square meters?"
     },
     {
       "id": 2,
@@ -138,7 +143,8 @@ export const skillPracticeHubData = {
       "problem_text": "A rectangular greenhouse measures 12 meters in length and 8 meters in width. What is the perimeter around the greenhouse fence?",
       "problem_en": "A rectangular greenhouse measures 12 meters in length and 8 meters in width. What is the perimeter around the greenhouse fence?",
       "answer": 40,
-      "step_by_step": "Step 1: Length = 12, Width = 8. Step 2: Perimeter = 2 * (12 + 8) = 2 * 20 = 40 meters."
+      "step_by_step": "Step 1: Length = 12, Width = 8. Step 2: Perimeter = 2 * (12 + 8) = 2 * 20 = 40 meters.",
+      "question": "A rectangular greenhouse measures 12 meters in length and 8 meters in width. What is the perimeter around the greenhouse fence?"
     },
     {
       "id": 3,
@@ -154,9 +160,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Area 15 * 6",
-            "value": 90,
-            "color": "#8B5CF6"
+            "label": "Part A",
+            "value": 45,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 45,
+            "color": "#10B981"
           }
         ],
         "total": 90,
@@ -166,7 +177,8 @@ export const skillPracticeHubData = {
       "problem_text": "A solar plant nursery is 15 meters long and 6 meters wide. What is the total area of the nursery in square meters?",
       "problem_en": "A solar plant nursery is 15 meters long and 6 meters wide. What is the total area of the nursery in square meters?",
       "answer": 90,
-      "step_by_step": "Step 1: Length = 15. Step 2: Width = 6. Step 3: Area = 15 * 6 = 90 square meters."
+      "step_by_step": "Step 1: Length = 15. Step 2: Width = 6. Step 3: Area = 15 * 6 = 90 square meters.",
+      "question": "A solar plant nursery is 15 meters long and 6 meters wide. What is the total area of the nursery in square meters?"
     },
     {
       "id": 4,
@@ -182,9 +194,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "4 Sides * 9 m",
-            "value": 36,
-            "color": "#EC4899"
+            "label": "Part A",
+            "value": 18,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 18,
+            "color": "#10B981"
           }
         ],
         "total": 36,
@@ -194,7 +211,8 @@ export const skillPracticeHubData = {
       "problem_text": "A square herb planter box measures 9 meters along each of its four sides. What is the perimeter of the herb garden?",
       "problem_en": "A square herb planter box measures 9 meters along each of its four sides. What is the perimeter of the herb garden?",
       "answer": 36,
-      "step_by_step": "Step 1: Side = 9. Step 2: Sides = 4. Step 3: Perimeter = 4 * 9 = 36 meters."
+      "step_by_step": "Step 1: Side = 9. Step 2: Sides = 4. Step 3: Perimeter = 4 * 9 = 36 meters.",
+      "question": "A square herb planter box measures 9 meters along each of its four sides. What is the perimeter of the herb garden?"
     },
     {
       "id": 5,
@@ -210,9 +228,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Area 14 * 5",
-            "value": 70,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 35,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 35,
+            "color": "#10B981"
           }
         ],
         "total": 70,
@@ -222,7 +245,8 @@ export const skillPracticeHubData = {
       "problem_text": "A seedling bed is 14 meters long and 5 meters wide. What is the enclosed area of the seedling bed in square meters?",
       "problem_en": "A seedling bed is 14 meters long and 5 meters wide. What is the enclosed area of the seedling bed in square meters?",
       "answer": 70,
-      "step_by_step": "Step 1: Length = 14. Step 2: Width = 5. Step 3: Area = 14 * 5 = 70 square meters."
+      "step_by_step": "Step 1: Length = 14. Step 2: Width = 5. Step 3: Area = 14 * 5 = 70 square meters.",
+      "question": "A seedling bed is 14 meters long and 5 meters wide. What is the enclosed area of the seedling bed in square meters?"
     }
   ],
   "science_lab": {

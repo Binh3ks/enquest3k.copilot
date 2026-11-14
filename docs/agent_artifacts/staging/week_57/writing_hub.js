@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 57,
-  "theme": "Problem and Solution: Clever Inventions",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "The Wheeled Book Trolley",

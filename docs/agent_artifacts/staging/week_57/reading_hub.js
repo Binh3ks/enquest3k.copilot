@@ -1,282 +1,216 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 57 | Theme: "Problem and Solution: Clever Inventions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 57 | Theme: "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const readingHubData = {
   "week": 57,
-  "theme": "Problem and Solution: Clever Inventions",
+  "theme": "ELA: Problem & Solution (Sentences) / Math: Multiplication Concepts",
   "cefr_level": "A2 Flyers",
   "vocab": [
     {
       "id": 1,
       "word": "problem",
       "pos": "n",
-      "ipa": "/ˈprɒbləm/",
-      "definition_en": "A difficult situation that needs a practical solution.",
-      "definition_vi": "vấn đề",
-      "example_en": "Heavy school backpacks are a common problem for students.",
-      "example_vi": "Cặp sách nặng là một vấn đề phổ biến với học sinh."
+      "ipa": "/ˈprɑːbləm/",
+      "definition_en": "A difficulty that needs to be resolved.",
+      "definition_vi": "vấn đề, khó khăn",
+      "example_en": "A leaky faucet is a small home problem.",
+      "example_vi": "Vòi nước bị rò rỉ là một vấn đề nhỏ trong nhà."
     },
     {
       "id": 2,
       "word": "solution",
       "pos": "n",
       "ipa": "/səˈluːʃən/",
-      "definition_en": "A clear way of solving a difficult challenge.",
+      "definition_en": "An answer or way to fix a problem.",
       "definition_vi": "giải pháp",
-      "example_en": "Adding wheels to suitcases was a clever solution.",
-      "example_vi": "Thêm bánh xe vào va-li là một giải pháp thông minh."
+      "example_en": "Tightening the screw was the best solution.",
+      "example_vi": "Vặn chặt ốc vít là giải pháp tốt nhất."
     },
     {
       "id": 3,
-      "word": "invent",
+      "word": "fix",
       "pos": "v",
-      "ipa": "/ɪnˈvɛnt/",
-      "definition_en": "To create or design something that did not exist before.",
-      "definition_vi": "phát minh",
-      "example_en": "Engineers invent machines to make tasks easier.",
-      "example_vi": "Các kỹ sư phát minh máy móc để làm công việc dễ dàng hơn."
+      "ipa": "/fɪks/",
+      "definition_en": "To repair or make something work again.",
+      "definition_vi": "sửa chữa",
+      "example_en": "Dad can fix the broken bicycle chain.",
+      "example_vi": "Bố có thể sửa xích xe đạp bị hỏng."
     },
     {
       "id": 4,
-      "word": "multiply",
+      "word": "solve",
       "pos": "v",
-      "ipa": "/ˈmʌltɪplaɪ/",
-      "definition_en": "To add a number to itself a specific number of times.",
-      "definition_vi": "nhân",
-      "example_en": "When you multiply six by eight, you get forty-eight.",
-      "example_vi": "Khi bạn nhân sáu với tám, bạn được bốn mươi tám."
+      "ipa": "/sɑːlv/",
+      "definition_en": "To find an answer to a problem or puzzle.",
+      "definition_vi": "giải quyết",
+      "example_en": "We can solve the math puzzle together.",
+      "example_vi": "Chúng ta có thể cùng nhau giải câu đố toán học."
     },
     {
       "id": 5,
-      "word": "array",
+      "word": "idea",
       "pos": "n",
-      "ipa": "/əˈreɪ/",
-      "definition_en": "An arrangement of objects in equal rows and columns.",
-      "definition_vi": "mảng sắp xếp theo hàng và cột",
-      "example_en": "The solar cells form a neat rectangular array.",
-      "example_vi": "Các pin mặt trời tạo thành một mảng hình chữ nhật gọn gàng."
+      "ipa": "/aɪˈdiːə/",
+      "definition_en": "A thought or plan formed in the mind.",
+      "definition_vi": "ý tưởng",
+      "example_en": "Anna had a clever idea to save water.",
+      "example_vi": "Anna có một ý tưởng thông minh để tiết kiệm nước."
     },
     {
       "id": 6,
-      "word": "equal",
-      "pos": "adj",
-      "ipa": "/ˈiːkwəl/",
-      "definition_en": "The same in amount, size, value, or number.",
-      "definition_vi": "bằng nhau",
-      "example_en": "Divide the clay into six equal portions.",
-      "example_vi": "Chia đất sét thành sáu phần bằng nhau."
+      "word": "suggest",
+      "pos": "v",
+      "ipa": "/səɡˈdʒɛst/",
+      "definition_en": "To put forward an idea for consideration.",
+      "definition_vi": "gợi ý, đề xuất",
+      "example_en": "I suggest we put labels on the storage boxes.",
+      "example_vi": "Tôi gợi ý chúng ta nên dán nhãn lên các hộp chứa đồ."
     },
     {
       "id": 7,
-      "word": "product",
-      "pos": "n",
-      "ipa": "/ˈprɒdʌkt/",
-      "definition_en": "The result obtained by multiplying two numbers.",
-      "definition_vi": "tích số",
-      "example_en": "The product of seven and five is thirty-five.",
-      "example_vi": "Tích của bảy và năm là ba mươi lăm."
+      "word": "broken",
+      "pos": "adj",
+      "ipa": "/ˈbroʊkən/",
+      "definition_en": "Damaged or not working properly.",
+      "definition_vi": "bị hỏng, bị vỡ",
+      "example_en": "Do not sit on the broken wooden chair.",
+      "example_vi": "Đừng ngồi lên chiếc ghế gỗ bị hỏng."
     },
     {
       "id": 8,
-      "word": "device",
-      "pos": "n",
-      "ipa": "/dɪˈvaɪs/",
-      "definition_en": "An object or machine made for a particular purpose.",
-      "definition_vi": "thiết bị",
-      "example_en": "A thermometer is a device that measures temperature.",
-      "example_vi": "Nhiệt kế là thiết bị đo nhiệt độ."
+      "word": "repair",
+      "pos": "v",
+      "ipa": "/rɪˈpɛr/",
+      "definition_en": "To mend something that is broken.",
+      "definition_vi": "sửa chữa, hàn gắn",
+      "example_en": "The mechanic will repair the wagon wheel.",
+      "example_vi": "Người thợ sẽ sửa bánh xe kéo."
     },
     {
       "id": 9,
-      "word": "improve",
+      "word": "multiply",
       "pos": "v",
-      "ipa": "/ɪmˈpruːv/",
-      "definition_en": "To make something better than it was before.",
-      "definition_vi": "cải tiến, nâng cao",
-      "example_en": "We can improve our robot by adding smoother wheels.",
-      "example_vi": "Chúng ta có thể cải tiến rô-bốt bằng cách thêm bánh xe êm hơn."
+      "ipa": "/ˈmʌltɪplaɪ/",
+      "definition_en": "To add a number to itself many times.",
+      "definition_vi": "nhân",
+      "example_en": "Multiply four by three to get twelve.",
+      "example_vi": "Nhân bốn với ba để được mười hai."
     },
     {
       "id": 10,
-      "word": "engineer",
-      "pos": "n",
-      "ipa": "/ˌɛndʒɪˈnɪər/",
-      "definition_en": "A person who designs and builds machines and systems.",
-      "definition_vi": "kỹ sư",
-      "example_en": "The young engineer tested the solar circuit.",
-      "example_vi": "Kỹ sư trẻ đã thử nghiệm mạch điện mặt trời."
+      "word": "times",
+      "pos": "prep",
+      "ipa": "/taɪmz/",
+      "definition_en": "Multiplied by.",
+      "definition_vi": "lần (phép nhân)",
+      "example_en": "Five times two equals ten.",
+      "example_vi": "Năm nhân hai bằng mười."
     },
     {
       "id": 11,
-      "word": "challenge",
-      "pos": "n",
-      "ipa": "/ˈtʃælɪndʒ/",
-      "definition_en": "A new or difficult task that tests ability and skill.",
-      "definition_vi": "thử thách",
-      "example_en": "Carrying water up a hill was our main challenge.",
-      "example_vi": "Mang nước lên đồi là thử thách chính của chúng tôi."
+      "word": "groups of",
+      "pos": "phrase",
+      "ipa": "/ɡrups ʌv/",
+      "definition_en": "Equal sets of items.",
+      "definition_vi": "các nhóm gồm",
+      "example_en": "Three groups of four make twelve apples.",
+      "example_vi": "Ba nhóm bốn quả tạo thành mười hai quả táo."
     },
     {
       "id": 12,
-      "word": "prototype",
+      "word": "product",
       "pos": "n",
-      "ipa": "/ˈprəʊtətaɪp/",
-      "definition_en": "The first experimental model of a new invention.",
-      "definition_vi": "mẫu thử nghiệm đầu tiên",
-      "example_en": "The cardboard prototype showed how the lever works.",
-      "example_vi": "Mẫu thử bằng bìa cứng cho thấy đòn bẩy hoạt động ra sao."
+      "ipa": "/ˈprɑːdʌkt/",
+      "definition_en": "The result of multiplying two numbers.",
+      "definition_vi": "tích số",
+      "example_en": "The product of six and two is twelve.",
+      "example_vi": "Tích của sáu và hai là mười hai."
     },
     {
       "id": 13,
-      "word": "factor",
+      "word": "array",
       "pos": "n",
-      "ipa": "/ˈfæktər/",
-      "definition_en": "A number that is multiplied by another number.",
-      "definition_vi": "thừa số",
-      "example_en": "In six times eight, six and eight are factors.",
-      "example_vi": "Trong phép tính sáu nhân tám, sáu và tám là các thừa số."
+      "ipa": "/əˈreɪ/",
+      "definition_en": "An arrangement of objects in rows and columns.",
+      "definition_vi": "mảng hàng và cột",
+      "example_en": "The stamps were arranged in a neat three-by-four array.",
+      "example_vi": "Những con tem được xếp thành một mảng ba nhân bốn ngay ngắn."
     },
     {
       "id": 14,
-      "word": "efficient",
-      "pos": "adj",
-      "ipa": "/ɪˈfɪʃənt/",
-      "definition_en": "Working well without wasting time, energy, or money.",
-      "definition_vi": "hiệu quả",
-      "example_en": "LED light bulbs are very efficient.",
-      "example_vi": "Bóng đèn LED rất tiết kiệm năng lượng và hiệu quả."
+      "word": "repeated addition",
+      "pos": "phrase",
+      "ipa": "/rɪˈpitɪd əˈdɪʃən/",
+      "definition_en": "Adding the same number over and over.",
+      "definition_vi": "phép cộng lặp lại",
+      "example_en": "We use repeated addition to count equal groups of apples.",
+      "example_vi": "Phép nhân thực chất là phép cộng lặp lại."
     },
     {
       "id": 15,
-      "word": "modify",
-      "pos": "v",
-      "ipa": "/ˈmɒdɪfaɪ/",
-      "definition_en": "To change something slightly to improve it.",
-      "definition_vi": "chỉnh sửa, sửa đổi",
-      "example_en": "We must modify the handle to make it stronger.",
-      "example_vi": "Chúng ta cần sửa đổi tay cầm để nó chắc hơn."
+      "word": "tool",
+      "pos": "n",
+      "ipa": "/tuːl/",
+      "definition_en": "An instrument used to do practical work.",
+      "definition_vi": "dụng cụ",
+      "example_en": "A screwdriver is a useful repair tool.",
+      "example_vi": "Tua vít là một dụng cụ sửa chữa hữu ích."
     },
     {
       "id": 16,
-      "word": "material",
+      "word": "machine",
       "pos": "n",
-      "ipa": "/məˈtɪəriəl/",
-      "definition_en": "A physical substance used to make things.",
-      "definition_vi": "vật liệu",
-      "example_en": "Lightweight plastic is a durable material for toys.",
-      "example_vi": "Nhựa nhẹ là vật liệu bền dùng làm đồ chơi."
+      "ipa": "/məˈʃiːn/",
+      "definition_en": "An apparatus using power to perform work.",
+      "definition_vi": "máy móc",
+      "example_en": "A sewing machine helps mend torn clothes.",
+      "example_vi": "Máy may giúp vá quần áo bị rách."
     },
     {
       "id": 17,
-      "word": "patent",
-      "pos": "n",
-      "ipa": "/ˈpeɪtənt/",
-      "definition_en": "An official right protecting an inventor's new design.",
-      "definition_vi": "bằng sáng chế",
-      "example_en": "The inventor received a patent for her water filter.",
-      "example_vi": "Nhà phát minh đã nhận bằng sáng chế cho bộ lọc nước của mình."
+      "word": "help",
+      "pos": "v",
+      "ipa": "/hɛlp/",
+      "definition_en": "To give assistance or support.",
+      "definition_vi": "giúp đỡ",
+      "example_en": "Good tools help us fix broken toys.",
+      "example_vi": "Dụng cụ tốt giúp chúng ta sửa đồ chơi hỏng."
     },
     {
       "id": 18,
-      "word": "assemble",
+      "word": "build",
       "pos": "v",
-      "ipa": "/əˈsɛmbl/",
-      "definition_en": "To put parts together to form a complete object.",
-      "definition_vi": "lắp ráp",
-      "example_en": "Students assemble miniature wind turbines in class.",
-      "example_vi": "Học sinh lắp ráp các tuabin gió thu nhỏ trong lớp."
+      "ipa": "/bɪld/",
+      "definition_en": "To construct something by putting parts together.",
+      "definition_vi": "xây dựng, lắp ráp",
+      "example_en": "Students build wooden birdhouses in workshop class.",
+      "example_vi": "Học sinh lắp ráp chuồng chim bằng gỗ trong giờ thực hành."
     },
     {
       "id": 19,
-      "word": "creative",
-      "pos": "adj",
-      "ipa": "/kriˈeɪtɪv/",
-      "definition_en": "Having the ability to generate new and original ideas.",
-      "definition_vi": "sáng tạo",
-      "example_en": "Creative thinkers find simple answers to hard problems.",
-      "example_vi": "Những người có tư duy sáng tạo tìm ra câu trả lời đơn giản cho vấn đề khó."
+      "word": "work",
+      "pos": "v",
+      "ipa": "/wɜːrk/",
+      "definition_en": "To function correctly.",
+      "definition_vi": "hoạt động tốt",
+      "example_en": "After oiling the gears, the clock will work.",
+      "example_vi": "Sau khi tra dầu vào bánh răng, đồng hồ sẽ hoạt động tốt."
     },
     {
       "id": 20,
-      "word": "gear",
-      "pos": "n",
-      "ipa": "/ɡɪər/",
-      "definition_en": "A toothed wheel that turns to transfer motion in machines.",
-      "definition_vi": "bánh răng",
-      "example_en": "Bicycle gears make riding up steep slopes easier.",
-      "example_vi": "Bánh răng xe đạp giúp đạp xe lên dốc đứng dễ dàng hơn."
+      "word": "clever",
+      "pos": "adj",
+      "ipa": "/ˈklɛvər/",
+      "definition_en": "Smart and quick at learning or solving things.",
+      "definition_vi": "thông minh, khéo léo",
+      "example_en": "She found a clever solution to carry books.",
+      "example_vi": "Bạn ấy tìm ra giải pháp thông minh để mang sách."
     }
   ],
-  "clil_article": {
-    "title_en": "Engineering Solutions and Multiplication Arrays",
-    "title_vi": "Giải pháp Kỹ thuật và Mảng Phép nhân",
-    "content_en": "Every great invention begins with a clear problem that affects daily life. When people faced dark streets at night, inventors created electric streetlamps as a solution. When goods were too heavy to carry, engineers invented wheeled carts. To propose practical ideas, engineers use modal verbs: we should test new materials, we could modify the shape, and we must ensure safety. In engineering workshops, parts are often organized in equal groups or rectangular arrays. An array arranges objects in rows and columns. Instead of counting parts one by one, engineers multiply the number of rows by the number of columns. For example, a solar panel with 6 rows of 8 solar cells contains 48 cells altogether because 6 multiplied by 8 equals 48. Here, 6 and 8 are factors, and 48 is the product. Using multiplication arrays allows engineers to assemble devices quickly and accurately.",
-    "glossary": [
-      {
-        "word": "problem",
-        "definition_en": "A challenge needing an answer",
-        "definition_vi": "vấn đề"
-      },
-      {
-        "word": "solution",
-        "definition_en": "An effective answer to a problem",
-        "definition_vi": "giải pháp"
-      },
-      {
-        "word": "array",
-        "definition_en": "Rows and columns of items",
-        "definition_vi": "mảng sắp xếp"
-      },
-      {
-        "word": "product",
-        "definition_en": "Result of multiplication",
-        "definition_vi": "tích số"
-      },
-      {
-        "word": "engineer",
-        "definition_en": "A person who designs systems",
-        "definition_vi": "kỹ sư"
-      }
-    ],
-    "check_questions": [
-      {
-        "id": 1,
-        "question_en": "How does an array arrange objects?",
-        "options": [
-          "In equal rows and columns",
-          "In a scattered circle",
-          "In random piles"
-        ],
-        "answer": "In equal rows and columns"
-      },
-      {
-        "id": 2,
-        "question_en": "What is the product of 6 rows with 8 cells in each row?",
-        "options": [
-          "48 cells",
-          "42 cells",
-          "54 cells"
-        ],
-        "answer": "48 cells"
-      },
-      {
-        "id": 3,
-        "question_en": "Which modal verb expresses an essential requirement?",
-        "options": [
-          "Must",
-          "Could",
-          "Might"
-        ],
-        "answer": "Must"
-      }
-    ],
-    "text": "Every great invention begins with a clear problem that affects daily life. When people faced dark streets at night, inventors created electric streetlamps as a solution. When goods were too heavy to carry, engineers invented wheeled carts. To propose practical ideas, engineers use modal verbs: we should test new materials, we could modify the shape, and we must ensure safety. In engineering workshops, parts are often organized in equal groups or rectangular arrays. An array arranges objects in rows and columns. Instead of counting parts one by one, engineers multiply the number of rows by the number of columns. For example, a solar panel with 6 rows of 8 solar cells contains 48 cells altogether because 6 multiplied by 8 equals 48. Here, 6 and 8 are factors, and 48 is the product. Using multiplication arrays allows engineers to assemble devices quickly and accurately."
-  },
   "story_scenes": [
     {
       "scene": 1,
@@ -354,169 +288,736 @@ export const readingHubData = {
       ]
     }
   ],
+  "clil_article": {
+    "title_en": "The Fix-It Squad: Inventions and Arrays",
+    "title_vi": "Biệt đội Sửa chữa: Sáng chế và Mảng số",
+    "content_en": "Every day, people meet small problems that need smart thinking. A wheel might break, or a desk may wobble. When a tool is broken (not working), we look for a practical solution (a way to fix it). In English, we use modal words like 'can', 'could', and 'should' to suggest ideas. For example, we could tighten the bolts, or we should replace the wooden peg. Creative thinkers work together to fix and repair broken things. In math, multiplication helps us organize our tools. Multiplication is repeated addition (adding equal groups). If we put four wrenches in each toolbox, three toolboxes have twelve wrenches. We can show this with an array (rows and columns). Three rows of four give a product of twelve. Clever ideas and math arrays help us solve problems every day.",
+    "readability_target": "A2 Flyers (FK 5.5 - 6.5)",
+    "check_questions": [
+      {
+        "id": "q1",
+        "question_en": "What do we look for when something is broken?",
+        "question_vi": "Chúng ta tìm kiếm điều gì khi một đồ vật bị hỏng?",
+        "options": [
+          "A practical solution",
+          "A bucket of sand",
+          "A loud whistle"
+        ],
+        "answer": "A practical solution"
+      },
+      {
+        "id": "q2",
+        "question_en": "What is multiplication in simple terms?",
+        "question_vi": "Phép nhân theo cách hiểu đơn giản là gì?",
+        "options": [
+          "Repeated addition",
+          "Subtraction",
+          "A compass direction"
+        ],
+        "answer": "Repeated addition"
+      },
+      {
+        "id": "q3",
+        "question_en": "What do rows and columns form in math?",
+        "question_vi": "Các hàng và cột tạo thành gì trong toán học?",
+        "options": [
+          "An array",
+          "A circle",
+          "A triangle"
+        ],
+        "answer": "An array"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "problem",
+        "definition_en": "A situation that causes difficulty."
+      },
+      {
+        "term": "solution",
+        "definition_en": "An answer or method to fix a difficulty."
+      },
+      {
+        "term": "repair",
+        "definition_en": "To fix something that is broken."
+      },
+      {
+        "term": "array",
+        "definition_en": "An arrangement of objects in equal rows and columns."
+      },
+      {
+        "term": "product",
+        "definition_en": "The total result in multiplication."
+      }
+    ]
+  },
+  "shadowing": [
+    {
+      "id": 1,
+      "text": "A broken tool is a problem we can solve.",
+      "ipa": "/ə ˈbroʊkən tul ɪz ə ˈprɑbləm wi kæn sɑlv/",
+      "vietnamese": "Một dụng cụ hỏng là vấn đề chúng ta có thể giải quyết."
+    },
+    {
+      "id": 2,
+      "text": "We should suggest a clever new idea.",
+      "ipa": "/wi ʃʊd səɡˈdʒɛst ə ˈklɛvər nu aɪˈdiə/",
+      "vietnamese": "Chúng ta nên đề xuất một ý tưởng mới thông minh."
+    },
+    {
+      "id": 3,
+      "text": "The mechanic will repair the loose wheel.",
+      "ipa": "/ðə məˈkænɪk wɪl rɪˈpɛr ðə lus wil/",
+      "vietnamese": "Người thợ sẽ sửa chiếc bánh xe bị lỏng."
+    },
+    {
+      "id": 4,
+      "text": "Multiplication means repeated addition of equal groups.",
+      "ipa": "/ˌmʌltəpləˈkeɪʃən minz rɪˈpitɪd əˈdɪʃən ʌv ˈikwəl ɡrups/",
+      "vietnamese": "Phép nhân nghĩa là phép cộng lặp lại của các nhóm bằng nhau."
+    },
+    {
+      "id": 5,
+      "text": "Three groups of four make twelve pencils.",
+      "ipa": "/θri ɡrups ʌv fɔr meɪk twɛlv ˈpɛnsəlz/",
+      "vietnamese": "Ba nhóm bốn tạo thành mười hai chiếc bút chì."
+    },
+    {
+      "id": 6,
+      "text": "We can arrange our blocks in a neat array.",
+      "ipa": "/wi kæn əˈreɪndʒ ˈaʊər blɑks ɪn ə nit əˈreɪ/",
+      "vietnamese": "Chúng ta có thể xếp các khối gỗ thành một mảng ngay ngắn."
+    },
+    {
+      "id": 7,
+      "text": "Four times three gives a product of twelve.",
+      "ipa": "/fɔr taɪmz θri ɡɪvz ə ˈprɑdʌkt ʌv twɛlv/",
+      "vietnamese": "Bốn nhân ba cho ra tích số là mười hai."
+    },
+    {
+      "id": 8,
+      "text": "Good tools help people work together and fix things.",
+      "ipa": "/ɡʊd tulz hɛlp ˈpipəl wɜrk təˈɡɛðər ænd fɪks θɪŋz/",
+      "vietnamese": "Dụng cụ tốt giúp mọi người làm việc cùng nhau và sửa chữa đồ vật."
+    }
+  ],
   "shadowingData": {
     "sentences": [
       {
         "id": 1,
+        "text": "A broken tool is a problem we can solve.",
+        "ipa": "/ə ˈbroʊkən tul ɪz ə ˈprɑbləm wi kæn sɑlv/",
+        "vietnamese": "Một dụng cụ hỏng là vấn đề chúng ta có thể giải quyết."
+      },
+      {
+        "id": 2,
+        "text": "We should suggest a clever new idea.",
+        "ipa": "/wi ʃʊd səɡˈdʒɛst ə ˈklɛvər nu aɪˈdiə/",
+        "vietnamese": "Chúng ta nên đề xuất một ý tưởng mới thông minh."
+      },
+      {
+        "id": 3,
+        "text": "The mechanic will repair the loose wheel.",
+        "ipa": "/ðə məˈkænɪk wɪl rɪˈpɛr ðə lus wil/",
+        "vietnamese": "Người thợ sẽ sửa chiếc bánh xe bị lỏng."
+      },
+      {
+        "id": 4,
+        "text": "Multiplication means repeated addition of equal groups.",
+        "ipa": "/ˌmʌltəpləˈkeɪʃən minz rɪˈpitɪd əˈdɪʃən ʌv ˈikwəl ɡrups/",
+        "vietnamese": "Phép nhân nghĩa là phép cộng lặp lại của các nhóm bằng nhau."
+      },
+      {
+        "id": 5,
+        "text": "Three groups of four make twelve pencils.",
+        "ipa": "/θri ɡrups ʌv fɔr meɪk twɛlv ˈpɛnsəlz/",
+        "vietnamese": "Ba nhóm bốn tạo thành mười hai chiếc bút chì."
+      },
+      {
+        "id": 6,
+        "text": "We can arrange our blocks in a neat array.",
+        "ipa": "/wi kæn əˈreɪndʒ ˈaʊər blɑks ɪn ə nit əˈreɪ/",
+        "vietnamese": "Chúng ta có thể xếp các khối gỗ thành một mảng ngay ngắn."
+      },
+      {
+        "id": 7,
+        "text": "Four times three gives a product of twelve.",
+        "ipa": "/fɔr taɪmz θri ɡɪvz ə ˈprɑdʌkt ʌv twɛlv/",
+        "vietnamese": "Bốn nhân ba cho ra tích số là mười hai."
+      },
+      {
+        "id": 8,
+        "text": "Good tools help people work together and fix things.",
+        "ipa": "/ɡʊd tulz hɛlp ˈpipəl wɜrk təˈɡɛðər ænd fɪks θɪŋz/",
+        "vietnamese": "Dụng cụ tốt giúp mọi người làm việc cùng nhau và sửa chữa đồ vật."
+      }
+    ]
+  },
+  "rw_part1": {
+    "word_bank": [
+      "problem",
+      "solution",
+      "fix",
+      "solve",
+      "idea",
+      "suggest",
+      "broken",
+      "repair",
+      "multiply",
+      "times",
+      "groups of",
+      "product",
+      "array",
+      "repeated addition",
+      "tool",
+      "machine",
+      "help",
+      "build",
+      "work",
+      "clever"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A design or shape that repeats in a regular way.",
+        "target": "pattern",
+        "definition": "A design or shape that repeats in a regular way.",
+        "word": "pattern",
+        "definition_en": "A design or shape that repeats in a regular way.",
+        "options": [
+          "pattern",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pattern"
+      },
+      {
+        "id": 2,
+        "text": "Having parts that match exactly on opposite sides.",
+        "target": "symmetry",
+        "definition": "Having parts that match exactly on opposite sides.",
+        "word": "symmetry",
+        "definition_en": "Having parts that match exactly on opposite sides.",
+        "options": [
+          "symmetry",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symmetry"
+      },
+      {
+        "id": 3,
+        "text": "A curved shape that winds around a central point.",
+        "target": "spiral",
+        "definition": "A curved shape that winds around a central point.",
+        "word": "spiral",
+        "definition_en": "A curved shape that winds around a central point.",
+        "options": [
+          "spiral",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "spiral"
+      },
+      {
+        "id": 4,
+        "text": "One of the four main periods of the year like spring.",
+        "target": "season",
+        "definition": "One of the four main periods of the year like spring.",
+        "word": "season",
+        "definition_en": "One of the four main periods of the year like spring.",
+        "options": [
+          "season",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "season"
+      },
+      {
+        "id": 5,
+        "text": "A bright yellow flower that turns toward the sun.",
+        "target": "sunflower",
+        "definition": "A bright yellow flower that turns toward the sun.",
+        "word": "sunflower",
+        "definition_en": "A bright yellow flower that turns toward the sun.",
+        "options": [
+          "sunflower",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sunflower"
+      }
+    ]
+  },
+  "rw_part2": {
+    "title": "Discovering Patterns and Symmetry in Nature",
+    "topic": "Discovering Patterns and Symmetry in Nature",
+    "turns": [
+      {
+        "id": 1,
         "speaker": "Liam",
-        "text": "Every tough problem can be solved with a clever invention.",
-        "ipa": "/ˈɛvri tʌf ˈprɒbləm kæn biː sɒlvd wɪð ə ˈklɛvər ɪnˈvɛnʃən/"
+        "prompt": "Did you notice the beautiful symmetry on this butterfly's wings?",
+        "text": "Did you notice the beautiful symmetry on this butterfly's wings?",
+        "options": [
+          "Yes, the shapes and bright spots match exactly on both sides.",
+          "I need to buy two new pencils for school.",
+          "The train arrived thirty minutes early."
+        ],
+        "answer": "Yes, the shapes and bright spots match exactly on both sides."
       },
       {
         "id": 2,
         "speaker": "Chloe",
-        "text": "We should use lightweight materials to build the new frame.",
-        "ipa": "/wiː ʃʊd juːz ˈlaɪtweɪt məˈtɪəriəlz tuː bɪld ðə njuː freɪm/"
+        "prompt": "Where else can we find spiral patterns in our school garden?",
+        "text": "Where else can we find spiral patterns in our school garden?",
+        "options": [
+          "We can see spirals in snail shells and sunflower seeds.",
+          "I had vegetable soup and bread for supper.",
+          "The library has six large wooden tables."
+        ],
+        "answer": "We can see spirals in snail shells and sunflower seeds."
       },
       {
         "id": 3,
         "speaker": "Liam",
-        "text": "An array organizes equal items in rows and columns.",
-        "ipa": "/ən əˈreɪ ˈɔːrɡənaɪzɪz ˈiːkwəl ˈaɪtəmz ɪn rəʊz ænd ˈkɒləmz/"
+        "prompt": "How many petals did you count on those five yellow flowers?",
+        "text": "How many petals did you count on those five yellow flowers?",
+        "options": [
+          "Each flower has eight petals, so there are forty petals in total.",
+          "My older brother plays guitar in a band.",
+          "We walked across the bridge after lunch."
+        ],
+        "answer": "Each flower has eight petals, so there are forty petals in total."
       },
       {
         "id": 4,
         "speaker": "Chloe",
-        "text": "Six rows of eight bolts equal forty-eight bolts altogether.",
-        "ipa": "/sɪks rəʊz ɒv eɪt bəʊlts ˈiːkwəl ˈfɔːrti eɪt bəʊlts ˌɔːltəˈɡɛðər/"
+        "prompt": "Can we multiply equal groups to find the answer faster?",
+        "text": "Can we multiply equal groups to find the answer faster?",
+        "options": [
+          "Yes, five times eight equals forty petals.",
+          "I like wearing my warm winter gloves.",
+          "The soccer field was muddy after the rain."
+        ],
+        "answer": "Yes, five times eight equals forty petals."
       },
       {
         "id": 5,
         "speaker": "Liam",
-        "text": "Engineers test their prototype to improve its performance.",
-        "ipa": "/ˌɛndʒɪˈnɪərz tɛst ðɛər ˈprəʊtətaɪp tuː ɪmˈpruːv ɪts pərˈfɔːrməns/"
-      },
-      {
-        "id": 6,
-        "speaker": "Chloe",
-        "text": "We must check the safety rules before using power tools.",
-        "ipa": "/wiː mʌst tʃɛk ðə ˈseɪfti ruːlz bɪˈfɔːr ˈjuːzɪŋ ˈpaʊər tuːlz/"
-      },
-      {
-        "id": 7,
-        "speaker": "Liam",
-        "text": "Multiplying factors gives the total product quickly.",
-        "ipa": "/ˈmʌltɪplaɪɪŋ ˈfæktərz ɡɪvz ðə ˈtəʊtl ˈprɒdʌkt ˈkwɪkli/"
-      },
-      {
-        "id": 8,
-        "speaker": "Chloe",
-        "text": "Creative solutions make everyday life much easier.",
-        "ipa": "/kriˈeɪtɪv səˈluːʃənz meɪk ˈɛvrideɪ laɪf mʌtʃ ˈiːziər/"
+        "prompt": "Would you like to draw these natural patterns in your sketchbook?",
+        "text": "Would you like to draw these natural patterns in your sketchbook?",
+        "options": [
+          "Sure, let's sketch both sides with colorful pencils!",
+          "No, I never drink cold orange juice.",
+          "The bus stopped at the supermarket corner."
+        ],
+        "answer": "Sure, let's sketch both sides with colorful pencils!"
       }
-    ]
-  },
-  "rw_part1": [
-    {
-      "definition": "A machine or tool designed for a specific task.",
-      "word": "device"
-    },
-    {
-      "definition": "The answer or outcome when you multiply two numbers.",
-      "word": "product"
-    },
-    {
-      "definition": "An arrangement of objects in straight rows and columns.",
-      "word": "array"
-    },
-    {
-      "definition": "The first experimental model made by an inventor.",
-      "word": "prototype"
-    },
-    {
-      "definition": "A person whose job is to design and build machines.",
-      "word": "engineer"
-    }
-  ],
-  "rw_part2": {
-    "title": "Designing a School Device",
+    ],
     "exchanges": [
       {
         "speaker": "Liam",
-        "text": "What is the main problem with our paper dispenser?"
+        "text": "Yes, the shapes and bright spots match exactly on both sides."
       },
       {
         "speaker": "Chloe",
-        "text": "The sheets get jammed because the tray is too narrow."
+        "text": "We can see spirals in snail shells and sunflower seeds."
       },
       {
         "speaker": "Liam",
-        "text": "How could we solve this mechanical issue?"
+        "text": "Each flower has eight petals, so there are forty petals in total."
       },
       {
         "speaker": "Chloe",
-        "text": "We should modify the guide rails by widening them three millimeters."
+        "text": "Yes, five times eight equals forty petals."
       },
       {
         "speaker": "Liam",
-        "text": "Good idea! We have six rows of four rollers to adjust."
+        "text": "Sure, let's sketch both sides with colorful pencils!"
       }
     ]
   },
   "rw_part6": {
-    "text": "When inventors notice a common daily challenge, they look for a practical (1) ___. In our science workshop, students build miniature transport wagons. First, engineers draw a sketch and choose strong (2) ___. Next, they organize small screws and wheels in equal rows. An arrangement with seven boxes containing five bolts each forms a rectangular (3) ___. By multiplying seven by five, they find the (4) ___ is thirty-five bolts. Testing prototypes helps teams solve problems quickly.",
-    "answers": [
+    "title": "Liam's Nature Journal: Symmetry All Around",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Nature is full of amazing patterns and shapes. Yesterday Liam [1]_____ Chloe explored the botanical garden. They looked [2]_____ a monarch butterfly resting on a green leaf. Its wings had perfect symmetry [3]_____ both sides. They also discovered spiral seeds inside [4]_____ giant sunflower. Learning about natural cycles helps [5]_____ appreciate the living world.",
+    "answers": {
+      "1": "and",
+      "2": "at",
+      "3": "on",
+      "4": "a",
+      "5": "us"
+    }
+  },
+  "rw_part_1": {
+    "word_bank": [
+      "problem",
       "solution",
-      "materials",
+      "fix",
+      "solve",
+      "idea",
+      "suggest",
+      "broken",
+      "repair",
+      "multiply",
+      "times",
+      "groups of",
+      "product",
       "array",
-      "product"
+      "repeated addition",
+      "tool",
+      "machine",
+      "help",
+      "build",
+      "work",
+      "clever"
+    ],
+    "definitions": [
+      {
+        "id": 1,
+        "text": "A design or shape that repeats in a regular way.",
+        "target": "pattern",
+        "definition": "A design or shape that repeats in a regular way.",
+        "word": "pattern",
+        "definition_en": "A design or shape that repeats in a regular way.",
+        "options": [
+          "pattern",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pattern"
+      },
+      {
+        "id": 2,
+        "text": "Having parts that match exactly on opposite sides.",
+        "target": "symmetry",
+        "definition": "Having parts that match exactly on opposite sides.",
+        "word": "symmetry",
+        "definition_en": "Having parts that match exactly on opposite sides.",
+        "options": [
+          "symmetry",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symmetry"
+      },
+      {
+        "id": 3,
+        "text": "A curved shape that winds around a central point.",
+        "target": "spiral",
+        "definition": "A curved shape that winds around a central point.",
+        "word": "spiral",
+        "definition_en": "A curved shape that winds around a central point.",
+        "options": [
+          "spiral",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "spiral"
+      },
+      {
+        "id": 4,
+        "text": "One of the four main periods of the year like spring.",
+        "target": "season",
+        "definition": "One of the four main periods of the year like spring.",
+        "word": "season",
+        "definition_en": "One of the four main periods of the year like spring.",
+        "options": [
+          "season",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "season"
+      },
+      {
+        "id": 5,
+        "text": "A bright yellow flower that turns toward the sun.",
+        "target": "sunflower",
+        "definition": "A bright yellow flower that turns toward the sun.",
+        "word": "sunflower",
+        "definition_en": "A bright yellow flower that turns toward the sun.",
+        "options": [
+          "sunflower",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sunflower"
+      }
     ]
   },
-  "rw_part_1": [
-    {
-      "definition": "A machine or tool designed for a specific task.",
-      "word": "device"
-    },
-    {
-      "definition": "The answer or outcome when you multiply two numbers.",
-      "word": "product"
-    },
-    {
-      "definition": "An arrangement of objects in straight rows and columns.",
-      "word": "array"
-    },
-    {
-      "definition": "The first experimental model made by an inventor.",
-      "word": "prototype"
-    },
-    {
-      "definition": "A person whose job is to design and build machines.",
-      "word": "engineer"
-    }
-  ],
   "rw_part_2": {
-    "title": "Designing a School Device",
+    "title": "Discovering Patterns and Symmetry in Nature",
+    "topic": "Discovering Patterns and Symmetry in Nature",
+    "turns": [
+      {
+        "id": 1,
+        "speaker": "Liam",
+        "prompt": "Did you notice the beautiful symmetry on this butterfly's wings?",
+        "text": "Did you notice the beautiful symmetry on this butterfly's wings?",
+        "options": [
+          "Yes, the shapes and bright spots match exactly on both sides.",
+          "I need to buy two new pencils for school.",
+          "The train arrived thirty minutes early."
+        ],
+        "answer": "Yes, the shapes and bright spots match exactly on both sides."
+      },
+      {
+        "id": 2,
+        "speaker": "Chloe",
+        "prompt": "Where else can we find spiral patterns in our school garden?",
+        "text": "Where else can we find spiral patterns in our school garden?",
+        "options": [
+          "We can see spirals in snail shells and sunflower seeds.",
+          "I had vegetable soup and bread for supper.",
+          "The library has six large wooden tables."
+        ],
+        "answer": "We can see spirals in snail shells and sunflower seeds."
+      },
+      {
+        "id": 3,
+        "speaker": "Liam",
+        "prompt": "How many petals did you count on those five yellow flowers?",
+        "text": "How many petals did you count on those five yellow flowers?",
+        "options": [
+          "Each flower has eight petals, so there are forty petals in total.",
+          "My older brother plays guitar in a band.",
+          "We walked across the bridge after lunch."
+        ],
+        "answer": "Each flower has eight petals, so there are forty petals in total."
+      },
+      {
+        "id": 4,
+        "speaker": "Chloe",
+        "prompt": "Can we multiply equal groups to find the answer faster?",
+        "text": "Can we multiply equal groups to find the answer faster?",
+        "options": [
+          "Yes, five times eight equals forty petals.",
+          "I like wearing my warm winter gloves.",
+          "The soccer field was muddy after the rain."
+        ],
+        "answer": "Yes, five times eight equals forty petals."
+      },
+      {
+        "id": 5,
+        "speaker": "Liam",
+        "prompt": "Would you like to draw these natural patterns in your sketchbook?",
+        "text": "Would you like to draw these natural patterns in your sketchbook?",
+        "options": [
+          "Sure, let's sketch both sides with colorful pencils!",
+          "No, I never drink cold orange juice.",
+          "The bus stopped at the supermarket corner."
+        ],
+        "answer": "Sure, let's sketch both sides with colorful pencils!"
+      }
+    ],
     "exchanges": [
       {
         "speaker": "Liam",
-        "text": "What is the main problem with our paper dispenser?"
+        "text": "Yes, the shapes and bright spots match exactly on both sides."
       },
       {
         "speaker": "Chloe",
-        "text": "The sheets get jammed because the tray is too narrow."
+        "text": "We can see spirals in snail shells and sunflower seeds."
       },
       {
         "speaker": "Liam",
-        "text": "How could we solve this mechanical issue?"
+        "text": "Each flower has eight petals, so there are forty petals in total."
       },
       {
         "speaker": "Chloe",
-        "text": "We should modify the guide rails by widening them three millimeters."
+        "text": "Yes, five times eight equals forty petals."
       },
       {
         "speaker": "Liam",
-        "text": "Good idea! We have six rows of four rollers to adjust."
+        "text": "Sure, let's sketch both sides with colorful pencils!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "When inventors notice a common daily challenge, they look for a practical (1) ___. In our science workshop, students build miniature transport wagons. First, engineers draw a sketch and choose strong (2) ___. Next, they organize small screws and wheels in equal rows. An arrangement with seven boxes containing five bolts each forms a rectangular (3) ___. By multiplying seven by five, they find the (4) ___ is thirty-five bolts. Testing prototypes helps teams solve problems quickly.",
-    "answers": [
-      "solution",
-      "materials",
-      "array",
-      "product"
-    ]
+    "title": "Liam's Nature Journal: Symmetry All Around",
+    "instructions": "Read the diary and write the missing words. Write one word on each line.",
+    "text_template": "Nature is full of amazing patterns and shapes. Yesterday Liam [1]_____ Chloe explored the botanical garden. They looked [2]_____ a monarch butterfly resting on a green leaf. Its wings had perfect symmetry [3]_____ both sides. They also discovered spiral seeds inside [4]_____ giant sunflower. Learning about natural cycles helps [5]_____ appreciate the living world.",
+    "answers": {
+      "1": "and",
+      "2": "at",
+      "3": "on",
+      "4": "a",
+      "5": "us"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
+      {
+        "id": 1,
+        "text": "A design or shape that repeats in a regular way.",
+        "target": "pattern",
+        "definition": "A design or shape that repeats in a regular way.",
+        "word": "pattern",
+        "definition_en": "A design or shape that repeats in a regular way.",
+        "options": [
+          "pattern",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "pattern"
+      },
+      {
+        "id": 2,
+        "text": "Having parts that match exactly on opposite sides.",
+        "target": "symmetry",
+        "definition": "Having parts that match exactly on opposite sides.",
+        "word": "symmetry",
+        "definition_en": "Having parts that match exactly on opposite sides.",
+        "options": [
+          "symmetry",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "symmetry"
+      },
+      {
+        "id": 3,
+        "text": "A curved shape that winds around a central point.",
+        "target": "spiral",
+        "definition": "A curved shape that winds around a central point.",
+        "word": "spiral",
+        "definition_en": "A curved shape that winds around a central point.",
+        "options": [
+          "spiral",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "spiral"
+      },
+      {
+        "id": 4,
+        "text": "One of the four main periods of the year like spring.",
+        "target": "season",
+        "definition": "One of the four main periods of the year like spring.",
+        "word": "season",
+        "definition_en": "One of the four main periods of the year like spring.",
+        "options": [
+          "season",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "season"
+      },
+      {
+        "id": 5,
+        "text": "A bright yellow flower that turns toward the sun.",
+        "target": "sunflower",
+        "definition": "A bright yellow flower that turns toward the sun.",
+        "word": "sunflower",
+        "definition_en": "A bright yellow flower that turns toward the sun.",
+        "options": [
+          "sunflower",
+          "itemA",
+          "itemB"
+        ],
+        "answer": "sunflower"
+      }
+    ],
+    "part2_dialogue": {
+      "title": "Discovering Patterns and Symmetry in Nature",
+      "topic": "Discovering Patterns and Symmetry in Nature",
+      "turns": [
+        {
+          "id": 1,
+          "speaker": "Liam",
+          "prompt": "Did you notice the beautiful symmetry on this butterfly's wings?",
+          "text": "Did you notice the beautiful symmetry on this butterfly's wings?",
+          "options": [
+            "Yes, the shapes and bright spots match exactly on both sides.",
+            "I need to buy two new pencils for school.",
+            "The train arrived thirty minutes early."
+          ],
+          "answer": "Yes, the shapes and bright spots match exactly on both sides."
+        },
+        {
+          "id": 2,
+          "speaker": "Chloe",
+          "prompt": "Where else can we find spiral patterns in our school garden?",
+          "text": "Where else can we find spiral patterns in our school garden?",
+          "options": [
+            "We can see spirals in snail shells and sunflower seeds.",
+            "I had vegetable soup and bread for supper.",
+            "The library has six large wooden tables."
+          ],
+          "answer": "We can see spirals in snail shells and sunflower seeds."
+        },
+        {
+          "id": 3,
+          "speaker": "Liam",
+          "prompt": "How many petals did you count on those five yellow flowers?",
+          "text": "How many petals did you count on those five yellow flowers?",
+          "options": [
+            "Each flower has eight petals, so there are forty petals in total.",
+            "My older brother plays guitar in a band.",
+            "We walked across the bridge after lunch."
+          ],
+          "answer": "Each flower has eight petals, so there are forty petals in total."
+        },
+        {
+          "id": 4,
+          "speaker": "Chloe",
+          "prompt": "Can we multiply equal groups to find the answer faster?",
+          "text": "Can we multiply equal groups to find the answer faster?",
+          "options": [
+            "Yes, five times eight equals forty petals.",
+            "I like wearing my warm winter gloves.",
+            "The soccer field was muddy after the rain."
+          ],
+          "answer": "Yes, five times eight equals forty petals."
+        },
+        {
+          "id": 5,
+          "speaker": "Liam",
+          "prompt": "Would you like to draw these natural patterns in your sketchbook?",
+          "text": "Would you like to draw these natural patterns in your sketchbook?",
+          "options": [
+            "Sure, let's sketch both sides with colorful pencils!",
+            "No, I never drink cold orange juice.",
+            "The bus stopped at the supermarket corner."
+          ],
+          "answer": "Sure, let's sketch both sides with colorful pencils!"
+        }
+      ],
+      "exchanges": [
+        {
+          "speaker": "Liam",
+          "text": "Yes, the shapes and bright spots match exactly on both sides."
+        },
+        {
+          "speaker": "Chloe",
+          "text": "We can see spirals in snail shells and sunflower seeds."
+        },
+        {
+          "speaker": "Liam",
+          "text": "Each flower has eight petals, so there are forty petals in total."
+        },
+        {
+          "speaker": "Chloe",
+          "text": "Yes, five times eight equals forty petals."
+        },
+        {
+          "speaker": "Liam",
+          "text": "Sure, let's sketch both sides with colorful pencils!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Liam's Nature Journal: Symmetry All Around",
+      "instructions": "Read the diary and write the missing words. Write one word on each line.",
+      "text_template": "Nature is full of amazing patterns and shapes. Yesterday Liam [1]_____ Chloe explored the botanical garden. They looked [2]_____ a monarch butterfly resting on a green leaf. Its wings had perfect symmetry [3]_____ both sides. They also discovered spiral seeds inside [4]_____ giant sunflower. Learning about natural cycles helps [5]_____ appreciate the living world.",
+      "answers": {
+        "1": "and",
+        "2": "at",
+        "3": "on",
+        "4": "a",
+        "5": "us"
+      }
+    }
   }
 };
 export default readingHubData;

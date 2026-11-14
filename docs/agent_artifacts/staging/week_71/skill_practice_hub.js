@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 71 | Theme: "The Solar System: Planetary Wonders" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 71 | Theme: "Science/ELA: The Solar System / Math: Large Numbers"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 71,
-  "theme": "The Solar System: Planetary Wonders",
+  "theme": "Science/ELA: The Solar System / Math: Large Numbers",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -109,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "A space rover travels 3,450 kilometers across a lunar plain and then another 2,180 kilometers to reach an ancient crater. What is the total distance traveled?",
       "problem_en": "A space rover travels 3,450 kilometers across a lunar plain and then another 2,180 kilometers to reach an ancient crater. What is the total distance traveled?",
       "answer": 5630,
-      "step_by_step": "Step 1: Distance 1 = 3,450. Step 2: Distance 2 = 2,180. Step 3: Sum = 3,450 + 2,180 = 5,630 km."
+      "step_by_step": "Step 1: Distance 1 = 3,450. Step 2: Distance 2 = 2,180. Step 3: Sum = 3,450 + 2,180 = 5,630 km.",
+      "question": "A space rover travels 3,450 kilometers across a lunar plain and then another 2,180 kilometers to reach an ancient crater. What is the total distance traveled?"
     },
     {
       "id": 2,
@@ -142,7 +142,8 @@ export const skillPracticeHubData = {
       "problem_text": "Satellite Alpha orbits at an altitude of 8,500 kilometers. Satellite Beta orbits at an altitude of 3,700 kilometers. What is the difference in altitude between the two satellites?",
       "problem_en": "Satellite Alpha orbits at an altitude of 8,500 kilometers. Satellite Beta orbits at an altitude of 3,700 kilometers. What is the difference in altitude between the two satellites?",
       "answer": 4800,
-      "step_by_step": "Step 1: Alpha = 8,500. Step 2: Beta = 3,700. Step 3: Difference = 8,500 - 3,700 = 4,800 km."
+      "step_by_step": "Step 1: Alpha = 8,500. Step 2: Beta = 3,700. Step 3: Difference = 8,500 - 3,700 = 4,800 km.",
+      "question": "Satellite Alpha orbits at an altitude of 8,500 kilometers. Satellite Beta orbits at an altitude of 3,700 kilometers. What is the difference in altitude between the two satellites?"
     },
     {
       "id": 3,
@@ -158,9 +159,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "4 Wings * 2500",
-            "value": 10000,
-            "color": "#8B5CF6"
+            "label": "Part A",
+            "value": 5000,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 5000,
+            "color": "#10B981"
           }
         ],
         "total": 10000,
@@ -170,7 +176,8 @@ export const skillPracticeHubData = {
       "problem_text": "A space station features 4 large solar wings. If each solar wing contains 2,500 photovoltaic cells, what is the total number of solar cells on the station?",
       "problem_en": "A space station features 4 large solar wings. If each solar wing contains 2,500 photovoltaic cells, what is the total number of solar cells on the station?",
       "answer": 10000,
-      "step_by_step": "Step 1: Wings = 4. Step 2: Cells per wing = 2,500. Step 3: Total = 4 * 2,500 = 10,000 cells."
+      "step_by_step": "Step 1: Wings = 4. Step 2: Cells per wing = 2,500. Step 3: Total = 4 * 2,500 = 10,000 cells.",
+      "question": "A space station features 4 large solar wings. If each solar wing contains 2,500 photovoltaic cells, what is the total number of solar cells on the station?"
     },
     {
       "id": 4,
@@ -186,9 +193,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "Hundreds Digit 7",
-            "value": 700,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 350,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 350,
+            "color": "#10B981"
           }
         ],
         "total": 700,
@@ -198,7 +210,8 @@ export const skillPracticeHubData = {
       "problem_text": "In the asteroid diameter measurement 6,782 kilometers, what is the value represented by the digit 7?",
       "problem_en": "In the asteroid diameter measurement 6,782 kilometers, what is the value represented by the digit 7?",
       "answer": 700,
-      "step_by_step": "Step 1: The digit 7 is in the hundreds place. Step 2: Value = 7 * 100 = 700."
+      "step_by_step": "Step 1: The digit 7 is in the hundreds place. Step 2: Value = 7 * 100 = 700.",
+      "question": "In the asteroid diameter measurement 6,782 kilometers, what is the value represented by the digit 7?"
     },
     {
       "id": 5,
@@ -231,7 +244,8 @@ export const skillPracticeHubData = {
       "problem_text": "Astronomers compare two deep-space probe distances: Probe One is at 9,400 thousand kilometers and Probe Two is at 5,600 thousand kilometers. What is the difference?",
       "problem_en": "Astronomers compare two deep-space probe distances: Probe One is at 9,400 thousand kilometers and Probe Two is at 5,600 thousand kilometers. What is the difference?",
       "answer": 3800,
-      "step_by_step": "Step 1: Probe 1 = 9,400. Step 2: Probe 2 = 5,600. Step 3: Difference = 9,400 - 5,600 = 3,800."
+      "step_by_step": "Step 1: Probe 1 = 9,400. Step 2: Probe 2 = 5,600. Step 3: Difference = 9,400 - 5,600 = 3,800.",
+      "question": "Astronomers compare two deep-space probe distances: Probe One is at 9,400 thousand kilometers and Probe Two is at 5,600 thousand kilometers. What is the difference?"
     }
   ],
   "science_lab": {

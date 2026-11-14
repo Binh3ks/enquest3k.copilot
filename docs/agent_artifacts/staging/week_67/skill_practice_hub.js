@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 67 | Theme: "The OREO Structure: Persuasive Power" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 67 | Theme: "ELA: The OREO Structure / Math: Measuring Mass"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 67,
-  "theme": "The OREO Structure: Persuasive Power",
+  "theme": "ELA: The OREO Structure / Math: Measuring Mass",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -92,9 +91,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "3 Packets * 250 g",
-            "value": 750,
+            "label": "Part A",
+            "value": 375,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 375,
+            "color": "#10B981"
           }
         ],
         "total": 750,
@@ -104,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "A school bakery opens 3 packets of whole wheat flour. Each packet contains 250 grams. What is the total mass of flour opened?",
       "problem_en": "A school bakery opens 3 packets of whole wheat flour. Each packet contains 250 grams. What is the total mass of flour opened?",
       "answer": 750,
-      "step_by_step": "Step 1: Packets = 3. Step 2: Mass per packet = 250 g. Step 3: Total = 3 * 250 = 750 g."
+      "step_by_step": "Step 1: Packets = 3. Step 2: Mass per packet = 250 g. Step 3: Total = 3 * 250 = 750 g.",
+      "question": "A school bakery opens 3 packets of whole wheat flour. Each packet contains 250 grams. What is the total mass of flour opened?"
     },
     {
       "id": 2,
@@ -137,7 +142,8 @@ export const skillPracticeHubData = {
       "problem_text": "A storage canister held 1,200 grams of flour. Bakers used 450 grams for a batch of rolls. How many grams of flour remained in the canister?",
       "problem_en": "A storage canister held 1,200 grams of flour. Bakers used 450 grams for a batch of rolls. How many grams of flour remained in the canister?",
       "answer": 750,
-      "step_by_step": "Step 1: Initial = 1,200 g. Step 2: Used = 450 g. Step 3: Remaining = 1,200 - 450 = 750 g."
+      "step_by_step": "Step 1: Initial = 1,200 g. Step 2: Used = 450 g. Step 3: Remaining = 1,200 - 450 = 750 g.",
+      "question": "A storage canister held 1,200 grams of flour. Bakers used 450 grams for a batch of rolls. How many grams of flour remained in the canister?"
     },
     {
       "id": 3,
@@ -170,7 +176,8 @@ export const skillPracticeHubData = {
       "problem_text": "The school office receives two parcels of books. Parcel A has a mass of 2,400 grams and Parcel B has a mass of 1,800 grams. What is the total combined mass in grams?",
       "problem_en": "The school office receives two parcels of books. Parcel A has a mass of 2,400 grams and Parcel B has a mass of 1,800 grams. What is the total combined mass in grams?",
       "answer": 4200,
-      "step_by_step": "Step 1: Parcel A = 2,400 g. Step 2: Parcel B = 1,800 g. Step 3: Total = 2,400 + 1,800 = 4,200 g."
+      "step_by_step": "Step 1: Parcel A = 2,400 g. Step 2: Parcel B = 1,800 g. Step 3: Total = 2,400 + 1,800 = 4,200 g.",
+      "question": "The school office receives two parcels of books. Parcel A has a mass of 2,400 grams and Parcel B has a mass of 1,800 grams. What is the total combined mass in grams?"
     },
     {
       "id": 4,
@@ -186,9 +193,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "5 Packets * 180 g",
-            "value": 900,
-            "color": "#06B6D4"
+            "label": "Part A",
+            "value": 450,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 450,
+            "color": "#10B981"
           }
         ],
         "total": 900,
@@ -198,7 +210,8 @@ export const skillPracticeHubData = {
       "problem_text": "A breakfast club orders 5 packets of rolled oats. If each packet weighs 180 grams, what is the total mass of the oats in grams?",
       "problem_en": "A breakfast club orders 5 packets of rolled oats. If each packet weighs 180 grams, what is the total mass of the oats in grams?",
       "answer": 900,
-      "step_by_step": "Step 1: Packets = 5. Step 2: Mass each = 180 g. Step 3: Total = 5 * 180 = 900 g."
+      "step_by_step": "Step 1: Packets = 5. Step 2: Mass each = 180 g. Step 3: Total = 5 * 180 = 900 g.",
+      "question": "A breakfast club orders 5 packets of rolled oats. If each packet weighs 180 grams, what is the total mass of the oats in grams?"
     },
     {
       "id": 5,
@@ -231,7 +244,8 @@ export const skillPracticeHubData = {
       "problem_text": "A crate of green apples weighs 850 grams. A crate of strawberries weighs 375 grams. What is the difference in mass between the two crates?",
       "problem_en": "A crate of green apples weighs 850 grams. A crate of strawberries weighs 375 grams. What is the difference in mass between the two crates?",
       "answer": 475,
-      "step_by_step": "Step 1: Apples = 850 g. Step 2: Strawberries = 375 g. Step 3: Difference = 850 - 375 = 475 g."
+      "step_by_step": "Step 1: Apples = 850 g. Step 2: Strawberries = 375 g. Step 3: Difference = 850 - 375 = 475 g.",
+      "question": "A crate of green apples weighs 850 grams. A crate of strawberries weighs 375 grams. What is the difference in mass between the two crates?"
     }
   ],
   "science_lab": {

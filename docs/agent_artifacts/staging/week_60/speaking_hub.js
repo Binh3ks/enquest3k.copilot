@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 60 | Theme: "The Mayor's Request: Civic Action" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 60 | Theme: "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 60,
-  "theme": "The Mayor's Request: Civic Action",
+  "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Deliver a 1-minute formal speech to the town council proposing a community improvement project. State the problem, your budget estimate, and why it matters.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Council Petitioner A",
-      "cues": [
-        "Town leader addressed",
-        "Civic request topic",
-        "Math cost formula",
-        "Calculated total cost",
-        "Formal closing used"
-      ]
-    },
-    "card_b": {
-      "role": "Council Petitioner B",
-      "cues": [
-        "Town leader addressed",
-        "Civic request topic",
-        "Math cost formula",
-        "Calculated total cost",
-        "Formal closing used"
-      ]
-    },
+    "title": "Jack and Sophia's Town Hall Exchange",
     "table_a": {
-      "title": "Council Petitioner A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Council Petitioner A",
+      "title": "Jack's Letter to the Mayor",
+      "person": "Jack",
       "fields": [
         {
-          "id": "f1",
-          "label": "Town leader addressed",
-          "cue_prompt": "what / town leader addressed?",
-          "cue_word": "town",
+          "id": "field_a1",
+          "label": "who / Jack write to?",
+          "cue_prompt": "who / Jack write to?",
+          "cue_word": "who",
           "is_missing": true,
+          "value": "Mayor Baker",
           "acceptable_questions": [
-            "What is the town leader addressed?",
-            "Can you tell me the town leader addressed?"
+            "Who did Jack write to?",
+            "Who was the letter sent to?",
+            "Who received Jack's letter?"
           ],
-          "nova_reply": "The town leader addressed is recorded for The Mayor's Request: Civic Action."
+          "nova_reply": "Jack wrote a polite formal letter to Town Mayor Baker."
         },
         {
-          "id": "f2",
-          "label": "Civic request topic",
-          "cue_prompt": "what / civic request topic?",
-          "cue_word": "civic",
+          "id": "field_a2",
+          "label": "what / Jack request?",
+          "cue_prompt": "what / Jack request?",
+          "cue_word": "what",
           "is_missing": true,
+          "value": "New wooden benches for the park",
           "acceptable_questions": [
-            "What is the civic request topic?",
-            "Can you tell me the civic request topic?"
+            "What did Jack request?",
+            "What did he ask for?",
+            "What was his letter request?"
           ],
-          "nova_reply": "The civic request topic is recorded for The Mayor's Request: Civic Action."
+          "nova_reply": "Jack requested 4 new wooden benches for the community park paths."
         },
         {
-          "id": "f3",
-          "label": "Math cost formula",
-          "cue_prompt": "what / math cost formula?",
-          "cue_word": "math",
-          "is_missing": false,
-          "card_value": "Math cost formula verified",
-          "value": "Math cost formula verified",
-          "examiner_question": "What is the math cost formula?",
-          "acceptable_answers": [
-            "It is math cost formula.",
-            "Math cost formula."
-          ]
+          "id": "field_a3",
+          "label": "where / park located?",
+          "cue_prompt": "where / park located?",
+          "cue_word": "where",
+          "is_missing": true,
+          "value": "On Oak Street beside the school",
+          "acceptable_questions": [
+            "Where is the park located?",
+            "Where is the town park?",
+            "Where is Oak Street park?"
+          ],
+          "nova_reply": "The community park is located on Oak Street, right beside the school."
         },
         {
-          "id": "f4",
-          "label": "Calculated total cost",
-          "cue_prompt": "what / calculated total cost?",
-          "cue_word": "calculated",
-          "is_missing": false,
-          "card_value": "Calculated total cost verified",
-          "value": "Calculated total cost verified",
-          "examiner_question": "What is the calculated total cost?",
-          "acceptable_answers": [
-            "It is calculated total cost.",
-            "Calculated total cost."
-          ]
+          "id": "field_a4",
+          "label": "how many / students signed?",
+          "cue_prompt": "how many / students signed?",
+          "cue_word": "how many",
+          "is_missing": true,
+          "value": "32 students signed",
+          "acceptable_questions": [
+            "How many students signed the letter?",
+            "How many names were on the letter?",
+            "How many students supported it?"
+          ],
+          "nova_reply": "Thirty-two students signed their names at the bottom of the letter."
         },
         {
-          "id": "f5",
-          "label": "Formal closing used",
-          "cue_prompt": "what / formal closing used?",
-          "cue_word": "formal",
-          "is_missing": false,
-          "card_value": "Formal closing used verified",
-          "value": "Formal closing used verified",
-          "examiner_question": "What is the formal closing used?",
-          "acceptable_answers": [
-            "It is formal closing used.",
-            "Formal closing used."
-          ]
+          "id": "field_a5",
+          "label": "when / receive a reply?",
+          "cue_prompt": "when / receive a reply?",
+          "cue_word": "when",
+          "is_missing": true,
+          "value": "On Friday morning",
+          "acceptable_questions": [
+            "When did Jack receive a reply?",
+            "What day did the reply come?",
+            "When did the mayor answer?"
+          ],
+          "nova_reply": "The mayor sent a kind reply letter on Friday morning."
         }
       ]
     },
     "table_b": {
-      "title": "Council Petitioner B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Council Petitioner B",
+      "title": "Sophia's Library Petition",
+      "person": "Sophia",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Town leader addressed",
-          "cue_prompt": "what / town leader addressed?",
-          "cue_word": "town",
+          "id": "field_b1",
+          "label": "what / Sophia's request?",
+          "cue_prompt": "what / Sophia's request?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Town leader addressed on file",
-          "value": "Town leader addressed on file",
-          "examiner_question": "What is the town leader addressed?",
+          "value": "Extra science books for the library",
+          "nova_question": "What did Sophia request in her petition?",
           "acceptable_answers": [
-            "It is town leader addressed.",
-            "Town leader addressed."
+            "Extra science books for the library",
+            "Extra science books.",
+            "She requested extra science books for the library.",
+            "Science books"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Civic request topic",
-          "cue_prompt": "what / civic request topic?",
-          "cue_word": "civic",
+          "id": "field_b2",
+          "label": "where / library located?",
+          "cue_prompt": "where / library located?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Civic request topic on file",
-          "value": "Civic request topic on file",
-          "examiner_question": "What is the civic request topic?",
+          "value": "Opposite the town hall",
+          "nova_question": "Where is the community library located?",
           "acceptable_answers": [
-            "It is civic request topic.",
-            "Civic request topic."
+            "Opposite the town hall",
+            "Opposite town hall.",
+            "It is opposite the town hall.",
+            "Near town hall"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Math cost formula",
-          "cue_prompt": "what / math cost formula?",
-          "cue_word": "math",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the math cost formula?",
-            "Can you tell me the math cost formula?"
-          ],
-          "nova_reply": "The math cost formula is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / books requested?",
+          "cue_prompt": "how many / books requested?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "50 new science books",
+          "nova_question": "How many new books did her group request?",
+          "acceptable_answers": [
+            "50 new science books",
+            "Fifty new science books",
+            "They requested 50 new science books.",
+            "50 books"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Calculated total cost",
-          "cue_prompt": "what / calculated total cost?",
-          "cue_word": "calculated",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the calculated total cost?",
-            "Can you tell me the calculated total cost?"
-          ],
-          "nova_reply": "The calculated total cost is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what time / meeting with mayor?",
+          "cue_prompt": "what time / meeting with mayor?",
+          "cue_word": "what time",
+          "is_missing": false,
+          "value": "At 3:15 PM",
+          "nova_question": "What time was Sophia's meeting with the mayor?",
+          "acceptable_answers": [
+            "At 3:15 PM",
+            "At 3:15",
+            "The meeting was at 3:15 PM.",
+            "3:15 PM"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Formal closing used",
-          "cue_prompt": "what / formal closing used?",
-          "cue_word": "formal",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the formal closing used?",
-            "Can you tell me the formal closing used?"
-          ],
-          "nova_reply": "The formal closing used is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / went with Sophia?",
+          "cue_prompt": "who / went with Sophia?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her teacher Mr. Hall",
+          "nova_question": "Who went to town hall with Sophia?",
+          "acceptable_answers": [
+            "Her teacher Mr. Hall",
+            "Mr. Hall",
+            "Her teacher Mr. Hall went with her.",
+            "Teacher Mr. Hall"
+          ]
         }
       ]
     }

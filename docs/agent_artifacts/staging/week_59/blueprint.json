@@ -15,10 +15,11 @@
     "focus": "Write an informal letter with correct format"
   },
   "grammar_focus": {
-    "structure": "Informal Tone (Contractions: I'm, It's; Greetings: Hi, Hey)",
+    "structure": "Informal Letter Conventions: Friendly greetings, contractions, chatty tone",
     "outcome": "Write an informal letter with correct format",
     "pattern_regex": null,
-    "requires_authoring_examples": true
+    "requires_authoring_examples": true,
+    "rule": "Informal Letter Conventions: Friendly greetings, contractions, chatty tone"
   },
   "vocabulary_focus": {
     "syllabus_words": [
@@ -268,5 +269,6 @@
     "source_digital_map": true,
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
-  }
+  },
+  "week_number": 59
 }

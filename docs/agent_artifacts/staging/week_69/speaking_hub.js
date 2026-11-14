@@ -1,178 +1,171 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 69 | Theme: "Environmental Protection: Eco-Warriors" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 69 | Theme: "Science/ELA: Environmental Protection / Math: Line Plots"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 69,
-  "theme": "Environmental Protection: Eco-Warriors",
+  "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
   "cefr_level": "A2 Flyers",
   "talkshow_prompt": "Deliver a 1-minute speech encouraging people to adopt green habits. Use modal verbs like 'must', 'should', and 'ought to' to give persuasive advice.",
   "info_exchange_cards": {
-    "card_a": {
-      "role": "Eco-Warrior A",
-      "cues": [
-        "Environmental issue targeted",
-        "Modal verb rule stated",
-        "Volunteer line plot data",
-        "Total hours calculated",
-        "Long-term conservation goal"
-      ]
-    },
-    "card_b": {
-      "role": "Eco-Warrior B",
-      "cues": [
-        "Environmental issue targeted",
-        "Modal verb rule stated",
-        "Volunteer line plot data",
-        "Total hours calculated",
-        "Long-term conservation goal"
-      ]
-    },
+    "title": "Lucas and Chloe's Earth Care Exchange",
     "table_a": {
-      "title": "Eco-Warrior A's Info Card",
-      "subtitle": "Candidate Card",
-      "person": "Eco-Warrior A",
+      "title": "Lucas's Beach Cleanup Project",
+      "person": "Lucas",
       "fields": [
         {
-          "id": "f1",
-          "label": "Environmental issue targeted",
-          "cue_prompt": "what / environmental issue targeted?",
-          "cue_word": "environmental",
+          "id": "field_a1",
+          "label": "where / cleanup project?",
+          "cue_prompt": "where / cleanup project?",
+          "cue_word": "where",
           "is_missing": true,
+          "value": "At Sandy Cove Beach",
           "acceptable_questions": [
-            "What is the environmental issue targeted?",
-            "Can you tell me the environmental issue targeted?"
+            "Where was the cleanup project?",
+            "Where did Lucas clean up?",
+            "What beach did he help clean?"
           ],
-          "nova_reply": "The environmental issue targeted is recorded for Environmental Protection: Eco-Warriors."
+          "nova_reply": "Lucas organized a Saturday morning cleanup project at Sandy Cove Beach."
         },
         {
-          "id": "f2",
-          "label": "Modal verb rule stated",
-          "cue_prompt": "what / modal verb rule stated?",
-          "cue_word": "modal",
+          "id": "field_a2",
+          "label": "how many / volunteers joined?",
+          "cue_prompt": "how many / volunteers joined?",
+          "cue_word": "how many",
           "is_missing": true,
+          "value": "20 student volunteers",
           "acceptable_questions": [
-            "What is the modal verb rule stated?",
-            "Can you tell me the modal verb rule stated?"
+            "How many volunteers joined?",
+            "How many students helped?",
+            "How many people came to help?"
           ],
-          "nova_reply": "The modal verb rule stated is recorded for Environmental Protection: Eco-Warriors."
+          "nova_reply": "Twenty student volunteers came with gloves and blue bags to help clean."
         },
         {
-          "id": "f3",
-          "label": "Volunteer line plot data",
-          "cue_prompt": "what / volunteer line plot data?",
-          "cue_word": "volunteer",
-          "is_missing": false,
-          "card_value": "Volunteer line plot data verified",
-          "value": "Volunteer line plot data verified",
-          "examiner_question": "What is the volunteer line plot data?",
-          "acceptable_answers": [
-            "It is volunteer line plot data.",
-            "Volunteer line plot data."
-          ]
+          "id": "field_a3",
+          "label": "what / most common trash?",
+          "cue_prompt": "what / most common trash?",
+          "cue_word": "what",
+          "is_missing": true,
+          "value": "Plastic water bottles (75 collected)",
+          "acceptable_questions": [
+            "What was the most common trash?",
+            "What did they pick up the most?",
+            "What trash was most frequent on the plot?"
+          ],
+          "nova_reply": "Plastic water bottles were the most common trash, with 75 bottles collected."
         },
         {
-          "id": "f4",
-          "label": "Total hours calculated",
-          "cue_prompt": "what / total hours calculated?",
-          "cue_word": "total",
-          "is_missing": false,
-          "card_value": "Total hours calculated verified",
-          "value": "Total hours calculated verified",
-          "examiner_question": "What is the total hours calculated?",
-          "acceptable_answers": [
-            "It is total hours calculated.",
-            "Total hours calculated."
-          ]
+          "id": "field_a4",
+          "label": "what time / project finish?",
+          "cue_prompt": "what time / project finish?",
+          "cue_word": "what time",
+          "is_missing": true,
+          "value": "At 11:30 AM",
+          "acceptable_questions": [
+            "What time did the project finish?",
+            "When was the cleanup over?",
+            "What time did they pack up?"
+          ],
+          "nova_reply": "The beach cleanup finished at 11:30 AM before the sun grew too hot."
         },
         {
-          "id": "f5",
-          "label": "Long-term conservation goal",
-          "cue_prompt": "what / long-term conservation goal?",
-          "cue_word": "long-term",
-          "is_missing": false,
-          "card_value": "Long-term conservation goal verified",
-          "value": "Long-term conservation goal verified",
-          "examiner_question": "What is the long-term conservation goal?",
-          "acceptable_answers": [
-            "It is long-term conservation goal.",
-            "Long-term conservation goal."
-          ]
+          "id": "field_a5",
+          "label": "who / gave them recycling bins?",
+          "cue_prompt": "who / gave them recycling bins?",
+          "cue_word": "who",
+          "is_missing": true,
+          "value": "Ranger Dan from the park service",
+          "acceptable_questions": [
+            "Who gave them recycling bins?",
+            "Who provided the bins?",
+            "Who helped them sort the trash?"
+          ],
+          "nova_reply": "Park Ranger Dan provided 6 large blue recycling bins for the plastic and cans."
         }
       ]
     },
     "table_b": {
-      "title": "Eco-Warrior B's Info Card",
-      "subtitle": "Partner Card",
-      "person": "Eco-Warrior B",
+      "title": "Chloe's School Recycling Day",
+      "person": "Chloe",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Environmental issue targeted",
-          "cue_prompt": "what / environmental issue targeted?",
-          "cue_word": "environmental",
+          "id": "field_b1",
+          "label": "what / Chloe's school project?",
+          "cue_prompt": "what / Chloe's school project?",
+          "cue_word": "what",
           "is_missing": false,
-          "card_value": "Environmental issue targeted on file",
-          "value": "Environmental issue targeted on file",
-          "examiner_question": "What is the environmental issue targeted?",
+          "value": "A classroom paper recycling drive",
+          "nova_question": "What was Chloe's school project about?",
           "acceptable_answers": [
-            "It is environmental issue targeted.",
-            "Environmental issue targeted."
+            "A classroom paper recycling drive",
+            "Paper recycling drive.",
+            "Her project was a paper recycling drive.",
+            "Paper recycling"
           ]
         },
         {
-          "id": "fb2",
-          "label": "Modal verb rule stated",
-          "cue_prompt": "what / modal verb rule stated?",
-          "cue_word": "modal",
+          "id": "field_b2",
+          "label": "where / recycling bins placed?",
+          "cue_prompt": "where / recycling bins placed?",
+          "cue_word": "where",
           "is_missing": false,
-          "card_value": "Modal verb rule stated on file",
-          "value": "Modal verb rule stated on file",
-          "examiner_question": "What is the modal verb rule stated?",
+          "value": "Outside each third-grade classroom",
+          "nova_question": "Where were the recycling bins placed in the school?",
           "acceptable_answers": [
-            "It is modal verb rule stated.",
-            "Modal verb rule stated."
+            "Outside each third-grade classroom",
+            "Outside the classrooms.",
+            "They were placed outside each classroom.",
+            "Outside classrooms"
           ]
         },
         {
-          "id": "fb3",
-          "label": "Volunteer line plot data",
-          "cue_prompt": "what / volunteer line plot data?",
-          "cue_word": "volunteer",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the volunteer line plot data?",
-            "Can you tell me the volunteer line plot data?"
-          ],
-          "nova_reply": "The volunteer line plot data is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / kilograms collected?",
+          "cue_prompt": "how many / kilograms collected?",
+          "cue_word": "how many",
+          "is_missing": false,
+          "value": "45 kilograms of paper",
+          "nova_question": "How many kilograms of paper did students collect in one week?",
+          "acceptable_answers": [
+            "45 kilograms of paper",
+            "Forty-five kilograms of paper",
+            "They collected 45 kilograms.",
+            "45 kg"
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Total hours calculated",
-          "cue_prompt": "what / total hours calculated?",
-          "cue_word": "total",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the total hours calculated?",
-            "Can you tell me the total hours calculated?"
-          ],
-          "nova_reply": "The total hours calculated is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what day / collection held?",
+          "cue_prompt": "what day / collection held?",
+          "cue_word": "what day",
+          "is_missing": false,
+          "value": "Every Friday afternoon",
+          "nova_question": "What day was the paper collected each week?",
+          "acceptable_answers": [
+            "Every Friday afternoon",
+            "Friday afternoon.",
+            "It was collected on Friday afternoons.",
+            "Friday"
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Long-term conservation goal",
-          "cue_prompt": "what / long-term conservation goal?",
-          "cue_word": "long-term",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the long-term conservation goal?",
-            "Can you tell me the long-term conservation goal?"
-          ],
-          "nova_reply": "The long-term conservation goal is confirmed in our notes."
+          "id": "field_b5",
+          "label": "who / weighed the paper bags?",
+          "cue_prompt": "who / weighed the paper bags?",
+          "cue_word": "who",
+          "is_missing": false,
+          "value": "Her science teacher Mr. Hall",
+          "nova_question": "Who helped Chloe weigh the paper bags on the scale?",
+          "acceptable_answers": [
+            "Her science teacher Mr. Hall",
+            "Mr. Hall",
+            "Science teacher Mr. Hall helped her weigh them.",
+            "Teacher Mr. Hall"
+          ]
         }
       ]
     }

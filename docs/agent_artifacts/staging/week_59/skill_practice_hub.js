@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 59 | Theme: "Message in a Bottle: Island Mystery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 59 | Theme: "ELA: Message in a Bottle (Informal Writing) / Math: Remainders"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 59,
-  "theme": "Message in a Bottle: Island Mystery",
+  "theme": "ELA: Message in a Bottle (Informal Writing) / Math: Remainders",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -104,14 +103,15 @@ export const skillPracticeHubData = {
             "color": "#EF4444"
           }
         ],
-        "total": 29,
+        "total": 5,
         "unit": "shells",
         "comparisonType": "remainder"
       },
       "problem_text": "Sofia collects 29 seashells along the shore. She packs them into gift bags with 6 shells in each bag. How many leftover shells form the remainder?",
       "problem_en": "Sofia collects 29 seashells along the shore. She packs them into gift bags with 6 shells in each bag. How many leftover shells form the remainder?",
       "answer": 5,
-      "step_by_step": "Step 1: Total = 29. Step 2: Divisor = 6. Step 3: 29 = 4 * 6 + 5. Remainder = 5 shells."
+      "step_by_step": "Step 1: Total = 29. Step 2: Divisor = 6. Step 3: 29 = 4 * 6 + 5. Remainder = 5 shells.",
+      "question": "Sofia collects 29 seashells along the shore. She packs them into gift bags with 6 shells in each bag. How many leftover shells form the remainder?"
     },
     {
       "id": 2,
@@ -139,14 +139,15 @@ export const skillPracticeHubData = {
             "color": "#F59E0B"
           }
         ],
-        "total": 38,
+        "total": 3,
         "unit": "postcards",
         "comparisonType": "remainder"
       },
       "problem_text": "A coastal post office has 38 scenic postcards. The clerk puts 5 postcards into each packet. What is the remainder of loose postcards left over?",
       "problem_en": "A coastal post office has 38 scenic postcards. The clerk puts 5 postcards into each packet. What is the remainder of loose postcards left over?",
       "answer": 3,
-      "step_by_step": "Step 1: Total = 38. Step 2: 38 / 5 = 7 packets with remainder. Step 3: 38 - 35 = 3 postcards."
+      "step_by_step": "Step 1: Total = 38. Step 2: 38 / 5 = 7 packets with remainder. Step 3: 38 - 35 = 3 postcards.",
+      "question": "A coastal post office has 38 scenic postcards. The clerk puts 5 postcards into each packet. What is the remainder of loose postcards left over?"
     },
     {
       "id": 3,
@@ -174,14 +175,15 @@ export const skillPracticeHubData = {
             "color": "#EC4899"
           }
         ],
-        "total": 45,
+        "total": 3,
         "unit": "pieces",
         "comparisonType": "remainder"
       },
       "problem_text": "Leo sorts 45 smooth pieces of sea glass into trays that hold 7 pieces each. How many leftover pieces of sea glass cannot fill a tray?",
       "problem_en": "Leo sorts 45 smooth pieces of sea glass into trays that hold 7 pieces each. How many leftover pieces of sea glass cannot fill a tray?",
       "answer": 3,
-      "step_by_step": "Step 1: Total = 45. Step 2: 45 / 7 = 6 full trays with 3 left. Step 3: Remainder = 3 pieces."
+      "step_by_step": "Step 1: Total = 45. Step 2: 45 / 7 = 6 full trays with 3 left. Step 3: Remainder = 3 pieces.",
+      "question": "Leo sorts 45 smooth pieces of sea glass into trays that hold 7 pieces each. How many leftover pieces of sea glass cannot fill a tray?"
     },
     {
       "id": 4,
@@ -209,14 +211,15 @@ export const skillPracticeHubData = {
             "color": "#F97316"
           }
         ],
-        "total": 53,
+        "total": 5,
         "unit": "seedlings",
         "comparisonType": "remainder"
       },
       "problem_text": "Park rangers have 53 dune grass seedlings to plant in rows of 8. How many seedlings remain after planting the complete rows?",
       "problem_en": "Park rangers have 53 dune grass seedlings to plant in rows of 8. How many seedlings remain after planting the complete rows?",
       "answer": 5,
-      "step_by_step": "Step 1: Total = 53. Step 2: 53 / 8 = 6 full rows. Step 3: 53 - 48 = 5 seedlings left."
+      "step_by_step": "Step 1: Total = 53. Step 2: 53 / 8 = 6 full rows. Step 3: 53 - 48 = 5 seedlings left.",
+      "question": "Park rangers have 53 dune grass seedlings to plant in rows of 8. How many seedlings remain after planting the complete rows?"
     },
     {
       "id": 5,
@@ -244,14 +247,15 @@ export const skillPracticeHubData = {
             "color": "#14B8A6"
           }
         ],
-        "total": 31,
+        "total": 3,
         "unit": "tokens",
         "comparisonType": "remainder"
       },
       "problem_text": "Four friends find 31 commemorative coastal tokens and share them equally. How many tokens are leftover as the remainder?",
       "problem_en": "Four friends find 31 commemorative coastal tokens and share them equally. How many tokens are leftover as the remainder?",
       "answer": 3,
-      "step_by_step": "Step 1: Total = 31. Step 2: Friends = 4. Step 3: 31 = 7 * 4 + 3. Remainder = 3 tokens."
+      "step_by_step": "Step 1: Total = 31. Step 2: Friends = 4. Step 3: 31 = 7 * 4 + 3. Remainder = 3 tokens.",
+      "question": "Four friends find 31 commemorative coastal tokens and share them equally. How many tokens are leftover as the remainder?"
     }
   ],
   "science_lab": {

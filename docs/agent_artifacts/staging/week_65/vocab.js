@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "review",
+    "word": "cause",
     "pos": "n",
-    "ipa": "/rɪˈvjuː/",
-    "definition_en": "A formal assessment or examination of what has been learned.",
-    "definition_vi": "sự ôn tập, tổng duyệt",
-    "example_en": "Today we complete our Cycle 2.1 comprehensive review.",
-    "example_vi": "Hôm nay chúng ta hoàn thành bài tổng duyệt toàn diện Chu trình 2.1."
+    "ipa": "/kɔːz/",
+    "definition_en": "The reason why an event happens.",
+    "definition_vi": "nguyên nhân",
+    "example_en": "A flat tire was the cause of the bike delay.",
+    "example_vi": "Lốp xẹp là nguyên nhân làm xe đạp bị trễ."
   },
   {
     "id": 2,
-    "word": "consolidate",
-    "pos": "v",
-    "ipa": "/kənˈsɒlɪdeɪt/",
-    "definition_en": "To combine and strengthen learned knowledge into a whole.",
-    "definition_vi": "củng cố kiến thức",
-    "example_en": "Review games consolidate our reading and grammar skills.",
-    "example_vi": "Các trò chơi ôn tập củng cố kỹ năng đọc và ngữ pháp của chúng tôi."
+    "word": "effect",
+    "pos": "n",
+    "ipa": "/ɪˈfɛkt/",
+    "definition_en": "A change resulting from an event.",
+    "definition_vi": "kết quả, hiệu ứng",
+    "example_en": "Clear thinking is one effect of good sleep.",
+    "example_vi": "Tư duy sáng suốt là một tác động của giấc ngủ ngon."
   },
   {
     "id": 3,
-    "word": "logic",
+    "word": "problem",
     "pos": "n",
-    "ipa": "/ˈlɒdʒɪk/",
-    "definition_en": "Reasoning conducted according to strict principles of validity.",
-    "definition_vi": "tư duy logic",
-    "example_en": "Clear logic helps us solve challenging word problems.",
-    "example_vi": "Tư duy logic rõ ràng giúp chúng ta giải các bài toán đố hóc búa."
+    "ipa": "/ˈprɑːbləm/",
+    "definition_en": "A matter or situation that is difficult to deal with.",
+    "definition_vi": "vấn đề",
+    "example_en": "Every math problem has a step to solve it.",
+    "example_vi": "Mỗi bài toán đều có một bước để giải quyết."
   },
   {
     "id": 4,
-    "word": "mastery",
+    "word": "solution",
     "pos": "n",
-    "ipa": "/ˈmɑːstəri/",
-    "definition_en": "Comprehensive knowledge or skill in a particular subject.",
-    "definition_vi": "sự tinh thông, làm chủ",
-    "example_en": "She demonstrated complete mastery of division concepts.",
-    "example_vi": "Cô ấy đã thể hiện sự tinh thông hoàn toàn về các khái niệm phép chia."
+    "ipa": "/səˈluːʃən/",
+    "definition_en": "A means of solving a problem.",
+    "definition_vi": "giải pháp",
+    "example_en": "Good teamwork gave us a quick solution to the puzzle.",
+    "example_vi": "Làm việc cùng nhau đã mang lại một giải pháp nhanh chóng."
   },
   {
     "id": 5,
-    "word": "conjunction",
+    "word": "plan",
     "pos": "n",
-    "ipa": "/kənˈdʒʌŋkʃən/",
-    "definition_en": "A word used to connect clauses or sentences (so, because).",
-    "definition_vi": "liên từ",
-    "example_en": "Use the conjunction therefore to show a formal result.",
-    "example_vi": "Hãy dùng liên từ therefore để chỉ một kết quả trang trọng."
+    "ipa": "/plæn/",
+    "definition_en": "A set of steps worked out to do something well.",
+    "definition_vi": "kế hoạch",
+    "example_en": "A clear study plan leads to good grades.",
+    "example_vi": "Một kế hoạch học tập rõ ràng sẽ mang lại điểm số tốt."
   },
   {
     "id": 6,
-    "word": "expression",
+    "word": "step",
     "pos": "n",
-    "ipa": "/ɪkˈsprɛʃən/",
-    "definition_en": "A combination of numbers, operators, and grouping symbols.",
-    "definition_vi": "biểu thức",
-    "example_en": "Evaluate the arithmetic expression with care.",
-    "example_vi": "Hãy tính giá trị biểu thức số học một cách cẩn thận."
+    "ipa": "/stɛp/",
+    "definition_en": "One action in a series.",
+    "definition_vi": "bước",
+    "example_en": "Follow each step on the review worksheet.",
+    "example_vi": "Hãy làm theo từng bước trên phiếu ôn tập."
   },
   {
     "id": 7,
-    "word": "priority",
-    "pos": "n",
-    "ipa": "/praɪˈɒrəti/",
-    "definition_en": "The condition of being regarded as more important.",
-    "definition_vi": "thứ tự ưu tiên",
-    "example_en": "Parentheses take top priority in math calculations.",
-    "example_vi": "Dấu ngoặc đơn có thứ tự ưu tiên cao nhất trong tính toán."
+    "word": "review",
+    "pos": "v",
+    "ipa": "/rɪˈvjuː/",
+    "definition_en": "To study lessons again to remember them clearly.",
+    "definition_vi": "ôn tập, rà soát lại",
+    "example_en": "Review your vocabulary words before the quiz.",
+    "example_vi": "Hãy ôn lại các từ vựng trước bài kiểm tra."
   },
   {
     "id": 8,
-    "word": "coordinate",
-    "pos": "n",
-    "ipa": "/kəʊˈɔːrdɪnət/",
-    "definition_en": "A number pair defining a position on a grid.",
-    "definition_vi": "tọa độ",
-    "example_en": "Plot the coordinate pair on the graph axes.",
-    "example_vi": "Hãy vẽ cặp tọa độ lên các trục đồ thị."
+    "word": "practice",
+    "pos": "v",
+    "ipa": "/ˈpræktɪs/",
+    "definition_en": "To do something often to become better at it.",
+    "definition_vi": "luyện tập",
+    "example_en": "Practice speaking English with your partner.",
+    "example_vi": "Hãy luyện nói tiếng Anh cùng bạn cùng bàn của bạn."
   },
   {
     "id": 9,
-    "word": "perimeter",
-    "pos": "n",
-    "ipa": "/pəˈrɪmɪtər/",
-    "definition_en": "The continuous line forming the boundary of a closed shape.",
-    "definition_vi": "chu vi",
-    "example_en": "The perimeter of the rectangle is thirty units.",
-    "example_vi": "Chu vi của hình chữ nhật là ba mươi đơn vị."
+    "word": "solve",
+    "pos": "v",
+    "ipa": "/sɑːlv/",
+    "definition_en": "To find an answer to an explanation.",
+    "definition_vi": "giải quyết",
+    "example_en": "We can solve the logic puzzle with clues.",
+    "example_vi": "Chúng ta có thể giải câu đố logic bằng các manh mối."
   },
   {
     "id": 10,
-    "word": "remainder",
+    "word": "map",
     "pos": "n",
-    "ipa": "/rɪˈmeɪndər/",
-    "definition_en": "The leftover number when an amount cannot divide evenly.",
-    "definition_vi": "số dư",
-    "example_en": "Twenty-nine divided by six leaves a remainder of five.",
-    "example_vi": "Hai mươi chín chia cho sáu để lại số dư là năm."
+    "ipa": "/mæp/",
+    "definition_en": "A drawing of an area showing physical features.",
+    "definition_vi": "bản đồ",
+    "example_en": "Find North on the school map.",
+    "example_vi": "Hãy tìm hướng Bắc trên bản đồ trường học."
   },
   {
     "id": 11,
-    "word": "synthesis",
+    "word": "compass",
     "pos": "n",
-    "ipa": "/ˈsɪnθəsɪs/",
-    "definition_en": "Combining different ideas to form a coherent whole.",
-    "definition_vi": "sự tổng hợp",
-    "example_en": "This essay is a synthesis of three science articles.",
-    "example_vi": "Bài luận này là sự tổng hợp của ba bài báo khoa học."
+    "ipa": "/ˈkʌmpəs/",
+    "definition_en": "An instrument with a magnetic needle.",
+    "definition_vi": "la bàn",
+    "example_en": "A magnetic compass shows hikers the right way to walk.",
+    "example_vi": "La bàn giúp người lữ hành định hướng an toàn."
   },
   {
     "id": 12,
-    "word": "challenge",
+    "word": "graph",
     "pos": "n",
-    "ipa": "/ˈtʃælɪndʒ/",
-    "definition_en": "A task that tests mental power or technical ability.",
-    "definition_vi": "thử thách",
-    "example_en": "The math tournament offered an exciting challenge.",
-    "example_vi": "Giải đấu toán học đã mang lại một thử thách đầy hào hứng."
+    "ipa": "/ɡræf/",
+    "definition_en": "A visual chart showing numbers and amounts.",
+    "definition_vi": "biểu đồ",
+    "example_en": "Look at the bar graph to see the tallest bar.",
+    "example_vi": "Hãy nhìn vào biểu đồ cột để thấy cột cao nhất."
   },
   {
     "id": 13,
-    "word": "strategy",
+    "word": "data",
     "pos": "n",
-    "ipa": "/ˈstrætədʒi/",
-    "definition_en": "A plan of action designed to achieve an overall aim.",
-    "definition_vi": "chiến lược",
-    "example_en": "Break word problems into steps as your main strategy.",
-    "example_vi": "Chia các bài toán lời văn thành các bước là chiến lược chính của bạn."
+    "ipa": "/ˈdeɪtə/",
+    "definition_en": "Facts or numbers collected together to study.",
+    "definition_vi": "dữ liệu",
+    "example_en": "The survey data shows student reading hours.",
+    "example_vi": "Dữ liệu khảo sát thể hiện số giờ đọc sách của học sinh."
   },
   {
     "id": 14,
-    "word": "operation",
+    "word": "summary",
     "pos": "n",
-    "ipa": "/ˌɒpəˈreɪʃən/",
-    "definition_en": "A calculation such as addition, subtraction, or multiplication.",
-    "definition_vi": "phép toán",
-    "example_en": "Remember the correct order of operations.",
-    "example_vi": "Hãy nhớ thứ tự thực hiện các phép toán chính xác."
+    "ipa": "/ˈsʌməri/",
+    "definition_en": "A short statement of the main points.",
+    "definition_vi": "tóm tắt",
+    "example_en": "Write a summary of the chapter in five lines.",
+    "example_vi": "Hãy viết một bản tóm tắt chương sách trong năm dòng."
   },
   {
     "id": 15,
-    "word": "accuracy",
-    "pos": "n",
-    "ipa": "/ˈækjʊrəsi/",
-    "definition_en": "The quality of being correct, exact, and error-free.",
-    "definition_vi": "độ chính xác",
-    "example_en": "Check your calculations to ensure full accuracy.",
-    "example_vi": "Hãy kiểm tra lại các phép tính của bạn để đảm bảo độ chính xác tuyệt đối."
+    "word": "retell",
+    "pos": "v",
+    "ipa": "/riːˈtɛl/",
+    "definition_en": "To tell again in a new way.",
+    "definition_vi": "kể lại",
+    "example_en": "Retell the fable using beginning, middle, and end.",
+    "example_vi": "Kể lại truyện ngụ ngôn bằng phần mở đầu, phần giữa và phần kết."
   },
   {
     "id": 16,
-    "word": "evidence",
+    "word": "symbol",
     "pos": "n",
-    "ipa": "/ˈɛvɪdəns/",
-    "definition_en": "Factual details that support a claim or conclusion.",
-    "definition_vi": "bằng chứng",
-    "example_en": "Provide textual evidence for each reading answer.",
-    "example_vi": "Hãy đưa ra bằng chứng từ văn bản cho mỗi câu trả lời đọc hiểu."
+    "ipa": "/ˈsɪmbəl/",
+    "definition_en": "A sign or image used to stand for something.",
+    "definition_vi": "biểu tượng",
+    "example_en": "The star symbol means top achievement.",
+    "example_vi": "Biểu tượng ngôi sao có nghĩa là thành tích xuất sắc."
   },
   {
     "id": 17,
-    "word": "conclude",
+    "word": "calculate",
     "pos": "v",
-    "ipa": "/kənˈkluːd/",
-    "definition_en": "To finish or arrive at a reasoned judgment.",
-    "definition_vi": "kết luận",
-    "example_en": "We conclude that careful planning ensures success.",
-    "example_vi": "Chúng tôi kết luận rằng sự chuẩn bị kỹ lưỡng đảm bảo thành công."
+    "ipa": "/ˈkælkjəleɪt/",
+    "definition_en": "To find an answer using numbers and math.",
+    "definition_vi": "tính toán",
+    "example_en": "Calculate the total score for both teams.",
+    "example_vi": "Hãy tính tổng điểm cho cả hai đội."
   },
   {
     "id": 18,
-    "word": "formula",
-    "pos": "n",
-    "ipa": "/ˈfɔːrmjʊlə/",
-    "definition_en": "A mathematical rule expressed in symbols.",
-    "definition_vi": "công thức",
-    "example_en": "Use the perimeter formula two times length plus width.",
-    "example_vi": "Hãy dùng công thức chu vi bằng hai lần dài cộng rộng."
+    "word": "equal",
+    "pos": "adj",
+    "ipa": "/ˈiːkwəl/",
+    "definition_en": "The same in value or amount.",
+    "definition_vi": "bằng nhau",
+    "example_en": "Four groups have an equal number of apples.",
+    "example_vi": "Bốn nhóm có số lượng táo bằng nhau."
   },
   {
     "id": 19,
-    "word": "competence",
-    "pos": "n",
-    "ipa": "/ˈkɒmpɪtəns/",
-    "definition_en": "The ability to do something successfully and efficiently.",
-    "definition_vi": "năng lực",
-    "example_en": "Students showed great competence in English and math.",
-    "example_vi": "Học sinh đã thể hiện năng lực tuyệt vời trong cả Tiếng Anh và Toán."
+    "word": "improve",
+    "pos": "v",
+    "ipa": "/ɪmˈpruːv/",
+    "definition_en": "To make or become better.",
+    "definition_vi": "cải thiện",
+    "example_en": "Reviewing your notes often makes your memory better.",
+    "example_vi": "Ôn tập thường xuyên sẽ cải thiện trí nhớ của bạn."
   },
   {
     "id": 20,
-    "word": "celebrate",
-    "pos": "v",
-    "ipa": "/ˈsɛlɪbreɪt/",
-    "definition_en": "To acknowledge a notable achievement with joyful activities.",
-    "definition_vi": "ăn mừng, kỷ niệm",
-    "example_en": "We celebrate our progress at the end of every rotary cycle.",
-    "example_vi": "Chúng tôi ăn mừng tiến bộ của mình vào cuối mỗi chu trình xoay vòng."
+    "word": "success",
+    "pos": "n",
+    "ipa": "/səkˈsɛs/",
+    "definition_en": "The accomplishment of an aim.",
+    "definition_vi": "thành công",
+    "example_en": "Hard work brings proud school success.",
+    "example_vi": "Làm việc chăm chỉ mang lại thành công vẻ vang ở trường."
   }
 ];
 export const vocabList = vocab;

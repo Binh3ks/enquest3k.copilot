@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 61 | Theme: "Main Idea Hunter: Volcanic Eruptions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 61 | Theme: "ELA: Main Idea Hunter / Math: Word Problems"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const writingHubData = {
   "week": 61,
-  "theme": "Main Idea Hunter: Volcanic Eruptions",
+  "theme": "ELA: Main Idea Hunter / Math: Word Problems",
   "cefr_level": "A2 Flyers",
   "picture_story": {
     "title_en": "Hunting the Main Idea of Volcanoes",

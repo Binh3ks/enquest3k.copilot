@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 56 | Theme: "Cause and Effect: The Community Garden" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 56 | Theme: "ELA: Cause & Effect (Paragraph) / Math: Subtraction with Regrouping"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "community",
-    "pos": "n",
-    "ipa": "/kəˈmjuːnəti/",
-    "definition_en": "A group of people living or working in the same area.",
-    "definition_vi": "cộng đồng",
-    "example_en": "Our community built a green vegetable garden.",
-    "example_vi": "Cộng đồng của chúng tôi đã xây một vườn rau xanh."
+    "word": "lead to",
+    "pos": "phrase",
+    "ipa": "/lid tu/",
+    "definition_en": "To cause something to happen as a result.",
+    "definition_vi": "dẫn đến",
+    "example_en": "Sunny weather will lead to sweet, ripe tomatoes.",
+    "example_vi": "Thời tiết nắng sẽ dẫn đến những quả cà chua chín ngọt."
   },
   {
     "id": 2,
-    "word": "garden",
-    "pos": "n",
-    "ipa": "/ˈɡɑːrdən/",
-    "definition_en": "A piece of land used for growing flowers or vegetables.",
-    "definition_vi": "khu vườn",
-    "example_en": "We planted tomatoes in the school garden.",
-    "example_vi": "Chúng tôi trồng cà chua trong vườn trường."
+    "word": "due to",
+    "pos": "phrase",
+    "ipa": "/du tu/",
+    "definition_en": "Because of a reason or event.",
+    "definition_vi": "do, bởi vì",
+    "example_en": "The dry soil was due to the hot sun.",
+    "example_vi": "Đất khô cằn là do ánh nắng mặt trời gay gắt."
   },
   {
     "id": 3,
-    "word": "soil",
-    "pos": "n",
-    "ipa": "/sɔɪl/",
-    "definition_en": "The top layer of earth in which plants grow.",
-    "definition_vi": "đất trồng",
-    "example_en": "Rich soil helps seedlings grow strong roots.",
-    "example_vi": "Đất màu mỡ giúp cây con phát triển rễ khỏe mạnh."
+    "word": "consequently",
+    "pos": "adv",
+    "ipa": "/ˈkɑːnsəkwəntli/",
+    "definition_en": "As a result of what just happened.",
+    "definition_vi": "hậu quả là, kết quả là",
+    "example_en": "The plants had no rain; consequently, they wilted.",
+    "example_vi": "Cây cối không có mưa; kết quả là chúng bị héo."
   },
   {
     "id": 4,
-    "word": "drought",
-    "pos": "n",
-    "ipa": "/draʊt/",
-    "definition_en": "A long period when there is little or no rain.",
-    "definition_vi": "hạn hán",
-    "example_en": "A summer drought made the grass turn yellow.",
-    "example_vi": "Hạn hán mùa hè làm cỏ chuyển sang màu vàng."
+    "word": "start",
+    "pos": "v",
+    "ipa": "/stɑːrt/",
+    "definition_en": "To begin an action or process.",
+    "definition_vi": "bắt đầu",
+    "example_en": "We start planting seeds in early spring.",
+    "example_vi": "Chúng tôi bắt đầu gieo hạt vào đầu mùa xuân."
   },
   {
     "id": 5,
-    "word": "borrow",
-    "pos": "v",
-    "ipa": "/ˈbɒrəʊ/",
-    "definition_en": "To take a ten from the tens column to regroup.",
-    "definition_vi": "mượn (trong phép trừ)",
-    "example_en": "We borrow one ten to subtract five from two.",
-    "example_vi": "Chúng ta mượn một chục để trừ năm khỏi hai."
+    "word": "end",
+    "pos": "n",
+    "ipa": "/ɛnd/",
+    "definition_en": "The final part of a process or period.",
+    "definition_vi": "kết thúc",
+    "example_en": "At the end of summer, the garden was full of beans.",
+    "example_vi": "Vào cuối mùa hè, khu vườn đầy những quả đậu."
   },
   {
     "id": 6,
-    "word": "difference",
-    "pos": "n",
-    "ipa": "/ˈdɪfərəns/",
-    "definition_en": "The amount by which one number is smaller or larger.",
-    "definition_vi": "hiệu số",
-    "example_en": "The difference between 72 and 38 is 34.",
-    "example_vi": "Hiệu số giữa 72 và 38 là 34."
+    "word": "first",
+    "pos": "adv",
+    "ipa": "/fɜːrst/",
+    "definition_en": "Before anything else in time or order.",
+    "definition_vi": "đầu tiên",
+    "example_en": "First, dig small holes in the rich soil.",
+    "example_vi": "Đầu tiên, hãy đào những hố nhỏ trên đất màu mỡ."
   },
   {
     "id": 7,
-    "word": "subtract",
-    "pos": "v",
-    "ipa": "/səbˈtrækt/",
-    "definition_en": "To take one number away from another number.",
-    "definition_vi": "trừ",
-    "example_en": "Subtract twenty-five from fifty to find twenty-five.",
-    "example_vi": "Trừ hai mươi lăm khỏi năm mươi để tìm ra hai mươi lăm."
+    "word": "finally",
+    "pos": "adv",
+    "ipa": "/ˈfaɪnəli/",
+    "definition_en": "After a long time or at the last step.",
+    "definition_vi": "cuối cùng",
+    "example_en": "Finally, the green sprouts pushed through the dirt.",
+    "example_vi": "Cuối cùng, những mầm xanh đã nhú lên qua mặt đất."
   },
   {
     "id": 8,
-    "word": "seedling",
-    "pos": "n",
-    "ipa": "/ˈsiːdlɪŋ/",
-    "definition_en": "A very young plant grown from a seed.",
-    "definition_vi": "cây giống con",
-    "example_en": "The small seedling needs daily water and sun.",
-    "example_vi": "Cây giống nhỏ cần nước và ánh nắng mỗi ngày."
+    "word": "borrow",
+    "pos": "v",
+    "ipa": "/ˈbɑːroʊ/",
+    "definition_en": "To take a ten from the tens column to regroup.",
+    "definition_vi": "mượn (trong phép trừ)",
+    "example_en": "We borrow one ten when the top digit is too small.",
+    "example_vi": "Chúng ta mượn một chục khi chữ số bên trên quá nhỏ."
   },
   {
     "id": 9,
-    "word": "harvest",
-    "pos": "n",
-    "ipa": "/ˈhɑːrvɪst/",
-    "definition_en": "The time when crops are gathered from fields.",
-    "definition_vi": "thu hoạch, mùa gặt",
-    "example_en": "The autumn harvest produced ninety pumpkins.",
-    "example_vi": "Mùa thu hoạch mùa thu mang lại chín mươi quả bí ngô."
-  },
-  {
-    "id": 10,
-    "word": "consequence",
-    "pos": "n",
-    "ipa": "/ˈkɒnsɪkwəns/",
-    "definition_en": "A direct result or effect of an action.",
-    "definition_vi": "hệ quả",
-    "example_en": "A green yard was the consequence of hard work.",
-    "example_vi": "Một khoảng sân xanh là hệ quả của sự chăm chỉ."
-  },
-  {
-    "id": 11,
-    "word": "moisture",
-    "pos": "n",
-    "ipa": "/ˈmɔɪstʃər/",
-    "definition_en": "Tiny drops of water present in soil or air.",
-    "definition_vi": "độ ẩm",
-    "example_en": "Mulch on top of soil keeps moisture inside.",
-    "example_vi": "Lớp mùn phủ trên đất giữ độ ẩm bên trong."
-  },
-  {
-    "id": 12,
-    "word": "wilt",
-    "pos": "v",
-    "ipa": "/wɪlt/",
-    "definition_en": "To bend over and dry up because of heat or dry soil.",
-    "definition_vi": "héo",
-    "example_en": "Flower leaves wilt when they lack fresh water.",
-    "example_vi": "Lá hoa héo rũ khi thiếu nước ngọt."
-  },
-  {
-    "id": 13,
-    "word": "irrigation",
-    "pos": "n",
-    "ipa": "/ˌɪrɪˈɡeɪʃən/",
-    "definition_en": "Supplying land with water through pipes or ditches.",
-    "definition_vi": "hệ thống tưới tiêu",
-    "example_en": "Drip irrigation saves water in hot summer months.",
-    "example_vi": "Hệ thống tưới nhỏ giọt tiết kiệm nước vào tháng hè oi bức."
-  },
-  {
-    "id": 14,
     "word": "regroup",
     "pos": "v",
     "ipa": "/riːˈɡruːp/",
-    "definition_en": "To trade one ten rod for ten ones cubes in math.",
+    "definition_en": "To change groups of ones and tens in math.",
     "definition_vi": "đổi nhóm",
-    "example_en": "Regroup one ten when subtracting larger digits.",
-    "example_vi": "Đổi nhóm một chục khi trừ các chữ số lớn hơn."
+    "example_en": "Regroup forty into three tens and ten ones.",
+    "example_vi": "Đổi nhóm bốn mươi thành ba chục và mười đơn vị."
+  },
+  {
+    "id": 10,
+    "word": "difference",
+    "pos": "n",
+    "ipa": "/ˈdɪfərəns/",
+    "definition_en": "The result of subtracting one number from another.",
+    "definition_vi": "hiệu số",
+    "example_en": "The difference between nine and four is five.",
+    "example_vi": "Hiệu giữa chín và bốn là năm."
+  },
+  {
+    "id": 11,
+    "word": "minus",
+    "pos": "prep",
+    "ipa": "/ˈmaɪnəs/",
+    "definition_en": "Used to show subtraction.",
+    "definition_vi": "trừ",
+    "example_en": "Fifteen minus seven leaves eight.",
+    "example_vi": "Mười lăm trừ bảy còn tám."
+  },
+  {
+    "id": 12,
+    "word": "subtract",
+    "pos": "v",
+    "ipa": "/səbˈtrækt/",
+    "definition_en": "To take one number away from another.",
+    "definition_vi": "thực hiện phép trừ",
+    "example_en": "Subtract the ones column first.",
+    "example_vi": "Hãy trừ hàng đơn vị trước."
+  },
+  {
+    "id": 13,
+    "word": "bottom number",
+    "pos": "phrase",
+    "ipa": "/ˈbɑːtəm ˈnʌmbər/",
+    "definition_en": "The number being subtracted in a column.",
+    "definition_vi": "số trừ bên dưới",
+    "example_en": "Compare the top number with the bottom number.",
+    "example_vi": "So sánh chữ số bên trên với chữ số bên dưới."
+  },
+  {
+    "id": 14,
+    "word": "garden",
+    "pos": "n",
+    "ipa": "/ˈɡɑːrdən/",
+    "definition_en": "A plot of ground where plants and flowers grow.",
+    "definition_vi": "khu vườn",
+    "example_en": "The children water the school garden every morning.",
+    "example_vi": "Các em nhỏ tưới nước cho vườn trường mỗi sáng."
   },
   {
     "id": 15,
-    "word": "fertilizer",
+    "word": "plant",
     "pos": "n",
-    "ipa": "/ˈfɜːrtəlaɪzər/",
-    "definition_en": "A natural or chemical food added to soil for plants.",
-    "definition_vi": "phân bón",
-    "example_en": "Compost is a safe organic fertilizer for carrots.",
-    "example_vi": "Phân ủ hữu cơ là loại phân bón an toàn cho cà rốt."
+    "ipa": "/plænt/",
+    "definition_en": "A living thing that grows in earth and has leaves.",
+    "definition_vi": "cây cối",
+    "example_en": "Every green plant needs sunlight and clean water.",
+    "example_vi": "Mỗi cây xanh đều cần ánh nắng và nước sạch."
   },
   {
     "id": 16,
-    "word": "drain",
+    "word": "water",
     "pos": "v",
-    "ipa": "/dreɪn/",
-    "definition_en": "To allow extra liquid to flow away slowly.",
-    "definition_vi": "thoát nước",
-    "example_en": "Pots have holes so extra water can drain out.",
-    "example_vi": "Chậu có lỗ để nước thừa thoát ra ngoài."
+    "ipa": "/ˈwɔːtər/",
+    "definition_en": "To pour water on plants.",
+    "definition_vi": "tưới nước",
+    "example_en": "Remember to water the young carrots today.",
+    "example_vi": "Hãy nhớ tưới nước cho những cây cà rốt non hôm nay."
   },
   {
     "id": 17,
-    "word": "produce",
+    "word": "grow",
     "pos": "v",
-    "ipa": "/prəˈdjuːs/",
-    "definition_en": "To make, grow, or yield something valuable.",
-    "definition_vi": "sản xuất, tạo ra",
-    "example_en": "Healthy tomato plants produce sweet red fruit.",
-    "example_vi": "Cây cà chua khỏe mạnh cho ra quả đỏ ngọt."
+    "ipa": "/ɡroʊ/",
+    "definition_en": "To get bigger or taller over time.",
+    "definition_vi": "phát triển, lớn lên",
+    "example_en": "Warm sunny days help the beans grow quickly.",
+    "example_vi": "Những ngày nắng ấm giúp đậu lớn rất nhanh."
   },
   {
     "id": 18,
-    "word": "sprout",
-    "pos": "v",
-    "ipa": "/spraʊt/",
-    "definition_en": "To begin growing tiny green shoots from a seed.",
-    "definition_vi": "nảy mầm",
-    "example_en": "Bean seeds sprout after four days in moist soil.",
-    "example_vi": "Hạt đậu nảy mầm sau bốn ngày trong đất ẩm."
+    "word": "seed",
+    "pos": "n",
+    "ipa": "/siːd/",
+    "definition_en": "A small hard part from which a new plant grows.",
+    "definition_vi": "hạt giống",
+    "example_en": "Place two tiny seeds inside each hole.",
+    "example_vi": "Đặt hai hạt giống nhỏ vào từng lỗ."
   },
   {
     "id": 19,
-    "word": "towel",
+    "word": "weather",
     "pos": "n",
-    "ipa": "/ˈtaʊəl/",
-    "definition_en": "A piece of cloth or paper used for wiping hands.",
-    "definition_vi": "khăn lau",
-    "example_en": "Wipe dirty gardening hands with a clean towel.",
-    "example_vi": "Lau tay dính đất làm vườn bằng khăn sạch."
+    "ipa": "/ˈwɛðər/",
+    "definition_en": "The state of the air like sun, rain, or heat.",
+    "definition_vi": "thời tiết",
+    "example_en": "Dry weather makes the garden ground hard.",
+    "example_vi": "Thời tiết khô hanh làm đất vườn bị cứng."
   },
   {
     "id": 20,
-    "word": "barrel",
-    "pos": "n",
-    "ipa": "/ˈbærəl/",
-    "definition_en": "A large round container used for holding water.",
-    "definition_vi": "thùng phuy chứa nước",
-    "example_en": "We collect rainwater in a green wooden barrel.",
-    "example_vi": "Chúng tôi hứng nước mưa vào một thùng gỗ xanh."
+    "word": "dry",
+    "pos": "adj",
+    "ipa": "/draɪ/",
+    "definition_en": "Having no water or moisture.",
+    "definition_vi": "khô ráo",
+    "example_en": "Dry leaves fell from the thirsty sunflower.",
+    "example_vi": "Những chiếc lá khô rụng xuống từ cây hướng dương đang khát nước."
   }
 ];
 export const vocabList = vocab;

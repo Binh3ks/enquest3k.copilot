@@ -1,4 +1,4 @@
-// Index wrapper for Week 67 (Staging Round 93)
+// Index wrapper for Week 67 (Round 94 Staging)
 import vocabList from './vocab.js';
 import { readingHubData as readingHub } from './reading_hub.js';
 import { listeningHubData as listeningHub } from './listening_hub.js';
@@ -6,16 +6,24 @@ import { writingHubData as writingHub } from './writing_hub.js';
 import { speakingHubData as speakingHub } from './speaking_hub.js';
 import { skillPracticeHubData as skillPracticeHub } from './skill_practice_hub.js';
 
-const normalizedVocab = Array.isArray(vocabList) ? vocabList : (vocabList?.vocab || []);
-const new_words = { vocab: normalizedVocab, vocab_list: normalizedVocab };
+const normalizedVocab = (vocabList && vocabList.vocab) ? vocabList.vocab : (Array.isArray(vocabList) ? vocabList : []);
+const new_words = normalizedVocab.map((item, idx) => ({
+  id: item.id || idx + 1,
+  word: item.word || '',
+  phonetic: item.ipa || item.phonetic || '',
+  meaning: item.definition_vi || item.meaning || '',
+  english_meaning: item.definition_en || item.english_meaning || '',
+  example: item.example_en || item.example || '',
+  example_vi: item.example_vi || '',
+  image: item.image || '',
+  audio_url: item.audio_url || null
+}));
 
 export const weekData = {
   weekId: 67,
-  theme: readingHub.theme || "The OREO Structure: Persuasive Power",
-  title: readingHub.theme || "The OREO Structure: Persuasive Power",
-  weekTitle_en: readingHub.theme || "The OREO Structure: Persuasive Power",
-  title_vi: "C\u1ea5u tr\u00fac OREO: S\u1ee9c m\u1ea1nh Thuy\u1ebft ph\u1ee5c",
-  cefr_level: readingHub.cefr_level || "A2 Flyers",
+  weekNumber: 67,
+  theme: "ELA: The OREO Structure / Math: Measuring Mass",
+  cefr_level: "A2 Flyers",
 
   cue_card_info_exchange: speakingHub.info_exchange_cards || null,
   cue_card_prompts: Array.isArray(speakingHub.cue_card_prompts) ? speakingHub.cue_card_prompts : [],

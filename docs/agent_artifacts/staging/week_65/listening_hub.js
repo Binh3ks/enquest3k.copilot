@@ -1,90 +1,89 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 65 | Theme: "Cycle 2.1 Review: Logic and Data Mastery" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 65 | Theme: "Review & Consolidation (Cycle 2.1)"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const listeningHubData = {
   "week": 65,
-  "theme": "Cycle 2.1 Review: Logic and Data Mastery",
+  "theme": "Review & Consolidation (Cycle 2.1)",
   "cefr_level": "A2 Flyers",
   "audio_dialogue": {
-    "title": "Reviewing Rotary Cycle Concepts",
+    "title": "Consolidating Science Discoveries and Stories",
     "exchanges": [
       {
-        "speaker": "Leo",
-        "text": "What is the first step in evaluating (36 + 24) / 5?"
+        "speaker": "Lucas",
+        "text": "The friction experiment testing toy cars on carpet and smooth wood."
       },
       {
         "speaker": "Mia",
-        "text": "Calculate the addition inside parentheses to get sixty."
+        "text": "It made complex ideas easy to remember and exciting to share with friends."
       },
       {
-        "speaker": "Leo",
-        "text": "And what is sixty divided by five?"
+        "speaker": "Lucas",
+        "text": "We completed twenty-five math problems and fifteen science questions."
       },
       {
         "speaker": "Mia",
-        "text": "The quotient is twelve."
+        "text": "Twenty-five plus fifteen equals forty review tasks in total."
       },
       {
-        "speaker": "Leo",
-        "text": "Our order of operations logic is completely sound."
+        "speaker": "Lucas",
+        "text": "Yes, let's tab each section clearly by topic and date!"
       }
     ]
   },
   "shadowing_sentences": [
     {
       "id": 1,
-      "speaker": "Leo",
-      "text": "Consolidation unites reading, writing, and arithmetic into a single system.",
-      "ipa": "/kənˌsɒlɪˈdeɪʃən juːˈnaɪts ˈriːdɪŋ, ˈraɪtɪŋ, ænd əˈrɪθmətɪk ˈɪntuː ə ˈsɪŋɡl ˈsɪstəm/"
+      "text": "Reviewing and practicing helps students master key concepts.",
+      "ipa": "/rɪˈvjuɪŋ ænd ˈpræktəsɪŋ hɛlps ˈstudənts ˈmæstər ki ˈkɑnsɛpts/",
+      "vietnamese": "Việc ôn tập và luyện tập giúp học sinh nắm vững các khái niệm then chốt."
     },
     {
       "id": 2,
-      "speaker": "Mia",
-      "text": "Parentheses always take top priority in multi-step math calculations.",
-      "ipa": "/pəˈrɛnθəsiːz ˈɔːlweɪz teɪk tɒp praɪˈɒrəti ɪn ˈmʌlti stɛp mæθ ˌkælkjʊˈleɪʃənz/"
+      "text": "Students explained cause and effect using domino lines.",
+      "ipa": "/ˈstudənts ɪkˈspleɪnd kɔz ænd ɪˈfɛkt ˈjuzɪŋ ˈdɑmɪnoʊ laɪnz/",
+      "vietnamese": "Các em học sinh đã giải thích nguyên nhân và kết quả bằng hàng domino."
     },
     {
       "id": 3,
-      "speaker": "Leo",
-      "text": "Thirty-six plus twenty-four equals sixty, and sixty divided by five is twelve.",
-      "ipa": "/ˈθɜːrti sɪks plʌs ˈtwɛnti fɔːr ˈiːkwəlz ˈsɪksti, ænd ˈsɪksti dɪˈvaɪdɪd baɪ faɪv ɪz twɛlv/"
+      "text": "Every problem has a clever and practical solution.",
+      "ipa": "/ˈɛvri ˈprɑbləm hæz ə ˈklɛvər ænd ˈpræktəkəl səˈluʃən/",
+      "vietnamese": "Mỗi vấn đề đều có một giải pháp thông minh và thực tế."
     },
     {
       "id": 4,
-      "speaker": "Mia",
-      "text": "Four times fifteen minus eighteen leaves forty-two precisely.",
-      "ipa": "/fɔːr taɪmz fɪfˈtiːn ˈmaɪnəs ˌeɪˈtiːn liːvz ˈfɔːrti tuː prɪˈsaɪsli/"
+      "text": "Division means sharing items into equal groups fairly.",
+      "ipa": "/dɪˈvɪʒən minz ˈʃɛrɪŋ ˈaɪtəmz ˈɪntu ˈikwəl ɡrups ˈfɛrli/",
+      "vietnamese": "Phép chia có nghĩa là chia các đồ vật thành các nhóm bằng nhau một cách công bằng."
     },
     {
       "id": 5,
-      "speaker": "Leo",
-      "text": "Formal writing employs polite phrases like Yours sincerely and Dear Mayor.",
-      "ipa": "/ˈfɔːrməl ˈraɪtɪŋ ɪmˈplɔɪz pəˈlaɪt ˈfreɪzɪz laɪk jɔːrz sɪnˈsɪərli ænd dɪər ˈmɛər/"
+      "text": "A compass rose points toward North, South, East, and West.",
+      "ipa": "/ə ˈkʌmpəs roʊz pɔɪnts təˈwɔrd nɔrθ saʊθ ist ænd wɛst/",
+      "vietnamese": "La bàn chỉ về các hướng Bắc, Nam, Đông và Tây."
     },
     {
       "id": 6,
-      "speaker": "Mia",
-      "text": "Conjunctions like therefore and because connect causes to their outcomes.",
-      "ipa": "/kənˈdʒʌŋkʃənz laɪk ˈðɛərfɔːr ænd bɪˈkɒz kəˈnɛkt ˈkɔːzɪz tuː ðɛər ˈaʊtkʌmz/"
+      "text": "Grid coordinates help you locate exact points easily.",
+      "ipa": "/ɡrɪd koʊˈɔrdənɪts hɛlp ju ˈloʊkeɪt ɪɡˈzækt pɔɪnts ˈizəli/",
+      "vietnamese": "Tọa độ lưới giúp bạn xác định các điểm chính xác một cách dễ dàng."
     },
     {
       "id": 7,
-      "speaker": "Leo",
-      "text": "Systematic review turns new concepts into lasting academic mastery.",
-      "ipa": "/ˌsɪstəˈmætɪk rɪˈvjuː tɜːrnz njuː ˈkɒnsɛpts ˈɪntuː ˈlɑːstɪŋ ˌækəˈdɛmɪk ˈmɑːstəri/"
+      "text": "Pictographs use symbols to tell clear data stories.",
+      "ipa": "/ˈpɪktəˌɡræfs juz ˈsɪmbəlz tu tɛl klɪr ˈdeɪtə ˈstɔriz/",
+      "vietnamese": "Biểu đồ tranh dùng các biểu tượng để kể những câu chuyện dữ liệu rõ ràng."
     },
     {
       "id": 8,
-      "speaker": "Mia",
-      "text": "We celebrate our growth with pride after completing each rotary cycle.",
-      "ipa": "/wiː ˈsɛlɪbreɪt ˈaʊər ɡrəʊθ wɪð praɪd ˈɑːftər kəmˈpliːtɪŋ iːtʃ ˈrəʊtəri ˈsaɪkl/"
+      "text": "Connecting ideas step by step makes learning a great success.",
+      "ipa": "/kəˈnɛktɪŋ aɪˈdiəz stɛp baɪ stɛp meɪks ˈlɜrnɪŋ ə ɡreɪt səkˈsɛs/",
+      "vietnamese": "Kết nối các ý tưởng từng bước giúp việc học tập trở thành một thành công lớn."
     }
   ],
-  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 65. Theme: Cycle 2.1 Review: Logic and Data Mastery.\nSpeaker: Consolidation unites reading, writing, and arithmetic into a single system.\nSpeaker: Parentheses always take top priority in multi-step math calculations.\nSpeaker: Thirty-six plus twenty-four equals sixty, and sixty divided by five is twelve.\nSpeaker: Four times fifteen minus eighteen leaves forty-two precisely.\nSpeaker: Formal writing employs polite phrases like Yours sincerely and Dear Mayor.\nSpeaker: Conjunctions like therefore and because connect causes to their outcomes.\nSpeaker: Systematic review turns new concepts into lasting academic mastery.\nSpeaker: We celebrate our growth with pride after completing each rotary cycle."
+  "passage_audio_script": "Narrator: Cambridge A2 Flyers Listening Practice for Week 65. Theme: Review & Consolidation (Cycle 2.1).\nSpeaker: Reviewing and practicing helps students master key concepts.\nSpeaker: Students explained cause and effect using domino lines.\nSpeaker: Every problem has a clever and practical solution.\nSpeaker: Division means sharing items into equal groups fairly.\nSpeaker: A compass rose points toward North, South, East, and West.\nSpeaker: Grid coordinates help you locate exact points easily.\nSpeaker: Pictographs use symbols to tell clear data stories.\nSpeaker: Connecting ideas step by step makes learning a great success."
 };
 export default listeningHubData;

@@ -1,211 +1,210 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 61 | Theme: "Main Idea Hunter: Volcanic Eruptions" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 61 | Theme: "ELA: Main Idea Hunter / Math: Word Problems"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const vocab = [
   {
     "id": 1,
-    "word": "volcano",
-    "pos": "n",
-    "ipa": "/vɒlˈkeɪnəʊ/",
-    "definition_en": "A mountain with an opening through which lava and ash erupt.",
-    "definition_vi": "núi lửa",
-    "example_en": "Mount Rainier is a large dormant volcano.",
-    "example_vi": "Núi Rainier là một ngọn núi lửa lớn đang ngủ say."
+    "word": "main idea",
+    "pos": "phrase",
+    "ipa": "/meɪn aɪˈdiːə/",
+    "definition_en": "The most important point that a writer makes.",
+    "definition_vi": "ý chính",
+    "example_en": "The main idea is that volcanoes build new land.",
+    "example_vi": "Ý chính là núi lửa tạo nên vùng đất mới."
   },
   {
     "id": 2,
-    "word": "magma",
-    "pos": "n",
-    "ipa": "/ˈmæɡmə/",
-    "definition_en": "Hot melted rock beneath the surface of the Earth.",
-    "definition_vi": "mắc-ma (đá nóng chảy dưới lòng đất)",
-    "example_en": "Magma collects in a chamber deep underground.",
-    "example_vi": "Mắc-ma tích tụ trong một buồng sâu dưới lòng đất."
-  },
-  {
-    "id": 3,
-    "word": "lava",
-    "pos": "n",
-    "ipa": "/ˈlɑːvə/",
-    "definition_en": "Hot melted liquid rock that flows out of a volcano.",
-    "definition_vi": "dung nham (đá nóng chảy trên mặt đất)",
-    "example_en": "Red lava flowed down the dark mountain slope.",
-    "example_vi": "Dung nham đỏ chảy xuống sườn núi tối."
-  },
-  {
-    "id": 4,
-    "word": "erupt",
-    "pos": "v",
-    "ipa": "/ɪˈrʌpt/",
-    "definition_en": "To explode and throw out fire, ash, and melted rock.",
-    "definition_vi": "phun trào",
-    "example_en": "The volcano can erupt with enormous power.",
-    "example_vi": "Núi lửa có thể phun trào với sức mạnh khổng lồ."
-  },
-  {
-    "id": 5,
-    "word": "ash",
-    "pos": "n",
-    "ipa": "/æʃ/",
-    "definition_en": "The grey powder that remains after something burns.",
-    "definition_vi": "tro bụi núi lửa",
-    "example_en": "Volcanic ash blanketed the surrounding fields.",
-    "example_vi": "Tro núi lửa phủ trắng các cánh đồng xung quanh."
-  },
-  {
-    "id": 6,
-    "word": "chamber",
-    "pos": "n",
-    "ipa": "/ˈtʃeɪmbər/",
-    "definition_en": "An enclosed subterranean cavity or space.",
-    "definition_vi": "buồng chứa",
-    "example_en": "High pressure builds inside the magma chamber.",
-    "example_vi": "Áp suất cao tích tụ bên trong buồng mắc-ma."
-  },
-  {
-    "id": 7,
     "word": "detail",
     "pos": "n",
     "ipa": "/ˈdiːteɪl/",
-    "definition_en": "An individual fact, feature, or piece of information.",
+    "definition_en": "A small fact or piece of information.",
     "definition_vi": "chi tiết",
-    "example_en": "Supporting details explain the main idea of a text.",
-    "example_vi": "Các chi tiết bổ trợ giải thích ý chính của bài đọc."
+    "example_en": "Each paragraph gives a detail about hot lava.",
+    "example_vi": "Mỗi đoạn văn cung cấp một chi tiết về nham thạch nóng."
   },
   {
-    "id": 8,
-    "word": "topic",
-    "pos": "n",
-    "ipa": "/ˈtɒpɪk/",
-    "definition_en": "The general subject that a text or paragraph is about.",
-    "definition_vi": "chủ đề",
-    "example_en": "The topic of the article is Earth science.",
-    "example_vi": "Chủ đề của bài báo là khoa học Trái Đất."
-  },
-  {
-    "id": 9,
-    "word": "crust",
-    "pos": "n",
-    "ipa": "/krʌst/",
-    "definition_en": "The hard solid outer layer of our planet Earth.",
-    "definition_vi": "vỏ Trái Đất",
-    "example_en": "Tectonic plates move slowly across Earth's crust.",
-    "example_vi": "Các mảng kiến tạo di chuyển chậm trên vỏ Trái Đất."
-  },
-  {
-    "id": 10,
-    "word": "pressure",
-    "pos": "n",
-    "ipa": "/ˈprɛʃər/",
-    "definition_en": "Continuous physical force exerted against an object.",
-    "definition_vi": "áp suất",
-    "example_en": "Rising gas pressure forces magma upward.",
-    "example_vi": "Áp suất khí tăng ép mắc-ma trào lên trên."
-  },
-  {
-    "id": 11,
-    "word": "geologist",
-    "pos": "n",
-    "ipa": "/dʒiˈɒlədʒɪst/",
-    "definition_en": "A scientist who studies rocks and the history of Earth.",
-    "definition_vi": "nhà địa chất học",
-    "example_en": "The geologist measured ground vibrations with sensors.",
-    "example_vi": "Nhà địa chất đã đo độ rung của mặt đất bằng cảm biến."
-  },
-  {
-    "id": 12,
-    "word": "vent",
-    "pos": "n",
-    "ipa": "/vɛnt/",
-    "definition_en": "An opening that allows gas or liquid to escape.",
-    "definition_vi": "lỗ thoát, miệng thoát khí",
-    "example_en": "Steam escaped from a narrow rock vent.",
-    "example_vi": "Hơi nước thoát ra từ một lỗ đá hẹp."
-  },
-  {
-    "id": 13,
-    "word": "dormant",
-    "pos": "adj",
-    "ipa": "/ˈdɔːrmənt/",
-    "definition_en": "Not active right now, but capable of erupting later.",
-    "definition_vi": "ngủ say, tạm ngừng hoạt động",
-    "example_en": "The volcano remained dormant for three centuries.",
-    "example_vi": "Ngọn núi lửa đã ngủ say trong suốt ba thế kỷ."
-  },
-  {
-    "id": 14,
-    "word": "active",
-    "pos": "adj",
-    "ipa": "/ˈæktɪv/",
-    "definition_en": "Currently showing signs of volcanic activity or eruption.",
-    "definition_vi": "đang hoạt động",
-    "example_en": "Scientists monitor active volcanoes day and night.",
-    "example_vi": "Các nhà khoa học theo dõi các ngọn núi lửa đang hoạt động ngày đêm."
-  },
-  {
-    "id": 15,
-    "word": "crater",
-    "pos": "n",
-    "ipa": "/ˈkreɪtər/",
-    "definition_en": "A large bowl-shaped hollow at the top of a volcano.",
-    "definition_vi": "miệng núi lửa",
-    "example_en": "Smoke drifted from the deep mountain crater.",
-    "example_vi": "Khói bốc lên từ miệng núi lửa sâu trên núi."
-  },
-  {
-    "id": 16,
-    "word": "mineral",
-    "pos": "n",
-    "ipa": "/ˈmɪnərəl/",
-    "definition_en": "A valuable natural substance formed in the earth.",
-    "definition_vi": "khoáng vật, khoáng chất",
-    "example_en": "Volcanic soil is full of rich minerals for crops.",
-    "example_vi": "Đất núi lửa chứa nhiều khoáng chất màu mỡ cho cây trồng."
-  },
-  {
-    "id": 17,
-    "word": "tremor",
-    "pos": "n",
-    "ipa": "/ˈtrɛmər/",
-    "definition_en": "A small shaking movement of the ground.",
-    "definition_vi": "chấn động nhẹ",
-    "example_en": "Minor tremors warn geologists before an eruption.",
-    "example_vi": "Những chấn động nhỏ cảnh báo các nhà địa chất trước đợt phun trào."
-  },
-  {
-    "id": 18,
-    "word": "identify",
-    "pos": "v",
-    "ipa": "/aɪˈdɛntɪfaɪ/",
-    "definition_en": "To recognize and state what something is.",
-    "definition_vi": "nhận diện, xác định",
-    "example_en": "Students identify the main idea in each paragraph.",
-    "example_vi": "Học sinh xác định ý chính trong mỗi đoạn văn."
-  },
-  {
-    "id": 19,
+    "id": 3,
     "word": "support",
     "pos": "v",
     "ipa": "/səˈpɔːrt/",
-    "definition_en": "To provide evidence or details that back up a claim.",
-    "definition_vi": "bổ trợ, củng cố",
-    "example_en": "Three facts support the author's primary conclusion.",
-    "example_vi": "Ba sự thật bổ trợ cho kết luận chính của tác giả."
+    "definition_en": "To give facts that back up a main idea.",
+    "definition_vi": "hỗ trợ, bổ trợ cho ý chính",
+    "example_en": "Strong facts support the main idea of the story.",
+    "example_vi": "Những sự thật vững chắc bổ trợ cho ý chính của câu chuyện."
+  },
+  {
+    "id": 4,
+    "word": "topic",
+    "pos": "n",
+    "ipa": "/ˈtɑːpɪk/",
+    "definition_en": "The general subject of a text or discussion.",
+    "definition_vi": "chủ đề",
+    "example_en": "Our science topic this week is active volcanoes.",
+    "example_vi": "Chủ đề khoa học tuần này của chúng tôi là núi lửa đang hoạt động."
+  },
+  {
+    "id": 5,
+    "word": "important",
+    "pos": "adj",
+    "ipa": "/ɪmˈpɔːrtənt/",
+    "definition_en": "Having great value, importance, or meaning.",
+    "definition_vi": "quan trọng",
+    "example_en": "Underline the most important sentence in the text.",
+    "example_vi": "Hãy gạch chân câu văn quan trọng nhất trong bài."
+  },
+  {
+    "id": 6,
+    "word": "about",
+    "pos": "prep",
+    "ipa": "/əˈbaʊt/",
+    "definition_en": "On the subject of.",
+    "definition_vi": "về (chủ đề gì)",
+    "example_en": "The reading is about how hot ash shapes rocks.",
+    "example_vi": "Bài đọc viết về cách tro nóng tạo hình cho đất đá."
+  },
+  {
+    "id": 7,
+    "word": "title",
+    "pos": "n",
+    "ipa": "/ˈtaɪtl/",
+    "definition_en": "The name of a book, article, or story.",
+    "definition_vi": "tiêu đề",
+    "example_en": "The title of the chapter is 'Volcano Hunters'.",
+    "example_vi": "Tiêu đề của chương là 'Những người săn núi lửa'."
+  },
+  {
+    "id": 8,
+    "word": "word problem",
+    "pos": "phrase",
+    "ipa": "/wɜrd ˈprɑbləm/",
+    "definition_en": "A math question written in everyday sentences.",
+    "definition_vi": "bài toán đố",
+    "example_en": "Read the word problem twice before calculating.",
+    "example_vi": "Hãy đọc bài toán đố hai lần trước khi tính toán."
+  },
+  {
+    "id": 9,
+    "word": "understand",
+    "pos": "v",
+    "ipa": "/ˌʌndərˈstænd/",
+    "definition_en": "To comprehend the meaning of something.",
+    "definition_vi": "thấu hiểu",
+    "example_en": "Circle the numbers so you understand the problem.",
+    "example_vi": "Hãy khoanh tròn các số để bạn hiểu bài toán."
+  },
+  {
+    "id": 10,
+    "word": "plan",
+    "pos": "v",
+    "ipa": "/plæn/",
+    "definition_en": "To decide which steps to take.",
+    "definition_vi": "lên kế hoạch",
+    "example_en": "Plan which operation to use first.",
+    "example_vi": "Hãy lên kế hoạch xem nên dùng phép tính nào trước."
+  },
+  {
+    "id": 11,
+    "word": "solve",
+    "pos": "v",
+    "ipa": "/sɑːlv/",
+    "definition_en": "To find the right answer to a puzzle or problem.",
+    "definition_vi": "giải bài",
+    "example_en": "Step three is to solve the equation carefully.",
+    "example_vi": "Bước ba là cẩn thận giải phép tính."
+  },
+  {
+    "id": 12,
+    "word": "check",
+    "pos": "v",
+    "ipa": "/tʃɛk/",
+    "definition_en": "To examine something to ensure it is correct.",
+    "definition_vi": "kiểm tra lại",
+    "example_en": "Always check your answer by working backwards.",
+    "example_vi": "Luôn luôn kiểm tra lại câu trả lời bằng phép tính ngược."
+  },
+  {
+    "id": 13,
+    "word": "volcano",
+    "pos": "n",
+    "ipa": "/vɑːlˈkeɪnoʊ/",
+    "definition_en": "A mountain with a crater that erupts magma.",
+    "definition_vi": "núi lửa",
+    "example_en": "Steam rose high above the active volcano.",
+    "example_vi": "Khói trắng bốc lên cao phía trên ngọn núi lửa đang hoạt động."
+  },
+  {
+    "id": 14,
+    "word": "mountain",
+    "pos": "n",
+    "ipa": "/ˈmaʊntn/",
+    "definition_en": "A large steep natural elevation of earth.",
+    "definition_vi": "ngọn núi",
+    "example_en": "The snowy mountain peak looked majestic.",
+    "example_vi": "Đỉnh núi phủ tuyết trông thật hùng vĩ."
+  },
+  {
+    "id": 15,
+    "word": "rock",
+    "pos": "n",
+    "ipa": "/rɑːk/",
+    "definition_en": "A solid mineral forming part of the earth.",
+    "definition_vi": "hòn đá, đất đá",
+    "example_en": "Cooled lava turns into hard black rock.",
+    "example_vi": "Dung nham nguội đi biến thành đá đen cứng."
+  },
+  {
+    "id": 16,
+    "word": "smoke",
+    "pos": "n",
+    "ipa": "/smoʊk/",
+    "definition_en": "A grey vapor produced by burning material.",
+    "definition_vi": "khói",
+    "example_en": "Grey smoke drifted into the clouds.",
+    "example_vi": "Khói xám bay lơ lửng vào những đám mây."
+  },
+  {
+    "id": 17,
+    "word": "fire",
+    "pos": "n",
+    "ipa": "/ˈfaɪər/",
+    "definition_en": "Combustion producing heat and light.",
+    "definition_vi": "lửa",
+    "example_en": "Orange fire glowed inside the crater.",
+    "example_vi": "Ngọn lửa cam rực sáng bên trong miệng núi lửa."
+  },
+  {
+    "id": 18,
+    "word": "ash",
+    "pos": "n",
+    "ipa": "/æʃ/",
+    "definition_en": "Grey powder left behind after a fire.",
+    "definition_vi": "tro núi lửa",
+    "example_en": "Fine volcanic ash settled across the forest.",
+    "example_vi": "Lớp tro núi lửa mịn phủ đầy khắp khu rừng."
+  },
+  {
+    "id": 19,
+    "word": "earth",
+    "pos": "n",
+    "ipa": "/ɜːrθ/",
+    "definition_en": "The planet on which we live; also soil.",
+    "definition_vi": "trái đất, mặt đất",
+    "example_en": "The earth rumbled before the eruption.",
+    "example_vi": "Mặt đất rung chuyển trước khi núi lửa phun trào."
   },
   {
     "id": 20,
-    "word": "pumice",
-    "pos": "n",
-    "ipa": "/ˈpʌmɪs/",
-    "definition_en": "A very light grey volcanic rock full of tiny holes.",
-    "definition_vi": "đá bọt núi lửa",
-    "example_en": "Pumice stone floats on top of fresh water.",
-    "example_vi": "Đá bọt có thể nổi trên mặt nước ngọt."
+    "word": "erupt",
+    "pos": "v",
+    "ipa": "/ɪˈrʌpt/",
+    "definition_en": "To explode and shoot out lava and ash.",
+    "definition_vi": "phun trào",
+    "example_en": "The volcano may erupt after many quiet years.",
+    "example_vi": "Ngọn núi lửa có thể phun trào sau nhiều năm yên tĩnh."
   }
 ];
 export const vocabList = vocab;

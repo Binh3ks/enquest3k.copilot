@@ -1,14 +1,13 @@
 /**
- * STAGED DELIVERABLE: Round 93 Production Standard
- * Week: 64 | Theme: "Data Stories: Reading Pictographs" | CEFR: A2 Flyers
- * Generated: 2026-11-14T03:28:50.000Z
- * Pipeline: scripts/round93_data_generator.py
+ * STAGED DELIVERABLE: Round 94 Production Standard (CEFR A2 Flyers)
+ * Week: 64 | Theme: "ELA: Data Stories / Math: Pictographs"
+ * Generated: 2026-11-14T04:22:25.047Z
+ * Pipeline: scripts/round94_generator.mjs
  * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const skillPracticeHubData = {
   "week": 64,
-  "theme": "Data Stories: Reading Pictographs",
+  "theme": "ELA: Data Stories / Math: Pictographs",
   "cefr_level": "A2 Flyers",
   "grammar_drills": [
     {
@@ -92,9 +91,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "8 Stars * 5",
-            "value": 40,
+            "label": "Part A",
+            "value": 20,
             "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 20,
+            "color": "#10B981"
           }
         ],
         "total": 40,
@@ -104,7 +108,8 @@ export const skillPracticeHubData = {
       "problem_text": "On a reading pictograph, each star symbol represents 5 books. The Adventure row has 8 star symbols. How many books does this row represent in total?",
       "problem_en": "On a reading pictograph, each star symbol represents 5 books. The Adventure row has 8 star symbols. How many books does this row represent in total?",
       "answer": 40,
-      "step_by_step": "Step 1: Symbols = 8. Step 2: Scale = 5. Step 3: Total = 8 * 5 = 40 books."
+      "step_by_step": "Step 1: Symbols = 8. Step 2: Scale = 5. Step 3: Total = 8 * 5 = 40 books.",
+      "question": "On a reading pictograph, each star symbol represents 5 books. The Adventure row has 8 star symbols. How many books does this row represent in total?"
     },
     {
       "id": 2,
@@ -120,8 +125,13 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "6 Icons * 10",
-            "value": 60,
+            "label": "Part A",
+            "value": 30,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 30,
             "color": "#10B981"
           }
         ],
@@ -132,7 +142,8 @@ export const skillPracticeHubData = {
       "problem_text": "In a municipal library chart, each book icon represents 10 volumes. If the Biography section has 6 icons, how many volumes are there?",
       "problem_en": "In a municipal library chart, each book icon represents 10 volumes. If the Biography section has 6 icons, how many volumes are there?",
       "answer": 60,
-      "step_by_step": "Step 1: Icons = 6. Step 2: Scale = 10. Step 3: Total = 6 * 10 = 60 volumes."
+      "step_by_step": "Step 1: Icons = 6. Step 2: Scale = 10. Step 3: Total = 6 * 10 = 60 volumes.",
+      "question": "In a municipal library chart, each book icon represents 10 volumes. If the Biography section has 6 icons, how many volumes are there?"
     },
     {
       "id": 3,
@@ -166,7 +177,8 @@ export const skillPracticeHubData = {
       "problem_text": "Each ball icon represents 4 student votes. Football has 7 icons and Tennis has 3 icons. What is the difference in student votes between Football and Tennis?",
       "problem_en": "Each ball icon represents 4 student votes. Football has 7 icons and Tennis has 3 icons. What is the difference in student votes between Football and Tennis?",
       "answer": 16,
-      "step_by_step": "Step 1: Difference in icons = 7 - 3 = 4 icons. Step 2: Vote difference = 4 * 4 = 16 votes."
+      "step_by_step": "Step 1: Difference in icons = 7 - 3 = 4 icons. Step 2: Vote difference = 4 * 4 = 16 votes.",
+      "question": "Each ball icon represents 4 student votes. Football has 7 icons and Tennis has 3 icons. What is the difference in student votes between Football and Tennis?"
     },
     {
       "id": 4,
@@ -200,7 +212,8 @@ export const skillPracticeHubData = {
       "problem_text": "A snack chart uses an apple symbol for 5 children. Grade 4A has 4 apple symbols and Grade 4B has 6 apple symbols. How many children are represented in both classes combined?",
       "problem_en": "A snack chart uses an apple symbol for 5 children. Grade 4A has 4 apple symbols and Grade 4B has 6 apple symbols. How many children are represented in both classes combined?",
       "answer": 50,
-      "step_by_step": "Step 1: Total symbols = 4 + 6 = 10. Step 2: Children = 10 * 5 = 50 children."
+      "step_by_step": "Step 1: Total symbols = 4 + 6 = 10. Step 2: Children = 10 * 5 = 50 children.",
+      "question": "A snack chart uses an apple symbol for 5 children. Grade 4A has 4 apple symbols and Grade 4B has 6 apple symbols. How many children are represented in both classes combined?"
     },
     {
       "id": 5,
@@ -216,9 +229,14 @@ export const skillPracticeHubData = {
       "modelData": {
         "bars": [
           {
-            "label": "9 Clouds * 8",
-            "value": 72,
-            "color": "#EC4899"
+            "label": "Part A",
+            "value": 36,
+            "color": "#3B82F6"
+          },
+          {
+            "label": "Part B",
+            "value": 36,
+            "color": "#10B981"
           }
         ],
         "total": 72,
@@ -228,7 +246,8 @@ export const skillPracticeHubData = {
       "problem_text": "A weather station pictograph uses a cloud symbol to represent 8 liters of rainfall per square meter. If May records 9 cloud symbols, what is the total rainfall?",
       "problem_en": "A weather station pictograph uses a cloud symbol to represent 8 liters of rainfall per square meter. If May records 9 cloud symbols, what is the total rainfall?",
       "answer": 72,
-      "step_by_step": "Step 1: Symbols = 9. Step 2: Scale = 8 liters. Step 3: Total = 9 * 8 = 72 liters."
+      "step_by_step": "Step 1: Symbols = 9. Step 2: Scale = 8 liters. Step 3: Total = 9 * 8 = 72 liters.",
+      "question": "A weather station pictograph uses a cloud symbol to represent 8 liters of rainfall per square meter. If May records 9 cloud symbols, what is the total rainfall?"
     }
   ],
   "science_lab": {
