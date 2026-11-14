@@ -1,0 +1,227 @@
+{
+  "week": 68,
+  "theme": "ELA: Strong Reasons / Math: Bar Graphs",
+  "title_en": "ELA: Strong Reasons / Math: Bar Graphs",
+  "title_vi": "ELA: Lý do Đanh thép / Toán: Biểu đồ cột",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "full_mock",
+  "isFullMock": true,
+  "rotary_cycle": 4,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Supporting the Argument",
+  "clil_topic": {
+    "title": "ELA: Strong Reasons / Math: Bar Graphs & Developing ideas",
+    "focus": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph"
+  },
+  "grammar_focus": {
+    "structure": "Connectors of Addition: \"Furthermore\", \"In addition\", \"For example",
+    "outcome": "Write the \"Reason\" and \"Example\" sentences for an OREO paragraph",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "support",
+      "detail",
+      "fact",
+      "true",
+      "prove",
+      "clear"
+    ],
+    "total_syllabus_words": 6,
+    "target_count": 20,
+    "missing_count": 14,
+    "status": "PARTIAL (6/20 syllabus words — Requires 14 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 6,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 5,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [],
+        "/ɪd/": [
+          "support"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "support",
+    "detail",
+    "fact",
+    "true",
+    "prove",
+    "clear"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "support",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/səpˈɔːɹt/",
+      "phonetics": {
+        "arpabet": "S AH0 P AO1 R T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "supported",
+        "past_participle": "supported",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "detail",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɪtˈeɪl/",
+      "phonetics": {
+        "arpabet": "D IH0 T EY1 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "fact",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/fˈækt/",
+      "phonetics": {
+        "arpabet": "F AE1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "true",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tɹˈuː/",
+      "phonetics": {
+        "arpabet": "T R UW1",
+        "final_phone": "UW",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "prove",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹˈuːv/",
+      "phonetics": {
+        "arpabet": "P R UW1 V",
+        "final_phone": "V",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "clear",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/klˈɪɹ/",
+      "phonetics": {
+        "arpabet": "K L IH1 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 14 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 68,
+    "map_theme": "Genetics & Hereditary Traits",
+    "map_clil_module": "Di truyền học: Màu mắt và ADN",
+    "map_grammar_hub": "So sánh và xác suất; `math_quest` tỷ lệ bảng di truyền Punnett",
+    "map_cefr_type": "A2 Flyers · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Strong Reasons / Math: Bar Graphs\") enforced over Digital Map (Source A: \"Genetics & Hereditary Traits\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.102Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  },
+  "mockFormat": "flyers"
+}

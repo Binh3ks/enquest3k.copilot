@@ -1,0 +1,274 @@
+{
+  "week": 69,
+  "theme": "Science/ELA: Environmental Protection / Math: Line Plots",
+  "title_en": "Science/ELA: Environmental Protection / Math: Line Plots",
+  "title_vi": "Khoa học/ELA: Bảo vệ Môi trường / Toán: Biểu đồ điểm",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 1,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Save the Earth (Persuading people to protect nature)",
+  "clil_topic": {
+    "title": "Science/ELA: Environmental Protection / Math: Line Plots & Persuasive Tone",
+    "focus": "Write a persuasive paragraph giving advice on environment"
+  },
+  "grammar_focus": {
+    "structure": "Modals of Obligation: \"Should\", \"Must\", \"Have to",
+    "outcome": "Write a persuasive paragraph giving advice on environment",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "protect",
+      "save",
+      "environment",
+      "pollution",
+      "waste",
+      "recycle",
+      "clean",
+      "dirty"
+    ],
+    "total_syllabus_words": 8,
+    "target_count": 20,
+    "missing_count": 12,
+    "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 8,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 4,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "save",
+          "clean"
+        ],
+        "/ɪd/": [
+          "protect",
+          "waste"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "protect",
+    "save",
+    "environment",
+    "pollution",
+    "waste",
+    "recycle",
+    "clean",
+    "dirty"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "protect",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pɹətˈɛkt/",
+      "phonetics": {
+        "arpabet": "P R AH0 T EH1 K T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "protected",
+        "past_participle": "protected",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "save",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈeɪv/",
+      "phonetics": {
+        "arpabet": "S EY1 V",
+        "final_phone": "V",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "saved",
+        "past_participle": "saved",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "environment",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪnvˈaɪɹənmənt/",
+      "phonetics": {
+        "arpabet": "IH0 N V AY1 R AH0 N M AH0 N T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "pollution",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/pəlˈuːʃən/",
+      "phonetics": {
+        "arpabet": "P AH0 L UW1 SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "waste",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/wˈeɪst/",
+      "phonetics": {
+        "arpabet": "W EY1 S T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "wasted",
+        "past_participle": "wasted",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "recycle",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹisˈaɪkəl/",
+      "phonetics": {
+        "arpabet": "R IY0 S AY1 K AH0 L",
+        "final_phone": "L",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "clean",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/klˈiːn/",
+      "phonetics": {
+        "arpabet": "K L IY1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "cleaned",
+        "past_participle": "cleaned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "dirty",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dˈɝːti/",
+      "phonetics": {
+        "arpabet": "D ER1 T IY0",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 69,
+    "map_theme": "Microscopic World (Bacteria)",
+    "map_clil_module": "Vi sinh vật học: Lợi khuẩn & vi khuẩn hại",
+    "map_grammar_hub": "Lời khuyên sức khỏe với modals; `discovery_report` đĩa thạch vi khuẩn",
+    "map_cefr_type": "A2 Flyers · Rotary 2",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Science/ELA: Environmental Protection / Math: Line Plots\") enforced over Digital Map (Source A: \"Microscopic World (Bacteria)\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:30:00.153Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

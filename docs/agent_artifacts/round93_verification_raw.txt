@@ -1,0 +1,139 @@
+
+>>> Auditing Staged Week 55 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_55...
+  ✓ CLIL article: 771 chars, Vocab Coverage: 90.0% (18/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 56 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_56...
+  ✓ CLIL article: 884 chars, Vocab Coverage: 60.0% (12/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 57 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_57...
+  ✓ CLIL article: 879 chars, Vocab Coverage: 65.0% (13/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 58 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_58...
+  ✓ CLIL article: 941 chars, Vocab Coverage: 65.0% (13/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 59 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_59...
+  ✓ CLIL article: 1135 chars, Vocab Coverage: 70.0% (14/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 60 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_60...
+  ✓ CLIL article: 1131 chars, Vocab Coverage: 65.0% (13/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 61 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_61...
+  ✓ CLIL article: 1173 chars, Vocab Coverage: 60.0% (12/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 62 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_62...
+  ✓ CLIL article: 1101 chars, Vocab Coverage: 60.0% (12/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 63 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_63...
+  ✓ CLIL article: 1088 chars, Vocab Coverage: 85.0% (17/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 64 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_64...
+  ✓ CLIL article: 1270 chars, Vocab Coverage: 100.0% (20/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 65 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_65...
+  ✓ CLIL article: 1194 chars, Vocab Coverage: 95.0% (19/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 66 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_66...
+  ✓ CLIL article: 1288 chars, Vocab Coverage: 95.0% (19/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 67 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_67...
+  ✓ CLIL article: 1261 chars, Vocab Coverage: 65.0% (13/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 68 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_68...
+  ✓ CLIL article: 1181 chars, Vocab Coverage: 60.0% (12/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 69 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_69...
+  ✓ CLIL article: 1285 chars, Vocab Coverage: 100.0% (20/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 70 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_70...
+  ✓ CLIL article: 1253 chars, Vocab Coverage: 65.0% (13/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 71 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_71...
+  ✓ CLIL article: 1285 chars, Vocab Coverage: 60.0% (12/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+>>> Auditing Staged Week 72 at /Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/staging/week_72...
+  ✓ CLIL article: 1342 chars, Vocab Coverage: 80.0% (16/20 words)
+  ✓ Singapore Math: 5/5 bar models resolved via station2Adapters.js (0 generic fallbacks)
+  ✓ Grammar Drills: 5/5 MCQ drills validated via station2Adapters.js
+  ✓ Action Lab: 3 stages validated via station2Adapters.js (targetBuckets > 0, pairs > 0)
+  ✓ Story (5 scenes), Shadowing (8 IPA), Cambridge R&W (Part 1/2/6), Info Exchange (Table A/B) verified.
+
+================================================================================
+FINAL VERIFICATION REPORT FOR ROUND 93:
+- Total Files Audited: 162/162 expected
+- Total Vocab Words Checked: 360/360 (20/week across 18 weeks)
+- Total CLIL Coverage Passes: 18/18 weeks (all >= 60%)
+- Total Math Questions Resolved via station2Adapters: 90/90 (0 fallbacks)
+- Total Grammar Drills Validated via station2Adapters: 90/90
+- Total Action Labs Validated via station2Adapters: 18/18
+- Critical Defects Found: 0
+================================================================================
+
+✅ 100% PASS: All 18 weeks (W55–W72) passed all technical, pedagogical, and runtime adapter gates!

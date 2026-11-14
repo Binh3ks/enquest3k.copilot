@@ -1,0 +1,251 @@
+{
+  "week": 55,
+  "theme": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)",
+  "title_en": "ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)",
+  "title_vi": "ELA: Nguyên nhân & Kết quả (Câu",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 3,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "The \"Why\" Game (Connecting ideas logically)",
+  "clil_topic": {
+    "title": "ELA: Cause & Effect & Sentence combining",
+    "focus": "Write compound sentences using \"because\" and \"so\" to link events"
+  },
+  "grammar_focus": {
+    "structure": "Conjunctions: \"Because\" (reason) vs. \"So\" (result)",
+    "outcome": "Write compound sentences using \"because\" and \"so\" to link events",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "cause",
+      "effect",
+      "reason",
+      "result",
+      "happen",
+      "connect",
+      "therefore"
+    ],
+    "total_syllabus_words": 7,
+    "target_count": 20,
+    "missing_count": 13,
+    "status": "PARTIAL (7/20 syllabus words — Requires 13 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 7,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 3,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 4,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "cause",
+          "happen"
+        ],
+        "/ɪd/": [
+          "connect"
+        ]
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "cause",
+    "effect",
+    "reason",
+    "result",
+    "happen",
+    "connect",
+    "therefore"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "cause",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈɑːz/",
+      "phonetics": {
+        "arpabet": "K AA1 Z",
+        "final_phone": "Z",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "caused",
+        "past_participle": "caused",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /z/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "effect",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɪfˈɛkt/",
+      "phonetics": {
+        "arpabet": "IH0 F EH1 K T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "reason",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹˈiːzən/",
+      "phonetics": {
+        "arpabet": "R IY1 Z AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "result",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ɹɪzˈʌlt/",
+      "phonetics": {
+        "arpabet": "R IH0 Z AH1 L T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "happen",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/hˈæpən/",
+      "phonetics": {
+        "arpabet": "HH AE1 P AH0 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "happened",
+        "past_participle": "happened",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    },
+    {
+      "word": "connect",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kənˈɛkt/",
+      "phonetics": {
+        "arpabet": "K AH0 N EH1 K T",
+        "final_phone": "T",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "connected",
+        "past_participle": "connected",
+        "past_ending_group": "/ɪd/",
+        "past_ending_rule": "Base verb ends in alveolar stop /t/ -> suffix pronounced as extra syllable /ɪd/",
+        "variants": null
+      }
+    },
+    {
+      "word": "therefore",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ðˈɛɹfˌɔːɹ/",
+      "phonetics": {
+        "arpabet": "DH EH1 R F AO2 R",
+        "final_phone": "R",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 13 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 55,
+    "map_theme": "Cause & Effect Master",
+    "map_clil_module": "Logic: Chuỗi domino trong tự nhiên",
+    "map_grammar_hub": "Liên từ *so / because / therefore*; `discovery_report` phản ứng dây chuyền",
+    "map_cefr_type": "A2 Flyers · Rotary 3",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Cause & Effect (Sentences) / Math: Addition with Regrouping  / Toán: Phép cộng có nhớ)\") enforced over Digital Map (Source A: \"Cause & Effect Master\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.440Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

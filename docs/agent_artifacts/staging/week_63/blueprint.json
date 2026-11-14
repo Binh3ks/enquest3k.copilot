@@ -1,0 +1,314 @@
+{
+  "week": 63,
+  "theme": "ELA: Reading Maps / Math: Coordinates",
+  "title_en": "ELA: Reading Maps / Math: Coordinates",
+  "title_vi": "ELA: Đọc Bản đồ / Toán: Tọa độ",
+  "cefr_level": "A2 Flyers",
+  "cefr_stage": 1,
+  "week_type": "rotary_practice",
+  "isFullMock": false,
+  "rotary_cycle": 3,
+  "template_used": "production_kit/templates/template_flyers_rotary.js",
+  "story_title": "Directions and Location",
+  "clil_topic": {
+    "title": "ELA: Reading Maps / Math: Coordinates & Spatial description",
+    "focus": "Describe exact locations using compass points"
+  },
+  "grammar_focus": {
+    "structure": "Prepositions of Location (North of, to the East of)",
+    "outcome": "Describe exact locations using compass points",
+    "pattern_regex": null,
+    "requires_authoring_examples": true
+  },
+  "vocabulary_focus": {
+    "syllabus_words": [
+      "North",
+      "South",
+      "East",
+      "West",
+      "compass",
+      "map",
+      "key",
+      "direction",
+      "straight",
+      "turn"
+    ],
+    "total_syllabus_words": 10,
+    "target_count": 20,
+    "missing_count": 10,
+    "status": "PARTIAL (10/20 syllabus words — Requires 10 words from human author)",
+    "phonology_summary": {
+      "total_words_tagged": 10,
+      "ipa_coverage_pct": 100,
+      "regular_verbs_count": 1,
+      "irregular_verbs_count": 0,
+      "non_verbs_count": 9,
+      "past_tense_triad": {
+        "/t/": [],
+        "/d/": [
+          "turn"
+        ],
+        "/ɪd/": []
+      },
+      "triad_complete": false
+    }
+  },
+  "keywords": [
+    "North",
+    "South",
+    "East",
+    "West",
+    "compass",
+    "map",
+    "key",
+    "direction",
+    "straight",
+    "turn"
+  ],
+  "characters": null,
+  "target_vocab_20": [
+    {
+      "word": "North",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/nˈɔːɹθ/",
+      "phonetics": {
+        "arpabet": "N AO1 R TH",
+        "final_phone": "TH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "South",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/sˈaʊθ/",
+      "phonetics": {
+        "arpabet": "S AW1 TH",
+        "final_phone": "TH",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "East",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/ˈiːst/",
+      "phonetics": {
+        "arpabet": "IY1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "West",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/wˈɛst/",
+      "phonetics": {
+        "arpabet": "W EH1 S T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "compass",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈʌmpəs/",
+      "phonetics": {
+        "arpabet": "K AH1 M P AH0 S",
+        "final_phone": "S",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "map",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/mˈæp/",
+      "phonetics": {
+        "arpabet": "M AE1 P",
+        "final_phone": "P",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "key",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/kˈiː/",
+      "phonetics": {
+        "arpabet": "K IY1",
+        "final_phone": "IY",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "direction",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/dɚˈɛkʃən/",
+      "phonetics": {
+        "arpabet": "D ER0 EH1 K SH AH0 N",
+        "final_phone": "N",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "straight",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/stɹˈeɪt/",
+      "phonetics": {
+        "arpabet": "S T R EY1 T",
+        "final_phone": "T",
+        "is_verb": false,
+        "verb_classification": null,
+        "past_simple": null,
+        "past_participle": null,
+        "past_ending_group": null,
+        "past_ending_rule": null,
+        "variants": null
+      }
+    },
+    {
+      "word": "turn",
+      "definition_en": null,
+      "definition_vi": null,
+      "example_en": null,
+      "example_vi": null,
+      "requires_human_input": true,
+      "ipa": "/tˈɝːn/",
+      "phonetics": {
+        "arpabet": "T ER1 N",
+        "final_phone": "N",
+        "is_verb": true,
+        "verb_classification": "regular",
+        "past_simple": "turned",
+        "past_participle": "turned",
+        "past_ending_group": "/d/",
+        "past_ending_rule": "Base verb ends in voiced consonant/vowel /n/ -> suffix pronounced as voiced /d/",
+        "variants": null
+      }
+    }
+  ],
+  "scaffolding_tier": "Tier 2 (Chunks)",
+  "tested_skills": [
+    "listening_p1",
+    "listening_p2",
+    "listening_p3",
+    "listening_p4",
+    "listening_p5",
+    "reading_p1",
+    "reading_p2",
+    "reading_p3",
+    "reading_p4",
+    "reading_p5",
+    "reading_p6",
+    "writing_p7",
+    "speaking_p1",
+    "speaking_p2",
+    "speaking_p3",
+    "speaking_p4"
+  ],
+  "target_shields": 3,
+  "pending_human_authoring": [
+    "Target Vocabulary: Needs 10 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+    "Story World: 5 story scenes with narration script + character names",
+    "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+    "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+    "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+  ],
+  "digital_map_reference": {
+    "map_week": 63,
+    "map_theme": "Human Respiratory System",
+    "map_clil_module": "Sinh học: Phổi và dung tích trao đổi khí",
+    "map_grammar_hub": "Giải thích quy trình sinh học; `dictation` số đo dung tích phổi",
+    "map_cefr_type": "A2 Flyers · Rotary 1",
+    "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+    "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: Reading Maps / Math: Coordinates\") enforced over Digital Map (Source A: \"Human Respiratory System\"). Source A metadata preserved in digital_map_reference."
+  },
+  "metadata_provenance": {
+    "generated_at": "2026-11-04T08:29:59.844Z",
+    "generator_script": "scripts/generate_week_blueprint.mjs",
+    "source_digital_map": true,
+    "source_master_syllabus": true,
+    "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+  }
+}

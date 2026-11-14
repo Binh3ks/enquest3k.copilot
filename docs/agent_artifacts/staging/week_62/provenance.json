@@ -1,0 +1,51 @@
+{
+  "provenance_version": "1.1.0",
+  "generated_at": "2026-11-14T03:28:50.000Z",
+  "pipeline_script": "scripts/round93_data_generator.py",
+  "generator_agent": "Antigravity/pipeline (Automated SOP Content Pipeline v2.3.0)",
+  "week_number": 62,
+  "theme": "The Movie Trailer: Summarizing Stories",
+  "cefr_level": "A2 Flyers",
+  "grammar_focus": "Paraphrasing and Summarizing in 3 Sentences & Rounding to Nearest Ten and Hundred",
+  "source_inputs": {
+    "blueprint_file": "src/data/weeks/week_62/blueprint.json",
+    "source_b_file": "docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt",
+    "digital_map_reference": {
+      "map_week": 62,
+      "map_theme": "Full Cambridge Mock 6",
+      "map_clil_module": "Khoa học Liên môn Mock 6",
+      "map_grammar_hub": "Full Mock Flyers 6: Đánh giá độ ổn định 15 Khiên trên cả 3 bài thi",
+      "map_cefr_type": "★ FULL MOCK 09 (Flyers)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: The Movie Trailer (Summarizing) / Math: Rounding\") enforced over Digital Map (Source A: \"Full Cambridge Mock 6\"). Source A metadata preserved in digital_map_reference."
+    }
+  },
+  "deliverables_generated": [
+    "vocab.js",
+    "reading_hub.js",
+    "listening_hub.js",
+    "writing_hub.js",
+    "speaking_hub.js",
+    "skill_practice_hub.js"
+  ],
+  "quality_gates_passed": [
+    "GATE_1_SCHEMA_CONTRACT",
+    "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
+    "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
+    "GATE_6_MINIGAMES_INTEGRITY",
+    "GATE_7_VIETNAMESE_LEAK_ZERO",
+    "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+    "GATE_9_NO_GENERIC_BOILERPLATE",
+    "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+    "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
+    "GATE_14_PROVENANCE_INTEGRITY",
+    "GATE_15_CLIL_VOCAB_INTEGRATION",
+    "GATE_16_ESL_ANOMALY_ZERO"
+  ],
+  "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
+  "staged_status": "STAGED_FOR_REVIEW"
+}
