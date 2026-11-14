@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 49 | Theme: "Future Dreams (Future Tense)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 49 Reading Hub Deliverable
 export const readingHubData = {
   "week": 49,
   "theme": "Future Dreams (Future Tense)",
@@ -239,37 +232,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "Why do students want to study at college?",
+        "question": "What event took place at the school?",
         "options": [
-          "In order to achieve a career",
-          "To sleep all day",
-          "To forget everything"
+          "Career Day",
+          "A sports race",
+          "A swimming party"
         ],
-        "answer": "In order to achieve a career"
+        "correct_answer": "Career Day"
       },
       {
-        "id": 2,
-        "question_en": "Why does a chameleon change its skin color?",
+        "question": "Why does one student want to become a doctor?",
         "options": [
-          "So that predators cannot see it",
-          "To attract heavy rain",
-          "To stay cool in water"
+          "In order to help sick people",
+          "To build fast wooden cars",
+          "To plant tall green trees"
         ],
-        "answer": "So that predators cannot see it"
+        "correct_answer": "In order to help sick people"
       },
       {
-        "id": 3,
-        "question_en": "How does a chameleon catch its insect target?",
+        "question": "What helps students build an exciting future?",
         "options": [
-          "With a fast sticky tongue",
-          "With sharp claws",
-          "With large wings"
+          "Having a clear goal and working hard",
+          "Sleeping all day long",
+          "Watching television alone"
         ],
-        "answer": "With a fast sticky tongue"
+        "correct_answer": "Having a clear goal and working hard"
       }
     ],
-    "content_en": "Every student has a special dream for the future. Many children say, 'I want to be a doctor in order to heal people.' Another student wants to be a helpful teacher or a creative artist. Some students want to become a brave pilot and fly high. To achieve a great career, students study diligently at school and train for college. In the natural world, animals also focus on clear goals. Consider the chameleon on a tree branch. It changes color so that predators cannot see it. When it hunts for food, it locks both eyes on its insect target. Then, it shoots its sticky tongue with speed to catch its meal. Both human scientists and hunting chameleons understand that focus helps them achieve their purpose."
+    "content_en": "Every student has a special dream for the future. On Career Day at our school, children talk about the jobs they want to do. One student says, 'I want to be a kind doctor in order to help sick people.' Another child wants to be a teacher and share knowledge with young learners. Some students dream of becoming an artist to create colorful paintings. Others want to become a brave pilot and fly high above the white clouds. To achieve a great career, students study hard at school each day. They train their minds and practice important skills. Teachers remind everyone that having a clear goal helps you build an exciting future. With hope and steady effort, any dream can come true.",
+    "title": "Career Day: Sharing Future Dreams",
+    "topic": "Future Dreams and Careers",
+    "glossary": [
+      {
+        "word": "career",
+        "definition_en": "A chosen job that a person does for a long time."
+      },
+      {
+        "word": "doctor",
+        "definition_en": "A trained person who heals sick people."
+      },
+      {
+        "word": "scientist",
+        "definition_en": "A person who explores and studies the natural world."
+      },
+      {
+        "word": "pilot",
+        "definition_en": "A skilled person who flies an airplane."
+      },
+      {
+        "word": "artist",
+        "definition_en": "A creative person who paints or makes art."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -439,83 +453,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Noah and Chloe Discuss Their Future Jobs",
+    "title": "Sophia and Ben Discuss Future Careers",
+    "topic": "Sharing Future Dreams",
     "turns": [
       {
-        "speaker": "Noah",
-        "text": "What do you want to be when you finish school?"
+        "speaker": "Sophia",
+        "statement": "Ben, what do you want to be when you grow up?",
+        "options": [
+          "I want to become a brave pilot!",
+          "It is five o'clock now.",
+          "Under the kitchen table."
+        ],
+        "answer": "I want to become a brave pilot!"
       },
       {
-        "speaker": "Chloe",
-        "text": "I want to be an engineer in order to design clean machines."
+        "speaker": "Ben",
+        "statement": "Why do you want to be a teacher, Sophia?",
+        "options": [
+          "Because I love helping children learn.",
+          "It has four wheels.",
+          "Last summer in the park."
+        ],
+        "answer": "Because I love helping children learn."
       },
       {
-        "speaker": "Noah",
-        "text": "What are you going to study at college?"
+        "speaker": "Sophia",
+        "statement": "What skills does a good doctor need?",
+        "options": [
+          "A doctor needs to care for people with patience.",
+          "They are blue crayons.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "A doctor needs to care for people with patience."
       },
       {
-        "speaker": "Chloe",
-        "text": "I am going to study robotics and computer programming."
+        "speaker": "Ben",
+        "statement": "Where will you study after high school?",
+        "options": [
+          "I hope to go to college to study science.",
+          "I like eating apples.",
+          "Because it was noisy."
+        ],
+        "answer": "I hope to go to college to study science."
       },
       {
-        "speaker": "Noah",
-        "text": "Why do athletes train every single afternoon?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "They train so that they can achieve their championship goal!"
+        "speaker": "Sophia",
+        "statement": "Shall we draw our dream jobs on this poster?",
+        "options": [
+          "Yes, let's start drawing our jobs now!",
+          "No, it was raining yesterday.",
+          "Because the bus was slow."
+        ],
+        "answer": "Yes, let's start drawing our jobs now!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Planning for the future is exciting for young learners. Many students want to (1) ___ doctors or scientists. They work hard in school in (2) ___ to learn modern science. In nature, animals also have clear purposes. A chameleon sits quietly on a tree (3) ___. It uses camouflage (4) ___ that predators cannot find it. When it sees an insect, it shoots its (5) ___ forward to catch the target.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "become",
-          "forget",
-          "break"
-        ],
-        "answer": "become"
-      },
-      {
-        "id": 2,
-        "options": [
-          "order",
-          "number",
-          "ticket"
-        ],
-        "answer": "order"
-      },
-      {
-        "id": 3,
-        "options": [
-          "branch",
-          "cloud",
-          "cup"
-        ],
-        "answer": "branch"
-      },
-      {
-        "id": 4,
-        "options": [
-          "so",
-          "because",
-          "while"
-        ],
-        "answer": "so"
-      },
-      {
-        "id": 5,
-        "options": [
-          "tongue",
-          "shoe",
-          "pencil"
-        ],
-        "answer": "tongue"
-      }
-    ]
+    "title": "Sophia's Future Dreams Diary",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today at school, we had a special Career Day. Everyone talked about their {1} for the future. Lucas wants to be an {2} who paints bright pictures. I want to be a science {3} so that I can help children learn. Our teacher told us that we must study {4} to reach our goals. When we work with hope, our dreams {5} come true.",
+    "answers": {
+      "1": "dream",
+      "2": "artist",
+      "3": "teacher",
+      "4": "hard",
+      "5": "will"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -559,83 +562,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Noah and Chloe Discuss Their Future Jobs",
+    "title": "Sophia and Ben Discuss Future Careers",
+    "topic": "Sharing Future Dreams",
     "turns": [
       {
-        "speaker": "Noah",
-        "text": "What do you want to be when you finish school?"
+        "speaker": "Sophia",
+        "statement": "Ben, what do you want to be when you grow up?",
+        "options": [
+          "I want to become a brave pilot!",
+          "It is five o'clock now.",
+          "Under the kitchen table."
+        ],
+        "answer": "I want to become a brave pilot!"
       },
       {
-        "speaker": "Chloe",
-        "text": "I want to be an engineer in order to design clean machines."
+        "speaker": "Ben",
+        "statement": "Why do you want to be a teacher, Sophia?",
+        "options": [
+          "Because I love helping children learn.",
+          "It has four wheels.",
+          "Last summer in the park."
+        ],
+        "answer": "Because I love helping children learn."
       },
       {
-        "speaker": "Noah",
-        "text": "What are you going to study at college?"
+        "speaker": "Sophia",
+        "statement": "What skills does a good doctor need?",
+        "options": [
+          "A doctor needs to care for people with patience.",
+          "They are blue crayons.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "A doctor needs to care for people with patience."
       },
       {
-        "speaker": "Chloe",
-        "text": "I am going to study robotics and computer programming."
+        "speaker": "Ben",
+        "statement": "Where will you study after high school?",
+        "options": [
+          "I hope to go to college to study science.",
+          "I like eating apples.",
+          "Because it was noisy."
+        ],
+        "answer": "I hope to go to college to study science."
       },
       {
-        "speaker": "Noah",
-        "text": "Why do athletes train every single afternoon?"
-      },
-      {
-        "speaker": "Chloe",
-        "text": "They train so that they can achieve their championship goal!"
+        "speaker": "Sophia",
+        "statement": "Shall we draw our dream jobs on this poster?",
+        "options": [
+          "Yes, let's start drawing our jobs now!",
+          "No, it was raining yesterday.",
+          "Because the bus was slow."
+        ],
+        "answer": "Yes, let's start drawing our jobs now!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Planning for the future is exciting for young learners. Many students want to (1) ___ doctors or scientists. They work hard in school in (2) ___ to learn modern science. In nature, animals also have clear purposes. A chameleon sits quietly on a tree (3) ___. It uses camouflage (4) ___ that predators cannot find it. When it sees an insect, it shoots its (5) ___ forward to catch the target.",
-    "questions": [
+    "title": "Sophia's Future Dreams Diary",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today at school, we had a special Career Day. Everyone talked about their {1} for the future. Lucas wants to be an {2} who paints bright pictures. I want to be a science {3} so that I can help children learn. Our teacher told us that we must study {4} to reach our goals. When we work with hope, our dreams {5} come true.",
+    "answers": {
+      "1": "dream",
+      "2": "artist",
+      "3": "teacher",
+      "4": "hard",
+      "5": "will"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "become",
-          "forget",
-          "break"
-        ],
-        "answer": "become"
+        "description": "A person who designs and constructs machines or buildings.",
+        "word": "engineer"
       },
       {
         "id": 2,
-        "options": [
-          "order",
-          "number",
-          "ticket"
-        ],
-        "answer": "order"
+        "description": "A person trained to travel and work inside a spacecraft.",
+        "word": "astronaut"
       },
       {
         "id": 3,
-        "options": [
-          "branch",
-          "cloud",
-          "cup"
-        ],
-        "answer": "branch"
+        "description": "A person whose job is flying commercial airplanes.",
+        "word": "pilot"
       },
       {
         "id": 4,
-        "options": [
-          "so",
-          "because",
-          "while"
-        ],
-        "answer": "so"
+        "description": "A lizard that changes skin color and shoots a long sticky tongue.",
+        "word": "chameleon"
       },
       {
         "id": 5,
-        "options": [
-          "tongue",
-          "shoe",
-          "pencil"
-        ],
-        "answer": "tongue"
+        "description": "The fleshy movable organ inside an animal's mouth.",
+        "word": "tongue"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Sophia and Ben Discuss Future Careers",
+      "topic": "Sharing Future Dreams",
+      "turns": [
+        {
+          "speaker": "Sophia",
+          "statement": "Ben, what do you want to be when you grow up?",
+          "options": [
+            "I want to become a brave pilot!",
+            "It is five o'clock now.",
+            "Under the kitchen table."
+          ],
+          "answer": "I want to become a brave pilot!"
+        },
+        {
+          "speaker": "Ben",
+          "statement": "Why do you want to be a teacher, Sophia?",
+          "options": [
+            "Because I love helping children learn.",
+            "It has four wheels.",
+            "Last summer in the park."
+          ],
+          "answer": "Because I love helping children learn."
+        },
+        {
+          "speaker": "Sophia",
+          "statement": "What skills does a good doctor need?",
+          "options": [
+            "A doctor needs to care for people with patience.",
+            "They are blue crayons.",
+            "Tomorrow morning at home."
+          ],
+          "answer": "A doctor needs to care for people with patience."
+        },
+        {
+          "speaker": "Ben",
+          "statement": "Where will you study after high school?",
+          "options": [
+            "I hope to go to college to study science.",
+            "I like eating apples.",
+            "Because it was noisy."
+          ],
+          "answer": "I hope to go to college to study science."
+        },
+        {
+          "speaker": "Sophia",
+          "statement": "Shall we draw our dream jobs on this poster?",
+          "options": [
+            "Yes, let's start drawing our jobs now!",
+            "No, it was raining yesterday.",
+            "Because the bus was slow."
+          ],
+          "answer": "Yes, let's start drawing our jobs now!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Sophia's Future Dreams Diary",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Today at school, we had a special Career Day. Everyone talked about their {1} for the future. Lucas wants to be an {2} who paints bright pictures. I want to be a science {3} so that I can help children learn. Our teacher told us that we must study {4} to reach our goals. When we work with hope, our dreams {5} come true.",
+      "answers": {
+        "1": "dream",
+        "2": "artist",
+        "3": "teacher",
+        "4": "hard",
+        "5": "will"
+      }
+    }
   }
 };
+
 export default readingHubData;

@@ -1,213 +1,168 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 51 | Theme: "Review Station 2 (Vocab & CLIL)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
-export const vocab = [
+// Week 51 Target Vocabulary (20/20 Target Words with GA IPA, Definitions, Examples)
+export const vocabData = {
+  week: 51,
+  vocab: [
   {
-    "id": 1,
-    "word": "solar",
-    "pos": "adj",
-    "ipa": "/ˈsoʊlər/",
-    "definition_en": "Relating to the sun and its family of planets.",
-    "definition_vi": "thuộc thái dương hệ",
-    "example_en": "Our solar system has eight official planets.",
-    "example_vi": "Hệ mặt trời của chúng ta có tám hành tinh chính thức."
-  },
-  {
-    "id": 2,
     "word": "system",
-    "pos": "n",
     "ipa": "/ˈsɪstəm/",
-    "definition_en": "Group of celestial bodies moving in organized orbits.",
-    "definition_vi": "hệ thống",
-    "example_en": "Planets move through the planetary system according to gravity.",
-    "example_vi": "Các hành tinh di chuyển trong hệ hành tinh theo lực hấp dẫn."
+    "definition_en": "A group of related parts that work together.",
+    "definition_vi": "Hệ thống.",
+    "example_en": "Our solar system has eight planets.",
+    "example_vi": "Hệ mặt trời của chúng ta có tám hành tinh."
   },
   {
-    "id": 3,
-    "word": "orbit",
-    "pos": "n",
-    "ipa": "/ˈɔːrbɪt/",
-    "definition_en": "Curved path of a planet around a star.",
-    "definition_vi": "quỹ đạo",
-    "example_en": "Earth completes one orbit around the sun in one year.",
-    "example_vi": "Trái đất hoàn thành một quỹ đạo quanh mặt trời trong một năm."
-  },
-  {
-    "id": 4,
-    "word": "planet",
-    "pos": "n",
-    "ipa": "/ˈplænɪt/",
-    "definition_en": "Large celestial body orbiting a star.",
-    "definition_vi": "hành tinh",
-    "example_en": "Mars is a dry rocky planet with red dust.",
-    "example_vi": "Sao Hỏa là một hành tinh đất đá khô cằn với bụi đỏ."
-  },
-  {
-    "id": 5,
-    "word": "rocky",
-    "pos": "adj",
-    "ipa": "/ˈrɑːki/",
-    "definition_en": "Consisting of or full of solid rock.",
-    "definition_vi": "đầy sỏi đá",
-    "example_en": "Mercury is a small rocky planet closest to the sun.",
-    "example_vi": "Sao Thủy là một hành tinh đất đá nhỏ gần mặt trời nhất."
-  },
-  {
-    "id": 6,
     "word": "giant",
-    "pos": "adj",
     "ipa": "/ˈdʒaɪənt/",
-    "definition_en": "Extremely large in physical size.",
-    "definition_vi": "khổng lồ",
-    "example_en": "Jupiter is a giant gas planet with swirling storms.",
-    "example_vi": "Sao Mộc là một hành tinh khí khổng lồ với những cơn bão cuộn xoáy."
+    "definition_en": "Very large in size or amount.",
+    "definition_vi": "Khổng lồ.",
+    "example_en": "Jupiter is a giant gas planet.",
+    "example_vi": "Sao Mộc là một hành tinh khí khổng lồ."
   },
   {
-    "id": 7,
-    "word": "distance",
-    "pos": "n",
-    "ipa": "/ˈdɪstəns/",
-    "definition_en": "Space measured between two celestial bodies.",
-    "definition_vi": "khoảng cách",
-    "example_en": "The distance between Earth and Mars changes constantly.",
-    "example_vi": "Khoảng cách giữa Trái đất và Sao Hỏa thay đổi liên tục."
-  },
-  {
-    "id": 8,
-    "word": "surface",
-    "pos": "n",
-    "ipa": "/ˈsɜːrfɪs/",
-    "definition_en": "Outermost layer or boundary of a planet.",
-    "definition_vi": "bề mặt",
-    "example_en": "The surface of Venus is covered with volcanic plains.",
-    "example_vi": "Bề mặt của Sao Kim được bao phủ bởi những đồng bằng núi lửa."
-  },
-  {
-    "id": 9,
     "word": "telescope",
-    "pos": "n",
-    "ipa": "/ˈtelɪskoʊp/",
-    "definition_en": "Optical instrument for viewing distant stars.",
-    "definition_vi": "kính thiên văn",
-    "example_en": "We used a modern metal telescope to look at Saturn.",
-    "example_vi": "Chúng tôi dùng một kính thiên văn kim loại hiện đại để nhìn Sao Thổ."
+    "ipa": "/ˈtɛləˌskoʊp/",
+    "definition_en": "A tool shaped like a tube used to see distant stars.",
+    "definition_vi": "Kính thiên văn.",
+    "example_en": "Look through the telescope to see the moon.",
+    "example_vi": "Hãy nhìn qua kính thiên văn để ngắm mặt trăng."
   },
   {
-    "id": 10,
-    "word": "ring",
-    "pos": "n",
-    "ipa": "/rɪŋ/",
-    "definition_en": "Circular band of icy debris circling a planet.",
-    "definition_vi": "vành đai",
-    "example_en": "Saturn has beautiful wide rings made of ice and dust.",
-    "example_vi": "Sao Thổ có những vành đai rộng tuyệt đẹp làm từ băng và bụi."
-  },
-  {
-    "id": 11,
     "word": "atmosphere",
-    "pos": "n",
-    "ipa": "/ˈætməsfɪr/",
-    "definition_en": "Gaseous envelope surrounding a celestial world.",
-    "definition_vi": "khí quyển",
-    "example_en": "Earth has a protective atmosphere rich in oxygen.",
-    "example_vi": "Trái đất có một bầu khí quyển bảo vệ giàu khí oxy."
+    "ipa": "/ˈætməˌsfɪr/",
+    "definition_en": "The layer of air and gases around a planet.",
+    "definition_vi": "Bầu khí quyển.",
+    "example_en": "Earth has a protective atmosphere of air.",
+    "example_vi": "Trái Đất có một bầu khí quyển bảo vệ."
   },
   {
-    "id": 12,
     "word": "space",
-    "pos": "n",
     "ipa": "/speɪs/",
-    "definition_en": "Physical universe beyond Earth's atmosphere.",
-    "definition_vi": "vũ trụ, không gian",
-    "example_en": "Deep space is silent, cold, and vast.",
-    "example_vi": "Vũ trụ sâu thẳm thì tĩnh lặng, giá lạnh và bao la."
+    "definition_en": "The huge area outside the Earth where stars are.",
+    "definition_vi": "Không gian, vũ trụ.",
+    "example_en": "Astronauts travel into outer space.",
+    "example_vi": "Các phi hành gia du hành vào không gian vũ trụ."
   },
   {
-    "id": 13,
     "word": "mission",
-    "pos": "n",
     "ipa": "/ˈmɪʃn/",
-    "definition_en": "Important scientific flight into outer space.",
-    "definition_vi": "nhiệm vụ không gian",
-    "example_en": "The space agency launched a mission to Jupiter.",
-    "example_vi": "Cơ quan vũ trụ đã phóng một sứ mệnh tới Sao Mộc."
+    "definition_en": "An important trip or task to learn facts.",
+    "definition_vi": "Nhiệm vụ, sứ mệnh.",
+    "example_en": "The robot went on a space mission.",
+    "example_vi": "Con rô-bốt đã thực hiện một sứ mệnh vũ trụ."
   },
   {
-    "id": 14,
     "word": "crater",
-    "pos": "n",
     "ipa": "/ˈkreɪtər/",
-    "definition_en": "Bowl-shaped cavity formed by a meteorite collision.",
-    "definition_vi": "hố va chạm",
-    "example_en": "The Moon has many round craters on its surface.",
-    "example_vi": "Mặt trăng có nhiều hố va chạm tròn trên bề mặt."
+    "definition_en": "A large round hole in the ground of a planet.",
+    "definition_vi": "Miệng hố va chạm.",
+    "example_en": "The rocky moon has many deep craters.",
+    "example_vi": "Mặt trăng nhiều đá có nhiều miệng hố sâu."
   },
   {
-    "id": 15,
-    "word": "gravity",
-    "pos": "n",
-    "ipa": "/ˈɡrævəti/",
-    "definition_en": "Force of attraction between all physical masses.",
-    "definition_vi": "trọng lực",
-    "example_en": "Solar gravity holds all eight planets in their orbits.",
-    "example_vi": "Trọng lực mặt trời giữ cả tám hành tinh trong quỹ đạo của chúng."
-  },
-  {
-    "id": 16,
     "word": "rotate",
-    "pos": "v",
     "ipa": "/ˈroʊteɪt/",
-    "definition_en": "Spin continuously on an internal axis.",
-    "definition_vi": "tự quay quanh trục",
-    "example_en": "Planets rotate on their axes as they travel around the sun.",
-    "example_vi": "Các hành tinh tự quay quanh trục khi di chuyển quanh mặt trời."
+    "definition_en": "Turn around in a continuous circle.",
+    "definition_vi": "Xoay quanh trục.",
+    "example_en": "Planets rotate as they move through space.",
+    "example_vi": "Các hành tinh tự quay khi di chuyển trong không gian."
   },
   {
-    "id": 17,
-    "word": "frozen",
-    "pos": "adj",
-    "ipa": "/ˈfroʊzn/",
-    "definition_en": "Turned into solid ice by deep cold.",
-    "definition_vi": "đóng băng, băng giá",
-    "example_en": "Uranus and Neptune have frozen icy atmospheres.",
-    "example_vi": "Sao Thiên Vương và Sao Hải Vương có bầu khí quyển băng giá."
-  },
-  {
-    "id": 18,
-    "word": "metallic",
-    "pos": "adj",
-    "ipa": "/məˈtælɪk/",
-    "definition_en": "Composed of or resembling dense metal.",
-    "definition_vi": "bằng kim loại",
-    "example_en": "Mercury has a large metallic iron core.",
-    "example_vi": "Sao Thủy có một lõi sắt kim loại lớn."
-  },
-  {
-    "id": 19,
-    "word": "probe",
-    "pos": "n",
-    "ipa": "/proʊb/",
-    "definition_en": "Uncrewed research vessel sent into deep space.",
-    "definition_vi": "tàu thăm dò",
-    "example_en": "The robotic probe sent high-resolution photos of Mars.",
-    "example_vi": "Tàu thăm dò rô-bốt đã gửi những bức ảnh độ phân giải cao về Sao Hỏa."
-  },
-  {
-    "id": 20,
     "word": "data",
-    "pos": "n",
     "ipa": "/ˈdeɪtə/",
-    "definition_en": "Facts and measurements gathered by researchers.",
-    "definition_vi": "dữ liệu",
-    "example_en": "Astronomers analyze planet data from the telescope.",
-    "example_vi": "Các nhà thiên văn học phân tích dữ liệu hành tinh từ kính thiên văn."
+    "definition_en": "Facts and numbers collected by study.",
+    "definition_vi": "Dữ liệu, số liệu.",
+    "example_en": "The space probe sent back helpful data.",
+    "example_vi": "Tàu thăm dò không gian đã gửi về dữ liệu hữu ích."
+  },
+  {
+    "word": "planet",
+    "ipa": "/ˈplænɪt/",
+    "definition_en": "A large round world that moves around the sun.",
+    "definition_vi": "Hành tinh.",
+    "example_en": "Earth is the third planet from the sun.",
+    "example_vi": "Trái Đất là hành tinh thứ ba tính từ mặt trời."
+  },
+  {
+    "word": "solar",
+    "ipa": "/ˈsoʊlər/",
+    "definition_en": "Related to or coming from the sun.",
+    "definition_vi": "Thuộc hệ mặt trời.",
+    "example_en": "The solar system is full of wonders.",
+    "example_vi": "Hệ mặt trời có đầy những điều kỳ diệu."
+  },
+  {
+    "word": "orbit",
+    "ipa": "/ˈɔːrbɪt/",
+    "definition_en": "The curved path of a planet around a star.",
+    "definition_vi": "Quỹ đạo.",
+    "example_en": "The Earth moves in an orbit around the sun.",
+    "example_vi": "Trái Đất di chuyển theo quỹ đạo quanh mặt trời."
+  },
+  {
+    "word": "rocky",
+    "ipa": "/ˈrɑːki/",
+    "definition_en": "Made of or covered with hard rock.",
+    "definition_vi": "Nhiều đá, đất đá.",
+    "example_en": "Mars has a dry and rocky surface.",
+    "example_vi": "Sao Hỏa có bề mặt khô cằn và nhiều đá."
+  },
+  {
+    "word": "surface",
+    "ipa": "/ˈsɜːrfɪs/",
+    "definition_en": "The outside or top layer of something.",
+    "definition_vi": "Bề mặt.",
+    "example_en": "The surface of Venus is very hot.",
+    "example_vi": "Bề mặt của sao Kim rất nóng."
+  },
+  {
+    "word": "frozen",
+    "ipa": "/ˈfroʊzn/",
+    "definition_en": "Turned into ice by very cold temperatures.",
+    "definition_vi": "Băng giá, đóng băng.",
+    "example_en": "The outer moons have frozen water ice.",
+    "example_vi": "Các mặt trăng ngoài cùng có nước đóng băng."
+  },
+  {
+    "word": "ring",
+    "ipa": "/rɪŋ/",
+    "definition_en": "A circle of bright dust and ice around a planet.",
+    "definition_vi": "Vành đai.",
+    "example_en": "Saturn has a bright and beautiful ring.",
+    "example_vi": "Sao Thổ có một vành đai sáng và đẹp."
+  },
+  {
+    "word": "probe",
+    "ipa": "/proʊb/",
+    "definition_en": "A robotic spacecraft sent to explore space.",
+    "definition_vi": "Tàu thăm dò.",
+    "example_en": "The space probe flew past the planets.",
+    "example_vi": "Tàu thăm dò vũ trụ đã bay qua các hành tinh."
+  },
+  {
+    "word": "distance",
+    "ipa": "/ˈdɪstəns/",
+    "definition_en": "The length of space between two points.",
+    "definition_vi": "Khoảng cách.",
+    "example_en": "There is a great distance between worlds.",
+    "example_vi": "Có một khoảng cách rất lớn giữa các thế giới."
+  },
+  {
+    "word": "gravity",
+    "ipa": "/ˈɡrævəti/",
+    "definition_en": "The natural force that pulls objects toward a planet.",
+    "definition_vi": "Lực hấp dẫn, trọng lực.",
+    "example_en": "Gravity keeps our feet on the ground.",
+    "example_vi": "Trọng lực giữ cho đôi chân của chúng ta trên mặt đất."
+  },
+  {
+    "word": "explore",
+    "ipa": "/ɪkˈsplɔːr/",
+    "definition_en": "Travel around an area to learn about it.",
+    "definition_vi": "Khám phá.",
+    "example_en": "Scientists explore space to learn new facts.",
+    "example_vi": "Các nhà khoa học khám phá không gian để biết thêm điều mới."
   }
-];
-export const vocabList = vocab;
-export const week51Vocab = vocab;
-export default vocab;
+]
+};
+
+export default vocabData;

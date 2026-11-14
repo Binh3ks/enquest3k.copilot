@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 47 | Theme: "Big Numbers (Place Value)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 47 Reading Hub Deliverable
 export const readingHubData = {
   "week": 47,
   "theme": "Big Numbers (Place Value)",
@@ -241,37 +234,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "What helps astronomers separate tens and ones?",
+        "question": "How do students group stars to count them easily?",
         "options": [
-          "A place value column chart",
-          "A telescope lens",
-          "A wooden stick"
+          "Into bundles of ten",
+          "By color only",
+          "Into groups of one thousand"
         ],
-        "answer": "A place value column chart"
+        "correct_answer": "Into bundles of ten"
       },
       {
-        "id": 2,
-        "question_en": "How many tens are in the number forty-five?",
+        "question": "What does the digit 4 mean in the number forty-five?",
         "options": [
           "Four tens",
-          "Five tens",
-          "Nine tens"
+          "Four hundreds",
+          "Four single ones"
         ],
-        "answer": "Four tens"
+        "correct_answer": "Four tens"
       },
       {
-        "id": 3,
-        "question_en": "What number follows ninety-nine when one more is added?",
+        "question": "What number comes after ninety-nine when you add one more star?",
         "options": [
           "One hundred",
           "Eighty-nine",
-          "Seventy-eight"
+          "Fifty-six"
         ],
-        "answer": "One hundred"
+        "correct_answer": "One hundred"
       }
     ],
-    "content_en": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we ask how many stars shine over a mountain village, we group them into tens. A village census found twenty stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column."
+    "content_en": "On a clear night, students look up at the dark sky to count bright stars. When we see many stars, place value helps us organize them easily. In a two-digit number, each digit sits in a special place. We write numbers in a simple chart to separate tens from ones. For example, forty-five has four tens and five ones. When students wonder how many stars shine above, they group them into bundles of ten. If we find five groups of ten and six single stars, the total number is fifty-six. With another group, the count grows to sixty-seven and then seventy-eight. If we spot one more star past ninety-nine, our count reaches one hundred. A place value chart makes reading large numbers fun and easy.",
+    "title": "Counting Stars with Place Value",
+    "topic": "Big Numbers and Place Value",
+    "glossary": [
+      {
+        "word": "place value",
+        "definition_en": "The value of a digit depending on where it sits in a number."
+      },
+      {
+        "word": "digit",
+        "definition_en": "Any single number symbol from zero to nine."
+      },
+      {
+        "word": "column",
+        "definition_en": "A straight line of numbers going down a chart."
+      },
+      {
+        "word": "bundle",
+        "definition_en": "A group of items collected together."
+      },
+      {
+        "word": "total",
+        "definition_en": "The complete amount when everything is added together."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -441,83 +455,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Lucas and Mia Discuss Place Value",
+    "title": "Lucas and Mia Counting Stars",
+    "topic": "Counting Stars and Reading Numbers",
     "turns": [
       {
         "speaker": "Lucas",
-        "text": "How do you write the number 45 with words?"
+        "statement": "Mia, look at the bright stars above the school!",
+        "options": [
+          "They look wonderful tonight!",
+          "It is five meters tall.",
+          "Yesterday at school."
+        ],
+        "answer": "They look wonderful tonight!"
       },
       {
         "speaker": "Mia",
-        "text": "You write forty-five with a hyphen in the middle."
+        "statement": "How many stars can you count in that small group?",
+        "options": [
+          "I can see about twenty stars.",
+          "They are blue pencils.",
+          "Tomorrow morning."
+        ],
+        "answer": "I can see about twenty stars."
       },
       {
         "speaker": "Lucas",
-        "text": "What is the value of the digit 4 in that number?"
+        "statement": "How do we write the number forty-five in words?",
+        "options": [
+          "Write forty-five with a hyphen in the middle.",
+          "Use a wooden ruler.",
+          "Because it is raining."
+        ],
+        "answer": "Write forty-five with a hyphen in the middle."
       },
       {
         "speaker": "Mia",
-        "text": "It is in the tens column, so its value is forty."
+        "statement": "What happens if we find one more star past ninety-nine?",
+        "options": [
+          "Our count reaches one hundred.",
+          "We need an umbrella.",
+          "It is sleeping now."
+        ],
+        "answer": "Our count reaches one hundred."
       },
       {
         "speaker": "Lucas",
-        "text": "If we add ten more, what will the total be?"
-      },
-      {
-        "speaker": "Mia",
-        "text": "The total will become fifty-five!"
+        "statement": "Shall we put our star counts into a place value chart?",
+        "options": [
+          "Yes, let's draw the chart now!",
+          "No, it was Tuesday.",
+          "Because the car is fast."
+        ],
+        "answer": "Yes, let's draw the chart now!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Place value helps us read big numbers. Every digit has a special value depending on its (1) ___ in a chart. For example, twenty-one has two tens and one (2) ___. When we count past ninety-nine, we need a new (3) ___ for hundreds. Astronomers use place value to record the (4) ___ amount of stars. Always remember to use a hyphen when writing two-digit (5) ___ like forty-five.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "place",
-          "color",
-          "sound"
-        ],
-        "answer": "place"
-      },
-      {
-        "id": 2,
-        "options": [
-          "one",
-          "circle",
-          "stone"
-        ],
-        "answer": "one"
-      },
-      {
-        "id": 3,
-        "options": [
-          "column",
-          "pocket",
-          "window"
-        ],
-        "answer": "column"
-      },
-      {
-        "id": 4,
-        "options": [
-          "total",
-          "slow",
-          "quiet"
-        ],
-        "answer": "total"
-      },
-      {
-        "id": 5,
-        "options": [
-          "numbers",
-          "animals",
-          "trees"
-        ],
-        "answer": "numbers"
-      }
-    ]
+    "title": "Mia's Night Sky Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Last night our class looked at the night sky. We wanted to {1} how many stars were shining. We used a simple chart to write each {2} in the correct column. First, we grouped the bright lights into bundles of {3}. Then we counted seventy-eight stars in the north sky. When Lucas found another star group, our total reached {4} hundred. It is fun to read big numbers when you know place {5}.",
+    "answers": {
+      "1": "count",
+      "2": "digit",
+      "3": "ten",
+      "4": "one",
+      "5": "value"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -561,83 +564,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Lucas and Mia Discuss Place Value",
+    "title": "Lucas and Mia Counting Stars",
+    "topic": "Counting Stars and Reading Numbers",
     "turns": [
       {
         "speaker": "Lucas",
-        "text": "How do you write the number 45 with words?"
+        "statement": "Mia, look at the bright stars above the school!",
+        "options": [
+          "They look wonderful tonight!",
+          "It is five meters tall.",
+          "Yesterday at school."
+        ],
+        "answer": "They look wonderful tonight!"
       },
       {
         "speaker": "Mia",
-        "text": "You write forty-five with a hyphen in the middle."
+        "statement": "How many stars can you count in that small group?",
+        "options": [
+          "I can see about twenty stars.",
+          "They are blue pencils.",
+          "Tomorrow morning."
+        ],
+        "answer": "I can see about twenty stars."
       },
       {
         "speaker": "Lucas",
-        "text": "What is the value of the digit 4 in that number?"
+        "statement": "How do we write the number forty-five in words?",
+        "options": [
+          "Write forty-five with a hyphen in the middle.",
+          "Use a wooden ruler.",
+          "Because it is raining."
+        ],
+        "answer": "Write forty-five with a hyphen in the middle."
       },
       {
         "speaker": "Mia",
-        "text": "It is in the tens column, so its value is forty."
+        "statement": "What happens if we find one more star past ninety-nine?",
+        "options": [
+          "Our count reaches one hundred.",
+          "We need an umbrella.",
+          "It is sleeping now."
+        ],
+        "answer": "Our count reaches one hundred."
       },
       {
         "speaker": "Lucas",
-        "text": "If we add ten more, what will the total be?"
-      },
-      {
-        "speaker": "Mia",
-        "text": "The total will become fifty-five!"
+        "statement": "Shall we put our star counts into a place value chart?",
+        "options": [
+          "Yes, let's draw the chart now!",
+          "No, it was Tuesday.",
+          "Because the car is fast."
+        ],
+        "answer": "Yes, let's draw the chart now!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Place value helps us read big numbers. Every digit has a special value depending on its (1) ___ in a chart. For example, twenty-one has two tens and one (2) ___. When we count past ninety-nine, we need a new (3) ___ for hundreds. Astronomers use place value to record the (4) ___ amount of stars. Always remember to use a hyphen when writing two-digit (5) ___ like forty-five.",
-    "questions": [
+    "title": "Mia's Night Sky Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Last night our class looked at the night sky. We wanted to {1} how many stars were shining. We used a simple chart to write each {2} in the correct column. First, we grouped the bright lights into bundles of {3}. Then we counted seventy-eight stars in the north sky. When Lucas found another star group, our total reached {4} hundred. It is fun to read big numbers when you know place {5}.",
+    "answers": {
+      "1": "count",
+      "2": "digit",
+      "3": "ten",
+      "4": "one",
+      "5": "value"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "place",
-          "color",
-          "sound"
-        ],
-        "answer": "place"
+        "description": "Any written symbol from zero to nine.",
+        "word": "digit"
       },
       {
         "id": 2,
-        "options": [
-          "one",
-          "circle",
-          "stone"
-        ],
-        "answer": "one"
+        "description": "A vertical arrangement of numbers in a table.",
+        "word": "column"
       },
       {
         "id": 3,
-        "options": [
-          "column",
-          "pocket",
-          "window"
-        ],
-        "answer": "column"
+        "description": "The whole sum when items are added together.",
+        "word": "total"
       },
       {
         "id": 4,
-        "options": [
-          "total",
-          "slow",
-          "quiet"
-        ],
-        "answer": "total"
+        "description": "A collection of items tied neatly together in math.",
+        "word": "bundle"
       },
       {
         "id": 5,
-        "options": [
-          "numbers",
-          "animals",
-          "trees"
-        ],
-        "answer": "numbers"
+        "description": "A number equal to ten groups of ten.",
+        "word": "hundred"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Lucas and Mia Counting Stars",
+      "topic": "Counting Stars and Reading Numbers",
+      "turns": [
+        {
+          "speaker": "Lucas",
+          "statement": "Mia, look at the bright stars above the school!",
+          "options": [
+            "They look wonderful tonight!",
+            "It is five meters tall.",
+            "Yesterday at school."
+          ],
+          "answer": "They look wonderful tonight!"
+        },
+        {
+          "speaker": "Mia",
+          "statement": "How many stars can you count in that small group?",
+          "options": [
+            "I can see about twenty stars.",
+            "They are blue pencils.",
+            "Tomorrow morning."
+          ],
+          "answer": "I can see about twenty stars."
+        },
+        {
+          "speaker": "Lucas",
+          "statement": "How do we write the number forty-five in words?",
+          "options": [
+            "Write forty-five with a hyphen in the middle.",
+            "Use a wooden ruler.",
+            "Because it is raining."
+          ],
+          "answer": "Write forty-five with a hyphen in the middle."
+        },
+        {
+          "speaker": "Mia",
+          "statement": "What happens if we find one more star past ninety-nine?",
+          "options": [
+            "Our count reaches one hundred.",
+            "We need an umbrella.",
+            "It is sleeping now."
+          ],
+          "answer": "Our count reaches one hundred."
+        },
+        {
+          "speaker": "Lucas",
+          "statement": "Shall we put our star counts into a place value chart?",
+          "options": [
+            "Yes, let's draw the chart now!",
+            "No, it was Tuesday.",
+            "Because the car is fast."
+          ],
+          "answer": "Yes, let's draw the chart now!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Mia's Night Sky Journal",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Last night our class looked at the night sky. We wanted to {1} how many stars were shining. We used a simple chart to write each {2} in the correct column. First, we grouped the bright lights into bundles of {3}. Then we counted seventy-eight stars in the north sky. When Lucas found another star group, our total reached {4} hundred. It is fun to read big numbers when you know place {5}.",
+      "answers": {
+        "1": "count",
+        "2": "digit",
+        "3": "ten",
+        "4": "one",
+        "5": "value"
+      }
+    }
   }
 };
+
 export default readingHubData;

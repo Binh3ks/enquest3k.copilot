@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 50 | Theme: "Review Station 1 (Grammar Mix)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 50 Reading Hub Deliverable
 export const readingHubData = {
   "week": 50,
   "theme": "Review Station 1 (Grammar Mix)",
@@ -243,37 +236,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "What powers the silent motor in an electric vehicle?",
+        "question": "What powers the quiet motor in an electric car?",
         "options": [
-          "A lithium battery",
-          "A steam boiler",
-          "A wood fire"
+          "A strong battery",
+          "Burning wood",
+          "Cold water"
         ],
-        "answer": "A lithium battery"
+        "correct_answer": "A strong battery"
       },
       {
-        "id": 2,
-        "question_en": "What will happen if we use clean energy?",
-        "options": [
-          "We will protect the planet",
-          "We will make more smoke",
-          "We will stop all cars"
-        ],
-        "answer": "We will protect the planet"
-      },
-      {
-        "id": 3,
-        "question_en": "Where do drivers plug their vehicles to recharge?",
+        "question": "Where do drivers stop to charge their electric cars?",
         "options": [
           "At a charging station",
-          "Into a tree",
-          "Under running water"
+          "In a dark forest",
+          "At a bakery shop"
         ],
-        "answer": "At a charging station"
+        "correct_answer": "At a charging station"
+      },
+      {
+        "question": "How do electric cars help big cities?",
+        "options": [
+          "They reduce harmful smoke",
+          "They make loud noises",
+          "They fly in the clouds"
+        ],
+        "correct_answer": "They reduce harmful smoke"
       }
     ],
-    "content_en": "Travel is changing fast across our world. In the past, all cars burned gas and made dirty smoke. Today, modern drivers choose a clean electric vehicle. An electric car uses a strong battery to power its quiet motor. Drivers stop at a charging station to charge the battery. When we use solar panels to make clean energy, we protect our green planet. A digital screen on the dashboard shows car speed and remaining power. Electric cars reduce harmful emission smoke in big cities. They can travel far on one charge. In the future, clean transport will keep our air fresh and clear."
+    "content_en": "Travel is changing fast across our world. In the past, all cars burned gas and made dirty smoke. Today, modern drivers choose a clean electric vehicle. An electric car uses a strong battery to power its quiet motor. Drivers stop at a charging station to charge the battery. When we use solar panels to make clean energy, we protect our green planet. A digital screen on the dashboard shows car speed and remaining power. Electric cars reduce harmful emission smoke in big cities. They can travel far on one charge. In the future, clean transport will keep our air fresh and clear.",
+    "title": "Modern Travel and Clean Energy",
+    "topic": "Electric Vehicles and Clean Energy",
+    "glossary": [
+      {
+        "word": "electric",
+        "definition_en": "Working by using electric power."
+      },
+      {
+        "word": "battery",
+        "definition_en": "A device that stores electric power for a machine."
+      },
+      {
+        "word": "solar",
+        "definition_en": "Coming from or using the light of the sun."
+      },
+      {
+        "word": "charge",
+        "definition_en": "To put electric power into a battery."
+      },
+      {
+        "word": "planet",
+        "definition_en": "A large round world in space like Earth."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -443,83 +457,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Leo and Maya Discuss Electric Vehicles",
+    "title": "Lucas and Maya at the Charging Station",
+    "topic": "Electric Vehicles and Clean Energy",
     "turns": [
       {
-        "speaker": "Leo",
-        "text": "Why do people choose electric vehicles today?"
+        "speaker": "Lucas",
+        "statement": "Look Maya, this new car makes no noise at all!",
+        "options": [
+          "Yes, it has a quiet electric motor!",
+          "It is five meters long.",
+          "Last Sunday at noon."
+        ],
+        "answer": "Yes, it has a quiet electric motor!"
       },
       {
         "speaker": "Maya",
-        "text": "Because they produce zero tailpipe emissions in our city."
+        "statement": "How long does it take to charge the car battery?",
+        "options": [
+          "It takes thirty minutes at this modern station.",
+          "They are blue coats.",
+          "In the kitchen cupboard."
+        ],
+        "answer": "It takes thirty minutes at this modern station."
       },
       {
-        "speaker": "Leo",
-        "text": "How do you recharge the car's battery?"
+        "speaker": "Lucas",
+        "statement": "Where does the green energy come from?",
+        "options": [
+          "It comes from the solar panels on the roof.",
+          "It is sleeping quietly.",
+          "Because of the rain."
+        ],
+        "answer": "It comes from the solar panels on the roof."
       },
       {
         "speaker": "Maya",
-        "text": "You plug it into a clean charging station."
+        "statement": "Will more people drive electric cars in the future?",
+        "options": [
+          "Yes, they help protect our clean planet.",
+          "No, it was Thursday.",
+          "Tomorrow at school."
+        ],
+        "answer": "Yes, they help protect our clean planet."
       },
       {
-        "speaker": "Leo",
-        "text": "What will happen if we use solar energy?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "If we use solar energy, we will protect our planet!"
+        "speaker": "Lucas",
+        "statement": "Shall we write about clean transport for our school talk?",
+        "options": [
+          "Yes, let's prepare our presentation together!",
+          "No, I lost my pencil.",
+          "Because the soup is hot."
+        ],
+        "answer": "Yes, let's prepare our presentation together!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Clean transportation is important for our future. Traditional cars produce harmful gas (1) ___ that pollute the air. Today, modern electric (2) ___ run quietly on battery power. Drivers can recharge their cars at a charging (3) ___. Solar (4) ___ on station roofs generate renewable power from sunlight. If we protect our environment, we (5) ___ create healthier cities for all children.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "emissions",
-          "stories",
-          "rivers"
-        ],
-        "answer": "emissions"
-      },
-      {
-        "id": 2,
-        "options": [
-          "vehicles",
-          "animals",
-          "shoes"
-        ],
-        "answer": "vehicles"
-      },
-      {
-        "id": 3,
-        "options": [
-          "station",
-          "forest",
-          "pillow"
-        ],
-        "answer": "station"
-      },
-      {
-        "id": 4,
-        "options": [
-          "panels",
-          "blankets",
-          "cakes"
-        ],
-        "answer": "panels"
-      },
-      {
-        "id": 5,
-        "options": [
-          "will",
-          "did",
-          "were"
-        ],
-        "answer": "will"
-      }
-    ]
+    "title": "Maya's Clean Energy Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Yesterday my family visited a modern charging station. We saw a new electric {1} that made no dirty smoke. The driver plugged a cable into the {2} to fill it with power. High above the station, big {3} panels collected sunshine. In the future, clean energy will {4} our green planet. I hope to drive a clean car {5} I grow up.",
+    "answers": {
+      "1": "car",
+      "2": "battery",
+      "3": "solar",
+      "4": "protect",
+      "5": "when"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -563,83 +566,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Leo and Maya Discuss Electric Vehicles",
+    "title": "Lucas and Maya at the Charging Station",
+    "topic": "Electric Vehicles and Clean Energy",
     "turns": [
       {
-        "speaker": "Leo",
-        "text": "Why do people choose electric vehicles today?"
+        "speaker": "Lucas",
+        "statement": "Look Maya, this new car makes no noise at all!",
+        "options": [
+          "Yes, it has a quiet electric motor!",
+          "It is five meters long.",
+          "Last Sunday at noon."
+        ],
+        "answer": "Yes, it has a quiet electric motor!"
       },
       {
         "speaker": "Maya",
-        "text": "Because they produce zero tailpipe emissions in our city."
+        "statement": "How long does it take to charge the car battery?",
+        "options": [
+          "It takes thirty minutes at this modern station.",
+          "They are blue coats.",
+          "In the kitchen cupboard."
+        ],
+        "answer": "It takes thirty minutes at this modern station."
       },
       {
-        "speaker": "Leo",
-        "text": "How do you recharge the car's battery?"
+        "speaker": "Lucas",
+        "statement": "Where does the green energy come from?",
+        "options": [
+          "It comes from the solar panels on the roof.",
+          "It is sleeping quietly.",
+          "Because of the rain."
+        ],
+        "answer": "It comes from the solar panels on the roof."
       },
       {
         "speaker": "Maya",
-        "text": "You plug it into a clean charging station."
+        "statement": "Will more people drive electric cars in the future?",
+        "options": [
+          "Yes, they help protect our clean planet.",
+          "No, it was Thursday.",
+          "Tomorrow at school."
+        ],
+        "answer": "Yes, they help protect our clean planet."
       },
       {
-        "speaker": "Leo",
-        "text": "What will happen if we use solar energy?"
-      },
-      {
-        "speaker": "Maya",
-        "text": "If we use solar energy, we will protect our planet!"
+        "speaker": "Lucas",
+        "statement": "Shall we write about clean transport for our school talk?",
+        "options": [
+          "Yes, let's prepare our presentation together!",
+          "No, I lost my pencil.",
+          "Because the soup is hot."
+        ],
+        "answer": "Yes, let's prepare our presentation together!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Clean transportation is important for our future. Traditional cars produce harmful gas (1) ___ that pollute the air. Today, modern electric (2) ___ run quietly on battery power. Drivers can recharge their cars at a charging (3) ___. Solar (4) ___ on station roofs generate renewable power from sunlight. If we protect our environment, we (5) ___ create healthier cities for all children.",
-    "questions": [
+    "title": "Maya's Clean Energy Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Yesterday my family visited a modern charging station. We saw a new electric {1} that made no dirty smoke. The driver plugged a cable into the {2} to fill it with power. High above the station, big {3} panels collected sunshine. In the future, clean energy will {4} our green planet. I hope to drive a clean car {5} I grow up.",
+    "answers": {
+      "1": "car",
+      "2": "battery",
+      "3": "solar",
+      "4": "protect",
+      "5": "when"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "emissions",
-          "stories",
-          "rivers"
-        ],
-        "answer": "emissions"
+        "description": "A chemical storage device that provides electrical power.",
+        "word": "battery"
       },
       {
         "id": 2,
-        "options": [
-          "vehicles",
-          "animals",
-          "shoes"
-        ],
-        "answer": "vehicles"
+        "description": "A machine that converts electrical power into motion.",
+        "word": "motor"
       },
       {
         "id": 3,
-        "options": [
-          "station",
-          "forest",
-          "pillow"
-        ],
-        "answer": "station"
+        "description": "A designated facility where vehicles recharge electricity.",
+        "word": "station"
       },
       {
         "id": 4,
-        "options": [
-          "panels",
-          "blankets",
-          "cakes"
-        ],
-        "answer": "panels"
+        "description": "A flat digital surface that displays visual driving data.",
+        "word": "screen"
       },
       {
         "id": 5,
-        "options": [
-          "will",
-          "did",
-          "were"
-        ],
-        "answer": "will"
+        "description": "A flat board covered with photovoltaic cells to catch sunlight.",
+        "word": "panel"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Lucas and Maya at the Charging Station",
+      "topic": "Electric Vehicles and Clean Energy",
+      "turns": [
+        {
+          "speaker": "Lucas",
+          "statement": "Look Maya, this new car makes no noise at all!",
+          "options": [
+            "Yes, it has a quiet electric motor!",
+            "It is five meters long.",
+            "Last Sunday at noon."
+          ],
+          "answer": "Yes, it has a quiet electric motor!"
+        },
+        {
+          "speaker": "Maya",
+          "statement": "How long does it take to charge the car battery?",
+          "options": [
+            "It takes thirty minutes at this modern station.",
+            "They are blue coats.",
+            "In the kitchen cupboard."
+          ],
+          "answer": "It takes thirty minutes at this modern station."
+        },
+        {
+          "speaker": "Lucas",
+          "statement": "Where does the green energy come from?",
+          "options": [
+            "It comes from the solar panels on the roof.",
+            "It is sleeping quietly.",
+            "Because of the rain."
+          ],
+          "answer": "It comes from the solar panels on the roof."
+        },
+        {
+          "speaker": "Maya",
+          "statement": "Will more people drive electric cars in the future?",
+          "options": [
+            "Yes, they help protect our clean planet.",
+            "No, it was Thursday.",
+            "Tomorrow at school."
+          ],
+          "answer": "Yes, they help protect our clean planet."
+        },
+        {
+          "speaker": "Lucas",
+          "statement": "Shall we write about clean transport for our school talk?",
+          "options": [
+            "Yes, let's prepare our presentation together!",
+            "No, I lost my pencil.",
+            "Because the soup is hot."
+          ],
+          "answer": "Yes, let's prepare our presentation together!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Maya's Clean Energy Journal",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Yesterday my family visited a modern charging station. We saw a new electric {1} that made no dirty smoke. The driver plugged a cable into the {2} to fill it with power. High above the station, big {3} panels collected sunshine. In the future, clean energy will {4} our green planet. I hope to drive a clean car {5} I grow up.",
+      "answers": {
+        "1": "car",
+        "2": "battery",
+        "3": "solar",
+        "4": "protect",
+        "5": "when"
+      }
+    }
   }
 };
+
 export default readingHubData;

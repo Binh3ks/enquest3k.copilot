@@ -1,243 +1,168 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 48 | Theme: "Measuring Up (Length)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
-export const vocab = [
+// Week 48 Target Vocabulary (20/20 Target Words with GA IPA, Definitions, Examples)
+export const vocabData = {
+  week: 48,
+  vocab: [
   {
-    "id": 1,
-    "word": "length",
-    "pos": "n",
-    "ipa": "/leŋkθ/",
-    "definition_en": "Measurement of something from end to end.",
-    "definition_vi": "chiều dài",
-    "example_en": "The total length of this yellow pencil is fifteen centimeters.",
-    "example_vi": "Tổng chiều dài của chiếc bút chì vàng này là mười lăm xăng-ti-mét."
-  },
-  {
-    "id": 2,
-    "word": "ruler",
-    "pos": "n",
-    "ipa": "/ˈruːlər/",
-    "definition_en": "Straight strip used for measuring length.",
-    "definition_vi": "thước kẻ",
-    "example_en": "Lucas used a plastic ruler to draw a straight line.",
-    "example_vi": "Lucas dùng thước kẻ nhựa để kẻ một đường thẳng."
-  },
-  {
-    "id": 3,
-    "word": "centimeter",
-    "pos": "n",
-    "ipa": "/ˈsentɪmiːtər/",
-    "definition_en": "Unit of length equal to one hundredth of a meter.",
-    "definition_vi": "xăng-ti-mét",
-    "example_en": "This notebook is twenty centimeters wide.",
-    "example_vi": "Cuốn vở này rộng hai mươi xăng-ti-mét."
-  },
-  {
-    "id": 4,
-    "word": "meter",
-    "pos": "n",
-    "ipa": "/ˈmiːtər/",
-    "definition_en": "Metric unit of length equal to one hundred centimeters.",
-    "definition_vi": "mét",
-    "example_en": "The teacher table is one meter long.",
-    "example_vi": "Bàn giáo viên dài một mét."
-  },
-  {
-    "id": 5,
-    "word": "tape",
-    "pos": "n",
-    "ipa": "/teɪp/",
-    "definition_en": "Flexible strip used to measure curved objects.",
-    "definition_vi": "thước dây",
-    "example_en": "The tailor wrapped the tape around the fabric.",
-    "example_vi": "Người thợ may quấn thước dây quanh tấm vải."
-  },
-  {
-    "id": 6,
-    "word": "distance",
-    "pos": "n",
-    "ipa": "/ˈdɪstəns/",
-    "definition_en": "Amount of space between two places.",
-    "definition_vi": "khoảng cách",
-    "example_en": "The running distance between classrooms is thirty meters.",
-    "example_vi": "Khoảng cách chạy giữa các lớp học là ba mươi mét."
-  },
-  {
-    "id": 7,
-    "word": "height",
-    "pos": "n",
-    "ipa": "/haɪt/",
-    "definition_en": "Measurement of something from base to top.",
-    "definition_vi": "chiều cao",
-    "example_en": "Liam measured his height against the classroom wall.",
-    "example_vi": "Liam đo chiều cao của mình dựa vào tường lớp học."
-  },
-  {
-    "id": 8,
-    "word": "width",
-    "pos": "n",
-    "ipa": "/wɪdtθ/",
-    "definition_en": "Measurement of something from side to side.",
-    "definition_vi": "chiều rộng",
-    "example_en": "The width of the wooden desk is sixty centimeters.",
-    "example_vi": "Chiều rộng của bàn gỗ là sáu mươi xăng-ti-mét."
-  },
-  {
-    "id": 9,
-    "word": "measure",
-    "pos": "v",
-    "ipa": "/ˈmeʒər/",
-    "definition_en": "Find the size or length of an object.",
-    "definition_vi": "đo lường",
-    "example_en": "Students measure ribbons for the science project.",
-    "example_vi": "Học sinh đo các dải ruy băng cho dự án khoa học."
-  },
-  {
-    "id": 10,
-    "word": "scale",
-    "pos": "n",
-    "ipa": "/skeɪl/",
-    "definition_en": "Numbered marks at regular intervals on a tool.",
-    "definition_vi": "thang đo",
-    "example_en": "Check the millimeter scale on your ruler.",
-    "example_vi": "Hãy kiểm tra thang đo mi-li-mét trên thước kẻ của bạn."
-  },
-  {
-    "id": 11,
-    "word": "accurate",
-    "pos": "adj",
-    "ipa": "/ˈækjərət/",
-    "definition_en": "Correct in all details without error.",
-    "definition_vi": "chính xác",
-    "example_en": "A wooden ruler gives accurate measurements.",
-    "example_vi": "Một chiếc thước gỗ mang lại kết quả đo chính xác."
-  },
-  {
-    "id": 12,
-    "word": "record",
-    "pos": "v",
-    "ipa": "/rɪˈkɔːrd/",
-    "definition_en": "Write down facts for future study.",
-    "definition_vi": "ghi chép",
-    "example_en": "We record the ice temperature in our notebooks.",
-    "example_vi": "Chúng tôi ghi chép nhiệt độ của băng vào vở."
-  },
-  {
-    "id": 13,
-    "word": "comparing",
-    "pos": "v",
-    "ipa": "/kəmˈperɪŋ/",
-    "definition_en": "Noting how two things differ in length.",
-    "definition_vi": "so sánh",
-    "example_en": "Mia is comparing two pieces of blue ribbon.",
-    "example_vi": "Mia đang so sánh hai mảnh ruy băng màu xanh."
-  },
-  {
-    "id": 14,
-    "word": "freeze",
-    "pos": "v",
-    "ipa": "/friːz/",
-    "definition_en": "Turn into ice when cold enough.",
-    "definition_vi": "đóng băng",
-    "example_en": "Water will freeze when temperature drops below zero.",
-    "example_vi": "Nước sẽ đóng băng khi nhiệt độ giảm xuống dưới 0 độ."
-  },
-  {
-    "id": 15,
-    "word": "temperature",
-    "pos": "n",
-    "ipa": "/ˈtemprətʃər/",
-    "definition_en": "Degree of heat or cold measured by thermometer.",
-    "definition_vi": "nhiệt độ",
-    "example_en": "The thermometer showed a freezing temperature.",
-    "example_vi": "Nhiệt kế chỉ nhiệt độ đóng băng."
-  },
-  {
-    "id": 16,
-    "word": "liquid",
-    "pos": "n",
-    "ipa": "/ˈlɪkwɪd/",
-    "definition_en": "Substance that flows freely like water.",
-    "definition_vi": "chất lỏng",
-    "example_en": "Water is a clear liquid that freezes into ice.",
-    "example_vi": "Nước là một chất lỏng trong suốt đóng băng thành đá."
-  },
-  {
-    "id": 17,
-    "word": "solid",
-    "pos": "n",
-    "ipa": "/ˈsɑːlɪd/",
-    "definition_en": "Firm substance that keeps its shape.",
-    "definition_vi": "chất rắn",
-    "example_en": "Ice is a solid form of cold water.",
-    "example_vi": "Băng là dạng chất rắn của nước lạnh."
-  },
-  {
-    "id": 18,
-    "word": "expand",
-    "pos": "v",
-    "ipa": "/ɪkˈspænd/",
-    "definition_en": "Become larger in size or volume.",
-    "definition_vi": "nở ra, giãn nở",
-    "example_en": "Water expands slightly when it turns into solid ice.",
-    "example_vi": "Nước nở ra một chút khi chuyển thành băng rắn."
-  },
-  {
-    "id": 19,
-    "word": "container",
-    "pos": "n",
-    "ipa": "/kənˈteɪnər/",
-    "definition_en": "Object used to hold liquids or solids.",
-    "definition_vi": "bình chứa",
-    "example_en": "Pour cold water into the glass container.",
-    "example_vi": "Đổ nước lạnh vào bình chứa bằng thủy tinh."
-  },
-  {
-    "id": 20,
-    "word": "millimeter",
-    "pos": "n",
-    "ipa": "/ˈmɪlɪmiːtər/",
-    "definition_en": "One tenth of a centimeter.",
-    "definition_vi": "mi-li-mét",
-    "example_en": "The tiny beetle is only five millimeters long.",
-    "example_vi": "Con bọ nhỏ chỉ dài năm mi-li-mét."
-  },
-  {
-    "id": 21,
     "word": "long",
-    "pos": "adj",
     "ipa": "/lɔːŋ/",
-    "definition_en": "Having a great distance from one end to the other.",
-    "definition_vi": "dài",
-    "example_en": "The blue jump rope is two meters long.",
-    "example_vi": "Sợi dây nhảy màu xanh lam dài hai mét."
+    "definition_en": "Measuring a great distance from end to end.",
+    "definition_vi": "Dài.",
+    "example_en": "This wooden desk has a long surface.",
+    "example_vi": "Bàn gỗ này có bề mặt dài."
   },
   {
-    "id": 22,
     "word": "short",
-    "pos": "adj",
     "ipa": "/ʃɔːrt/",
     "definition_en": "Measuring a small distance from end to end.",
-    "definition_vi": "ngắn",
-    "example_en": "He drew a short pencil line on the paper.",
-    "example_vi": "Cậu ấy đã vẽ một đường bút chì ngắn trên tờ giấy."
+    "definition_vi": "Ngắn, thấp.",
+    "example_en": "The yellow crayon is short.",
+    "example_vi": "Cây bút sáp màu vàng rất ngắn."
   },
   {
-    "id": 23,
     "word": "tall",
-    "pos": "adj",
     "ipa": "/tɔːl/",
-    "definition_en": "Having greater height than normal things.",
-    "definition_vi": "cao",
-    "example_en": "A tall sunflower grows next to the garden fence.",
-    "example_vi": "Một bông hoa hướng dương cao lớn mọc bên cạnh hàng rào vườn."
+    "definition_en": "Having a greater height than average.",
+    "definition_vi": "Cao.",
+    "example_en": "The science teacher is very tall.",
+    "example_vi": "Thầy giáo dạy khoa học rất cao."
+  },
+  {
+    "word": "measure",
+    "ipa": "/ˈmɛʒər/",
+    "definition_en": "Find the size or length of an object.",
+    "definition_vi": "Đo lường.",
+    "example_en": "We will measure our notebooks today.",
+    "example_vi": "Hôm nay chúng ta sẽ đo những cuốn vở của mình."
+  },
+  {
+    "word": "ruler",
+    "ipa": "/ˈruːlər/",
+    "definition_en": "A straight strip of wood or plastic used to measure.",
+    "definition_vi": "Cây thước kẻ.",
+    "example_en": "Use a plastic ruler to draw a straight line.",
+    "example_vi": "Hãy dùng thước nhựa để kẻ một đường thẳng."
+  },
+  {
+    "word": "centimeter",
+    "ipa": "/ˈsɛntəˌmiːtər/",
+    "definition_en": "A metric unit of length equal to one hundredth of a meter.",
+    "definition_vi": "Xăng-ti-mét.",
+    "example_en": "My pencil is fifteen centimeters long.",
+    "example_vi": "Bút chì của tôi dài mười lăm xăng-ti-mét."
+  },
+  {
+    "word": "meter",
+    "ipa": "/ˈmiːtər/",
+    "definition_en": "The standard metric unit of length equal to one hundred centimeters.",
+    "definition_vi": "Mét.",
+    "example_en": "The classroom whiteboard is two meters wide.",
+    "example_vi": "Bảng lớp học rộng hai mét."
+  },
+  {
+    "word": "length",
+    "ipa": "/lɛŋkθ/",
+    "definition_en": "The measurement of something from end to end.",
+    "definition_vi": "Chiều dài.",
+    "example_en": "Measure the length of your desk carefully.",
+    "example_vi": "Hãy đo chiều dài của bàn học cẩn thận."
+  },
+  {
+    "word": "width",
+    "ipa": "/wɪdθ/",
+    "definition_en": "The measurement of something from side to side.",
+    "definition_vi": "Chiều rộng.",
+    "example_en": "What is the width of this math book?",
+    "example_vi": "Chiều rộng của cuốn sách toán này là bao nhiêu?"
+  },
+  {
+    "word": "height",
+    "ipa": "/haɪt/",
+    "definition_en": "The measurement of someone or something from base to top.",
+    "definition_vi": "Chiều cao.",
+    "example_en": "The height of the bookshelf is two meters.",
+    "example_vi": "Chiều cao của giá sách là hai mét."
+  },
+  {
+    "word": "distance",
+    "ipa": "/ˈdɪstəns/",
+    "definition_en": "The amount of space between two places.",
+    "definition_vi": "Khoảng cách.",
+    "example_en": "The distance from the door to my seat is short.",
+    "example_vi": "Khoảng cách từ cửa đến chỗ ngồi của tôi rất ngắn."
+  },
+  {
+    "word": "tape",
+    "ipa": "/teɪp/",
+    "definition_en": "A long flexible strip used for measuring.",
+    "definition_vi": "Thước cuộn, dây đo.",
+    "example_en": "Use a measuring tape for long tables.",
+    "example_vi": "Hãy dùng thước dây cho những chiếc bàn dài."
+  },
+  {
+    "word": "scale",
+    "ipa": "/skeɪl/",
+    "definition_en": "A set of marks used for measuring.",
+    "definition_vi": "Thang đo, vạch chia.",
+    "example_en": "Look at the number scale on the ruler.",
+    "example_vi": "Hãy nhìn vào thang số trên thước kẻ."
+  },
+  {
+    "word": "accurate",
+    "ipa": "/ˈækjərət/",
+    "definition_en": "Correct in all details and exact.",
+    "definition_vi": "Chính xác.",
+    "example_en": "Make an accurate measurement of the paper.",
+    "example_vi": "Hãy đo thật chính xác tờ giấy."
+  },
+  {
+    "word": "record",
+    "ipa": "/rɪˈkɔːrd/",
+    "definition_en": "Write down information to keep it.",
+    "definition_vi": "Ghi chép lại.",
+    "example_en": "Record your answers in the notebook.",
+    "example_vi": "Hãy ghi câu trả lời của bạn vào vở."
+  },
+  {
+    "word": "compare",
+    "ipa": "/kəmˈpɛr/",
+    "definition_en": "Examine two things to see how they differ.",
+    "definition_vi": "So sánh.",
+    "example_en": "Compare the heights of both students.",
+    "example_vi": "Hãy so sánh chiều cao của cả hai học sinh."
+  },
+  {
+    "word": "millimeter",
+    "ipa": "/ˈmɪləˌmiːtər/",
+    "definition_en": "A tiny metric unit equal to one tenth of a centimeter.",
+    "definition_vi": "Mi-li-mét.",
+    "example_en": "A coin is only two millimeters thick.",
+    "example_vi": "Đồng xu chỉ dày hai mi-li-mét."
+  },
+  {
+    "word": "object",
+    "ipa": "/ˈɑːbdʒɛkt/",
+    "definition_en": "A material thing that can be seen and touched.",
+    "definition_vi": "Đồ vật.",
+    "example_en": "Pick up an object to measure its size.",
+    "example_vi": "Hãy nhặt một đồ vật lên để đo kích thước của nó."
+  },
+  {
+    "word": "classroom",
+    "ipa": "/ˈklæsruːm/",
+    "definition_en": "A room where students learn together.",
+    "definition_vi": "Lớp học.",
+    "example_en": "We measure items around our classroom.",
+    "example_vi": "Chúng tôi đo các đồ vật quanh lớp học."
+  },
+  {
+    "word": "desk",
+    "ipa": "/dɛsk/",
+    "definition_en": "A piece of furniture with a flat top used for study.",
+    "definition_vi": "Bàn học.",
+    "example_en": "The student sat at her wooden desk.",
+    "example_vi": "Học sinh đã ngồi tại bàn học bằng gỗ của mình."
   }
-];
-export const vocabList = vocab;
-export const week48Vocab = vocab;
-export default vocab;
+]
+};
+
+export default vocabData;

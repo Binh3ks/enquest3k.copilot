@@ -1,213 +1,168 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 50 | Theme: "Review Station 1 (Grammar Mix)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
-export const vocab = [
+// Week 50 Target Vocabulary (20/20 Target Words with GA IPA, Definitions, Examples)
+export const vocabData = {
+  week: 50,
+  vocab: [
   {
-    "id": 1,
     "word": "electric",
-    "pos": "adj",
-    "ipa": "/ɪˈlektrɪk/",
-    "definition_en": "Powered by or producing electricity.",
-    "definition_vi": "chạy bằng điện",
-    "example_en": "Modern electric cars produce zero tailpipe smoke.",
-    "example_vi": "Những chiếc ô tô điện hiện đại không thải khói qua ống xả."
+    "ipa": "/ɪˈlɛktrɪk/",
+    "definition_en": "Working by or using electric power.",
+    "definition_vi": "Chạy bằng điện.",
+    "example_en": "My dad drives a quiet electric car.",
+    "example_vi": "Bố tôi lái một chiếc xe điện rất êm."
   },
   {
-    "id": 2,
     "word": "vehicle",
-    "pos": "n",
     "ipa": "/ˈviːəkl/",
-    "definition_en": "Machine used for carrying people or goods.",
-    "definition_vi": "phương tiện giao thông",
-    "example_en": "An electric bus is a clean public vehicle.",
-    "example_vi": "Xe buýt điện là một phương tiện giao thông công cộng sạch."
+    "definition_en": "A machine with wheels that carries people or things.",
+    "definition_vi": "Phương tiện giao thông.",
+    "example_en": "This clean vehicle carries six people safely.",
+    "example_vi": "Phương tiện sạch này chở sáu người an toàn."
   },
   {
-    "id": 3,
     "word": "battery",
-    "pos": "n",
     "ipa": "/ˈbætəri/",
-    "definition_en": "Device that stores electrical chemical energy.",
-    "definition_vi": "bình ắc quy, pin",
-    "example_en": "The lithium battery powers the car motor for hours.",
-    "example_vi": "Cục pin lithium cung cấp năng lượng cho động cơ xe trong nhiều giờ."
+    "definition_en": "A small unit that stores electric power.",
+    "definition_vi": "Pin, ắc quy.",
+    "example_en": "The battery keeps the machine working.",
+    "example_vi": "Cục pin giúp máy móc tiếp tục hoạt động."
   },
   {
-    "id": 4,
     "word": "energy",
-    "pos": "n",
-    "ipa": "/ˈenərdʒi/",
-    "definition_en": "Power derived from physical resources.",
-    "definition_vi": "năng lượng",
-    "example_en": "Solar panels convert sunshine into useful energy.",
-    "example_vi": "Các tấm pin mặt trời chuyển đổi ánh nắng thành năng lượng hữu ích."
+    "ipa": "/ˈɛnərdʒi/",
+    "definition_en": "Power that can make things move and work.",
+    "definition_vi": "Năng lượng.",
+    "example_en": "The sun gives clean energy to our planet.",
+    "example_vi": "Mặt trời mang lại nguồn năng lượng sạch cho hành tinh."
   },
   {
-    "id": 5,
     "word": "solar",
-    "pos": "adj",
     "ipa": "/ˈsoʊlər/",
-    "definition_en": "Relating to or derived from the sun.",
-    "definition_vi": "thuộc mặt trời",
-    "example_en": "The school roof has twenty solar panels.",
-    "example_vi": "Mái trường có hai mươi tấm pin năng lượng mặt trời."
+    "definition_en": "Coming from or using the light of the sun.",
+    "definition_vi": "Thuộc về năng lượng mặt trời.",
+    "example_en": "We put solar panels on our school roof.",
+    "example_vi": "Chúng tôi đặt các tấm pin mặt trời trên mái trường."
   },
   {
-    "id": 6,
     "word": "station",
-    "pos": "n",
     "ipa": "/ˈsteɪʃn/",
-    "definition_en": "Place where vehicles recharge power.",
-    "definition_vi": "trạm sạc, nhà ga",
-    "example_en": "The driver plugged the car into the fast charging station.",
-    "example_vi": "Tài xế cắm xe vào trạm sạc nhanh."
+    "definition_en": "A special place where services are provided.",
+    "definition_vi": "Trạm sạc, nhà ga.",
+    "example_en": "We stopped at the charging station on the road.",
+    "example_vi": "Chúng tôi đã dừng lại ở trạm sạc trên đường."
   },
   {
-    "id": 7,
     "word": "charge",
-    "pos": "v",
     "ipa": "/tʃɑːrdʒ/",
-    "definition_en": "Store electrical energy inside a battery.",
-    "definition_vi": "nạp điện, sạc pin",
-    "example_en": "We will charge the family car overnight.",
-    "example_vi": "Chúng tôi sẽ sạc xe gia đình qua đêm."
+    "definition_en": "To put electric power into a dead battery.",
+    "definition_vi": "Sạc điện.",
+    "example_en": "He will charge the battery before driving.",
+    "example_vi": "Cậu ấy sẽ sạc pin trước khi lái xe."
   },
   {
-    "id": 8,
     "word": "clean",
-    "pos": "adj",
     "ipa": "/kliːn/",
-    "definition_en": "Free from harmful pollution and emissions.",
-    "definition_vi": "sạch, không ô nhiễm",
-    "example_en": "Wind and solar power create clean electricity.",
-    "example_vi": "Năng lượng gió và mặt trời tạo ra điện sạch."
+    "definition_en": "Free from dirt or harmful smoke.",
+    "definition_vi": "Sạch sẽ, trong lành.",
+    "example_en": "Clean air helps all people breathe easily.",
+    "example_vi": "Không khí trong lành giúp mọi người thở dễ dàng."
   },
   {
-    "id": 9,
     "word": "motor",
-    "pos": "n",
     "ipa": "/ˈmoʊtər/",
-    "definition_en": "Machine that provides motive power.",
-    "definition_vi": "động cơ điện",
-    "example_en": "An electric motor runs very quietly without oil.",
-    "example_vi": "Một động cơ điện chạy rất êm mà không cần dầu."
+    "definition_en": "A machine that uses power to create motion.",
+    "definition_vi": "Động cơ.",
+    "example_en": "The electric motor runs without loud noise.",
+    "example_vi": "Động cơ điện chạy mà không có tiếng ồn lớn."
   },
   {
-    "id": 10,
     "word": "reduce",
-    "pos": "v",
     "ipa": "/rɪˈduːs/",
-    "definition_en": "Make smaller in amount or size.",
-    "definition_vi": "giảm thiểu",
-    "example_en": "Clean vehicles reduce air pollution in cities.",
-    "example_vi": "Các phương tiện sạch giảm thiểu ô nhiễm không khí trong các thành phố."
+    "definition_en": "Make something smaller in amount or size.",
+    "definition_vi": "Cắt giảm, giảm bớt.",
+    "example_en": "Electric cars reduce dirty smoke in cities.",
+    "example_vi": "Xe điện giúp giảm khói bụi bẩn trong thành phố."
   },
   {
-    "id": 11,
     "word": "emission",
-    "pos": "n",
     "ipa": "/ɪˈmɪʃn/",
-    "definition_en": "Discharge of harmful gas into the air.",
-    "definition_vi": "khí thải",
-    "example_en": "Zero emission cars protect our breathing air.",
-    "example_vi": "Xe không phát thải bảo vệ không khí thở của chúng ta."
+    "definition_en": "Gas or smoke that is sent into the air.",
+    "definition_vi": "Khí thải.",
+    "example_en": "Cars with zero emission protect the trees.",
+    "example_vi": "Những chiếc xe không phát thải bảo vệ cây xanh."
   },
   {
-    "id": 12,
     "word": "speed",
-    "pos": "n",
     "ipa": "/spiːd/",
-    "definition_en": "Rate at which someone or something travels.",
-    "definition_vi": "tốc độ",
-    "example_en": "The electric train reached high speed smoothly.",
-    "example_vi": "Đoàn tàu điện đạt tốc độ cao một cách êm ái."
+    "definition_en": "How fast someone or something moves.",
+    "definition_vi": "Tốc độ.",
+    "example_en": "The digital screen shows our driving speed.",
+    "example_vi": "Màn hình kỹ thuật số hiển thị tốc độ lái xe của chúng tôi."
   },
   {
-    "id": 13,
     "word": "screen",
-    "pos": "n",
     "ipa": "/skriːn/",
-    "definition_en": "Flat digital display showing driving data.",
-    "definition_vi": "màn hình hiển thị",
-    "example_en": "The dashboard screen shows current battery percentage.",
-    "example_vi": "Màn hình trên bảng điều khiển hiển thị phần trăm pin hiện tại."
+    "definition_en": "A flat surface on an electronic device showing words or pictures.",
+    "definition_vi": "Màn hình.",
+    "example_en": "Look at the screen to see how much power is left.",
+    "example_vi": "Hãy nhìn vào màn hình để xem còn bao nhiêu điện."
   },
   {
-    "id": 14,
     "word": "panel",
-    "pos": "n",
     "ipa": "/ˈpænl/",
-    "definition_en": "Flat board fitted with solar cells.",
-    "definition_vi": "tấm pa-nô pin",
-    "example_en": "Each solar panel collects sunlight during bright days.",
-    "example_vi": "Mỗi tấm pin mặt trời thu ánh sáng trong những ngày nắng đẹp."
+    "definition_en": "A flat board that collects sunlight.",
+    "definition_vi": "Tấm pin năng lượng.",
+    "example_en": "Each solar panel collects bright sunshine.",
+    "example_vi": "Mỗi tấm pin mặt trời thu nhận ánh nắng rực rỡ."
   },
   {
-    "id": 15,
     "word": "power",
-    "pos": "n",
     "ipa": "/ˈpaʊər/",
-    "definition_en": "Energy that is produced by mechanical or electrical means.",
-    "definition_vi": "công suất, năng lượng",
-    "example_en": "Green power comes from wind, water, and sun.",
-    "example_vi": "Năng lượng xanh đến từ gió, nước và mặt trời."
+    "definition_en": "Energy that makes machines run.",
+    "definition_vi": "Nguồn điện, năng lượng.",
+    "example_en": "Wind gives power to the small village.",
+    "example_vi": "Gió cung cấp năng lượng cho ngôi làng nhỏ."
   },
   {
-    "id": 16,
     "word": "travel",
-    "pos": "v",
     "ipa": "/ˈtrævl/",
-    "definition_en": "Journey from one destination to another.",
-    "definition_vi": "di chuyển",
-    "example_en": "The modern electric car can travel four hundred kilometers.",
-    "example_vi": "Chiếc xe điện hiện đại có thể di chuyển bốn trăm cây số."
+    "definition_en": "Go from one place to another place.",
+    "definition_vi": "Đi lại, du hành.",
+    "example_en": "Many happy families travel to school by electric bus.",
+    "example_vi": "Nhiều gia đình đi lại bằng xe buýt điện."
   },
   {
-    "id": 17,
     "word": "future",
-    "pos": "n",
     "ipa": "/ˈfjuːtʃər/",
-    "definition_en": "Time that will come after the present.",
-    "definition_vi": "tương lai",
-    "example_en": "In the future, most city buses will be electric.",
-    "example_vi": "Trong tương lai, hầu hết xe buýt thành phố sẽ chạy bằng điện."
+    "definition_en": "The time that is coming after today.",
+    "definition_vi": "Tương lai.",
+    "example_en": "In the future, all cars will be clean.",
+    "example_vi": "Trong tương lai, tất cả xe hơi sẽ sạch."
   },
   {
-    "id": 18,
     "word": "protect",
-    "pos": "v",
-    "ipa": "/prəˈtekt/",
-    "definition_en": "Keep safe from damage or harm.",
-    "definition_vi": "bảo vệ",
-    "example_en": "We must protect our planet from global warming.",
-    "example_vi": "Chúng ta phải bảo vệ hành tinh khỏi sự nóng lên toàn cầu."
+    "ipa": "/prəˈtɛkt/",
+    "definition_en": "Keep someone or something safe from harm.",
+    "definition_vi": "Bảo vệ.",
+    "example_en": "We must protect our green planet together.",
+    "example_vi": "Chúng ta phải cùng nhau bảo vệ hành tinh xanh."
   },
   {
-    "id": 19,
     "word": "planet",
-    "pos": "n",
     "ipa": "/ˈplænɪt/",
-    "definition_en": "The Earth or another celestial world.",
-    "definition_vi": "hành tinh",
-    "example_en": "Earth is the only planet known to support life.",
-    "example_vi": "Trái đất là hành tinh duy nhất được biết có sự sống."
+    "definition_en": "A large round body in space like the Earth.",
+    "definition_vi": "Hành tinh.",
+    "example_en": "Earth is the wonderful planet we live on.",
+    "example_vi": "Trái Đất là hành tinh tuyệt vời nơi chúng ta sinh sống."
   },
   {
-    "id": 20,
     "word": "modern",
-    "pos": "adj",
     "ipa": "/ˈmɑːdərn/",
-    "definition_en": "Relating to current times rather than the past.",
-    "definition_vi": "hiện đại",
-    "example_en": "Modern charging stations recharge batteries quickly.",
-    "example_vi": "Các trạm sạc hiện đại nạp pin rất nhanh chóng."
+    "definition_en": "Using the newest ideas and tools.",
+    "definition_vi": "Hiện đại.",
+    "example_en": "This modern station charges cars quickly.",
+    "example_vi": "Trạm hiện đại này sạc xe rất nhanh."
   }
-];
-export const vocabList = vocab;
-export const week50Vocab = vocab;
-export default vocab;
+]
+};
+
+export default vocabData;

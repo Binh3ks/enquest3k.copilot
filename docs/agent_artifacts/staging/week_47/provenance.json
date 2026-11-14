@@ -31,7 +31,9 @@
   "quality_gates_passed": [
     "GATE_1_SCHEMA_CONTRACT",
     "GATE_2_WORD_COUNT_SRS",
+    "GATE_3_CLIL_RIGOR",
     "GATE_4_SHADOWING_IPA",
+    "GATE_5_CAMBRIDGE_RW_GRADABLE",
     "GATE_6_MINIGAMES_INTEGRITY",
     "GATE_7_VIETNAMESE_LEAK_ZERO",
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
@@ -39,6 +41,7 @@
     "GATE_10_SKELETON_DIFFERENTIATION",
     "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
     "GATE_12_CEFR_CONSISTENCY",
+    "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY",
     "GATE_15_CLIL_VOCAB_INTEGRATION",
     "GATE_16_ESL_ANOMALY_ZERO",
@@ -46,11 +49,11 @@
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
   "staged_status": "STAGED_FOR_REVIEW",
-  "verified_at": "2026-11-14T13:09:51.091Z",
+  "verified_at": "2026-11-14T14:28:00.296Z",
   "audit_summary": {
     "total_gates_evaluated": 17,
-    "passed_count": 14,
-    "failed_count": 3,
-    "all_passed": false
+    "passed_count": 17,
+    "failed_count": 0,
+    "all_passed": true
   }
 }

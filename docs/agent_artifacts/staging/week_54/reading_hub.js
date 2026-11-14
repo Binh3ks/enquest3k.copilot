@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 54 | Theme: "PHASE 1 GRADUATION SHOWCASE" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 54 Reading Hub Deliverable
 export const readingHubData = {
   "week": 54,
   "theme": "PHASE 1 GRADUATION SHOWCASE",
@@ -243,37 +236,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "What event celebrates the completion of fifty-four learning weeks?",
+        "question": "Where do families gather for the graduation showcase?",
         "options": [
-          "The Phase 1 Graduation Showcase",
-          "A quiet library test",
-          "A rainy afternoon run"
+          "In the school hall",
+          "At a bus stop",
+          "In a dark basement"
         ],
-        "answer": "The Phase 1 Graduation Showcase"
+        "correct_answer": "In the school hall"
       },
       {
-        "id": 2,
-        "question_en": "What do students receive as official proof of completion?",
+        "question": "What does the principal give each graduating student?",
         "options": [
-          "An achievement certificate",
-          "A broken pencil",
-          "An empty envelope"
+          "A special award and a paper certificate",
+          "A bag of cold ice",
+          "A red umbrella"
         ],
-        "answer": "An achievement certificate"
+        "correct_answer": "A special award and a paper certificate"
       },
       {
-        "id": 3,
-        "question_en": "How do students begin their graduation presentations?",
+        "question": "How do parents celebrate their children's speeches?",
         "options": [
-          "With present perfect questions about world wonders",
-          "By whispering quietly",
-          "By closing their binders"
+          "With loud applause and smiles",
+          "By walking away silently",
+          "By turning off the lights"
         ],
-        "answer": "With present perfect questions about world wonders"
+        "correct_answer": "With loud applause and smiles"
       }
     ],
-    "content_en": "Today is a big day for every graduate at our school. Families gather in the hall for the annual showcase. Students stand on the stage and feel proud of their learning journey. With great confidence, each student gives a short speech before the audience. In their presentation, they share memories of an ancient wonder, like a giant stone pyramid or a famous landmark monument. Parents smile and celebrate this happy event with loud applause. The principal gives each child a special award and a paper certificate. A small souvenir gift reminds everyone of this wonderful memory. All students are ready for an exciting future in the next grade."
+    "content_en": "Today is a big day for every graduate at our school. Families gather in the hall for the annual showcase. Students stand on the stage and feel proud of their learning journey. With great confidence, each student gives a short speech before the audience. In their presentation, they share memories of an ancient wonder, like a giant stone pyramid or a famous landmark monument. Parents smile and celebrate this happy event with loud applause. The principal gives each child a special award and a paper certificate. A small souvenir gift reminds everyone of this wonderful memory. All students are ready for an exciting future in the next grade.",
+    "title": "Phase 1 Graduation Showcase",
+    "topic": "Graduation Celebration and Looking Ahead",
+    "glossary": [
+      {
+        "word": "graduate",
+        "definition_en": "A student who finishes a course of learning."
+      },
+      {
+        "word": "showcase",
+        "definition_en": "An event to show off skills and achievements."
+      },
+      {
+        "word": "speech",
+        "definition_en": "A talk given to a group of people."
+      },
+      {
+        "word": "presentation",
+        "definition_en": "A spoken talk explaining an idea or project."
+      },
+      {
+        "word": "certificate",
+        "definition_en": "An official document proving you finished study."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -443,83 +457,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Leo and Sophia at the Graduation Ceremony",
+    "title": "Liam and Zoe at the Graduation Showcase",
+    "topic": "Graduation Speeches and Celebrations",
     "turns": [
       {
-        "speaker": "Leo",
-        "text": "How do you feel about graduating from Phase 1?"
+        "speaker": "Liam",
+        "statement": "Zoe, look at all the parents waiting in the hall!",
+        "options": [
+          "They are smiling and ready for our speeches!",
+          "It is four meters wide.",
+          "Last Friday evening."
+        ],
+        "answer": "They are smiling and ready for our speeches!"
       },
       {
-        "speaker": "Sophia",
-        "text": "I feel very proud and excited for Phase 2."
+        "speaker": "Zoe",
+        "statement": "Are you ready to walk onto the stage with your certificate?",
+        "options": [
+          "Yes, I feel very proud of our work!",
+          "They are blue socks.",
+          "Under the chair."
+        ],
+        "answer": "Yes, I feel very proud of our work!"
       },
       {
-        "speaker": "Leo",
-        "text": "What topic did you choose for your speech?"
+        "speaker": "Liam",
+        "statement": "What did you share during your presentation talk?",
+        "options": [
+          "I talked about the ancient stone pyramid we studied.",
+          "It has two wings.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "I talked about the ancient stone pyramid we studied."
       },
       {
-        "speaker": "Sophia",
-        "text": "I chose the ancient pyramids and world wonders."
+        "speaker": "Zoe",
+        "statement": "Will you keep this graduation souvenir for a long time?",
+        "options": [
+          "Yes, it will always remind me of Phase 1.",
+          "I am asleep now.",
+          "Because it was cold outside."
+        ],
+        "answer": "Yes, it will always remind me of Phase 1."
       },
       {
-        "speaker": "Leo",
-        "text": "What did Principal Evans give to each student?"
-      },
-      {
-        "speaker": "Sophia",
-        "text": "He gave everyone an official achievement certificate!"
+        "speaker": "Liam",
+        "statement": "Shall we take a picture together with our certificates?",
+        "options": [
+          "Yes, let's take a photo right now!",
+          "No, it was raining yesterday.",
+          "Because the train is fast."
+        ],
+        "answer": "Yes, let's take a photo right now!"
       }
     ]
   },
   "rw_part6": {
-    "text": "The end of the school year is a time for celebration. Today, students celebrate their (1) ___ from Phase 1. Each child walks onto the brightly lit (2) ___ to deliver a short presentation. In their speeches, they share what they (3) ___ achieved over fifty-four weeks. The supportive (4) ___ listens attentively and offers warm applause. Every graduate proudly holds an official (5) ___ as proof of their English excellence.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "graduation",
-          "breakfast",
-          "winter"
-        ],
-        "answer": "graduation"
-      },
-      {
-        "id": 2,
-        "options": [
-          "stage",
-          "tree",
-          "river"
-        ],
-        "answer": "stage"
-      },
-      {
-        "id": 3,
-        "options": [
-          "have",
-          "will",
-          "did"
-        ],
-        "answer": "have"
-      },
-      {
-        "id": 4,
-        "options": [
-          "audience",
-          "furniture",
-          "weather"
-        ],
-        "answer": "audience"
-      },
-      {
-        "id": 5,
-        "options": [
-          "certificate",
-          "spoon",
-          "blanket"
-        ],
-        "answer": "certificate"
-      }
-    ]
+    "title": "Liam's Graduation Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today was the graduation showcase at our school. Every {1} stood on the stage to give a short speech. I felt great {2} as my parents smiled and clapped. The principal handed me a beautiful paper {3} and a golden badge. It has been an exciting learning {4} across fifty-four weeks. We are ready for a wonderful {5} in Phase 2.",
+    "answers": {
+      "1": "graduate",
+      "2": "confidence",
+      "3": "certificate",
+      "4": "journey",
+      "5": "future"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -563,83 +566,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Leo and Sophia at the Graduation Ceremony",
+    "title": "Liam and Zoe at the Graduation Showcase",
+    "topic": "Graduation Speeches and Celebrations",
     "turns": [
       {
-        "speaker": "Leo",
-        "text": "How do you feel about graduating from Phase 1?"
+        "speaker": "Liam",
+        "statement": "Zoe, look at all the parents waiting in the hall!",
+        "options": [
+          "They are smiling and ready for our speeches!",
+          "It is four meters wide.",
+          "Last Friday evening."
+        ],
+        "answer": "They are smiling and ready for our speeches!"
       },
       {
-        "speaker": "Sophia",
-        "text": "I feel very proud and excited for Phase 2."
+        "speaker": "Zoe",
+        "statement": "Are you ready to walk onto the stage with your certificate?",
+        "options": [
+          "Yes, I feel very proud of our work!",
+          "They are blue socks.",
+          "Under the chair."
+        ],
+        "answer": "Yes, I feel very proud of our work!"
       },
       {
-        "speaker": "Leo",
-        "text": "What topic did you choose for your speech?"
+        "speaker": "Liam",
+        "statement": "What did you share during your presentation talk?",
+        "options": [
+          "I talked about the ancient stone pyramid we studied.",
+          "It has two wings.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "I talked about the ancient stone pyramid we studied."
       },
       {
-        "speaker": "Sophia",
-        "text": "I chose the ancient pyramids and world wonders."
+        "speaker": "Zoe",
+        "statement": "Will you keep this graduation souvenir for a long time?",
+        "options": [
+          "Yes, it will always remind me of Phase 1.",
+          "I am asleep now.",
+          "Because it was cold outside."
+        ],
+        "answer": "Yes, it will always remind me of Phase 1."
       },
       {
-        "speaker": "Leo",
-        "text": "What did Principal Evans give to each student?"
-      },
-      {
-        "speaker": "Sophia",
-        "text": "He gave everyone an official achievement certificate!"
+        "speaker": "Liam",
+        "statement": "Shall we take a picture together with our certificates?",
+        "options": [
+          "Yes, let's take a photo right now!",
+          "No, it was raining yesterday.",
+          "Because the train is fast."
+        ],
+        "answer": "Yes, let's take a photo right now!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "The end of the school year is a time for celebration. Today, students celebrate their (1) ___ from Phase 1. Each child walks onto the brightly lit (2) ___ to deliver a short presentation. In their speeches, they share what they (3) ___ achieved over fifty-four weeks. The supportive (4) ___ listens attentively and offers warm applause. Every graduate proudly holds an official (5) ___ as proof of their English excellence.",
-    "questions": [
+    "title": "Liam's Graduation Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today was the graduation showcase at our school. Every {1} stood on the stage to give a short speech. I felt great {2} as my parents smiled and clapped. The principal handed me a beautiful paper {3} and a golden badge. It has been an exciting learning {4} across fifty-four weeks. We are ready for a wonderful {5} in Phase 2.",
+    "answers": {
+      "1": "graduate",
+      "2": "confidence",
+      "3": "certificate",
+      "4": "journey",
+      "5": "future"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "graduation",
-          "breakfast",
-          "winter"
-        ],
-        "answer": "graduation"
+        "description": "An official printed paper proving that you passed or completed a course.",
+        "word": "certificate"
       },
       {
         "id": 2,
-        "options": [
-          "stage",
-          "tree",
-          "river"
-        ],
-        "answer": "stage"
+        "description": "A group of people gathered to watch a concert, speech, or showcase.",
+        "word": "audience"
       },
       {
         "id": 3,
-        "options": [
-          "have",
-          "will",
-          "did"
-        ],
-        "answer": "have"
+        "description": "A formal spoken address delivered to a gathering of listeners.",
+        "word": "speech"
       },
       {
         "id": 4,
-        "options": [
-          "audience",
-          "furniture",
-          "weather"
-        ],
-        "answer": "audience"
+        "description": "A raised wooden platform on which students stand during ceremonies.",
+        "word": "stage"
       },
       {
         "id": 5,
-        "options": [
-          "certificate",
-          "spoon",
-          "blanket"
-        ],
-        "answer": "certificate"
+        "description": "A remarkable, ancient structure or monument that causes great admiration.",
+        "word": "wonder"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Liam and Zoe at the Graduation Showcase",
+      "topic": "Graduation Speeches and Celebrations",
+      "turns": [
+        {
+          "speaker": "Liam",
+          "statement": "Zoe, look at all the parents waiting in the hall!",
+          "options": [
+            "They are smiling and ready for our speeches!",
+            "It is four meters wide.",
+            "Last Friday evening."
+          ],
+          "answer": "They are smiling and ready for our speeches!"
+        },
+        {
+          "speaker": "Zoe",
+          "statement": "Are you ready to walk onto the stage with your certificate?",
+          "options": [
+            "Yes, I feel very proud of our work!",
+            "They are blue socks.",
+            "Under the chair."
+          ],
+          "answer": "Yes, I feel very proud of our work!"
+        },
+        {
+          "speaker": "Liam",
+          "statement": "What did you share during your presentation talk?",
+          "options": [
+            "I talked about the ancient stone pyramid we studied.",
+            "It has two wings.",
+            "Tomorrow morning at home."
+          ],
+          "answer": "I talked about the ancient stone pyramid we studied."
+        },
+        {
+          "speaker": "Zoe",
+          "statement": "Will you keep this graduation souvenir for a long time?",
+          "options": [
+            "Yes, it will always remind me of Phase 1.",
+            "I am asleep now.",
+            "Because it was cold outside."
+          ],
+          "answer": "Yes, it will always remind me of Phase 1."
+        },
+        {
+          "speaker": "Liam",
+          "statement": "Shall we take a picture together with our certificates?",
+          "options": [
+            "Yes, let's take a photo right now!",
+            "No, it was raining yesterday.",
+            "Because the train is fast."
+          ],
+          "answer": "Yes, let's take a photo right now!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Liam's Graduation Journal",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Today was the graduation showcase at our school. Every {1} stood on the stage to give a short speech. I felt great {2} as my parents smiled and clapped. The principal handed me a beautiful paper {3} and a golden badge. It has been an exciting learning {4} across fifty-four weeks. We are ready for a wonderful {5} in Phase 2.",
+      "answers": {
+        "1": "graduate",
+        "2": "confidence",
+        "3": "certificate",
+        "4": "journey",
+        "5": "future"
+      }
+    }
   }
 };
+
 export default readingHubData;

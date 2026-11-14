@@ -15,7 +15,7 @@
     "focus": "Read and write numbers up to 100 correctly in English"
   },
   "grammar_focus": {
-    "structure": "hyphenated numbers (twenty-one)",
+    "structure": "Hyphenated numbers (twenty-one); place value grouping",
     "outcome": "Read and write numbers up to 100 correctly in English",
     "pattern_regex": null,
     "requires_authoring_examples": true

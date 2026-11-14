@@ -1,6 +1,6 @@
 {
   "week": 53,
-  "theme": "Project 4 Prep - \"My Year in Review",
+  "theme": "Project 4 Prep - \"My Year in Review\"",
   "title_en": "Project 4 Prep - \"My Year in Review",
   "title_vi": "Chuẩn bị Dự án 4 - \"Năm học của em\"",
   "cefr_level": "A2 Flyers",
@@ -15,7 +15,7 @@
     "focus": "Project 4 Prep - My Year in Review"
   },
   "grammar_focus": {
-    "structure": "Động từ khuyết thiếu suy đoán (*must be, can't be*); `info_exchange` thẻ nghi phạm",
+    "structure": "Modal verbs of deduction (*must be, can't be*); portfolio review reflections",
     "outcome": null,
     "pattern_regex": null,
     "requires_authoring_examples": true

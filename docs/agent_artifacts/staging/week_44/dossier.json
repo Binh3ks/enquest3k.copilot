@@ -1,5 +1,5 @@
 {
-  "dossier_version": "1.1.0",
+  "dossier_version": "1.2.0",
   "week_number": 44,
   "cefr_level": "A2 Flyers",
   "theme": "The Cookie Monster (Subtraction Language)",
@@ -64,5 +64,5 @@
     "all_have_cubes_model_data": true,
     "zero_adapter_fallbacks": true
   },
-  "dossier_timestamp": "2026-11-14T13:07:57.989Z"
+  "dossier_timestamp": "2026-11-14T14:28:33.585Z"
 }

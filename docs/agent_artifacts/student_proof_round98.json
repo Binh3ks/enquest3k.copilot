@@ -1,0 +1,1684 @@
+[
+  {
+    "week": 40,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/40/task/gear1_webtoon",
+        "screenshot": "w40_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene They stepped onto an interactive scale that compared animal"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/40/task/gear2_karaoke",
+        "screenshot": "w40_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Cheetahs /ˈtʃiːtəz/ run /rʌn/ faster /ˈfæstər/ than /ðæn/ lions /ˈlaɪənz/ across /əˈkrɔːs/ the /ðə/ savanna. /səˈvænə"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/40/task/gear3_retell",
+        "screenshot": "w40_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/40/task/gear4_clil",
+        "screenshot": "w40_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Predators of the Wild World 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY predator: stronger: faster: claws: compare: 🔤 Vocab Focus 🔬 Gram"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/40/task/science_lab",
+        "screenshot": "w40_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=9, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Predator Feature Matching 120s 0 PTS SCENARIOS: 1. Predator Feature Matching 2. Speed vs Power Comparison 3. Habitat Adaptations SCENARIO 1 OF 3 Match "
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/40/task/science_report",
+        "screenshot": "w40_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Predators of the Wild World 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happ"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/40/task/word_blitz",
+        "screenshot": "w40_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET fur teeth skin claws MEANING / DEFINITION móng vuốt răng da bộ lông 🦊"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/40/task/sentence_smash",
+        "screenshot": "w40_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 The male tiger is ______ than the spotted leopard. (Fill: ___"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/40/task/math_quest",
+        "screenshot": "w40_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 TIGER AND CHEETAH BODY WEIGHT COMPARISON A male Siberian tiger weighs 300 kilograms. A cheetah weighs 6"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/40/task/story_writer",
+        "screenshot": "w40_story_writer.png",
+        "passed": false,
+        "console_errors_count": 3,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week40/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/40/task/broadcast_studio",
+        "screenshot": "w40_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 4,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/40/task/info_exchange",
+        "screenshot": "w40_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/40/task/boss_listening",
+        "screenshot": "w40_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=14, inputs=2",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 5: Colour & Write FLYERS PRACTICE 🎨 Color & Write On The Picture Playing: 1st Listen (1/2) 1. CHOOSE A COLOR: Active Color: Yellow 2. INST"
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/40/task/boss_reading",
+        "screenshot": "w40_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=4, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 6: Open Cloze R6 · Open Cloze R7 · Story Writing FLYERS PRACTICE Open Cloze Challenge Read the diary page and write the missing wo"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/40/task/weekly_review",
+        "screenshot": "w40_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=15, inputs=4",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 4: Personal Questions FLYERS PRACTICE Personal Questions Answer the examiner's questions about your life, hobbies, and family. Examiner In"
+      }
+    ]
+  },
+  {
+    "week": 44,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/44/task/gear1_webtoon",
+        "screenshot": "w44_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene As the warm tray cooled, their pet dog Buster sniffed the k"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/44/task/gear2_karaoke",
+        "screenshot": "w44_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Subtract /səbˈtrækt/ five /faɪv/ cookies /ˈkʊkiz/ to /tuː/ find /faɪnd/ how /haʊ/ many /ˈmeni/ left. /left./ 🔊 Liste"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/44/task/gear3_retell",
+        "screenshot": "w44_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/44/task/gear4_clil",
+        "screenshot": "w44_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: The Language of Taking Away 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY subtract: minus: difference: take away: batch: 🔤 Vocab Focus 🔬 G"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/44/task/science_lab",
+        "screenshot": "w44_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=9, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Subtraction Language Modeling 120s 0 PTS SCENARIOS: 1. Subtraction Language Modeling 2. Tray to Jar Inventory 3. Fair Cookie Sharing Lab SCENARIO 1 OF 3"
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/44/task/science_report",
+        "screenshot": "w44_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP The Language of Taking Away 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to observe what happ"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/44/task/word_blitz",
+        "screenshot": "w44_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET subtract minus how many left take away MEANING / DEFINITION làm phép trừ trừ đi lấy bớt đi cò"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/44/task/sentence_smash",
+        "screenshot": "w44_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Ten cookies ______ four cookies leaves six cookies. (Fill: __"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/44/task/math_quest",
+        "screenshot": "w44_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 BAKERY TRAY COOKIE SUBTRACTION A baker baked 72 cookies on metal trays. Children at the bakery snack ba"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/44/task/story_writer",
+        "screenshot": "w44_story_writer.png",
+        "passed": false,
+        "console_errors_count": 5,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week44/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/44/task/broadcast_studio",
+        "screenshot": "w44_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 3,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/44/task/info_exchange",
+        "screenshot": "w44_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/44/task/boss_listening",
+        "screenshot": "w44_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=14, inputs=2",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 5: Colour & Write FLYERS PRACTICE 🎨 Color & Write On The Picture Playing: 1st Listen (1/2) 1. CHOOSE A COLOR: Active Color: Yellow 2. INST"
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/44/task/boss_reading",
+        "screenshot": "w44_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=4, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 6: Open Cloze R6 · Open Cloze R7 · Story Writing FLYERS PRACTICE Open Cloze Challenge Read the diary page and write the missing wo"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/44/task/weekly_review",
+        "screenshot": "w44_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=15, inputs=4",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 4: Personal Questions FLYERS PRACTICE Personal Questions Answer the examiner's questions about your life, hobbies, and family. Examiner In"
+      }
+    ]
+  },
+  {
+    "week": 47,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/47/task/gear1_webtoon",
+        "screenshot": "w47_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Mia grouped the bright stars into neat bundles of ten. ◀ Pr"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/47/task/gear2_karaoke",
+        "screenshot": "w47_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 The /ðə/ place /pleɪs/ value /ˈvæljuː/ chart /tʃɑːrt/ shows /ʃoʊz/ tens /tenz/ and /ænd/ ones /wʌnz/ clearly. /ˈklɪrl"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/47/task/gear3_retell",
+        "screenshot": "w47_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/47/task/gear4_clil",
+        "screenshot": "w47_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Counting Stars with Place Value 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY place value: digit: column: bundle: total: 🔤 Vocab Focus 🔬 G"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/47/task/science_lab",
+        "screenshot": "w47_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=9, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Place Value Sorting Table 120s 0 PTS SCENARIOS: 1. Place Value Sorting Table 2. Hyphenated Number Spelling 3. Reaching One Hundred SCENARIO 1 OF 3 Big "
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/47/task/science_report",
+        "screenshot": "w47_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/47/task/word_blitz",
+        "screenshot": "w47_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET digit column place value MEANING / DEFINITION giá trị vị trí hàng chữ số cột dọc 🦊"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/47/task/sentence_smash",
+        "screenshot": "w47_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A thirty-four B thirty fo"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/47/task/math_quest",
+        "screenshot": "w47_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 STAR COUNTING IN TWO SECTORS Lucas counted 21 bright stars in the north sector. Mia counted 34 stars in"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/47/task/story_writer",
+        "screenshot": "w47_story_writer.png",
+        "passed": false,
+        "console_errors_count": 3,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week47/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/47/task/broadcast_studio",
+        "screenshot": "w47_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/47/task/info_exchange",
+        "screenshot": "w47_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/47/task/boss_listening",
+        "screenshot": "w47_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=1, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 4: 3-Picture Quiz No questions available for Listening Part 4."
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/47/task/boss_reading",
+        "screenshot": "w47_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 4: Text Cloze R4 · Text Cloze R5 · Story Detective FLYERS PRACTICE Inline Text Cloze Dropdown Read the text. Choose the right word"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/47/task/weekly_review",
+        "screenshot": "w47_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 3: Picture Story FLYERS PRACTICE Picture Story Continuation (5-Scene Sequence) Look at these four pictures. They tell a story. First, I'll "
+      }
+    ]
+  },
+  {
+    "week": 48,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/48/task/gear1_webtoon",
+        "screenshot": "w48_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Emma stretched a flexible tape to measure the classroom doo"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/48/task/gear2_karaoke",
+        "screenshot": "w48_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Use /juːz/ a /ə/ flexible /ˈfleksəbl/ tape /teɪp/ to /tuː/ measure /ˈmeʒər/ the /ðə/ classroom /ˈklæsruːm/ door. /dɔː"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/48/task/gear3_retell",
+        "screenshot": "w48_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/48/task/gear4_clil",
+        "screenshot": "w48_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Measuring Objects in Our Classroom 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY measure: ruler: centimeter: meter: length: 🔤 Vocab Focus \ud83d"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/48/task/science_lab",
+        "screenshot": "w48_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Measuring With Rulers 120s 0 PTS SCENARIOS: 1. Measuring With Rulers 2. The Ice and Salt Freezing Point 3. Water Expansion Measurement SCENARIO 1 OF 3 "
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/48/task/science_report",
+        "screenshot": "w48_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/48/task/word_blitz",
+        "screenshot": "w48_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET centimeter length meter ruler MEANING / DEFINITION chiều dài mét thước kẻ xăng-ti-mét 🦊"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/48/task/sentence_smash",
+        "screenshot": "w48_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A It is fifteen centimete"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/48/task/math_quest",
+        "screenshot": "w48_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 RIBBON LENGTH COMPARISON Lucas has a blue ribbon that is 45 cm long. Emma has a red ribbon that is 28 c"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/48/task/story_writer",
+        "screenshot": "w48_story_writer.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week48/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/48/task/broadcast_studio",
+        "screenshot": "w48_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/48/task/info_exchange",
+        "screenshot": "w48_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/48/task/boss_listening",
+        "screenshot": "w48_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=14, inputs=2",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 5: Colour & Write FLYERS PRACTICE 🎨 Color & Write On The Picture Playing: 1st Listen (1/2) 1. CHOOSE A COLOR: Active Color: Yellow 2. INST"
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/48/task/boss_reading",
+        "screenshot": "w48_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=4, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 6: Open Cloze R6 · Open Cloze R7 · Story Writing FLYERS PRACTICE Open Cloze Challenge Read the diary page and write the missing wo"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/48/task/weekly_review",
+        "screenshot": "w48_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=15, inputs=4",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 4: Personal Questions FLYERS PRACTICE Personal Questions Answer the examiner's questions about your life, hobbies, and family. Examiner In"
+      }
+    ]
+  },
+  {
+    "week": 49,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 11,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/49/task/gear1_webtoon",
+        "screenshot": "w49_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Noah pointed to a sparkling poster of the solar system. ◀ P"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/49/task/gear2_karaoke",
+        "screenshot": "w49_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Noah /ˈnoʊə/ is /ɪz/ going /ˈɡoʊɪŋ/ to /tuː/ be /biː/ an /ən/ astronaut /ˈæstrənɔːt/ so /soʊ/ that /ðæt/ he /hiː/ can"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/49/task/gear3_retell",
+        "screenshot": "w49_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/49/task/gear4_clil",
+        "screenshot": "w49_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Career Day: Sharing Future Dreams 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY career: doctor: scientist: pilot: artist: 🔤 Vocab Focus 🔬 "
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/49/task/science_lab",
+        "screenshot": "w49_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Chameleon Camouflage Matching 120s 0 PTS SCENARIOS: 1. Chameleon Camouflage Matching 2. Tongue Strike Mechanism 3. Career Purpose Alignment SCENARIO 1 O"
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/49/task/science_report",
+        "screenshot": "w49_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/49/task/word_blitz",
+        "screenshot": "w49_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET engineer career astronaut scientist MEANING / DEFINITION nhà khoa học phi hành gia kỹ sư sự n"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/49/task/sentence_smash",
+        "screenshot": "w49_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A I want to be an enginee"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/49/task/math_quest",
+        "screenshot": "w49_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 SAVING FOR SCIENCE EQUIPMENT Chloe saved 45 dollars in October and 38 dollars in November to buy a scie"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/49/task/story_writer",
+        "screenshot": "w49_story_writer.png",
+        "passed": false,
+        "console_errors_count": 5,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week49/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/49/task/broadcast_studio",
+        "screenshot": "w49_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/49/task/info_exchange",
+        "screenshot": "w49_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/49/task/boss_listening",
+        "screenshot": "w49_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=6, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 1: Draw Lines L1 · Draw Lines L2 · Note Completion Playing: 1st Listen (1/2) 👉 Listen and draw lines. There is one example. Clear Lines "
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/49/task/boss_reading",
+        "screenshot": "w49_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=12, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 1: Word Bank Match FLYERS PRACTICE Word Bank Matching Look and read. Choose the correct words and write them on the lines. There i"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/49/task/weekly_review",
+        "screenshot": "w49_weekly_review.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "An empty string (\"\") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src",
+          "An empty string (\"\") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src"
+        ],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 1: Find Differences FLYERS PRACTICE Find the Differences Look at the two pictures. They are the same, but there are some differences. Tell "
+      }
+    ]
+  },
+  {
+    "week": 50,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/50/task/gear1_webtoon",
+        "screenshot": "w50_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Maya watched her father connect a thick orange charging cab"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/50/task/gear2_karaoke",
+        "screenshot": "w50_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Modern /ˈmɑːdərn/ electric /ɪˈlektrɪk/ vehicles /ˈviːəklz/ produce /prəˈduːs/ zero /ˈzɪroʊ/ exhaust /ɪɡˈzɔːst/ emissi"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/50/task/gear3_retell",
+        "screenshot": "w50_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/50/task/gear4_clil",
+        "screenshot": "w50_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Modern Travel and Clean Energy 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY electric: battery: solar: charge: planet: 🔤 Vocab Focus 🔬 Gra"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/50/task/science_lab",
+        "screenshot": "w50_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 EV Charging Circuit Setup 120s 0 PTS SCENARIOS: 1. EV Charging Circuit Setup 2. Solar Canopy Energy Flow 3. Battery Temperature Management SCENARIO 1 OF"
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/50/task/science_report",
+        "screenshot": "w50_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/50/task/word_blitz",
+        "screenshot": "w50_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET battery vehicle energy electric MEANING / DEFINITION năng lượng chạy bằng điện bình ắc quy, p"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/50/task/sentence_smash",
+        "screenshot": "w50_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A will reduce B reduced C"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/50/task/math_quest",
+        "screenshot": "w50_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 ELECTRIC CAR TRAVEL RANGE An electric car traveled 48 km in the morning and 37 km in the afternoon. Wha"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/50/task/story_writer",
+        "screenshot": "w50_story_writer.png",
+        "passed": false,
+        "console_errors_count": 5,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week50/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/50/task/broadcast_studio",
+        "screenshot": "w50_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/50/task/info_exchange",
+        "screenshot": "w50_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/50/task/boss_listening",
+        "screenshot": "w50_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 3: Match A–H Playing: 1st Listen (1/2) FLYERS PRACTICE 👉 Listen and write a letter in each box. There is one example. ★ EXAMPLE Example "
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/50/task/boss_reading",
+        "screenshot": "w50_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=4, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 2: Dialogue A–H R2 · Dialogue A–H R3 · Cloze Story FLYERS PRACTICE Dialogue A–H Completer Read the conversation and choose the bes"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/50/task/weekly_review",
+        "screenshot": "w50_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 2: Ask & Answer FLYERS PRACTICE Information Exchange (Ask & Answer Questions) Look at the questions. Ask and answer questions using the inf"
+      }
+    ]
+  },
+  {
+    "week": 51,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/51/task/gear1_webtoon",
+        "screenshot": "w51_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene The astronomer adjusted a modern silver metallic telescope."
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/51/task/gear2_karaoke",
+        "screenshot": "w51_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 We /wi/ observed /əbˈzɜːrvd/ Saturn /ˈsætərn/ through /θruː/ a /ə/ modern /ˈmɑːdərn/ metallic /məˈtælɪk/ telescope. /"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/51/task/gear3_retell",
+        "screenshot": "w51_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/51/task/gear4_clil",
+        "screenshot": "w51_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Exploring Our Amazing Solar System 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY planet: orbit: telescope: crater: gravity: 🔤 Vocab Focus \ud83d"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/51/task/science_lab",
+        "screenshot": "w51_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Rocky vs Gas Giant Classification 120s 0 PTS SCENARIOS: 1. Rocky vs Gas Giant Classification 2. Order of Adjectives Alignment 3. Telescope Optical Calib"
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/51/task/science_report",
+        "screenshot": "w51_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/51/task/word_blitz",
+        "screenshot": "w51_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET planet solar system orbit MEANING / DEFINITION hành tinh quỹ đạo thuộc thái dương hệ hệ thống"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/51/task/sentence_smash",
+        "screenshot": "w51_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A a beautiful big red pla"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/51/task/math_quest",
+        "screenshot": "w51_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 MOONS OF THE GIANT PLANETS Uranus has 28 confirmed moons and Neptune has 16 confirmed moons. How many m"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/51/task/story_writer",
+        "screenshot": "w51_story_writer.png",
+        "passed": false,
+        "console_errors_count": 5,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week51/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/51/task/broadcast_studio",
+        "screenshot": "w51_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/51/task/info_exchange",
+        "screenshot": "w51_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/51/task/boss_listening",
+        "screenshot": "w51_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=1, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 4: 3-Picture Quiz No questions available for Listening Part 4."
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/51/task/boss_reading",
+        "screenshot": "w51_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 4: Text Cloze R4 · Text Cloze R5 · Story Detective FLYERS PRACTICE Inline Text Cloze Dropdown Read the text. Choose the right word"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/51/task/weekly_review",
+        "screenshot": "w51_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 3: Picture Story FLYERS PRACTICE Picture Story Continuation (5-Scene Sequence) Look at these four pictures. They tell a story. First, I'll "
+      }
+    ]
+  },
+  {
+    "week": 53,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 11,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/53/task/gear1_webtoon",
+        "screenshot": "w53_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Grace examined suspect cards containing clues and timetable"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/53/task/gear2_karaoke",
+        "screenshot": "w53_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 It /ɪt/ cannot /ˈkænɑːt/ be /biː/ Liam /ˈliːəm/ because /bɪˈkɔːz/ he /hiː/ was /wʌz/ in /ɪn/ the /ðə/ cafeteria. /ˌkæ"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/53/task/gear3_retell",
+        "screenshot": "w53_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/53/task/gear4_clil",
+        "screenshot": "w53_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Building a Proud Learning Portfolio 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY detective: evidence: portfolio: artifact: progress: 🔤 Voc"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/53/task/science_lab",
+        "screenshot": "w53_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Suspect Evidence Matrix 120s 0 PTS SCENARIOS: 1. Suspect Evidence Matrix 2. Shoe Print Metric Measurement 3. Portfolio Section Organization SCENARIO 1 O"
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/53/task/science_report",
+        "screenshot": "w53_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/53/task/word_blitz",
+        "screenshot": "w53_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET reflect suspect review portfolio MEANING / DEFINITION suy ngẫm hồ sơ học tập bản tổng kết kẻ "
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/53/task/sentence_smash",
+        "screenshot": "w53_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A cannot be B must be C m"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/53/task/math_quest",
+        "screenshot": "w53_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 DETECTIVE EVIDENCE CARDS Oliver examined 26 suspect cards on Monday and 35 suspect cards on Tuesday. Ho"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/53/task/story_writer",
+        "screenshot": "w53_story_writer.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week53/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/53/task/broadcast_studio",
+        "screenshot": "w53_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/53/task/info_exchange",
+        "screenshot": "w53_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/53/task/boss_listening",
+        "screenshot": "w53_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=6, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 1: Draw Lines L1 · Draw Lines L2 · Note Completion Playing: 1st Listen (1/2) 👉 Listen and draw lines. There is one example. Clear Lines "
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/53/task/boss_reading",
+        "screenshot": "w53_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=12, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 1: Word Bank Match FLYERS PRACTICE Word Bank Matching Look and read. Choose the correct words and write them on the lines. There i"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/53/task/weekly_review",
+        "screenshot": "w53_weekly_review.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "An empty string (\"\") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src",
+          "An empty string (\"\") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src"
+        ],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 1: Find Differences FLYERS PRACTICE Find the Differences Look at the two pictures. They are the same, but there are some differences. Tell "
+      }
+    ]
+  },
+  {
+    "week": 54,
+    "type": "staged",
+    "quests_tested": 15,
+    "quests_passed": 12,
+    "quests": [
+      {
+        "quest_id": "gear1_webtoon",
+        "name": "Scene Explorer",
+        "url": "http://localhost:5173/week/54/task/gear1_webtoon",
+        "screenshot": "w54_gear1_webtoon.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=0",
+        "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Sophia reviewed her presentation notes at the wooden lecter"
+      },
+      {
+        "quest_id": "gear2_karaoke",
+        "name": "Voice Shadow",
+        "url": "http://localhost:5173/week/54/task/gear2_karaoke",
+        "screenshot": "w54_gear2_karaoke.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎧 Voice Shadow Voice Shadow ⭐ 0/8 Full Audio Sentence 2/8 Have /hæv/ you /juː/ ever /ˈevər/ visited /ˈvɪzɪtɪd/ an /ən/ ancient /ˈeɪnʃənt/ architectural /ˌɑːrkɪˈtektʃərəl/ wond"
+      },
+      {
+        "quest_id": "gear3_retell",
+        "name": "Story Retell",
+        "url": "http://localhost:5173/week/54/task/gear3_retell",
+        "screenshot": "w54_gear3_retell.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🎙️ Story Retell +50 XP 🎙️ Retell to Nova Event 2 of 5 SCENE 2/5 Listen 🤖 NOVA'S QUESTION: \"Retell part 2 of the story:\" 💡 WORD BANK (TAP TO HEAR): 💡 Show Sentence Hint ("
+      },
+      {
+        "quest_id": "gear4_clil",
+        "name": "Fact Finder",
+        "url": "http://localhost:5173/week/54/task/gear4_clil",
+        "screenshot": "w54_gear4_clil.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map 🌐 Fact Finder LV.1 🧪 Part 2: Phase 1 Graduation Showcase 2/3 Science LV.1 KEY CHUNKS (0) Word Bank GLOSSARY graduate: showcase: speech: presentation: certificate: 🔤 Vocab Fo"
+      },
+      {
+        "quest_id": "science_lab",
+        "name": "Action Lab",
+        "url": "http://localhost:5173/week/54/task/science_lab",
+        "screenshot": "w54_science_lab.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=8, inputs=0",
+        "dom_snippet": "Map 🧪 Action Lab +50 XP 🧪 Graduation Stage Setup 120s 0 PTS SCENARIOS: 1. Graduation Stage Setup 2. World Wonder Artifact Exhibition 3. Graduation Speech Teleprompter SCENARIO 1 "
+      },
+      {
+        "quest_id": "science_report",
+        "name": "Discovery Report",
+        "url": "http://localhost:5173/week/54/task/science_report",
+        "screenshot": "w54_science_report.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=10, inputs=0",
+        "dom_snippet": "Map 📝 Discovery Report +50 XP Corridor Friction & Safety Discovery Report 1. Observe 2. Clue 3. Quick Write 4. Report 🔍 Step 1: Tap an evidence spot on the corridor diagram to o"
+      },
+      {
+        "quest_id": "word_blitz",
+        "name": "Speed Match",
+        "url": "http://localhost:5173/week/54/task/word_blitz",
+        "screenshot": "w54_word_blitz.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=11, inputs=0",
+        "dom_snippet": "Map ⚡ Speed Match +45 XP ⚡ ROUND 1/5 • ⚔️ ROUND 1: WORD CLASH 60s 0 PTS ENGLISH TARGET audience certificate graduate showcase MEANING / DEFINITION tốt nghiệp khán giả buổi trình di"
+      },
+      {
+        "quest_id": "sentence_smash",
+        "name": "Grammar Duel",
+        "url": "http://localhost:5173/week/54/task/sentence_smash",
+        "screenshot": "w54_sentence_smash.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=7, inputs=0",
+        "dom_snippet": "Map 🧱 Grammar Duel +50 XP 🧱 GRAMMAR DUEL • ROUND 1/5 Choose the best option to complete the sentence: 45s 0 PTS 1/5 Choose the correct grammar option: A Have you ever visited a"
+      },
+      {
+        "quest_id": "math_quest",
+        "name": "Math Quest",
+        "url": "http://localhost:5173/week/54/task/math_quest",
+        "screenshot": "w54_math_quest.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=5, inputs=1",
+        "dom_snippet": "Map 📐 Math Quest +40 XP 📐 Math Quest (Singapore Bar Model) 150s 0 PTS 1/5 GRADUATION SHOWCASE ATTENDEES There are 50 graduates and 85 parent guests in the school auditorium. How"
+      },
+      {
+        "quest_id": "story_writer",
+        "name": "Story Writer",
+        "url": "http://localhost:5173/week/54/task/story_writer",
+        "screenshot": "w54_story_writer.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "[StoryWriting] Failed to load current step image: /images/week54/writing_panel_1.png",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=17, inputs=0",
+        "dom_snippet": "Map ✏️ Story Writer +50 XP WRITE 2-3 SENTENCES TO DESCRIBE THE SCENES Look at the pictures. Write 40 or more words. MODEL Scene 1 of 5 1 MODEL 2 BUILD 3 WRITE 4 EXPAND 5 REFLECT "
+      },
+      {
+        "quest_id": "broadcast_studio",
+        "name": "Video Challenge",
+        "url": "http://localhost:5173/week/54/task/broadcast_studio",
+        "screenshot": "w54_broadcast_studio.png",
+        "passed": false,
+        "console_errors_count": 1,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=15, inputs=0",
+        "dom_snippet": "Map 📹 Video Challenge +50 XP 📹 Record yourself retelling your story! Look at camera & speak clearly (+50 XP). Video Audio 📜 PROMPTER Scene 2 of 5 Hide Read your story sentenc"
+      },
+      {
+        "quest_id": "info_exchange",
+        "name": "Info Exchange",
+        "url": "http://localhost:5173/week/54/task/info_exchange",
+        "screenshot": "w54_info_exchange.png",
+        "passed": false,
+        "console_errors_count": 2,
+        "console_errors": [
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+          "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+        ],
+        "dom_elements": "buttons=14, inputs=0",
+        "dom_snippet": "Map 🔄 Info Exchange +50 XP SPEAKING PRACTICE Question 1 / 5 Phase 1: Answer Examiner's Questions 🎙️ Card 1 (You Answer) 📋 Card 2 (You Ask) MODEL DIALOGUE: Listen to examiner & c"
+      },
+      {
+        "quest_id": "boss_listening",
+        "name": "Listening Shield",
+        "url": "http://localhost:5173/week/54/task/boss_listening",
+        "screenshot": "w54_boss_listening.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Listening Part 3: Match A–H Playing: 1st Listen (1/2) FLYERS PRACTICE 👉 Listen and write a letter in each box. There is one example. ★ EXAMPLE Example "
+      },
+      {
+        "quest_id": "boss_reading",
+        "name": "Reading Shield",
+        "url": "http://localhost:5173/week/54/task/boss_reading",
+        "screenshot": "w54_boss_reading.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=4, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Reading & Writing Part 2: Dialogue A–H R2 · Dialogue A–H R3 · Cloze Story FLYERS PRACTICE Dialogue A–H Completer Read the conversation and choose the bes"
+      },
+      {
+        "quest_id": "weekly_review",
+        "name": "Speaking & Passport",
+        "url": "http://localhost:5173/week/54/task/weekly_review",
+        "screenshot": "w54_weekly_review.png",
+        "passed": true,
+        "console_errors_count": 0,
+        "console_errors": [],
+        "dom_elements": "buttons=3, inputs=0",
+        "dom_snippet": "Map Cambridge A2 Flyers — Speaking Part 2: Ask & Answer FLYERS PRACTICE Information Exchange (Ask & Answer Questions) Look at the questions. Ask and answer questions using the inf"
+      }
+    ]
+  },
+  {
+    "week": 126,
+    "type": "production_verified",
+    "url": "https://app.bkbacademy.vn/week/126/task/gear1_webtoon",
+    "screenshot": "prod_w126_gear1.png",
+    "passed": true,
+    "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Lucas looks at his long written essay and plans how to shar"
+  },
+  {
+    "week": 127,
+    "type": "production_verified",
+    "url": "https://app.bkbacademy.vn/week/127/task/gear1_webtoon",
+    "screenshot": "prod_w127_gear1.png",
+    "passed": true,
+    "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Nora listens carefully as the opposing speaker claims that "
+  },
+  {
+    "week": 133,
+    "type": "production_verified",
+    "url": "https://app.bkbacademy.vn/week/133/task/gear1_webtoon",
+    "screenshot": "prod_w133_gear1.png",
+    "passed": true,
+    "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Ethan and Hannah discuss whether computer gaming automatica"
+  },
+  {
+    "week": 134,
+    "type": "production_verified",
+    "url": "https://app.bkbacademy.vn/week/134/task/gear1_webtoon",
+    "screenshot": "prod_w134_gear1.png",
+    "passed": true,
+    "dom_snippet": "Map 📚 Scene Explorer 🎮 MINI-GAME: Tap glowing pins to find 3 hidden story items! 🔍 0/3 Found (+20 XP) Listen to Scene Zoe and Liam read a newspaper editorial claiming: 'All vide"
+  }
+]

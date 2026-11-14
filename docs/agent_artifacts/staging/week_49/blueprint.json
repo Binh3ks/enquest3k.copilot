@@ -15,7 +15,7 @@
     "focus": "State intentions/dreams using \"Want to"
   },
   "grammar_focus": {
-    "structure": "I want to be a [job]\" / \"I am going to be",
+    "structure": "Future tense with *want to be* and *will* (*I want to be a doctor in order to help people*)",
     "outcome": "State intentions/dreams using \"Want to",
     "pattern_regex": null,
     "requires_authoring_examples": true

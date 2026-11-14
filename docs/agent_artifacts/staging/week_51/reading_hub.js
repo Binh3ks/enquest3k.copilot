@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 51 | Theme: "Review Station 2 (Vocab & CLIL)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 51 Reading Hub Deliverable
 export const readingHubData = {
   "week": 51,
   "theme": "Review Station 2 (Vocab & CLIL)",
@@ -240,37 +233,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "What type of planets are Mercury, Venus, Earth, and Mars?",
+        "question": "How many planets are there in our solar system?",
         "options": [
-          "Small rocky planets",
-          "Giant gas balls",
-          "Frozen ice rings"
+          "Eight planets",
+          "Four planets",
+          "Twelve planets"
         ],
-        "answer": "Small rocky planets"
+        "correct_answer": "Eight planets"
       },
       {
-        "id": 2,
-        "question_en": "Which force holds all planets in their orbits around the sun?",
+        "question": "What keeps every planet in its orbit around the sun?",
         "options": [
-          "Solar gravity",
-          "Ocean tides",
-          "Strong wind"
+          "Invisible gravity",
+          "Strong winds",
+          "Warm sunshine"
         ],
-        "answer": "Solar gravity"
+        "correct_answer": "Invisible gravity"
       },
       {
-        "id": 3,
-        "question_en": "What are Saturn's wide rings made of?",
+        "question": "Which planet is famous for having bright frozen rings?",
         "options": [
-          "Ice and rock particles",
-          "Hot metal lava",
-          "Green leaves"
+          "Saturn",
+          "Mercury",
+          "Venus"
         ],
-        "answer": "Ice and rock particles"
+        "correct_answer": "Saturn"
       }
     ],
-    "content_en": "Our solar system has eight amazing planets. They all orbit around the bright sun. The four inner worlds are small and rocky. Each rocky planet has a solid surface with deep crater holes. In contrast, the outer worlds are giant planets of gas. Saturn is a giant planet with a bright frozen ring. Scientists look into deep space through a metallic telescope. They also send a space probe on a long mission to collect scientific data. The probe flies a great distance to study each planet atmosphere. Invisible gravity keeps every world in place as they rotate smoothly. Space science helps us explore our solar system."
+    "content_en": "Our solar system has eight amazing planets. They all orbit around the bright sun. The four inner worlds are small and rocky. Each rocky planet has a solid surface with deep crater holes. In contrast, the outer worlds are giant planets of gas. Saturn is a giant planet with a bright frozen ring. Scientists look into deep space through a metallic telescope. They also send a space probe on a long mission to collect scientific data. The probe flies a great distance to study each planet atmosphere. Invisible gravity keeps every world in place as they rotate smoothly. Space science helps us explore our solar system.",
+    "title": "Exploring Our Amazing Solar System",
+    "topic": "The Solar System and Planetary Science",
+    "glossary": [
+      {
+        "word": "planet",
+        "definition_en": "A large round body in space that orbits a star."
+      },
+      {
+        "word": "orbit",
+        "definition_en": "The curved path of a planet around the sun."
+      },
+      {
+        "word": "telescope",
+        "definition_en": "An instrument with lenses used to observe distant objects."
+      },
+      {
+        "word": "crater",
+        "definition_en": "A large bowl-shaped hole on a rocky planet surface."
+      },
+      {
+        "word": "gravity",
+        "definition_en": "The invisible force that pulls objects toward a world."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -440,83 +454,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Ethan and Zoe Discuss Solar System Data",
+    "title": "Leo and Mia Looking at Planets",
+    "topic": "Planets in the Solar System",
     "turns": [
       {
-        "speaker": "Ethan",
-        "text": "What type of planet is Mars?"
+        "speaker": "Leo",
+        "statement": "Mia, look through this telescope at Saturn!",
+        "options": [
+          "I can see its beautiful rings clearly!",
+          "It is five centimeters wide.",
+          "Yesterday at five."
+        ],
+        "answer": "I can see its beautiful rings clearly!"
       },
       {
-        "speaker": "Zoe",
-        "text": "It is a small red rocky planet with thin air."
+        "speaker": "Mia",
+        "statement": "How many rocky planets are close to the sun?",
+        "options": [
+          "There are four inner rocky planets.",
+          "They are blue pencils.",
+          "Under the table."
+        ],
+        "answer": "There are four inner rocky planets."
       },
       {
-        "speaker": "Ethan",
-        "text": "How do astronomers view Saturn's rings?"
+        "speaker": "Leo",
+        "statement": "Which planet is the largest in our whole solar system?",
+        "options": [
+          "Jupiter is the biggest planet of all.",
+          "It has two legs.",
+          "Tomorrow morning."
+        ],
+        "answer": "Jupiter is the biggest planet of all."
       },
       {
-        "speaker": "Zoe",
-        "text": "They use a powerful metallic telescope."
+        "speaker": "Mia",
+        "statement": "Why did scientists send a space probe to Mars?",
+        "options": [
+          "In order to collect data about its surface.",
+          "Because it is very cold.",
+          "With a red spoon."
+        ],
+        "answer": "In order to collect data about its surface."
       },
       {
-        "speaker": "Ethan",
-        "text": "Which force keeps the planets in orbit?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Solar gravity holds all planets in orbit around the sun!"
+        "speaker": "Leo",
+        "statement": "Shall we build a model of the solar system for science class?",
+        "options": [
+          "Yes, let's start making our planet model!",
+          "No, I was sleeping.",
+          "Because the soup was warm."
+        ],
+        "answer": "Yes, let's start making our planet model!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Our solar system contains eight planets that travel around the sun. The four planets closest to the sun are solid and (1) ___. Farther away, we find four (2) ___ gas worlds like Jupiter and Saturn. Astronomers study these planets with a modern (3) ___ or space probes. Every probe transmits scientific (4) ___ back to research stations. Solar (5) ___ keeps every world moving safely along its orbit.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "rocky",
-          "paper",
-          "sugar"
-        ],
-        "answer": "rocky"
-      },
-      {
-        "id": 2,
-        "options": [
-          "giant",
-          "tiny",
-          "wooden"
-        ],
-        "answer": "giant"
-      },
-      {
-        "id": 3,
-        "options": [
-          "telescope",
-          "paintbrush",
-          "spoon"
-        ],
-        "answer": "telescope"
-      },
-      {
-        "id": 4,
-        "options": [
-          "data",
-          "clothes",
-          "shoes"
-        ],
-        "answer": "data"
-      },
-      {
-        "id": 5,
-        "options": [
-          "gravity",
-          "music",
-          "paint"
-        ],
-        "answer": "gravity"
-      }
-    ]
+    "title": "Mia's Astronomy Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Last night our class visited the school observatory. We looked through a giant {1} to see outer space. I was amazed to see Saturn with its bright frozen {2}. Our teacher told us that eight planets {3} around the sun. Invisible {4} keeps all the worlds in place. Space science helps us {5} many wonderful mysteries.",
+    "answers": {
+      "1": "telescope",
+      "2": "rings",
+      "3": "orbit",
+      "4": "gravity",
+      "5": "explore"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -560,83 +563,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Ethan and Zoe Discuss Solar System Data",
+    "title": "Leo and Mia Looking at Planets",
+    "topic": "Planets in the Solar System",
     "turns": [
       {
-        "speaker": "Ethan",
-        "text": "What type of planet is Mars?"
+        "speaker": "Leo",
+        "statement": "Mia, look through this telescope at Saturn!",
+        "options": [
+          "I can see its beautiful rings clearly!",
+          "It is five centimeters wide.",
+          "Yesterday at five."
+        ],
+        "answer": "I can see its beautiful rings clearly!"
       },
       {
-        "speaker": "Zoe",
-        "text": "It is a small red rocky planet with thin air."
+        "speaker": "Mia",
+        "statement": "How many rocky planets are close to the sun?",
+        "options": [
+          "There are four inner rocky planets.",
+          "They are blue pencils.",
+          "Under the table."
+        ],
+        "answer": "There are four inner rocky planets."
       },
       {
-        "speaker": "Ethan",
-        "text": "How do astronomers view Saturn's rings?"
+        "speaker": "Leo",
+        "statement": "Which planet is the largest in our whole solar system?",
+        "options": [
+          "Jupiter is the biggest planet of all.",
+          "It has two legs.",
+          "Tomorrow morning."
+        ],
+        "answer": "Jupiter is the biggest planet of all."
       },
       {
-        "speaker": "Zoe",
-        "text": "They use a powerful metallic telescope."
+        "speaker": "Mia",
+        "statement": "Why did scientists send a space probe to Mars?",
+        "options": [
+          "In order to collect data about its surface.",
+          "Because it is very cold.",
+          "With a red spoon."
+        ],
+        "answer": "In order to collect data about its surface."
       },
       {
-        "speaker": "Ethan",
-        "text": "Which force keeps the planets in orbit?"
-      },
-      {
-        "speaker": "Zoe",
-        "text": "Solar gravity holds all planets in orbit around the sun!"
+        "speaker": "Leo",
+        "statement": "Shall we build a model of the solar system for science class?",
+        "options": [
+          "Yes, let's start making our planet model!",
+          "No, I was sleeping.",
+          "Because the soup was warm."
+        ],
+        "answer": "Yes, let's start making our planet model!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Our solar system contains eight planets that travel around the sun. The four planets closest to the sun are solid and (1) ___. Farther away, we find four (2) ___ gas worlds like Jupiter and Saturn. Astronomers study these planets with a modern (3) ___ or space probes. Every probe transmits scientific (4) ___ back to research stations. Solar (5) ___ keeps every world moving safely along its orbit.",
-    "questions": [
+    "title": "Mia's Astronomy Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Last night our class visited the school observatory. We looked through a giant {1} to see outer space. I was amazed to see Saturn with its bright frozen {2}. Our teacher told us that eight planets {3} around the sun. Invisible {4} keeps all the worlds in place. Space science helps us {5} many wonderful mysteries.",
+    "answers": {
+      "1": "telescope",
+      "2": "rings",
+      "3": "orbit",
+      "4": "gravity",
+      "5": "explore"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "rocky",
-          "paper",
-          "sugar"
-        ],
-        "answer": "rocky"
+        "description": "An optical device with lenses used to observe distant planets and stars.",
+        "word": "telescope"
       },
       {
         "id": 2,
-        "options": [
-          "giant",
-          "tiny",
-          "wooden"
-        ],
-        "answer": "giant"
+        "description": "The curved path that a planet follows as it travels around the sun.",
+        "word": "orbit"
       },
       {
         "id": 3,
-        "options": [
-          "telescope",
-          "paintbrush",
-          "spoon"
-        ],
-        "answer": "telescope"
+        "description": "The natural invisible force that attracts objects toward each other.",
+        "word": "gravity"
       },
       {
         "id": 4,
-        "options": [
-          "data",
-          "clothes",
-          "shoes"
-        ],
-        "answer": "data"
+        "description": "An uncrewed spacecraft sent to gather information about planets.",
+        "word": "probe"
       },
       {
         "id": 5,
-        "options": [
-          "gravity",
-          "music",
-          "paint"
-        ],
-        "answer": "gravity"
+        "description": "A circular bowl-shaped hole formed on a planet by a meteorite strike.",
+        "word": "crater"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Leo and Mia Looking at Planets",
+      "topic": "Planets in the Solar System",
+      "turns": [
+        {
+          "speaker": "Leo",
+          "statement": "Mia, look through this telescope at Saturn!",
+          "options": [
+            "I can see its beautiful rings clearly!",
+            "It is five centimeters wide.",
+            "Yesterday at five."
+          ],
+          "answer": "I can see its beautiful rings clearly!"
+        },
+        {
+          "speaker": "Mia",
+          "statement": "How many rocky planets are close to the sun?",
+          "options": [
+            "There are four inner rocky planets.",
+            "They are blue pencils.",
+            "Under the table."
+          ],
+          "answer": "There are four inner rocky planets."
+        },
+        {
+          "speaker": "Leo",
+          "statement": "Which planet is the largest in our whole solar system?",
+          "options": [
+            "Jupiter is the biggest planet of all.",
+            "It has two legs.",
+            "Tomorrow morning."
+          ],
+          "answer": "Jupiter is the biggest planet of all."
+        },
+        {
+          "speaker": "Mia",
+          "statement": "Why did scientists send a space probe to Mars?",
+          "options": [
+            "In order to collect data about its surface.",
+            "Because it is very cold.",
+            "With a red spoon."
+          ],
+          "answer": "In order to collect data about its surface."
+        },
+        {
+          "speaker": "Leo",
+          "statement": "Shall we build a model of the solar system for science class?",
+          "options": [
+            "Yes, let's start making our planet model!",
+            "No, I was sleeping.",
+            "Because the soup was warm."
+          ],
+          "answer": "Yes, let's start making our planet model!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Mia's Astronomy Journal",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Last night our class visited the school observatory. We looked through a giant {1} to see outer space. I was amazed to see Saturn with its bright frozen {2}. Our teacher told us that eight planets {3} around the sun. Invisible {4} keeps all the worlds in place. Space science helps us {5} many wonderful mysteries.",
+      "answers": {
+        "1": "telescope",
+        "2": "rings",
+        "3": "orbit",
+        "4": "gravity",
+        "5": "explore"
+      }
+    }
   }
 };
+
 export default readingHubData;

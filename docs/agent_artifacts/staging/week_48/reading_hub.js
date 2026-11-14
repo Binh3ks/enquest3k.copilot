@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 48 | Theme: "Measuring Up (Length)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 48 Reading Hub Deliverable
 export const readingHubData = {
   "week": 48,
   "theme": "Measuring Up (Length)",
@@ -242,37 +235,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "What tool is used to measure small objects in centimeters?",
+        "question": "What tool do students use to measure small classroom objects?",
         "options": [
-          "A plastic ruler",
-          "A large clock",
-          "A glass cup"
+          "A clear plastic ruler",
+          "A kitchen spoon",
+          "A heavy hammer"
         ],
-        "answer": "A plastic ruler"
+        "correct_answer": "A clear plastic ruler"
       },
       {
-        "id": 2,
-        "question_en": "What happens when you freeze liquid water at zero degrees?",
+        "question": "How many centimeters are there in one meter?",
         "options": [
-          "It turns into a solid",
-          "It boils away",
-          "It becomes steam"
+          "One hundred centimeters",
+          "Ten centimeters",
+          "Fifty centimeters"
         ],
-        "answer": "It turns into a solid"
+        "correct_answer": "One hundred centimeters"
       },
       {
-        "id": 3,
-        "question_en": "Why does ice float on water?",
+        "question": "What tool works better for measuring long objects?",
         "options": [
-          "Water expands when it freezes",
-          "Ice is made of metal",
-          "Cold water has no weight"
+          "A flexible measuring tape",
+          "A short pencil",
+          "A small eraser"
         ],
-        "answer": "Water expands when it freezes"
+        "correct_answer": "A flexible measuring tape"
       }
     ],
-    "content_en": "In science class, students learn how to measure length accurately. We use a plastic ruler to find the length and width of small objects. A ruler shows marks in centimeters and millimeters. For longer distance, a measuring tape is better. It is thirty centimeters long when you measure a notebook. Students compare a tall beaker and a short wooden block. Next, they observe water in a clear container. If you freeze water at zero degrees, the liquid turns into a solid. Water molecules expand as they freeze into ice crystals. When scientists add salt to ice, the temperature drops rapidly. Students record the changing height of ice columns in their journals. Comparing measurements helps scientists understand physical changes."
+    "content_en": "In science class, students learn how to measure length and height accurately. We use a clear plastic ruler to measure small classroom objects. A ruler shows marks in centimeters and millimeters. For longer objects, a flexible measuring tape works much better. When we measure a notebook, it is twenty centimeters long. Students enjoy asking who is taller in their learning group. They stand straight against the wall to check their height. A student might be one meter and thirty centimeters tall. Next, they compare a tall bookshelf and a short wooden stool. Recording exact measurements in a science journal helps everyone become better thinkers. Measuring our world teaches us how things fit together.",
+    "title": "Measuring Objects in Our Classroom",
+    "topic": "Measuring Length and Height",
+    "glossary": [
+      {
+        "word": "measure",
+        "definition_en": "To find the size or length of something using tools."
+      },
+      {
+        "word": "ruler",
+        "definition_en": "A straight strip with numbers used to measure length."
+      },
+      {
+        "word": "centimeter",
+        "definition_en": "A metric unit of length for small objects."
+      },
+      {
+        "word": "meter",
+        "definition_en": "A unit of length equal to one hundred centimeters."
+      },
+      {
+        "word": "length",
+        "definition_en": "The distance from one end of an object to the other."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -442,83 +456,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Lucas and Emma Measure Classroom Items",
+    "title": "Oliver and Emma Measuring Tools",
+    "topic": "Comparing Lengths and Heights",
     "turns": [
       {
-        "speaker": "Lucas",
-        "text": "How long is that yellow ribbon?"
+        "speaker": "Oliver",
+        "statement": "Emma, look at this long measuring tape on the table!",
+        "options": [
+          "It can measure very long desks!",
+          "It is eating grass.",
+          "Last Wednesday evening."
+        ],
+        "answer": "It can measure very long desks!"
       },
       {
         "speaker": "Emma",
-        "text": "It is forty-five centimeters long."
+        "statement": "How long is your new science notebook?",
+        "options": [
+          "It is thirty centimeters long.",
+          "They are blue boots.",
+          "At four o'clock."
+        ],
+        "answer": "It is thirty centimeters long."
       },
       {
-        "speaker": "Lucas",
-        "text": "What tool did you use to measure it?"
+        "speaker": "Oliver",
+        "statement": "Who is taller, the teacher or the student?",
+        "options": [
+          "The teacher is much taller.",
+          "It tastes sweet.",
+          "In the garden."
+        ],
+        "answer": "The teacher is much taller."
       },
       {
         "speaker": "Emma",
-        "text": "I used a wooden ruler with millimeter marks."
+        "statement": "Can you help me measure the height of this bookshelf?",
+        "options": [
+          "Yes, hold the measuring tape straight!",
+          "No, I am asleep.",
+          "Because it is cold."
+        ],
+        "answer": "Yes, hold the measuring tape straight!"
       },
       {
-        "speaker": "Lucas",
-        "text": "What happens if we put water into the freezer?"
-      },
-      {
-        "speaker": "Emma",
-        "text": "If you freeze water, it becomes solid ice!"
+        "speaker": "Oliver",
+        "statement": "Shall we write down all our measurements in our journals?",
+        "options": [
+          "Yes, let's record them now!",
+          "Tomorrow morning at home.",
+          "Because the dog barked."
+        ],
+        "answer": "Yes, let's record them now!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Measuring objects is an important science skill. We use a ruler to measure the (1) ___ of books and pencils. Most rulers show marks in (2) ___ and millimeters. If we want to measure around a tree, we use a measuring (3) ___. In our lab today, we also tested freezing water. When temperature reaches zero, water turns from liquid to (4) ___. Students carefully (5) ___ every measurement in their charts.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "length",
-          "taste",
-          "color"
-        ],
-        "answer": "length"
-      },
-      {
-        "id": 2,
-        "options": [
-          "centimeters",
-          "minutes",
-          "spoons"
-        ],
-        "answer": "centimeters"
-      },
-      {
-        "id": 3,
-        "options": [
-          "tape",
-          "chair",
-          "hat"
-        ],
-        "answer": "tape"
-      },
-      {
-        "id": 4,
-        "options": [
-          "solid",
-          "cloud",
-          "fire"
-        ],
-        "answer": "solid"
-      },
-      {
-        "id": 5,
-        "options": [
-          "recorded",
-          "forgot",
-          "jumped"
-        ],
-        "answer": "recorded"
-      }
-    ]
+    "title": "Oliver's Science Notebook",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today in science class, we learned how to {1} different things. Our teacher gave each student a plastic {2} to measure small items. My math book was twenty centimeters {3}. Next, we used a long tape to check our {4} against the wall. I found that I was one {5} and thirty centimeters tall. It was a fun lesson.",
+    "answers": {
+      "1": "measure",
+      "2": "ruler",
+      "3": "long",
+      "4": "height",
+      "5": "meter"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -562,83 +565,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Lucas and Emma Measure Classroom Items",
+    "title": "Oliver and Emma Measuring Tools",
+    "topic": "Comparing Lengths and Heights",
     "turns": [
       {
-        "speaker": "Lucas",
-        "text": "How long is that yellow ribbon?"
+        "speaker": "Oliver",
+        "statement": "Emma, look at this long measuring tape on the table!",
+        "options": [
+          "It can measure very long desks!",
+          "It is eating grass.",
+          "Last Wednesday evening."
+        ],
+        "answer": "It can measure very long desks!"
       },
       {
         "speaker": "Emma",
-        "text": "It is forty-five centimeters long."
+        "statement": "How long is your new science notebook?",
+        "options": [
+          "It is thirty centimeters long.",
+          "They are blue boots.",
+          "At four o'clock."
+        ],
+        "answer": "It is thirty centimeters long."
       },
       {
-        "speaker": "Lucas",
-        "text": "What tool did you use to measure it?"
+        "speaker": "Oliver",
+        "statement": "Who is taller, the teacher or the student?",
+        "options": [
+          "The teacher is much taller.",
+          "It tastes sweet.",
+          "In the garden."
+        ],
+        "answer": "The teacher is much taller."
       },
       {
         "speaker": "Emma",
-        "text": "I used a wooden ruler with millimeter marks."
+        "statement": "Can you help me measure the height of this bookshelf?",
+        "options": [
+          "Yes, hold the measuring tape straight!",
+          "No, I am asleep.",
+          "Because it is cold."
+        ],
+        "answer": "Yes, hold the measuring tape straight!"
       },
       {
-        "speaker": "Lucas",
-        "text": "What happens if we put water into the freezer?"
-      },
-      {
-        "speaker": "Emma",
-        "text": "If you freeze water, it becomes solid ice!"
+        "speaker": "Oliver",
+        "statement": "Shall we write down all our measurements in our journals?",
+        "options": [
+          "Yes, let's record them now!",
+          "Tomorrow morning at home.",
+          "Because the dog barked."
+        ],
+        "answer": "Yes, let's record them now!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Measuring objects is an important science skill. We use a ruler to measure the (1) ___ of books and pencils. Most rulers show marks in (2) ___ and millimeters. If we want to measure around a tree, we use a measuring (3) ___. In our lab today, we also tested freezing water. When temperature reaches zero, water turns from liquid to (4) ___. Students carefully (5) ___ every measurement in their charts.",
-    "questions": [
+    "title": "Oliver's Science Notebook",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "Today in science class, we learned how to {1} different things. Our teacher gave each student a plastic {2} to measure small items. My math book was twenty centimeters {3}. Next, we used a long tape to check our {4} against the wall. I found that I was one {5} and thirty centimeters tall. It was a fun lesson.",
+    "answers": {
+      "1": "measure",
+      "2": "ruler",
+      "3": "long",
+      "4": "height",
+      "5": "meter"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "length",
-          "taste",
-          "color"
-        ],
-        "answer": "length"
+        "description": "A straight strip of plastic or wood used for measuring length.",
+        "word": "ruler"
       },
       {
         "id": 2,
-        "options": [
-          "centimeters",
-          "minutes",
-          "spoons"
-        ],
-        "answer": "centimeters"
+        "description": "A metric unit of length equal to one hundred centimeters.",
+        "word": "meter"
       },
       {
         "id": 3,
-        "options": [
-          "tape",
-          "chair",
-          "hat"
-        ],
-        "answer": "tape"
+        "description": "The degree of heat or cold measured by a thermometer.",
+        "word": "temperature"
       },
       {
         "id": 4,
-        "options": [
-          "solid",
-          "cloud",
-          "fire"
-        ],
-        "answer": "solid"
+        "description": "A firm substance that keeps its shape and does not flow.",
+        "word": "solid"
       },
       {
         "id": 5,
-        "options": [
-          "recorded",
-          "forgot",
-          "jumped"
-        ],
-        "answer": "recorded"
+        "description": "A flexible strip used to measure round or curved objects.",
+        "word": "tape"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Oliver and Emma Measuring Tools",
+      "topic": "Comparing Lengths and Heights",
+      "turns": [
+        {
+          "speaker": "Oliver",
+          "statement": "Emma, look at this long measuring tape on the table!",
+          "options": [
+            "It can measure very long desks!",
+            "It is eating grass.",
+            "Last Wednesday evening."
+          ],
+          "answer": "It can measure very long desks!"
+        },
+        {
+          "speaker": "Emma",
+          "statement": "How long is your new science notebook?",
+          "options": [
+            "It is thirty centimeters long.",
+            "They are blue boots.",
+            "At four o'clock."
+          ],
+          "answer": "It is thirty centimeters long."
+        },
+        {
+          "speaker": "Oliver",
+          "statement": "Who is taller, the teacher or the student?",
+          "options": [
+            "The teacher is much taller.",
+            "It tastes sweet.",
+            "In the garden."
+          ],
+          "answer": "The teacher is much taller."
+        },
+        {
+          "speaker": "Emma",
+          "statement": "Can you help me measure the height of this bookshelf?",
+          "options": [
+            "Yes, hold the measuring tape straight!",
+            "No, I am asleep.",
+            "Because it is cold."
+          ],
+          "answer": "Yes, hold the measuring tape straight!"
+        },
+        {
+          "speaker": "Oliver",
+          "statement": "Shall we write down all our measurements in our journals?",
+          "options": [
+            "Yes, let's record them now!",
+            "Tomorrow morning at home.",
+            "Because the dog barked."
+          ],
+          "answer": "Yes, let's record them now!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Oliver's Science Notebook",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "Today in science class, we learned how to {1} different things. Our teacher gave each student a plastic {2} to measure small items. My math book was twenty centimeters {3}. Next, we used a long tape to check our {4} against the wall. I found that I was one {5} and thirty centimeters tall. It was a fun lesson.",
+      "answers": {
+        "1": "measure",
+        "2": "ruler",
+        "3": "long",
+        "4": "height",
+        "5": "meter"
+      }
+    }
   }
 };
+
 export default readingHubData;

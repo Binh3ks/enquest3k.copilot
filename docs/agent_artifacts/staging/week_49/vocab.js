@@ -1,243 +1,168 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 49 | Theme: "Future Dreams (Future Tense)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
-export const vocab = [
+// Week 49 Target Vocabulary (20/20 Target Words with GA IPA, Definitions, Examples)
+export const vocabData = {
+  week: 49,
+  vocab: [
   {
-    "id": 1,
-    "word": "career",
-    "pos": "n",
-    "ipa": "/kəˈrɪr/",
-    "definition_en": "Occupation or profession chosen for life.",
-    "definition_vi": "sự nghiệp, nghề nghiệp",
-    "example_en": "Sophia wants a successful career in medical science.",
-    "example_vi": "Sophia muốn một sự nghiệp thành công trong ngành y khoa."
-  },
-  {
-    "id": 2,
-    "word": "engineer",
-    "pos": "n",
-    "ipa": "/ˌendʒɪˈnɪr/",
-    "definition_en": "Person who designs and builds machines or bridges.",
-    "definition_vi": "kỹ sư",
-    "example_en": "The clever engineer designed a clean solar car.",
-    "example_vi": "Người kỹ sư tài ba đã thiết kế một chiếc ô tô năng lượng mặt trời sạch."
-  },
-  {
-    "id": 3,
-    "word": "scientist",
-    "pos": "n",
-    "ipa": "/ˈsaɪəntɪst/",
-    "definition_en": "Person who studies the natural world through experiments.",
-    "definition_vi": "nhà khoa học",
-    "example_en": "The marine scientist studies coral reefs in the ocean.",
-    "example_vi": "Nhà khoa học biển nghiên cứu các rạn san hô dưới đại dương."
-  },
-  {
-    "id": 4,
-    "word": "astronaut",
-    "pos": "n",
-    "ipa": "/ˈæstrənɔːt/",
-    "definition_en": "Person trained to travel in spacecraft.",
-    "definition_vi": "phi hành gia",
-    "example_en": "The brave astronaut floated outside the space station.",
-    "example_vi": "Người phi hành gia dũng cảm trôi bồng bềnh bên ngoài trạm vũ trụ."
-  },
-  {
-    "id": 5,
-    "word": "pilot",
-    "pos": "n",
-    "ipa": "/ˈpaɪlət/",
-    "definition_en": "Person licensed to fly airplanes.",
-    "definition_vi": "phi công",
-    "example_en": "The skilled pilot landed the passenger plane smoothly.",
-    "example_vi": "Người phi công lành nghề hạ cánh máy bay chở khách thật êm ái."
-  },
-  {
-    "id": 6,
     "word": "doctor",
-    "pos": "n",
     "ipa": "/ˈdɑːktər/",
-    "definition_en": "Person licensed to care for sick people.",
-    "definition_vi": "bác sĩ",
-    "example_en": "The kind doctor listened to the boy's heartbeat.",
-    "example_vi": "Vị bác sĩ tốt bụng lắng nghe nhịp tim của cậu bé."
+    "definition_en": "A person with medical training who heals sick people.",
+    "definition_vi": "Bác sĩ.",
+    "example_en": "The doctor helped the boy feel better.",
+    "example_vi": "Bác sĩ đã giúp cậu bé cảm thấy khỏe hơn."
   },
   {
-    "id": 7,
-    "word": "architect",
-    "pos": "n",
-    "ipa": "/ˈɑːrkɪtekt/",
-    "definition_en": "Person who designs buildings and houses.",
-    "definition_vi": "kiến trúc sư",
-    "example_en": "The young architect drew blueprints for a green library.",
-    "example_vi": "Người kiến trúc sư trẻ vẽ bản thiết kế cho một thư viện xanh."
-  },
-  {
-    "id": 8,
-    "word": "goal",
-    "pos": "n",
-    "ipa": "/ɡoʊl/",
-    "definition_en": "Aim or desired result of personal effort.",
-    "definition_vi": "mục tiêu",
-    "example_en": "My main goal this year is to read thirty books.",
-    "example_vi": "Mục tiêu chính của tôi năm nay là đọc ba mươi cuốn sách."
-  },
-  {
-    "id": 9,
-    "word": "achieve",
-    "pos": "v",
-    "ipa": "/əˈtʃiːv/",
-    "definition_en": "Reach a goal through hard work.",
-    "definition_vi": "đạt được",
-    "example_en": "You can achieve your dreams if you practice every day.",
-    "example_vi": "Bạn có thể đạt được ước mơ nếu luyện tập mỗi ngày."
-  },
-  {
-    "id": 10,
-    "word": "train",
-    "pos": "v",
-    "ipa": "/treɪn/",
-    "definition_en": "Practice skills through regular instruction.",
-    "definition_vi": "rèn luyện",
-    "example_en": "Young athletes train in order to build physical endurance.",
-    "example_vi": "Các vận động viên trẻ rèn luyện nhằm xây dựng sức bền thể lực."
-  },
-  {
-    "id": 11,
-    "word": "ambition",
-    "pos": "n",
-    "ipa": "/æmˈbɪʃn/",
-    "definition_en": "Strong desire to succeed and accomplish great things.",
-    "definition_vi": "hoài bão",
-    "example_en": "Her childhood ambition was to discover new planets.",
-    "example_vi": "Hoài bão thời thơ ấu của cô là khám phá những hành tinh mới."
-  },
-  {
-    "id": 12,
-    "word": "college",
-    "pos": "n",
-    "ipa": "/ˈkɑːlɪdʒ/",
-    "definition_en": "Place of higher education after high school.",
-    "definition_vi": "trường đại học/cao đẳng",
-    "example_en": "Liam will study robotics at college next autumn.",
-    "example_vi": "Liam sẽ theo học ngành rô-bốt tại trường đại học vào mùa thu tới."
-  },
-  {
-    "id": 13,
-    "word": "invent",
-    "pos": "v",
-    "ipa": "/ɪnˈvent/",
-    "definition_en": "Create a completely new tool or machine.",
-    "definition_vi": "phát minh",
-    "example_en": "Students hope to invent a water-cleaning robot.",
-    "example_vi": "Các học sinh hy vọng sẽ phát minh ra một chú rô-bốt làm sạch nước."
-  },
-  {
-    "id": 14,
-    "word": "discover",
-    "pos": "v",
-    "ipa": "/dɪˈskʌvər/",
-    "definition_en": "Find something unknown to other people.",
-    "definition_vi": "khám phá",
-    "example_en": "Biologists discover rare chameleon species in the rainforest.",
-    "example_vi": "Các nhà sinh học khám phá những loài tắc kè hoa quý hiếm trong rừng nhiệt đới."
-  },
-  {
-    "id": 15,
-    "word": "chameleon",
-    "pos": "n",
-    "ipa": "/kəˈmiːliən/",
-    "definition_en": "Lizard that changes color to blend into trees.",
-    "definition_vi": "tắc kè hoa",
-    "example_en": "The green chameleon hid silently on the leafy branch.",
-    "example_vi": "Con tắc kè hoa xanh ẩn mình lặng lẽ trên cành cây rậm lá."
-  },
-  {
-    "id": 16,
-    "word": "tongue",
-    "pos": "n",
-    "ipa": "/tʌŋ/",
-    "definition_en": "Long muscular organ used to catch insects.",
-    "definition_vi": "lưỡi",
-    "example_en": "A chameleon shoots its long sticky tongue rapidly.",
-    "example_vi": "Một con tắc kè hoa phóng chiếc lưỡi dài dính của nó rất nhanh."
-  },
-  {
-    "id": 17,
-    "word": "hunt",
-    "pos": "v",
-    "ipa": "/hʌnt/",
-    "definition_en": "Chase and capture food in the wild.",
-    "definition_vi": "săn mồi",
-    "example_en": "Wild predators hunt in order to survive in winter.",
-    "example_vi": "Thú săn mồi hoang dã săn bắn nhằm sinh tồn vào mùa đông."
-  },
-  {
-    "id": 18,
-    "word": "branch",
-    "pos": "n",
-    "ipa": "/bræntʃ/",
-    "definition_en": "Part of a tree that grows out from the trunk.",
-    "definition_vi": "cành cây",
-    "example_en": "The colorful bird rested on a sturdy oak branch.",
-    "example_vi": "Chú chim sặc sỡ đậu trên một cành cây sồi vững chãi."
-  },
-  {
-    "id": 19,
-    "word": "target",
-    "pos": "n",
-    "ipa": "/ˈtɑːrɡɪt/",
-    "definition_en": "Object or mark aimed at during hunting.",
-    "definition_vi": "mục tiêu ngắm",
-    "example_en": "The chameleon locked both eyes on its insect target.",
-    "example_vi": "Con tắc kè hoa khóa cả hai mắt vào mục tiêu côn trùng của nó."
-  },
-  {
-    "id": 20,
-    "word": "purpose",
-    "pos": "n",
-    "ipa": "/ˈpɜːrpəs/",
-    "definition_en": "Reason for doing or making something.",
-    "definition_vi": "mục đích",
-    "example_en": "The main purpose of study is to gain useful knowledge.",
-    "example_vi": "Mục đích chính của việc học là để có được kiến thức hữu ích."
-  },
-  {
-    "id": 21,
     "word": "teacher",
-    "pos": "n",
     "ipa": "/ˈtiːtʃər/",
     "definition_en": "A person who helps students learn new things.",
-    "definition_vi": "giáo viên",
-    "example_en": "Our English teacher explains the lesson clearly.",
-    "example_vi": "Giáo viên tiếng Anh của chúng tôi giải thích bài học rất rõ ràng."
+    "definition_vi": "Giáo viên.",
+    "example_en": "Our kind teacher explains the lesson clearly.",
+    "example_vi": "Giáo viên tốt bụng của chúng tôi giải thích bài học rất rõ ràng."
   },
   {
-    "id": 22,
+    "word": "pilot",
+    "ipa": "/ˈpaɪlət/",
+    "definition_en": "A person who flies an airplane through the sky.",
+    "definition_vi": "Phi công.",
+    "example_en": "The brave pilot flew the plane safely.",
+    "example_vi": "Người phi công dũng cảm đã lái máy bay an toàn."
+  },
+  {
     "word": "artist",
-    "pos": "n",
     "ipa": "/ˈɑːrtɪst/",
-    "definition_en": "A person who creates paintings or drawings.",
-    "definition_vi": "họa sĩ",
-    "example_en": "The young artist paints colorful landscapes.",
-    "example_vi": "Họa sĩ trẻ vẽ những bức tranh phong cảnh rực rỡ sắc màu."
+    "definition_en": "A person who paints pictures or creates art.",
+    "definition_vi": "Họa sĩ, nghệ sĩ.",
+    "example_en": "The artist painted a colorful picture of flowers.",
+    "example_vi": "Người họa sĩ đã vẽ một bức tranh hoa đầy màu sắc."
   },
   {
-    "id": 23,
+    "word": "scientist",
+    "ipa": "/ˈsaɪəntɪst/",
+    "definition_en": "A person who studies the natural world with care.",
+    "definition_vi": "Nhà khoa học.",
+    "example_en": "The scientist showed us a fun experiment.",
+    "example_vi": "Nhà khoa học đã cho chúng tôi xem một thí nghiệm thú vị."
+  },
+  {
     "word": "dream",
-    "pos": "n",
     "ipa": "/driːm/",
-    "definition_en": "A strong wish or goal for your future life.",
-    "definition_vi": "ước mơ",
-    "example_en": "His dream is to fly an airplane across the ocean.",
-    "example_vi": "Ước mơ của cậu ấy là lái máy bay vượt qua đại dương."
+    "definition_en": "A strong hope or goal for the future.",
+    "definition_vi": "Ước mơ.",
+    "example_en": "Her dream is to travel around the world.",
+    "example_vi": "Ước mơ của cô ấy là được đi du lịch vòng quanh thế giới."
+  },
+  {
+    "word": "career",
+    "ipa": "/kəˈrɪr/",
+    "definition_en": "A job or profession that you do for a long time.",
+    "definition_vi": "Sự nghiệp, nghề nghiệp.",
+    "example_en": "Teaching English is a wonderful career.",
+    "example_vi": "Dạy tiếng Anh là một sự nghiệp tuyệt vời."
+  },
+  {
+    "word": "goal",
+    "ipa": "/ɡoʊl/",
+    "definition_en": "Something that you work hard to achieve.",
+    "definition_vi": "Mục tiêu.",
+    "example_en": "My goal is to read twenty English books.",
+    "example_vi": "Mục tiêu của tôi là đọc hai mươi cuốn sách tiếng Anh."
+  },
+  {
+    "word": "achieve",
+    "ipa": "/əˈtʃiːv/",
+    "definition_en": "Reach a goal by working hard.",
+    "definition_vi": "Đạt được.",
+    "example_en": "You can achieve your dreams with practice.",
+    "example_vi": "Bạn có thể đạt được ước mơ bằng việc luyện tập."
+  },
+  {
+    "word": "train",
+    "ipa": "/treɪn/",
+    "definition_en": "Practice skills to prepare for a job.",
+    "definition_vi": "Rèn luyện, đào tạo.",
+    "example_en": "Athletes train every day to stay strong.",
+    "example_vi": "Các vận động viên rèn luyện mỗi ngày để luôn khỏe mạnh."
+  },
+  {
+    "word": "college",
+    "ipa": "/ˈkɑːlɪdʒ/",
+    "definition_en": "A school for higher education after high school.",
+    "definition_vi": "Trường đại học, cao đẳng.",
+    "example_en": "She wants to study science in college.",
+    "example_vi": "Cô ấy muốn học khoa học ở trường đại học."
+  },
+  {
+    "word": "future",
+    "ipa": "/ˈfjuːtʃər/",
+    "definition_en": "The time that will come after now.",
+    "definition_vi": "Tương lai.",
+    "example_en": "What will you do in the future?",
+    "example_vi": "Bạn sẽ làm gì trong tương lai?"
+  },
+  {
+    "word": "skill",
+    "ipa": "/skɪl/",
+    "definition_en": "The ability to do an action well.",
+    "definition_vi": "Kỹ năng.",
+    "example_en": "Drawing is a very useful artistic skill.",
+    "example_vi": "Vẽ là một kỹ năng nghệ thuật rất hữu ích."
+  },
+  {
+    "word": "study",
+    "ipa": "/ˈstʌdi/",
+    "definition_en": "Spend time learning about a subject.",
+    "definition_vi": "Học tập, nghiên cứu.",
+    "example_en": "Students study math and English every week.",
+    "example_vi": "Học sinh học toán và tiếng Anh mỗi tuần."
+  },
+  {
+    "word": "help",
+    "ipa": "/hɛlp/",
+    "definition_en": "Give assistance to someone in need.",
+    "definition_vi": "Giúp đỡ.",
+    "example_en": "Doctors help people when they are sick.",
+    "example_vi": "Các bác sĩ giúp đỡ mọi người khi họ bị ốm."
+  },
+  {
+    "word": "create",
+    "ipa": "/kriˈeɪt/",
+    "definition_en": "Make something new that did not exist before.",
+    "definition_vi": "Tạo ra, sáng tạo.",
+    "example_en": "Creative artists make bright paintings for everyone to see.",
+    "example_vi": "Các nghệ sĩ tạo ra những bức tranh đẹp cho mọi người."
+  },
+  {
+    "word": "invent",
+    "ipa": "/ɪnˈvɛnt/",
+    "definition_en": "Design or make a new tool or machine.",
+    "definition_vi": "Phát minh.",
+    "example_en": "Engineers invent machines to solve problems.",
+    "example_vi": "Các kỹ sư phát minh ra máy móc để giải quyết các vấn đề."
+  },
+  {
+    "word": "discover",
+    "ipa": "/dɪˈskʌvər/",
+    "definition_en": "Find something that was not known before.",
+    "definition_vi": "Khám phá.",
+    "example_en": "Scientists discover new facts about stars.",
+    "example_vi": "Các nhà khoa học khám phá ra những sự thật mới về các vì sao."
+  },
+  {
+    "word": "hope",
+    "ipa": "/hoʊp/",
+    "definition_en": "Want something good to happen in the future.",
+    "definition_vi": "Hy vọng.",
+    "example_en": "I hope to become a pilot one day.",
+    "example_vi": "Tôi hy vọng một ngày nào đó sẽ trở thành phi công."
+  },
+  {
+    "word": "plan",
+    "ipa": "/plæn/",
+    "definition_en": "Decide what to do before taking action.",
+    "definition_vi": "Kế hoạch, lên kế hoạch.",
+    "example_en": "We will make a plan for our future study.",
+    "example_vi": "Chúng tôi sẽ lên kế hoạch cho việc học tập trong tương lai."
   }
-];
-export const vocabList = vocab;
-export const week49Vocab = vocab;
-export default vocab;
+]
+};
+
+export default vocabData;

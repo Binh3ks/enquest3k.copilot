@@ -1,11 +1,4 @@
-/**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 53 | Theme: "Project 4 Prep - \"My Year in Review\"" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
- */
-
+// Week 53 Reading Hub Deliverable
 export const readingHubData = {
   "week": 53,
   "theme": "Project 4 Prep - \"My Year in Review\"",
@@ -238,37 +231,58 @@ export const readingHubData = {
     "reading_time_seconds": 65,
     "check_questions": [
       {
-        "id": 1,
-        "question_en": "Which modal expresses absolute certainty that something is true?",
+        "question": "What does a detective look for to solve a mystery?",
         "options": [
-          "must be",
-          "cannot be",
-          "might be"
+          "Hidden clues and evidence",
+          "Sweet red apples",
+          "Colorful party balloons"
         ],
-        "answer": "must be"
+        "correct_answer": "Hidden clues and evidence"
       },
       {
-        "id": 2,
-        "question_en": "What does a detective use to solve a mystery?",
+        "question": "What do students create to display their best school work?",
         "options": [
-          "Clues and evidence",
-          "Magic spells",
-          "Random guessing"
+          "A neat portfolio",
+          "A heavy toolbox",
+          "A shopping basket"
         ],
-        "answer": "Clues and evidence"
+        "correct_answer": "A neat portfolio"
       },
       {
-        "id": 3,
-        "question_en": "What do students curate inside their learning portfolio?",
+        "question": "How does building a portfolio help learners?",
         "options": [
-          "Written essays, lab diagrams, and certificates",
-          "Empty paper boxes",
-          "Old lunch boxes"
+          "It helps them celebrate their learning growth",
+          "It makes them feel tired",
+          "It hides their homework"
         ],
-        "answer": "Written essays, lab diagrams, and certificates"
+        "correct_answer": "It helps them celebrate their learning growth"
       }
     ],
-    "content_en": "A clever detective works hard to solve a mystery. The detective wears a shiny badge and looks for each hidden clue. If there is a muddy footprint near the curtain, it gives clear evidence. A dark shadow on the wall helps find the suspect. With careful deduction, the detective decides who is guilty and who is innocent. In school, students also do a Year in Review. They create a neat portfolio to display their best work. Each artifact shows real progress in math and science. Students reflect on their school year and write a short summary. Building a proud portfolio helps learners celebrate their growth."
+    "content_en": "A clever detective works hard to solve a mystery. The detective wears a shiny badge and looks for each hidden clue. If there is a muddy footprint near the curtain, it gives clear evidence. A dark shadow on the wall helps find the suspect. With careful deduction, the detective decides who is guilty and who is innocent. In school, students also do a Year in Review. They create a neat portfolio to display their best work. Each artifact shows real progress in math and science. Students reflect on their school year and write a short summary. Building a proud portfolio helps learners celebrate their growth.",
+    "title": "Building a Proud Learning Portfolio",
+    "topic": "Detective Thinking and Portfolio Curation",
+    "glossary": [
+      {
+        "word": "detective",
+        "definition_en": "A person who looks for clues to solve a mystery."
+      },
+      {
+        "word": "evidence",
+        "definition_en": "Facts or signs that prove something is true."
+      },
+      {
+        "word": "portfolio",
+        "definition_en": "A neat folder of your best school work."
+      },
+      {
+        "word": "artifact",
+        "definition_en": "A sample of work made by a student."
+      },
+      {
+        "word": "progress",
+        "definition_en": "Growth and improvement over a period of time."
+      }
+    ]
   },
   "story_scenes": [
     {
@@ -438,83 +452,72 @@ export const readingHubData = {
     ]
   },
   "rw_part2": {
-    "title": "Oliver and Grace Solve the Mystery",
+    "title": "Jack and Ruby Reviewing Their Portfolios",
+    "topic": "Portfolio Preparation and Detective Deduction",
     "turns": [
       {
-        "speaker": "Oliver",
-        "text": "Who took the science fair trophy from the case?"
+        "speaker": "Jack",
+        "statement": "Ruby, look at my completed portfolio folder!",
+        "options": [
+          "Your drawings look very neat and colorful!",
+          "It is ten meters tall.",
+          "Yesterday in the kitchen."
+        ],
+        "answer": "Your drawings look very neat and colorful!"
       },
       {
-        "speaker": "Grace",
-        "text": "It cannot be Liam because he was eating in the lunch hall."
+        "speaker": "Ruby",
+        "statement": "Which writing sample will you choose as your main artifact?",
+        "options": [
+          "I will choose my story about the clever detective.",
+          "They are blue socks.",
+          "At four o'clock."
+        ],
+        "answer": "I will choose my story about the clever detective."
       },
       {
-        "speaker": "Oliver",
-        "text": "Look at the small muddy footprint on the rug!"
+        "speaker": "Jack",
+        "statement": "How did the detective know who borrowed the missing trophy?",
+        "options": [
+          "By careful deduction from the muddy footprint.",
+          "It was singing loudly.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "By careful deduction from the muddy footprint."
       },
       {
-        "speaker": "Grace",
-        "text": "It must be a student because an adult shoe is much larger."
+        "speaker": "Ruby",
+        "statement": "What did you write in your personal introduction summary?",
+        "options": [
+          "I wrote about my favorite science experiments.",
+          "I am asleep now.",
+          "Because it was cold outside."
+        ],
+        "answer": "I wrote about my favorite science experiments."
       },
       {
-        "speaker": "Oliver",
-        "text": "What should we add to our school portfolio today?"
-      },
-      {
-        "speaker": "Grace",
-        "text": "We should add our detective case report and best essays!"
+        "speaker": "Jack",
+        "statement": "Shall we practice presenting our portfolios before the showcase?",
+        "options": [
+          "Yes, let's practice our speeches right now!",
+          "No, it was Tuesday yesterday.",
+          "Because the train is long."
+        ],
+        "answer": "Yes, let's practice our speeches right now!"
       }
     ]
   },
   "rw_part6": {
-    "text": "Solving mysteries requires careful thinking and scientific evidence. When detectives investigate a case, they examine every small (1) ___ on the floor. If a suspect has an alibi, they (2) ___ be the person who took the object. In our English classroom, students also collect proof of their learning. They assemble a personal (3) ___ containing writing and art projects. Each student writes a brief (4) ___ of their achievements. Curating these works shows how much (5) ___ they have made throughout the entire school year.",
-    "questions": [
-      {
-        "id": 1,
-        "options": [
-          "clue",
-          "blanket",
-          "sandwich"
-        ],
-        "answer": "clue"
-      },
-      {
-        "id": 2,
-        "options": [
-          "cannot",
-          "must",
-          "will"
-        ],
-        "answer": "cannot"
-      },
-      {
-        "id": 3,
-        "options": [
-          "portfolio",
-          "pencil",
-          "hat"
-        ],
-        "answer": "portfolio"
-      },
-      {
-        "id": 4,
-        "options": [
-          "summary",
-          "cookie",
-          "cloud"
-        ],
-        "answer": "summary"
-      },
-      {
-        "id": 5,
-        "options": [
-          "progress",
-          "furniture",
-          "danger"
-        ],
-        "answer": "progress"
-      }
-    ]
+    "title": "Ruby's Portfolio Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "This week in class, we got ready for our big showcase. Each student collected their best work in a neat {1}. I selected my favorite detective story as my main {2}. Our teacher told us to {3} on how much we learned this year. I feel very proud of my {4} in English writing. We are all ready to {5} our year of growth.",
+    "answers": {
+      "1": "portfolio",
+      "2": "artifact",
+      "3": "reflect",
+      "4": "progress",
+      "5": "celebrate"
+    }
   },
   "rw_part_1": {
     "word_bank": [
@@ -558,83 +561,170 @@ export const readingHubData = {
     ]
   },
   "rw_part_2": {
-    "title": "Oliver and Grace Solve the Mystery",
+    "title": "Jack and Ruby Reviewing Their Portfolios",
+    "topic": "Portfolio Preparation and Detective Deduction",
     "turns": [
       {
-        "speaker": "Oliver",
-        "text": "Who took the science fair trophy from the case?"
+        "speaker": "Jack",
+        "statement": "Ruby, look at my completed portfolio folder!",
+        "options": [
+          "Your drawings look very neat and colorful!",
+          "It is ten meters tall.",
+          "Yesterday in the kitchen."
+        ],
+        "answer": "Your drawings look very neat and colorful!"
       },
       {
-        "speaker": "Grace",
-        "text": "It cannot be Liam because he was eating in the lunch hall."
+        "speaker": "Ruby",
+        "statement": "Which writing sample will you choose as your main artifact?",
+        "options": [
+          "I will choose my story about the clever detective.",
+          "They are blue socks.",
+          "At four o'clock."
+        ],
+        "answer": "I will choose my story about the clever detective."
       },
       {
-        "speaker": "Oliver",
-        "text": "Look at the small muddy footprint on the rug!"
+        "speaker": "Jack",
+        "statement": "How did the detective know who borrowed the missing trophy?",
+        "options": [
+          "By careful deduction from the muddy footprint.",
+          "It was singing loudly.",
+          "Tomorrow morning at home."
+        ],
+        "answer": "By careful deduction from the muddy footprint."
       },
       {
-        "speaker": "Grace",
-        "text": "It must be a student because an adult shoe is much larger."
+        "speaker": "Ruby",
+        "statement": "What did you write in your personal introduction summary?",
+        "options": [
+          "I wrote about my favorite science experiments.",
+          "I am asleep now.",
+          "Because it was cold outside."
+        ],
+        "answer": "I wrote about my favorite science experiments."
       },
       {
-        "speaker": "Oliver",
-        "text": "What should we add to our school portfolio today?"
-      },
-      {
-        "speaker": "Grace",
-        "text": "We should add our detective case report and best essays!"
+        "speaker": "Jack",
+        "statement": "Shall we practice presenting our portfolios before the showcase?",
+        "options": [
+          "Yes, let's practice our speeches right now!",
+          "No, it was Tuesday yesterday.",
+          "Because the train is long."
+        ],
+        "answer": "Yes, let's practice our speeches right now!"
       }
     ]
   },
   "rw_part_6": {
-    "text": "Solving mysteries requires careful thinking and scientific evidence. When detectives investigate a case, they examine every small (1) ___ on the floor. If a suspect has an alibi, they (2) ___ be the person who took the object. In our English classroom, students also collect proof of their learning. They assemble a personal (3) ___ containing writing and art projects. Each student writes a brief (4) ___ of their achievements. Curating these works shows how much (5) ___ they have made throughout the entire school year.",
-    "questions": [
+    "title": "Ruby's Portfolio Journal",
+    "instructions": "Read the diary and write one word in each gap.",
+    "text_template": "This week in class, we got ready for our big showcase. Each student collected their best work in a neat {1}. I selected my favorite detective story as my main {2}. Our teacher told us to {3} on how much we learned this year. I feel very proud of my {4} in English writing. We are all ready to {5} our year of growth.",
+    "answers": {
+      "1": "portfolio",
+      "2": "artifact",
+      "3": "reflect",
+      "4": "progress",
+      "5": "celebrate"
+    }
+  },
+  "cambridge_rw": {
+    "part1_definitions": [
       {
         "id": 1,
-        "options": [
-          "clue",
-          "blanket",
-          "sandwich"
-        ],
-        "answer": "clue"
+        "description": "A folder or binder containing selected student work and essays.",
+        "word": "portfolio"
       },
       {
         "id": 2,
-        "options": [
-          "cannot",
-          "must",
-          "will"
-        ],
-        "answer": "cannot"
+        "description": "A piece of information that helps someone solve a puzzle or crime.",
+        "word": "clue"
       },
       {
         "id": 3,
-        "options": [
-          "portfolio",
-          "pencil",
-          "hat"
-        ],
-        "answer": "portfolio"
+        "description": "An investigator who solves mysteries by gathering evidence.",
+        "word": "detective"
       },
       {
         "id": 4,
-        "options": [
-          "summary",
-          "cookie",
-          "cloud"
-        ],
-        "answer": "summary"
+        "description": "A mark left behind by someone's shoe on the floor or mud.",
+        "word": "footprint"
       },
       {
         "id": 5,
-        "options": [
-          "progress",
-          "furniture",
-          "danger"
-        ],
-        "answer": "progress"
+        "description": "A brief report that recaps the main events and achievements.",
+        "word": "summary"
       }
-    ]
+    ],
+    "part2_dialogue": {
+      "title": "Jack and Ruby Reviewing Their Portfolios",
+      "topic": "Portfolio Preparation and Detective Deduction",
+      "turns": [
+        {
+          "speaker": "Jack",
+          "statement": "Ruby, look at my completed portfolio folder!",
+          "options": [
+            "Your drawings look very neat and colorful!",
+            "It is ten meters tall.",
+            "Yesterday in the kitchen."
+          ],
+          "answer": "Your drawings look very neat and colorful!"
+        },
+        {
+          "speaker": "Ruby",
+          "statement": "Which writing sample will you choose as your main artifact?",
+          "options": [
+            "I will choose my story about the clever detective.",
+            "They are blue socks.",
+            "At four o'clock."
+          ],
+          "answer": "I will choose my story about the clever detective."
+        },
+        {
+          "speaker": "Jack",
+          "statement": "How did the detective know who borrowed the missing trophy?",
+          "options": [
+            "By careful deduction from the muddy footprint.",
+            "It was singing loudly.",
+            "Tomorrow morning at home."
+          ],
+          "answer": "By careful deduction from the muddy footprint."
+        },
+        {
+          "speaker": "Ruby",
+          "statement": "What did you write in your personal introduction summary?",
+          "options": [
+            "I wrote about my favorite science experiments.",
+            "I am asleep now.",
+            "Because it was cold outside."
+          ],
+          "answer": "I wrote about my favorite science experiments."
+        },
+        {
+          "speaker": "Jack",
+          "statement": "Shall we practice presenting our portfolios before the showcase?",
+          "options": [
+            "Yes, let's practice our speeches right now!",
+            "No, it was Tuesday yesterday.",
+            "Because the train is long."
+          ],
+          "answer": "Yes, let's practice our speeches right now!"
+        }
+      ]
+    },
+    "part6_cloze": {
+      "title": "Ruby's Portfolio Journal",
+      "instructions": "Read the diary and write one word in each gap.",
+      "text_template": "This week in class, we got ready for our big showcase. Each student collected their best work in a neat {1}. I selected my favorite detective story as my main {2}. Our teacher told us to {3} on how much we learned this year. I feel very proud of my {4} in English writing. We are all ready to {5} our year of growth.",
+      "answers": {
+        "1": "portfolio",
+        "2": "artifact",
+        "3": "reflect",
+        "4": "progress",
+        "5": "celebrate"
+      }
+    }
   }
 };
+
 export default readingHubData;

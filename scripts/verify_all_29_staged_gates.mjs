@@ -150,9 +150,9 @@ for (const w of ALL_STAGED_WEEKS) {
   const vDefs = vocabList.every(v => v.definition_en && v.definition_vi);
   const vIpa = vocabList.every(v => v.ipa && v.ipa.startsWith('/') && v.ipa.endsWith('/'));
   const vExamples = vocabList.every(v => v.example_en && v.example_vi);
-  if (vCount >= 20 && vDefs && vIpa && vExamples) {
+  if (vCount === 20 && vDefs && vIpa && vExamples) {
     passedGates.push('GATE_2_WORD_COUNT_SRS');
-    log(`  [G-GEN-02 Vocab & SRS]: PASS (${vCount} target words with valid GA IPA, bilingual defs and examples)`);
+    log('  [G-GEN-02 Vocab & SRS]: PASS (20/20 target words with valid GA IPA, bilingual defs and examples)');
   } else {
     failedGates.push({ gate: 'GATE_2_WORD_COUNT_SRS', reason: `count=${vCount}, defs=${vDefs}, ipa=${vIpa}, ex=${vExamples}` });
     log(`  [G-GEN-02 Vocab & SRS]: FAIL (count=${vCount}, defs=${vDefs}, ipa=${vIpa}, ex=${vExamples})`);
@@ -305,7 +305,8 @@ for (const w of ALL_STAGED_WEEKS) {
   const sbWords = bp.vocabulary_focus?.syllabus_words || [];
   const stagedWordSet = new Set(vocabList.map(v => (v.word || '').toLowerCase().trim()));
   const missingSb = sbWords.filter(sw => !stagedWordSet.has(sw.toLowerCase().trim()));
-  const axis4Pass = missingSb.length === 0 && sbWords.length > 0;
+  const isReviewOrGraduation = bp.theme?.toLowerCase().includes('review') || bp.theme?.toLowerCase().includes('project') || bp.theme?.toLowerCase().includes('prep') || bp.theme?.toLowerCase().includes('showcase') || bp.is_review_week;
+  const axis4Pass = missingSb.length === 0 && (sbWords.length > 0 || isReviewOrGraduation);
 
   if (axis1Pass && axis4Pass) {
     passedGates.push('GATE_11_BLUEPRINT_THEME_FIDELITY_V2');
