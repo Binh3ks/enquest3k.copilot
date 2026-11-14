@@ -1,0 +1,277 @@
+{
+  "week": 72,
+  "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
+  "cefr_level": "A2 Flyers",
+  "blueprint_snapshot": {
+    "week": 72,
+    "theme": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
+    "title_en": "Science/ELA: Photosynthesis / Math: Area & Perimeter",
+    "title_vi": "Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi",
+    "cefr_level": "A2 Flyers",
+    "cefr_stage": 1,
+    "week_type": "full_mock",
+    "isFullMock": true,
+    "rotary_cycle": null,
+    "template_used": "production_kit/templates/template_flyers_mock.js",
+    "story_title": "Plant Power (How plants eat)",
+    "clil_topic": {
+      "title": "Science/ELA: Photosynthesis / Math: Area & Perimeter & Explaining a process",
+      "focus": "Explain the process of photosynthesis"
+    },
+    "grammar_focus": {
+      "structure": "Passive Voice (Intro - Simple Present): Sunlight is absorbed, Water is taken in",
+      "outcome": "Explain the process of photosynthesis",
+      "pattern_regex": null,
+      "requires_authoring_examples": true,
+      "rule": "Passive Voice (Intro - Simple Present): Sunlight is absorbed, Water is taken in"
+    },
+    "vocabulary_focus": {
+      "syllabus_words": [
+        "photosynthesis",
+        "sunlight",
+        "water",
+        "carbon dioxide",
+        "oxygen",
+        "energy",
+        "absorb",
+        "make"
+      ],
+      "total_syllabus_words": 8,
+      "target_count": 20,
+      "missing_count": 12,
+      "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+      "phonology_summary": {
+        "total_words_tagged": 8,
+        "ipa_coverage_pct": 100,
+        "regular_verbs_count": 0,
+        "irregular_verbs_count": 1,
+        "non_verbs_count": 7,
+        "past_tense_triad": {
+          "/t/": [],
+          "/d/": [],
+          "/ɪd/": []
+        },
+        "triad_complete": false
+      }
+    },
+    "keywords": [
+      "photosynthesis",
+      "sunlight",
+      "water",
+      "carbon dioxide",
+      "oxygen",
+      "energy",
+      "absorb",
+      "make"
+    ],
+    "characters": null,
+    "target_vocab_20": [
+      {
+        "word": "photosynthesis",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/fˌoʊtoʊsˈɪnθəsɪs/",
+        "phonetics": {
+          "arpabet": "F OW2 T OW0 S IH1 N TH AH0 S IH0 S",
+          "final_phone": "S",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "sunlight",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/sˈʌnlˌaɪt/",
+        "phonetics": {
+          "arpabet": "S AH1 N L AY2 T",
+          "final_phone": "T",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "water",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/wˈɔːtɚ/",
+        "phonetics": {
+          "arpabet": "W AO1 T ER0",
+          "final_phone": "ER",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "carbon dioxide",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/kˈɑːɹbən daɪˈɑːksˌaɪd/",
+        "phonetics": {
+          "arpabet": "K AA1 R B AH0 N D AY0 AA1 K S AY2 D",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "oxygen",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ˈɑːksədʒən/",
+        "phonetics": {
+          "arpabet": "AA1 K S AH0 JH AH0 N",
+          "final_phone": "N",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "energy",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ˈɛnɚdʒi/",
+        "phonetics": {
+          "arpabet": "EH1 N ER0 JH IY0",
+          "final_phone": "IY",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "absorb",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/əbzˈɔːɹb/",
+        "phonetics": {
+          "arpabet": "AH0 B Z AO1 R B",
+          "final_phone": "B",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "make",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/mˈeɪk/",
+        "phonetics": {
+          "arpabet": "M EY1 K",
+          "final_phone": "K",
+          "is_verb": true,
+          "verb_classification": "irregular",
+          "past_simple": "made",
+          "past_participle": "made",
+          "past_ending_group": null,
+          "past_ending_rule": "Dental suffix k -> d",
+          "variants": null
+        }
+      }
+    ],
+    "scaffolding_tier": "Tier 2 (Official)",
+    "tested_skills": [
+      "listening_p1",
+      "listening_p2",
+      "listening_p3",
+      "listening_p4",
+      "listening_p5",
+      "reading_p1",
+      "reading_p2",
+      "reading_p3",
+      "reading_p4",
+      "reading_p5",
+      "reading_p6",
+      "writing_p7",
+      "speaking_p1",
+      "speaking_p2",
+      "speaking_p3",
+      "speaking_p4"
+    ],
+    "target_shields": 3,
+    "pending_human_authoring": [
+      "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+      "Story World: 5 story scenes with narration script + character names",
+      "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+      "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+      "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+    ],
+    "digital_map_reference": {
+      "map_week": 72,
+      "map_theme": "CAMBRIDGE FLYERS OFFICIAL GATE",
+      "map_clil_module": "OFFICIAL A2 FLYERS EXAMINATION",
+      "map_grammar_hub": "KỲ THI CHÍNH THỨC CAMBRIDGE FLYERS — MỤC TIÊU TUYỆT ĐỐI 15/15 KHIÊN!",
+      "map_cefr_type": "★ FULL MOCK 11 (OFFICIAL)",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"Science/ELA: Photosynthesis / Math: Area & Perimeter\") enforced over Digital Map (Source A: \"CAMBRIDGE FLYERS OFFICIAL GATE\"). Source A metadata preserved in digital_map_reference."
+    },
+    "metadata_provenance": {
+      "generated_at": "2026-11-04T08:30:00.305Z",
+      "generator_script": "scripts/generate_week_blueprint.mjs",
+      "source_digital_map": true,
+      "source_master_syllabus": true,
+      "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+    },
+    "mockFormat": "flyers",
+    "week_number": 72
+  },
+  "source_b_excerpt": "•\tWeek 72: Science/ELA: Photosynthesis / Math: Area & Perimeter (Tuần 72: Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi)\n\t•\tTopic (Science): Plant Power (How plants eat). (Chủ đề: Sức mạnh thực vật - Cây ăn thế nào.)\n\t•\tKey Learning Outcome (ELA): Explain the process of photosynthesis. (Kết quả: Giải thích quy trình quang hợp.)\n\t•\tWriting Skill Focus: Explaining a process. (Kỹ năng Viết: Giải thích quy trình.)\n\t•\tGrammar Focus: Passive Voice (Intro - Simple Present): \"Sunlight is absorbed\". (Ngữ pháp: Bị động thì hiện tại đơn - Giới thiệu.)\n\t•\tVocabulary Focus: photosynthesis, sunlight, water, carbon dioxide, oxygen, energy, absorb, make.\n\t•\tTopic (Math): Space vs. Edge. (Toán: Không gian vs Viền.)\n\t•\tKey Learning Outcome (Math): Distinguish Area and Perimeter. (Kết quả: Phân biệt Diện tích và Chu vi.)\n\t•\tMath Vocabulary: area, perimeter, inside, around, square units, measure."
+}

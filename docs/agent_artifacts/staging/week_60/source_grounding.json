@@ -1,0 +1,279 @@
+{
+  "week": 60,
+  "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+  "cefr_level": "A2 Flyers",
+  "blueprint_snapshot": {
+    "week": 60,
+    "theme": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+    "title_en": "ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations",
+    "title_vi": "ELA: Yêu cầu gửi Thị trưởng - Viết Trang trọng / Toán: Thứ tự phép tính",
+    "cefr_level": "A2 Flyers",
+    "cefr_stage": 1,
+    "week_type": "full_mock",
+    "isFullMock": true,
+    "rotary_cycle": 4,
+    "template_used": "production_kit/templates/template_flyers_rotary.js",
+    "story_title": "Writing to improve the city",
+    "clil_topic": {
+      "title": "ELA: The Mayors Request",
+      "focus": "Write a polite formal request"
+    },
+    "grammar_focus": {
+      "structure": "Formal Letter Conventions: Dear Sir/Madam, Sincerely, polite requests",
+      "outcome": "Write a polite formal request",
+      "pattern_regex": null,
+      "requires_authoring_examples": true,
+      "rule": "Formal Letter Conventions: Dear Sir/Madam, Sincerely, polite requests"
+    },
+    "vocabulary_focus": {
+      "syllabus_words": [
+        "Sir",
+        "Madam",
+        "sincerely",
+        "request",
+        "improve",
+        "community",
+        "library",
+        "park"
+      ],
+      "total_syllabus_words": 8,
+      "target_count": 20,
+      "missing_count": 12,
+      "status": "PARTIAL (8/20 syllabus words — Requires 12 words from human author)",
+      "phonology_summary": {
+        "total_words_tagged": 8,
+        "ipa_coverage_pct": 100,
+        "regular_verbs_count": 1,
+        "irregular_verbs_count": 0,
+        "non_verbs_count": 7,
+        "past_tense_triad": {
+          "/t/": [],
+          "/d/": [
+            "improve"
+          ],
+          "/ɪd/": []
+        },
+        "triad_complete": false
+      }
+    },
+    "keywords": [
+      "Sir",
+      "Madam",
+      "sincerely",
+      "request",
+      "improve",
+      "community",
+      "library",
+      "park"
+    ],
+    "characters": null,
+    "target_vocab_20": [
+      {
+        "word": "Sir",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/sˈɝː/",
+        "phonetics": {
+          "arpabet": "S ER1",
+          "final_phone": "ER",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "Madam",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/mˈædəm/",
+        "phonetics": {
+          "arpabet": "M AE1 D AH0 M",
+          "final_phone": "M",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "sincerely",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/sɪnsˈɪɹli/",
+        "phonetics": {
+          "arpabet": "S IH0 N S IH1 R L IY0",
+          "final_phone": "IY",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "request",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ɹɪkwˈɛst/",
+        "phonetics": {
+          "arpabet": "R IH0 K W EH1 S T",
+          "final_phone": "T",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "improve",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/ɪmpɹˈuːv/",
+        "phonetics": {
+          "arpabet": "IH0 M P R UW1 V",
+          "final_phone": "V",
+          "is_verb": true,
+          "verb_classification": "regular",
+          "past_simple": "improved",
+          "past_participle": "improved",
+          "past_ending_group": "/d/",
+          "past_ending_rule": "Base verb ends in voiced consonant/vowel /v/ -> suffix pronounced as voiced /d/",
+          "variants": null
+        }
+      },
+      {
+        "word": "community",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/kəmjˈuːnəti/",
+        "phonetics": {
+          "arpabet": "K AH0 M Y UW1 N AH0 T IY0",
+          "final_phone": "IY",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "library",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/lˈaɪbɹˌɛɹi/",
+        "phonetics": {
+          "arpabet": "L AY1 B R EH2 R IY0",
+          "final_phone": "IY",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      },
+      {
+        "word": "park",
+        "definition_en": null,
+        "definition_vi": null,
+        "example_en": null,
+        "example_vi": null,
+        "requires_human_input": true,
+        "ipa": "/pˈɑːɹk/",
+        "phonetics": {
+          "arpabet": "P AA1 R K",
+          "final_phone": "K",
+          "is_verb": false,
+          "verb_classification": null,
+          "past_simple": null,
+          "past_participle": null,
+          "past_ending_group": null,
+          "past_ending_rule": null,
+          "variants": null
+        }
+      }
+    ],
+    "scaffolding_tier": "Tier 2 (Chunks)",
+    "tested_skills": [
+      "listening_p1",
+      "listening_p2",
+      "listening_p3",
+      "listening_p4",
+      "listening_p5",
+      "reading_p1",
+      "reading_p2",
+      "reading_p3",
+      "reading_p4",
+      "reading_p5",
+      "reading_p6",
+      "writing_p7",
+      "speaking_p1",
+      "speaking_p2",
+      "speaking_p3",
+      "speaking_p4"
+    ],
+    "target_shields": 3,
+    "pending_human_authoring": [
+      "Target Vocabulary: Needs 12 additional CEFR-aligned words + bilingual definitions (SRS tier tagging)",
+      "Story World: 5 story scenes with narration script + character names",
+      "CLIL Article: 90-200 word academic text containing 100% glossary items + 5 check questions",
+      "Singapore Math: 5 word problems with C.U.B.E.S. modelData calculation",
+      "Cambridge Exam Tasks: Specific dialogue turns, reading cloze passages, and listening scripts"
+    ],
+    "digital_map_reference": {
+      "map_week": 60,
+      "map_theme": "Electricity in Circuits",
+      "map_clil_module": "Vật lý: Mạch nối tiếp và song song",
+      "map_grammar_hub": "Logic điều kiện mạch điện; `action_lab` đóng ngắt công tắc bóng đèn",
+      "map_cefr_type": "A2 Flyers · Rotary 3",
+      "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+      "alignment_note": "Theme divergence detected. Master Pedagogical Syllabus (Source B: \"ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations\") enforced over Digital Map (Source A: \"Electricity in Circuits\"). Source A metadata preserved in digital_map_reference."
+    },
+    "metadata_provenance": {
+      "generated_at": "2026-11-04T08:29:59.692Z",
+      "generator_script": "scripts/generate_week_blueprint.mjs",
+      "source_digital_map": true,
+      "source_master_syllabus": true,
+      "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
+    },
+    "mockFormat": "flyers",
+    "week_number": 60
+  },
+  "source_b_excerpt": "•\tWeek 60: ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations (Tuần 60: ELA: Yêu cầu gửi Thị trưởng - Viết Trang trọng / Toán: Thứ tự phép tính)\n\t•\tTopic (ELA): Writing to improve the city. (Chủ đề: Viết thư cải thiện thành phố.)\n\t•\tKey Learning Outcome (ELA): Write a polite formal request. (Kết quả: Viết yêu cầu trang trọng lịch sự.)\n\t•\tGrammar Focus: Polite Modals (May I, Could you, Would like). (Ngữ pháp: Động từ khuyết thiếu lịch sự.)\n\t•\tVocabulary Focus: Sir, Madam, sincerely, request, improve, community, library, park.\n\t•\tTopic (Math): PEMDAS Intro. (Toán: Giới thiệu về thứ tự ưu tiên.)\n\t•\tKey Learning Outcome (Math): Explain which operation comes first. (Kết quả: Giải thích phép tính nào làm trước.)\n\t•\tMath Vocabulary: order, operation, first, bracket, parenthesis."
+}
