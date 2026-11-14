@@ -1,0 +1,149 @@
+========================================================================
+ENGQUEST3K — ROUND 96 REVIEW PACKAGE MANIFEST (LÔ 1)
+========================================================================
+Generated at:        2026-11-14T08:54:37.562Z
+Round:               ROUND 96
+Scope:               Lô 1 (W40, W42, W44, W47–W54) for ESL Sign-Off
+Total Weeks:         11 weeks
+Total Files in Zip:  121 files (11 weeks x 11 modules/dossiers)
+Deliverables Commit: 0f15d3504b392fabb39df0d5bff2716d2c501234
+Package File:        docs/review_packages/round96_lo1_w40_42_44_w47_54_20261114.zip
+Package Size:        246408 bytes
+Package SHA256:      29fd1ebb21e11e6668cfac43fa397048126963bdc502d48265225c0d09597c04
+------------------------------------------------------------------------
+SUMMARY OF PACKAGED WEEKS:
+  - week_40: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_42: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_44: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_47: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_48: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_49: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_50: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_51: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_52: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_53: 11 files (9 modules + source_grounding.json + dossier.json)
+  - week_54: 11 files (9 modules + source_grounding.json + dossier.json)
+------------------------------------------------------------------------
+DETAILED FILE MANIFEST (relative to zip root):
+  b73fa0737b326ea7a8ba1bda70c32da462ef90eba109cd113b81dbbb370d3dfd      6470 bytes  week_40/blueprint.json
+  3a549250a39ca0bdbb9ea794eb54399e99e7bc2617d1376fd3ddf70aa1b6eccd      1588 bytes  week_40/index.js
+  62e2a556d0b53d5ff600fc5d1e6cf8735f90a365727955ba499ae2bb0d3db139      7243 bytes  week_40/vocab.js
+  dc35a539d0d3767dc89f7904fb3dec1e024180d3440e0bb07a286f4f6477e566     21776 bytes  week_40/reading_hub.js
+  650bf2aabf7c4e4c4ea1c5387db6b51e37c8c8a9621cdde9a001d143c224537e      3001 bytes  week_40/listening_hub.js
+  8c7c7bddb10261d24543b663949ee8862b296c379c447b4c47b905de76728631      1960 bytes  week_40/writing_hub.js
+  2e54e62a011749488ee0f1e0e6005cb551798cd4644ccdd1936f939434702335      6264 bytes  week_40/speaking_hub.js
+  3aa67ef9cae66006238c83824f5d82ea4b2609450889007f93a002c0188b04c8      9367 bytes  week_40/skill_practice_hub.js
+  cfe79cc49948292c00b7b7234684308ee7c70fac9582f5f39a0e47230f545e38      2241 bytes  week_40/provenance.json
+  b1eae0f0444012d7227f806f0e9f15511e266c945b44d77e0062f67e7a47adb6      7569 bytes  week_40/source_grounding.json
+  3e45316ea552c21cc423e76b74a92b01f40fab48be6324d482854dccbf847987      1894 bytes  week_40/dossier.json
+  ffa8210f6bf4d1701db143b7865c5d903770a4cfc8770caddcfe2914700bab98      7745 bytes  week_42/blueprint.json
+  6476277960d420865e195ca680d55b2d3bad90e63f0cf2cadcd77c67968b77b2      1590 bytes  week_42/index.js
+  e003ddc8a27a38db1ef7bc2c529ec213386d224b649e796a461cf4acfe16faa9      6966 bytes  week_42/vocab.js
+  0cf12d113e551866918e9e066e44e3d302b757e434b2cbf0000c1a80f1277090     20932 bytes  week_42/reading_hub.js
+  b70b1e7de18343724bc8d8aca1504024ea4dfe502f146f89a09371e73f48b948      2810 bytes  week_42/listening_hub.js
+  14e015810dc211c923f8be3ecb6a5333112f30b03b32d9d8dca90084108a0030      1887 bytes  week_42/writing_hub.js
+  4fa2d58107d6b674ddcacae80035e54a7ffe70ba58630d6b11a1fbcc8384233d      6267 bytes  week_42/speaking_hub.js
+  da6f77eff863021df769a78fa7cdab99f48470b0c91020ff9e66a8c9a4eaebbf      9345 bytes  week_42/skill_practice_hub.js
+  a811626053a6e1ee0cc2870c40a2bbb6358bee164f20756512ec2c2276133499      2233 bytes  week_42/provenance.json
+  087a5d00362f84863e34b9c98c120e61df583d8578244b7f720a6e6872b49dab      9079 bytes  week_42/source_grounding.json
+  3a860194f6acb110fe311a0d0cc5d0bc15789d54fe52e106104fb477a20dc8e1      1932 bytes  week_42/dossier.json
+  4ea71a9f91b9aa1f26fd7ee68209c541cf68ac7311ae64e3b6c02ac25abd8567      6143 bytes  week_44/blueprint.json
+  8352d5786728aeee22f7b3b73fdccc419d46028e747314514aa747d477c38503      1666 bytes  week_44/index.js
+  4fa6fe433ab88929317d62ba853a32c1f5ce99d73e07c7ba6eb0ba1c187072dd      7112 bytes  week_44/vocab.js
+  ca3906924e0bb0cb18bb14d8840ee9ec1f732549a81a31df5a90446ced8e5fa2     20948 bytes  week_44/reading_hub.js
+  7e58983f5a70083bead9c4c0c8cd9d8a6e1629f468046df925631213b0d843db      2777 bytes  week_44/listening_hub.js
+  a336f5dbb0f52070d60a04c5a8172bc3340076eb9e2931a8c445926b10959a53      1932 bytes  week_44/writing_hub.js
+  96038360b09826f0de1670b4cc1bda5e18c3068baade7bd8fe553ec004601d27      6391 bytes  week_44/speaking_hub.js
+  10a5f038f4cc98921aa0f1936649c1fa551deedebd6ead9e799fb32812684f78      9442 bytes  week_44/skill_practice_hub.js
+  f653c86458551b828a9c200654ae4cec85b331edbacfd2529462514f93071cc5      2229 bytes  week_44/provenance.json
+  2181bd58ad067455399ee415b9f1bc53249b9a8fa057c3a3b385aee8ada0e5e3      7241 bytes  week_44/source_grounding.json
+  00d88adb162ac91941c16c889bec975dc470142a24c5f66c4f241b2b802a380e      1926 bytes  week_44/dossier.json
+  245cf45a80e01ee09bdc520d846bbd322eed91658a635d1505913a4835637742      6113 bytes  week_47/blueprint.json
+  9d052535e101c1e29a890bcf4b482e266a94f258a7b1f91035e75c4f84fe6bc6      1592 bytes  week_47/index.js
+  a6fbbd56642d9e957639ef47ec06918b9ce2c536b6884dbd2ce3354db83f73fa      7262 bytes  week_47/vocab.js
+  b500f147351b0789fbef86ac259bca1f71f8cd58983925038a54453c64a39e57     20190 bytes  week_47/reading_hub.js
+  5e06f1b355342bbfead5fb6637c17138b50f3bb43926906f412a215390f3072f      2673 bytes  week_47/listening_hub.js
+  df6cc6d4ee827b660b4641c0b43290208d94028549f9796c881a33a7b28e9160      1576 bytes  week_47/writing_hub.js
+  19ae390d7ed16d76eef64b01e79b43a6c2e79e887fc9e765900e0c1cf06f84f6      7210 bytes  week_47/speaking_hub.js
+  62bad243fe188786fd217b99c2417e6552e67af203f540d9125a31e32c75732a     11166 bytes  week_47/skill_practice_hub.js
+  b40c318b430bdf3c2ade3fb396ff5df2d472e92c20c87fce61f0463200ffc2ea      2110 bytes  week_47/provenance.json
+  62a7e244c95599ec0e250298a8c135b641135d2257e86aec3c35cfaece672382      7236 bytes  week_47/source_grounding.json
+  32333bec4c8d88e76554c734b6822e71f7ffd7ddcd462e0db394f3689d1b7565      1862 bytes  week_47/dossier.json
+  fc9c582b2de5f5da7d6349d1c728185697ebce0e5f71d73fe9ba7a1fa06e3a99      7055 bytes  week_48/blueprint.json
+  2f3291751411c3deb11e036f3799b0566f2f216efaf2946c150c68f8fb6225cd      1581 bytes  week_48/index.js
+  899c8b17894875525491248ef68197233c91bc2da11381db0b289ed489429987      7194 bytes  week_48/vocab.js
+  ac9adc17dcaf7877ea2f585fa914b5a6abd87e3ad2a88a0c30e57027aed71e27     20580 bytes  week_48/reading_hub.js
+  8ed3e189a4d3611bda4633f0e4160b00e4498af51e55c2fca2ac1526b1a8dc60      2629 bytes  week_48/listening_hub.js
+  eecc90509af8498996e6363ae0fed33fc7ad6526b41724c40bd64ac2fb865140      1603 bytes  week_48/writing_hub.js
+  50053cf075cddd8e847549646d4ee6b239b93c9a9ff3b3ccf6fa0fe3edf38f65      6872 bytes  week_48/speaking_hub.js
+  8a4e7434587890942f26ef028f2dd56386b70e968b4679efaa70c7cc81c15c26     11020 bytes  week_48/skill_practice_hub.js
+  73db5d859bc397c8d8a6115905c70255a4b617ad784aaeaf95dfb343ff933b87      2164 bytes  week_48/provenance.json
+  bdb7c0eba1b5d19d0e9039c8937f7323bc93ff033f227b2523d2f3f68593b005      8393 bytes  week_48/source_grounding.json
+  2244098681e26d2e6c4763dfbb10a29c4e4fd9f0c1829ef05014d7cfeae854be      1826 bytes  week_48/dossier.json
+  ab429e0315f87d62189a7be53aa173a0a3d89793696eb17ee83cb4819fe4bb41      6484 bytes  week_49/blueprint.json
+  e37329491414c89c191f8925da4b2a783d3959503d9df34b362e7ac4838cd1c7      1596 bytes  week_49/index.js
+  cd47daab1ea5f2a2394150d39d9fce8eec467c4daec6cc6531aa27bd5ae414f4      7802 bytes  week_49/vocab.js
+  eef175748b609e380f249c02e44483c6a259f3bb04d8fa2ac8a24efecae10df0     21499 bytes  week_49/reading_hub.js
+  e6f167e27ac92551beb8e7cf13e925b0b4ee265d03fe6540365dbc94577493b5      2959 bytes  week_49/listening_hub.js
+  c462c88354d8903493760758b5fa62875968af7dee9aed499f25e20ffb911ec1      1663 bytes  week_49/writing_hub.js
+  78c662c01402e8962be7bc25837fa89fcaffc8ad206e239345eefc750a322900      6774 bytes  week_49/speaking_hub.js
+  ab7556ba557e1f5df8612ce13e058dc089e0c17e4ebe7f89cb4f62ecb2281f12     11310 bytes  week_49/skill_practice_hub.js
+  5c5d10c6c0aa27e0e3d95f845b8146d8af906305f6875002923f43d03875a249      2121 bytes  week_49/provenance.json
+  cef771c5f2fa0f31495981832de7f8d63aad17f776f01812ce547368baeceaa5      7662 bytes  week_49/source_grounding.json
+  1f6a4b7b5547ba7d00477d38842c2908c1ff9abb2a93b07eb9af8e54e9fff77b      1807 bytes  week_49/dossier.json
+  09817a9e113d0142a50f428bbea3038028a2dce049f12b49dd2d96655a8cf6cf      3181 bytes  week_50/blueprint.json
+  2d11fdae9cc2b201fbba802017f3d8bff2c4235440f6057f4bea31e6ec1575f9      1629 bytes  week_50/index.js
+  d137155ce0385bf35640a089c047697fefc32a370666a3d96538a3dff47590ea      7551 bytes  week_50/vocab.js
+  b709123fe95bddcee771226baf56d5f88ac5f7e16b80e875411fa50d023e1985     21257 bytes  week_50/reading_hub.js
+  18520e3eb2dc95aee53871f7d50cd843fe28cc5d3d082ce77e49a4455eed422e      2863 bytes  week_50/listening_hub.js
+  653a701da0ecfa85e1489f75781dd4ad182f5f61f5589a941dcdd9abbeef607f      1646 bytes  week_50/writing_hub.js
+  c13c57632cf0acbf90d53ddaf1a78a3ea293df03adcc02715a000cf2a7054002      7079 bytes  week_50/speaking_hub.js
+  6507e255519ba3b25d6ac5a64c69b024f3b43ba419270dfba4a921e8193f6c48     11003 bytes  week_50/skill_practice_hub.js
+  43498fe739af586c5bb30fe499302022835c8727b5a2cecb530e6808ad460d3a      2153 bytes  week_50/provenance.json
+  d56511bab754fe76b6f2aced46191e82c1247ff69f712cdd8adbc5a9e5ef1068      3956 bytes  week_50/source_grounding.json
+  38a7847df7b094efdb9363a159ceb0746a3497491f496fc17824b02c220b1bc3      1761 bytes  week_50/dossier.json
+  76c36199e37fb7b1dd7b87bbff30a61b29799ee75dc6ebd60d8f54b9ab3c2c8c      3155 bytes  week_51/blueprint.json
+  63c4ffe7825c3f5b46d518d8df979b7e27dc064c4e04a1d81c29437cc18116e5      1619 bytes  week_51/index.js
+  7e9647bfd1f43075be25e3bc181368cc8dd76570d85f887d1431f56ac90fdff0      7715 bytes  week_51/vocab.js
+  ea48771232aee114cd8eda246c1ca21b8ea3820d978e7f9a2102bf319fe25e26     21378 bytes  week_51/reading_hub.js
+  82ce479539662e9335ed79b6bf769599d192dbc21e8e2b1b49ec7b5991ff5de2      2681 bytes  week_51/listening_hub.js
+  a28c393a1eecaead08d420b68640094adf62e8d781b172015dd3e23025c3fa59      1652 bytes  week_51/writing_hub.js
+  244a4899a5ab22f88e973b39c11e29ea14eee3b261a2039e00ab47ca10857efd      6979 bytes  week_51/speaking_hub.js
+  a8f828e32a9439f8e1e3791e5d92e79786c450017f512e463da2fba573c3eadf     11364 bytes  week_51/skill_practice_hub.js
+  7ddcb18333e56496a1840961cc68c8be947b172f992327f2fd7badf2a7c32f31      2110 bytes  week_51/provenance.json
+  e5ec70f5d86149f725783cf76f1cd700a9bf4c411e84b2fc2f95565027ddf104      3899 bytes  week_51/source_grounding.json
+  28662c7d35c8269114a1e51443b81f6e0b12c3a854ba3b4d84487f56f3c437b6      1763 bytes  week_51/dossier.json
+  c4872f7dd2f5189f10c27f7e0334d48ddd3f41d4b1912742b2da858d6f3f29f2      3260 bytes  week_52/blueprint.json
+  f14ab05142226662f6de99fd8dac3fcf03ca35b647d75dc12b2464ab03c323bf      1628 bytes  week_52/index.js
+  474d02f9b91f5924a87d8be27d24be3e8d22ec54144bf46674bcea41c7372362      7509 bytes  week_52/vocab.js
+  9bfcef2a342f87ed9c3a9310f8c1619df00d9739e4f6a95240e8a902991c3d8f     20951 bytes  week_52/reading_hub.js
+  b94eefb5fab70d7b34e4c1a14897f7ab09c423559a18b36fdcedb61da8309748      2729 bytes  week_52/listening_hub.js
+  8b7046cd8186c969010510a37d019f42e16be698e485518cdfe5d1e11e22e04b      1638 bytes  week_52/writing_hub.js
+  f208fedc40f1e54fefc2f851058c3e64e859f5a6be6d720c3a05ad9e91b11ad8      7028 bytes  week_52/speaking_hub.js
+  44ec6eceebc11ef21f710af4bc476e8ca7799ba07ed40cc291f30293142f4da6     11122 bytes  week_52/skill_practice_hub.js
+  3b8832c1a07d3c8f95dd7ec5d44072c857fd961662dfdb5514613efd72059a81      2136 bytes  week_52/provenance.json
+  d406cf9ac1f9dd329daadd3eda6f0c0adbb545728c68ad0f8541b558f92f8f0e      4307 bytes  week_52/source_grounding.json
+  19efe5f5a0be3f94aada3c35da6e0ee1eb4dbd45ffd18c89836b164728c7cd8b      1763 bytes  week_52/dossier.json
+  baf0dbccc14c8bc0bcdf07a420914bea06b6a254ecb7bdd2ae0985426fd3a7c3      3259 bytes  week_53/blueprint.json
+  f644af1a798b07aa1864352c1b940cd6dbdca7b2d582cec2389745beafb7f0bf      1657 bytes  week_53/index.js
+  3ab83164f164b794d4ca03bb82c6c1a6fa3a569f35279907ba0ce9e1eb12516c      8084 bytes  week_53/vocab.js
+  9044c393a4c592eee50e257470a834af329346650e26a4ba35fa05e925e15fc2     22349 bytes  week_53/reading_hub.js
+  60dd8755aec958a48fa5500f88c741b53c0ae9c2cbd1be0d0036bad4f29818c1      2889 bytes  week_53/listening_hub.js
+  4b91a352da663aacfc71b9b784eb74225cba0bfd2f553cd5f0f3b4ab4bd01477      1730 bytes  week_53/writing_hub.js
+  c41fc1b05012fab63dff76f3d3e3b388d89218fea1c36a7ea466552abf284e1e      7308 bytes  week_53/speaking_hub.js
+  55967ca532c76737dcfefc186755d25857b67e0847c7a648731ca95cf9b1e7e4     11425 bytes  week_53/skill_practice_hub.js
+  47de24932a70ca06712f88e7e8b7fc87e46a903ec827db9db77c9f67c8bb2309      2130 bytes  week_53/provenance.json
+  21e2998061c5edac857217be8b33e07aef60359d62f11e6d2308953fd2d53633      4134 bytes  week_53/source_grounding.json
+  e6baf487af4541d0d3525af01332b0e2a3697101b7cf7194e559a5282fccd5fc      1773 bytes  week_53/dossier.json
+  3ef6649f3dd944f62cc57f4b52b7446e5c2f8c5e47d956c7c860fb0ac2f8bc87      3174 bytes  week_54/blueprint.json
+  87ed474276cf62e43d68c99cba97cac14aeb86dc5a77ef90284ceee3cf1b6b78      1625 bytes  week_54/index.js
+  16e2612ccce48b91c404c7d8fb5fb8c06edaedb976a4029dacbf9ca8ab0c7e80      8262 bytes  week_54/vocab.js
+  7975e7e6b0165b5d88102e34e016960a17e0feea76a54068cdb3512010b9058b     22512 bytes  week_54/reading_hub.js
+  13320a980618f94d35b3452cc1c0bdef4cecceaf0b21977c20093c6d572b4c7a      2858 bytes  week_54/listening_hub.js
+  cd146d9035d981d3c393745114c2aed6a67ef6c0177cfce0d3c6d050d8f79775      1748 bytes  week_54/writing_hub.js
+  357fdca4723220bb07680a5bbdbc5325416526ab93fd5109bab5d3bdd4abf481      7340 bytes  week_54/speaking_hub.js
+  e4fd88af0e15ffe690ff63f218ee40082878c9e95dbe6b42b5d2ed8b59c18f9c     11590 bytes  week_54/skill_practice_hub.js
+  e9330ce870c88e868e60ae01dcb8a5ed48050c7880e94e2e173a5a7333b234fa      2144 bytes  week_54/provenance.json
+  19e9bef7bbab70df6dd65fc0d8adf16260788e2e901ddc80f08ec92d34a5d8da      4384 bytes  week_54/source_grounding.json
+  6ed8ea392e14280ca87ecc1c75676c376cf52e4b258c04be45b7e69f91c7e433      1757 bytes  week_54/dossier.json
+========================================================================
