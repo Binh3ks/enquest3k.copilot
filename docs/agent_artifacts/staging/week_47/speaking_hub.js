@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
  * Week: 47 | Theme: "Big Numbers (Place Value)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 47,
   "theme": "Big Numbers (Place Value)",
@@ -40,70 +36,74 @@ export const speakingHubData = {
       "person": "Village Census Officer",
       "fields": [
         {
-          "id": "f1",
-          "label": "Village name",
+          "id": "field_a1",
+          "label": "what / village name?",
           "cue_prompt": "what / village name?",
-          "cue_word": "village",
+          "cue_word": "name",
           "is_missing": true,
+          "value": "Silver Hill Village",
           "acceptable_questions": [
             "What is the village name?",
-            "Can you tell me the village name?"
+            "Can you tell me the village name?",
+            "What is the name of the village?"
           ],
-          "nova_reply": "The village name is recorded for Big Numbers (Place Value)."
+          "nova_reply": "The village is called Silver Hill Village."
         },
         {
-          "id": "f2",
-          "label": "Number of houses",
-          "cue_prompt": "what / number of houses?",
-          "cue_word": "number",
+          "id": "field_a2",
+          "label": "how many / stone houses?",
+          "cue_prompt": "how many / stone houses?",
+          "cue_word": "houses",
           "is_missing": true,
+          "value": "Forty-five stone houses",
           "acceptable_questions": [
-            "What is the number of houses?",
-            "Can you tell me the number of houses?"
+            "How many stone houses are there?",
+            "How many houses does the village have?",
+            "How many stone houses are in the village?"
           ],
-          "nova_reply": "The number of houses is recorded for Big Numbers (Place Value)."
+          "nova_reply": "There are forty-five stone houses in the village."
         },
         {
-          "id": "f3",
-          "label": "Cottages in north",
-          "cue_prompt": "what / cottages in north?",
+          "id": "field_a3",
+          "label": "how many / cottages in north?",
+          "cue_prompt": "how many / cottages in north?",
           "cue_word": "cottages",
-          "is_missing": false,
-          "card_value": "Cottages in north verified",
-          "value": "Cottages in north verified",
-          "examiner_question": "What is the cottages in north?",
-          "acceptable_answers": [
-            "It is cottages in north.",
-            "Cottages in north."
-          ]
+          "is_missing": true,
+          "value": "Twenty-one cottages",
+          "acceptable_questions": [
+            "How many cottages are in the north?",
+            "Are there cottages in the north?",
+            "How many northern cottages are there?"
+          ],
+          "nova_reply": "There are twenty-one cottages located in the north."
         },
         {
-          "id": "f4",
-          "label": "Farms in south",
-          "cue_prompt": "what / farms in south?",
+          "id": "field_a4",
+          "label": "how many / farms in south?",
+          "cue_prompt": "how many / farms in south?",
           "cue_word": "farms",
-          "is_missing": false,
-          "card_value": "Farms in south verified",
-          "value": "Farms in south verified",
-          "examiner_question": "What is the farms in south?",
-          "acceptable_answers": [
-            "It is farms in south.",
-            "Farms in south."
-          ]
+          "is_missing": true,
+          "value": "Thirty-four farms",
+          "acceptable_questions": [
+            "How many farms are in the south?",
+            "Are there farms in the south?",
+            "How many southern farms are there?"
+          ],
+          "nova_reply": "There are thirty-four farms situated in the south."
         },
         {
-          "id": "f5",
-          "label": "Total population",
+          "id": "field_a5",
+          "label": "what / total population?",
           "cue_prompt": "what / total population?",
-          "cue_word": "total",
-          "is_missing": false,
-          "card_value": "Total population verified",
-          "value": "Total population verified",
-          "examiner_question": "What is the total population?",
-          "acceptable_answers": [
-            "It is total population.",
-            "Total population."
-          ]
+          "cue_word": "population",
+          "is_missing": true,
+          "value": "Ninety-nine residents",
+          "acceptable_questions": [
+            "What is the total population?",
+            "How many residents live in the village?",
+            "How many people live there?"
+          ],
+          "nova_reply": "The total population of Silver Hill Village is ninety-nine residents."
         }
       ]
     },
@@ -113,68 +113,77 @@ export const speakingHubData = {
       "person": "Star Observatory Guide",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Observatory name",
+          "id": "field_b1",
+          "label": "what / observatory name?",
           "cue_prompt": "what / observatory name?",
-          "cue_word": "observatory",
+          "cue_word": "name",
           "is_missing": false,
-          "card_value": "Observatory name on file",
-          "value": "Observatory name on file",
-          "examiner_question": "What is the observatory name?",
+          "value": "Sky Peak Observatory",
+          "nova_question": "What is the name of the star observatory?",
           "acceptable_answers": [
-            "It is observatory name.",
-            "Observatory name."
+            "Sky Peak Observatory",
+            "Sky Peak Observatory.",
+            "It is Sky Peak Observatory.",
+            "It is called Sky Peak Observatory."
           ]
         },
         {
-          "id": "fb2",
-          "label": "Telescopes in use",
-          "cue_prompt": "what / telescopes in use?",
+          "id": "field_b2",
+          "label": "how many / telescopes in use?",
+          "cue_prompt": "how many / telescopes in use?",
           "cue_word": "telescopes",
           "is_missing": false,
-          "card_value": "Telescopes in use on file",
-          "value": "Telescopes in use on file",
-          "examiner_question": "What is the telescopes in use?",
+          "value": "Eight large telescopes",
+          "nova_question": "How many large telescopes are currently in use?",
           "acceptable_answers": [
-            "It is telescopes in use.",
-            "Telescopes in use."
+            "Eight large telescopes",
+            "Eight large telescopes.",
+            "There are eight large telescopes in use.",
+            "Eight telescopes."
           ]
         },
         {
-          "id": "fb3",
-          "label": "Constellations counted",
-          "cue_prompt": "what / constellations counted?",
+          "id": "field_b3",
+          "label": "which / constellations counted?",
+          "cue_prompt": "which / constellations counted?",
           "cue_word": "constellations",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the constellations counted?",
-            "Can you tell me the constellations counted?"
-          ],
-          "nova_reply": "The constellations counted is confirmed in our notes."
+          "is_missing": false,
+          "value": "Southern and northern constellations",
+          "nova_question": "Which constellations were observed and counted tonight?",
+          "acceptable_answers": [
+            "Southern and northern constellations",
+            "Southern and northern constellations.",
+            "Astronomers counted southern and northern constellations."
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Stars logged tonight",
-          "cue_prompt": "what / stars logged tonight?",
+          "id": "field_b4",
+          "label": "how many / stars logged tonight?",
+          "cue_prompt": "how many / stars logged tonight?",
           "cue_word": "stars",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the stars logged tonight?",
-            "Can you tell me the stars logged tonight?"
-          ],
-          "nova_reply": "The stars logged tonight is confirmed in our notes."
+          "is_missing": false,
+          "value": "Seventy-eight southern stars and sixty-seven northern stars",
+          "nova_question": "How many stars were logged in the night sky?",
+          "acceptable_answers": [
+            "Seventy-eight southern stars and sixty-seven northern stars",
+            "Seventy-eight southern stars and sixty-seven northern stars.",
+            "They logged seventy-eight southern and sixty-seven northern stars."
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Visitor total",
-          "cue_prompt": "what / visitor total?",
-          "cue_word": "visitor",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the visitor total?",
-            "Can you tell me the visitor total?"
-          ],
-          "nova_reply": "The visitor total is confirmed in our notes."
+          "id": "field_b5",
+          "label": "what / visitor total tonight?",
+          "cue_prompt": "what / visitor total tonight?",
+          "cue_word": "visitors",
+          "is_missing": false,
+          "value": "Fifty-six students",
+          "nova_question": "What was the total number of student visitors tonight?",
+          "acceptable_answers": [
+            "Fifty-six students",
+            "Fifty-six students.",
+            "There were fifty-six student visitors.",
+            "Fifty-six."
+          ]
         }
       ]
     }

@@ -250,5 +250,9 @@
     },
     "week_number": 62
   },
-  "source_b_excerpt": "•\tWeek 62: ELA: The Movie Trailer (Summarizing) / Math: Rounding (Tuần 62: ELA: Trailer Phim - Tóm tắt / Toán: Làm tròn)\n\t•\tTopic (ELA): Retelling a story briefly. (Chủ đề: Kể lại chuyện ngắn gọn.)\n\t•\tKey Learning Outcome (ELA): Paraphrase a text in 3 sentences. (Kết quả: Diễn giải lại văn bản trong 3 câu.)\n\t•\tSkill Focus: Paraphrasing. (Kỹ năng: Diễn giải.)\n\t•\tGrammar Focus: Reported Speech Basic (He said that...). (Ngữ pháp: Câu tường thuật cơ bản.)\n\t•\tVocabulary Focus: summary, short, retell, story, scene, character, plot.\n\t•\tTopic (Math): Rounding & Estimation. (Toán: Làm tròn & Ước lượng.)\n\t•\tKey Learning Outcome (Math): Estimate an answer before calculating. (Kết quả: Ước lượng đáp án trước khi tính.)\n\t•\tMath Vocabulary: round up, round down, estimate, close to, about, nearly."
+  "source_b_excerpt": "•\tWeek 62: ELA: The Movie Trailer (Summarizing) / Math: Rounding (Tuần 62: ELA: Trailer Phim - Tóm tắt / Toán: Làm tròn)\n\t•\tTopic (ELA): Retelling a story briefly. (Chủ đề: Kể lại chuyện ngắn gọn.)\n\t•\tKey Learning Outcome (ELA): Paraphrase a text in 3 sentences. (Kết quả: Diễn giải lại văn bản trong 3 câu.)\n\t•\tSkill Focus: Paraphrasing. (Kỹ năng: Diễn giải.)\n\t•\tGrammar Focus: Reported Speech Basic (He said that...). (Ngữ pháp: Câu tường thuật cơ bản.)\n\t•\tVocabulary Focus: summary, short, retell, story, scene, character, plot.\n\t•\tTopic (Math): Rounding & Estimation. (Toán: Làm tròn & Ước lượng.)\n\t•\tKey Learning Outcome (Math): Estimate an answer before calculating. (Kết quả: Ước lượng đáp án trước khi tính.)\n\t•\tMath Vocabulary: round up, round down, estimate, close to, about, nearly.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L484–L492"
 }

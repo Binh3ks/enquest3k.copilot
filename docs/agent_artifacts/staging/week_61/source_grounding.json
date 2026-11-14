@@ -252,5 +252,9 @@
     },
     "week_number": 61
   },
-  "source_b_excerpt": "•\tWeek 61: ELA: Main Idea Hunter / Math: Word Problems (Tuần 61: ELA: Thợ săn Ý chính / Toán: Toán đố)\n\t•\tTopic (ELA): Finding the \"Gem\" (Main Idea) in a text. (Chủ đề: Tìm ý chính trong văn bản.)\n\t•\tKey Learning Outcome (ELA): Distinguish Main Idea vs. Details. (Kết quả: Phân biệt Ý chính và Chi tiết.)\n\t•\tSkill Focus: Reading Comprehension. (Kỹ năng: Đọc hiểu.)\n\t•\tGrammar Focus: Subject + Verb Identification (Core sentence). (Ngữ pháp: Xác định nòng cốt câu.)\n\t•\tVocabulary Focus: main idea, detail, support, topic, important, about, title.\n\t•\tTopic (Math): Two-Step Word Problems. (Toán: Bài toán đố 2 bước.)\n\t•\tKey Learning Outcome (Math): Identify the hidden question in a problem. (Kết quả: Xác định câu hỏi ẩn.)\n\t•\tMath Vocabulary: step, first, then, total, solve."
+  "source_b_excerpt": "•\tWeek 61: ELA: Main Idea Hunter / Math: Word Problems (Tuần 61: ELA: Thợ săn Ý chính / Toán: Toán đố)\n\t•\tTopic (ELA): Finding the \"Gem\" (Main Idea) in a text. (Chủ đề: Tìm ý chính trong văn bản.)\n\t•\tKey Learning Outcome (ELA): Distinguish Main Idea vs. Details. (Kết quả: Phân biệt Ý chính và Chi tiết.)\n\t•\tSkill Focus: Reading Comprehension. (Kỹ năng: Đọc hiểu.)\n\t•\tGrammar Focus: Subject + Verb Identification (Core sentence). (Ngữ pháp: Xác định nòng cốt câu.)\n\t•\tVocabulary Focus: main idea, detail, support, topic, important, about, title.\n\t•\tTopic (Math): Two-Step Word Problems. (Toán: Bài toán đố 2 bước.)\n\t•\tKey Learning Outcome (Math): Identify the hidden question in a problem. (Kết quả: Xác định câu hỏi ẩn.)\n\t•\tMath Vocabulary: step, first, then, total, solve.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L475–L483"
 }

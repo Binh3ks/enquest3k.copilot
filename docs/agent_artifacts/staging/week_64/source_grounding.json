@@ -275,5 +275,9 @@
     "mockFormat": "flyers",
     "week_number": 64
   },
-  "source_b_excerpt": "•\tWeek 64: ELA: Data Stories / Math: Pictographs (Tuần 64: ELA: Câu chuyện Dữ liệu / Toán: Biểu đồ tranh)\n\t•\tTopic (ELA): What the Picture Says (Describing a chart). (Chủ đề: Bức tranh nói gì - Miêu tả biểu đồ.)\n\t•\tKey Learning Outcome (ELA): Write sentences summarizing data findings (Most/Least). (Kết quả: Viết câu tóm tắt dữ liệu tìm được.)\n\t•\tWriting Skill Focus: Factual reporting. (Kỹ năng Viết: Báo cáo sự thật.)\n\t•\tGrammar Focus: Quantifiers: \"The majority of...\", \"Most...\", \"Few...\". (Ngữ pháp: Lượng từ.)\n\t•\tVocabulary Focus: chart, graph, show, data, popular, least, number, information.\n\t•\tTopic (Math): Interpreting Pictographs. (Toán: Diễn giải Biểu đồ tranh.)\n\t•\tKey Learning Outcome (Math): Answer questions using a key (e.g., 1 icon = 10 items). (Kết quả: Trả lời câu hỏi dùng chú giải.)\n\t•\tMath Vocabulary: symbol, key, represent, value, count, picture."
+  "source_b_excerpt": "•\tWeek 64: ELA: Data Stories / Math: Pictographs (Tuần 64: ELA: Câu chuyện Dữ liệu / Toán: Biểu đồ tranh)\n\t•\tTopic (ELA): What the Picture Says (Describing a chart). (Chủ đề: Bức tranh nói gì - Miêu tả biểu đồ.)\n\t•\tKey Learning Outcome (ELA): Write sentences summarizing data findings (Most/Least). (Kết quả: Viết câu tóm tắt dữ liệu tìm được.)\n\t•\tWriting Skill Focus: Factual reporting. (Kỹ năng Viết: Báo cáo sự thật.)\n\t•\tGrammar Focus: Quantifiers: \"The majority of...\", \"Most...\", \"Few...\". (Ngữ pháp: Lượng từ.)\n\t•\tVocabulary Focus: chart, graph, show, data, popular, least, number, information.\n\t•\tTopic (Math): Interpreting Pictographs. (Toán: Diễn giải Biểu đồ tranh.)\n\t•\tKey Learning Outcome (Math): Answer questions using a key (e.g., 1 icon = 10 items). (Kết quả: Trả lời câu hỏi dùng chú giải.)\n\t•\tMath Vocabulary: symbol, key, represent, value, count, picture.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L502–L510"
 }

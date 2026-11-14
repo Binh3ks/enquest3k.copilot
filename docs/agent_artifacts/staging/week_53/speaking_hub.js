@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 53 | Theme: "Project 4 Prep - \"My Year in Review\"" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
+ * Week: 53 | Theme: "Project 4 Prep - "My Year in Review"" | CEFR: A2 Flyers
  */
-
 export const speakingHubData = {
   "week": 53,
   "theme": "Project 4 Prep - \"My Year in Review\"",
@@ -40,70 +36,74 @@ export const speakingHubData = {
       "person": "Lead Junior Detective",
       "fields": [
         {
-          "id": "f1",
-          "label": "Case name",
-          "cue_prompt": "what / case name?",
+          "id": "field_a1",
+          "label": "what / mystery case name?",
+          "cue_prompt": "what / mystery case name?",
           "cue_word": "case",
           "is_missing": true,
+          "value": "The Library Trophy Mystery",
           "acceptable_questions": [
-            "What is the case name?",
-            "Can you tell me the case name?"
+            "What is the mystery case name?",
+            "What case did Oliver investigate?",
+            "What was the title of the case?"
           ],
-          "nova_reply": "The case name is recorded for Project 4 Prep - \"My Year in Review\"."
+          "nova_reply": "The case was named The Library Trophy Mystery."
         },
         {
-          "id": "f2",
-          "label": "Key clue",
-          "cue_prompt": "what / key clue?",
-          "cue_word": "key",
+          "id": "field_a2",
+          "label": "what / key clue discovered?",
+          "cue_prompt": "what / key clue discovered?",
+          "cue_word": "clue",
           "is_missing": true,
+          "value": "Twenty-two-centimeter sneaker footprint",
           "acceptable_questions": [
-            "What is the key clue?",
-            "Can you tell me the key clue?"
+            "What was the key clue discovered?",
+            "What clue did Oliver find in the library?",
+            "How long was the footprint clue?"
           ],
-          "nova_reply": "The key clue is recorded for Project 4 Prep - \"My Year in Review\"."
+          "nova_reply": "The key clue was a twenty-two-centimeter sneaker footprint on the rug."
         },
         {
-          "id": "f3",
-          "label": "Deduction made",
+          "id": "field_a3",
+          "label": "what / deduction made?",
           "cue_prompt": "what / deduction made?",
           "cue_word": "deduction",
-          "is_missing": false,
-          "card_value": "Deduction made verified",
-          "value": "Deduction made verified",
-          "examiner_question": "What is the deduction made?",
-          "acceptable_answers": [
-            "It is deduction made.",
-            "Deduction made."
-          ]
+          "is_missing": true,
+          "value": "The culprit must be a primary student",
+          "acceptable_questions": [
+            "What deduction did Oliver make?",
+            "Who did Oliver deduce the suspect was?",
+            "What conclusion was reached from the footprint?"
+          ],
+          "nova_reply": "Oliver deduced that the footprint must belong to a primary school student."
         },
         {
-          "id": "f4",
-          "label": "Suspect status",
-          "cue_prompt": "what / suspect status?",
-          "cue_word": "suspect",
-          "is_missing": false,
-          "card_value": "Suspect status verified",
-          "value": "Suspect status verified",
-          "examiner_question": "What is the suspect status?",
-          "acceptable_answers": [
-            "It is suspect status.",
-            "Suspect status."
-          ]
+          "id": "field_a4",
+          "label": "where / notes curated?",
+          "cue_prompt": "where / notes curated?",
+          "cue_word": "notes",
+          "is_missing": true,
+          "value": "In his detective portfolio",
+          "acceptable_questions": [
+            "Where were the detective notes curated?",
+            "Where did Oliver save his evidence?",
+            "What document holds the investigation notes?"
+          ],
+          "nova_reply": "Oliver curated all detective notes neatly into his portfolio."
         },
         {
-          "id": "f5",
-          "label": "Portfolio piece",
-          "cue_prompt": "what / portfolio piece?",
-          "cue_word": "portfolio",
-          "is_missing": false,
-          "card_value": "Portfolio piece verified",
-          "value": "Portfolio piece verified",
-          "examiner_question": "What is the portfolio piece?",
-          "acceptable_answers": [
-            "It is portfolio piece.",
-            "Portfolio piece."
-          ]
+          "id": "field_a5",
+          "label": "what / modal skill demonstrated?",
+          "cue_prompt": "what / modal skill demonstrated?",
+          "cue_word": "modal",
+          "is_missing": true,
+          "value": "Modals of deduction: must, could, cannot",
+          "acceptable_questions": [
+            "What modal grammar skill was demonstrated?",
+            "Which modal verbs did Oliver use?",
+            "What grammar skill was applied?"
+          ],
+          "nova_reply": "He demonstrated modals of deduction using must, could, and cannot."
         }
       ]
     },
@@ -113,68 +113,79 @@ export const speakingHubData = {
       "person": "Portfolio Curation Leader",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Project title",
-          "cue_prompt": "what / project title?",
-          "cue_word": "project",
+          "id": "field_b1",
+          "label": "what / project portfolio title?",
+          "cue_prompt": "what / project portfolio title?",
+          "cue_word": "title",
           "is_missing": false,
-          "card_value": "Project title on file",
-          "value": "Project title on file",
-          "examiner_question": "What is the project title?",
+          "value": "Year in Review Portfolio",
+          "nova_question": "What is the title of Grace's project portfolio?",
           "acceptable_answers": [
-            "It is project title.",
-            "Project title."
+            "Year in Review Portfolio",
+            "Year in Review Portfolio.",
+            "It is called Year in Review Portfolio.",
+            "My Year in Review."
           ]
         },
         {
-          "id": "fb2",
-          "label": "Artifacts chosen",
-          "cue_prompt": "what / artifacts chosen?",
-          "cue_word": "artifacts",
+          "id": "field_b2",
+          "label": "how many / written essays included?",
+          "cue_prompt": "how many / written essays included?",
+          "cue_word": "essays",
           "is_missing": false,
-          "card_value": "Artifacts chosen on file",
-          "value": "Artifacts chosen on file",
-          "examiner_question": "What is the artifacts chosen?",
+          "value": "Five essays",
+          "nova_question": "How many written essays are included in her portfolio?",
           "acceptable_answers": [
-            "It is artifacts chosen.",
-            "Artifacts chosen."
+            "Five essays",
+            "Five essays.",
+            "Her portfolio contains five essays.",
+            "Five."
           ]
         },
         {
-          "id": "fb3",
-          "label": "Modal deduction skill",
-          "cue_prompt": "what / modal deduction skill?",
-          "cue_word": "modal",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the modal deduction skill?",
-            "Can you tell me the modal deduction skill?"
-          ],
-          "nova_reply": "The modal deduction skill is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / science diagrams?",
+          "cue_prompt": "how many / science diagrams?",
+          "cue_word": "diagrams",
+          "is_missing": false,
+          "value": "Three science diagrams",
+          "nova_question": "How many science diagrams did Grace curate?",
+          "acceptable_answers": [
+            "Three science diagrams",
+            "Three science diagrams.",
+            "She included three science diagrams.",
+            "Three diagrams."
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Summary focus",
-          "cue_prompt": "what / summary focus?",
-          "cue_word": "summary",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the summary focus?",
-            "Can you tell me the summary focus?"
-          ],
-          "nova_reply": "The summary focus is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what / core learning takeaway?",
+          "cue_prompt": "what / core learning takeaway?",
+          "cue_word": "takeaway",
+          "is_missing": false,
+          "value": "Evidence must prove truth",
+          "nova_question": "What is Grace's core learning takeaway from the project?",
+          "acceptable_answers": [
+            "Evidence must prove truth",
+            "Evidence must prove truth.",
+            "She demonstrated that evidence must prove truth.",
+            "Proof of truth."
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Display date",
-          "cue_prompt": "what / display date?",
-          "cue_word": "display",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the display date?",
-            "Can you tell me the display date?"
-          ],
-          "nova_reply": "The display date is confirmed in our notes."
+          "id": "field_b5",
+          "label": "when / portfolio display date?",
+          "cue_prompt": "when / portfolio display date?",
+          "cue_word": "date",
+          "is_missing": false,
+          "value": "This Friday afternoon",
+          "nova_question": "When will Grace's portfolio be displayed in the hall?",
+          "acceptable_answers": [
+            "This Friday afternoon",
+            "This Friday afternoon.",
+            "It will be displayed on Friday.",
+            "On Friday afternoon."
+          ]
         }
       ]
     }

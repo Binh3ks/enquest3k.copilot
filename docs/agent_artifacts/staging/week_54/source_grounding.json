@@ -91,5 +91,9 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "•\tWeek 54: PHASE 1 GRADUATION SHOWCASE (Tuần 54: BUỔI TRÌNH DIỄN TỐT NGHIỆP GIAI ĐOẠN 1)\n\t•\tEvent: Parents invited. Students present their portfolios and recite a short speech about their favorite memory of the year. (Sự kiện: Mời phụ huynh. Học sinh trình bày hồ sơ và bài nói ngắn về kỷ niệm yêu thích.)\n🧠 PHASE 2: ACADEMIC APPLICATION (WEEKS 55-120)\n(GIAI ĐOẠN 2: ỨNG DỤNG HỌC THUẬT - 66 TUẦN) Goal: Transition from personal to academic writing. Use English to learn Math, Science, Social Studies. Master structured paragraphs.\n🟤 UNIT 9: LOGICAL THINKING & EXPLANATION (TƯ DUY LOGIC & GIẢI THÍCH) - WEEKS 55-66\n(Tương ứng nội dung gốc Cycle 2.1)"
+  "source_b_excerpt": "•\tWeek 54: PHASE 1 GRADUATION SHOWCASE (Tuần 54: BUỔI TRÌNH DIỄN TỐT NGHIỆP GIAI ĐOẠN 1)\n\t•\tEvent: Parents invited. Students present their portfolios and recite a short speech about their favorite memory of the year. (Sự kiện: Mời phụ huynh. Học sinh trình bày hồ sơ và bài nói ngắn về kỷ niệm yêu thích.)\n🧠 PHASE 2: ACADEMIC APPLICATION (WEEKS 55-120)\n(GIAI ĐOẠN 2: ỨNG DỤNG HỌC THUẬT - 66 TUẦN) Goal: Transition from personal to academic writing. Use English to learn Math, Science, Social Studies. Master structured paragraphs.\n🟤 UNIT 9: LOGICAL THINKING & EXPLANATION (TƯ DUY LOGIC & GIẢI THÍCH) - WEEKS 55-66\n(Tương ứng nội dung gốc Cycle 2.1)",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L417–L422"
 }

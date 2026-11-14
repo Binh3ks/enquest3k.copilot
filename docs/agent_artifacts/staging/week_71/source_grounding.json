@@ -272,5 +272,9 @@
     },
     "week_number": 71
   },
-  "source_b_excerpt": "•\tWeek 71: Science/ELA: The Solar System / Math: Large Numbers (Tuần 71: Khoa học/ELA: Hệ Mặt trời / Toán: Số lớn)\n\t•\tTopic (Science): Space Giants. (Chủ đề: Những gã khổng lồ vũ trụ.)\n\t•\tKey Learning Outcome (ELA): Write a descriptive paragraph about a planet. (Kết quả: Viết đoạn văn miêu tả hành tinh.)\n\t•\tWriting Skill Focus: Using factual adjectives. (Kỹ năng Viết: Dùng tính từ thực tế.)\n\t•\tGrammar Focus: Superlative Adjectives: \"The biggest\", \"The furthest\", \"The hottest\". (Ngữ pháp: So sánh nhất.)\n\t•\tVocabulary Focus: planet, solar system, orbit, sun, moon, star, space, telescope.\n\t•\tTopic (Math): Millions and Billions. (Toán: Hàng triệu và Tỷ.)\n\t•\tKey Learning Outcome (Math): Read and write large numbers (Space distances). (Kết quả: Đọc viết số lớn.)\n\t•\tMath Vocabulary: million, billion, place value, zero, comma."
+  "source_b_excerpt": "•\tWeek 71: Science/ELA: The Solar System / Math: Large Numbers (Tuần 71: Khoa học/ELA: Hệ Mặt trời / Toán: Số lớn)\n\t•\tTopic (Science): Space Giants. (Chủ đề: Những gã khổng lồ vũ trụ.)\n\t•\tKey Learning Outcome (ELA): Write a descriptive paragraph about a planet. (Kết quả: Viết đoạn văn miêu tả hành tinh.)\n\t•\tWriting Skill Focus: Using factual adjectives. (Kỹ năng Viết: Dùng tính từ thực tế.)\n\t•\tGrammar Focus: Superlative Adjectives: \"The biggest\", \"The furthest\", \"The hottest\". (Ngữ pháp: So sánh nhất.)\n\t•\tVocabulary Focus: planet, solar system, orbit, sun, moon, star, space, telescope.\n\t•\tTopic (Math): Millions and Billions. (Toán: Hàng triệu và Tỷ.)\n\t•\tKey Learning Outcome (Math): Read and write large numbers (Space distances). (Kết quả: Đọc viết số lớn.)\n\t•\tMath Vocabulary: million, billion, place value, zero, comma.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L560–L568"
 }

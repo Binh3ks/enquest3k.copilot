@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
- * Week: 52 | Theme: "Have You Ever\" Bingo (Seeding)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
+ * Week: 52 | Theme: "Have You Ever" Bingo (Seeding)" | CEFR: A2 Flyers
  */
-
 export const speakingHubData = {
   "week": 52,
   "theme": "Have You Ever\" Bingo (Seeding)",
@@ -40,70 +36,74 @@ export const speakingHubData = {
       "person": "Global Junior Traveler",
       "fields": [
         {
-          "id": "f1",
-          "label": "Countries visited",
-          "cue_prompt": "what / countries visited?",
+          "id": "field_a1",
+          "label": "how many / foreign countries visited?",
+          "cue_prompt": "how many / foreign countries visited?",
           "cue_word": "countries",
           "is_missing": true,
+          "value": "Three foreign countries",
           "acceptable_questions": [
-            "What is the countries visited?",
-            "Can you tell me the countries visited?"
+            "How many foreign countries has Harper visited?",
+            "How many countries has she traveled to?",
+            "What is the number of countries visited?"
           ],
-          "nova_reply": "The countries visited is recorded for Have You Ever\" Bingo (Seeding)."
+          "nova_reply": "Harper has visited three foreign countries."
         },
         {
-          "id": "f2",
-          "label": "Favorite experience",
-          "cue_prompt": "what / favorite experience?",
-          "cue_word": "favorite",
+          "id": "field_a2",
+          "label": "what / famous landmark seen?",
+          "cue_prompt": "what / famous landmark seen?",
+          "cue_word": "landmark",
           "is_missing": true,
+          "value": "Mount Fuji in Japan",
           "acceptable_questions": [
-            "What is the favorite experience?",
-            "Can you tell me the favorite experience?"
+            "What famous landmark has Harper seen?",
+            "Which mountain has she visited?",
+            "Has Harper seen Mount Fuji?"
           ],
-          "nova_reply": "The favorite experience is recorded for Have You Ever\" Bingo (Seeding)."
+          "nova_reply": "She has seen the snowy peak of Mount Fuji in Japan."
         },
         {
-          "id": "f3",
-          "label": "Never tried",
-          "cue_prompt": "what / never tried?",
-          "cue_word": "never",
-          "is_missing": false,
-          "card_value": "Never tried verified",
-          "value": "Never tried verified",
-          "examiner_question": "What is the never tried?",
-          "acceptable_answers": [
-            "It is never tried.",
-            "Never tried."
-          ]
-        },
-        {
-          "id": "f4",
-          "label": "Unusual food eaten",
+          "id": "field_a3",
+          "label": "what / unusual food eaten?",
           "cue_prompt": "what / unusual food eaten?",
-          "cue_word": "unusual",
-          "is_missing": false,
-          "card_value": "Unusual food eaten verified",
-          "value": "Unusual food eaten verified",
-          "examiner_question": "What is the unusual food eaten?",
-          "acceptable_answers": [
-            "It is unusual food eaten.",
-            "Unusual food eaten."
-          ]
+          "cue_word": "food",
+          "is_missing": true,
+          "value": "Sushi and dragon fruit",
+          "acceptable_questions": [
+            "What unusual foods has Harper eaten?",
+            "What foods has she tried abroad?",
+            "Has she eaten dragon fruit?"
+          ],
+          "nova_reply": "Harper has eaten fresh sushi and sweet dragon fruit."
         },
         {
-          "id": "f5",
-          "label": "Next adventure",
-          "cue_prompt": "what / next adventure?",
-          "cue_word": "next",
-          "is_missing": false,
-          "card_value": "Next adventure verified",
-          "value": "Next adventure verified",
-          "examiner_question": "What is the next adventure?",
-          "acceptable_answers": [
-            "It is next adventure.",
-            "Next adventure."
-          ]
+          "id": "field_a4",
+          "label": "what / never tried before?",
+          "cue_prompt": "what / never tried before?",
+          "cue_word": "never",
+          "is_missing": true,
+          "value": "Ridden a camel",
+          "acceptable_questions": [
+            "What has Harper never tried before?",
+            "Has Harper ever ridden a camel?",
+            "What adventure has she not done?"
+          ],
+          "nova_reply": "She has never ridden a camel in the desert."
+        },
+        {
+          "id": "field_a5",
+          "label": "what / next dream adventure?",
+          "cue_prompt": "what / next dream adventure?",
+          "cue_word": "dream",
+          "is_missing": true,
+          "value": "Climbing the Alps",
+          "acceptable_questions": [
+            "What is Harper's next dream adventure?",
+            "What mountain range does she want to climb?",
+            "Where does she want to go next?"
+          ],
+          "nova_reply": "Her next dream adventure is climbing the Swiss Alps."
         }
       ]
     },
@@ -113,68 +113,79 @@ export const speakingHubData = {
       "person": "Outdoor Adventure Explorer",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Mountains climbed",
-          "cue_prompt": "what / mountains climbed?",
-          "cue_word": "mountains",
+          "id": "field_b1",
+          "label": "how many / hills climbed?",
+          "cue_prompt": "how many / hills climbed?",
+          "cue_word": "hills",
           "is_missing": false,
-          "card_value": "Mountains climbed on file",
-          "value": "Mountains climbed on file",
-          "examiner_question": "What is the mountains climbed?",
+          "value": "Five forest hills",
+          "nova_question": "How many forest hills has Daniel climbed?",
           "acceptable_answers": [
-            "It is mountains climbed.",
-            "Mountains climbed."
+            "Five forest hills",
+            "Five forest hills.",
+            "Daniel has climbed five forest hills.",
+            "Five hills."
           ]
         },
         {
-          "id": "fb2",
-          "label": "Aviation experience",
-          "cue_prompt": "what / aviation experience?",
-          "cue_word": "aviation",
+          "id": "field_b2",
+          "label": "how many times / flown across ocean?",
+          "cue_prompt": "how many times / flown across ocean?",
+          "cue_word": "ocean",
           "is_missing": false,
-          "card_value": "Aviation experience on file",
-          "value": "Aviation experience on file",
-          "examiner_question": "What is the aviation experience?",
+          "value": "Twice",
+          "nova_question": "How many times has Daniel flown across the ocean?",
           "acceptable_answers": [
-            "It is aviation experience.",
-            "Aviation experience."
+            "Twice",
+            "Twice.",
+            "He has flown across the ocean twice.",
+            "Two times."
           ]
         },
         {
-          "id": "fb3",
-          "label": "Never tried",
-          "cue_prompt": "what / never tried?",
+          "id": "field_b3",
+          "label": "which / museum visited?",
+          "cue_prompt": "which / museum visited?",
+          "cue_word": "museum",
+          "is_missing": false,
+          "value": "National Space Museum",
+          "nova_question": "Which national museum has Daniel visited?",
+          "acceptable_answers": [
+            "National Space Museum",
+            "National Space Museum.",
+            "He has visited the National Space Museum.",
+            "The space museum."
+          ]
+        },
+        {
+          "id": "field_b4",
+          "label": "what / never tried before?",
+          "cue_prompt": "what / never tried before?",
           "cue_word": "never",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the never tried?",
-            "Can you tell me the never tried?"
-          ],
-          "nova_reply": "The never tried is confirmed in our notes."
+          "is_missing": false,
+          "value": "Flown in a hot air balloon",
+          "nova_question": "What experience has Daniel never tried?",
+          "acceptable_answers": [
+            "Flown in a hot air balloon",
+            "Flown in a hot air balloon.",
+            "He has never flown in a hot air balloon.",
+            "Hot air balloon."
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Museums visited",
-          "cue_prompt": "what / museums visited?",
-          "cue_word": "museums",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the museums visited?",
-            "Can you tell me the museums visited?"
-          ],
-          "nova_reply": "The museums visited is confirmed in our notes."
-        },
-        {
-          "id": "fb5",
-          "label": "Next goal",
-          "cue_prompt": "what / next goal?",
-          "cue_word": "next",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the next goal?",
-            "Can you tell me the next goal?"
-          ],
-          "nova_reply": "The next goal is confirmed in our notes."
+          "id": "field_b5",
+          "label": "what / next outdoor goal?",
+          "cue_prompt": "what / next outdoor goal?",
+          "cue_word": "goal",
+          "is_missing": false,
+          "value": "Visiting a coral reef",
+          "nova_question": "What is Daniel's next outdoor exploration goal?",
+          "acceptable_answers": [
+            "Visiting a coral reef",
+            "Visiting a coral reef.",
+            "His goal is visiting a coral reef.",
+            "A coral reef."
+          ]
         }
       ]
     }

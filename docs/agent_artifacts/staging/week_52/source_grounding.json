@@ -92,5 +92,9 @@
     },
     "mockFormat": "flyers"
   },
-  "source_b_excerpt": "•\tWeek 52: \"Have You Ever\" Bingo (Seeding) (Tuần 52: Bingo \"Bạn đã bao giờ...?\" - Gieo hạt)\n\t•\tTopic: Experiences. (Chủ đề: Trải nghiệm.)\n\t•\tKey Learning Outcome: Use specific chunks to ask about experiences (Preparation for Phase 2). (Kết quả: Dùng cụm từ để hỏi trải nghiệm.)\n\t•\tGrammar Focus: Present Perfect Chunks ONLY (Memorize: \"Have you ever...?\"). (Ngữ pháp: Cụm từ Hiện tại hoàn thành - Học thuộc lòng.)\n\t•\tVocabulary Focus: seen, been, eaten (Sight words - Participles)."
+  "source_b_excerpt": "•\tWeek 52: \"Have You Ever\" Bingo (Seeding) (Tuần 52: Bingo \"Bạn đã bao giờ...?\" - Gieo hạt)\n\t•\tTopic: Experiences. (Chủ đề: Trải nghiệm.)\n\t•\tKey Learning Outcome: Use specific chunks to ask about experiences (Preparation for Phase 2). (Kết quả: Dùng cụm từ để hỏi trải nghiệm.)\n\t•\tGrammar Focus: Present Perfect Chunks ONLY (Memorize: \"Have you ever...?\"). (Ngữ pháp: Cụm từ Hiện tại hoàn thành - Học thuộc lòng.)\n\t•\tVocabulary Focus: seen, been, eaten (Sight words - Participles).",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L409–L413"
 }

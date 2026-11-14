@@ -44,8 +44,16 @@
     "GATE_13_READABILITY_CEILING",
     "GATE_14_PROVENANCE_INTEGRITY",
     "GATE_15_CLIL_VOCAB_INTEGRATION",
-    "GATE_16_ESL_ANOMALY_ZERO"
+    "GATE_16_ESL_ANOMALY_ZERO",
+    "GATE_SP2_SPEAKING_EXCHANGE_AUTHENTIC"
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
-  "staged_status": "STAGED_FOR_REVIEW"
+  "staged_status": "STAGED_FOR_REVIEW",
+  "verified_at": "2026-11-14T08:51:05.414Z",
+  "audit_summary": {
+    "total_gates_evaluated": 17,
+    "passed_count": 17,
+    "failed_count": 0,
+    "all_passed": true
+  }
 }

@@ -226,5 +226,9 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "•\tWeek 49: Future Dreams (Future Tense) (Tuần 49: Ước mơ Tương lai)\n\t•\tTopic: When I grow up. (Chủ đề: Khi em lớn lên.)\n\t•\tKey Learning Outcome: State intentions/dreams using \"Want to\". (Kết quả: Nêu dự định/ước mơ dùng \"Want to\".)\n\t•\tGrammar Focus: \"I want to be a [job]\" / \"I am going to be...\".\n\t•\tVocabulary Focus: doctor, teacher, pilot, artist, scientist, dream."
+  "source_b_excerpt": "•\tWeek 49: Future Dreams (Future Tense) (Tuần 49: Ước mơ Tương lai)\n\t•\tTopic: When I grow up. (Chủ đề: Khi em lớn lên.)\n\t•\tKey Learning Outcome: State intentions/dreams using \"Want to\". (Kết quả: Nêu dự định/ước mơ dùng \"Want to\".)\n\t•\tGrammar Focus: \"I want to be a [job]\" / \"I am going to be...\".\n\t•\tVocabulary Focus: doctor, teacher, pilot, artist, scientist, dream.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L398–L402"
 }

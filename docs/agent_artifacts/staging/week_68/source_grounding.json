@@ -231,5 +231,9 @@
     "mockFormat": "flyers",
     "week_number": 68
   },
-  "source_b_excerpt": "•\tWeek 68: ELA: Strong Reasons / Math: Bar Graphs (Tuần 68: ELA: Lý do Đanh thép / Toán: Biểu đồ cột)\n\t•\tTopic (ELA): Supporting the Argument. (Chủ đề: Hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Write the \"Reason\" and \"Example\" sentences for an OREO paragraph. (Kết quả: Viết câu Lý do và Ví dụ.)\n\t•\tWriting Skill Focus: Developing ideas. (Kỹ năng Viết: Phát triển ý.)\n\t•\tGrammar Focus: Connectors of Addition: \"Furthermore\", \"In addition\", \"For example\". (Ngữ pháp: Từ nối bổ sung.)\n\t•\tVocabulary Focus: support, detail, fact, true, prove, clear.\n\t•\tTopic (Math): Scaled Bar Graphs. (Toán: Biểu đồ cột có thang đo.)\n\t•\tKey Learning Outcome (Math): Read graphs where 1 unit = 2, 5, or 10 items. (Kết quả: Đọc biểu đồ có thang đo lớn hơn 1.)\n\t•\tMath Vocabulary: scale, axis, bar, height, value, skip counting."
+  "source_b_excerpt": "•\tWeek 68: ELA: Strong Reasons / Math: Bar Graphs (Tuần 68: ELA: Lý do Đanh thép / Toán: Biểu đồ cột)\n\t•\tTopic (ELA): Supporting the Argument. (Chủ đề: Hỗ trợ lập luận.)\n\t•\tKey Learning Outcome (ELA): Write the \"Reason\" and \"Example\" sentences for an OREO paragraph. (Kết quả: Viết câu Lý do và Ví dụ.)\n\t•\tWriting Skill Focus: Developing ideas. (Kỹ năng Viết: Phát triển ý.)\n\t•\tGrammar Focus: Connectors of Addition: \"Furthermore\", \"In addition\", \"For example\". (Ngữ pháp: Từ nối bổ sung.)\n\t•\tVocabulary Focus: support, detail, fact, true, prove, clear.\n\t•\tTopic (Math): Scaled Bar Graphs. (Toán: Biểu đồ cột có thang đo.)\n\t•\tKey Learning Outcome (Math): Read graphs where 1 unit = 2, 5, or 10 items. (Kết quả: Đọc biểu đồ có thang đo lớn hơn 1.)\n\t•\tMath Vocabulary: scale, axis, bar, height, value, skip counting.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L533–L541"
 }

@@ -91,5 +91,9 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "•\tWeek 53: Project 4 Prep - \"My Year in Review\" (Tuần 53: Chuẩn bị Dự án 4 - \"Năm học của em\")\n\t•\tTask: Select best work from the year (Drawings, Writings). Write an \"About Me\" introduction. (Nhiệm vụ: Chọn bài làm tốt nhất. Viết giới thiệu bản thân.)\n\t•\tSkill Focus: Portfolio Curation. (Kỹ năng: Sắp xếp hồ sơ năng lực.)"
+  "source_b_excerpt": "•\tWeek 53: Project 4 Prep - \"My Year in Review\" (Tuần 53: Chuẩn bị Dự án 4 - \"Năm học của em\")\n\t•\tTask: Select best work from the year (Drawings, Writings). Write an \"About Me\" introduction. (Nhiệm vụ: Chọn bài làm tốt nhất. Viết giới thiệu bản thân.)\n\t•\tSkill Focus: Portfolio Curation. (Kỹ năng: Sắp xếp hồ sơ năng lực.)",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L414–L416"
 }

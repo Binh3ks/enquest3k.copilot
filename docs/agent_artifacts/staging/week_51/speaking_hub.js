@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
  * Week: 51 | Theme: "Review Station 2 (Vocab & CLIL)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 51,
   "theme": "Review Station 2 (Vocab & CLIL)",
@@ -40,70 +36,74 @@ export const speakingHubData = {
       "person": "Observatory Astronomer",
       "fields": [
         {
-          "id": "f1",
-          "label": "Target planet",
-          "cue_prompt": "what / target planet?",
-          "cue_word": "target",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the target planet?",
-            "Can you tell me the target planet?"
-          ],
-          "nova_reply": "The target planet is recorded for Review Station 2 (Vocab & CLIL)."
-        },
-        {
-          "id": "f2",
-          "label": "Planet category",
-          "cue_prompt": "what / planet category?",
+          "id": "field_a1",
+          "label": "which / target planet?",
+          "cue_prompt": "which / target planet?",
           "cue_word": "planet",
           "is_missing": true,
+          "value": "Jupiter",
           "acceptable_questions": [
-            "What is the planet category?",
-            "Can you tell me the planet category?"
+            "Which target planet is the astronomer studying?",
+            "What planet is being observed?",
+            "Which planet is it?"
           ],
-          "nova_reply": "The planet category is recorded for Review Station 2 (Vocab & CLIL)."
+          "nova_reply": "The astronomer is observing Jupiter."
         },
         {
-          "id": "f3",
-          "label": "Adjective description",
-          "cue_prompt": "what / adjective description?",
-          "cue_word": "adjective",
-          "is_missing": false,
-          "card_value": "Adjective description verified",
-          "value": "Adjective description verified",
-          "examiner_question": "What is the adjective description?",
-          "acceptable_answers": [
-            "It is adjective description.",
-            "Adjective description."
-          ]
+          "id": "field_a2",
+          "label": "what / planet category?",
+          "cue_prompt": "what / planet category?",
+          "cue_word": "category",
+          "is_missing": true,
+          "value": "Gas giant planet",
+          "acceptable_questions": [
+            "What category of planet is Jupiter?",
+            "What type of planet is Jupiter?",
+            "Is Jupiter a gas planet?"
+          ],
+          "nova_reply": "Jupiter is classified as a giant swirling gas planet."
         },
         {
-          "id": "f4",
-          "label": "Number of moons",
-          "cue_prompt": "what / number of moons?",
-          "cue_word": "number",
-          "is_missing": false,
-          "card_value": "Number of moons verified",
-          "value": "Number of moons verified",
-          "examiner_question": "What is the number of moons?",
-          "acceptable_answers": [
-            "It is number of moons.",
-            "Number of moons."
-          ]
+          "id": "field_a3",
+          "label": "what / appearance description?",
+          "cue_prompt": "what / appearance description?",
+          "cue_word": "appearance",
+          "is_missing": true,
+          "value": "Swirling clouds and giant storms",
+          "acceptable_questions": [
+            "What does Jupiter look like?",
+            "How is Jupiter's appearance described?",
+            "What can you see on Jupiter?"
+          ],
+          "nova_reply": "Jupiter has thick swirling clouds and massive storms."
         },
         {
-          "id": "f5",
-          "label": "Orbital distance",
-          "cue_prompt": "what / orbital distance?",
-          "cue_word": "orbital",
-          "is_missing": false,
-          "card_value": "Orbital distance verified",
-          "value": "Orbital distance verified",
-          "examiner_question": "What is the orbital distance?",
-          "acceptable_answers": [
-            "It is orbital distance.",
-            "Orbital distance."
-          ]
+          "id": "field_a4",
+          "label": "how many / moons orbiting?",
+          "cue_prompt": "how many / moons orbiting?",
+          "cue_word": "moons",
+          "is_missing": true,
+          "value": "Ninety-five moons",
+          "acceptable_questions": [
+            "How many moons orbit Jupiter?",
+            "How many moons does Jupiter have?",
+            "What is the number of moons?"
+          ],
+          "nova_reply": "Jupiter has ninety-five confirmed moons orbiting it."
+        },
+        {
+          "id": "field_a5",
+          "label": "what / distance from sun?",
+          "cue_prompt": "what / distance from sun?",
+          "cue_word": "distance",
+          "is_missing": true,
+          "value": "Seven hundred seventy-eight million kilometers",
+          "acceptable_questions": [
+            "What is Jupiter's distance from the sun?",
+            "How far is Jupiter from the sun?",
+            "How many kilometers from the sun is Jupiter?"
+          ],
+          "nova_reply": "Jupiter orbits at seven hundred seventy-eight million kilometers from the sun."
         }
       ]
     },
@@ -113,68 +113,79 @@ export const speakingHubData = {
       "person": "Mars Mission Controller",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Mission vehicle",
+          "id": "field_b1",
+          "label": "what / mission vehicle?",
           "cue_prompt": "what / mission vehicle?",
-          "cue_word": "mission",
+          "cue_word": "vehicle",
           "is_missing": false,
-          "card_value": "Mission vehicle on file",
-          "value": "Mission vehicle on file",
-          "examiner_question": "What is the mission vehicle?",
+          "value": "Robotic rover",
+          "nova_question": "What vehicle is exploring the Martian surface?",
           "acceptable_answers": [
-            "It is mission vehicle.",
-            "Mission vehicle."
+            "Robotic rover",
+            "Robotic rover.",
+            "A robotic rover is exploring the surface.",
+            "The robotic rover."
           ]
         },
         {
-          "id": "fb2",
-          "label": "Planet type",
-          "cue_prompt": "what / planet type?",
+          "id": "field_b2",
+          "label": "which / destination planet?",
+          "cue_prompt": "which / destination planet?",
           "cue_word": "planet",
           "is_missing": false,
-          "card_value": "Planet type on file",
-          "value": "Planet type on file",
-          "examiner_question": "What is the planet type?",
+          "value": "Mars",
+          "nova_question": "Which planet is the mission controller directing?",
           "acceptable_answers": [
-            "It is planet type.",
-            "Planet type."
+            "Mars",
+            "Mars.",
+            "The planet Mars.",
+            "Mars is the destination."
           ]
         },
         {
-          "id": "fb3",
-          "label": "Adjective description",
-          "cue_prompt": "what / adjective description?",
-          "cue_word": "adjective",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the adjective description?",
-            "Can you tell me the adjective description?"
-          ],
-          "nova_reply": "The adjective description is confirmed in our notes."
+          "id": "field_b3",
+          "label": "what / planet appearance?",
+          "cue_prompt": "what / planet appearance?",
+          "cue_word": "appearance",
+          "is_missing": false,
+          "value": "Dry, red, rocky surface",
+          "nova_question": "How is the surface of Mars described?",
+          "acceptable_answers": [
+            "Dry, red, rocky surface",
+            "Dry, red, rocky surface.",
+            "Mars has a dry, red, and rocky surface.",
+            "Red and rocky."
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Surface feature",
-          "cue_prompt": "what / surface feature?",
-          "cue_word": "surface",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the surface feature?",
-            "Can you tell me the surface feature?"
-          ],
-          "nova_reply": "The surface feature is confirmed in our notes."
+          "id": "field_b4",
+          "label": "what / surface feature photographed?",
+          "cue_prompt": "what / surface feature photographed?",
+          "cue_word": "craters",
+          "is_missing": false,
+          "value": "Giant impact craters",
+          "nova_question": "What surface features does the rover photograph?",
+          "acceptable_answers": [
+            "Giant impact craters",
+            "Giant impact craters.",
+            "It photographs giant impact craters.",
+            "Impact craters."
+          ]
         },
         {
-          "id": "fb5",
-          "label": "Atmosphere condition",
+          "id": "field_b5",
+          "label": "what / atmosphere condition?",
           "cue_prompt": "what / atmosphere condition?",
           "cue_word": "atmosphere",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the atmosphere condition?",
-            "Can you tell me the atmosphere condition?"
-          ],
-          "nova_reply": "The atmosphere condition is confirmed in our notes."
+          "is_missing": false,
+          "value": "Thin carbon dioxide atmosphere",
+          "nova_question": "What kind of atmosphere does Mars have?",
+          "acceptable_answers": [
+            "Thin carbon dioxide atmosphere",
+            "Thin carbon dioxide atmosphere.",
+            "Mars has a thin carbon dioxide atmosphere.",
+            "Thin atmosphere."
+          ]
         }
       ]
     }

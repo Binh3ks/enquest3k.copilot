@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
  * Week: 40 | Theme: "Beast Battle (Comparisons)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 40,
   "theme": "Beast Battle (Comparisons)",
@@ -22,50 +18,74 @@ export const speakingHubData = {
       "person": "Marcus",
       "fields": [
         {
-          "id": "f1",
-          "cue_prompt": "how heavy / tiger?",
-          "cue_word": "how heavy",
+          "id": "field_a1",
+          "label": "how heavy / Siberian tiger?",
+          "cue_prompt": "how heavy / Siberian tiger?",
+          "cue_word": "weight",
           "is_missing": true,
+          "value": "Three hundred kilograms",
           "acceptable_questions": [
-            "How heavy is the tiger?",
-            "How much does the tiger weigh?"
+            "How heavy is the Siberian tiger?",
+            "How much does the Siberian tiger weigh?",
+            "What is the weight of the tiger?"
           ],
           "nova_reply": "The male Siberian tiger weighs three hundred kilograms."
         },
         {
-          "id": "f2",
+          "id": "field_a2",
+          "label": "what color / stripes?",
           "cue_prompt": "what color / stripes?",
           "cue_word": "color",
           "is_missing": true,
+          "value": "Dark brown and black",
           "acceptable_questions": [
             "What color are its stripes?",
-            "What color are the stripes?"
+            "What color are the tiger's stripes?",
+            "Are its stripes black?"
           ],
           "nova_reply": "Its stripes are dark brown and black."
         },
         {
-          "id": "f3",
-          "cue_prompt": "where / live?",
-          "cue_word": "where",
-          "is_missing": false,
-          "card_value": "Russian cold pine forests",
-          "examiner_question": "Where does the Siberian tiger live?"
+          "id": "field_a3",
+          "label": "where / tiger live?",
+          "cue_prompt": "where / tiger live?",
+          "cue_word": "habitat",
+          "is_missing": true,
+          "value": "Russian cold pine forests",
+          "acceptable_questions": [
+            "Where does the Siberian tiger live?",
+            "What is its natural habitat?",
+            "Where can you find the tiger?"
+          ],
+          "nova_reply": "The Siberian tiger lives in cold pine forests in Russia."
         },
         {
-          "id": "f4",
-          "cue_prompt": "how fast / run?",
+          "id": "field_a4",
+          "label": "how fast / tiger run?",
+          "cue_prompt": "how fast / tiger run?",
           "cue_word": "speed",
-          "is_missing": false,
-          "card_value": "60 km per hour",
-          "examiner_question": "How fast can the tiger run?"
+          "is_missing": true,
+          "value": "Sixty kilometers per hour",
+          "acceptable_questions": [
+            "How fast can the tiger run?",
+            "What is the tiger's top speed?",
+            "Can the tiger run fast?"
+          ],
+          "nova_reply": "It can run up to sixty kilometers per hour in short bursts."
         },
         {
-          "id": "f5",
-          "cue_prompt": "what / eat?",
-          "cue_word": "food",
-          "is_missing": false,
-          "card_value": "deer and wild boars",
-          "examiner_question": "What does the tiger eat?"
+          "id": "field_a5",
+          "label": "what / tiger eat?",
+          "cue_prompt": "what / tiger eat?",
+          "cue_word": "diet",
+          "is_missing": true,
+          "value": "Deer and wild boars",
+          "acceptable_questions": [
+            "What does the tiger eat?",
+            "What is its main food?",
+            "What animals does the tiger hunt?"
+          ],
+          "nova_reply": "The tiger hunts wild boars and large forest deer."
         }
       ]
     },
@@ -75,53 +95,79 @@ export const speakingHubData = {
       "person": "Sophia",
       "fields": [
         {
-          "id": "fb1",
+          "id": "field_b1",
+          "label": "how heavy / cheetah?",
           "cue_prompt": "how heavy / cheetah?",
           "cue_word": "weight",
           "is_missing": false,
-          "card_value": "60 kilograms",
-          "examiner_question": "How heavy is the cheetah?"
+          "value": "Sixty kilograms",
+          "nova_question": "How heavy is the adult cheetah?",
+          "acceptable_answers": [
+            "Sixty kilograms",
+            "Sixty kilograms.",
+            "It weighs sixty kilograms.",
+            "About sixty kilograms."
+          ]
         },
         {
-          "id": "fb2",
+          "id": "field_b2",
+          "label": "what / on fur?",
           "cue_prompt": "what / on fur?",
-          "cue_word": "coat",
+          "cue_word": "spots",
           "is_missing": false,
-          "card_value": "small round black spots",
-          "examiner_question": "What is on the cheetah's fur?"
+          "value": "Small round black spots",
+          "nova_question": "What pattern is on the cheetah's fur?",
+          "acceptable_answers": [
+            "Small round black spots",
+            "Small round black spots.",
+            "It has small round black spots.",
+            "Black spots."
+          ]
         },
         {
-          "id": "fb3",
-          "cue_prompt": "where / live?",
+          "id": "field_b3",
+          "label": "where / cheetah live?",
+          "cue_prompt": "where / cheetah live?",
           "cue_word": "habitat",
-          "is_missing": true,
-          "acceptable_questions": [
-            "Where does the cheetah live?",
-            "What is its habitat?"
-          ],
-          "nova_reply": "The cheetah lives in open African grasslands."
+          "is_missing": false,
+          "value": "Open African grasslands",
+          "nova_question": "Where does the cheetah live in the wild?",
+          "acceptable_answers": [
+            "Open African grasslands",
+            "Open African grasslands.",
+            "The cheetah lives in open African grasslands.",
+            "African grasslands."
+          ]
         },
         {
-          "id": "fb4",
-          "cue_prompt": "how fast / run?",
+          "id": "field_b4",
+          "label": "how fast / cheetah run?",
+          "cue_prompt": "how fast / cheetah run?",
           "cue_word": "speed",
-          "is_missing": true,
-          "acceptable_questions": [
-            "How fast can the cheetah run?",
-            "What is its top speed?"
-          ],
-          "nova_reply": "It can run up to one hundred and ten kilometers per hour."
+          "is_missing": false,
+          "value": "One hundred ten kilometers per hour",
+          "nova_question": "How fast can the cheetah run?",
+          "acceptable_answers": [
+            "One hundred ten kilometers per hour",
+            "One hundred ten kilometers per hour.",
+            "It can run up to one hundred ten kilometers per hour.",
+            "110 km per hour."
+          ]
         },
         {
-          "id": "fb5",
-          "cue_prompt": "what / eat?",
+          "id": "field_b5",
+          "label": "what / cheetah eat?",
+          "cue_prompt": "what / cheetah eat?",
           "cue_word": "prey",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What does the cheetah eat?",
-            "What is its food?"
-          ],
-          "nova_reply": "The cheetah hunts small gazelles and hares."
+          "is_missing": false,
+          "value": "Small gazelles and hares",
+          "nova_question": "What does the cheetah hunt and eat?",
+          "acceptable_answers": [
+            "Small gazelles and hares",
+            "Small gazelles and hares.",
+            "The cheetah eats small gazelles and hares.",
+            "Gazelles and hares."
+          ]
         }
       ]
     }

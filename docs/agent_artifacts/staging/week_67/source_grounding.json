@@ -253,5 +253,9 @@
     },
     "week_number": 67
   },
-  "source_b_excerpt": "•\tWeek 67: ELA: The OREO Structure / Math: Measuring Mass (Tuần 67: ELA: Cấu trúc OREO / Toán: Đo khối lượng)\n\t•\tTopic (ELA): The Opinion Sandwich (Intro to Persuasion). (Chủ đề: Bánh kẹp Quan điểm - Giới thiệu Thuyết phục.)\n\t•\tKey Learning Outcome (ELA): Identify and label parts: Opinion, Reason, Example, Opinion Restated. (Kết quả: Xác định các phần O-R-E-O.)\n\t•\tWriting Skill Focus: Structural awareness. (Kỹ năng Viết: Nhận thức cấu trúc.)\n\t•\tGrammar Focus: Opinion Phrases: \"I strongly believe...\", \"In my view...\". (Ngữ pháp: Cụm từ chỉ quan điểm.)\n\t•\tVocabulary Focus: opinion, believe, think, agree, disagree, reason, example.\n\t•\tTopic (Math): Measuring Mass. (Toán: Đo khối lượng.)\n\t•\tKey Learning Outcome (Math): Read scales (g, kg). (Kết quả: Đọc cân.)\n\t•\tMath Vocabulary: gram, kilogram, heavy, light, weigh, scale, weight."
+  "source_b_excerpt": "•\tWeek 67: ELA: The OREO Structure / Math: Measuring Mass (Tuần 67: ELA: Cấu trúc OREO / Toán: Đo khối lượng)\n\t•\tTopic (ELA): The Opinion Sandwich (Intro to Persuasion). (Chủ đề: Bánh kẹp Quan điểm - Giới thiệu Thuyết phục.)\n\t•\tKey Learning Outcome (ELA): Identify and label parts: Opinion, Reason, Example, Opinion Restated. (Kết quả: Xác định các phần O-R-E-O.)\n\t•\tWriting Skill Focus: Structural awareness. (Kỹ năng Viết: Nhận thức cấu trúc.)\n\t•\tGrammar Focus: Opinion Phrases: \"I strongly believe...\", \"In my view...\". (Ngữ pháp: Cụm từ chỉ quan điểm.)\n\t•\tVocabulary Focus: opinion, believe, think, agree, disagree, reason, example.\n\t•\tTopic (Math): Measuring Mass. (Toán: Đo khối lượng.)\n\t•\tKey Learning Outcome (Math): Read scales (g, kg). (Kết quả: Đọc cân.)\n\t•\tMath Vocabulary: gram, kilogram, heavy, light, weigh, scale, weight.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L524–L532"
 }

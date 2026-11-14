@@ -1,0 +1,67 @@
+{
+  "dossier_version": "1.0.0",
+  "week_number": 40,
+  "cefr_level": "A2 Flyers",
+  "theme": "Beast Battle (Comparisons)",
+  "source_b_theme": "Beast Battle (Comparisons)",
+  "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
+  "quality_gates_status": {
+    "total_evaluated": 17,
+    "passed_count": 16,
+    "passed_gates": [
+      "GATE_1_SCHEMA_CONTRACT",
+      "GATE_2_WORD_COUNT_SRS",
+      "GATE_3_CLIL_RIGOR",
+      "GATE_4_SHADOWING_IPA",
+      "GATE_5_CAMBRIDGE_RW_GRADABLE",
+      "GATE_6_MINIGAMES_INTEGRITY",
+      "GATE_7_VIETNAMESE_LEAK_ZERO",
+      "GATE_8_BANNED_CONTENT_FILTER_ZERO",
+      "GATE_9_NO_GENERIC_BOILERPLATE",
+      "GATE_10_SKELETON_DIFFERENTIATION",
+      "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
+      "GATE_12_CEFR_CONSISTENCY",
+      "GATE_14_PROVENANCE_INTEGRITY",
+      "GATE_15_CLIL_VOCAB_INTEGRATION",
+      "GATE_16_ESL_ANOMALY_ZERO",
+      "GATE_SP2_SPEAKING_EXCHANGE_AUTHENTIC"
+    ],
+    "audit_summary": {
+      "total_gates_evaluated": 17,
+      "passed_count": 16,
+      "failed_count": 1,
+      "all_passed": false
+    }
+  },
+  "speaking_part2_validation": {
+    "table_a_count": 5,
+    "table_b_count": 5,
+    "placeholders_found": 0,
+    "is_fully_compliant": true
+  },
+  "clil_article_metrics": {
+    "word_count": 97,
+    "fk_grade_level": 4,
+    "long_words_percentage": 1,
+    "glossary_terms_count": 5,
+    "check_questions_count": 3
+  },
+  "vocabulary_metrics": {
+    "target_vocab_count": 20,
+    "source_b_syllabus_words_count": 6,
+    "source_b_covered_count": 6,
+    "missing_syllabus_words": []
+  },
+  "shadowing_metrics": {
+    "sentence_count": 8,
+    "avg_words_per_sentence": 8.1,
+    "max_words_in_sentence": 9,
+    "has_ipa": true
+  },
+  "singapore_math_metrics": {
+    "problem_count": 5,
+    "all_have_cubes_model_data": true,
+    "zero_adapter_fallbacks": true
+  },
+  "dossier_timestamp": "2026-11-14T08:53:48.250Z"
+}

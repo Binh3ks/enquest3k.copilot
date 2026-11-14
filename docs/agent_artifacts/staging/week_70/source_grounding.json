@@ -252,5 +252,9 @@
     },
     "week_number": 70
   },
-  "source_b_excerpt": "•\tWeek 70: ELA: Presentation \"My Green Idea\" / Math: Graph Review (Tuần 70: ELA: Thuyết trình \"Ý tưởng Xanh\" / Toán: Ôn tập Biểu đồ)\n\t•\tTopic (ELA): Speaking for the Planet. (Chủ đề: Lên tiếng vì Hành tinh.)\n\t•\tKey Learning Outcome (ELA): Deliver a 1-minute persuasive speech using OREO. (Kết quả: Trình bày bài nói thuyết phục 1 phút dùng OREO.)\n\t•\tSkill Focus (Speaking): Public Speaking (Volume, Eye contact). (Kỹ năng Nói: Âm lượng, Giao tiếp mắt.)\n\t•\tGrammar Focus: Speaking Transitions: \"First of all...\", \"Finally...\". (Ngữ pháp: Từ chuyển tiếp trong văn nói.)\n\t•\tVocabulary Focus: speech, present, voice, loud, clear, audience, listen.\n\t•\tTopic (Math): Graph Review. (Toán: Ôn tập Biểu đồ.)\n\t•\tKey Learning Outcome (Math): Choose the right graph for the data. (Kết quả: Chọn đúng biểu đồ cho dữ liệu.)\n\t•\tMath Vocabulary: Review all graph terms (bar, line, pictograph)."
+  "source_b_excerpt": "•\tWeek 70: ELA: Presentation \"My Green Idea\" / Math: Graph Review (Tuần 70: ELA: Thuyết trình \"Ý tưởng Xanh\" / Toán: Ôn tập Biểu đồ)\n\t•\tTopic (ELA): Speaking for the Planet. (Chủ đề: Lên tiếng vì Hành tinh.)\n\t•\tKey Learning Outcome (ELA): Deliver a 1-minute persuasive speech using OREO. (Kết quả: Trình bày bài nói thuyết phục 1 phút dùng OREO.)\n\t•\tSkill Focus (Speaking): Public Speaking (Volume, Eye contact). (Kỹ năng Nói: Âm lượng, Giao tiếp mắt.)\n\t•\tGrammar Focus: Speaking Transitions: \"First of all...\", \"Finally...\". (Ngữ pháp: Từ chuyển tiếp trong văn nói.)\n\t•\tVocabulary Focus: speech, present, voice, loud, clear, audience, listen.\n\t•\tTopic (Math): Graph Review. (Toán: Ôn tập Biểu đồ.)\n\t•\tKey Learning Outcome (Math): Choose the right graph for the data. (Kết quả: Chọn đúng biểu đồ cho dữ liệu.)\n\t•\tMath Vocabulary: Review all graph terms (bar, line, pictograph).",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L551–L559"
 }

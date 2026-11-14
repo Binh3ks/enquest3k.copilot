@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
  * Week: 50 | Theme: "Review Station 1 (Grammar Mix)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 50,
   "theme": "Review Station 1 (Grammar Mix)",
@@ -40,70 +36,74 @@ export const speakingHubData = {
       "person": "Electric Car Designer",
       "fields": [
         {
-          "id": "f1",
-          "label": "Vehicle model",
+          "id": "field_a1",
+          "label": "what / vehicle model?",
           "cue_prompt": "what / vehicle model?",
-          "cue_word": "vehicle",
+          "cue_word": "model",
           "is_missing": true,
+          "value": "The EcoCity Car",
           "acceptable_questions": [
-            "What is the vehicle model?",
-            "Can you tell me the vehicle model?"
+            "What is the electric vehicle model?",
+            "What model is the car?",
+            "What is the name of the vehicle?"
           ],
-          "nova_reply": "The vehicle model is recorded for Review Station 1 (Grammar Mix)."
+          "nova_reply": "The vehicle model is called the EcoCity Car."
         },
         {
-          "id": "f2",
-          "label": "Battery capacity",
+          "id": "field_a2",
+          "label": "what / battery capacity?",
           "cue_prompt": "what / battery capacity?",
           "cue_word": "battery",
           "is_missing": true,
+          "value": "Seventy kilowatts",
           "acceptable_questions": [
             "What is the battery capacity?",
-            "Can you tell me the battery capacity?"
+            "How big is the battery?",
+            "What capacity does the battery have?"
           ],
-          "nova_reply": "The battery capacity is recorded for Review Station 1 (Grammar Mix)."
+          "nova_reply": "The EcoCity Car uses a seventy-kilowatt battery."
         },
         {
-          "id": "f3",
-          "label": "Recharge time",
-          "cue_prompt": "what / recharge time?",
+          "id": "field_a3",
+          "label": "how long / recharge time?",
+          "cue_prompt": "how long / recharge time?",
           "cue_word": "recharge",
-          "is_missing": false,
-          "card_value": "Recharge time verified",
-          "value": "Recharge time verified",
-          "examiner_question": "What is the recharge time?",
-          "acceptable_answers": [
-            "It is recharge time.",
-            "Recharge time."
-          ]
+          "is_missing": true,
+          "value": "Thirty minutes",
+          "acceptable_questions": [
+            "How long does the car take to recharge?",
+            "What is the recharge time?",
+            "How many minutes to charge?"
+          ],
+          "nova_reply": "It recharges in thirty minutes at high-speed fast stations."
         },
         {
-          "id": "f4",
-          "label": "Driving range",
+          "id": "field_a4",
+          "label": "what / driving range?",
           "cue_prompt": "what / driving range?",
-          "cue_word": "driving",
-          "is_missing": false,
-          "card_value": "Driving range verified",
-          "value": "Driving range verified",
-          "examiner_question": "What is the driving range?",
-          "acceptable_answers": [
-            "It is driving range.",
-            "Driving range."
-          ]
+          "cue_word": "range",
+          "is_missing": true,
+          "value": "Four hundred kilometers",
+          "acceptable_questions": [
+            "What is the driving range?",
+            "How far can the car drive on one charge?",
+            "What is its maximum range?"
+          ],
+          "nova_reply": "The EcoCity Car offers a four-hundred-kilometer driving range."
         },
         {
-          "id": "f5",
-          "label": "Clean energy source",
+          "id": "field_a5",
+          "label": "what / clean energy source?",
           "cue_prompt": "what / clean energy source?",
-          "cue_word": "clean",
-          "is_missing": false,
-          "card_value": "Clean energy source verified",
-          "value": "Clean energy source verified",
-          "examiner_question": "What is the clean energy source?",
-          "acceptable_answers": [
-            "It is clean energy source.",
-            "Clean energy source."
-          ]
+          "cue_word": "energy",
+          "is_missing": true,
+          "value": "Solar panels",
+          "acceptable_questions": [
+            "What is the clean energy source?",
+            "Where does the clean electricity come from?",
+            "What powers the charging station?"
+          ],
+          "nova_reply": "The car is charged with electricity powered entirely by solar panels."
         }
       ]
     },
@@ -113,68 +113,79 @@ export const speakingHubData = {
       "person": "Solar Charging Station Manager",
       "fields": [
         {
-          "id": "fb1",
-          "label": "Station location",
-          "cue_prompt": "what / station location?",
-          "cue_word": "station",
+          "id": "field_b1",
+          "label": "where / station location?",
+          "cue_prompt": "where / station location?",
+          "cue_word": "location",
           "is_missing": false,
-          "card_value": "Station location on file",
-          "value": "Station location on file",
-          "examiner_question": "What is the station location?",
+          "value": "Greenway Hub",
+          "nova_question": "Where is the solar charging station located?",
           "acceptable_answers": [
-            "It is station location.",
-            "Station location."
+            "Greenway Hub",
+            "Greenway Hub.",
+            "It is located at Greenway Hub.",
+            "At Greenway Hub."
           ]
         },
         {
-          "id": "fb2",
-          "label": "Number of chargers",
-          "cue_prompt": "what / number of chargers?",
-          "cue_word": "number",
+          "id": "field_b2",
+          "label": "how many / fast chargers?",
+          "cue_prompt": "how many / fast chargers?",
+          "cue_word": "chargers",
           "is_missing": false,
-          "card_value": "Number of chargers on file",
-          "value": "Number of chargers on file",
-          "examiner_question": "What is the number of chargers?",
+          "value": "Sixteen high-speed plugs",
+          "nova_question": "How many high-speed charging plugs are available?",
           "acceptable_answers": [
-            "It is number of chargers.",
-            "Number of chargers."
+            "Sixteen high-speed plugs",
+            "Sixteen high-speed plugs.",
+            "There are sixteen high-speed charging plugs.",
+            "Sixteen plugs."
           ]
         },
         {
-          "id": "fb3",
-          "label": "Solar panels on roof",
-          "cue_prompt": "what / solar panels on roof?",
-          "cue_word": "solar",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the solar panels on roof?",
-            "Can you tell me the solar panels on roof?"
-          ],
-          "nova_reply": "The solar panels on roof is confirmed in our notes."
+          "id": "field_b3",
+          "label": "how many / solar panels on roof?",
+          "cue_prompt": "how many / solar panels on roof?",
+          "cue_word": "panels",
+          "is_missing": false,
+          "value": "Eighty solar panels",
+          "nova_question": "How many solar panels are installed on the roof?",
+          "acceptable_answers": [
+            "Eighty solar panels",
+            "Eighty solar panels.",
+            "There are eighty solar panels on the roof.",
+            "Eighty panels."
+          ]
         },
         {
-          "id": "fb4",
-          "label": "Daily vehicles served",
-          "cue_prompt": "what / daily vehicles served?",
-          "cue_word": "daily",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the daily vehicles served?",
-            "Can you tell me the daily vehicles served?"
-          ],
-          "nova_reply": "The daily vehicles served is confirmed in our notes."
+          "id": "field_b4",
+          "label": "how many / vehicles served daily?",
+          "cue_prompt": "how many / vehicles served daily?",
+          "cue_word": "vehicles",
+          "is_missing": false,
+          "value": "Ninety electric vehicles",
+          "nova_question": "How many electric vehicles does the hub serve daily?",
+          "acceptable_answers": [
+            "Ninety electric vehicles",
+            "Ninety electric vehicles.",
+            "It serves ninety electric vehicles daily.",
+            "Ninety vehicles."
+          ]
         },
         {
-          "id": "fb5",
-          "label": "CO2 reduced",
-          "cue_prompt": "what / co2 reduced?",
-          "cue_word": "co2",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What is the co2 reduced?",
-            "Can you tell me the co2 reduced?"
-          ],
-          "nova_reply": "The co2 reduced is confirmed in our notes."
+          "id": "field_b5",
+          "label": "what / environmental benefit?",
+          "cue_prompt": "what / environmental benefit?",
+          "cue_word": "benefit",
+          "is_missing": false,
+          "value": "Reduces city carbon emissions",
+          "nova_question": "What is the main environmental benefit of Greenway Hub?",
+          "acceptable_answers": [
+            "Reduces city carbon emissions",
+            "Reduces city carbon emissions.",
+            "It reduces city carbon emissions significantly.",
+            "Reducing emissions."
+          ]
         }
       ]
     }

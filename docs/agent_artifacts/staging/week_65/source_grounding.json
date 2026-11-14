@@ -137,5 +137,9 @@
     },
     "week_number": 65
   },
-  "source_b_excerpt": "•\tWeek 65: Review & Consolidation (Cycle 2.1) (Tuần 65: Ôn tập & Củng cố Chu trình 2.1)\n\t•\tTopic (ELA): Logic & Data Review. (Chủ đề: Ôn tập Logic & Dữ liệu.)\n\t•\tActivity: Creating a class newsletter with Data and Letters. (Hoạt động: Làm bản tin lớp học với Dữ liệu và Thư từ.)\n\t•\tVocabulary Focus: Review all keywords from Weeks 55-64.\n\t•\tMath Focus: Mixed Review (Operations & Graphs)."
+  "source_b_excerpt": "•\tWeek 65: Review & Consolidation (Cycle 2.1) (Tuần 65: Ôn tập & Củng cố Chu trình 2.1)\n\t•\tTopic (ELA): Logic & Data Review. (Chủ đề: Ôn tập Logic & Dữ liệu.)\n\t•\tActivity: Creating a class newsletter with Data and Letters. (Hoạt động: Làm bản tin lớp học với Dữ liệu và Thư từ.)\n\t•\tVocabulary Focus: Review all keywords from Weeks 55-64.\n\t•\tMath Focus: Mixed Review (Operations & Graphs).",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L511–L515"
 }

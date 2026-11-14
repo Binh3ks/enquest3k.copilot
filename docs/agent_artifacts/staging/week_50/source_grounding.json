@@ -91,5 +91,9 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "•\tWeek 50: Review Station 1 (Grammar Mix) (Tuần 50: Trạm Ôn tập 1 - Ngữ pháp Tổng hợp)\n\t•\tTopic: Past, Present, Future Mix. (Chủ đề: Trộn lẫn Quá khứ, Hiện tại, Tương lai.)\n\t•\tActivity: Board game where students must choose the right tense to answer."
+  "source_b_excerpt": "•\tWeek 50: Review Station 1 (Grammar Mix) (Tuần 50: Trạm Ôn tập 1 - Ngữ pháp Tổng hợp)\n\t•\tTopic: Past, Present, Future Mix. (Chủ đề: Trộn lẫn Quá khứ, Hiện tại, Tương lai.)\n\t•\tActivity: Board game where students must choose the right tense to answer.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L403–L405"
 }

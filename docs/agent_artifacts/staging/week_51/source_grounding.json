@@ -91,5 +91,9 @@
       "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
     }
   },
-  "source_b_excerpt": "•\tWeek 51: Review Station 2 (Vocab & CLIL) (Tuần 51: Trạm Ôn tập 2 - Từ vựng & CLIL)\n\t•\tTopic: Nature, Home, School, Math. (Chủ đề: Tự nhiên, Nhà, Trường, Toán.)\n\t•\tActivity: Categorization game (Put words into the right box)."
+  "source_b_excerpt": "•\tWeek 51: Review Station 2 (Vocab & CLIL) (Tuần 51: Trạm Ôn tập 2 - Từ vựng & CLIL)\n\t•\tTopic: Nature, Home, School, Math. (Chủ đề: Tự nhiên, Nhà, Trường, Toán.)\n\t•\tActivity: Categorization game (Put words into the right box).",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L406–L408"
 }

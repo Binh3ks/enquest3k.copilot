@@ -273,5 +273,9 @@
     "mockFormat": "flyers",
     "week_number": 72
   },
-  "source_b_excerpt": "•\tWeek 72: Science/ELA: Photosynthesis / Math: Area & Perimeter (Tuần 72: Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi)\n\t•\tTopic (Science): Plant Power (How plants eat). (Chủ đề: Sức mạnh thực vật - Cây ăn thế nào.)\n\t•\tKey Learning Outcome (ELA): Explain the process of photosynthesis. (Kết quả: Giải thích quy trình quang hợp.)\n\t•\tWriting Skill Focus: Explaining a process. (Kỹ năng Viết: Giải thích quy trình.)\n\t•\tGrammar Focus: Passive Voice (Intro - Simple Present): \"Sunlight is absorbed\". (Ngữ pháp: Bị động thì hiện tại đơn - Giới thiệu.)\n\t•\tVocabulary Focus: photosynthesis, sunlight, water, carbon dioxide, oxygen, energy, absorb, make.\n\t•\tTopic (Math): Space vs. Edge. (Toán: Không gian vs Viền.)\n\t•\tKey Learning Outcome (Math): Distinguish Area and Perimeter. (Kết quả: Phân biệt Diện tích và Chu vi.)\n\t•\tMath Vocabulary: area, perimeter, inside, around, square units, measure."
+  "source_b_excerpt": "•\tWeek 72: Science/ELA: Photosynthesis / Math: Area & Perimeter (Tuần 72: Khoa học/ELA: Quang hợp / Toán: Diện tích & Chu vi)\n\t•\tTopic (Science): Plant Power (How plants eat). (Chủ đề: Sức mạnh thực vật - Cây ăn thế nào.)\n\t•\tKey Learning Outcome (ELA): Explain the process of photosynthesis. (Kết quả: Giải thích quy trình quang hợp.)\n\t•\tWriting Skill Focus: Explaining a process. (Kỹ năng Viết: Giải thích quy trình.)\n\t•\tGrammar Focus: Passive Voice (Intro - Simple Present): \"Sunlight is absorbed\". (Ngữ pháp: Bị động thì hiện tại đơn - Giới thiệu.)\n\t•\tVocabulary Focus: photosynthesis, sunlight, water, carbon dioxide, oxygen, energy, absorb, make.\n\t•\tTopic (Math): Space vs. Edge. (Toán: Không gian vs Viền.)\n\t•\tKey Learning Outcome (Math): Distinguish Area and Perimeter. (Kết quả: Phân biệt Diện tích và Chu vi.)\n\t•\tMath Vocabulary: area, perimeter, inside, around, square units, measure.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L569–L577"
 }

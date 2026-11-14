@@ -275,5 +275,9 @@
     "mockFormat": "flyers",
     "week_number": 60
   },
-  "source_b_excerpt": "•\tWeek 60: ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations (Tuần 60: ELA: Yêu cầu gửi Thị trưởng - Viết Trang trọng / Toán: Thứ tự phép tính)\n\t•\tTopic (ELA): Writing to improve the city. (Chủ đề: Viết thư cải thiện thành phố.)\n\t•\tKey Learning Outcome (ELA): Write a polite formal request. (Kết quả: Viết yêu cầu trang trọng lịch sự.)\n\t•\tGrammar Focus: Polite Modals (May I, Could you, Would like). (Ngữ pháp: Động từ khuyết thiếu lịch sự.)\n\t•\tVocabulary Focus: Sir, Madam, sincerely, request, improve, community, library, park.\n\t•\tTopic (Math): PEMDAS Intro. (Toán: Giới thiệu về thứ tự ưu tiên.)\n\t•\tKey Learning Outcome (Math): Explain which operation comes first. (Kết quả: Giải thích phép tính nào làm trước.)\n\t•\tMath Vocabulary: order, operation, first, bracket, parenthesis."
+  "source_b_excerpt": "•\tWeek 60: ELA: The Mayor's Request (Formal Writing) / Math: Order of Operations (Tuần 60: ELA: Yêu cầu gửi Thị trưởng - Viết Trang trọng / Toán: Thứ tự phép tính)\n\t•\tTopic (ELA): Writing to improve the city. (Chủ đề: Viết thư cải thiện thành phố.)\n\t•\tKey Learning Outcome (ELA): Write a polite formal request. (Kết quả: Viết yêu cầu trang trọng lịch sự.)\n\t•\tGrammar Focus: Polite Modals (May I, Could you, Would like). (Ngữ pháp: Động từ khuyết thiếu lịch sự.)\n\t•\tVocabulary Focus: Sir, Madam, sincerely, request, improve, community, library, park.\n\t•\tTopic (Math): PEMDAS Intro. (Toán: Giới thiệu về thứ tự ưu tiên.)\n\t•\tKey Learning Outcome (Math): Explain which operation comes first. (Kết quả: Giải thích phép tính nào làm trước.)\n\t•\tMath Vocabulary: order, operation, first, bracket, parenthesis.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L467–L474"
 }

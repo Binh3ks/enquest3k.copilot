@@ -1,11 +1,7 @@
 /**
- * STAGED DELIVERABLE: Round 91 Production Standard
+ * STAGED DELIVERABLE: Round 96 Authentic Cambridge Flyers Speaking Hub
  * Week: 44 | Theme: "The Cookie Monster (Subtraction Language)" | CEFR: A2 Flyers
- * Generated: 2026-11-13T05:53:06.000Z
- * Pipeline: scripts/round91_data_generator.py
- * Staging Status: STAGED_FOR_REVIEW (Requires Claude ESL Sign-off before merge)
  */
-
 export const speakingHubData = {
   "week": 44,
   "theme": "The Cookie Monster (Subtraction Language)",
@@ -22,50 +18,74 @@ export const speakingHubData = {
       "person": "Ben",
       "fields": [
         {
-          "id": "fa1",
-          "cue_prompt": "how many / cookies / baked?",
-          "cue_word": "total",
+          "id": "field_a1",
+          "label": "how many / cookies baked?",
+          "cue_prompt": "how many / cookies baked?",
+          "cue_word": "baked",
           "is_missing": true,
+          "value": "Seventy-two cookies",
           "acceptable_questions": [
             "How many cookies were baked?",
-            "How many cookies did you bake?"
+            "How many cookies did the class bake?",
+            "What was the total number baked?"
           ],
-          "nova_reply": "We baked seventy-two cookies on large trays."
+          "nova_reply": "We baked seventy-two cookies on large baking trays."
         },
         {
-          "id": "fa2",
-          "cue_prompt": "how many / sold?",
+          "id": "field_a2",
+          "label": "how many / cookies sold?",
+          "cue_prompt": "how many / cookies sold?",
           "cue_word": "sold",
           "is_missing": true,
+          "value": "Twenty-eight cookies",
           "acceptable_questions": [
             "How many cookies were sold?",
-            "How many did you sell?"
+            "How many treats did you sell?",
+            "What was the number sold?"
           ],
           "nova_reply": "We sold twenty-eight cookies to morning visitors."
         },
         {
-          "id": "fa3",
-          "cue_prompt": "how many / left?",
+          "id": "field_a3",
+          "label": "how many / cookies left?",
+          "cue_prompt": "how many / cookies left?",
           "cue_word": "remaining",
-          "is_missing": false,
-          "card_value": "forty-four cookies left",
-          "examiner_question": "How many cookies were left in the jar?"
+          "is_missing": true,
+          "value": "Forty-four cookies",
+          "acceptable_questions": [
+            "How many cookies were left?",
+            "How many cookies remained in the jar?",
+            "What was the remaining count?"
+          ],
+          "nova_reply": "There were forty-four cookies left in the jar."
         },
         {
-          "id": "fa4",
+          "id": "field_a4",
+          "label": "what / flavor / cookies?",
           "cue_prompt": "what / flavor / cookies?",
           "cue_word": "flavor",
-          "is_missing": false,
-          "card_value": "chocolate chip and butter",
-          "examiner_question": "What flavor were the cookies?"
+          "is_missing": true,
+          "value": "Chocolate chip and butter",
+          "acceptable_questions": [
+            "What flavor were the cookies?",
+            "What kind of cookies did you bake?",
+            "What was the cookie flavor?"
+          ],
+          "nova_reply": "The cookies were chocolate chip and sweet butter flavor."
         },
         {
-          "id": "fa5",
-          "cue_prompt": "what time / bake sale / end?",
+          "id": "field_a5",
+          "label": "what time / bake sale end?",
+          "cue_prompt": "what time / bake sale end?",
           "cue_word": "time",
-          "is_missing": false,
-          "card_value": "four o'clock in the afternoon",
-          "examiner_question": "What time did the bake sale end?"
+          "is_missing": true,
+          "value": "Four o'clock in the afternoon",
+          "acceptable_questions": [
+            "What time did the bake sale end?",
+            "When did the sale finish?",
+            "At what time did it end?"
+          ],
+          "nova_reply": "The bake sale finished at four o'clock in the afternoon."
         }
       ]
     },
@@ -75,53 +95,79 @@ export const speakingHubData = {
       "person": "Mia",
       "fields": [
         {
-          "id": "fb1",
-          "cue_prompt": "how many / guests / arrived?",
+          "id": "field_b1",
+          "label": "how many / party guests arrived?",
+          "cue_prompt": "how many / party guests arrived?",
           "cue_word": "guests",
           "is_missing": false,
-          "card_value": "fifteen party guests",
-          "examiner_question": "How many guests arrived at the party?"
+          "value": "Fifteen party guests",
+          "nova_question": "How many guests arrived at the cookie party?",
+          "acceptable_answers": [
+            "Fifteen party guests",
+            "Fifteen party guests.",
+            "There were fifteen party guests.",
+            "Fifteen guests."
+          ]
         },
         {
-          "id": "fb2",
-          "cue_prompt": "how many / cookies / eaten?",
+          "id": "field_b2",
+          "label": "how many / cookies eaten?",
+          "cue_prompt": "how many / cookies eaten?",
           "cue_word": "eaten",
           "is_missing": false,
-          "card_value": "thirty-five cookies eaten",
-          "examiner_question": "How many cookies were eaten?"
+          "value": "Thirty-five cookies eaten",
+          "nova_question": "How many cookies were eaten during the party?",
+          "acceptable_answers": [
+            "Thirty-five cookies eaten",
+            "Thirty-five cookies eaten.",
+            "The guests ate thirty-five cookies.",
+            "Thirty-five."
+          ]
         },
         {
-          "id": "fb3",
-          "cue_prompt": "where / party / held?",
-          "cue_word": "place",
-          "is_missing": true,
-          "acceptable_questions": [
-            "Where was the party held?",
-            "Where did the party take place?"
-          ],
-          "nova_reply": "The party was held in Grandma's sunny backyard."
+          "id": "field_b3",
+          "label": "where / party held?",
+          "cue_prompt": "where / party held?",
+          "cue_word": "venue",
+          "is_missing": false,
+          "value": "Grandma's sunny backyard",
+          "nova_question": "Where was the cookie party held?",
+          "acceptable_answers": [
+            "Grandma's sunny backyard",
+            "Grandma's sunny backyard.",
+            "The party was held in Grandma's sunny backyard.",
+            "In the backyard."
+          ]
         },
         {
-          "id": "fb4",
-          "cue_prompt": "how many / cookies / left?",
-          "cue_word": "left",
-          "is_missing": true,
-          "acceptable_questions": [
-            "How many cookies were left?",
-            "How many treats remained?"
-          ],
-          "nova_reply": "There were twenty-five cookies left in the big jar."
+          "id": "field_b4",
+          "label": "how many / cookies left in jar?",
+          "cue_prompt": "how many / cookies left in jar?",
+          "cue_word": "remaining",
+          "is_missing": false,
+          "value": "Twenty-five cookies",
+          "nova_question": "How many cookies remained in the big glass jar?",
+          "acceptable_answers": [
+            "Twenty-five cookies",
+            "Twenty-five cookies.",
+            "There were twenty-five cookies left.",
+            "Twenty-five."
+          ]
         },
         {
-          "id": "fb5",
-          "cue_prompt": "what / game / played?",
+          "id": "field_b5",
+          "label": "what / game played?",
+          "cue_prompt": "what / game played?",
           "cue_word": "game",
-          "is_missing": true,
-          "acceptable_questions": [
-            "What game did you play?",
-            "What game was played?"
-          ],
-          "nova_reply": "We played a fun cookie monster counting game."
+          "is_missing": false,
+          "value": "Cookie monster counting game",
+          "nova_question": "What game did the guests play together?",
+          "acceptable_answers": [
+            "Cookie monster counting game",
+            "Cookie monster counting game.",
+            "They played a fun cookie monster counting game.",
+            "Cookie counting game."
+          ]
         }
       ]
     }

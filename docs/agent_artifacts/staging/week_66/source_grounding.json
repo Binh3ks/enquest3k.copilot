@@ -250,5 +250,9 @@
     },
     "week_number": 66
   },
-  "source_b_excerpt": "•\tWeek 66: Micro-Debate 1: \"Email vs Handwritten Letters\" (Tuần 66: Tranh luận nhỏ 1: Email hay Thư tay)\n\t•\tTopic: Which is better? (Chủ đề: Cái nào tốt hơn?)\n\t•\tActivity: \"Stand Your Ground\" (Students choose a corner and speak). (Hoạt động: Chọn phe và phát biểu.)\n\t•\tReview Goal: Consolidate Opinion sentences + Logical connectors. (Mục tiêu: Củng cố câu quan điểm + từ nối logic.)\n\t•\tGrammar Review: Modals, Comparatives, Because/So.\n\t•\tVocabulary Focus: faster, slower, personal, easy, hard, keep, delete."
+  "source_b_excerpt": "•\tWeek 66: Micro-Debate 1: \"Email vs Handwritten Letters\" (Tuần 66: Tranh luận nhỏ 1: Email hay Thư tay)\n\t•\tTopic: Which is better? (Chủ đề: Cái nào tốt hơn?)\n\t•\tActivity: \"Stand Your Ground\" (Students choose a corner and speak). (Hoạt động: Chọn phe và phát biểu.)\n\t•\tReview Goal: Consolidate Opinion sentences + Logical connectors. (Mục tiêu: Củng cố câu quan điểm + từ nối logic.)\n\t•\tGrammar Review: Modals, Comparatives, Because/So.\n\t•\tVocabulary Focus: faster, slower, personal, easy, hard, keep, delete.",
+  "grounding_origin": "backfilled_after_generation",
+  "grounding_date": "2026-11-14",
+  "grounding_commit": "ce8cd3af",
+  "source_b_line_range": "L516–L521"
 }
