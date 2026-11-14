@@ -1,5 +1,5 @@
 {
-  "dossier_version": "1.0.0",
+  "dossier_version": "1.1.0",
   "week_number": 49,
   "cefr_level": "A2 Flyers",
   "theme": "Future Dreams (Future Tense)",
@@ -7,7 +7,7 @@
   "alignment_status": "DIVERGENT_THEME_FALLBACK_TO_SOURCE_B",
   "quality_gates_status": {
     "total_evaluated": 17,
-    "passed_count": 12,
+    "passed_count": 14,
     "passed_gates": [
       "GATE_1_SCHEMA_CONTRACT",
       "GATE_2_WORD_COUNT_SRS",
@@ -17,15 +17,17 @@
       "GATE_8_BANNED_CONTENT_FILTER_ZERO",
       "GATE_9_NO_GENERIC_BOILERPLATE",
       "GATE_10_SKELETON_DIFFERENTIATION",
+      "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
       "GATE_12_CEFR_CONSISTENCY",
       "GATE_14_PROVENANCE_INTEGRITY",
+      "GATE_15_CLIL_VOCAB_INTEGRATION",
       "GATE_16_ESL_ANOMALY_ZERO",
       "GATE_SP2_SPEAKING_EXCHANGE_AUTHENTIC"
     ],
     "audit_summary": {
       "total_gates_evaluated": 17,
-      "passed_count": 12,
-      "failed_count": 5,
+      "passed_count": 14,
+      "failed_count": 3,
       "all_passed": false
     }
   },
@@ -36,21 +38,17 @@
     "is_fully_compliant": true
   },
   "clil_article_metrics": {
-    "word_count": 121,
-    "fk_grade_level": 6.9,
-    "long_words_percentage": 3.3,
+    "word_count": 125,
+    "fk_grade_level": 5.8,
+    "long_words_percentage": 3.2,
     "glossary_terms_count": 0,
     "check_questions_count": 3
   },
   "vocabulary_metrics": {
-    "target_vocab_count": 20,
+    "target_vocab_count": 23,
     "source_b_syllabus_words_count": 6,
-    "source_b_covered_count": 3,
-    "missing_syllabus_words": [
-      "teacher",
-      "artist",
-      "dream"
-    ]
+    "source_b_covered_count": 6,
+    "missing_syllabus_words": []
   },
   "shadowing_metrics": {
     "sentence_count": 8,
@@ -63,5 +61,5 @@
     "all_have_cubes_model_data": true,
     "zero_adapter_fallbacks": true
   },
-  "dossier_timestamp": "2026-11-14T08:53:48.271Z"
+  "dossier_timestamp": "2026-11-14T13:07:57.995Z"
 }

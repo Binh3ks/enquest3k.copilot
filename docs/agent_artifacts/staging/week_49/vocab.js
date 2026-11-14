@@ -206,6 +206,36 @@ export const vocab = [
     "definition_vi": "mục đích",
     "example_en": "The main purpose of study is to gain useful knowledge.",
     "example_vi": "Mục đích chính của việc học là để có được kiến thức hữu ích."
+  },
+  {
+    "id": 21,
+    "word": "teacher",
+    "pos": "n",
+    "ipa": "/ˈtiːtʃər/",
+    "definition_en": "A person who helps students learn new things.",
+    "definition_vi": "giáo viên",
+    "example_en": "Our English teacher explains the lesson clearly.",
+    "example_vi": "Giáo viên tiếng Anh của chúng tôi giải thích bài học rất rõ ràng."
+  },
+  {
+    "id": 22,
+    "word": "artist",
+    "pos": "n",
+    "ipa": "/ˈɑːrtɪst/",
+    "definition_en": "A person who creates paintings or drawings.",
+    "definition_vi": "họa sĩ",
+    "example_en": "The young artist paints colorful landscapes.",
+    "example_vi": "Họa sĩ trẻ vẽ những bức tranh phong cảnh rực rỡ sắc màu."
+  },
+  {
+    "id": 23,
+    "word": "dream",
+    "pos": "n",
+    "ipa": "/driːm/",
+    "definition_en": "A strong wish or goal for your future life.",
+    "definition_vi": "ước mơ",
+    "example_en": "His dream is to fly an airplane across the ocean.",
+    "example_vi": "Ước mơ của cậu ấy là lái máy bay vượt qua đại dương."
   }
 ];
 export const vocabList = vocab;

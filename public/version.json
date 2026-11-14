@@ -1,9 +1,9 @@
 {
-  "commit": "ded525af4b03d87dc727ad140ef1018fd9f4b8b0",
-  "git_commit": "ded525af4b03d87dc727ad140ef1018fd9f4b8b0",
-  "shortCommit": "ded525af",
-  "message": "feat(curriculum): complete round 73 computed forensic audit & Source B realignment [multi-agent-review]",
-  "builtAt": "2026-11-10T06:27:39.239Z",
-  "build_timestamp": "2026-11-10T06:27:39.240Z",
+  "commit": "59d6558cc4e33d4b4d24fe7ad797e76b6ca867b8",
+  "git_commit": "59d6558cc4e33d4b4d24fe7ad797e76b6ca867b8",
+  "shortCommit": "59d6558c",
+  "message": "round96(manifest): add Lô 1 review package zip and commit manifest [round96-manifest]",
+  "builtAt": "2026-11-14T13:08:17.149Z",
+  "build_timestamp": "2026-11-14T13:08:17.149Z",
   "env": "production"
 }

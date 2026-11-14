@@ -218,7 +218,7 @@ export const readingHubData = {
       "The Place Value Chart",
       "Counting Up to One Hundred"
     ],
-    "text": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we count stars over a mountain village, we group them into tens. A village census found twenty-one stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column.",
+    "text": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we ask how many stars shine over a mountain village, we group them into tens. A village census found twenty stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column.",
     "vocabulary_recycled": [
       "place",
       "value",
@@ -271,7 +271,7 @@ export const readingHubData = {
         "answer": "One hundred"
       }
     ],
-    "content_en": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we count stars over a mountain village, we group them into tens. A village census found twenty-one stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column."
+    "content_en": "Astronomers use place value to count distant stars. In a two-digit number, each digit holds a special value. We write numbers in a column chart to separate tens from ones. For example, forty-five has four tens and five ones. When we ask how many stars shine over a mountain village, we group them into tens. A village census found twenty stone cottages in the north valley and thirty-four wooden houses near the stream. Together with fifty-six hillside homes and sixty-seven farm sheds, the total amount reaches ninety-nine buildings. If astronomers observe one more star, the count reaches one hundred. Scientists estimate total numbers accurately by checking each column."
   },
   "story_scenes": [
     {

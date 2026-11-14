@@ -218,7 +218,7 @@ export const readingHubData = {
       "Aiming for Future Careers",
       "The Hunting Strategy of the Chameleon"
     ],
-    "text": "Every student has an ambition for the future. Many children say, 'I want to be a doctor in order to heal people,' or 'I am going to be an engineer so that I can invent clean energy machines.' To achieve a great career, students study diligently at school and train for college. In the natural world, animals also focus on clear goals. Consider the chameleon on a tree branch. It changes color so that predators cannot see it. When it hunts for food, it locks both eyes on its insect target. Then, it shoots its sticky tongue with extreme speed in order to catch its meal. Both human scientists and hunting chameleons understand that focus is essential to achieve their purpose.",
+    "text": "Every student has a special dream for the future. Many children say, 'I want to be a doctor in order to heal people.' Another student wants to be a helpful teacher or a creative artist. Some students want to become a brave pilot and fly high. To achieve a great career, students study diligently at school and train for college. In the natural world, animals also focus on clear goals. Consider the chameleon on a tree branch. It changes color so that predators cannot see it. When it hunts for food, it locks both eyes on its insect target. Then, it shoots its sticky tongue with speed to catch its meal. Both human scientists and hunting chameleons understand that focus helps them achieve their purpose.",
     "vocabulary_recycled": [
       "career",
       "ambition",
@@ -269,7 +269,7 @@ export const readingHubData = {
         "answer": "With a fast sticky tongue"
       }
     ],
-    "content_en": "Every student has an ambition for the future. Many children say, 'I want to be a doctor in order to heal people,' or 'I am going to be an engineer so that I can invent clean energy machines.' To achieve a great career, students study diligently at school and train for college. In the natural world, animals also focus on clear goals. Consider the chameleon on a tree branch. It changes color so that predators cannot see it. When it hunts for food, it locks both eyes on its insect target. Then, it shoots its sticky tongue with extreme speed in order to catch its meal. Both human scientists and hunting chameleons understand that focus is essential to achieve their purpose."
+    "content_en": "Every student has a special dream for the future. Many children say, 'I want to be a doctor in order to heal people.' Another student wants to be a helpful teacher or a creative artist. Some students want to become a brave pilot and fly high. To achieve a great career, students study diligently at school and train for college. In the natural world, animals also focus on clear goals. Consider the chameleon on a tree branch. It changes color so that predators cannot see it. When it hunts for food, it locks both eyes on its insect target. Then, it shoots its sticky tongue with speed to catch its meal. Both human scientists and hunting chameleons understand that focus helps them achieve their purpose."
   },
   "story_scenes": [
     {

@@ -206,6 +206,36 @@ export const vocab = [
     "definition_vi": "mi-li-mét",
     "example_en": "The tiny beetle is only five millimeters long.",
     "example_vi": "Con bọ nhỏ chỉ dài năm mi-li-mét."
+  },
+  {
+    "id": 21,
+    "word": "long",
+    "pos": "adj",
+    "ipa": "/lɔːŋ/",
+    "definition_en": "Having a great distance from one end to the other.",
+    "definition_vi": "dài",
+    "example_en": "The blue jump rope is two meters long.",
+    "example_vi": "Sợi dây nhảy màu xanh lam dài hai mét."
+  },
+  {
+    "id": 22,
+    "word": "short",
+    "pos": "adj",
+    "ipa": "/ʃɔːrt/",
+    "definition_en": "Measuring a small distance from end to end.",
+    "definition_vi": "ngắn",
+    "example_en": "He drew a short pencil line on the paper.",
+    "example_vi": "Cậu ấy đã vẽ một đường bút chì ngắn trên tờ giấy."
+  },
+  {
+    "id": 23,
+    "word": "tall",
+    "pos": "adj",
+    "ipa": "/tɔːl/",
+    "definition_en": "Having greater height than normal things.",
+    "definition_vi": "cao",
+    "example_en": "A tall sunflower grows next to the garden fence.",
+    "example_vi": "Một bông hoa hướng dương cao lớn mọc bên cạnh hàng rào vườn."
   }
 ];
 export const vocabList = vocab;

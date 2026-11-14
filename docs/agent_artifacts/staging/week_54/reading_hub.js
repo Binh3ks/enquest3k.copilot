@@ -218,7 +218,7 @@ export const readingHubData = {
       "Celebrating Fifty-Four Weeks of Learning",
       "World Wonders and Presenting with Confidence"
     ],
-    "text": "The Phase 1 Graduation Showcase marks the completion of fifty-four intensive learning weeks. Students stand on the main auditorium stage, feeling very proud before an encouraging audience of parents and teachers. Each graduate delivers a graduation speech with confidence. In their final presentation, learners describe an ancient wonder, such as a great Egyptian pyramid or historical monument. They reflect on their learning journey and share their favorite school memory. Each student receives an official achievement certificate and a special award. The auditorium fills with enthusiastic applause as families celebrate this milestone. A souvenir booklet reminds them that a bright academic future awaits in Phase 2.",
+    "text": "Today is a big day for every graduate at our school. Families gather in the hall for the annual showcase. Students stand on the stage and feel proud of their learning journey. With great confidence, each student gives a short speech before the audience. In their presentation, they share memories of an ancient wonder, like a giant stone pyramid or a famous landmark monument. Parents smile and celebrate this happy event with loud applause. The principal gives each child a special award and a paper certificate. A small souvenir gift reminds everyone of this wonderful memory. All students are ready for an exciting future in the next grade.",
     "vocabulary_recycled": [
       "showcase",
       "stage",
@@ -273,7 +273,7 @@ export const readingHubData = {
         "answer": "With present perfect questions about world wonders"
       }
     ],
-    "content_en": "The Phase 1 Graduation Showcase marks the completion of fifty-four intensive learning weeks. Students stand on the main auditorium stage, feeling very proud before an encouraging audience of parents and teachers. Each graduate delivers a graduation speech with confidence. In their final presentation, learners describe an ancient wonder, such as a great Egyptian pyramid or historical monument. They reflect on their learning journey and share their favorite school memory. Each student receives an official achievement certificate and a special award. The auditorium fills with enthusiastic applause as families celebrate this milestone. A souvenir booklet reminds them that a bright academic future awaits in Phase 2."
+    "content_en": "Today is a big day for every graduate at our school. Families gather in the hall for the annual showcase. Students stand on the stage and feel proud of their learning journey. With great confidence, each student gives a short speech before the audience. In their presentation, they share memories of an ancient wonder, like a giant stone pyramid or a famous landmark monument. Parents smile and celebrate this happy event with loud applause. The principal gives each child a special award and a paper certificate. A small souvenir gift reminds everyone of this wonderful memory. All students are ready for an exciting future in the next grade."
   },
   "story_scenes": [
     {

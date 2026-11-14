@@ -218,7 +218,7 @@ export const readingHubData = {
       "Using Rulers and Scales",
       "What Happens When Water Freezes?"
     ],
-    "text": "In science class, students learn how to measure length accurately. We use a plastic ruler to find the length and width of small objects. A ruler shows marks in centimeters and millimeters. For longer distance, a measuring tape is better. It is thirty centimeters long when you measure a school notebook. Next, students observe freezing water in a clear container. If you freeze water at zero degrees, the liquid turns into a solid. Interestingly, water molecules expand as they freeze into ice crystals. When scientists add salt to ice, the temperature drops rapidly. Students record the changing height of ice columns in their science journals. Comparing measurements helps scientists understand physical changes.",
+    "text": "In science class, students learn how to measure length accurately. We use a plastic ruler to find the length and width of small objects. A ruler shows marks in centimeters and millimeters. For longer distance, a measuring tape is better. It is thirty centimeters long when you measure a notebook. Students compare a tall beaker and a short wooden block. Next, they observe water in a clear container. If you freeze water at zero degrees, the liquid turns into a solid. Water molecules expand as they freeze into ice crystals. When scientists add salt to ice, the temperature drops rapidly. Students record the changing height of ice columns in their journals. Comparing measurements helps scientists understand physical changes.",
     "vocabulary_recycled": [
       "measure",
       "length",
@@ -272,7 +272,7 @@ export const readingHubData = {
         "answer": "Water expands when it freezes"
       }
     ],
-    "content_en": "In science class, students learn how to measure length accurately. We use a plastic ruler to find the length and width of small objects. A ruler shows marks in centimeters and millimeters. For longer distance, a measuring tape is better. It is thirty centimeters long when you measure a school notebook. Next, students observe freezing water in a clear container. If you freeze water at zero degrees, the liquid turns into a solid. Interestingly, water molecules expand as they freeze into ice crystals. When scientists add salt to ice, the temperature drops rapidly. Students record the changing height of ice columns in their science journals. Comparing measurements helps scientists understand physical changes."
+    "content_en": "In science class, students learn how to measure length accurately. We use a plastic ruler to find the length and width of small objects. A ruler shows marks in centimeters and millimeters. For longer distance, a measuring tape is better. It is thirty centimeters long when you measure a notebook. Students compare a tall beaker and a short wooden block. Next, they observe water in a clear container. If you freeze water at zero degrees, the liquid turns into a solid. Water molecules expand as they freeze into ice crystals. When scientists add salt to ice, the temperature drops rapidly. Students record the changing height of ice columns in their journals. Comparing measurements helps scientists understand physical changes."
   },
   "story_scenes": [
     {

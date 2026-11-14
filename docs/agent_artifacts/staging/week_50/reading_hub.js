@@ -218,7 +218,7 @@ export const readingHubData = {
       "How Electric Vehicles Work",
       "Protecting Our Planet's Atmosphere"
     ],
-    "text": "Transportation is changing across the world. In the past, all vehicles burned gasoline and produced harmful emission smoke. Today, modern electric vehicles use a lithium battery to power a silent motor. Drivers plug the vehicle into a charging station to charge the battery with green energy. If we use clean energy from solar panels, we will protect the planet from air pollution. On the dashboard screen, drivers monitor remaining battery power and speed. An electric car can travel hundreds of kilometers on a single charge. If cities adopt electric transport, they will reduce noisy traffic and toxic fumes. The future of travel relies on renewable power to keep our skies clear and healthy.",
+    "text": "Travel is changing fast across our world. In the past, all cars burned gas and made dirty smoke. Today, modern drivers choose a clean electric vehicle. An electric car uses a strong battery to power its quiet motor. Drivers stop at a charging station to charge the battery. When we use solar panels to make clean energy, we protect our green planet. A digital screen on the dashboard shows car speed and remaining power. Electric cars reduce harmful emission smoke in big cities. They can travel far on one charge. In the future, clean transport will keep our air fresh and clear.",
     "vocabulary_recycled": [
       "electric",
       "vehicle",
@@ -273,7 +273,7 @@ export const readingHubData = {
         "answer": "At a charging station"
       }
     ],
-    "content_en": "Transportation is changing across the world. In the past, all vehicles burned gasoline and produced harmful emission smoke. Today, modern electric vehicles use a lithium battery to power a silent motor. Drivers plug the vehicle into a charging station to charge the battery with green energy. If we use clean energy from solar panels, we will protect the planet from air pollution. On the dashboard screen, drivers monitor remaining battery power and speed. An electric car can travel hundreds of kilometers on a single charge. If cities adopt electric transport, they will reduce noisy traffic and toxic fumes. The future of travel relies on renewable power to keep our skies clear and healthy."
+    "content_en": "Travel is changing fast across our world. In the past, all cars burned gas and made dirty smoke. Today, modern drivers choose a clean electric vehicle. An electric car uses a strong battery to power its quiet motor. Drivers stop at a charging station to charge the battery. When we use solar panels to make clean energy, we protect our green planet. A digital screen on the dashboard shows car speed and remaining power. Electric cars reduce harmful emission smoke in big cities. They can travel far on one charge. In the future, clean transport will keep our air fresh and clear."
   },
   "story_scenes": [
     {

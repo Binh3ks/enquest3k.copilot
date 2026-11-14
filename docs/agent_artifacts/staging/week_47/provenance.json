@@ -37,6 +37,7 @@
     "GATE_8_BANNED_CONTENT_FILTER_ZERO",
     "GATE_9_NO_GENERIC_BOILERPLATE",
     "GATE_10_SKELETON_DIFFERENTIATION",
+    "GATE_11_BLUEPRINT_THEME_FIDELITY_V2",
     "GATE_12_CEFR_CONSISTENCY",
     "GATE_14_PROVENANCE_INTEGRITY",
     "GATE_15_CLIL_VOCAB_INTEGRATION",
@@ -45,11 +46,11 @@
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
   "staged_status": "STAGED_FOR_REVIEW",
-  "verified_at": "2026-11-14T08:51:05.419Z",
+  "verified_at": "2026-11-14T13:09:51.091Z",
   "audit_summary": {
     "total_gates_evaluated": 17,
-    "passed_count": 13,
-    "failed_count": 4,
+    "passed_count": 14,
+    "failed_count": 3,
     "all_passed": false
   }
 }

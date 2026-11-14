@@ -42,7 +42,7 @@ export const vocab = [
     "word": "how many left",
     "pos": "phr",
     "ipa": "/haʊ ˈmeni left/",
-    "definition_en": "Asking for the remaining quantity.",
+    "definition_en": "Asking how many things remain.",
     "definition_vi": "còn lại bao nhiêu",
     "example_en": "How many left after the hungry children ate lunch?",
     "example_vi": "Còn lại bao nhiêu sau khi những đứa trẻ đói ăn trưa?"

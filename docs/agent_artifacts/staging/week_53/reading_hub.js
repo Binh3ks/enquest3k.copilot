@@ -218,7 +218,7 @@ export const readingHubData = {
       "The Science of Deduction",
       "Assembling a Showcase Portfolio"
     ],
-    "text": "Detectives and researchers both rely on logical deduction to uncover truth. When examining a mystery, a detective looks at every clue. If a footprint is small and wet, the suspect cannot be the tall caretaker; it must be a young student who came in from the rain. Modals of deduction express certainty: we say 'It must be Mr. White because of his hat,' or 'It cannot be Sarah because she was in science class.' Similarly, as students prepare their 'Year in Review' portfolio, they gather evidence of their academic progress. They curate artifacts, including essays, lab diagrams, and certificates. Each student writes a thoughtful summary to reflect on their learning journey. Curating a portfolio prepares learners to display their achievements with genuine pride.",
+    "text": "A clever detective works hard to solve a mystery. The detective wears a shiny badge and looks for each hidden clue. If there is a muddy footprint near the curtain, it gives clear evidence. A dark shadow on the wall helps find the suspect. With careful deduction, the detective decides who is guilty and who is innocent. In school, students also do a Year in Review. They create a neat portfolio to display their best work. Each artifact shows real progress in math and science. Students reflect on their school year and write a short summary. Building a proud portfolio helps learners celebrate their growth.",
     "vocabulary_recycled": [
       "deduction",
       "clue",
@@ -268,7 +268,7 @@ export const readingHubData = {
         "answer": "Written essays, lab diagrams, and certificates"
       }
     ],
-    "content_en": "Detectives and researchers both rely on logical deduction to uncover truth. When examining a mystery, a detective looks at every clue. If a footprint is small and wet, the suspect cannot be the tall caretaker; it must be a young student who came in from the rain. Modals of deduction express certainty: we say 'It must be Mr. White because of his hat,' or 'It cannot be Sarah because she was in science class.' Similarly, as students prepare their 'Year in Review' portfolio, they gather evidence of their academic progress. They curate artifacts, including essays, lab diagrams, and certificates. Each student writes a thoughtful summary to reflect on their learning journey. Curating a portfolio prepares learners to display their achievements with genuine pride."
+    "content_en": "A clever detective works hard to solve a mystery. The detective wears a shiny badge and looks for each hidden clue. If there is a muddy footprint near the curtain, it gives clear evidence. A dark shadow on the wall helps find the suspect. With careful deduction, the detective decides who is guilty and who is innocent. In school, students also do a Year in Review. They create a neat portfolio to display their best work. Each artifact shows real progress in math and science. Students reflect on their school year and write a short summary. Building a proud portfolio helps learners celebrate their growth."
   },
   "story_scenes": [
     {

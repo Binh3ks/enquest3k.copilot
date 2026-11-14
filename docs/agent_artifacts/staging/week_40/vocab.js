@@ -42,7 +42,7 @@ export const vocab = [
     "word": "skin",
     "pos": "n",
     "ipa": "/skɪn/",
-    "definition_en": "The outer natural cover of animal body.",
+    "definition_en": "The outer layer that covers an animal.",
     "definition_vi": "da",
     "example_en": "Crocodiles have thick tough skin to protect themselves.",
     "example_vi": "Cá sấu có lớp da dày dai để tự bảo vệ."

@@ -206,6 +206,36 @@ export const vocab = [
     "definition_vi": "bó, tập hợp",
     "example_en": "Ten sticks make one bundle in place value practice.",
     "example_vi": "Mười que tính tạo thành một bó trong bài luyện tập giá trị hàng."
+  },
+  {
+    "id": 21,
+    "word": "ten",
+    "pos": "num",
+    "ipa": "/tɛn/",
+    "definition_en": "The number that comes after nine.",
+    "definition_vi": "số mười",
+    "example_en": "There are ten pencils in the red box.",
+    "example_vi": "Có mười chiếc bút chì trong chiếc hộp màu đỏ."
+  },
+  {
+    "id": 22,
+    "word": "how many",
+    "pos": "phr",
+    "ipa": "/haʊ ˈmɛni/",
+    "definition_en": "Asking about the total number of things.",
+    "definition_vi": "bao nhiêu",
+    "example_en": "How many stars can you count in the sky?",
+    "example_vi": "Bạn có thể đếm được bao nhiêu ngôi sao trên bầu trời?"
+  },
+  {
+    "id": 23,
+    "word": "twenty",
+    "pos": "num",
+    "ipa": "/ˈtwɛnti/",
+    "definition_en": "The number equal to two times ten.",
+    "definition_vi": "số hai mươi",
+    "example_en": "She has twenty colorful shells on her desk.",
+    "example_vi": "Cô ấy có hai mươi vỏ sò đầy màu sắc trên bàn."
   }
 ];
 export const vocabList = vocab;

@@ -218,7 +218,7 @@ export const readingHubData = {
       "Rocky Inner Planets vs Gas Giants",
       "Extracting Data from Space Probes"
     ],
-    "text": "Astronomers use scientific data to compare the eight worlds of our solar system. The inner planets—Mercury, Venus, Earth, and Mars—are small, dense, rocky planets. They orbit closest to the sun and feature solid ground with volcanic craters. In contrast, the outer worlds—Jupiter, Saturn, Uranus, and Neptune—are giant gaseous planets. Saturn is famous for its beautiful, wide, icy rings. Scientists observe these worlds through a powerful metallic telescope or launch an uncrewed space probe into deep space. Each probe transmits valuable surface temperature and atmospheric data back to Earth. Powerful solar gravity keeps each planet in its steady elliptical orbit. By following the correct order of adjectives, students describe each celestial body clearly.",
+    "text": "Our solar system has eight amazing planets. They all orbit around the bright sun. The four inner worlds are small and rocky. Each rocky planet has a solid surface with deep crater holes. In contrast, the outer worlds are giant planets of gas. Saturn is a giant planet with a bright frozen ring. Scientists look into deep space through a metallic telescope. They also send a space probe on a long mission to collect scientific data. The probe flies a great distance to study each planet atmosphere. Invisible gravity keeps every world in place as they rotate smoothly. Space science helps us explore our solar system.",
     "vocabulary_recycled": [
       "data",
       "solar",
@@ -270,7 +270,7 @@ export const readingHubData = {
         "answer": "Ice and rock particles"
       }
     ],
-    "content_en": "Astronomers use scientific data to compare the eight worlds of our solar system. The inner planets—Mercury, Venus, Earth, and Mars—are small, dense, rocky planets. They orbit closest to the sun and feature solid ground with volcanic craters. In contrast, the outer worlds—Jupiter, Saturn, Uranus, and Neptune—are giant gaseous planets. Saturn is famous for its beautiful, wide, icy rings. Scientists observe these worlds through a powerful metallic telescope or launch an uncrewed space probe into deep space. Each probe transmits valuable surface temperature and atmospheric data back to Earth. Powerful solar gravity keeps each planet in its steady elliptical orbit. By following the correct order of adjectives, students describe each celestial body clearly."
+    "content_en": "Our solar system has eight amazing planets. They all orbit around the bright sun. The four inner worlds are small and rocky. Each rocky planet has a solid surface with deep crater holes. In contrast, the outer worlds are giant planets of gas. Saturn is a giant planet with a bright frozen ring. Scientists look into deep space through a metallic telescope. They also send a space probe on a long mission to collect scientific data. The probe flies a great distance to study each planet atmosphere. Invisible gravity keeps every world in place as they rotate smoothly. Space science helps us explore our solar system."
   },
   "story_scenes": [
     {

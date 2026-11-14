@@ -44,7 +44,7 @@
   ],
   "review_status": "PENDING_CLAUDE_ESL_SIGNOFF",
   "staged_status": "STAGED_FOR_REVIEW",
-  "verified_at": "2026-11-14T08:51:05.431Z",
+  "verified_at": "2026-11-14T13:09:51.100Z",
   "audit_summary": {
     "total_gates_evaluated": 17,
     "passed_count": 12,

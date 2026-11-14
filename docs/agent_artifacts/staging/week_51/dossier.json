@@ -1,5 +1,5 @@
 {
-  "dossier_version": "1.0.0",
+  "dossier_version": "1.1.0",
   "week_number": 51,
   "cefr_level": "A2 Flyers",
   "theme": "Review Station 2 (Vocab & CLIL)",
@@ -36,9 +36,9 @@
     "is_fully_compliant": true
   },
   "clil_article_metrics": {
-    "word_count": 112,
-    "fk_grade_level": 10.1,
-    "long_words_percentage": 8.9,
+    "word_count": 106,
+    "fk_grade_level": 5.3,
+    "long_words_percentage": 2.8,
     "glossary_terms_count": 0,
     "check_questions_count": 3
   },
@@ -59,5 +59,5 @@
     "all_have_cubes_model_data": true,
     "zero_adapter_fallbacks": true
   },
-  "dossier_timestamp": "2026-11-14T08:53:48.275Z"
+  "dossier_timestamp": "2026-11-14T13:07:57.999Z"
 }
