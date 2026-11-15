@@ -1,0 +1,52 @@
+{
+  "week": 41,
+  "theme": "Life Cycles (Process)",
+  "character_consistency": {
+    "boy": "Oliver: 8-year-old boy, neat dark short hair, green polo shirt, khaki shorts, curious and thoughtful expression",
+    "girl": "Sophia: 8-year-old girl, wavy light brown shoulder-length hair, soft pink sweater, denim skirt, gentle smile",
+    "teacher": "Miss Parker: friendly female science teacher with round spectacles and floral lab apron",
+    "style": "3D Pixar animation style, warm volumetric lighting, soft shadows, vibrant colors, child-friendly, cinema 4D render quality"
+  },
+  "panels": [
+    {
+      "panel": 1,
+      "title": "Finding the Egg",
+      "target_file": "public/images/week41/writing_panel_1.png",
+      "prompt": "3D Pixar animation style: Two cute students Oliver (neat dark hair, green polo shirt) and Sophia (wavy brown hair, pink sweater) looking through hand lenses at a tiny butterfly egg on a broad milkweed leaf in the sunny school garden, morning light, macro detail.",
+      "seed": 420411,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 2,
+      "title": "The Feeding Caterpillar",
+      "target_file": "public/images/week41/writing_panel_2.png",
+      "prompt": "3D Pixar animation style: A plump, friendly black-yellow-white striped monarch caterpillar chewing fresh green leaves inside an airy classroom terrarium, Oliver and Sophia smiling beside the jar.",
+      "seed": 420412,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 3,
+      "title": "The Hanging Chrysalis",
+      "target_file": "public/images/week41/writing_panel_3.png",
+      "prompt": "3D Pixar animation style: A smooth jade-green chrysalis with tiny golden dots hanging upside down from a twig under the lid of the observation box, calm peaceful atmosphere, gentle room lighting.",
+      "seed": 420413,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 4,
+      "title": "Emerging from the Shell",
+      "target_file": "public/images/week41/writing_panel_4.png",
+      "prompt": "3D Pixar animation style: A newly emerged monarch butterfly clinging to its empty transparent shell, pumping fluid into its damp orange-and-black patterned wings as Oliver and Sophia watch in amazement.",
+      "seed": 420414,
+      "status": "BACKLOG_PENDING_QUOTA_RESET"
+    },
+    {
+      "panel": 5,
+      "title": "Free in the Flower Garden",
+      "target_file": "public/images/week41/writing_panel_5.png",
+      "prompt": "3D Pixar animation style: The magnificent orange and black monarch butterfly soaring joyfully into the clear blue sky above a vibrant flowerbed, Oliver and Sophia cheering with outstretched arms, bright sunny afternoon.",
+      "seed": 420415,
+      "status": "BACKLOG_PENDING_QUOTA_RESET"
+    }
+  ]
+}

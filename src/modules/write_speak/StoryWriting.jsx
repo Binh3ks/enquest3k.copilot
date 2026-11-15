@@ -48,8 +48,7 @@ const KNOWN_CONNECTORS = [
 const NEUTRAL_IMAGE_PLACEHOLDER =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f1f5f9' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='50%25' y='46%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='32'%3E🖼️%3C/text%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='14' font-weight='600' fill='%2364748b'%3EImage Not Available%3C/text%3E%3C/svg%3E";
 
-// Author-verified weeks with physical writing scene images on disk in public/images/
-const WEEKS_WITH_PHYSICAL_SCENE_IMAGES = new Set([33, 34, 36, 37]);
+// Clean image presence check based strictly on authentic step data
 
 export function StoryWriting({ content, customData, data, vocab, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
@@ -97,9 +96,8 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
   const currentStep = steps ? (steps[currentStepIdx] || steps[0]) : null;
   const colorScheme = STAGE_COLORS[currentStepIdx % STAGE_COLORS.length];
   const hasSceneImages = useMemo(() => {
-    if (!currentWeek || !WEEKS_WITH_PHYSICAL_SCENE_IMAGES.has(currentWeek)) return false;
     return Boolean(steps && steps.some((s, idx) => s && s.image_url && !imageErrors[idx]));
-  }, [steps, currentWeek, imageErrors]);
+  }, [steps, imageErrors]);
 
   const fullText = useMemo(() => panelTexts.filter(Boolean).join(' ').trim(), [panelTexts]);
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
@@ -327,7 +325,7 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
     });
 
     // Cambridge 5-shield distribution (Content 2, Grammar 2, Vocab 1)
-    const contentScore = Math.min(2, Math.max(1, wordCount >= 20 ? 2 : 1));
+    const contentScore = Math.min(2, Math.max(1, wordCount >= 40 ? 2 : 1));
     const grammarScore = Math.min(2, Math.max(1, distinctConnectors.length >= 2 && hasScene3PastTense ? 2 : 1));
     const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 1 ? 1 : 1));
     const totalShields = contentScore + grammarScore + vocabScore;
@@ -417,12 +415,12 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
           <span
             data-testid="total-words-counter"
             className={`text-xs font-black px-3 py-1 rounded-full border ${
-              wordCount >= 20
+              wordCount >= 40
                 ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                 : 'bg-amber-100 text-amber-800 border-amber-300'
             }`}
           >
-            Total words: {wordCount} {wordCount >= 20 ? '✓' : '/ 20 min'}
+            Total words: {wordCount} {wordCount >= 40 ? '✓' : '/ 40 min'}
           </span>
         </div>
 
@@ -435,7 +433,7 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
               className="cursor-pointer group bg-white rounded-2xl border-2 border-slate-200 hover:border-indigo-400 overflow-hidden shadow-xs transition"
             >
               <div className="relative h-24 sm:h-28 overflow-hidden bg-slate-100">
-                {hasSceneImages && step.image_url && !imageErrors[idx] ? (
+                {step.image_url && !imageErrors[idx] ? (
                   <img
                     src={step.image_url}
                     alt={`Scene ${idx + 1}`}
@@ -446,8 +444,9 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
                     }}
                   />
                 ) : (
-                  <div className="w-full h-full p-2 bg-gradient-to-br from-indigo-50 to-slate-100 flex flex-col justify-between">
-                    <span className="text-[10px] font-bold text-indigo-950 line-clamp-2 leading-tight">
+                  <div className="w-full h-full p-2 bg-slate-100 flex flex-col justify-center items-center text-center">
+                    <span className="text-base text-slate-400">🖼️</span>
+                    <span className="text-[10px] font-bold text-slate-500 line-clamp-2 leading-tight">
                       {step.title}
                     </span>
                   </div>
@@ -598,7 +597,7 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
           Write 2-3 sentences to describe the scenes
         </span>
         <p className="text-xs sm:text-sm text-indigo-700 font-bold hidden sm:block">
-          {hasSceneImages ? "Look at the pictures. Write 20 or more words." : "Write 20 or more words to describe the scenes."}
+          {hasSceneImages ? "Look at the pictures. Write 40 or more words." : "Write 40 or more words to describe the scenes."}
         </p>
       </div>
 
@@ -659,10 +658,10 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
           {/* Left Column (lg:col-span-5): Image & Scene Context */}
           <div className="lg:col-span-5 space-y-2 flex flex-col">
             <div className="relative w-full h-40 sm:h-48 lg:h-[240px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
-              {hasSceneImages && currentStep.image_url && !imageErrors[currentStepIdx] ? (
+              {currentStep.image_url && !imageErrors[currentStepIdx] ? (
                 <img
                   src={currentStep.image_url}
-                  alt={`Scene ${currentStepIdx + 1}`}
+                  alt={currentStep.title || `Scene ${currentStepIdx + 1}`}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     console.error(`[StoryWriting] Failed to load current step image: ${currentStep.image_url}`);
@@ -670,20 +669,14 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
                   }}
                 />
               ) : (
-                <div className="w-full h-full p-4 bg-gradient-to-br from-indigo-50 via-slate-50 to-purple-50 flex flex-col justify-between">
-                  <div className="space-y-1">
-                    <span className="text-[11px] font-black tracking-wider text-indigo-600 uppercase">
-                      Scenario Prompt
-                    </span>
-                    <h4 className="text-sm sm:text-base font-black text-slate-900 line-clamp-2">
-                      {currentStep.title || `Scene ${currentStepIdx + 1}`}
-                    </h4>
-                    {currentStep.caption && (
-                      <p className="text-xs font-medium text-slate-700 line-clamp-4 leading-relaxed">
-                        {currentStep.caption}
-                      </p>
-                    )}
-                  </div>
+                <div className="w-full h-full p-4 bg-slate-100 flex flex-col justify-center items-center text-center">
+                  <span className="text-3xl mb-1">🖼️</span>
+                  <p className="text-xs font-bold text-slate-500">
+                    {imageErrors[currentStepIdx] ? 'Image failed to load' : 'No image file on disk'}
+                  </p>
+                  <p className="text-[11px] text-slate-400 mt-1 max-w-[80%] line-clamp-2">
+                    {currentStep.title || `Scene ${currentStepIdx + 1}`}
+                  </p>
                 </div>
               )}
               <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-amber-400/95 text-slate-950 rounded-lg text-xs font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
@@ -821,7 +814,7 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
                 <span>
                   {stepWordCount} words in scene (min: 5)
                 </span>
-                <span>Total: {wordCount} words (min: 20)</span>
+                <span>Total: {wordCount} words (min: 40)</span>
               </div>
             </div>
           </div>

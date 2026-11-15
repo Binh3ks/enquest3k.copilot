@@ -1,0 +1,52 @@
+{
+  "week": 39,
+  "theme": "Habitats (Persuasion Intro)",
+  "character_consistency": {
+    "boy": "Liam: 8-year-old boy, short brown messy hair, wearing blue hoodie with zipper, beige cargo shorts, blue sneakers, friendly smile",
+    "girl": "Emma: 8-year-old girl, blonde hair in a ponytail with green scrunchie, bright yellow jacket over white t-shirt, blue jeans, white sneakers",
+    "guide": "Ranger David: friendly park ranger in khaki uniform and ranger hat with wildlife badge",
+    "style": "3D Pixar animation style, warm volumetric lighting, soft shadows, vibrant colors, child-friendly, cinema 4D render quality"
+  },
+  "panels": [
+    {
+      "panel": 1,
+      "title": "Visiting Nature Reserve",
+      "target_file": "public/images/week39/writing_panel_1.png",
+      "prompt": "3D Pixar animation style: Two friendly children Liam (short brown hair, blue hoodie) and Emma (blonde ponytail, yellow jacket) with backpacks looking at an outdoor nature reserve map at the entrance of Green Valley wildlife sanctuary, wooden signpost, sunny morning lighting, ultra crisp details.",
+      "seed": 420391,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 2,
+      "title": "Sandy Desert Zone",
+      "target_file": "public/images/week39/writing_panel_2.png",
+      "prompt": "3D Pixar animation style: A friendly desert tortoise resting near its sandy burrow beside small warm desert rocks and green cacti, Liam and Emma kneeling nearby observing carefully, bright natural sunlight, sand dunes in background.",
+      "seed": 420392,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 3,
+      "title": "Rainforest Canopy Zone",
+      "target_file": "public/images/week39/writing_panel_3.png",
+      "prompt": "3D Pixar animation style: A bright scarlet parrot with colorful blue and yellow feathers perching on a flowering tropical branch high in a leafy rainforest canopy, lush green foliage and sunbeams, Liam and Emma looking up in wonder.",
+      "seed": 420393,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 4,
+      "title": "Polar & Ocean Exploration",
+      "target_file": "public/images/week39/writing_panel_4.png",
+      "prompt": "3D Pixar animation style: Liam and Emma standing before a panoramic glass viewing wall showing swimming seals in cold ocean water and penguins on snowy rocks, expressive wonder, vibrant lighting.",
+      "seed": 420394,
+      "status": "GENERATED_ON_DISK"
+    },
+    {
+      "panel": 5,
+      "title": "Conservation Pledge & Ranger Awards",
+      "target_file": "public/images/week39/writing_panel_5.png",
+      "prompt": "3D Pixar animation style: Smiling Liam and Emma standing proudly with friendly Ranger David in front of a wooden wildlife sanctuary sign, holding junior wildlife protector badges, warm cheerful sunset.",
+      "seed": 420395,
+      "status": "BACKLOG_PENDING_QUOTA_RESET"
+    }
+  ]
+}

@@ -11,18 +11,6 @@
  * 4. Zero Default Week: Does not silently default weekNumber to 33.
  */
 
-// Author-verified syllabus vocabulary mapping for W47–W54 (where word_bank was omitted from writing_hub.js in Round 91)
-// Sourced 100% from docs/agent_artifacts/staging/week_{47..54}/vocab.js
-const STAGED_W47_W54_SYLLABUS_WORD_BANKS = {
-  47: ['place', 'value', 'chart', 'digit', 'number', 'seventy-eight', 'hundred', 'total'],
-  48: ['measure', 'ruler', 'centimeter', 'scale', 'record', 'compare', 'height', 'length'],
-  49: ['career', 'future', 'skill', 'scientist', 'discover', 'study', 'goal', 'achieve'],
-  50: ['electric', 'solar', 'station', 'battery', 'screen', 'charge', 'clean', 'energy'],
-  51: ['telescope', 'solar', 'planet', 'rocky', 'giant', 'ring', 'system', 'data'],
-  52: ['experience', 'bingo', 'card', 'visited', 'museum', 'foreign', 'adventure', 'memory'],
-  53: ['detective', 'clue', 'footprint', 'suspect', 'deduction', 'evidence', 'portfolio', 'reflect'],
-  54: ['speech', 'confidence', 'presentation', 'stage', 'certificate', 'award', 'applause', 'proud']
-};
 
 /**
  * Normalizes an authored picture_story object into a standard array of 3–5 scene steps.
@@ -142,7 +130,7 @@ export function normalizeStorySteps(rawStory, currentWeek, options = {}) {
         scene: p.panel || p.panel_id || idx + 1,
         ladder_stage: p.ladder_stage || STAGE_ORDER[idx] || 'WRITE',
         badge_label: p.badge_label || STAGE_ORDER[idx] || 'WRITE',
-        title: p.title_en || p.title || (desc ? `Scene ${idx + 1}: ${desc.slice(0, 32)}...` : `Scene ${idx + 1}`),
+        title: p.title_en || p.title || (desc ? `Scene ${idx + 1}: ${desc}` : `Scene ${idx + 1}`),
         image_url: p.image_url || null,
         caption: desc,
         frame_L1: p.frame_L1 || frame,
@@ -167,8 +155,6 @@ export function normalizeStorySteps(rawStory, currentWeek, options = {}) {
       ? rawStory.word_bank
       : (Array.isArray(externalWordBank) && externalWordBank.length > 0)
       ? externalWordBank
-      : (weekNum && STAGED_W47_W54_SYLLABUS_WORD_BANKS[weekNum])
-      ? STAGED_W47_W54_SYLLABUS_WORD_BANKS[weekNum]
       : [];
 
     const count = rawStory.image_panels.length;
@@ -186,7 +172,7 @@ export function normalizeStorySteps(rawStory, currentWeek, options = {}) {
         scene: p.panel || idx + 1,
         ladder_stage: STAGE_ORDER[idx] || 'WRITE',
         badge_label: STAGE_ORDER[idx] || 'WRITE',
-        title: p.title || `Scene ${idx + 1}: ${desc.slice(0, 32)}...`,
+        title: p.title_en || p.title || (desc ? `Scene ${idx + 1}: ${desc}` : `Scene ${idx + 1}`),
         image_url: p.image_url || null,
         caption: desc,
         frame_L1: question || desc,

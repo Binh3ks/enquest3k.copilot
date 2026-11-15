@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-11-15T04:48:54.873Z",
+  "testedWeeks": {
+    "W39": {
+      "imageData": {
+        "exists": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 896,
+        "src": "http://localhost:5173/images/week39/writing_panel_1.png"
+      },
+      "audioCheck": {
+        "status": 200,
+        "ok": true
+      },
+      "screenshots": {
+        "scene1": {
+          "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round103/w39_scene1_proof.png",
+          "sha256": "42a16ff4e5d9e8551ccd64c6e573782e3766c93c180683d50f0294d168842def"
+        },
+        "scene2_interacted": {
+          "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round103/w39_scene2_student_interaction.png",
+          "sha256": "264f3d0a922327d264940fbefe33dec9f70d1d97f8a54013aee139778cc32bb9"
+        }
+      }
+    },
+    "W41": {
+      "imageData": {
+        "exists": true,
+        "naturalWidth": 1200,
+        "naturalHeight": 896,
+        "src": "http://localhost:5173/images/week41/writing_panel_1.png"
+      },
+      "audioCheck": {
+        "status": 200,
+        "ok": true
+      },
+      "screenshots": {
+        "scene1": {
+          "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round103/w41_scene1_proof.png",
+          "sha256": "ea3352d09c73ab71bd583bd6eea3febda0a4a311bd23ee17846bbfc497eac97c"
+        },
+        "scene2_interacted": {
+          "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round103/w41_scene2_student_interaction.png",
+          "sha256": "d96d5e4336285d70b9ad060f70086627be789392d6d03ba2e91d486d54d2fdc9"
+        }
+      }
+    },
+    "W33": {
+      "url": "http://localhost:5173/week/33/task/story_writer",
+      "screenshot": {
+        "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round103/w33_story_writer_regression.png",
+        "sha256": "ee6950c3a05526c98d2cd4bd7328f352ea4c0cdf668e9c52989963679b7cd4b9"
+      }
+    }
+  },
+  "audioHttpChecks": {},
+  "consoleErrors": [
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+    "Failed to load resource: net::ERR_CONNECTION_REFUSED"
+  ]
+}

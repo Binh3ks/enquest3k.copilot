@@ -1,0 +1,168 @@
+{
+  "week": 39,
+  "theme": "Habitats (Persuasion Intro)",
+  "cefr_level": "A2 Flyers",
+  "staging_note": "Staged deliverable for R&W Parts 3, 4, 5. Requires Claude ESL review before merging into src/data/weeks/week_39/reading_hub.js",
+  "reading_part3_story": {
+    "example": { "blank": 0, "answer": "reserve" },
+    "story_text": "On Saturday morning, Liam and Emma traveled by bus to visit the Green Valley Wildlife [0]_____. The weather was warm and sunny. First, their guide, Ranger David, led them toward the dry [1]_____ zone. Liam spotted a large tortoise resting quietly under a rocky ledge. Ranger David explained that tortoises dig deep burrows to escape the hot sun. Next, they walked into the tropical [2]_____ greenhouse. The air inside felt humid and warm. Emma heard loud bird calls high above in the tall green [3]_____. She looked up and saw three colorful parrots eating wild figs. Ranger David asked the children why animals belong in their natural homes. Liam gave his [4]_____ that every creature has special features to survive in its own home. Emma agreed that humans must protect these places so wild animals remain [5]_____ and healthy. At the end of the tour, both children received young conservationist badges.",
+    "word_bank": ["reserve", "desert", "rainforest", "canopy", "opinion", "safe", "dangerous", "ocean", "walking", "cold"],
+    "answers": {
+      "0": "reserve",
+      "1": "desert",
+      "2": "rainforest",
+      "3": "canopy",
+      "4": "opinion",
+      "5": "safe"
+    },
+    "title_options": [
+      { "id": 1, "title": "A Long Journey Across the Ocean", "target": false },
+      { "id": 2, "title": "Liam and Emma Learn About Animal Habitats", "target": true },
+      { "id": 3, "title": "Building a Large Glass Greenhouse", "target": false }
+    ],
+    "correct_title": "Liam and Emma Learn About Animal Habitats"
+  },
+  "rw_part4": {
+    "instructions": "Read the text. Choose the correct words and write them on the lines.",
+    "text_template": "Every living creature on Earth needs a place to live. Scientists call this natural home a [0]_____. Different animals are adapted to [1]_____ in different environments around the world. For example, camels live in dry deserts because [2]_____ bodies can store water for long journeys. In contrast, monkeys and parrots live [3]_____ tropical rainforests where tall trees provide abundant food. The highest branches form a leafy roof [4]_____ the forest canopy. In the cold polar regions, animals have thick layers of fat [5]_____ keep them warm in freezing blizzards. Whales and dolphins swim through deep ocean waters, where they hunt [6]_____ small fish. Sadly, some human activities are [7]_____ dangerous problems for wildlife. When forests are cut down, many animals lose their [8]_____ and cannot find enough food. In my view, we must all work together to [9]_____ our planet's natural habitats. If everyone helps, the world will be a [10]_____ place for all living things.",
+    "example": { "blank": 0, "correct": "habitat", "options": ["habitat", "habitats", "habiting"] },
+    "blanks": [
+      { "id": 1, "correct": "survive", "options": ["survive", "survives", "surviving"] },
+      { "id": 2, "correct": "their", "options": ["there", "their", "they're"] },
+      { "id": 3, "correct": "in", "options": ["at", "on", "in"] },
+      { "id": 4, "correct": "called", "options": ["calling", "called", "calls"] },
+      { "id": 5, "correct": "to", "options": ["to", "for", "with"] },
+      { "id": 6, "correct": "for", "options": ["for", "at", "about"] },
+      { "id": 7, "correct": "causing", "options": ["cause", "caused", "causing"] },
+      { "id": 8, "correct": "shelter", "options": ["shelter", "shelters", "sheltered"] },
+      { "id": 9, "correct": "protect", "options": ["protects", "protect", "protecting"] },
+      { "id": 10, "correct": "better", "options": ["good", "better", "best"] }
+    ],
+    "questions": [
+      {
+        "id": 0,
+        "isExample": true,
+        "sentence": "Scientists call this natural home a _____.",
+        "options": { "A": "habitat", "B": "habitats", "C": "habiting" },
+        "answer": "A"
+      },
+      {
+        "id": 1,
+        "sentence": "Different animals are adapted to _____ in different environments.",
+        "options": { "A": "survive", "B": "survives", "C": "surviving" },
+        "answer": "A"
+      },
+      {
+        "id": 2,
+        "sentence": "Camels live in dry deserts because _____ bodies can store water.",
+        "options": { "A": "there", "B": "their", "C": "they're" },
+        "answer": "B"
+      },
+      {
+        "id": 3,
+        "sentence": "Monkeys and parrots live _____ tropical rainforests.",
+        "options": { "A": "at", "B": "on", "C": "in" },
+        "answer": "C"
+      },
+      {
+        "id": 4,
+        "sentence": "The highest branches form a leafy roof _____ the forest canopy.",
+        "options": { "A": "calling", "B": "called", "C": "calls" },
+        "answer": "B"
+      },
+      {
+        "id": 5,
+        "sentence": "Animals have thick layers of fat _____ keep them warm.",
+        "options": { "A": "to", "B": "for", "C": "with" },
+        "answer": "A"
+      },
+      {
+        "id": 6,
+        "sentence": "Whales and dolphins swim through waters where they hunt _____ small fish.",
+        "options": { "A": "for", "B": "at", "C": "about" },
+        "answer": "A"
+      },
+      {
+        "id": 7,
+        "sentence": "Sadly, some human activities are _____ dangerous problems.",
+        "options": { "A": "cause", "B": "caused", "C": "causing" },
+        "answer": "C"
+      },
+      {
+        "id": 8,
+        "sentence": "When forests are cut down, animals lose their _____ and cannot feed.",
+        "options": { "A": "shelter", "B": "shelters", "C": "sheltered" },
+        "answer": "A"
+      },
+      {
+        "id": 9,
+        "sentence": "We must all work together to _____ our planet's natural habitats.",
+        "options": { "A": "protects", "B": "protect", "C": "protecting" },
+        "answer": "B"
+      },
+      {
+        "id": 10,
+        "sentence": "If everyone helps, the world will be a _____ place for all living things.",
+        "options": { "A": "good", "B": "better", "C": "best" },
+        "answer": "B"
+      }
+    ]
+  },
+  "rw_part5": {
+    "instructions": "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    "story": {
+      "title": "Liam and Emma's Visit to the Wildlife Reserve",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "Last Saturday morning, Liam and his sister Emma visited the Green Valley Nature Reserve with their school science club. The reserve was divided into four main sections to represent different world habitats. Their guide was Ranger David, who had worked with wild animals for more than ten years. He gave each child a map and a notebook to write down observations."
+        },
+        {
+          "id": 2,
+          "text": "First, the group entered the desert exhibit. The ground was covered with orange sand and large flat stones. Emma noticed a desert tortoise moving slowly toward a hole in the ground. Ranger David explained that tortoises dig deep burrows to escape the scorching heat of the afternoon sun. Liam took a photo and wrote in his notebook that the burrow keeps the animal cool and safe."
+        },
+        {
+          "id": 3,
+          "text": "Next, they walked through the double doors into the tropical rainforest zone. Tall palm trees reached up toward the glass dome, and colorful orchids hung from branches. Suddenly, Emma heard high-pitched whistling from the treetops. Looking through his binoculars, Liam spotted two scarlet parrots perching high in the leafy canopy. At the end of the day, Ranger David thanked the children and told them that protecting natural habitats is the most important duty of all wildlife scientists."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": 1,
+        "sentence": "Liam and Emma visited the nature reserve with their _____ on Saturday.",
+        "answers": ["school science club", "science club"]
+      },
+      {
+        "id": 2,
+        "sentence": "Ranger David gave each child a _____ and a notebook before the tour.",
+        "answers": ["map"]
+      },
+      {
+        "id": 3,
+        "sentence": "The ground inside the desert exhibit was covered in orange sand and _____.",
+        "answers": ["large flat stones", "flat stones"]
+      },
+      {
+        "id": 4,
+        "sentence": "Desert tortoises dig burrows in order to escape the _____.",
+        "answers": ["scorching heat", "heat", "afternoon sun"]
+      },
+      {
+        "id": 5,
+        "sentence": "The tall trees in the rainforest reached up toward the _____.",
+        "answers": ["glass dome"]
+      },
+      {
+        "id": 6,
+        "sentence": "Liam used his binoculars to spot two scarlet parrots in the _____.",
+        "answers": ["leafy canopy", "treetops", "canopy"]
+      },
+      {
+        "id": 7,
+        "sentence": "Ranger David explained that protecting natural habitats is the _____ of wildlife scientists.",
+        "answers": ["most important duty", "duty"]
+      }
+    ]
+  }
+}

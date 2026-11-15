@@ -1,0 +1,434 @@
+[
+  {
+    "file": "clil_article.mp3",
+    "size_bytes": 201504,
+    "sha256": "007b8857491424d6601b2a48fd194ba81bc234bd3a6cfbe600022f3f791418e3",
+    "text": "Our planet has four major habitats that shelter wildlife...",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:clil_article.content_en",
+    "voice": "en-US-Journey-F",
+    "type": "clil"
+  },
+  {
+    "file": "listening_part1.mp3",
+    "size_bytes": 46656,
+    "sha256": "331bfbccb13594952625d47ed8345f79ebee0582d9f93e3c86c475f80030163c",
+    "text": "Cambridge A2 Flyers Listening Practice Week 39 Part 1...",
+    "data_field": "src/data/weeks/week_39/listening_hub.js:passage_audio_script (Part 1)",
+    "voice": "en-US-Journey-F",
+    "type": "listening"
+  },
+  {
+    "file": "listening_part2.mp3",
+    "size_bytes": 51840,
+    "sha256": "c804ca373e4908f0b28294782657ad9b1eaee0ecb36012a5f5b97965c340da16",
+    "text": "Cambridge A2 Flyers Listening Practice Week 39 Part 2...",
+    "data_field": "src/data/weeks/week_39/listening_hub.js:passage_audio_script (Part 2)",
+    "voice": "en-US-Journey-F",
+    "type": "listening"
+  },
+  {
+    "file": "listening_part3.mp3",
+    "size_bytes": 36288,
+    "sha256": "1420488b95ea6d3fdad20ca273bbeac47fcbffce358b56b2f696ab5aeaefdf2b",
+    "text": "Cambridge A2 Flyers Listening Practice Week 39 Part 3...",
+    "data_field": "src/data/weeks/week_39/listening_hub.js:passage_audio_script (Part 3)",
+    "voice": "en-US-Journey-F",
+    "type": "listening"
+  },
+  {
+    "file": "listening_part4.mp3",
+    "size_bytes": 48384,
+    "sha256": "ec087016dec407b9a435b33b5f3fb88df118573f55fa18b7af24aefe514a2121",
+    "text": "Cambridge A2 Flyers Listening Practice Week 39 Part 4...",
+    "data_field": "src/data/weeks/week_39/listening_hub.js:passage_audio_script (Part 4)",
+    "voice": "en-US-Journey-F",
+    "type": "listening"
+  },
+  {
+    "file": "listening_part5.mp3",
+    "size_bytes": 41664,
+    "sha256": "fe71c504d784f39cfcebbb68fcbcd90dab79928d8ad0ff2620dff12a94e3dcff",
+    "text": "Cambridge A2 Flyers Listening Practice Week 39 Part 5...",
+    "data_field": "src/data/weeks/week_39/listening_hub.js:passage_audio_script (Part 5)",
+    "voice": "en-US-Journey-F",
+    "type": "listening"
+  },
+  {
+    "file": "retell_model.mp3",
+    "size_bytes": 81696,
+    "sha256": "29758500e712d7c6d32357dba3fcc5c60b322715f101b35bca97299028a16215",
+    "text": "Liam and Emma visited the wildlife sanctuary on Saturday morning...",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:picture_story.model_sentence",
+    "voice": "en-US-Journey-F",
+    "type": "retell"
+  },
+  {
+    "file": "scene_1.mp3",
+    "size_bytes": 18912,
+    "sha256": "40def6f9f6971a32673ec1c17804ffa46757b3a0d0e7e70d2551db4bb6bc170d",
+    "text": "Liam and Emma visited the wildlife reserve to learn about animal habitats.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[0].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_2.mp3",
+    "size_bytes": 14880,
+    "sha256": "efa8e11ec76a13aa0d578538b8f8a8a30bd0dd977cf8aa3f0dc92e41042732d0",
+    "text": "They observed a desert tortoise near its warm underground burrow.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[1].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_3.mp3",
+    "size_bytes": 13920,
+    "sha256": "f1beae271650475747233d9d535b6f25ef6b649c5a4f9d7d5f648b605dce7991",
+    "text": "A bright parrot called out from the tall rainforest canopy.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[2].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_4.mp3",
+    "size_bytes": 16512,
+    "sha256": "2a00547a0f8d8211b41556c2b0df954f833883f4c1340e4d1c363a96711cd5c7",
+    "text": "Everyone agreed that every creature needs a safe natural habitat.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[3].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_5.mp3",
+    "size_bytes": 28032,
+    "sha256": "edf92162377fb21437b54f1829effdffa813b71702b8d651839d59f3335f5449",
+    "text": "Finally, the ranger awarded Liam and Emma junior wildlife protector badges for helping protect animal habitats.",
+    "data_field": "docs/agent_artifacts/staging/week_39/patch_story_writer_s3.json:panels[4].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "shadowing_1.mp3",
+    "size_bytes": 15168,
+    "sha256": "658aa14201366015ff483e8b00631babf53bafcbc184de0ae3fb22911e1ec239",
+    "text": "Every animal needs a safe natural habitat to survive.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[0].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_2.mp3",
+    "size_bytes": 13440,
+    "sha256": "3122483a9f30da1e23ffa5fc5c6b5d6750cfa436bcc68bb580fc93155d7d80dd",
+    "text": "Camels walk across the hot and sandy desert easily.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[1].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_3.mp3",
+    "size_bytes": 15744,
+    "sha256": "addd3c42be3d50ac543a44ef2a51e05d76e3297bdd2e16ba2e8ccf87e3af2bd2",
+    "text": "Colorful parrots build nests high in the rainforest canopy.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[2].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_4.mp3",
+    "size_bytes": 15168,
+    "sha256": "098b8cf3f95b2084611e845973c56605225ed1b5e77c89352c267723de77a04a",
+    "text": "Giant blue whales swim through the deep salty ocean.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[3].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_5.mp3",
+    "size_bytes": 13440,
+    "sha256": "7b5c45fc02da0d337eef91945a4459fa6a3fea69b9a3bf4027a8e35192329f42",
+    "text": "Penguins huddle together in the freezing polar region.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[4].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_6.mp3",
+    "size_bytes": 11424,
+    "sha256": "fc9ff7077f79d7d15a61fb1d7853516cad21a1aa83a5fe39f7bb2b47ad95eb89",
+    "text": "I think the desert tortoise belongs in a warm burrow.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[5].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_7.mp3",
+    "size_bytes": 15744,
+    "sha256": "a387cfed7dacb4d68fa2f64a1bf74b2c6ecda5db4af959f2e76bf34d115c0420",
+    "text": "Rangers protect wildlife inside the large nature reserve.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[6].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_8.mp3",
+    "size_bytes": 14496,
+    "sha256": "69383f92570e3224b3951a2b1ebaca00b2eef5f54b6ea8625f5e2f6befcbd954",
+    "text": "In my opinion, we must keep animal habitats clean.",
+    "data_field": "src/data/weeks/week_39/reading_hub.js:shadowingData.sentences[7].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "speaking_p2_cue_a.mp3",
+    "size_bytes": 72576,
+    "sha256": "dfce6804ff1e3926ce46dbd464338b7a3b2e55e77b71067a327c9cf334426e1c",
+    "text": "Liam's Desert Tortoise Project. Candidate Question Card...",
+    "data_field": "src/data/weeks/week_39/speaking_hub.js:info_exchange_cards.table_a",
+    "voice": "en-US-Standard-D",
+    "type": "cue_card_a"
+  },
+  {
+    "file": "speaking_p2_cue_b.mp3",
+    "size_bytes": 85056,
+    "sha256": "75a60c77baef9686f19a8fd0c55f79f134fe78f0a8d6d8173045cac28505aa71",
+    "text": "Emma's Arctic Fox Project. Information Card...",
+    "data_field": "src/data/weeks/week_39/speaking_hub.js:info_exchange_cards.table_b",
+    "voice": "en-US-Standard-C",
+    "type": "cue_card_b"
+  },
+  {
+    "file": "video_challenge_prompt.mp3",
+    "size_bytes": 51264,
+    "sha256": "4e6fbad78cd8a4aa48a05a4ff8f98752f4b66a816735083ae557aa7ee1f6bbad",
+    "text": "Hi Liam! In your opinion, why does a desert tortoise belong in a dry sandy habitat?",
+    "data_field": "src/data/weeks/week_39/speaking_hub.js:talkshow_prompt.question",
+    "voice": "en-US-Standard-C",
+    "type": "video_prompt"
+  },
+  {
+    "file": "vocab_belong.mp3",
+    "size_bytes": 3456,
+    "sha256": "48fcba07d243353d89db43175bf997ab5ab750e9c09a78c35581b063d02f28f2",
+    "text": "belong",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[16].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_burrow.mp3",
+    "size_bytes": 3264,
+    "sha256": "dccc1d352ee08f5a7ce15410f671352a0f3e348c6af7579d890ec9e795a9f867",
+    "text": "burrow",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[7].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_camel.mp3",
+    "size_bytes": 2784,
+    "sha256": "c4c394e43a8171998937c7f1e80a0554624f98799c66ccdcd110fe2050700ef3",
+    "text": "camel",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[10].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_canopy.mp3",
+    "size_bytes": 2976,
+    "sha256": "7b2db923e6ff9bc41ac706dde78609abc1c4acbcfdfceaa38bea19d4e5641c29",
+    "text": "canopy",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[18].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_climate.mp3",
+    "size_bytes": 2784,
+    "sha256": "31a00833d24ad1000fc33751769d6bec8cb50739d78f51fbeb391bacb4da5c5a",
+    "text": "climate",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[14].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_creature.mp3",
+    "size_bytes": 3264,
+    "sha256": "52447ea5f4795a994ac0cd1ad7b42f3282f50a305e08d7342a806bc46f6d7442",
+    "text": "creature",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[11].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_dangerous.mp3",
+    "size_bytes": 3264,
+    "sha256": "02c3c8e39d822ff704f602dd1c1e22f85ccebd427a9f8f934bb90116d65c9077",
+    "text": "dangerous",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[6].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_desert.mp3",
+    "size_bytes": 3840,
+    "sha256": "272af35b6caa33c9c3de406dd507c5cec8584f239500f01da83d4fb744ab1e15",
+    "text": "desert",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[1].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_habitat.mp3",
+    "size_bytes": 3456,
+    "sha256": "06cc2c341f6bf6ed0c01997157894790c74e7e62e25dbc07cd16c7afa168b746",
+    "text": "habitat",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[0].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_ocean.mp3",
+    "size_bytes": 2784,
+    "sha256": "bdc73bc026265619d4469deb701a2966e49cd4e5a14aa594871b1ce37c63707e",
+    "text": "ocean",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[3].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_opinion.mp3",
+    "size_bytes": 3840,
+    "sha256": "a58e3a6cec6f50dfe55316a835bc2e2c6495ef7e09f7b8253229ea00e3a0a6e2",
+    "text": "opinion",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[17].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_polar.mp3",
+    "size_bytes": 3264,
+    "sha256": "fd932244c49e819d477419ae2b11010f0c993644bc3102daf5fff8d76ab8ceda",
+    "text": "polar",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[4].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_protect.mp3",
+    "size_bytes": 2976,
+    "sha256": "929bd0e107a24a82448acbd8789cd4e14a67430f8fa0b32e94f59819b3c4ae03",
+    "text": "protect",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[12].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_rainforest.mp3",
+    "size_bytes": 3840,
+    "sha256": "2721c17f491aef18ad46866b937727d02601174ff2c2bdc378dc4697559822a2",
+    "text": "rainforest",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[2].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_reserve.mp3",
+    "size_bytes": 3456,
+    "sha256": "b6dc9fe3efbad03f502b5bf02c1db0d6965c7a61408c1f7dab3c8bd83182cefc",
+    "text": "reserve",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[19].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_safe.mp3",
+    "size_bytes": 2400,
+    "sha256": "9f84e85cf50e73cc89dec0916f375f82c552f25375b425522df03a7a921f79e0",
+    "text": "safe",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[5].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_shallow.mp3",
+    "size_bytes": 3840,
+    "sha256": "187b06bdbba321c71f73cc3c6bc2c06227092818c9b7a45a35c1c99b4d6d710a",
+    "text": "shallow",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[15].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_shelter.mp3",
+    "size_bytes": 3648,
+    "sha256": "271e1ff96f9a6370bb620864eb0b2716ab0277b7864605ac6ff3092c3b41dcbb",
+    "text": "shelter",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[8].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_survive.mp3",
+    "size_bytes": 3840,
+    "sha256": "a7289006f78358351bde0a10f164592d42742e0f79572ae5ae94970bd65ac347",
+    "text": "survive",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[9].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_wildlife.mp3",
+    "size_bytes": 4224,
+    "sha256": "aa4ac85d7e71f116644abebf3d2688bde0124e2ef2a1a35256c19bf20b12ec14",
+    "text": "wildlife",
+    "data_field": "src/data/weeks/week_39/vocab.js:vocab[13].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "writing_scene_1.mp3",
+    "size_bytes": 18912,
+    "sha256": "40def6f9f6971a32673ec1c17804ffa46757b3a0d0e7e70d2551db4bb6bc170d",
+    "text": "Liam and Emma visited the wildlife reserve to learn about animal habitats.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[0].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_2.mp3",
+    "size_bytes": 14880,
+    "sha256": "efa8e11ec76a13aa0d578538b8f8a8a30bd0dd977cf8aa3f0dc92e41042732d0",
+    "text": "They observed a desert tortoise near its warm underground burrow.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[1].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_3.mp3",
+    "size_bytes": 13920,
+    "sha256": "f1beae271650475747233d9d535b6f25ef6b649c5a4f9d7d5f648b605dce7991",
+    "text": "A bright parrot called out from the tall rainforest canopy.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[2].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_4.mp3",
+    "size_bytes": 16512,
+    "sha256": "2a00547a0f8d8211b41556c2b0df954f833883f4c1340e4d1c363a96711cd5c7",
+    "text": "Everyone agreed that every creature needs a safe natural habitat.",
+    "data_field": "src/data/weeks/week_39/writing_hub.js:panels[3].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_5.mp3",
+    "size_bytes": 28032,
+    "sha256": "edf92162377fb21437b54f1829effdffa813b71702b8d651839d59f3335f5449",
+    "text": "Finally, the ranger awarded Liam and Emma junior wildlife protector badges for helping protect animal habitats.",
+    "data_field": "docs/agent_artifacts/staging/week_39/patch_story_writer_s3.json:panels[4].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  }
+]

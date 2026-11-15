@@ -1,0 +1,161 @@
+{
+  "spec_version": "1.0.0",
+  "generated_at": "2026-11-15T11:36:00Z",
+  "reference_sop": "docs/WEEK_PRODUCTION_SOP.md L209-257 and docs/WEEK_CONTENT_SOP_W34_PLUS.md L17-24, L265-309",
+  "quests": {
+    "gear1_webtoon": {
+      "quest_name": "Scene Explorer",
+      "zone": 1,
+      "day": 1,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L265",
+      "required_images": 5,
+      "required_audio": 5,
+      "image_pattern": "public/images/week{N}/scene_{1..5}.jpg",
+      "audio_pattern": "public/audio/week{N}/scene_{1..5}.mp3"
+    },
+    "gear2_karaoke": {
+      "quest_name": "Voice Shadow",
+      "zone": 1,
+      "day": 1,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L227-234, L251",
+      "required_images": 0,
+      "required_audio": 8,
+      "image_pattern": null,
+      "audio_pattern": "public/audio/week{N}/shadowing_{1..8}.mp3"
+    },
+    "gear3_retell": {
+      "quest_name": "Story Retell",
+      "zone": 1,
+      "day": 1,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L265, docs/WEEK_CONTENT_SOP_W34_PLUS.md L19-24",
+      "required_images": 0,
+      "required_audio": 1,
+      "image_pattern": "(re-uses gear1_webtoon scene images)",
+      "audio_pattern": "public/audio/week{N}/retell_model.mp3"
+    },
+    "gear4_clil": {
+      "quest_name": "Fact Finder",
+      "zone": 2,
+      "day": 2,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L215-220, L252",
+      "required_images": 1,
+      "required_audio": 1,
+      "image_pattern": "public/images/week{N}/clil_article.jpg",
+      "audio_pattern": "public/audio/week{N}/clil_article.mp3"
+    },
+    "science_lab": {
+      "quest_name": "Action Lab",
+      "zone": 2,
+      "day": 2,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L244, Invariant 7",
+      "required_images": 1,
+      "required_audio": 0,
+      "image_pattern": "public/images/week{N}/action_lab_diagram.png",
+      "audio_pattern": null
+    },
+    "science_report": {
+      "quest_name": "Discovery Report",
+      "zone": 2,
+      "day": 2,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L267",
+      "required_images": 1,
+      "required_audio": 0,
+      "image_pattern": "public/images/week{N}/discovery_card.png",
+      "audio_pattern": null
+    },
+    "word_blitz": {
+      "quest_name": "Speed Match",
+      "zone": 3,
+      "day": 3,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L221-226, L253",
+      "required_images": 20,
+      "required_audio": 20,
+      "image_pattern": "public/images/week{N}/vocab_{word}.jpg",
+      "audio_pattern": "public/audio/week{N}/vocab_{word}.mp3"
+    },
+    "sentence_smash": {
+      "quest_name": "Grammar Duel",
+      "zone": 3,
+      "day": 3,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L246",
+      "required_images": 0,
+      "required_audio": 0,
+      "image_pattern": null,
+      "audio_pattern": null
+    },
+    "math_quest": {
+      "quest_name": "Math Quest",
+      "zone": 3,
+      "day": 3,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L245",
+      "required_images": 5,
+      "required_audio": 0,
+      "image_pattern": "public/images/week{N}/barmodel_w{N}_adv_p{1..5}.svg",
+      "audio_pattern": null
+    },
+    "story_writer": {
+      "quest_name": "Story Writer",
+      "zone": 4,
+      "day": 4,
+      "sop_citation": "docs/WEEK_CONTENT_SOP_W34_PLUS.md L19-24, L265-309",
+      "required_images": 5,
+      "required_audio": 5,
+      "image_pattern": "public/images/week{N}/writing_panel_{1..5}.png",
+      "audio_pattern": "public/audio/week{N}/writing_scene_{1..5}.mp3"
+    },
+    "broadcast_studio": {
+      "quest_name": "Video Challenge",
+      "zone": 4,
+      "day": 4,
+      "sop_citation": "docs/WEEK_CONTENT_SOP_W34_PLUS.md L20-23",
+      "required_images": 0,
+      "required_audio": 1,
+      "image_pattern": "(re-uses story_writer panels)",
+      "audio_pattern": "public/audio/week{N}/video_challenge_prompt.mp3"
+    },
+    "info_exchange": {
+      "quest_name": "Info Exchange",
+      "zone": 4,
+      "day": 4,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L254, L268",
+      "required_images": 2,
+      "required_audio": 2,
+      "image_pattern": "public/images/week{N}/card_a.jpg, card_b.jpg",
+      "audio_pattern": "public/audio/week{N}/speaking_p2_cue_a.mp3, speaking_p2_cue_b.mp3"
+    },
+    "boss_listening": {
+      "quest_name": "Listening Shield",
+      "zone": 5,
+      "day": 5,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L254, L266",
+      "required_images": 9,
+      "required_audio": 5,
+      "image_pattern": "public/images/week{N}/listening_part1_scene.jpg, card_{a..h}.jpg",
+      "audio_pattern": "public/audio/week{N}/listening_part{1..5}.mp3"
+    },
+    "boss_reading": {
+      "quest_name": "Reading & Writing Shield",
+      "zone": 5,
+      "day": 5,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L235-242",
+      "required_images": 0,
+      "required_audio": 0,
+      "image_pattern": null,
+      "audio_pattern": null
+    },
+    "weekly_review": {
+      "quest_name": "Speaking & Passport",
+      "zone": 5,
+      "day": 5,
+      "sop_citation": "docs/WEEK_PRODUCTION_SOP.md L268",
+      "required_images": 2,
+      "required_audio": 0,
+      "image_pattern": "public/images/week{N}/spot_diff_a.jpg, spot_diff_b.jpg",
+      "audio_pattern": null
+    }
+  },
+  "summary_per_week": {
+    "total_required_images": 51,
+    "total_required_audio": 48
+  }
+}

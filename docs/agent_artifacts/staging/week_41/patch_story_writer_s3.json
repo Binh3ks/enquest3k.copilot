@@ -1,0 +1,77 @@
+{
+  "week": 41,
+  "theme": "Life Cycles (Process)",
+  "cefr_level": "A2 Flyers",
+  "picture_story_s3": {
+    "title": "The Complete Butterfly Life Cycle (S3 5-Panel Standard)",
+    "prompt_en": "Look at the five pictures. Tell a story about Oliver and Sophia raising a monarch butterfly. Write 40 or more words.",
+    "min_words": 40,
+    "panels": [
+      {
+        "panel_id": "panel_1",
+        "scene": 1,
+        "ladder_stage": "MODEL",
+        "badge_label": "MODEL",
+        "title_en": "Scene 1: Finding the Egg",
+        "image_url": "/images/week41/writing_panel_1.png",
+        "image_prompt": "3D Pixar animation style: Two cute students Oliver (neat dark hair, green polo shirt) and Sophia (wavy brown hair, pink sweater) looking through hand lenses at a tiny butterfly egg on a broad milkweed leaf in the sunny school garden, morning light, macro detail.",
+        "caption": "Oliver and Sophia discovered a tiny round egg resting on a garden leaf.",
+        "sentence_frame": "First, Oliver and Sophia discovered a tiny egg on a broad green leaf.",
+        "pills": ["discovered a tiny egg", "broad green leaf", "looked with lenses", "Tuesday morning"],
+        "connectors": ["First,", "In the beginning,", "On Tuesday morning,"]
+      },
+      {
+        "panel_id": "panel_2",
+        "scene": 2,
+        "ladder_stage": "BUILD",
+        "badge_label": "BUILD",
+        "title_en": "Scene 2: The Feeding Caterpillar",
+        "image_url": "/images/week41/writing_panel_2.png",
+        "image_prompt": "3D Pixar animation style: A plump, friendly black-yellow-white striped monarch caterpillar chewing fresh green leaves inside an airy classroom terrarium, Oliver and Sophia smiling beside the jar.",
+        "caption": "A striped caterpillar hatched from the egg and fed on fresh green leaves.",
+        "sentence_frame": "Next, a striped caterpillar hatched and fed on fresh leaves.",
+        "pills": ["caterpillar hatched", "fed on fresh leaves", "grew bigger", "every day"],
+        "connectors": ["Next,", "Then,", "Soon after,"]
+      },
+      {
+        "panel_id": "panel_3",
+        "scene": 3,
+        "ladder_stage": "WRITE",
+        "badge_label": "WRITE",
+        "title_en": "Scene 3: The Hanging Chrysalis",
+        "image_url": "/images/week41/writing_panel_3.png",
+        "image_prompt": "3D Pixar animation style: A smooth jade-green chrysalis with tiny golden dots hanging upside down from a twig under the lid of the observation box, calm peaceful atmosphere, gentle room lighting.",
+        "caption": "The caterpillar formed a peaceful chrysalis to undergo metamorphosis.",
+        "sentence_frame": "After that, it formed a green chrysalis and stayed very quiet.",
+        "pills": ["formed a green chrysalis", "stayed very quiet", "inside the case", "changed slowly"],
+        "connectors": ["After that,", "Later,", "During the week,"]
+      },
+      {
+        "panel_id": "panel_4",
+        "scene": 4,
+        "ladder_stage": "EXPAND",
+        "badge_label": "EXPAND",
+        "title_en": "Scene 4: Emerging from the Shell",
+        "image_url": "/images/week41/writing_panel_4.png",
+        "image_prompt": "3D Pixar animation style: A newly emerged monarch butterfly clinging to its empty transparent shell, pumping fluid into its damp orange-and-black patterned wings as Oliver and Sophia watch in amazement.",
+        "caption": "The butterfly split the chrysalis shell and pumped fluid to expand its wings.",
+        "sentence_frame": "Then, the adult butterfly emerged and carefully unfolded its wet wings.",
+        "pills": ["adult butterfly emerged", "unfolded its wet wings", "empty chrysalis shell", "watched in amazement"],
+        "connectors": ["Then,", "Suddenly,", "A week later,"]
+      },
+      {
+        "panel_id": "panel_5",
+        "scene": 5,
+        "ladder_stage": "REFLECT",
+        "badge_label": "REFLECT",
+        "title_en": "Scene 5: Free in the Flower Garden",
+        "image_url": "/images/week41/writing_panel_5.png",
+        "image_prompt": "3D Pixar animation style: The magnificent orange and black monarch butterfly soaring joyfully into the clear blue sky above a vibrant flowerbed, Oliver and Sophia cheering with outstretched arms, bright sunny afternoon.",
+        "caption": "Finally, the magnificent butterfly took flight across the school garden toward the blooming flowers.",
+        "sentence_frame": "Finally, the magnificent butterfly spread its strong wings and flew freely into the garden.",
+        "pills": ["spread its strong wings", "flew freely into the garden", "cheered with joy", "completed the life cycle"],
+        "connectors": ["Finally,", "In the end,", "At last,"]
+      }
+    ]
+  }
+}

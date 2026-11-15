@@ -1,0 +1,308 @@
+[
+  {
+    "file": "scene_1.mp3",
+    "size_bytes": 17952,
+    "sha256": "7e4a7264dc6edd4d6c7645e8f527e9f60cf5398033c7d027963433023198c436",
+    "text": "Oliver and Sophia discovered a tiny round egg resting on a garden leaf.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[0].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_2.mp3",
+    "size_bytes": 18720,
+    "sha256": "b4ecc7449297b9c54a1116bf8691c17eaaeaff60010674b581d5ebe98409035d",
+    "text": "A striped caterpillar hatched from the egg and fed on fresh green leaves.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[1].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_3.mp3",
+    "size_bytes": 16320,
+    "sha256": "cb0f2c1a951ee79cd1bd2ad50d547e77be6bd7e75f27a514c72c458153f6281d",
+    "text": "The caterpillar formed a peaceful chrysalis to undergo metamorphosis.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[2].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "scene_4.mp3",
+    "size_bytes": 19392,
+    "sha256": "0c734b276724af59902016340c03067a6dae0e2b85617400d4e0ee60ee948049",
+    "text": "A magnificent butterfly emerged and flew toward the sunny flower garden.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[3].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "shadowing_1.mp3",
+    "size_bytes": 14016,
+    "sha256": "ff998f5e5478719f974dd6464977229d72b36b2931ef91a05dfe68e8b9c1a717",
+    "text": "A tiny caterpillar hatches from an egg on the green leaf.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[0].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_2.mp3",
+    "size_bytes": 15552,
+    "sha256": "fb80d529b5952a7ef38147b07d6bf66e61b33c35c34ffb6c517a8b1fb7c58d06",
+    "text": "The hungry caterpillar eats sweet green leaves every day.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[1].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_3.mp3",
+    "size_bytes": 16032,
+    "sha256": "c63e7fe464c62235b3d06f1a7134a67ca06fe03d75e91e07b840269bb2adacde",
+    "text": "Next, the caterpillar builds a hard protective chrysalis.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[2].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_4.mp3",
+    "size_bytes": 17088,
+    "sha256": "f13aaf1d24decab90b7976c8516b13c8183d22d11452c43a621f51913957a73d",
+    "text": "Inside the chrysalis, its body changes in amazing ways.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[3].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_5.mp3",
+    "size_bytes": 16608,
+    "sha256": "f76e4239103459375d00be889b7a9a0352e28443ce87a3a80fbfafa295e7b8b6",
+    "text": "Finally, a colorful butterfly spreads its bright new wings.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[4].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "shadowing_6.mp3",
+    "size_bytes": 15360,
+    "sha256": "3495c7410d879f493a624e81aedbce9cd1f4599b759abdee789ae7020a2e6ada",
+    "text": "In the pond, a tiny swimming tadpole grows longer legs.",
+    "data_field": "src/data/weeks/week_41/reading_hub.js:shadowingData.sentences[5].text",
+    "voice": "en-US-Journey-F",
+    "type": "shadowing"
+  },
+  {
+    "file": "vocab_adult.mp3",
+    "size_bytes": 2784,
+    "sha256": "dab07c753590757570203ecb9e9bc8066169efde6bc8b342f481e55666de9d89",
+    "text": "adult",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[16].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_butterfly.mp3",
+    "size_bytes": 3456,
+    "sha256": "3b99fe884814f328247740b47f700dfa0e4d3e769068dd67a6f193ff62dfc690",
+    "text": "butterfly",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[4].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_caterpillar.mp3",
+    "size_bytes": 3648,
+    "sha256": "0318b56be7714e5a3b0992900b26ab7047c5ab47036b24d3a25870b8f67bc86b",
+    "text": "caterpillar",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[2].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_change.mp3",
+    "size_bytes": 2592,
+    "sha256": "62ac8640a2c087bbcf9cf8b37cee9ea2ce6488dfcde7d06193c56b0062f8523b",
+    "text": "change",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[9].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_chrysalis.mp3",
+    "size_bytes": 2976,
+    "sha256": "e3d7954394dc5ea5a1806e353aa45c393723b92a37849ed5a1bcc52079cde998",
+    "text": "chrysalis",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[3].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_cocoon.mp3",
+    "size_bytes": 3456,
+    "sha256": "174cc396e9b35f17b513fe203d5909d7064df6c265cda14ec6b911bd8c2bd3bc",
+    "text": "cocoon",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[19].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_cycle.mp3",
+    "size_bytes": 3264,
+    "sha256": "5b3818e20855adc502fa1575aa7146158eac1b680de06b0d21e3454563f73a82",
+    "text": "cycle",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[17].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_develop.mp3",
+    "size_bytes": 2784,
+    "sha256": "8f336db993072ade89b68efc9a0e81bfb0c5301c1d461239a48ff345f4595a7a",
+    "text": "develop",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[18].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_egg.mp3",
+    "size_bytes": 1824,
+    "sha256": "146458274c2474a71c071cfc950518d61cc716a4a709572dc658682a039f786b",
+    "text": "egg",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[0].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_feed.mp3",
+    "size_bytes": 2784,
+    "sha256": "6d25ca9a152d2b22022171576bf5f85b8b01c7f57dee13b4b8ae2ab1c7ccaf9e",
+    "text": "feed",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[15].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_frog.mp3",
+    "size_bytes": 2400,
+    "sha256": "8e8ff0dc5b1005c295acd55c68a2c673f6053f58a38fb4d32843012023fa3998",
+    "text": "frog",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[6].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_grow.mp3",
+    "size_bytes": 3264,
+    "sha256": "2ec20f41fc4d2a9e57816cae3ec42e82cb83bf13a0c410457794280872135a3e",
+    "text": "grow",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[8].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_hatch.mp3",
+    "size_bytes": 2784,
+    "sha256": "e05645d2544febdee6b2016e4270637ab5f0985e7220fa10dba5ecee1fb26263",
+    "text": "hatch",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[1].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_leaf.mp3",
+    "size_bytes": 2592,
+    "sha256": "aa70c9dd0490ec4a0bbdef74f0876814e3b852094c4cf244cc4f94d065f4720f",
+    "text": "leaf",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[10].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_pond.mp3",
+    "size_bytes": 2784,
+    "sha256": "8ea139036cff4d443cafaabc0866740eac90b3d4304ab7ffa285ee463881e9b4",
+    "text": "pond",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[13].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_stage.mp3",
+    "size_bytes": 3264,
+    "sha256": "73a5c6125326ba609ce71495d5f5ac223a348fe64c15c7d9f2d60c3f0befe7c6",
+    "text": "stage",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[7].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_swim.mp3",
+    "size_bytes": 2784,
+    "sha256": "d9a87fd9cc4d89ea99734df6e2fc3ad10d91075ce171630f0e84ff5652f6d88b",
+    "text": "swim",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[14].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_tadpole.mp3",
+    "size_bytes": 3456,
+    "sha256": "394fc18ba97a9ad6c384c180a5bd2d90b3d53d900947900503e0b8139107fef9",
+    "text": "tadpole",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[5].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_tail.mp3",
+    "size_bytes": 3264,
+    "sha256": "b04dcb65381c1e97482fb88b568f9e598685d9bd6f4bbb7f0efb26aa69a9fa26",
+    "text": "tail",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[12].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "vocab_wing.mp3",
+    "size_bytes": 2016,
+    "sha256": "eabef30e758a0df14bc8b293ce3f7f555deebc5a310d6272d62dde188dab54a9",
+    "text": "wing",
+    "data_field": "src/data/weeks/week_41/vocab.js:vocab[11].word",
+    "voice": "en-US-Journey-F",
+    "type": "vocab"
+  },
+  {
+    "file": "writing_scene_1.mp3",
+    "size_bytes": 17952,
+    "sha256": "7e4a7264dc6edd4d6c7645e8f527e9f60cf5398033c7d027963433023198c436",
+    "text": "Oliver and Sophia discovered a tiny round egg resting on a garden leaf.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[0].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_2.mp3",
+    "size_bytes": 18720,
+    "sha256": "b4ecc7449297b9c54a1116bf8691c17eaaeaff60010674b581d5ebe98409035d",
+    "text": "A striped caterpillar hatched from the egg and fed on fresh green leaves.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[1].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_3.mp3",
+    "size_bytes": 16320,
+    "sha256": "cb0f2c1a951ee79cd1bd2ad50d547e77be6bd7e75f27a514c72c458153f6281d",
+    "text": "The caterpillar formed a peaceful chrysalis to undergo metamorphosis.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[2].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  },
+  {
+    "file": "writing_scene_4.mp3",
+    "size_bytes": 19392,
+    "sha256": "0c734b276724af59902016340c03067a6dae0e2b85617400d4e0ee60ee948049",
+    "text": "A magnificent butterfly emerged and flew toward the sunny flower garden.",
+    "data_field": "src/data/weeks/week_41/writing_hub.js:panels[3].caption",
+    "voice": "en-US-Journey-F",
+    "type": "story_scene"
+  }
+]

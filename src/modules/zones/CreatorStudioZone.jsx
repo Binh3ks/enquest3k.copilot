@@ -255,6 +255,7 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
         {activeTab === 'story_writer' && (
           <StoryWriting
             content={data?.writing_hub || data?.rawWeekData?.writing_hub || studioData?.writingHub || null}
+            vocab={data?.vocab || data?.rawWeekData?.vocab || studioData?.vocab || null}
             storyPrompts={storyPrompts}
             weekNumber={activeWeek}
             onComplete={(xp, finalText, extraData) => handleStoryComplete(xp, finalText, extraData)}

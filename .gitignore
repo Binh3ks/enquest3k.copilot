@@ -51,10 +51,18 @@ Icon?
 
 # ====== PUBLIC STATIC ASSETS (Served from R2 / YouTube) ======
 # R2: engquest-images bucket
-public/images/
+public/images/*
+!public/images/week33/
+!public/images/week34/
+!public/images/week39/
+!public/images/week41/
 
 # R2: engquest-audio bucket
-public/audio/
+public/audio/*
+!public/audio/week33/
+!public/audio/week34/
+!public/audio/week39/
+!public/audio/week41/
 public/audio_cache/
 public/audio copy/
 

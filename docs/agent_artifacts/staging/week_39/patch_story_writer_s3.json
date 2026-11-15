@@ -1,0 +1,77 @@
+{
+  "week": 39,
+  "theme": "Habitats (Persuasion Intro)",
+  "cefr_level": "A2 Flyers",
+  "picture_story_s3": {
+    "title": "Matching Animals to Safe Habitats (S3 5-Panel Standard)",
+    "prompt_en": "Look at the five pictures. Tell a story about Liam and Emma helping animals find their natural habitats. Write 40 or more words.",
+    "min_words": 40,
+    "panels": [
+      {
+        "panel_id": "panel_1",
+        "scene": 1,
+        "ladder_stage": "MODEL",
+        "badge_label": "MODEL",
+        "title_en": "Scene 1: Visiting Nature Reserve",
+        "image_url": "/images/week39/writing_panel_1.png",
+        "image_prompt": "3D Pixar animation style: Two friendly children Liam (brown hair, blue hoodie) and Emma (blonde ponytail, yellow jacket) with backpacks looking at an outdoor nature reserve map at the entrance of Green Valley sanctuary, sunny morning, ultra crisp details.",
+        "caption": "Liam and Emma visited the wildlife reserve to learn about animal habitats.",
+        "sentence_frame": "First, Liam and Emma visited the wildlife reserve on a sunny Saturday morning.",
+        "pills": ["visited the wildlife reserve", "sunny Saturday morning", "looked at the map", "Liam and Emma"],
+        "connectors": ["First,", "In the beginning,", "On Saturday morning,"]
+      },
+      {
+        "panel_id": "panel_2",
+        "scene": 2,
+        "ladder_stage": "BUILD",
+        "badge_label": "BUILD",
+        "title_en": "Scene 2: Sandy Desert Zone",
+        "image_url": "/images/week39/writing_panel_2.png",
+        "image_prompt": "3D Pixar animation style: A friendly desert tortoise resting near its sandy burrow beside small warm desert rocks and green cacti, Liam and Emma kneeling nearby observing carefully, bright natural sunlight.",
+        "caption": "They observed a desert tortoise near its warm underground burrow.",
+        "sentence_frame": "Next, they saw a desert tortoise resting beside its sandy burrow.",
+        "pills": ["desert tortoise", "sandy burrow", "warm dry rocks", "crawled slowly"],
+        "connectors": ["Next,", "Then,", "After that,"]
+      },
+      {
+        "panel_id": "panel_3",
+        "scene": 3,
+        "ladder_stage": "WRITE",
+        "badge_label": "WRITE",
+        "title_en": "Scene 3: Rainforest Canopy Zone",
+        "image_url": "/images/week39/writing_panel_3.png",
+        "image_prompt": "3D Pixar animation style: A bright scarlet parrot with colorful blue and yellow feathers perching on a flowering tropical branch high in a leafy rainforest canopy, lush green foliage and sunbeams.",
+        "caption": "A bright parrot called out from the tall rainforest canopy.",
+        "sentence_frame": "After that, they spotted a colorful parrot high in the leafy rainforest canopy.",
+        "pills": ["colorful parrot", "leafy rainforest canopy", "tall green branches", "flew gracefully"],
+        "connectors": ["After that,", "Later,", "Soon,"]
+      },
+      {
+        "panel_id": "panel_4",
+        "scene": 4,
+        "ladder_stage": "EXPAND",
+        "badge_label": "EXPAND",
+        "title_en": "Scene 4: Polar & Ocean Exploration",
+        "image_url": "/images/week39/writing_panel_4.png",
+        "image_prompt": "3D Pixar animation style: Liam and Emma standing before a panoramic glass viewing wall showing swimming seals in cold ocean water and penguins on snowy rocks, expressive wonder, vibrant lighting.",
+        "caption": "They watched seals swim through cool water and penguins rest on snowy rocks.",
+        "sentence_frame": "Then, they discovered that marine animals and polar penguins need freezing water and ice.",
+        "pills": ["freezing water and ice", "swimming seals", "polar penguins", "cold ocean zone"],
+        "connectors": ["Then,", "Following that,", "Afterwards,"]
+      },
+      {
+        "panel_id": "panel_5",
+        "scene": 5,
+        "ladder_stage": "REFLECT",
+        "badge_label": "REFLECT",
+        "title_en": "Scene 5: Conservation Pledge & Ranger Awards",
+        "image_url": "/images/week39/writing_panel_5.png",
+        "image_prompt": "3D Pixar animation style: Smiling Liam and Emma standing proudly with friendly Ranger David in front of a wooden wildlife sanctuary sign, holding junior wildlife protector badges, warm cheerful sunset.",
+        "caption": "Finally, the ranger awarded Liam and Emma junior wildlife protector badges for helping protect animal habitats.",
+        "sentence_frame": "In the end, everyone agreed that every animal belongs in its safe natural habitat.",
+        "pills": ["every animal belongs", "safe natural habitat", "junior protector badges", "celebrated happily"],
+        "connectors": ["Finally,", "In the end,", "At last,"]
+      }
+    ]
+  }
+}

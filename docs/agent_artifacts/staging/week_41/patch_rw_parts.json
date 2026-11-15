@@ -1,0 +1,168 @@
+{
+  "week": 41,
+  "theme": "Life Cycles (Process)",
+  "cefr_level": "A2 Flyers",
+  "staging_note": "Staged deliverable for R&W Parts 3, 4, 5. Requires Claude ESL review before merging into src/data/weeks/week_41/reading_hub.js",
+  "reading_part3_story": {
+    "example": { "blank": 0, "answer": "garden" },
+    "story_text": "On Tuesday morning, Oliver and Sophia walked into the school [0]_____ with their science teacher, Miss Parker. They wanted to study the life cycle of butterflies. Underneath a broad milkweed leaf, Oliver found a tiny round [1]_____. Miss Parker placed the leaf inside an observation container with air holes. Three days later, a hungry little [2]_____ hatched and began munching on fresh green leaves. It grew bigger and fatter every day. After two weeks, the creature climbed to the top twig and formed a smooth green [3]_____. Inside the case, its body changed in mysterious ways. Finally, on Monday morning, a magnificent monarch butterfly emerged. It stayed still until its colorful [4]_____ dried completely in the warm sunshine. Then, the children carried the container outside and watched the butterfly fly happily across the [5]_____ toward the blooming flowers.",
+    "word_bank": ["garden", "egg", "caterpillar", "chrysalis", "wings", "pond", "swimming", "flying", "hungry", "green"],
+    "answers": {
+      "0": "garden",
+      "1": "egg",
+      "2": "caterpillar",
+      "3": "chrysalis",
+      "4": "wings",
+      "5": "pond"
+    },
+    "title_options": [
+      { "id": 1, "title": "Catching Fish in the Deep River", "target": false },
+      { "id": 2, "title": "Oliver and Sophia's Butterfly Experiment", "target": true },
+      { "id": 3, "title": "Planting Vegetables in Winter", "target": false }
+    ],
+    "correct_title": "Oliver and Sophia's Butterfly Experiment"
+  },
+  "rw_part4": {
+    "instructions": "Read the text. Choose the correct words and write them on the lines.",
+    "text_template": "All living things change as they grow older. This natural series of stages [0]_____ called a life cycle. Different animals experience very different life cycles, [1]_____ they all begin as eggs or newborns. For example, a mother butterfly lays [2]_____ eggs on green leaves. When an egg hatches, a tiny larva called a caterpillar [3]_____ out. The caterpillar spends most of its time [4]_____ fresh leaves so that it can grow rapidly. After molting several times, the caterpillar fastens itself to a twig [5]_____ forms a protective chrysalis. Inside this safe shell, an amazing transformation takes place. Tissues are rebuilt, and delicate wings begin to [6]_____. Eventually, an adult butterfly splits the shell and [7]_____ into the daylight. At first, its wings are damp and crumpled, [8]_____ after pumping fluid through the veins, the wings expand fully. Frogs undergo a similar transformation [9]_____ a tadpole loses its swimming tail and grows jumping legs. In this way, every creature completes [10]_____ life journey.",
+    "example": { "blank": 0, "correct": "is", "options": ["is", "are", "be"] },
+    "blanks": [
+      { "id": 1, "correct": "but", "options": ["so", "but", "or"] },
+      { "id": 2, "correct": "her", "options": ["its", "her", "their"] },
+      { "id": 3, "correct": "crawls", "options": ["crawl", "crawls", "crawling"] },
+      { "id": 4, "correct": "eating", "options": ["eat", "ate", "eating"] },
+      { "id": 5, "correct": "and", "options": ["and", "because", "although"] },
+      { "id": 6, "correct": "develop", "options": ["develop", "develops", "developing"] },
+      { "id": 7, "correct": "emerges", "options": ["emerge", "emerges", "emerging"] },
+      { "id": 8, "correct": "but", "options": ["so", "for", "but"] },
+      { "id": 9, "correct": "when", "options": ["where", "when", "which"] },
+      { "id": 10, "correct": "its", "options": ["it's", "its", "their"] }
+    ],
+    "questions": [
+      {
+        "id": 0,
+        "isExample": true,
+        "sentence": "This natural series of stages _____ called a life cycle.",
+        "options": { "A": "is", "B": "are", "C": "be" },
+        "answer": "A"
+      },
+      {
+        "id": 1,
+        "sentence": "Different animals experience different cycles, _____ they all begin small.",
+        "options": { "A": "so", "B": "but", "C": "or" },
+        "answer": "B"
+      },
+      {
+        "id": 2,
+        "sentence": "A mother butterfly lays _____ eggs on green leaves.",
+        "options": { "A": "its", "B": "her", "C": "their" },
+        "answer": "B"
+      },
+      {
+        "id": 3,
+        "sentence": "When an egg hatches, a tiny larva _____ out.",
+        "options": { "A": "crawl", "B": "crawls", "C": "crawling" },
+        "answer": "B"
+      },
+      {
+        "id": 4,
+        "sentence": "The caterpillar spends most of its time _____ fresh leaves.",
+        "options": { "A": "eat", "B": "ate", "C": "eating" },
+        "answer": "C"
+      },
+      {
+        "id": 5,
+        "sentence": "The caterpillar fastens itself to a twig _____ forms a chrysalis.",
+        "options": { "A": "and", "B": "because", "C": "although" },
+        "answer": "A"
+      },
+      {
+        "id": 6,
+        "sentence": "Tissues are rebuilt and delicate wings begin to _____.",
+        "options": { "A": "develop", "B": "develops", "C": "developing" },
+        "answer": "A"
+      },
+      {
+        "id": 7,
+        "sentence": "An adult butterfly splits the shell and _____ into the daylight.",
+        "options": { "A": "emerge", "B": "emerges", "C": "emerging" },
+        "answer": "B"
+      },
+      {
+        "id": 8,
+        "sentence": "Its wings are damp, _____ they expand after pumping fluid.",
+        "options": { "A": "so", "B": "for", "C": "but" },
+        "answer": "C"
+      },
+      {
+        "id": 9,
+        "sentence": "Frogs undergo a transformation _____ a tadpole loses its tail.",
+        "options": { "A": "where", "B": "when", "C": "which" },
+        "answer": "B"
+      },
+      {
+        "id": 10,
+        "sentence": "In this way, every creature completes _____ life journey.",
+        "options": { "A": "it's", "B": "its", "C": "their" },
+        "answer": "B"
+      }
+    ]
+  },
+  "rw_part5": {
+    "instructions": "Complete the sentences about the story. Write 1, 2, 3 or 4 words.",
+    "story": {
+      "title": "The Amazing Monarch Chrysalis",
+      "paragraphs": [
+        {
+          "id": 1,
+          "text": "Sophia and Oliver were very excited when Miss Parker brought a glass terrarium into the classroom. Inside, on a fresh twig, was a bright jade-green chrysalis decorated with tiny golden dots. Miss Parker told the class that this was a monarch butterfly in its pupa stage. The students took turns recording its size and color in their science journals every morning."
+        },
+        {
+          "id": 2,
+          "text": "For seven days, the chrysalis remained completely still. But on the eighth morning, Sophia noticed that the outer shell had turned transparent. Through the thin shell, the dark pattern of folded orange and black wings was clearly visible. Oliver called Miss Parker immediately because they knew the butterfly was ready to hatch."
+        },
+        {
+          "id": 3,
+          "text": "Suddenly, the bottom of the chrysalis split open. The butterfly pushed itself out and hung upside down from the empty shell. Its body looked thick, and its wet wings were crumpled. Over the next hour, the butterfly pumped fluid into its wings until they became large, smooth, and dry. That afternoon, the children carried the cage out to the flower garden and cheered as the butterfly took flight."
+        }
+      ]
+    },
+    "questions": [
+      {
+        "id": 1,
+        "sentence": "Miss Parker brought a _____ into the classroom.",
+        "answers": ["glass terrarium", "terrarium"]
+      },
+      {
+        "id": 2,
+        "sentence": "The green chrysalis was decorated with _____.",
+        "answers": ["tiny golden dots", "golden dots"]
+      },
+      {
+        "id": 3,
+        "sentence": "Students recorded the size and color in their _____ each morning.",
+        "answers": ["science journals", "journals"]
+      },
+      {
+        "id": 4,
+        "sentence": "On the eighth morning, the outer shell turned _____.",
+        "answers": ["transparent"]
+      },
+      {
+        "id": 5,
+        "sentence": "Through the shell, students could see orange and _____.",
+        "answers": ["black wings", "folded wings"]
+      },
+      {
+        "id": 6,
+        "sentence": "The butterfly hung upside down from the _____.",
+        "answers": ["empty shell", "shell"]
+      },
+      {
+        "id": 7,
+        "sentence": "The children carried the cage to the _____ before letting it fly.",
+        "answers": ["flower garden", "garden"]
+      }
+    ]
+  }
+}
