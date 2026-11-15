@@ -1,0 +1,83 @@
+# ROUND 101 REVIEW PACKAGE MANIFEST
+Package File: round101_20261115.zip
+Generated: 2026-11-15T03:54:55.062Z
+SHA256: 05e748c7d111f95142cff1ff9de663bc4ff6e09d205d6f23fc78e516b2429045
+Size: 4443322 bytes
+Deliverables Commit: 818e3f8d2d431838540fe1a39cf8f62622a5fce7
+Scope: Remediation of Story Writer Fail-Loud, Authored Chips, Cambridge 20-Word Standard, C5 Regression, and Deployed Production Evidence (Items A–I)
+
+## 1. Summary of Deliverables
+- **Mục A (Fail-Loud)**: Loại bỏ hoàn toàn khối 5-scene fallback và mặc định `weekNumber = 33`. Xác nhận schema lạ trả về `null` và render giao diện lỗi rõ ràng qua `scripts/test_story_writing_fail_loud.mjs`.
+- **Mục B (Tranh/Audio & Quét 34 tuần)**: Loại bỏ mọi URL tự bịa. Quét `fs.existsSync` xác nhận 34 tuần đều chưa có tài nguyên ảnh/audio vật lý; giao diện tự động tắt *"Look at the pictures"* và hiển thị *Scenario Prompt Card*.
+- **Mục C (Chip)**: Loại bỏ regex cắt giới từ. 100% chip được lấy nguyên vẹn từ tác giả (`pills`, `word_bank`, hoặc `vocab.js`).
+- **Mục D (W55–W72)**: Đề xuất sư phạm chuyên biệt (Genre/Functional Writing, đơn giản hóa prompt về mức $\le$ A2, giao diện Accordion 3 phần).
+- **Mục E (Hồi quy C5)**: Kiểm thử `deepStrictEqual` xác nhận W33, W34, W35, W78, W125 khớp 100% thuộc tính gốc. Đã chụp screenshot hồi quy W33.
+- **Mục F (Playwright Evidence & Prod Proof)**:
+  - Tương tác học sinh thật trên W47 (chỉ click connector + chip, **không dùng `fill()`**); 3 ảnh chụp có SHA-256 phân biệt rõ ràng.
+  - Evidence thực tế sau khi deploy trên URL live `https://app.bkbacademy.vn` cho cả 5 tuần W39, W41, W43, W45, W46 (100% PASS).
+- **Mục G (Khai báo)**: Giải trình `npm test` exit 1 (do `package.json` chưa có script test), bảng quét normalizer 156 tuần, giải thích phạm vi W36 và W73–82, xác nhận CI auto-deploy Cloudflare Pages.
+- **Mục H (CreatorStudioZone)**: Revert nguyên trạng `CreatorStudioZone.jsx` về trước Round 100 (`22ec31a0^`).
+- **Mục I (Chuẩn 20 từ)**: Đồng bộ rubric, bộ đếm review, và chỉ dẫn UI về chuẩn chính thức **$\ge 20$ từ** theo đúng Handbook của Cambridge A2 Flyers Part 7 (pp. 19–21).
+
+## 2. Live Git Scope Disclosure (818e3f8d2d431838540fe1a39cf8f62622a5fce7)
+| Status | File Path | Packaging Status |
+|:---:|:---|:---:|
+| A | `docs/agent_artifacts/production_story_writer_proof.json` | [IN-ZIP] |
+| M | `docs/review_packages/manifest_round100.txt` | [OUT-ZIP] (repository metadata) |
+| M | `scripts/package_round100.mjs` | [OUT-ZIP] (repository metadata) |
+
+## 3. Packaged Files Inventory (52 files)
+| Relative Path in Zip | Size (Bytes) | SHA-256 |
+|:---|:---:|:---|
+| `src/utils/storyWritingAdapter.js` | 12309 | `858be5dd384c683b20090adac3fb0aebf298a4e5b3ac3ba3ac1bc4dcb9f8e1ee` |
+| `src/modules/write_speak/StoryWriting.jsx` | 41298 | `eb6ff4150d14933cfdcedfed3e008df04ddadfcedb0f42d0485353ef4cb37265` |
+| `src/components/cambridge/StoryWriting.jsx` | 309 | `8a18cd21b8c8004fffc568026eed0887f86b33297efda6f486f1fb0fbb645476` |
+| `src/modules/zones/CreatorStudioZone.jsx` | 17384 | `3fbc0964c92b44455ec8c01c57b5ce41cfc83fd11db91007e53e8fcf999d7c29` |
+| `scripts/playwright_story_writer_proof.mjs` | 9703 | `eaad2326a13605951a20cbcbf9c204f1e09e0a80bdee968ca2cb4979cf450362` |
+| `scripts/test_story_writing_fail_loud.mjs` | 1517 | `bc5c9ebeab8169430c4ece3098fdd32b3a27a8b20840c283ec1a2f6699bb728a` |
+| `scripts/audit_34_weeks_media_assets.mjs` | 4067 | `207036c08f97226a933a8f7382ae659474207d34403b43e62ff9419329f597c7` |
+| `scripts/generate_34_weeks_chips_table.mjs` | 2515 | `89ba8c6bf13d9a638f350167c75b479e90c00ada0ca0c8f4ad4747ddbb858c55` |
+| `scripts/verify_c5_regression.mjs` | 2355 | `9afcb8a6ce391cf2dab6aabfa3bea8f04c3a05b9740e9c89d381cc67b412a4eb` |
+| `scripts/audit_normalizer_all_weeks.mjs` | 3381 | `99539c56d05719301b5a14dfbc035c746ba75fe465344bc36757967f91042b80` |
+| `scripts/capture_production_proof.mjs` | 4877 | `c4474458c85b0be92aab848454e8f492c12f91b4a4616bea792bc4d01ebf8ced` |
+| `docs/agent_artifacts/playwright_interaction_proof.json` | 1408 | `00bbfbf57d145099e50f6a4841b06a43b474afd76f9a8e5e58a62ad16cb19b08` |
+| `docs/agent_artifacts/production_story_writer_proof.json` | 6406 | `c0b9e10a47786c5bf9f4c56f5c26902783bed2ddeaa8066e344a042fec13bd96` |
+| `docs/agent_artifacts/story_writer_proof_report.json` | 14249 | `9dd7fef35ecf37f16fdccf17611d874d2f9e7662aadcec0da8037b713131a3be` |
+| `docs/agent_artifacts/screenshots/round100/prod_w39_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w39_story_writer_deployed.png` | 152325 | `642bf16b84bb3bbcf44eacad0d64b84dabc9b9aad2641df2a8aa323e59a5ddc8` |
+| `docs/agent_artifacts/screenshots/round100/prod_w41_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w41_story_writer_deployed.png` | 153003 | `8d74d5d840a001776e99968a5bfa43f0e96f43dea5c1e50e135274f8c95345a0` |
+| `docs/agent_artifacts/screenshots/round100/prod_w43_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w43_story_writer_deployed.png` | 154109 | `7bf4b01db00c40fcbf52e546302a4a2efdf2e019cfe15540d47711f975490df7` |
+| `docs/agent_artifacts/screenshots/round100/prod_w45_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w45_story_writer_deployed.png` | 152788 | `7482f299ffa8ff1e850cbe3ae6e630898575038333e3949e8b4ec1ca06353743` |
+| `docs/agent_artifacts/screenshots/round100/prod_w46_story_writer.png` | 95347 | `4994ef91880a76d9caec5f62389bd47ef3823efbafefa4a23727f1d566fb0140` |
+| `docs/agent_artifacts/screenshots/round100/prod_w46_story_writer_deployed.png` | 152786 | `f3447053b86482f2968b520bd3269bd50599eb231900673e3cd6c6b8eb39c868` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w39.png` | 103372 | `c9180544b31281fd72d58c33b7ccef019ddff69d06ba325458f30aed310226e9` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w40.png` | 99637 | `26d546fb3cfd07a5605fed58ab8cd18c3f63125c3bcfe156b3910be485fdb2a6` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w41.png` | 104718 | `14db4429493d5e1fe2c910e61a5ed0ef9b2f4f20f80ad160fd6aad2412ddbe89` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w42.png` | 97061 | `e69b8ac247ed588e19870c56aa3e6caa5501a64a99ac26b6126ffa2e4077eb64` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w43.png` | 105033 | `f0be37cb25c82918e6798f1544e99cca9adca6302dac13aefb7021778d44cc32` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w44.png` | 97555 | `da0cc2905bf3f72a4caf525646dcc242e1a916a3bc8b367d29c69e5a90446c50` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w45.png` | 103444 | `cb3b64ec950c890dd8626bdff1184874ad64426c536a412146f72999d976419f` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w46.png` | 104501 | `a590adc3f4b38d57dbcc4cb8b5210b383da714ef635a0ac56ba3502c4b9928fe` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w47.png` | 104273 | `bfe26cae3d45f1cf71daa15f84e021629fd293efe6f60fb700df25fa1220c040` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w47_interacted.png` | 108055 | `7967f772644c5de426d4310ecb7ae152a2f6e4a5f0b77cd174124e8898dcb861` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w47_scene2.png` | 104273 | `bfe26cae3d45f1cf71daa15f84e021629fd293efe6f60fb700df25fa1220c040` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w48.png` | 106806 | `4fb8152737b54323d07f04c8b20cb1e91e83076a6afe8721ca8e177019086bb3` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w49.png` | 105577 | `d7cf57de16fffcd32bf313517b4a9aeebb38b4a0b4e1402ab9767f0bcbeebb30` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w50.png` | 106302 | `15fa08f4bd1b5cb7a5bfc2c355ff4ee32f9fb74ac79efd87411614d90c6100f1` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w51.png` | 102024 | `d473004cae8500054f4c331b528d9f44732f9292655372dadf2b773041e87c73` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w52.png` | 105571 | `aee759fa2a5ffbfefdc72bd2ce1ebe6b46bd014dc1e85c7f3406f2cecf45ab00` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w53.png` | 108617 | `7cfa4086589c4b17077b85b24ca652c1544f84f7d4afe41153c61bf71ecc82a9` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w54.png` | 99600 | `400abe802d5658b5551d5e540e4dbde6afe48fb2626c897bb18f27bd0bfb4aa8` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w55.png` | 107462 | `6570d2e83994943fd120ffeda83bf3e143f92e02fd451bea934a373fd180dfdc` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w56.png` | 113064 | `6686fd46aed58e11f0ecb9b3cd4652f2635262a05d2d111dc3a60adad3ed08ca` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w60.png` | 118958 | `6a9627b722ac43cdd2f9aac68d63778f3a1a0adfa94f82e767d813a746154b71` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w65.png` | 118446 | `9a1bb995c3533712436ccf9e6ba4c2fc5236cd0172fcf8c13e7a0df8e246e7d7` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w70.png` | 122765 | `322b7fd5338cfed1f209261aba317aa8c02c2bf1097eb4a6b0237975a1ecacef` |
+| `docs/agent_artifacts/screenshots/round100/story_writer_w72.png` | 123244 | `586534367b9b1e310737f212fdcaf46b4d7bf314dae786fbb8189b7bfe2c058d` |
+| `docs/agent_artifacts/screenshots/round100/w33_story_writer_proof.png` | 324993 | `1035024c2081f01811045ac406f1f35a895cc3c242859580ef24cd856422bd63` |
+| `docs/agent_artifacts/screenshots/round100/w47_scene1_initial.png` | 146605 | `6b63c394cacb1c7ef9d9a3612980809e79681865416cec59354e0867a3eecd91` |
+| `docs/agent_artifacts/screenshots/round100/w47_scene1_interacted.png` | 145777 | `766f2495a8102c57a284a15c7c749c1428408748fd44c2239ae883fd874f2bbd` |
+| `docs/agent_artifacts/screenshots/round100/w47_scene2.png` | 151851 | `d15f27c948a946c4c7ea54d5d255502b7be7ccadb24a275d183a31854a68d752` |
