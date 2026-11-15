@@ -1,9 +1,9 @@
 # ROUND 100 REVIEW PACKAGE MANIFEST
 Package File: round100_20261115.zip
-Generated: 2026-11-15T03:20:25.296Z
-SHA256: 7005b7d2a3a83420c7b162321f6a2e4a6c28637eb8a3851b81e4df91c0d65deb
-Size: 3706295 bytes
-Deliverables Commit: e3eacfe741bca24b6239049f30e055cd165f732e
+Generated: 2026-11-15T03:23:05.435Z
+SHA256: ae25c82a2b148ad55592b7832028ed59ee217c91b2bd9e9312699d10f8a26a6a
+Size: 4443322 bytes
+Deliverables Commit: da1f2a704f9f3cfe5259776d05c408260d5d31f2
 Scope: P0 Critical Production Bug Fix — Story Writer 34-Week Schema Normalization & Adapter Layer
 
 ## 1. Summary of Deliverables
@@ -18,27 +18,12 @@ Scope: P0 Critical Production Bug Fix — Story Writer 34-Week Schema Normalizat
   - Fix verification screenshots across 20+ sampled weeks with 0 fallbacks detected.
   - Interactive multi-scene advancement verified on W47.
 
-## 2. Live Git Scope Disclosure (e3eacfe741bca24b6239049f30e055cd165f732e)
+## 2. Live Git Scope Disclosure (da1f2a704f9f3cfe5259776d05c408260d5d31f2)
 | Status | File Path | Packaging Status |
 |:---:|:---|:---:|
-| A | `docs/agent_artifacts/playwright_interaction_proof.json` | [IN-ZIP] |
-| A | `docs/agent_artifacts/screenshots/round100/w33_story_writer_proof.png` | [IN-ZIP] |
-| A | `docs/agent_artifacts/screenshots/round100/w47_scene1_initial.png` | [IN-ZIP] |
-| A | `docs/agent_artifacts/screenshots/round100/w47_scene1_interacted.png` | [IN-ZIP] |
-| A | `docs/agent_artifacts/screenshots/round100/w47_scene2.png` | [IN-ZIP] |
-| A | `scripts/audit_34_weeks_media_assets.mjs` | [IN-ZIP] |
-| A | `scripts/audit_normalizer_all_weeks.mjs` | [IN-ZIP] |
-| A | `scripts/capture_production_proof.mjs` | [IN-ZIP] |
-| A | `scripts/generate_34_weeks_chips_table.mjs` | [IN-ZIP] |
-| M | `scripts/package_round100.mjs` | [OUT-ZIP] (repository metadata) |
-| M | `scripts/playwright_story_writer_proof.mjs` | [IN-ZIP] |
-| A | `scripts/test_story_writing_fail_loud.mjs` | [IN-ZIP] |
-| A | `scripts/verify_c5_regression.mjs` | [IN-ZIP] |
-| M | `src/modules/write_speak/StoryWriting.jsx` | [IN-ZIP] |
-| M | `src/modules/zones/CreatorStudioZone.jsx` | [IN-ZIP] |
-| M | `src/utils/storyWritingAdapter.js` | [IN-ZIP] |
+| M | `docs/review_packages/manifest_round100.txt` | [OUT-ZIP] (repository metadata) |
 
-## 3. Packaged Files Inventory (46 files)
+## 3. Packaged Files Inventory (52 files)
 | Relative Path in Zip | Size (Bytes) | SHA-256 |
 |:---|:---:|:---|
 | `src/utils/storyWritingAdapter.js` | 12309 | `858be5dd384c683b20090adac3fb0aebf298a4e5b3ac3ba3ac1bc4dcb9f8e1ee` |
@@ -46,19 +31,25 @@ Scope: P0 Critical Production Bug Fix — Story Writer 34-Week Schema Normalizat
 | `src/components/cambridge/StoryWriting.jsx` | 309 | `8a18cd21b8c8004fffc568026eed0887f86b33297efda6f486f1fb0fbb645476` |
 | `src/modules/zones/CreatorStudioZone.jsx` | 17384 | `3fbc0964c92b44455ec8c01c57b5ce41cfc83fd11db91007e53e8fcf999d7c29` |
 | `scripts/playwright_story_writer_proof.mjs` | 9703 | `eaad2326a13605951a20cbcbf9c204f1e09e0a80bdee968ca2cb4979cf450362` |
-| `scripts/test_story_writing_fail_loud.mjs` | 1516 | `b0e216925e61a13c8f1af580250f7ae505f7ff6bf00d394381314e014b1dbdef` |
-| `scripts/audit_34_weeks_media_assets.mjs` | 4066 | `ef691fcb82ca4dbfaea06c6976c2c3a5ec7557a0e242784a7f5a0dc6a575bd93` |
+| `scripts/test_story_writing_fail_loud.mjs` | 1517 | `bc5c9ebeab8169430c4ece3098fdd32b3a27a8b20840c283ec1a2f6699bb728a` |
+| `scripts/audit_34_weeks_media_assets.mjs` | 4067 | `207036c08f97226a933a8f7382ae659474207d34403b43e62ff9419329f597c7` |
 | `scripts/generate_34_weeks_chips_table.mjs` | 2515 | `89ba8c6bf13d9a638f350167c75b479e90c00ada0ca0c8f4ad4747ddbb858c55` |
-| `scripts/verify_c5_regression.mjs` | 2354 | `f6ee4ac6baf26b3ad362ac8597ddc2cab76630726646904f5a4151c555bdd1b4` |
+| `scripts/verify_c5_regression.mjs` | 2355 | `9afcb8a6ce391cf2dab6aabfa3bea8f04c3a05b9740e9c89d381cc67b412a4eb` |
 | `scripts/audit_normalizer_all_weeks.mjs` | 3381 | `99539c56d05719301b5a14dfbc035c746ba75fe465344bc36757967f91042b80` |
-| `scripts/capture_production_proof.mjs` | 4876 | `f13b3bf11ad60d47e0b1e5dc8be40130c06a9254befd4c634c8b04e651092d8c` |
+| `scripts/capture_production_proof.mjs` | 4877 | `c4474458c85b0be92aab848454e8f492c12f91b4a4616bea792bc4d01ebf8ced` |
 | `docs/agent_artifacts/playwright_interaction_proof.json` | 1408 | `00bbfbf57d145099e50f6a4841b06a43b474afd76f9a8e5e58a62ad16cb19b08` |
+| `docs/agent_artifacts/production_story_writer_proof.json` | 6406 | `c0b9e10a47786c5bf9f4c56f5c26902783bed2ddeaa8066e344a042fec13bd96` |
 | `docs/agent_artifacts/story_writer_proof_report.json` | 14249 | `9dd7fef35ecf37f16fdccf17611d874d2f9e7662aadcec0da8037b713131a3be` |
 | `docs/agent_artifacts/screenshots/round100/prod_w39_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w39_story_writer_deployed.png` | 152325 | `642bf16b84bb3bbcf44eacad0d64b84dabc9b9aad2641df2a8aa323e59a5ddc8` |
 | `docs/agent_artifacts/screenshots/round100/prod_w41_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w41_story_writer_deployed.png` | 153003 | `8d74d5d840a001776e99968a5bfa43f0e96f43dea5c1e50e135274f8c95345a0` |
 | `docs/agent_artifacts/screenshots/round100/prod_w43_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w43_story_writer_deployed.png` | 154109 | `7bf4b01db00c40fcbf52e546302a4a2efdf2e019cfe15540d47711f975490df7` |
 | `docs/agent_artifacts/screenshots/round100/prod_w45_story_writer.png` | 95350 | `5a67646a739d8b0f223cd9a30db65619758b23e4ccc454dd66e24086828fb504` |
+| `docs/agent_artifacts/screenshots/round100/prod_w45_story_writer_deployed.png` | 152788 | `7482f299ffa8ff1e850cbe3ae6e630898575038333e3949e8b4ec1ca06353743` |
 | `docs/agent_artifacts/screenshots/round100/prod_w46_story_writer.png` | 95347 | `4994ef91880a76d9caec5f62389bd47ef3823efbafefa4a23727f1d566fb0140` |
+| `docs/agent_artifacts/screenshots/round100/prod_w46_story_writer_deployed.png` | 152786 | `f3447053b86482f2968b520bd3269bd50599eb231900673e3cd6c6b8eb39c868` |
 | `docs/agent_artifacts/screenshots/round100/story_writer_w39.png` | 103372 | `c9180544b31281fd72d58c33b7ccef019ddff69d06ba325458f30aed310226e9` |
 | `docs/agent_artifacts/screenshots/round100/story_writer_w40.png` | 99637 | `26d546fb3cfd07a5605fed58ab8cd18c3f63125c3bcfe156b3910be485fdb2a6` |
 | `docs/agent_artifacts/screenshots/round100/story_writer_w41.png` | 104718 | `14db4429493d5e1fe2c910e61a5ed0ef9b2f4f20f80ad160fd6aad2412ddbe89` |

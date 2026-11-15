@@ -51,7 +51,8 @@ const SOURCE_FILES = [
   'scripts/verify_c5_regression.mjs',
   'scripts/audit_normalizer_all_weeks.mjs',
   'scripts/capture_production_proof.mjs',
-  'docs/agent_artifacts/playwright_interaction_proof.json'
+  'docs/agent_artifacts/playwright_interaction_proof.json',
+  'docs/agent_artifacts/production_story_writer_proof.json'
 ];
 
 for (const rel of SOURCE_FILES) {

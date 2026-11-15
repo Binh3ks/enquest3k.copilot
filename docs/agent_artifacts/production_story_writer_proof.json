@@ -1,0 +1,129 @@
+{
+  "capturedAt": "2026-11-15T03:22:52.163Z",
+  "productionVersion": {
+    "commit": "da1f2a704f9f3cfe5259776d05c408260d5d31f2",
+    "git_commit": "da1f2a704f9f3cfe5259776d05c408260d5d31f2",
+    "shortCommit": "da1f2a70",
+    "message": "round100(manifest): update manifest with remediated deliverables [round100-package]",
+    "builtAt": "2026-11-15T03:21:13.067Z",
+    "build_timestamp": "2026-11-15T03:21:13.068Z",
+    "env": "production"
+  },
+  "results": [
+    {
+      "week": 39,
+      "url": "https://app.bkbacademy.vn/week/39/task/story_writer",
+      "status": "PASS",
+      "headerInstruction": "Write 20 or more words to describe the scenes.",
+      "sceneCounter": "Scene 1 of 4",
+      "ladder": "MODEL",
+      "chipsCount": 4,
+      "chips": [
+        "+ sunny morning",
+        "+ visited the wildlife reserve",
+        "+ Liam and Emma",
+        "+ looked at the map"
+      ],
+      "connectors": [
+        "🔗 + First,",
+        "🔗 + On Saturday morning,",
+        "🔗 + In the beginning,"
+      ],
+      "hasFallback": false,
+      "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/prod_w39_story_writer_deployed.png",
+      "bodySnippet": "Map\n✏️\nStory Writer\n+50 XP\nWRITE 2-3 SENTENCES TO DESCRIBE THE SCENES\n\nWrite 20 or more words to describe the scenes.\n\nMODEL\nScene 1 of 4\n1\nMODEL\n2\nBUILD\n3\nWRITE\n4\nEXPAND\nSCENARIO PROMPT\nScene 1: Visiting Nature Reserve\n\nLiam and Emma visited the wildlife reserve to learn about animal habitats.\n\nSCENE 1/4 • MODEL\nListen\n📝\nWrite 2 sentences about visiting the wildlife reserve.\n🔗 LINK YOUR SENTENC"
+    },
+    {
+      "week": 41,
+      "url": "https://app.bkbacademy.vn/week/41/task/story_writer",
+      "status": "PASS",
+      "headerInstruction": "Write 20 or more words to describe the scenes.",
+      "sceneCounter": "Scene 1 of 4",
+      "ladder": "MODEL",
+      "chipsCount": 4,
+      "chips": [
+        "+ garden leaf",
+        "+ Oliver and Sophia",
+        "+ Tuesday morning",
+        "+ tiny butterfly egg"
+      ],
+      "connectors": [
+        "🔗 + First,",
+        "🔗 + On Tuesday morning,",
+        "🔗 + In the beginning,"
+      ],
+      "hasFallback": false,
+      "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/prod_w41_story_writer_deployed.png",
+      "bodySnippet": "Map\n✏️\nStory Writer\n+50 XP\nWRITE 2-3 SENTENCES TO DESCRIBE THE SCENES\n\nWrite 20 or more words to describe the scenes.\n\nMODEL\nScene 1 of 4\n1\nMODEL\n2\nBUILD\n3\nWRITE\n4\nEXPAND\nSCENARIO PROMPT\nScene 1: Finding the Egg\n\nOliver and Sophia discovered a tiny round egg resting on a garden leaf.\n\nSCENE 1/4 • MODEL\nListen\n📝\nWrite 2 sentences about finding the tiny egg in the garden.\n🔗 LINK YOUR SENTENCES (CO"
+    },
+    {
+      "week": 43,
+      "url": "https://app.bkbacademy.vn/week/43/task/story_writer",
+      "status": "PASS",
+      "headerInstruction": "Write 20 or more words to describe the scenes.",
+      "sceneCounter": "Scene 1 of 4",
+      "ladder": "MODEL",
+      "chipsCount": 4,
+      "chips": [
+        "+ Wednesday afternoon",
+        "+ visited the workshop",
+        "+ Alex and Mia",
+        "+ Plus Machine"
+      ],
+      "connectors": [
+        "🔗 + First,",
+        "🔗 + On Wednesday afternoon,",
+        "🔗 + In the beginning,"
+      ],
+      "hasFallback": false,
+      "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/prod_w43_story_writer_deployed.png",
+      "bodySnippet": "Map\n✏️\nStory Writer\n+50 XP\nWRITE 2-3 SENTENCES TO DESCRIBE THE SCENES\n\nWrite 20 or more words to describe the scenes.\n\nMODEL\nScene 1 of 4\n1\nMODEL\n2\nBUILD\n3\nWRITE\n4\nEXPAND\nSCENARIO PROMPT\nScene 1: Entering the Workshop\n\nAlex and Mia arrived at the workshop to test the mechanical Plus Machine.\n\nSCENE 1/4 • MODEL\nListen\n📝\nWrite 2 sentences about visiting the inventor's workshop.\n🔗 LINK YOUR SENTENC"
+    },
+    {
+      "week": 45,
+      "url": "https://app.bkbacademy.vn/week/45/task/story_writer",
+      "status": "PASS",
+      "headerInstruction": "Write 20 or more words to describe the scenes.",
+      "sceneCounter": "Scene 1 of 4",
+      "ladder": "MODEL",
+      "chipsCount": 4,
+      "chips": [
+        "+ wore detective hats",
+        "+ shape search",
+        "+ Ben and Zoe",
+        "+ Friday morning"
+      ],
+      "connectors": [
+        "🔗 + First,",
+        "🔗 + On Friday morning,",
+        "🔗 + In the beginning,"
+      ],
+      "hasFallback": false,
+      "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/prod_w45_story_writer_deployed.png",
+      "bodySnippet": "Map\n✏️\nStory Writer\n+50 XP\nWRITE 2-3 SENTENCES TO DESCRIBE THE SCENES\n\nWrite 20 or more words to describe the scenes.\n\nMODEL\nScene 1 of 4\n1\nMODEL\n2\nBUILD\n3\nWRITE\n4\nEXPAND\nSCENARIO PROMPT\nScene 1: Starting the Detective Game\n\nBen and Zoe started their shape detective hunt in the classroom.\n\nSCENE 1/4 • MODEL\nListen\n📝\nWrite 2 sentences about starting the shape search.\n🔗 LINK YOUR SENTENCES (CONNEC"
+    },
+    {
+      "week": 46,
+      "url": "https://app.bkbacademy.vn/week/46/task/story_writer",
+      "status": "PASS",
+      "headerInstruction": "Write 20 or more words to describe the scenes.",
+      "sceneCounter": "Scene 1 of 4",
+      "ladder": "MODEL",
+      "chipsCount": 4,
+      "chips": [
+        "+ crack visual codes",
+        "+ visited the arcade lab",
+        "+ Monday afternoon",
+        "+ Noah and Lily"
+      ],
+      "connectors": [
+        "🔗 + First,",
+        "🔗 + On Monday afternoon,",
+        "🔗 + In the beginning,"
+      ],
+      "hasFallback": false,
+      "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/prod_w46_story_writer_deployed.png",
+      "bodySnippet": "Map\n✏️\nStory Writer\n+50 XP\nWRITE 2-3 SENTENCES TO DESCRIBE THE SCENES\n\nWrite 20 or more words to describe the scenes.\n\nMODEL\nScene 1 of 4\n1\nMODEL\n2\nBUILD\n3\nWRITE\n4\nEXPAND\nSCENARIO PROMPT\nScene 1: Entering the Logic Arcade\n\nNoah and Lily arrived at the arcade lab to solve pattern codes.\n\nSCENE 1/4 • MODEL\nListen\n📝\nWrite 2 sentences about visiting the logic laboratory.\n🔗 LINK YOUR SENTENCES (CONNE"
+    }
+  ]
+}
