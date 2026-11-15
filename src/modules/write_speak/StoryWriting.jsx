@@ -20,6 +20,7 @@ import { scoreWritingTiered } from '../../utils/writingRubric';
 import { speakText } from '../../utils/AudioHelper';
 import { playButtonClick, playVictoryFanfare } from '../../utils/soundEffects';
 import { useUserStore } from '../../stores/useUserStore';
+import { normalizeStorySteps } from '../../utils/storyWritingAdapter';
 
 const STAGE_COLORS = [
   { bg: 'bg-sky-50', border: 'border-sky-200', pill: 'bg-sky-50 text-sky-950 border-sky-300 hover:bg-sky-100' },
@@ -47,7 +48,7 @@ const KNOWN_CONNECTORS = [
 const NEUTRAL_IMAGE_PLACEHOLDER =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f1f5f9' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='50%25' y='46%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='32'%3E🖼️%3C/text%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='14' font-weight='600' fill='%2364748b'%3EImage Not Available%3C/text%3E%3C/svg%3E";
 
-export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
+export function StoryWriting({ content, customData, data, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
   const currentWeek = parseInt(weekId) || weekNumber || 33;
   const userProfile = useUserStore((state) => state.userProfile);
@@ -56,12 +57,18 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   // Saved progress under stationId 'story_writing'
   const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
 
-  // Extract picture story data from writing_hub
-  const rawStory = content?.picture_story || content?.story_prompts?.picture_mode || storyPrompts?.picture_mode || {};
+  // Extract picture story data from writing_hub or passed props
+  const rawInput = content || customData || data || {};
+  const rawStory = rawInput?.picture_story 
+    || (rawInput?.steps || rawInput?.panels || rawInput?.image_panels || rawInput?.ladder_stages || rawInput?.sentence_starters ? rawInput : null)
+    || rawInput?.story_prompts?.picture_mode 
+    || storyPrompts?.picture_mode 
+    || {};
 
   const steps = useMemo(() => {
-    if (Array.isArray(rawStory.steps) && rawStory.steps.length >= 3) {
-      return rawStory.steps.slice(0, 5); // Support up to 5 scenes (S3 Cambridge format)
+    const normalized = normalizeStorySteps(rawStory, currentWeek);
+    if (Array.isArray(normalized) && normalized.length >= 3) {
+      return normalized.slice(0, 5); // Support up to 5 scenes (S3 Cambridge format)
     }
     // Fallback if not configured
     return [
@@ -849,4 +856,5 @@ export function StoryWriting({ content, storyPrompts, themeColor = 'indigo', isV
   );
 }
 
+export { normalizeStorySteps } from '../../utils/storyWritingAdapter';
 export default StoryWriting;

@@ -1,0 +1,461 @@
+[
+  {
+    "week": 39,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 4",
+    "ladder": "MODEL",
+    "hint": "📝Write 2 sentences about visiting the wildlife reserve.",
+    "chipsCount": 4,
+    "chips": [
+      "+ sunny morning",
+      "+ visited the wildlife reserve",
+      "+ Liam and Emma",
+      "+ looked at the map"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On Saturday morning,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w39.png"
+  },
+  {
+    "week": 41,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 4",
+    "ladder": "MODEL",
+    "hint": "📝Write 2 sentences about finding the tiny egg in the garden.",
+    "chipsCount": 4,
+    "chips": [
+      "+ garden leaf",
+      "+ Oliver and Sophia",
+      "+ Tuesday morning",
+      "+ tiny butterfly egg"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On Tuesday morning,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w41.png"
+  },
+  {
+    "week": 43,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 4",
+    "ladder": "MODEL",
+    "hint": "📝Write 2 sentences about visiting the inventor's workshop.",
+    "chipsCount": 4,
+    "chips": [
+      "+ Wednesday afternoon",
+      "+ visited the workshop",
+      "+ Alex and Mia",
+      "+ Plus Machine"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On Wednesday afternoon,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w43.png"
+  },
+  {
+    "week": 45,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 4",
+    "ladder": "MODEL",
+    "hint": "📝Write 2 sentences about starting the shape search.",
+    "chipsCount": 4,
+    "chips": [
+      "+ wore detective hats",
+      "+ shape search",
+      "+ Ben and Zoe",
+      "+ Friday morning"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On Friday morning,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w45.png"
+  },
+  {
+    "week": 46,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 4",
+    "ladder": "MODEL",
+    "hint": "📝Write 2 sentences about visiting the logic laboratory.",
+    "chipsCount": 4,
+    "chips": [
+      "+ crack visual codes",
+      "+ visited the arcade lab",
+      "+ Monday afternoon",
+      "+ Noah and Lily"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On Monday afternoon,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w46.png"
+  },
+  {
+    "week": 40,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Complete the frame: First, the rangers noticed ___ tracks in the mud.",
+    "chipsCount": 3,
+    "chips": [
+      "+ claws",
+      "+ predator",
+      "+ the soft mud"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + In the beginning,",
+      "🔗 + On that day,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w40.png"
+  },
+  {
+    "week": 42,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Complete the frame: First, cool rain fell from a gray ___.",
+    "chipsCount": 3,
+    "chips": [
+      "+ cloud",
+      "+ Rain falling",
+      "+ rain"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + In the beginning,",
+      "🔗 + On that day,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w42.png"
+  },
+  {
+    "week": 44,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Complete the frame: First, the baker placed fresh cookies on the ___.",
+    "chipsCount": 2,
+    "chips": [
+      "+ cookie",
+      "+ baker"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + In the beginning,",
+      "🔗 + On that day,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w44.png"
+  },
+  {
+    "week": 47,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: Where were Lucas and Mia on Friday night?",
+    "chipsCount": 5,
+    "chips": [
+      "+ Mia counting stars",
+      "+ the village observatory",
+      "+ a place value chart",
+      "+ On Friday evening  Lucas",
+      "+ Lucas"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w47.png",
+    "interactionSuccess": true
+  },
+  {
+    "week": 48,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What object was Lucas measuring with the wooden ruler?",
+    "chipsCount": 5,
+    "chips": [
+      "+ a ruler",
+      "+ the classroom desk",
+      "+ Emma participated",
+      "+ Lucas measuring a ribbon",
+      "+ On Tuesday morning  Lucas"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w48.png"
+  },
+  {
+    "week": 49,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What future jobs did Noah and Chloe discuss at the career fair?",
+    "chipsCount": 5,
+    "chips": [
+      "+ career posters",
+      "+ the school fair",
+      "+ On Wednesday afternoon  Noah",
+      "+ Chloe looking",
+      "+ Noah"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w49.png"
+  },
+  {
+    "week": 50,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: Where did Leo and Maya see the clean electric vehicles?",
+    "chipsCount": 5,
+    "chips": [
+      "+ Maya looking",
+      "+ an electric car plugged",
+      "+ a solar charging station",
+      "+ On Thursday morning  Leo",
+      "+ Leo"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w50.png"
+  },
+  {
+    "week": 51,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What did Ethan and Zoe observe through the metal telescope?",
+    "chipsCount": 3,
+    "chips": [
+      "+ On Friday afternoon  Ethan",
+      "+ Ethan",
+      "+ the planetarium"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w51.png"
+  },
+  {
+    "week": 52,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What game were Daniel and Harper playing in English class?",
+    "chipsCount": 5,
+    "chips": [
+      "+ a desk",
+      "+ Harper sitting",
+      "+ experience bingo cards",
+      "+ On Friday afternoon  Daniel",
+      "+ Daniel"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w52.png"
+  },
+  {
+    "week": 53,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What mystery did Oliver and Grace investigate in the school library?",
+    "chipsCount": 5,
+    "chips": [
+      "+ On Tuesday morning  Oliver",
+      "+ blue thread",
+      "+ the trophy case",
+      "+ Grace inspecting a footprint",
+      "+ Oliver"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w53.png"
+  },
+  {
+    "week": 54,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Question: What ceremony took place in the decorated school auditorium?",
+    "chipsCount": 2,
+    "chips": [
+      "+ Leo",
+      "+ the wooden podium"
+    ],
+    "connectors": [
+      "🔗 + First,",
+      "🔗 + On that day,",
+      "🔗 + In the beginning,"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w54.png"
+  },
+  {
+    "week": 55,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Look at the pictures showing domino blocks falling. Write a story about what caused the fall and the result. Starter: \"Lucas was building a high tower when...\"",
+    "chipsCount": 3,
+    "chips": [
+      "+ effect",
+      "+ the school science fair",
+      "+ cause"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w55.png"
+  },
+  {
+    "week": 56,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Look at the pictures showing dry plants and children fixing irrigation. Write a cause-and-effect paragraph explaining the problem and the outcome. Starter: \"During a long summer drought, the community garden...\"",
+    "chipsCount": 3,
+    "chips": [
+      "+ garden",
+      "+ severe heat",
+      "+ community"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w56.png"
+  },
+  {
+    "week": 60,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Write a formal letter to your town mayor requesting a new bike lane or crosswalk lamp. Use formal conventions: 'Dear Mayor...', polite request phrases, order of operations cost estimates, and 'Yours sincerely'. Starter: \"Dear Mayor Davis, We are writing to respectfully request...\"",
+    "chipsCount": 3,
+    "chips": [
+      "+ mayor",
+      "+ respectfully request",
+      "+ request"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w60.png"
+  },
+  {
+    "week": 65,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Write a reflective essay summarizing what you learned during Cycle 2.1. Discuss cause and effect, formal writing etiquette, and how the order of operations helps solve mixed math challenges. Starter: \"During Cycle 2.1, our class consolidated important skills in...\"",
+    "chipsCount": 4,
+    "chips": [
+      "+ consolidate",
+      "+ mathematics",
+      "+ English",
+      "+ review"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w65.png"
+  },
+  {
+    "week": 70,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Write a 1-minute persuasive presentation speech pitching an innovative green initiative for your school. Use discourse markers ('First of all', 'Furthermore', 'To conclude') and incorporate multi-graph calculations. Starter: \"Good morning judges! First of all, we are thrilled to present our green...\"",
+    "chipsCount": 4,
+    "chips": [
+      "+ present our green",
+      "+ presentation",
+      "+ Good morning esteemed judges",
+      "+ pitch"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w70.png"
+  },
+  {
+    "week": 72,
+    "status": "PASS",
+    "sceneCounter": "Scene 1 of 3",
+    "ladder": "MODEL",
+    "hint": "📝Write an expository scientific text explaining how plants perform photosynthesis. Use sequential connectors (first, next, finally) and include area and perimeter calculations for a greenhouse garden. Starter: \"Photosynthesis is the miraculous biological process that converts solar energy into...\"",
+    "chipsCount": 4,
+    "chips": [
+      "+ chemical food",
+      "+ plants",
+      "+ photosynthesis",
+      "+ chlorophyll"
+    ],
+    "connectors": [
+      "🔗 + In the beginning,",
+      "🔗 + First,",
+      "🔗 + When"
+    ],
+    "hasFallbackPills": false,
+    "screenshot": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/story_writer_w72.png"
+  }
+]
