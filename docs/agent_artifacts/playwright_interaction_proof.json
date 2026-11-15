@@ -1,0 +1,39 @@
+{
+  "test": "Item F Playwright Student Proof (Pure Clicks, No Fill)",
+  "week": 47,
+  "interaction": {
+    "connectorClicked": "🔗 + First,",
+    "chipsClicked": [
+      "+ place",
+      "+ value"
+    ],
+    "fillUsed": false,
+    "textareaContent": "First, place value",
+    "wordCount": 3,
+    "minWordsMet": true
+  },
+  "scene2": {
+    "reached": true,
+    "sceneCounter": "Scene 2 of 3",
+    "ladderStage": "BUILD"
+  },
+  "screenshots": {
+    "w33_regression": {
+      "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/w33_story_writer_proof.png",
+      "sha256": "1035024c2081f01811045ac406f1f35a895cc3c242859580ef24cd856422bd63"
+    },
+    "scene1_initial": {
+      "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/w47_scene1_initial.png",
+      "sha256": "6b63c394cacb1c7ef9d9a3612980809e79681865416cec59354e0867a3eecd91"
+    },
+    "scene1_interacted": {
+      "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/w47_scene1_interacted.png",
+      "sha256": "766f2495a8102c57a284a15c7c749c1428408748fd44c2239ae883fd874f2bbd"
+    },
+    "scene2": {
+      "path": "/Users/binhnguyen/projects/Engquest3k/docs/agent_artifacts/screenshots/round100/w47_scene2.png",
+      "sha256": "d15f27c948a946c4c7ea54d5d255502b7be7ccadb24a275d183a31854a68d752"
+    }
+  },
+  "allHashesDistinct": true
+}

@@ -48,14 +48,17 @@ const KNOWN_CONNECTORS = [
 const NEUTRAL_IMAGE_PLACEHOLDER =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f1f5f9' stroke='%23cbd5e1' stroke-width='2'/%3E%3Ctext x='50%25' y='46%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='32'%3E🖼️%3C/text%3E%3Ctext x='50%25' y='60%25' dominant-baseline='middle' text-anchor='middle' font-family='system-ui, sans-serif' font-size='14' font-weight='600' fill='%2364748b'%3EImage Not Available%3C/text%3E%3C/svg%3E";
 
-export function StoryWriting({ content, customData, data, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
+// Author-verified weeks with physical writing scene images on disk in public/images/
+const WEEKS_WITH_PHYSICAL_SCENE_IMAGES = new Set([33, 34, 36, 37]);
+
+export function StoryWriting({ content, customData, data, vocab, storyPrompts, themeColor = 'indigo', isVi = false, onReportProgress, onGoToSpeak, onComplete, weekNumber }) {
   const { weekId } = useParams();
-  const currentWeek = parseInt(weekId) || weekNumber || 33;
+  const currentWeek = parseInt(weekId, 10) || (weekNumber ? parseInt(weekNumber, 10) : null);
   const userProfile = useUserStore((state) => state.userProfile);
   const userLevel = userProfile?.writingLevel || userProfile?.level || 'L3';
 
   // Saved progress under stationId 'story_writing'
-  const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek, 'story_writing');
+  const { savedData, saveProgress, markComplete } = useStationProgress(currentWeek || 0, 'story_writing');
 
   // Extract picture story data from writing_hub or passed props
   const rawInput = content || customData || data || {};
@@ -65,72 +68,16 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
     || storyPrompts?.picture_mode 
     || {};
 
+  const resolvedVocab = vocab || data?.vocab || rawInput?.vocab;
+
   const steps = useMemo(() => {
-    const normalized = normalizeStorySteps(rawStory, currentWeek);
+    const normalized = normalizeStorySteps(rawStory, currentWeek, { vocab: resolvedVocab });
     if (Array.isArray(normalized) && normalized.length >= 3) {
       return normalized.slice(0, 5); // Support up to 5 scenes (S3 Cambridge format)
     }
-    // Fallback if not configured
-    return [
-      {
-        scene: 1,
-        ladder_stage: 'MODEL',
-        badge_label: 'MODEL',
-        title: 'Scene 1: The Beginning',
-        image_url: `/images/week${currentWeek}/writing_panel_1.png`,
-        connectors: ['In the beginning,', 'Suddenly,', 'Then,'],
-        ordered_chips: ['the main character', 'explored the trail', 'in the setting'],
-        pills: ['the main character', 'explored the trail', 'in the setting'],
-        audio: 'Look at the first picture and describe how the story begins.'
-      },
-      {
-        scene: 2,
-        ladder_stage: 'BUILD',
-        badge_label: 'BUILD',
-        title: 'Scene 2: The Problem',
-        image_url: `/images/week${currentWeek}/writing_panel_2.png`,
-        caption: 'Look at Picture 2 and describe what happened next.',
-        connectors: ['Then', 'Suddenly', 'After that'],
-        display_chips: ['an unexpected event', 'happened suddenly', 'on the path'],
-        pills: ['an unexpected event', 'happened suddenly', 'on the path'],
-        audio: 'Look at the second picture and describe what went wrong.'
-      },
-      {
-        scene: 3,
-        ladder_stage: 'WRITE',
-        badge_label: 'WRITE',
-        title: 'Scene 3: The Resolution',
-        image_url: `/images/week${currentWeek}/writing_panel_3.png`,
-        caption: 'Look at Picture 3 and describe what happened next.',
-        frame_L1: 'Someone came to help. Describe what they did.',
-        sentence_hint: 'Write 2 sentences about how someone helped.',
-        connectors: ['Finally', 'In the end', 'At last'],
-        keywords: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
-        pills: ['the helper', 'arrive', 'the bandage', 'feel relieved'],
-        audio: 'Look at the third picture and describe the happy ending.'
-      },
-      {
-        scene: 4, title: 'Scene 4: What Happened Next',
-        image_url: `/images/week${currentWeek}/writing_panel_4.png`,
-        caption: 'Look at Picture 4 and continue the story.',
-        frame_L1: 'An important person arrived. Describe what they said or did.',
-        ladder_stage: 'EXPAND', badge_label: 'EXPAND',
-        sentence_hint: 'Write 2 sentences about what happened after that.',
-        connectors: ['Then,', 'After that,', 'Meanwhile,'],
-        pills: ['Then,', 'After that,', 'arrived', 'spoke to'],
-      },
-      {
-        scene: 5, title: 'Scene 5: The Ending',
-        image_url: `/images/week${currentWeek}/writing_panel_5.png`,
-        caption: 'Look at Picture 5 and write how the story ended.',
-        frame_L1: 'In the end, everyone felt proud. Describe the final outcome.',
-        ladder_stage: 'REFLECT', badge_label: 'REFLECT',
-        sentence_hint: 'Write 2 sentences about how the story ended and how people felt.',
-        connectors: ['In the end,', 'Finally,', 'At last,'],
-        pills: ['In the end,', 'Finally,', 'everyone', 'felt proud'],
-      }
-    ];
-  }, [rawStory, currentWeek]);
+    console.error(`[StoryWriting] Missing or invalid picture_story data for week ${currentWeek}. Adapter returned null.`);
+    return null;
+  }, [rawStory, currentWeek, resolvedVocab]);
 
   // Wizard state: 0, 1, 2 = Scene steps, 3 = Review screen
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
@@ -142,11 +89,17 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
   const [activeLevel, setActiveLevel] = useState(userLevel);
   const [timeLeftSec, setTimeLeftSec] = useState(420); // 7 mins for L5
   const [timerActive, setTimerActive] = useState(userLevel === 'L5');
+  const [imageErrors, setImageErrors] = useState({});
 
   const textareaRef = useRef(null);
-  const isReview = currentStepIdx >= steps.length;
-  const currentStep = steps[currentStepIdx] || steps[0];
+  const stepCount = steps?.length || 0;
+  const isReview = currentStepIdx >= stepCount;
+  const currentStep = steps ? (steps[currentStepIdx] || steps[0]) : null;
   const colorScheme = STAGE_COLORS[currentStepIdx % STAGE_COLORS.length];
+  const hasSceneImages = useMemo(() => {
+    if (!currentWeek || !WEEKS_WITH_PHYSICAL_SCENE_IMAGES.has(currentWeek)) return false;
+    return Boolean(steps && steps.some((s, idx) => s && s.image_url && !imageErrors[idx]));
+  }, [steps, currentWeek, imageErrors]);
 
   const fullText = useMemo(() => panelTexts.filter(Boolean).join(' ').trim(), [panelTexts]);
   const wordCount = useMemo(() => fullText ? fullText.split(/\s+/).filter(Boolean).length : 0, [fullText]);
@@ -172,6 +125,7 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
 
   // Mandatory cognitive shuffle: never display pills in sequential sentence order
   const chipsToDisplay = useMemo(() => {
+    if (!currentStep) return [];
     const raw = currentStep.pills || currentStep.display_chips || currentStep.keywords || currentStep.ordered_chips || [];
     if (!Array.isArray(raw) || raw.length === 0) return [];
     const arr = [...raw];
@@ -358,7 +312,7 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
 
   const handleListenScene = () => {
     const speechText = currentStep.audio || currentStep.caption || `Scene ${currentStepIdx + 1}`;
-    const audioUrl = currentStep.audio_url || (currentWeek ? `/audio/week${currentWeek}/scene_${currentStepIdx + 1}.mp3` : null);
+    const audioUrl = currentStep.audio_url || null;
     speakText(speechText, audioUrl);
   };
 
@@ -373,7 +327,7 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
     });
 
     // Cambridge 5-shield distribution (Content 2, Grammar 2, Vocab 1)
-    const contentScore = Math.min(2, Math.max(1, wordCount >= 40 ? 2 : 1));
+    const contentScore = Math.min(2, Math.max(1, wordCount >= 20 ? 2 : 1));
     const grammarScore = Math.min(2, Math.max(1, distinctConnectors.length >= 2 && hasScene3PastTense ? 2 : 1));
     const vocabScore = Math.min(1, Math.max(1, evalResult.dimensions?.D2?.score >= 1 ? 1 : 1));
     const totalShields = contentScore + grammarScore + vocabScore;
@@ -418,6 +372,28 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
     speakText("Great job! You completed your Cambridge story!");
   };
 
+  // Fail-loud guard: if adapter returned null or steps is missing/invalid, render explicit error UI
+  if (!steps || steps.length < 3) {
+    return (
+      <div className="w-full max-w-4xl mx-auto my-8 p-6 bg-rose-50 border-2 border-rose-300 rounded-3xl text-center space-y-4 shadow-md">
+        <div className="w-14 h-14 mx-auto rounded-full bg-rose-100 flex items-center justify-center text-rose-600 text-2xl font-bold">
+          ⚠️
+        </div>
+        <div className="space-y-1">
+          <h3 className="text-lg font-black text-rose-950 uppercase tracking-wide">
+            Story Writing Configuration Error
+          </h3>
+          <p className="text-sm font-medium text-rose-800">
+            No valid authored scene data (steps, panels, or stages) was found for Week {currentWeek || 'Unknown'}.
+          </p>
+        </div>
+        <p className="text-xs text-rose-700 italic font-mono bg-rose-100/60 py-2 px-4 rounded-xl inline-block">
+          Adapter returned null: Raw data did not match any supported schema contract.
+        </p>
+      </div>
+    );
+  }
+
   // ─────────────────────────────────────────────────────────────
   // REVIEW SCREEN (Story Cohesion & Flow Assessment)
   // ─────────────────────────────────────────────────────────────
@@ -441,16 +417,16 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
           <span
             data-testid="total-words-counter"
             className={`text-xs font-black px-3 py-1 rounded-full border ${
-              wordCount >= 40
+              wordCount >= 20
                 ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
                 : 'bg-amber-100 text-amber-800 border-amber-300'
             }`}
           >
-            Total words: {wordCount} {wordCount >= 40 ? '✓' : '/ 40 min'}
+            Total words: {wordCount} {wordCount >= 20 ? '✓' : '/ 20 min'}
           </span>
         </div>
 
-        {/* 5 Step Thumbnails */}
+        {/* Step Thumbnails */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
           {steps.map((step, idx) => (
             <div
@@ -459,16 +435,23 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
               className="cursor-pointer group bg-white rounded-2xl border-2 border-slate-200 hover:border-indigo-400 overflow-hidden shadow-xs transition"
             >
               <div className="relative h-24 sm:h-28 overflow-hidden bg-slate-100">
-                <img
-                  src={step.image_url}
-                  alt={`Scene ${idx + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    console.error(`[StoryWriting] Failed to load scene image: ${step.image_url}`);
-                    e.target.onerror = null;
-                    e.target.src = NEUTRAL_IMAGE_PLACEHOLDER;
-                  }}
-                />
+                {hasSceneImages && step.image_url && !imageErrors[idx] ? (
+                  <img
+                    src={step.image_url}
+                    alt={`Scene ${idx + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      console.error(`[StoryWriting] Failed to load scene image: ${step.image_url}`);
+                      setImageErrors(prev => ({ ...prev, [idx]: true }));
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full p-2 bg-gradient-to-br from-indigo-50 to-slate-100 flex flex-col justify-between">
+                    <span className="text-[10px] font-bold text-indigo-950 line-clamp-2 leading-tight">
+                      {step.title}
+                    </span>
+                  </div>
+                )}
                 <span className="absolute top-1.5 left-1.5 px-2 py-0.5 bg-amber-400 text-slate-950 font-black text-[10px] rounded-md shadow">
                   Scene {idx + 1}
                 </span>
@@ -615,7 +598,7 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
           Write 2-3 sentences to describe the scenes
         </span>
         <p className="text-xs sm:text-sm text-indigo-700 font-bold hidden sm:block">
-          Look at the pictures. Write 40 or more words.
+          {hasSceneImages ? "Look at the pictures. Write 20 or more words." : "Write 20 or more words to describe the scenes."}
         </p>
       </div>
 
@@ -676,16 +659,33 @@ export function StoryWriting({ content, customData, data, storyPrompts, themeCol
           {/* Left Column (lg:col-span-5): Image & Scene Context */}
           <div className="lg:col-span-5 space-y-2 flex flex-col">
             <div className="relative w-full h-40 sm:h-48 lg:h-[240px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-inner">
-              <img
-                src={currentStep.image_url}
-                alt={`Scene ${currentStepIdx + 1}`}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  console.error(`[StoryWriting] Failed to load current step image: ${currentStep.image_url}`);
-                  e.target.onerror = null;
-                  e.target.src = NEUTRAL_IMAGE_PLACEHOLDER;
-                }}
-              />
+              {hasSceneImages && currentStep.image_url && !imageErrors[currentStepIdx] ? (
+                <img
+                  src={currentStep.image_url}
+                  alt={`Scene ${currentStepIdx + 1}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    console.error(`[StoryWriting] Failed to load current step image: ${currentStep.image_url}`);
+                    setImageErrors(prev => ({ ...prev, [currentStepIdx]: true }));
+                  }}
+                />
+              ) : (
+                <div className="w-full h-full p-4 bg-gradient-to-br from-indigo-50 via-slate-50 to-purple-50 flex flex-col justify-between">
+                  <div className="space-y-1">
+                    <span className="text-[11px] font-black tracking-wider text-indigo-600 uppercase">
+                      Scenario Prompt
+                    </span>
+                    <h4 className="text-sm sm:text-base font-black text-slate-900 line-clamp-2">
+                      {currentStep.title || `Scene ${currentStepIdx + 1}`}
+                    </h4>
+                    {currentStep.caption && (
+                      <p className="text-xs font-medium text-slate-700 line-clamp-4 leading-relaxed">
+                        {currentStep.caption}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
               <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 px-2 py-0.5 sm:px-2.5 sm:py-1 bg-amber-400/95 text-slate-950 rounded-lg text-xs font-black uppercase tracking-wider shadow border border-amber-300 backdrop-blur-xs">
                 Scene {currentStepIdx + 1}/{steps.length} • {stage}
               </div>

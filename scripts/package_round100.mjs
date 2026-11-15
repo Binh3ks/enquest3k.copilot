@@ -44,7 +44,14 @@ const SOURCE_FILES = [
   'src/modules/write_speak/StoryWriting.jsx',
   'src/components/cambridge/StoryWriting.jsx',
   'src/modules/zones/CreatorStudioZone.jsx',
-  'scripts/playwright_story_writer_proof.mjs'
+  'scripts/playwright_story_writer_proof.mjs',
+  'scripts/test_story_writing_fail_loud.mjs',
+  'scripts/audit_34_weeks_media_assets.mjs',
+  'scripts/generate_34_weeks_chips_table.mjs',
+  'scripts/verify_c5_regression.mjs',
+  'scripts/audit_normalizer_all_weeks.mjs',
+  'scripts/capture_production_proof.mjs',
+  'docs/agent_artifacts/playwright_interaction_proof.json'
 ];
 
 for (const rel of SOURCE_FILES) {
@@ -161,3 +168,4 @@ ${packagedFiles.map(f => `| \`${f.path}\` | ${f.bytes} | \`${f.sha}\` |`).join('
 const MANIFEST_FILE = path.join(OUT_DIR, 'manifest_round100.txt');
 fs.writeFileSync(MANIFEST_FILE, manifestContent, 'utf8');
 console.log(`Manifest written to: ${MANIFEST_FILE}`);
+

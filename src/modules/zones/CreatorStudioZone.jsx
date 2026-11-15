@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSearchParams, useParams } from 'react-router-dom';
-import StoryWriting, { normalizeStorySteps } from '../write_speak/StoryWriting';
+import StoryWriting from '../write_speak/StoryWriting';
 import RetellRecorder from '../../components/zones/RetellRecorder';
 import ScienceReportCreator from '../../components/cambridge/ScienceReportCreator';
 import AIDebateMode from '../../components/cambridge/AIDebateMode';
@@ -65,16 +65,15 @@ export default function CreatorStudioZone({ data, weekNumber, forcedStation = nu
 
   // Sync saved story progress to Broadcast Studio on mount / progress update
   useEffect(() => {
-    // Canonical scene frames from writingData normalized across all schemas so prompter ALWAYS uses authentic weekly content
-    const rawPictureStory = writingData?.picture_story || writingData?.story_prompts?.picture_mode;
-    const normalizedSteps = normalizeStorySteps(rawPictureStory, activeWeek) || rawPictureStory?.steps || [];
+    // 5 canonical scene frames from writingData so prompter ALWAYS uses authentic weekly content
+    const canonicalSteps = writingData?.picture_story?.steps || [];
     const speakingImages = speakingData?.picture_story?.images || [];
     const defaultScenes = [
-      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: speakingImages[0]?.narrator_prompt || normalizedSteps[0]?.frame_L1 || normalizedSteps[0]?.caption || "" },
-      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: speakingImages[1]?.narrator_prompt || normalizedSteps[1]?.frame_L1 || normalizedSteps[1]?.caption || "" },
-      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: speakingImages[2]?.narrator_prompt || normalizedSteps[2]?.frame_L1 || normalizedSteps[2]?.caption || "" },
-      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: speakingImages[3]?.narrator_prompt || normalizedSteps[3]?.frame_L1 || normalizedSteps[3]?.caption || "" },
-      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: speakingImages[4]?.narrator_prompt || normalizedSteps[4]?.frame_L1 || normalizedSteps[4]?.caption || "" }
+      { id: 1, func: 'setting',  title: 'Scene 1: Setting 🔵', defaultText: speakingImages[0]?.narrator_prompt || canonicalSteps[0]?.frame_L1 || canonicalSteps[0]?.caption || "" },
+      { id: 2, func: 'action',   title: 'Scene 2: Action 🟢',  defaultText: speakingImages[1]?.narrator_prompt || canonicalSteps[1]?.frame_L1 || canonicalSteps[1]?.caption || "" },
+      { id: 3, func: 'problem',  title: 'Scene 3: Problem 🟠', defaultText: speakingImages[2]?.narrator_prompt || canonicalSteps[2]?.frame_L1 || canonicalSteps[2]?.caption || "" },
+      { id: 4, func: 'climax',   title: 'Scene 4: Response 🟣', defaultText: speakingImages[3]?.narrator_prompt || canonicalSteps[3]?.frame_L1 || canonicalSteps[3]?.caption || "" },
+      { id: 5, func: 'solution', title: 'Scene 5: Ending ⭐',  defaultText: speakingImages[4]?.narrator_prompt || canonicalSteps[4]?.frame_L1 || canonicalSteps[4]?.caption || "" }
     ];
 
     const panelTexts = (storySavedData?.panelTexts && Array.isArray(storySavedData.panelTexts)) ? storySavedData.panelTexts : [];
