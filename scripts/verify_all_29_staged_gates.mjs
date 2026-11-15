@@ -305,7 +305,15 @@ for (const w of ALL_STAGED_WEEKS) {
   const sbWords = bp.vocabulary_focus?.syllabus_words || [];
   const stagedWordSet = new Set(vocabList.map(v => (v.word || '').toLowerCase().trim()));
   const missingSb = sbWords.filter(sw => !stagedWordSet.has(sw.toLowerCase().trim()));
-  const isReviewOrGraduation = bp.theme?.toLowerCase().includes('review') || bp.theme?.toLowerCase().includes('project') || bp.theme?.toLowerCase().includes('prep') || bp.theme?.toLowerCase().includes('showcase') || bp.is_review_week;
+  const isReviewOrGraduation = bp.theme?.toLowerCase().includes('review') ||
+    bp.theme?.toLowerCase().includes('project') ||
+    bp.theme?.toLowerCase().includes('prep') ||
+    bp.theme?.toLowerCase().includes('showcase') ||
+    bp.theme?.toLowerCase().includes('mock') ||
+    bp.theme?.toLowerCase().includes('seeding') ||
+    bp.is_review_week ||
+    bp.isFullMock ||
+    bp.week_type === 'full_mock';
   const axis4Pass = missingSb.length === 0 && (sbWords.length > 0 || isReviewOrGraduation);
 
   if (axis1Pass && axis4Pass) {

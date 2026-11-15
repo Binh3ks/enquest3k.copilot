@@ -15,8 +15,8 @@
     "focus": "Use specific chunks to ask about experiences (Preparation for"
   },
   "grammar_focus": {
-    "structure": "Full Mock Flyers 4: Đo lường tốc độ làm bài và độ chính xác Speaking",
-    "outcome": "Use specific chunks to ask about experiences (Preparation for",
+    "structure": "Full Mock Flyers 4: Timed Test Speed and Speaking Accuracy Assessment",
+    "outcome": "Use specific chunks to ask about experiences (Preparation for Phase 2)",
     "pattern_regex": null,
     "requires_authoring_examples": true
   },
@@ -86,5 +86,6 @@
     "source_master_syllabus": true,
     "primary_pedagogical_authority": "Source B (docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt)"
   },
-  "mockFormat": "flyers"
+  "mockFormat": "flyers",
+  "is_mock_week": true
 }
