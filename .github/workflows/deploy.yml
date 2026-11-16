@@ -31,6 +31,9 @@ jobs:
       - name: Verify Golden Standard Integrity (W33 Freeze Guard)
         run: node scripts/guard_golden_w33_freeze.mjs
 
+      - name: Verify Golden Standard Integrity (W34 Freeze Guard)
+        run: node scripts/guard_golden_w34_freeze.mjs
+
       - name: Build
         run: npm run build
         env:
