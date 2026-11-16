@@ -1,491 +1,327 @@
 # 🏭 ENGQUEST3K — WEEK PRODUCTION SOP (STANDARD OPERATING PROCEDURE)
-
-**Document Reference**: `docs/WEEK_PRODUCTION_SOP.md`  
-**Version**: 2.3.0 (Cambridge Exam Structural Fidelity Invariant, Strict No-Default Parameters, Chronicles Suspension)  
-**Governing Standard**: Cambridge CEFR (Pre-A1 to B1+) & W33 Golden Standard Architecture  
-**Effective Date**: 2026-10-30  
-**Status**: 🟢 **CANONICAL PRODUCTION SOP**
-
----
-
-## 1. Core Production Philosophy & Master Invariants
-
-Every week created for EngQuest3K (from Week 01 to Week 156) must adhere strictly to these fundamental principles:
-
-1. **Master 15-Quest / 5-Zone Invariant (W17–W156)**:
-   - Every week from W17 onward operates on **exactly 5 Days = 5 Zones = 15 Quests** (3 Quests per day).
-   - Fragmented legacy "stations" (`explore.js`, `daily_watch.js`, `logic_lab.js`) are **strictly prohibited** as standalone data files.
-   - **⚠️ LITE MODE (W01–W16)**: Pre-A1 Starters weeks operate on **10 Quests / 5 Zones (2 Quests/Day)** due to cognitive load constraints for 6–7 year olds. See MASTER_ARCHITECTURE §9 for details.
-2. **Four Central Data Hubs Invariant**:
-   - All week content lives exclusively in **4 Data Hubs**: `reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`.
-3. **Zero-Cloning & Single-Source Invariant**:
-   - Weeks are authored from the authoritative syllabus (`docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` and `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md`).
-   - Copying raw content or hardcoded strings from older weeks without adapting them to the new week's theme is strictly prohibited.
-4. **Hai Hình Thái Tuần Học (Two Production Modalities)**:
-   - **Type A: Tuần Luyện Tập Xoay Vòng (Rotary Practice Week — 80% số tuần)**: Zone 5 trên Day 5 đánh giá quá trình tập trung sâu vào **4 Cambridge Parts xoay vòng**.
-   - **Type B: Tuần Thi Thử Trọn Vẹn (Full Mock Test Week — 28 tuần trên toàn khóa)**: Cờ `isFullMock: true` trong `index.js`. Zone 5 kích hoạt toàn bộ bài thi chuẩn hóa có đếm ngược thời gian nghiêm ngặt.
-5. **Standard Task Naming & CLIL Sư Phạm Invariant**:
-   - **`science_lab` MUST be displayed as `Action Lab`** on all UI screens, reflecting interdisciplinary CLIL (science, social studies, geography, history, and experimental problem-solving). Never display as "Science Lab".
-   - **`science_report` MUST be displayed as `Discovery Report`**.
-   - **`sentence_smash` MUST be displayed as `Grammar Duel`**.
-   - **`math_quest` MUST be displayed as `Math Quest`**.
-   - **`broadcast_studio` MUST be displayed as `Video Challenge`**.
-6. **No-Fallback & Fail-Loud Invariant (Updated 2026-10-30)**:
-   - Interactive components, hooks, utility functions, and loaders must NEVER use silent dummy fallbacks (e.g. hardcoded text, fallback question objects, or mock answers).
-   - Functions and hooks that take a `weekNumber` or `weekId` MUST NOT define a default parameter (e.g. `weekNumber = 33` or `weekNumber = 1`). All week context must be passed explicitly from caller/route. If an argument is missing or invalid, throw an error or fail loud immediately.
-   - If required data is missing from the hub or caller, render an explicit warning banner and fail loudly during audit.
-7. **Authentic Cambridge 2-Play Loop Invariant**:
-   - Listening Part 1–5 audios must follow the authentic Cambridge cycle:
-     $$\text{Play 1} \longrightarrow \text{"Now listen to Part X again."} \longrightarrow \text{3-second pause} \longrightarrow \text{Play 2} \longrightarrow \text{"That is the end of Part X."}$$
-8. **Cambridge Exam Structural Item-Count & Fidelity Invariant (2026-10-30)**:
-   - The structural number of items/questions for every Cambridge assessment part is strictly fixed by the official Cambridge Young Learners English (YLE) Handbook for Teachers (Starters / Movers / Flyers) and MUST NOT be reduced or altered, regardless of pedagogical scaffolding or learner proficiency level.
-   - Scaffolding MUST only occur in hints, prompts, audio rate, vocabulary tier, or response guidance (e.g., word banks, sentence frames), NEVER by reducing the number of exam tasks.
-   - **Canonical Flyers Item Counts**:
-     - **Speaking Part 1 (Find Differences)**: Exactly 6 differences (Handshake/intro + 6 differences).
-     - **Speaking Part 2 (Information Exchange)**: Exactly 5 cues / 5 questions (both Ask and Answer cards).
-     - **Speaking Part 3 (Picture Story)**: Exactly 5 pictures (Examiner introduces Picture 1; student continues with Pictures 2–5).
-     - **Speaking Part 4 (Personal Questions)**: Exactly 4–5 thematic questions.
-     - **Listening Parts 1–5**: Part 1 (5 items + 1 example, 7 names), Part 2 (5 items + 1 example), Part 3 (5 items + 1 example), Part 4 (5 items + 1 example), Part 5 (5 items + 1 example).
-     - **Reading & Writing Parts 1–7**: Exact item counts matching Cambridge Flyers handbook (Part 1: 10 items, 15 words; Part 2: 5 items; Part 3: 5 items; Part 4: 10 items; Part 5: 7 items; Part 6: 5 items; Part 7: 1 picture story / 3 pictures).
-9. **Action Lab 3-Scenario Depth Standard**:
-   - The Action Lab must feature 3 distinct interactive scenarios/diagrams (`stages: [Stage 1, Stage 2, Stage 3]`) covering physical causes, materials comparison, and safety/first aid procedures. Never ship a single-image trivial lab.
-10. **Canonical Audio Fallback Hierarchy Invariant**:
-    - Pre-generated Static MP3 (in `public/audio/week{N}/` & Cloudflare R2 CDN) $\rightarrow$ Client IndexedDB Cache (`TTSCache.get`) $\rightarrow$ Google Cloud TTS Direct (only when uncached or live dynamic) $\rightarrow$ Browser TTS fallback (only on fatal error). All components must supply valid `audioUrl` parameters.
-11. **Dual-Store Universal Progress Persistence & Return-to-Map Navigation Invariant (2026-09-05)**:
-    - All 15 Quests must save completion to both `useDailyQuestStore` (`completedQuests['w' + weekId][questId]`) and `useUserStore` (`progressCache[weekId][stationId]` + Supabase cloud backup).
-    - `useDailyQuestStore.completeQuest` is the single canonical entry point with automatic alias mapping (`science_lab` $\leftrightarrow$ `action_lab`, `story_writer` $\leftrightarrow$ `story_writing`, `broadcast_studio` $\leftrightarrow$ `video_challenge`, `gear4_clil` $\leftrightarrow$ `clil`).
-    - Every Quest component must accept `onBackToMap` / `onComplete` and provide a clean, celebratory return path to the Quest Map (`/week/{weekId}/hub/1`) without getting trapped.
-12. **Everyday Conversation & Cambridge Exam Dictation Invariant (2026-09-05)** [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]:
-    - This dialogue must NEVER copy or duplicate Shadowing sentences or CLIL scientific texts.
-    - Consisted of 8 short turns forming an authentic everyday conversation dialogue between characters/friends related to the week's theme.
-    - Mandatory inclusion of Cambridge Movers/Flyers tested entities: numbers (times, rooms, phone digits, durations), days of the week, dates, names, places, and everyday conversational collocations/chunks.
-
+**Document Reference**: `docs/agent_artifacts/sop_draft/WEEK_PRODUCTION_SOP_v2.4.0_DRAFT.md`  
+**Version**: 2.4.0 (Release Candidate — Profile-Based Asset Contract, Data-Driven Gate & 3-Layer Mass Production)  
+**Governing Documents**: AGENTS.md, docs/ARCHITECTURE_CURRENT.md, docs/MASTER_ARCHITECTURE_W01_W156.md  
+**Effective Date**: 2026-11-15 (RELEASE CANDIDATE)  
+**Status**: 🟠 **RELEASE CANDIDATE — Chờ Owner và Claude QA phê duyệt chính thức (CẤM SỬA CANONICAL CHO ĐẾN KHI KÝ DUYỆT)**
 
 ---
 
-## 2. Universal Weekly Structure: 15 Quests / 5 Zones
+## 📑 MỤC LỤC 3 LỚP KIẾN TRÚC SOP
 
-```
-WEEKLY STRUCTURE (15 TASKS / 5 DAYS):
-├── DAY 1: Zone 1 — Story World
-│    ├── Quest 1: gear1_webtoon      ──> Scene Explorer (Comic immersion)
-│    ├── Quest 2: gear2_karaoke      ──> Voice Shadow (Acoustic karaoke sync)
-│    └── Quest 3: gear3_retell       ──> Story Retell (ESL Collocation Chunks)
-├── DAY 2: Zone 2 — Knowledge Lab
-│    ├── Quest 1: gear4_clil         ──> Fact Finder (Non-fiction reading & audio glossary)
-│    ├── Quest 2: science_lab        ──> Action Lab (Interdisciplinary experiment / problem)
-│    └── Quest 3: science_report     ──> Discovery Report (Observation Data Card + 1-Tap Pills)
-├── DAY 3: Zone 3 — Battle Arena
-│    ├── Quest 1: word_blitz         ──> Speed Match (Fast vocabulary pairing)
-│    ├── Quest 2: sentence_smash     ──> Grammar Duel (Sentence syntax battle vs AI bot)
-│    └── Quest 3: math_quest         ──> Math Quest (Singapore Math Bar Models & C.U.B.E.S.)
-├── DAY 4: Zone 4 — Creator Studio
-│    ├── Quest 1: story_writer       ──> Story Writer (3-panel narrative writing >= 20 words)
-│    ├── Quest 2: broadcast_studio   ──> Video Challenge (Webcam presentation & recording)
-│    └── Quest 3: info_exchange      ──> Info Exchange (2-way Q&A cue cards with info gaps)
-└── DAY 5: Zone 5 — Boss Castle (Summative Assessment)
-     ├── Quest 1: boss_listening     ──> Listening Shield (Cambridge Parts 1–5 rotary / Mock)
-     ├── Quest 2: boss_reading       ──> Reading & Writing Shield (Parts 1–6 rotary / Mock)
-     └── Quest 3: weekly_review      ──> Speaking & Passport (Speaking Parts 1–4 / Debate)
-```
+### LỚP 1: HIẾN PHÁP SƯ PHẠM & BẤT BIẾN KỸ THUẬT (PEDAGOGICAL CONSTITUTION & TECHNICAL INVARIANTS)
+- §1. Bất biến 15 Quests / 5 Zones / 5 Ngày (W17–W156) & Ngoại lệ Lite Mode (W01–W16)
+- §2. Bất biến 4 Data Hubs Tập Trung per Week
+- §3. Quy chuẩn Danh pháp & Sư phạm CLIL
+- §4. Bất biến Giàn giáo Sư phạm Story Retell (Scaffolding Invariant)
+- §5. Bất biến Kịch bản Thực nghiệm Action Lab (3-Scenario Invariant)
+- §6. Zero Fallback & Forbidden Defaults
+- §7. Universal Progress Persistence & Return-to-Map Navigation Standards (W01–W156)
+- §8. Audio Fallback Hierarchy & Fail-Loud Doctrine
+- §9. Mock Exam Cadence (34 Checkpoints Interpolated)
+- §10. Story Writer Dual Standard
+- §11. 5-Feature Data Contracts (v2.0.0 — 2026-09-05)
 
----
+### LỚP 2: HỢP ĐỒNG TÀI SẢN THEO PROFILE (PROFILE-BASED QUEST ASSET CONTRACT)
+- §12. Ma trận 6 Profiles Khảo thí & Năng lực (v2.2.0)
+- §13. Phân tầng Tài sản Truyền thông: Core vs Extended Assets
+- §14. Bảng Đặc tả Hợp đồng Tài sản 15 Quests theo Profile (15 Quests x 6 Profiles)
+- §15. [SUSPENDED & ABOLISHED ARCHITECTURE — DANH MỤC KIẾN TRÚC TẠM DỪNG & ĐÃ KHAI TỬ] (Super Leo Chronicles [SUSPENDED], Dictation [ABOLISHED], 20 Vocab / vocab_*.mp3 [ABOLISHED], Flash Arena Vocab [ABOLISHED])
 
-## 3. Ba Thế Hệ Khảo Thí Zone 5 (Day 5: Boss Castle)
-
-Tùy thuộc vào tuần đang sản xuất thuộc giai đoạn nào, Zone 5 sẽ nạp dữ liệu theo đúng chuẩn khảo thí của thế hệ đó:
-
-1. **Thế hệ 1 (Weeks 01–72): Cambridge Young Learners (Starters $\rightarrow$ Movers $\rightarrow$ Flyers)**:
-   - `boss_listening`: Listening Parts 1–5 (vẽ đường nối, ghi chép notepad, nối thẻ A-H, trắc nghiệm 3 tranh, tô màu và viết).
-   - `boss_reading`: Reading Parts 1–6 + Part 7 Writing truyện 3 tranh $\ge 20$ từ.
-   - `weekly_review`: Speaking Parts 1–4 (tìm điểm khác, info exchange, kể tiếp truyện tranh, phỏng vấn). Thang điểm **15 Khiên Cambridge**.
-2. **Thế hệ 2 (Weeks 73–112): Cambridge B1 Preliminary (PET) & CLIL STEM Lab**:
-   - `boss_listening`: PET Listening Parts 1–4 (7 hội thoại ngắn, note completion thông báo, phỏng vấn độc thoại dài, hội thoại quan điểm).
-   - `boss_reading`: PET Reading Parts 1–6 (biển báo, matching người-văn bản, gapped text điền câu, open cloze) + Writing viết email/bài báo $\ge 100$ từ.
-   - `weekly_review`: PET Speaking Parts 1–4 + Vấn đáp thực nghiệm khoa học **CLIL CER Viva Voce**. Thang điểm **Cambridge English Scale 140–160**.
-3. **Thế hệ 3 (Weeks 113–156): B1+ Strong Academic Reading & Structured Opinion**:
-   - `boss_listening`: B1+ Academic Listening 4 Parts (nghe bài giảng khoa học, note-taking podcast học thuật, hội thoại chuyên đề dài).
-   - `boss_reading`: B1+ Academic Reading 6 Parts (đọc bài văn 500–800 từ, trích xuất luận điểm, inference questions, gapped text) + Writing Opinion Essay $\ge 140–190$ từ và Extended Project Report $\ge 500$ từ.
-   - `weekly_review`: Thuyết trình quan điểm có chuẩn bị (Structured Opinion Presentation 3–5 phút) + Ghi hình Extended Project Report + Phỏng vấn học thuật. Thang điểm **B1+ Academic Proficiency Scale + Portfolio Grade (A/B/C/D)**.
+### LỚP 3: QUY TRÌNH SẢN XUẤT TUẦN HÀNG LOẠT (MASS PRODUCTION WORKFLOW)
+- §16. Nguyên Tắc Nộp Bài & Kiểm Toán Bằng Chứng (Rule 0 Compliance)
+- §17. Multi-Agent Review Protocol & Verification Checklist
+- §18. Quy Tắc Nhóm Sản Xuất (Batch Production Rules)
+- §19. Quy Trình PILOT Tiên Phong (Bắt Buộc Cho Profile Mới)
+- §20. Pipeline Sản Xuất Tuần Chuẩn Hóa (7 Bước Tuần Tự)
+- §21. Hệ Thống Quality Gates Tự Động, Gate 15 Spec-Based Runner & Danh Mục Việc Chặn Mass Production
+- §22. Quản Lý Dung Lượng & Contact Sheet Mỹ Thuật
+- §23. Quy Trình Quản Trị Thay Đổi (Governance Change Control)
 
 ---
+# LỚP 1: HIẾN PHÁP SƯ PHẠM & BẤT BIẾN KỸ THUẬT
 
-## 4. Chu Kỳ 28 Tuần Full Mock Test
+### §1. Bất biến 15 Quests / 5 Zones / 5 Ngày (W17–W156) & Ngoại lệ Lite Mode (W01–W16)
+- **15 Quests Tiêu chuẩn**: Từ Tuần 17 trở đi, hệ thống vận hành cố định trên **15 Quests phân bổ đều qua 5 Ngày học = 5 Zones** (mỗi ngày đúng 3 Quests). Loại bỏ hoàn toàn khái niệm Station rời rạc.
+  - **Day 1 (Zone 1 — Story World)**: `gear1_webtoon` (Scene Explorer), `gear2_karaoke` (Voice Shadow), `gear3_retell` (Story Retell).
+  - **Day 2 (Zone 2 — Knowledge Lab)**: `gear4_clil` (Fact Finder), `science_lab` (Action Lab), `science_report` (Discovery Report).
+  - **Day 3 (Zone 3 — Battle Arena)**: `word_blitz` (Speed Match), `sentence_smash` (Grammar Duel), `math_quest` (Math Quest).
+  - **Day 4 (Zone 4 — Creator Studio)**: `story_writer` (Story Writer), `broadcast_studio` (Video Challenge), `info_exchange` (Info Exchange).
+  - **Day 5 (Zone 5 — Boss Castle)**: `boss_listening` (Listening Shield), `boss_reading` (Reading & Writing Shield), `weekly_review` (Speaking & Passport).
+- **⚠️ Lite Mode Exception (W01–W16)**: Tuần 01–16 (Pre-A1 Starters, trẻ 6–7 tuổi) hoạt động ở chế độ **10 Quests / 5 Zones (2 Quests/Day)** do giới hạn attention span. 5 quests giản lược: `gear3_retell` → tích hợp vào `gear2_karaoke`, `science_report` → Draw & Say, `math_quest` → Count & Match, `broadcast_studio` → Listen & Repeat, `boss_reading` → tích hợp vào `boss_listening` (*Dẫn chứng: docs/MASTER_ARCHITECTURE_W01_W156.md:56, 250-284*).
 
-Khi biên soạn tuần có mã `★ FULL MOCK`, tác giả bắt buộc phải khai báo:
-```javascript
-// src/data/weeks/week_XX/index.js
-export default {
-  weekNumber: XX,
-  isFullMock: true,
-  mockExamType: "FLYERS" // hoặc "STARTERS", "MOVERS", "B1_PET", "B2_FCE_ACELLUS"
-  // ...
-};
-```
+### §2. Bất biến 4 Data Hubs Tập Trung per Week
+- Dữ liệu mỗi tuần BẮT BUỘC lưu trữ tập trung tại đúng 4 Hubs:
+  - `reading_hub.js`: Cung cấp dữ liệu cho Zone 1, Zone 2, Zone 5 (Scene Explorer, Voice Shadow, Story Retell, Fact Finder, Reading Shield).
+  - `listening_hub.js`: Cung cấp dữ liệu cho Zone 2, Zone 3, Zone 5 (Action Lab, Speed Match, Grammar Duel, Math Quest, Listening Shield).
+  - `writing_hub.js`: Cung cấp dữ liệu cho Zone 4, Zone 5 (Story Writer, Reading & Writing Shield).
+  - `speaking_hub.js`: Cung cấp dữ liệu cho Zone 4, Zone 5 (Video Challenge, Info Exchange, Speaking & Passport).
+- CẤM TUYỆT ĐỐI tạo mới hoặc phụ thuộc vào các file rác cũ như `explore.js`, `logic_lab.js`, `daily_watch.js`, [ABOLISHED] `dictation.js` như một nguồn dữ liệu độc lập (*Dẫn chứng: AGENTS.md:120-128*).
 
-### Danh mục 28 Tuần Mock Test:
-- **Starters (1 Mock)**: W16
-- **Movers (2 Mocks)**: W24, W32
-- **Flyers (8 Mocks - Nhịp 4+1)**: W37, W42, W47, W52, W57, W62, W67, W72 (Official Flyers Gate)
-- **B1 PET & CLIL (8 Mocks - Nhịp 4+1)**: W77, W82, W87, W92, W97, W102, W107, W112 (Official PET Gate)
-- **B2 FCE & Acellus (9 Mocks - Nhịp 4+1)**: W117, W122, W127, W132, W137, W142, W147, W152, W156 (Final Capstone & Graduation)
+### §3. Quy chuẩn Danh pháp & Sư phạm CLIL
+- **`science_lab` BẮT BUỘC hiển thị là `Action Lab`**: CLIL bao hàm Khoa học, Xã hội, Địa lý, Lịch sử và Kỹ năng thực nghiệm giải quyết vấn đề. CẤM hiển thị nhầm thành `Science Lab` (*Dẫn chứng: AGENTS.md:138*).
+- **`science_report` BẮT BUỘC hiển thị là `Discovery Report`**: Đúc kết phát hiện thực tế sau quá trình điều tra của Thám tử Khám phá (Discovery Detective) (*Dẫn chứng: AGENTS.md:139*).
+- **`sentence_smash` BẮT BUỘC hiển thị là `Grammar Duel`**: Đấu trường ngữ pháp, sắp xếp trật tự câu.
+- **`math_quest` BẮT BUỘC hiển thị là `Math Quest`**: Toán tư duy & Bar Models Singapore.
+- **`broadcast_studio` BẮT BUỘC hiển thị là `Video Challenge`**: Thử thách thuyết trình / quay video.
 
-> **Note**: Giai đoạn W113–W156 mục tiêu điều chỉnh thành **B1+ Academic Reading & Structured Opinion** (thay vì B2 FCE/Acellus). Mock Test labels trên UI hiển thị là `★ B1+ Academic Assessment Mock`.
+### §4. Bất biến Giàn giáo Sư phạm Story Retell (Scaffolding Invariant)
+- **`full` (Maximum Scaffolding)**: Hiển thị 100% câu mẫu kèm nút nghe audio mẫu. Dành cho học sinh cần mô hình đầy đủ trước khi nói.
+- **`half` (Moderate Scaffolding)**: Hiển thị 50% đầu câu (`w.slice(0, half).join(' ') + ' ___ ...'`) làm Sentence Starter.
+- **`chunks` (Linear Thinking ESL Collocation Scaffolding)**: CẤM TUYỆT ĐỐI che từ cơ học so le (`i % 2 === 0`). BẮT BUỘC hiển thị theo cụm từ Linear Thinking ESL dựa trên sense units và ranh giới ngữ pháp (*Dẫn chứng: AGENTS.md:143-150*).
 
----
+### §5. Bất biến Kịch bản Thực nghiệm Action Lab (3-Scenario Invariant)
+- Action Lab (`ActionLab.jsx` / `ScienceDragDropLab.jsx`) KHÔNG được phép chỉ là 1 hình sơ sài.
+- BẮT BUỘC cung cấp tối thiểu **3 kịch bản thực nghiệm tương tác** (`stages: [Stage 1, Stage 2, Stage 3]`) để khai thác sâu sắc kiến thức liên môn CLIL:
+  - Scenario 1: Hiện tượng / Nguyên nhân vật lý (e.g. Sàn ướt & Vùng giảm ma sát).
+  - Scenario 2: So sánh vật liệu / Cơ chế đối ứng (e.g. Đế cao su ma sát cao vs đế nhựa trơn trượt).
+  - Scenario 3: Quy trình xử lý thực tế / Sơ cứu / An toàn (e.g. Túi chườm lạnh, băng gạc, chăm sóc y tế) (*Dẫn chứng: AGENTS.md:152-160*).
 
-## 5. Productive Tasks Scaffolding Standard
+### §6. Zero Fallback & Forbidden Defaults
+- CẤM TUYỆT ĐỐI fallback cứng `weekNumber || 33` hoặc `activeWeek || 33` trong mọi component dùng chung. Mọi component phải nhận prop `weekNumber` tường minh. Nếu thiếu, component phải fail-loud hoặc log cảnh báo (*Dẫn chứng: docs/ARCHITECTURE_CURRENT.md:204-208*).
+- CẤM TUYỆT ĐỐI mượn ảnh hoặc audio của tuần khác khi chưa có sự cho phép bằng văn bản của Owner.
 
-All creative and productive tasks must provide a **3-Level Scaffolding Engine** so learners never face a blank canvas:
+### §7. Universal Progress Persistence & Return-to-Map Navigation Standards (W01–W156)
 
-1. **Level 1 (Full Scaffolding)**:
-   - **`story_retell`**: 100% full model sentence with tap-to-listen audio.
-   - **`discovery_report`**: 1-Tap Word Pills with fill-in-the-blanks.
-   - **`story_writer`**: Guided Cloze frame with word options for each of the 3 pictures.
-   - **`broadcast_studio`**: Auto-scrolling teleprompter with karaoke timing.
-   - **`info_exchange`**: Full question given with model audio pronunciation.
-2. **Level 2 (Moderate Scaffolding / Chunks)**:
-   - **`story_retell`**: Linear Thinking ESL Collocation chunks in brackets (`Jake was [walking carefully] down the [school corridor].`). Cheating-proof, never alternating single-word blanks.
-   - **`discovery_report`**: Sentence starters linking to the Data Card (`The data proves that... because...`).
-   - **`story_writer`**: Collocation keyword pills (4–5 phrase chunks per picture).
-   - **`broadcast_studio`**: Chunk-segmented teleprompter with breath pause markers (`//`).
-   - **`info_exchange`**: Question scaffolding stems (`Where / science room?` $\rightarrow$ learner forms question).
-3. **Level 3 (Autonomous / Open)**:
-   - **`story_retell`**: Key character and verb prompt outline.
-   - **`discovery_report`**: Full CER Canvas (Claim, Evidence, Reasoning) with transition word bank.
-   - **`story_writer`**: Open 3-picture composition with word counter gauge and Rubric checklist.
-   - **`broadcast_studio`**: Bulleted talking point cue cards and presentation timer.
-   - **`info_exchange`**: Raw cue cards with only field names given; student forms questions independently.
+#### 7.1. The Dual-Store Architecture
+Hệ thống tiến độ EngQuest3K vận hành đồng thời 2 kho lưu trữ:
+1. **`useDailyQuestStore` (`src/stores/useDailyQuestStore.js`)**:
+   - Quản lý tiến trình mở khóa Day 1–5, ma trận hoàn thành 15 Quests (`completedQuests['w' + weekId][questId]`), và XP/streak gamification.
+   - Dispatcher duy nhất: `completeQuest(weekId, questId, options)`.
+   - Cơ chế tự động giải mã alias: `QUEST_ALIAS_MAP` tự động ánh xạ `science_lab` ↔ `action_lab`, `story_writer` ↔ `story_writing`, `broadcast_studio` ↔ `video_challenge`, `gear4_clil` ↔ `clil`.
+2. **`useUserStore` (`src/stores/useUserStore.js`)**:
+   - Quản lý hồ sơ học sinh toàn cục, cache tiến độ (`progressCache[weekId][stationId]`), và kích hoạt đồng bộ Supabase Cloud DB (`syncProgressToServer`).
+   - Tự động cập nhật đồng bộ khi `useDailyQuestStore.completeQuest` được gọi.
+3. **Hook `useStationProgress` (`src/hooks/useStationProgress.js`)**:
+   - Cung cấp trạng thái cấp station (`saveProgress`, `isCompleted`, `score`).
+   - Tự động đồng bộ sang `useDailyQuestStore.completeQuest` mỗi khi `saveProgress(partialData, true, score)` được kích hoạt.
 
----
+#### 7.2. 15-Quest Completion & Navigation Checklist
+Mọi component đại diện cho một trong 15 Quests BẮT BUỘC tuân thủ mẫu UX sau:
+1. **Tiếp nhận Prop**: Nhận `onBackToMap` và `onComplete` truyền từ `TaskScreen.jsx` và Zone container.
+2. **Nhận diện Hoàn thành**: Đọc cả 2 stores khi mount (`useDailyQuestStore.isQuestCompleted` hoặc `useStationProgress.isCompleted`). Nếu đã hoàn thành:
+   - Hiển thị huy hiệu `✓ Đã Hoàn Thành` (`CompletedBadge`) nổi bật trên hero card / header.
+   - Cho phép học sinh chơi lại (Replay) tự do mà không làm mất tiến độ đã lưu.
+3. **Hành động Kết thúc**: Khi hoàn thành quest:
+   - Gọi `useDailyQuestStore.getState().completeQuest(weekId, questId, { score })` hoặc `saveProgress(..., true, score)` để lưu trạng thái TRƯỚC.
+   - Cung cấp nút chiến thắng rõ ràng: e.g. `✓ Return to Map (+50 XP)` hoặc `✓ Finish Quest & Return to Map`.
+   - Kích hoạt callback `onBackToMap()` hoặc `onComplete()` để điều hướng mượt mà về `/week/${weekId}/hub/1`, không bao giờ để học sinh bị kẹt lại màn hình.
 
-## 6. The Dictation 3-Step Engine [DEPRECATED / ABOLISHED — Khai tử theo Quyết định Kiến trúc 15 Quests Gói 003B, commit c30ab03e + efe32bb3]
+### §8. Audio Fallback Hierarchy & Fail-Loud Doctrine
+- **TẦNG 0 (Pre-generated Static MP3 / R2 CDN)**: 100% audio nội dung bài học BẮT BUỘC phải có file vật lý MP3 tĩnh trong `public/audio/week{N}/`. Mọi component khi gọi `speakText(text, audioUrl)` hoặc `VoiceService.speak` BẮT BUỘC truyền `audioUrl` hợp lệ.
+- **TẦNG 1 (Local Client / IndexedDB Cache)**: Kiểm tra `TTSCache.get()` (0ms latency, không tốn API call).
+- **TẦNG 2 (Google Cloud TTS Direct Synthesis)**: CHỈ được kích hoạt khi học sinh tự gõ chữ (dynamic user-generated text). BẤT KỲ request nào tới Google Cloud TTS trong quá trình học 15 Quests đều bị Gate Firewall đánh trượt (**FAIL**).
+- **TẦNG 3 (Browser SpeechSynthesis Fallback)**: Chỉ kích hoạt khi mất mạng hoàn toàn (*Dẫn chứng: AGENTS.md:184-194; docs/ARCHITECTURE_CURRENT.md:199-203*).
 
-Whenever such note-taking exercises occur (Cambridge Listening Part 2 notepad note-taking, spelling, and everyday dialogue):
-1. **Step 1: Authentic Two-Play Listening**:
-   - Audio plays twice with a 3-second thinking pause.
-   - Student types notes into digital notepad without visual prompts.
-2. **Step 2: Visual Diff Verification**:
-   - System displays a character-level color-coded visual diff (Green for correct, Red for missing or typo).
-3. **Step 3: Listen & Shadow Loop**:
-   - Plays target native audio model.
-   - Student records voice repeating the sentence with real-time feedback on pronunciation and rhythm.
+### §9. Mock Exam Cadence (34 Checkpoints Interpolated)
+- Căn cứ Quyết định Owner R75/R80/R81 (10–11/11/2026): Mock Exam là **tuần chèn thêm**, không chiếm tuần nội dung Source B. Toàn bộ 156 tuần nội dung (W01–W156) được giữ nguyên vẹn.
+- Toàn khóa gồm **34 Mock Checkpoints** phân bổ đều giữa các tuần nội dung (tổng 190 tuần lịch biểu):
+  - **3 Mock Đầu Khóa (EARLY: M01–M03)**:
+    - `M01` (sau W16, trước W17): Starters Shield Festival — *Tạm hoãn/giản lược theo Lite Mode do giới hạn tải nhận thức của trẻ 6–7 tuổi (Dẫn chứng: docs/MASTER_ARCHITECTURE_W01_W156.md:17, 245-289)*.
+    - `M02` (sau W24, trước W25): Mid-Movers Mock Exam — *Đánh giá giữa kỳ A1 Movers*.
+    - `M03` (sau W32, trước W33): Final Movers Mock Exam — *Đánh giá tốt nghiệp A1 Movers trước khi vào A2 Flyers*.
+  - **10 Mock Flyers (FLYERS: M04–M13)**:
+    - Chèn trước tuần $W33 + 4n$ ($n = 1..10$), tức sau các tuần nội dung $W36, W40, W44, W48, W52, W56, W60, W64, W68, W72$.
+    - Định dạng: `FULL_MOCK` Flyers (Cycle 0, 16 Cambridge parts: 5 Listening + 7 Reading & Writing + 4 Speaking).
+  - **21 Mock PET (PET: M14–M34)**:
+    - Chèn sau các tuần nội dung $W72 + 4k$ ($k = 1..21$), tức sau $W76, W80, W84, W88, W92, W96, W100, W104, W108, W112, W116, W120, W124, W128, W132, W136, W140, W144, W148, W152, W156$.
+    - Định dạng: Cambridge B1 Preliminary (PET) áp dụng xuyên suốt cho 100% mock sau W72 per Owner Decision R80 & R81. Mock cuối cùng (M34) chèn sau khi hoàn thành tuần nội dung W156.
 
----
+#### Bảng Tra Cứu 34 Mốc Khảo Thí Cambridge (Kiểm Chứng 100% Qua `scripts/verify_mock_schedule.mjs`)
 
-## 7. Quy Trình Sản Xuất Tuần Chuẩn Hóa 5 Giai Đoạn (Mass Production Pipeline W01–W156)
+| Checkpoint | Tier | Tên Mock Exam | Chèn Sau Tuần | Trước Tuần | Định Dạng Khảo Thí | Trạng Thái |
+|:---:|:---:|:---|:---:|:---:|:---|:---|
+| **M01** | EARLY | Starters Shield Festival | W16 | W17 | `STARTERS_LITE` | DEFERRED_LITE_MODE |
+| **M02** | EARLY | Mid-Movers Mock Exam | W24 | W25 | `CAMBRIDGE_MOVERS` | PLANNED |
+| **M03** | EARLY | Final Movers Mock Exam | W32 | W33 | `CAMBRIDGE_MOVERS` | PLANNED |
+| **M04** | FLYERS | Flyers Mock Exam 1 | W36 | W37 | `FLYERS_FULL_MOCK_CYCLE_0` | PILOT_CANDIDATE |
+| **M05** | FLYERS | Flyers Mock Exam 2 | W40 | W41 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M06** | FLYERS | Flyers Mock Exam 3 | W44 | W45 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M07** | FLYERS | Flyers Mock Exam 4 | W48 | W49 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M08** | FLYERS | Flyers Mock Exam 5 | W52 | W53 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M09** | FLYERS | Flyers Mock Exam 6 | W56 | Tuần 57 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M10** | FLYERS | Flyers Mock Exam 7 | W60 | W61 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M11** | FLYERS | Flyers Mock Exam 8 | W64 | W65 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M12** | FLYERS | Flyers Mock Exam 9 | W68 | W69 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M13** | FLYERS | Flyers Official Gate Mock Exam | W72 | W73 | `FLYERS_FULL_MOCK_CYCLE_0` | PLANNED |
+| **M14** | PET | B1 PET Mock Exam 1 | W76 | W77 | `CAMBRIDGE_B1_PET` | PILOT_CANDIDATE |
+| **M15** | PET | B1 PET Mock Exam 2 | W80 | W81 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M16** | PET | B1 PET Mock Exam 3 | W84 | W85 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M17** | PET | B1 PET Mock Exam 4 | W88 | W89 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M18** | PET | B1 PET Mock Exam 5 | W92 | W93 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M19** | PET | B1 PET Mock Exam 6 | W96 | W97 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M20** | PET | B1 PET Mock Exam 7 | W100 | W101 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M21** | PET | B1 PET Mock Exam 8 | W104 | W105 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M22** | PET | B1 PET Mock Exam 9 | W108 | W109 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M23** | PET | B1 PET Mock Exam 10 | W112 | W113 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M24** | PET | B1 PET Mock Exam 11 | W116 | W117 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M25** | PET | B1 PET Mock Exam 12 | W120 | W121 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M26** | PET | B1 PET Mock Exam 13 | W124 | W125 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M27** | PET | B1 PET Mock Exam 14 | W128 | W129 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M28** | PET | B1 PET Mock Exam 15 | W132 | W133 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M29** | PET | B1 PET Mock Exam 16 | W136 | W137 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M30** | PET | B1 PET Mock Exam 17 | W140 | W141 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M31** | PET | B1 PET Mock Exam 18 | W144 | W145 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M32** | PET | B1 PET Mock Exam 19 | W148 | W149 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M33** | PET | B1 PET Mock Exam 20 | W152 | W153 | `CAMBRIDGE_B1_PET` | PLANNED |
+| **M34** | PET | B1 PET Final Capstone Mock Exam | W156 | — (Cuối khóa) | `CAMBRIDGE_B1_PET` | PLANNED |
 
-Quy trình sản xuất công nghiệp chuẩn hóa để nhân bản tuần học (chuẩn bị mass production cho ~136 tuần W01–W32 và W35–W156) mà không cần suy luận thủ công lại từ đầu:
+- **Quy chế Tuần Nội dung W33–W72**: Toàn bộ 40 tuần nội dung W33–W72 vận hành xoay vòng trên **4 Rotary Cycles (Cycle 1–4)**, mỗi tuần gồm 4 Cambridge Parts (tổng 16 parts hoàn chỉnh sau 4 tuần). Các tuần nội dung KHÔNG chạy Mock. [LEGACY, ĐÃ BÃI BỎ]: CẤM mô tả mô hình cũ "Cycle 5 (Mock) W37, W42..." vì mâu thuẫn với lịch chèn mock R75.
+- **Mock Checkpoints (M04–M13)**: Hoạt động ở chế độ `FULL_MOCK` (Cycle 0 trong `bossRotarySchedule.js`, bao gồm đầy đủ 16 Cambridge Parts: 5 Listening + 7 Reading & Writing + 4 Speaking).
+- **Hiện Trạng Code & Đối Chiếu Kỹ Thuật Rotary Schedule**:
+  - Tại `src/config/bossRotarySchedule.js:132-133`, code thực thi runtime là modulo 4: `const offset = ((w - 33) % 4 + 4) % 4; const cycleKey = isMock ? 0 : (offset + 1);`. Logic này đảm bảo các tuần nội dung xoay vòng chuẩn qua Cycles 1–4 mà không bị mock xen ngang làm lệch pha (*Dẫn chứng: raw_outputs/r111_f_rotary_reconciliation.txt*).
+  - Ghi nhận tại `docs/Claude_handoff.txt:265-266` phản ánh phiên bản cũ trước Round 81 khi code còn chạy modulo 5 tại dòng 127.
+  - [LEGACY / CODE DEBT, ĐÃ BÃI BỎ]: Dòng 85 của `src/config/bossRotarySchedule.js` còn comment cũ `// Cycle 0 = Full Mock (Week 5 of each 5-week rotation: W37, W42…)`, đây là comment rác cần dọn khi mở băng `src/`.
+- **Quy chế Miễn trừ Toán (Capstone / Mock Exemption)**: Các tuần mang cờ `mode: "FULL_MOCK_ASSESSMENT"` hoặc `mode: "CAPSTONE_PROJECT"` được **MIỄN TRỪ HOÀN TOÀN** yêu cầu mảng `singapore_math` 5/5 theo thiết kế kiến trúc sư phạm (*Dẫn chứng: docs/MASTER_ARCHITECTURE_W01_W156.md:309-322*).
 
-```mermaid
-graph TD
-    Stage1[Giai đoạn 1: Trích xuất Syllabus từ Khung CT Gốc] --> Stage2[Giai đoạn 2: Sinh Nội dung 6 Hạng mục Sư phạm]
-    Stage2 --> Stage3[Giai đoạn 3: Tích hợp & Đồng bộ 4 Central Data Hubs]
-    Stage3 --> Stage4[Giai đoạn 4: Thẩm định 14 Automated Quality Gates]
-    Stage4 --> Stage5[Giai đoạn 5: Đóng băng & Kiểm soát Toàn vẹn Manifest]
-```
+### §10. Story Writer Dual Standard
+- **Day 4 `story_writer` (Creator Studio)**: Xưởng học tập viết sáng tạo có giàn giáo 5 cảnh (`writing_panel_1..5.png`) theo chuẩn S3 và `WEEK_CONTENT_SOP_W34_PLUS.md`, yêu cầu tối thiểu **40 từ** (~8 từ/cảnh).
+- **Day 5 `boss_reading` Part 7 (Boss Castle)**: Phòng thi Cambridge Flyers chính thức theo Handbook for Teachers và `src/config/cambridgeExamStandards.js:141-144`, gồm đúng **3 tranh**, yêu cầu viết **≥ 20 từ**.
 
----
+### §11. 5-Feature Data Contracts (v2.0.0 — 2026-09-05)
 
-### Giai đoạn 1: Trích xuất Thông số từ Khung CT Gốc 156 Tuần (Authoritative Syllabus Ingestion)
+Các tính năng nâng cao trong EngQuest3K yêu cầu hợp đồng dữ liệu chuẩn xác trong 4 Data Hubs:
 
-- **Mục tiêu**: Lấy đúng chủ đề, thể loại bài đọc, kỹ năng và ngữ pháp mục tiêu từ nguồn dữ liệu gốc duy nhất được đóng băng.
-- **Tài liệu nguồn (Inputs)**:
-  1. `docs/1. NEW-FINAL_Khung CT_SYLLABUS_3yrs copy.txt` (Khung CT gốc 156 tuần chính thức).
-  2. `docs/ENGQUEST_DIGITAL_SYLLABUS_W01_W156_MAP.md` (Bản đồ số hóa chi tiết 156 tuần).
-- **Các thông số bắt buộc trích xuất**:
-  - `weekNumber`: Số thứ tự tuần ($1 \dots 156$).
-  - `theme`: Chủ đề tuần học (e.g. W34: *"The Lion and the Mouse & Forest Ecosystem"*).
-  - `cefr_stage`: Giai đoạn CEFR (Stage 1: Pre-A1 $\rightarrow$ A2 Flyers; Stage 2: A2+ $\rightarrow$ B1 PET; Stage 3: B1+ Academic).
-  - `week_type`: Type A (Rotary Practice Week) hoặc Type B (Full Mock Test Week với `isFullMock: true`).
-  - `grammar_focus`: Trọng tâm ngữ pháp (e.g. Past Continuous with *While/When*).
-  - `clil_topic`: Chủ đề khoa học/xã hội liên môn tích hợp.
-  - `phonics_focus` / `vocab_domain`: Miền từ vựng và ngữ âm.
-- **Đầu ra (Output)**:
-  - File thông số tuần `src/data/weeks/week_{N}/blueprint.json` chứa toàn bộ metadata sư phạm.
-
----
-
-### Giai đoạn 2: Sinh Nội Dung 6 Hạng Mục Sư Phạm Bắt Buộc (6 Core Pedagogical Deliverables — W34 Gold Standard Checklist)
-
-Lấy Tuần 34 làm khuôn mẫu chuẩn mực (Gold Standard Template), tác giả và agent bắt buộc phải rà soát qua bảng **Checklist Sư phạm 6 Hạng mục** trước khi ráp vào hệ thống:
-
-#### 📋 Checklist Chi tiết 6 Hạng mục Sư phạm:
-
-- [ ] **1. Hạng mục 1: Bài đọc Khoa học Liên môn CLIL (Interdisciplinary CLIL Article)**:
-  - Dung lượng: 90 – 200 từ (chuẩn A2 Flyers: ~120 – 150 từ).
-  - Độ dài câu: $\le 28$ từ/câu; chứa tối thiểu 3 fact units hoàn chỉnh (Subject + Action + Outcome).
-  - **Nguyên tắc Toàn vẹn Thuật ngữ (100% Glossary In-Text Presence)**: 100% các thuật ngữ trong `glossary` ($\ge 7$ từ) BẮT BUỘC phải xuất hiện thực tế trong văn bản `content_en`, CẤM định nghĩa từ mà bài đọc không dùng.
-  - Đi kèm: 5 câu hỏi đọc hiểu `check_questions` và 1 câu hỏi tư duy phản biện `critical_thinking`.
-
-- [ ] **2. Hạng mục 2: Danh mục Từ vựng Mục tiêu Cốt lõi & Ôn tập (Vocab & Foundation Review)**:
-  - Đúng 20 từ vựng cốt lõi mới (`week{N}Vocab`) theo chuẩn CEFR của tuần.
-  - Mỗi từ có đầy đủ: `word`, `definition_en`, `definition_vi`, `example_en`, `example_vi`, `audio_word`.
-  - **Mở rộng Ôn tập Ngắt quãng (SRS Foundation Review)**: Bổ sung các từ mục tiêu nền tảng xuất hiện trong tuần (e.g. `tiny`, `huge`, `help`) có gắn cờ `tier: "foundation_review"` để hệ thống SRS nạp vào lịch ôn tập ngắt quãng.
-  - **Ghi chú Từ vựng CLIL Mở rộng**: Ghi rõ `category: "CLIL_EXTENSION"` cho các thuật ngữ khoa học vượt chuẩn Flyers một bậc (e.g. `ecosystem`) để hệ thống kiểm tra tự động (`gate12`) không cảnh báo lỗi vượt cấp độ.
-
-- [ ] **3. Hạng mục 3: Voice Shadowing & Trọng tâm Ngữ âm (Pronunciation & Phonology Triad)**:
-  - Gồm 8 câu luyện phát âm bám sát cốt truyện.
-  - Đầy đủ phiên âm IPA cho từng từ (`ipa: [...]`).
-  - **Bộ Ba Âm Đuôi Quá Khứ (Past Tense -ed Ending Triad)**: Nếu tuần có trọng tâm phát âm quá khứ đơn, 8 câu Shadowing BẮT BUỘC phải bao quát đầy đủ cả 3 nhóm âm đuôi:
-    - Nhóm **/t/** (sau âm vô thanh /p, k, f, s, ʃ, tʃ/: `trapped`, `promised`, `escaped`, `thanked`).
-    - Nhóm **/d/** (sau âm hữu thanh và nguyên âm: `chewed`, `roared`, `freed`, `stayed`).
-    - Nhóm **/ɪd/** (sau âm /t/ và /d/: `rested`, `trusted`, `waited`, `started`).
-
-- [ ] **4. Hạng mục 4: Các đoạn văn khảo thí F5D3 Reading & Writing Passages**:
-  - `rw_part1`: 15 từ vựng Word Bank + 10 định nghĩa + 1 ví dụ mẫu.
-  - `rw_part2`: Cuộc trò chuyện Dialogue A-H gồm 5 lượt thoại (`turns`) + 8 phương án (`answer_options`) + 1 ví dụ mẫu (`example`).
-  - `reading_part3_story`: Bài đọc điền từ 5 chỗ trống + 10 từ Word Bank + 3 phương án chọn tiêu đề (`title_options`).
-  - `rw_part4`: Bài đọc ngữ pháp Cloze 10 chỗ trống trắc nghiệm 3 lựa chọn (`blanks`) + 1 ví dụ mẫu blank 0.
-  - `rw_part5`: Đoạn văn trích xuất thông tin 7 câu điền từ tự do (`questions`, không có phương án trắc nghiệm) + 1 ví dụ mẫu.
-  - `rw_part_6`: Bài viết nhật ký Open Cloze 5 chỗ trống điền 1 từ duy nhất + 1 ví dụ mẫu.
-
-- [ ] **5. Hạng mục 5: Dữ liệu Tương tác Mini-games F7D1 & Action Lab**:
-  - `science_lab` (Action Lab): Cung cấp tối thiểu 3 kịch bản / diagram tương tác (`stages: [Stage 1, Stage 2, Stage 3]`) về nguyên nhân vật lý, vật liệu đối ứng và quy trình xử lý thực tế theo Invariant 7.
-  - `singapore_math`: Đúng 5 bài toán tư duy Bar Model theo chuẩn C.U.B.E.S. kèm dữ liệu `modelData` (part-whole / comparison) khớp 100% kết quả tính toán.
-  - `grammar_drills`: 5 câu Grammar Duel sắp xếp trật tự từ có từ gây nhiễu (`distractor_blocks`).
-  - `story_writer`: Khung 3 bức tranh với 3 nấc thang MODEL $\rightarrow$ BUILD $\rightarrow$ WRITE và từ nối thời gian (`connectors`).
-
-- [ ] **6. Hạng mục 6: Kịch bản Âm thanh & Asset Âm thanh Pre-generated**:
-  - Khai báo đầy đủ và tạo sẵn file MP3 vật lý trong `public/audio/week{N}/`:
-    - 8 câu Voice Shadowing.
-    - Bài đọc CLIL Explore.
-    - 20+ file âm thanh từ vựng (`vocab_{word}.mp3`).
-    - Listening Parts 1–5 và Speaking Part 2/4.
-  - Đảm bảo 100% file tồn tại và dung lượng $> 0\text{ bytes}$ để vượt qua Gate 3.
-
-- **Đầu ra (Output)**: Bộ bản thảo nội dung sẵn sàng ráp vào các Hub.
-
----
-
-### Giai đoạn 3: Tích Hợp & Đồng Bộ 4 Central Data Hubs (Hub Integration & Purity)
-
-- **Mục tiêu**: Tạo lập cấu trúc thư mục `src/data/weeks/week_{N}/` và xuất khẩu đúng chuẩn các biến dữ liệu:
-  - `index.js`: Khai báo metadata tuần (`weekNumber`, `theme`, `cefr_level`, `isFullMock`, các hub con).
-  - `reading_hub.js`: Webtoon story scenes (5 cảnh có hotspots), Voice Shadowing (8 câu có IPA), CLIL article & glossary, Cambridge Reading Parts 1–6.
-  - `listening_hub.js`: Listening Parts 1–5 chuẩn Cambridge Movers/Flyers, Action Lab, Singapore Math, Grammar Duel.
-  - `writing_hub.js`: Creative Story Writer (3 panels có 3 nấc thang), Discovery Report config (Data Card + 1-Tap Pills), Writing Chunks (4 nhóm ngữ đoạn).
-  - `speaking_hub.js`: Video Challenge teleprompter, Info Exchange cue cards, Spot-Differences (4 cặp điểm khác biệt có tọa độ hotspot), Personal Questions.
-  - `skill_practice_hub.js`: Tập trung Grammar Drills, Singapore Math 5 bài toán và Action Lab.
-
----
-
-### Giai đoạn 4: Thẩm Định Độc Lập Qua 14 Automated Quality Gates (Automated Gate Sweep)
-
-Tuần học BẮT BUỘC phải chạy tuần tự và đạt 100% PASS trên tất cả **14 Quality Gates**:
-
-```bash
-# 1. Gate 3: Kiểm tra toàn vẹn tài nguyên media vật lý (ảnh, audio)
-node scripts/gate3_media_integrity.mjs {N}
-
-# 2. Gate 4: Kiểm tra in đậm ngữ đoạn và cấu trúc cụm từ retell/shadowing
-node scripts/gate4_chunk_bolding.mjs {N}
-
-# 3. Gate 8: Quét sạch mã dự phòng và dummy string (No-fallback sweep)
-node scripts/gate8_no_fallback_sweep.mjs {N}
-
-# 4. Gate 10: Kiểm tra tính chuẩn xác ngữ pháp các câu ví dụ Cambridge
-node scripts/gate10_example_grammaticality.mjs {N}
-
-# 5. Gate 11: Kiểm tra độ phong phú nội dung (vocab, math, grammar drills, science_lab stages)
-node scripts/gate11_content_richness.mjs {N}
-
-# 6. Gate 12: Thẩm định cấp độ CEFR và độ dài câu từ vựng
-node scripts/gate12_comprehensive_cefr.mjs {N}
-
-# 7. Gate 13: Xác thực cấu trúc 5 Zones / 15 Quests và nhịp xoay vòng rotary
-node scripts/gate13_rotary_schedule.mjs {N}
-
-# 8. Gate 15: Kiểm thử DOM thực tế trên Headless Chrome & WebKit
-node scripts/gate15_production_dom_assertions.mjs {N}
-
-# 9. Gate 16: Thẩm định chất lượng CLIL fact units, banned strings & writing chunks
-node scripts/gate16_content_quality.mjs {N}
-
-# 10. Gate 17: Thẩm định Cambridge Mechanic Fidelity Doctrine (14 Invariants)
-node scripts/gate17_fidelity_doctrine.mjs {N}
-
-# 11. Gate 15 v2: Thẩm định tương tác chức năng động & phát âm thanh trên production
-node scripts/gate15_v2_functional_audio_playtest.mjs {N}
-
-# 12. Schema Uniformity Gate: Quét sạch fallback kép (.items || .fields) và lệch khóa
-node scripts/gate_schema_uniformity.mjs {N}
-
-# 13. Whitelist Entity Gate: Chặn đứng thực thể ngoại lai và rò rỉ nhân vật lạc đề
-node scripts/gate_whitelist_entities.mjs {N}
-
-# 14. Freeze Guard: Kiểm tra khóa toàn vẹn file và chống drift
-node scripts/guard_golden_w{N}_freeze.mjs
-```
-
-**Bảng Tiêu chí Chấp thuận (Pass Criteria Matrix)**:
-
-| Cổng (Gate) | Tên Gate Script | Tiêu chuẩn Đạt (Acceptance Criteria) |
-|:---|:---|:---|
-| **Gate 3** | `gate3_media_integrity.mjs` | 100% file ảnh và audio được khai báo tồn tại thực tế trên đĩa, không 404. |
-| **Gate 4** | `gate4_chunk_bolding.mjs` | 100% câu narration có in đậm cụm từ Collocations hợp lệ. |
-| **Gate 8** | `gate8_no_fallback_sweep.mjs` | 0 dummy strings (không chứa `"Related to "`, `"Lorem"`, `"placeholder"`). |
-| **Gate 10** | `gate10_example_grammaticality.mjs` | 0 lỗi ngữ pháp trong các câu mẫu Cambridge Part 1–6. |
-| **Gate 11** | `gate11_content_richness.mjs` | Đủ 20 từ vựng cốt lõi; 5 bài toán Singapore Math, 5 câu Grammar Drills và Action Lab 3 stages. |
-| **Gate 12** | `gate12_comprehensive_cefr.mjs` | 0 vi phạm từ vựng ngoài CEFR A2 Flyers (cho Stage 1); độ dài câu đạt chuẩn. |
-| **Gate 13** | `gate13_rotary_schedule.mjs` | Đúng 5 Zones / 15 Quests; phân bổ 3 Quests/ngày khớp 100% Ma trận. |
-| **Gate 15** | `gate15_production_dom_assertions.mjs` | 15/15 Quests render thành công trên DOM production, 0 console error. |
-| **Gate 16** | `gate16_content_quality.mjs` | $\ge 3$ fact units CLIL; 0 banned strings; 4 nhóm writing chunks hoàn chỉnh. |
-| **Gate 17** | `gate17_fidelity_doctrine.mjs` | `schemaValid: true`; 14/14 Invariants PASS; 16/16 component Cambridge tồn tại. |
-| **Gate 15 v2** | `gate15_v2_functional_audio_playtest.mjs` | 15/15 quest functional PASS: 0 runtime TTS, 0 missing audio, 0 frozen phases, 0 dictation tabs |
-| **Schema Uniformity** | `gate_schema_uniformity.mjs` | 0 dual-fallback patterns, 0 schema key drift |
-| **Whitelist Entity** | `gate_whitelist_entities.mjs` | 0 rogue entity violations |
-| **Gate Guard** | `guard_golden_w{N}_freeze.mjs` | 100% file cốt lõi khớp mã băm SHA-256 đã đóng băng trong Manifest. |
-
----
-
-### Giai đoạn 5: Đóng Băng Chất Lượng & Tạo Manifest Hash (Freeze & Verification)
-
-- **Mục tiêu**: Khóa chặt nội dung tuần học sau khi vượt qua toàn bộ 14 Gates, đảm bảo không bị drift hoặc vô tình sửa đổi trong các đợt refactor hệ thống sau này.
-- **Các bước thực hiện**:
-  1. Tính mã băm SHA-256 cho các file dữ liệu cốt lõi (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`, `skill_practice_hub.js`, `vocab.js`, `GATE15_SPEC_W{N}.json`).
-  2. Ghi nhận vào file manifest đóng băng: `docs/W{N}_GOLDEN_FREEZE_MANIFEST.json`.
-  3. Thiết lập script bảo vệ `scripts/guard_golden_w{N}_freeze.mjs` và thêm vào suite CI/CD.
-  4. Thực hiện Git commit với thông điệp chuẩn hóa:  
-     `feat(week-{N}): freeze golden standard curriculum core [14-gates-passed]`
-
----
-
-## 9. Multi-Agent Review Protocol & Verification Checklist
-
-Before pushing to production, the authoring agent must execute the **Multi-Agent Review Checklist**:
-
-- [ ] **Variable Declarations**: No undeclared variables or TDZ risks.
-- [ ] **Cheat-proofing**: Speech recognition requires authentic voice input; no bypass length mocks.
-- [ ] **Data Integrity**: `logAttempt` called only when `isAttempted: true`.
-- [ ] **Build Verification**: `npm run build` exits with code 0.
-- [ ] **Manifest Drift Test**: `npm run test:manifest:drift` passes.
-- [ ] **5-Feature Compliance**: `node scripts/gate18_feature_compliance.mjs N` exits with code 0 (or ⚠️ warnings-only for W33–W48).
-- [ ] **Reviewer Report**: Documented in commit message or PR summary.
-
----
-
-## 10. 5-Feature Data Contracts (v2.0.0 — 2026-09-05)
-
-The following features require specific data contracts in week hub files. Content-writer subagents and human authors MUST include these contracts when producing new weeks.
-
-### 10.1 Feature-to-Data Mapping
+#### 11.1. Feature-to-Data Mapping
 
 | Feature | Data Location | Required Fields | First Week Required |
 |---|---|---|---|
 | **SRS Leitner 5-Box** | `reading_hub.js → vocab[]` | `word`, `definition_en`, `definition_vi` | W17 (auto-enroll) |
 | **Inference Questions** | `reading_hub.js → clil_article.inference_questions[]` | `id`, `text`, `type`, + type-specific fields | W38 (optional), **W49+ enforced** |
-| **Quick Write Panel** | None (dynamic prompts from context) | — | — |
+| **Quick Write Panel** | Dynamic prompts from context | — | — |
 | **Placement Test** | `data/placementTest.js` (one-time) | — | — |
-| **Parent Dashboard Radar** | Computed from quest completion data | — | — |
+| **Parent Dashboard Radar** | Computed from 15-quest completion data | — | — |
 
-### 10.2 Inference Questions Contract
-
-Each `clil_article` in `reading_hub.js` MUST include an `inference_questions` array:
-
+#### 11.2. Inference Questions Contract
+Mỗi `clil_article` trong `reading_hub.js` BẮT BUỘC cung cấp mảng `inference_questions`:
 ```javascript
 inference_questions: [
   {
-    id: 'infer_1',                           // Must start with "infer_"
-    text: 'Why did Jake help the new student?', // "Why?" or "What can we learn?" format
-    type: 'mcq_with_evidence',               // or 'open_response'
-    options: ['Because...', 'Since...', 'Due to...'], // 3–4 options (MCQ only)
-    correct: 0,                              // index of correct answer (MCQ only)
-    scaffoldHint: 'Look at paragraph 2...',  // optional scaffold for Learn mode
+    id: 'infer_1',                             // Bắt đầu bằng "infer_"
+    text: 'Why did Jake help the new student?', // Dạng "Why?" hoặc "What can we learn?"
+    type: 'mcq_with_evidence',                 // hoặc 'open_response'
+    options: ['Because...', 'Since...', 'Due to...'], // 3–4 phương án (chỉ MCQ)
+    correct: 0,                                // Index đáp án đúng (chỉ MCQ)
+    scaffoldHint: 'Look at paragraph 2...',    // Gợi ý giàn giáo
   },
   {
     id: 'infer_2',
     text: 'What can we learn from this experiment?',
     type: 'open_response',
-    modelAnswer: 'We can learn that...',     // required for open_response
-    acceptableKeywords: ['friction', 'force', 'surface'], // required for scoring
-  },
+    modelAnswer: 'We can learn that...',       // Câu trả lời mẫu (bắt buộc cho open_response)
+    acceptableKeywords: ['friction', 'force', 'surface'], // Từ khóa chấm điểm
+  }
 ]
 ```
+**Số lượng tối thiểu theo thế hệ:**
+- Thế hệ 1 (W33–W72, A2 Flyers): $\ge 2$ câu
+- Thế hệ 2 (W73–W120, B1 PET): $\ge 2$ câu (Theo Quyết định Owner R81: PET áp dụng xuyên suốt đến hết W120)
+- Thế hệ 3 (W121–W156, B1+ Academic): $\ge 3$ câu phân tích sâu (B1+ Academic bắt đầu từ W121 per Source B Phase 3 & Owner R81)
 
-**Minimum counts by generation:**
-- Gen 1 (W33–W72, A2 Flyers): ≥2 items
-- Gen 2 (W73–W112, B1 PET): ≥2 items
-- Gen 3 (W113–W156, B1+ Academic): ≥3 items (deeper analytical types)
+#### 11.3. Vocab SRS Contract (Dynamic Count, Không Có Số Cố Định)
+Mảng `vocab` trong `reading_hub.js` chứa các mục từ vựng trọng tâm sư phạm theo chủ đề tuần (Dynamic lexical count — KHÔNG áp đặt số lượng cố định), mỗi mục gồm:
+- `word` (string) — Từ vựng mục tiêu
+- `definition_en` (string) — Định nghĩa tiếng Anh chuẩn CEFR
+- `definition_vi` (string) — Định nghĩa tiếng Việt có dấu đầy đủ
+Các mục này được hệ thống SRS Leitner 5-Box tự động ghi danh vào flashcard học tập của học sinh.
 
-### 10.3 Vocab SRS Contract
+#### 11.4. Golden Templates
+Bộ template mẫu chuẩn hóa dành cho subagents và tác giả nội dung:
 
-The `vocab` array in `reading_hub.js` MUST have **exactly 20 items**, each with:
-- `word` (string) — the target vocabulary word
-- `definition_en` (string) — English definition
-- `definition_vi` (string) — Vietnamese definition with full diacritics
-
-These fields are consumed by the SRS Leitner 5-Box system for automatic flashcard enrollment.
-
-### 10.4 Golden Templates
-
-Reference templates for content-writer subagents:
-
-| Template | Range | Path |
+| Template | Range / Checkpoints | Path |
 |---|---|---|
-| Flyers Rotary (80% of weeks) | W33–W72 | `production_kit/templates/template_flyers_rotary.js` |
-| Flyers Full Mock (20%) | W37, W42, ... W72 | `production_kit/templates/template_flyers_mock.js` |
-| PET Transition | W73–W112 | `production_kit/templates/template_pet_transition.js` |
-| B1+ Academic Transition | W113–W156 | `production_kit/templates/template_b1plus_transition.js` |
+| Flyers Rotary (Content Weeks) | W33–W72 (Tuần nội dung) | `production_kit/templates/template_flyers_rotary.js` |
+| Flyers Full Mock (Checkpoints) | M04–M13 (Chèn sau W36, 40, ..., 72) | `production_kit/templates/template_flyers_mock.js` |
+| PET Transition | W73–W120 | `production_kit/templates/template_pet_transition.js` |
+| B1+ Academic Transition | W121–W156 | `production_kit/templates/template_b1plus_transition.js` |
 
-### 10.5 Automated Gate Validation
-
+#### 11.5. Automated Gate Validation (gate18)
 ```bash
-# Run after content creation, before commit
+# Chạy thẩm định tuân thủ 5 tính năng trước khi commit
 node scripts/gate18_feature_compliance.mjs <weekNumber>
 ```
-
-**Enforcement timeline:**
-- **W33–W48**: Warnings only (transition period, gate exits 0)
-- **W49+**: Strict enforcement (gate exits 1 on missing data)
-
----
-
-## 11. Universal Progress Persistence & Return-to-Map Navigation Standards (W01–W156)
-
-### 11.1 The Dual-Store Architecture
-EngQuest3K uses two synchronized state stores for user progress:
-1. **`useDailyQuestStore` (`src/stores/useDailyQuestStore.js`)**:
-   - Manages Day 1–5 unlock progression, 15 Quests completion matrix (`completedQuests['w' + weekId][questId]`), and XP/streak gamification.
-   - Authoritative dispatcher: `completeQuest(weekId, questId, options)`.
-   - Built-in `QUEST_ALIAS_MAP` automatically harmonizes technical station IDs and quest names:
-     - `science_lab` $\leftrightarrow$ `action_lab`
-     - `story_writer` $\leftrightarrow$ `story_writing`
-     - `broadcast_studio` $\leftrightarrow$ `video_challenge`
-     - `gear4_clil` $\leftrightarrow$ `clil`
-     - `science_report` $\leftrightarrow$ `discovery_report`
-     - `word_blitz` $\leftrightarrow$ `speed_match`
-     - `sentence_smash` $\leftrightarrow$ `grammar_duel`
-     - `math_quest` $\leftrightarrow$ `bar_model`
-2. **`useUserStore` (`src/stores/useUserStore.js`)**:
-   - Manages user profile, local progress cache (`progressCache[weekId][stationId]`), and Supabase cloud persistence (`syncProgressToServer`).
-   - Auto-updated by `useDailyQuestStore.completeQuest` on every quest completion.
-3. **`useStationProgress` Hook (`src/hooks/useStationProgress.js`)**:
-   - Provides station-level state (`saveProgress`, `isCompleted`, `score`).
-   - Automatically synchronizes with `useDailyQuestStore.completeQuest` whenever `saveProgress(partialData, true, score)` is invoked.
-
-### 11.2 15-Quest Completion & Navigation Checklist
-Every component representing one of the 15 Quests MUST implement the following UX pattern:
-1. **Prop Acceptance**: Accept `onBackToMap` and `onComplete` passed down from `TaskScreen.jsx` and Zone containers.
-2. **Completion Recognition**: Read both stores on mount (`useDailyQuestStore.isQuestCompleted` or `useStationProgress.isCompleted`). If already completed:
-   - Display a prominent `✓ Completed` badge in the header or hero card.
-   - Allow the student to replay/review freely without losing completion state.
-3. **Finish Action**: Upon completing the quest activity:
-   - Call `useDailyQuestStore.getState().completeQuest(weekId, questId, { score })` or `saveProgress(..., true, score)`.
-   - Provide an explicit, prominent button: e.g. `✓ Return to Map (+50 XP)` or `✓ Finish Quest & Return to Map`.
-   - Trigger `onBackToMap()` or `onComplete()` to navigate cleanly back to `/week/${weekId}/hub/1`. Never leave the student trapped on a static screen.
+**Lộ trình áp dụng:**
+- **W33–W48**: Chế độ cảnh báo (Warnings only, exit 0).
+- **W49+**: Chế độ cưỡng chế nghiêm ngặt (Fail gate, exit 1 nếu thiếu dữ liệu).
 
 ---
 
-## 12. Chronicles 21 Mini-Game Mode Architecture & Release Gating Standards [TẠM DỪNG — Chờ chỉ đạo Owner (2026-10-30)]
+# LỚP 2: HỢP ĐỒNG TÀI SẢN THEO PROFILE (PROFILE-BASED QUEST ASSET CONTRACT)
 
-> [!WARNING]
-> **TRẠNG THÁI PHÁT TRIỂN / SẢN XUẤT: TẠM DỪNG (SUSPENDED)**  
-> Kể từ ngày 2026-10-30, toàn bộ tiến trình sản xuất nội dung (`wh_questions.js`, `word_class_duel.js`) và tích hợp 21 Mini-Games của Super Leo Chronicles tạm thời dừng lại theo chỉ đạo của Project Owner để tập trung nguồn lực hoàn thiện 100% Core 15 Quests / 5 Zones và Pipeline sản xuất hàng loạt.  
-> Các quy chuẩn dưới đây được lưu giữ lại làm tài liệu tham chiếu kỹ thuật và sẽ chỉ được kích hoạt lại khi có thông báo chính thức từ Owner.
+### §12. Ma trận 6 Profiles Khảo thí & Năng lực (v2.2.0)
+*Toàn bộ dữ liệu bảng này được sinh tự động trực tiếp từ `docs/agent_artifacts/sop_draft/quest_asset_contract.json` qua script `scripts/render_contract_tables.mjs`.*
 
-### 12.1 The Master 21 Mini-Game Roster (7 Floors × 3 Doors)
-Super Leo Chronicles organizes gamified dungeon crawling across 7 Floors (Days 1–7), with each floor presenting exactly 3 doors:
+| Profile ID | Tên Profile | Khoảng Tuần | CEFR | Quests/Ngày (Tổng Quests) | Core Ảnh | Core Audio | Ext Ảnh | Ext Audio | Panels Story | Ngưỡng Từ | Cambridge Shield Parts | Trạng Thái Quy Trình (Pilot Gate) |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---|
+| **LITE** | Pre-A1 Starters (Lite Mode) | W01–W16 | Pre-A1 | 2 Quests/Ngày (10 Quests) | **15** | **16** | 0 | 0 | 1 panel | ≥ 10 từ | L:3, R:0, S:2 | DRAFT — PILOT-GATED: Cấm mass production cho đến khi tuần pilot được duyệt và contract được cập nhật. |
+| **YLE** | A1 Movers (Full 15-Quest Mode) | W17–W32 | A1 Movers | 3 Quests/Ngày (15 Quests) | **28** | **30** | 2 | 1 | 4 panels | ≥ 30 từ | L:5, R:6, S:4 | DRAFT — PILOT-GATED: Cấm mass production cho đến khi tuần pilot được duyệt và contract được cập nhật. |
+| **FLYERS** | A2 Flyers (North Star 1 — Golden Standard) | W33–W72 | A2 Flyers | 3 Quests/Ngày (15 Quests) | **29** | **39** | 2 | 1 | 5 panels | ≥ 40 từ | L:5, R:6, S:4 | ĐÃ ĐỐI CHIẾU & KIỂM CHỨNG CHÍNH THỨC (W33 GOLDEN MASTER) — DUY NHẤT ĐƯỢC CHẠY MASS PRODUCTION NGAY. |
+| **PET** | B1 Preliminary (Level 1 Post-Flyers) | W73–W120 | B1 Preliminary | 3 Quests/Ngày (15 Quests) | **19** | **29** | 0 | 0 | 1 panel | ≥ 100 từ | L:4, R:6, S:4 | DRAFT — PILOT-GATED: Cấm mass production cho đến khi tuần pilot W73 được duyệt và contract được cập nhật. |
+| **B1PLUS** | B1+ Strong Academic (Level 2 Post-Flyers) | W121–W156 | B1+ / B2 Prep | 3 Quests/Ngày (15 Quests) | **19** | **29** | 0 | 0 | 1 panel | ≥ 140 từ | L:4, R:6, S:4 | DRAFT — PILOT-GATED: Cấm mass production cho đến khi tuần pilot W121 được duyệt và contract được cập nhật. |
+| **MOCK** | Cambridge Mock Exam Checkpoints | Interpolated between content weeks (every 4 weeks: 3 early + 10 Flyers + 21 PET = 34 checkpoints total) | Theo cấp độ | 3 Quests/Ngày (15 Quests) | *Miễn trừ Singapore Math* | *Theo đề thi* | 0 | 0 | Format đề thi | Chuẩn đề | 100% Format đề thi thật | DRAFT — PILOT-GATED: Pilot M04 (Flyers) và M14 (PET đầu tiên) phải được duyệt trước khi nhân rộng. |
+
+### §13. Phân tầng Tài sản Truyền thông: Core vs Extended Assets
+- **Core Assets (Tài sản Cốt lõi — Tier 1)**:
+  - BẮT BUỘC 100% phải có mặt trên đĩa (`fs.existsSync`, size > 0, đúng định dạng).
+  - Thiếu bất kỳ 1 tài sản Core nào -> Tuần học bị đánh trượt (**FAIL**), cấm đóng băng, cấm merge vào production.
+  - Chuẩn mẫu FLYERS (W33): **29 Core Images + 39 Core Audio = 68 Media Files** (Chi tiết: 29 ảnh = 5 Webtoon + 1 CLIL + 5 Math + 5 Story + 11 Listening + 2 Speaking; 39 audio = 5 Webtoon + 8 Voice Shadow + 1 CLIL + 4 Discovery + 1 Video Prompt + 11 Info Exchange + 5 Listening + 4 Speaking).
+- **Extended Assets (Tài sản Mở rộng — Tier 2)**:
+  - Tài sản minh họa bổ trợ, hướng dẫn mở rộng (Diagram Action Lab, Diagram Discovery Report, Audio mẫu Retell).
+  - Thuộc diện "Polish Layer": KHÔNG chặn hoàn thành tuần, được phép sản xuất ở lượt polish.
+  - Tuần bàn giao BẮT BUỘC phải báo cáo rõ ràng tỷ lệ % Ext (không được gộp Ext vào để bù thiếu Core).
+  - Đánh dấu trạng thái: `MẶC ĐỊNH CỦA ANTIGRAVITY — chờ duyệt Claude`.
+
+### §14. Bảng Đặc tả Hợp đồng Tài sản 15 Quests theo Profile (15 Quests x 6 Profiles)
+*Sinh tự động từ `quest_asset_contract.json` qua `scripts/render_contract_tables.mjs`.*
+
+| Quest ID | Tên Hiển Thị UI Chuẩn | Zone | LITE (Img/Aud) | YLE (Img/Aud) | FLYERS (Img/Aud) | PET (Img/Aud) | B1PLUS (Img/Aud) | Missing Behavior |
+|:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| `gear1_webtoon` | Scene Explorer (Interactive Comic) | Zone 1 — Story World | 4 ảnh / 4 aud | 5 ảnh / 5 aud | **5 ảnh / 5 aud** | 5 ảnh / 5 aud | 5 ảnh / 5 aud | `FAIL_LOUD` |
+| `gear2_karaoke` | Voice Shadow (Karaoke Recording) | Zone 1 — Story World | 0 ảnh / 6 aud | 0 ảnh / 8 aud | **0 ảnh / 8 aud** | 0 ảnh / 8 aud | 0 ảnh / 8 aud | `FAIL_LOUD` |
+| `gear3_retell` | Story Retell (Linear Scaffold) | Zone 1 — Story World | — *(Giản lược)* | 0 ảnh / 0 aud *(+0e/1e)* | **0 ảnh / 0 aud *(+0e/1e)*** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `FAIL_LOUD` |
+| `gear4_clil` | Fact Finder (CLIL Discovery) | Zone 2 — Knowledge Lab | 1 ảnh / 1 aud | 1 ảnh / 1 aud | **1 ảnh / 1 aud** | 1 ảnh / 1 aud | 1 ảnh / 1 aud | `FAIL_LOUD` |
+| `science_lab` | Action Lab (Interactive Experiments) | Zone 2 — Knowledge Lab | 1 ảnh / 0 aud | 0 ảnh / 0 aud *(+1e/0e)* | **0 ảnh / 0 aud *(+1e/0e)*** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `FAIL_LOUD` |
+| `science_report` | Discovery Report (Discovery Detective) | Zone 2 — Knowledge Lab | — *(Giản lược)* | 0 ảnh / 4 aud *(+1e/0e)* | **0 ảnh / 4 aud *(+1e/0e)*** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `FAIL_LOUD` |
+| `word_blitz` | Speed Match (Vocabulary Duel) | Zone 3 — Battle Arena | 0 ảnh / 0 aud | 0 ảnh / 0 aud | **0 ảnh / 0 aud** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `DYNAMIC_EVAL` |
+| `sentence_smash` | Grammar Duel (Sentence Builder) | Zone 3 — Battle Arena | 0 ảnh / 0 aud | 0 ảnh / 0 aud | **0 ảnh / 0 aud** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `DYNAMIC_EVAL` |
+| `math_quest` | Math Quest (Singapore Bar Models) | Zone 3 — Battle Arena | — *(Giản lược)* | 5 ảnh / 0 aud | **5 ảnh / 0 aud** | 5 ảnh / 0 aud | 5 ảnh / 0 aud | `FAIL_LOUD` |
+| `story_writer` | Story Writer (Picture Story / Essay) | Zone 4 — Creator Studio | 1 ảnh / 0 aud | 4 ảnh / 0 aud | **5 ảnh / 0 aud** | 1 ảnh / 0 aud | 1 ảnh / 0 aud | `FAIL_LOUD` |
+| `broadcast_studio`| Video Challenge (Talkshow / Report) | Zone 4 — Creator Studio | — *(Giản lược)* | 0 ảnh / 1 aud | **0 ảnh / 1 aud** | 0 ảnh / 1 aud | 0 ảnh / 1 aud | `FAIL_LOUD` |
+| `info_exchange` | Info Exchange (Information Gap) | Zone 4 — Creator Studio | 1 ảnh / 1 aud | 0 ảnh / 2 aud | **0 ảnh / 11 aud** | 1 ảnh / 2 aud | 1 ảnh / 2 aud | `FAIL_LOUD` |
+| `boss_listening` | Listening Shield (Cambridge Exam) | Zone 5 — Boss Castle | 6 ảnh / 3 aud | 11 ảnh / 5 aud | **11 ảnh / 5 aud** | 4 ảnh / 4 aud | 4 ảnh / 4 aud | `FAIL_LOUD` |
+| `boss_reading` | Reading & Writing Shield | Zone 5 — Boss Castle | — *(Giản lược)* | 0 ảnh / 0 aud | **0 ảnh / 0 aud** | 0 ảnh / 0 aud | 0 ảnh / 0 aud | `DYNAMIC_EVAL` |
+| `weekly_review` | Speaking & Passport (Cambridge Exam)| Zone 5 — Boss Castle | 1 ảnh / 1 aud | 2 ảnh / 4 aud | **2 ảnh / 4 aud** | 2 ảnh / 4 aud | 2 ảnh / 4 aud | `FAIL_LOUD` |
+
+#### Quy Chuẩn Âm Thanh Bắt Buộc Của `info_exchange` (Dựa Theo Hub Khai Báo)
+- **Chuẩn Mực Bắt Buộc FLYERS Profile (W33 Golden Standard — 11 Files Audio Core)**:
+  - 100% audio hội thoại mẫu của `info_exchange` trong FLYERS Profile BẮT BUỘC tuân thủ cấu trúc đầy đủ của W33 Golden Standard gồm đúng 11 file audio tĩnh:
+    - 1 file Cambridge Speaking Intro Part 2: `/audio/week{W}/exam_intro_S2.mp3`
+    - 5 câu hỏi mẫu Table A: `/audio/week{W}/info_exchange_a1_model.mp3` .. `/audio/week{W}/info_exchange_a5_model.mp3`
+    - 5 câu trả lời mẫu Table A: `/audio/week{W}/info_exchange_reply_1.mp3` .. `/audio/week{W}/info_exchange_reply_5.mp3`
+  - CẤM TUYỆT ĐỐI mọi quy tắc nới lỏng hoặc dùng "HOẶC" (không chấp nhận phương án chỉ cung cấp 2 file intro thay thế cho bộ 10 file Model Dialogue).
+- **Ghi Nhận Nợ Tuân Thủ Của W34 (Compliance Debt Documentation)**:
+  - `speaking_hub.js` của W34 chỉ khai báo `exam_intro_S2.mp3` cùng 2 file intro tổng quan (`info_exchange_intro_p1.mp3`, `info_exchange_intro_p2.mp3`), hoàn toàn THIẾU 10 file Model Dialogue (`a1..a5_model.mp3` và `reply_1..5.mp3`).
+  - Đây là **Nợ tuân thủ (Compliance Debt)** của W34 so với W33 Golden Standard.
+  - Toàn bộ các tuần sản xuất mới W35+ BẮT BUỘC chuẩn hóa 100% theo đầy đủ 11 file audio của W33 Golden Standard.
+
+---
+
+### §15. [SUSPENDED & ABOLISHED ARCHITECTURE — DANH MỤC KIẾN TRÚC TẠM DỪNG & ĐÃ KHAI TỬ]
+> [!NOTE]
+> Bảng đối chiếu sự lệch R107 và Sổ nợ kỹ thuật chi tiết của W33/W34 đã được chuyển sang tài liệu riêng: `docs/agent_artifacts/sop_draft/SOP_APPENDIX_BACKLOG.md`.
+
+#### 15.1. [SUSPENDED] Super Leo Chronicles 21 Mini-Game Mode Architecture & Release Gating Standards
+> [!IMPORTANT]
+> **TRẠNG THÁI HIỆN TẠI: TẠM DỪNG HOÀN TOÀN (SUSPENDED)**  
+> Căn cứ chỉ đạo trực tiếp của Project Owner (Owner Decision R75, R80 và `docs/Claude_handoff.txt:25`):
+> - Game track Super Leo Chronicles **TẠM DỪNG HOÀN TOÀN** (không viết code mới, không kiểm toán, không đưa vào pipeline sản xuất tuần).
+> - **KHÔNG** thuộc quy trình sản xuất tuần, **KHÔNG** có quality gate tuần và **KHÔNG** có tài sản bắt buộc mỗi tuần.
+> - CẤM sản xuất `wh_questions.js` và `word_class_duel.js` trong các tuần nội dung mới.
+> - **ĐIỀU KIỆN MỞ LẠI**: CHỈ ĐƯỢC PHÉP mở lại khi có quyết định bằng văn bản chính thức của Owner.
+> - Toàn bộ cấu trúc dưới đây được lưu trữ như tài liệu tham chiếu kỹ thuật (Technical Archive) khi track được kích hoạt lại.
+
+**1. The Master 21 Mini-Game Roster (7 Floors × 3 Doors = 21 Mini-Games)**:  
+Super Leo Chronicles tổ chức hành trình thám hiểm ngục tối qua 7 Tầng (Floor 1–7), mỗi tầng gồm đúng 3 cánh cửa tương ứng 3 kỹ năng:
 
 | Floor | Door 1: Vocab | Door 2: Grammar | Door 3: Integration | Component File |
 |---|---|---|---|---|
@@ -497,40 +333,156 @@ Super Leo Chronicles organizes gamified dungeon crawling across 7 Floors (Days 1
 | **F6** | `synonym_storm` (Synonym Storm) | `connector_relay` (Connector Relay) | `story_sequencer` (Story Sequencer) | `SynonymStormGame.jsx` / `ConnectorRelayGame.jsx` / `StorySequencerGame.jsx` |
 | **F7** | `word_forge_scramble` (Word Forge) | `question_quest` (Question Quest) | `rune_balance_scale` (Word Class Duel) | `WordForgeScrambleGame.jsx` / `QuestionQuestGame.jsx` / `WordClassDuelGame.jsx` |
 
-- **Floor Navigation Invariant**:
-  In `ChroniclesScreen.jsx`, the condition to intercept for Mystery Vault / Boss Chamber MUST be `activeDayIndex >= 7` (representing all 7 daily rooms). Setting `activeDayIndex >= 5` prematurely blocks access to Floors 5 and 6.
+- **Bất biến Điều hướng Floor**: Trong `ChroniclesScreen.jsx`, điều kiện chặn Mystery Vault / Boss Chamber BẮT BUỘC là `activeDayIndex >= 7` (đủ 7 ngày). CẤM đặt `activeDayIndex >= 5` vì sẽ khóa sớm Floors 5 và 6.
 
-### 12.2 Required Weekly Chronicles Content Assets (W34+)
-Every newly authored week must supply two dedicated files alongside the 4 Data Hubs:
-1. **`src/data/weeks/week_{N}/wh_questions.js`**:
-   - 5 pre-generated WH-questions based on the week's Story Scenes & CLIL Article.
-   - Suffix verb detection MUST strictly check `-ed` (`length >= 4 && endsWith('ed')`). Never match bare `-d`.
-   - Never generate double possessives (`Maria's's`).
-   - Only query "What did ... remind ... about?" if the clause explicitly contains the verb `remind`.
-   - Pre-generate questions at build-time; never rely on naive runtime heuristics.
-   - Header comment: `// Pre-generated WH Questions — pending pedagogy review before release`.
-2. **`src/data/weeks/week_{N}/word_class_duel.js`**:
-   - 4 target dual-class words (e.g. `grip`, `slide`, `care`, `help`).
-   - Round 1 should prioritize genuine dual-class words from CLIL reading.
-   - For authored contextual sentences (Rounds 2–4), document provenance clearly in comments.
-   - Header comment: `// Word Class Duel draft — pending pedagogy review before release`.
+**2. Required Weekly Chronicles Content Assets (W34+) [THAM CHIẾU LƯU TRỮ KHI MỞ LẠI]**:  
+Khi kích hoạt sản xuất nội dung game track, mỗi tuần tác giả cung cấp 2 file dữ liệu chuyên biệt song song cùng 4 Data Hubs:
+- **`src/data/weeks/week_{N}/wh_questions.js`**: 5 câu hỏi WH tạo sẵn dựa trên Story Scenes & CLIL Article của tuần. Nhận diện hậu tố quá khứ BẮT BUỘC kiểm tra `-ed` (`length >= 4 && endsWith('ed')`). CẤM khớp `-d` trần. Tuyệt đối không sinh sở hữu cách kép (`Maria's's`).
+- **`src/data/weeks/week_{N}/word_class_duel.js`**: 4 từ mục tiêu lưỡng tính ngữ pháp (dual-class words, e.g. `grip`, `slide`, `care`, `help`). Round 1 ưu tiên từ thực tế trong bài đọc CLIL; Rounds 2–4 ghi rõ nguồn gốc câu văn trong comment.
 
-### 12.3 BUG-002 Prevention & Pure Lexical Isolation
-- **No Dummy Fallbacks**: CẤM TUYỆT ĐỐI `"Related to " + word` fallback in `contentService.js`, `extractQuestVocab.js`, `DailyRoomScreen.jsx`, and `ShadowVaultInfiltrate.jsx`.
-- **Lexical Isolation**: Integration mini-game vocab extractors must filter out any item containing `.sentence` or text with $> 3$ words to prevent grammar sentences from polluting vocabulary pools.
+**3. BUG-002 Prevention & Pure Lexical Isolation**:  
+- **Cấm Dummy Fallback**: CẤM TUYỆT ĐỐI chuỗi `"Related to " + word` fallback trong `contentService.js`, `extractQuestVocab.js`, `DailyRoomScreen.jsx`, và `ShadowVaultInfiltrate.jsx`.
+- **Cách ly Từ vựng thuần khiết**: Hàm trích xuất từ vựng mini-game tích hợp phải lọc bỏ bất kỳ mục nào chứa `.sentence` hoặc văn bản có $> 3$ từ để tránh câu ngữ pháp làm ô nhiễm kho từ vựng.
 
-### 12.4 Transparent Data Sizing & Assessment Metrics
-- Standard week vocab loader imports: 20 words from `reading_hub.vocab` + 10 definitions from `writing_hub.rw_part_1.definitions` = 30 total array slots.
-- For template/skeleton weeks (W34, W35), these 30 items are mock template entries until content is authored.
-- Agents must never report 30/30 as "30 verified custom definitions" for unauthored weeks.
+**4. Transparent Data Sizing & Assessment Metrics**:  
+- Trình nạp từ vựng nạp từ `reading_hub.vocab` và định nghĩa từ `writing_hub`.
+- Tuyệt đối không báo cáo số lượng mẫu tạm thời (mock placeholder) thành "từ vựng đã thẩm định" khi tuần chưa hoàn tất tác quyền.
 
-### 12.5 Release Gating & Pedagogical Sign-off Protocol
-- While game engine code and components are frozen and pass all automated tests, **the content in `wh_questions.js`, `word_class_duel.js`, and Connector Relay MUST undergo human pedagogical review before being enabled for real students**.
+**5. Release Gating & Pedagogical Sign-off Protocol**:  
+- Nội dung trong `wh_questions.js`, `word_class_duel.js`, và Connector Relay BẮT BUỘC trải qua thẩm duyệt sư phạm trước khi bật cho học sinh thực tế.
 - Pre-release gate checklist:
-  - [ ] Human review of dual-class sentences in `word_class_duel.js`.
-  - [ ] Human review of WH questions and hints in `wh_questions.js`.
-  - [ ] Human review of conjunction drills in `ConnectorRelayGame.jsx`.
-  - [ ] Verification of pure definitions across Floors 1–7 (0 `"Related to "` instances).
+  - [ ] Thẩm duyệt các câu lưỡng tính ngữ pháp trong `word_class_duel.js`.
+  - [ ] Thẩm duyệt câu hỏi WH và gợi ý trong `wh_questions.js`.
+  - [ ] Thẩm duyệt bài luyện từ nối trong `ConnectorRelayGame.jsx`.
+  - [ ] Xác thực định nghĩa thuần khiết trên Floors 1–7 (0 trường hợp `"Related to "`).
   - [ ] `npx eslint src/modules/chronicles/games/*.jsx` exit 0, `npm run build` exit 0.
 
+#### 15.2. [ABOLISHED] Dictation 3-Step Engine & Dictation Notepad
+- Khai tử hoàn toàn theo Quyết định Kiến trúc Gói 003B (`commit c30ab03e` & `commit efe32bb3`).
+- CẤM sinh file `dictation.js`, CẤM sinh audio `dictation_1..8.mp3`. 0% hiện diện trên UI (*Dẫn chứng: AGENTS.md:214*).
 
+#### 15.3. [ABOLISHED] Trạm Vocab Rời & 20 Audio Từ Vựng Cố Định (vocab_*.mp3)
+- Khai tử theo Quyết định Owner Round 104 (*"Vocab là của cấu trúc cũ đã xoá bỏ từ lâu rồi mà????? SOP vẫn còn thì phải xoá đi"*).
+- Không còn trạm Vocab độc lập, không sản xuất `vocab.js`, không sinh 20 file `vocab_*.mp3`.
+- Từ vựng được tích hợp trực tiếp vào `reading_hub.vocab` với số lượng động theo chủ đề, không có số lượng 20 cố định.
+
+#### 15.4. [ABOLISHED] Flash Arena vocab Độc Lập
+- `word_blitz` (Speed Match) sử dụng trực tiếp các thẻ từ vựng trích xuất động từ reading hub và listening hub, không yêu cầu kho audio vocab riêng biệt (*Dẫn chứng: docs/ARCHITECTURE_CURRENT.md:231*).
+
+---
+
+# LỚP 3: QUY TRÌNH SẢN XUẤT TUẦN HÀNG LOẠT (MASS PRODUCTION WORKFLOW)
+
+### §16. Nguyên Tắc Nộp Bài & Kiểm Toán Bằng Chứng (Rule 0 Compliance)
+- Mọi báo cáo kết thúc bằng đường dẫn zip + `sha256sum` thật + dán `unzip -l`.
+- Mỗi round nộp **đúng 1 zip duy nhất** đặt tại `docs/review_packages/roundXX_YYYYMMDD.zip`.
+- Zip bắt buộc chứa đầy đủ 5 thư mục thành phần:
+  1. `raw_outputs/`: Toàn bộ stdout/stderr của mọi lệnh shell chạy qua wrapper.
+  2. `screenshots/`: Ảnh chụp bằng chứng từ Headless/Visible Browser thực tế.
+  3. `media/`: Các tài sản media mới sản xuất (nếu có).
+  4. `scripts/`: Mọi script kiểm toán, tự động hóa và đóng gói.
+  5. `src_diff.patch` + `MANIFEST.txt`: File danh sách thay đổi và bảng kê SHA-256 xác thực.
+- CẤM nộp file rời, cấm nộp nhiều zip chồng chéo. Script `package_check.mjs` kiểm tra và FAIL (exit 1) nếu thiếu thư mục hoặc thiếu file đã nêu trong báo cáo.
+
+### §17. Multi-Agent Review Protocol & Verification Checklist
+Trước khi commit bất kỳ thay đổi nào lên mã nguồn, Agent thực thi BẮT BUỘC phải spawn **Reviewer Agent** (ở chế độ phản biện độc lập / adversarial review) để thẩm định theo checklist 7 tiêu chí:
+- [ ] **1. Variable Declarations**: Mọi biến sử dụng trong hàm phải được khai báo trước đó; không có nguy cơ ReferenceError hoặc Temporal Dead Zone (TDZ).
+- [ ] **2. Cheat-proofing**: Không có fallback text injection; nhận dạng giọng nói bắt buộc từ microphone thật; không dùng độ dài chuỗi mock để bypass bài thi Speaking.
+- [ ] **3. Progress Data Integrity**: Hàm `logAttempt` chỉ được gọi khi `isAttempted: true`; không ghi nhận dữ liệu rác vào hệ thống analytics.
+- [ ] **4. Build Verification**: Lệnh `npm run build` BẮT BUỘC thoát mã 0 (exit code 0).
+- [ ] **5. Manifest Drift Test**: Lệnh `npm run test:manifest:drift` pass 100%.
+- [ ] **6. 5-Feature Compliance**: Lệnh `node scripts/gate18_feature_compliance.mjs <week>` pass (hoặc cảnh báo hợp lệ cho W33–W48).
+- [ ] **7. Reviewer Report**: Báo cáo phản biện độc lập được lập thành văn bản rõ ràng trước khi đóng gói nộp bài.
+
+### §18. Quy Tắc Nhóm Sản Xuất (Batch Production Rules)
+- **Quy mô lô sản xuất**: Đúng **2–4 tuần / round**.
+- **Tiêu chí Hoàn thành Lô (Completion Criterion)**: Tuần nào làm là phải đạt **100% Core Assets** theo hợp đồng profile (ảnh, audio, code hub, bài tập) TRƯỚC KHI chuyển sang tuần kế tiếp.
+- Tuyệt đối cấm làm dàn trải, cấm mở tuần mới khi tuần hiện tại chưa đạt 100% Core.
+
+### §19. Quy Trình PILOT Tiên Phong (Bắt Buộc Cho Profile Mới)
+- Trước khi sản xuất hàng loạt cho bất kỳ profile nào (LITE, YLE, PET, B1PLUS), BẮT BUỘC phải thực hiện **1 tuần Pilot tiên phong**:
+  - LITE: Pilot Tuần 01.
+  - YLE: Pilot Tuần 17.
+  - PET: Pilot Tuần 73.
+  - B1PLUS: Pilot Tuần 121.
+- Tuần Pilot phải được kiểm thử toàn diện trên trình duyệt thực tế, nghiệm thu sư phạm và đóng băng (Frozen Standard) trước khi mở khóa sản xuất hàng loạt cho các tuần còn lại của profile đó.
+
+### §20. Pipeline Sản Xuất Tuần Chuẩn Hóa
+Quy trình sản xuất gồm 7 bước tuần tự nghiêm ngặt (Game track Chronicles đã tạm dừng hoàn toàn theo chỉ thị Owner, không có bước sản xuất Chronicles):
+1. **Bước 1 — Ingestion**: Đọc syllabus và thông số tuần từ Source B và ma trận profile.
+2. **Bước 2 — Hub Authoring & Schema Validation**: Tạo 4 Data Hubs (`reading_hub.js`, `listening_hub.js`, `writing_hub.js`, `speaking_hub.js`). Ngay sau khi tạo xong dữ liệu hub, BẮT BUỘC chạy `node scripts/gate_schema_validation.mjs --generate-mode` để khóa và xác thực cấu trúc schema, ngăn chặn triệt để hiện tượng trôi dạt cấu trúc (schema drift) trước khi tiến hành sinh media.
+3. **Bước 3 — Media Generation**: Sinh ảnh vector Bar Model SVG (Quest 9), ảnh Story Writer panels (Quest 10), và ảnh Cambridge Listening (Quest 13).
+4. **Bước 4 — Audio Production**: Đảm bảo 100% audio Core theo Tầng 2 (Story scenes, Voice Shadowing, CLIL, Discovery Hotspots & Report, Cambridge Listening P1–P5, Cambridge Speaking Intros, Model Dialogue, Video Prompts) có file vật lý MP3 tĩnh trong `public/audio/week{N}/`.
+5. **Bước 5 — Automated Quality Gates Sweep & Git-Tracked Verification**:
+   - Chạy toàn bộ các Quality Gates tự động (Gate 1–Gate 19).
+   - Chạy `node scripts/gate_declared_media_tracked.mjs <week>`: Bắt buộc 100% media (ảnh, audio, svg) được khai báo trong 5 hub phải tồn tại trên đĩa vật lý, được theo dõi trong chỉ mục Git (`git ls-files --error-unmatch`), và không bị loại trừ bởi `.gitignore`. Đây là điều kiện tiên quyết (prerequisite) để CI/CD triển khai tài nguyên lên Cloudflare Pages.
+6. **Bước 6 — Gate 15 Browser Playtest & Live CDN Verification**:
+   - Chạy kiểm thử tự động trên Chrome thật với fake media stream theo đúng kịch bản Rotary Cycle / Spec của tuần.
+   - Chạy `node scripts/test_production_media_assets.mjs <week>` kiểm tra trên URL production live (`https://app.bkbacademy.vn`), xác nhận 100% asset trả về mã HTTP 200 và đúng Content-Type chuẩn (`audio/mpeg`, `image/png`, `image/jpeg`, `image/svg+xml`), tuyệt đối không chấp nhận mã 200 trả về `text/html` (bẫy fallback của Cloudflare Pages SPA router).
+7. **Bước 7 — Quality Sign-off & Freeze**: Khóa hash manifest (`docs/W{N}_GOLDEN_FREEZE_MANIFEST.json` với key `protectedFileHashes`) và thực hiện Multi-Agent Review.
+
+> 🔒 **BẤT BIẾN DUYỆT TUẦN (PRODUCTION RELEASE INVARIANT)**:  
+> Báo cáo nghiệm thu tuần chỉ được công nhận **PASS** và sẵn sàng bàn giao khi hội đủ 4 điều kiện bất khả xâm phạm:  
+> 1. Toàn bộ file media Core/Extended hiện diện 100% trên đĩa vật lý (Gate 3).  
+> 2. 100% media khai báo trong Hub được git-tracked (`gate_declared_media_tracked.mjs` PASS 100%).  
+> 3. 100% asset trên CDN production live trả về HTTP 200 và đúng Content-Type chuẩn (`audio/mpeg`, `image/png`, `image/jpeg`, `image/svg+xml`), không dính bẫy fallback `text/html` (`test_production_media_assets.mjs` PASS 100%).  
+> 4. Gate 15 Browser Playtest PASS theo đúng kịch bản Rotary Cycle của tuần.
+
+### §21. Hệ Thống Quality Gates Tự Động, Gate 15 Spec-Based Runner & Danh Mục Việc Chặn Mass Production
+1. **Bộ Quality Gates Tự Động Toàn Diện**:
+   - `Gate 1`: Blueprint Conformance
+   - `Gate 2`: Atomic Alignment
+   - `Gate 3`: Media Integrity (fs.existsSync, size > 0)
+   - `Gate 4`: Chunk Bolding & Retell Scaffolding
+   - `Gate 6`: XP Economy Consistency
+   - `Gate 8`: Zero Fallback Sweep
+   - `Gate 10`: Example Grammaticality
+   - `Gate 11`: Content Richness
+   - `Gate 12`: CEFR Vocabulary & Sentence Length
+   - `Gate 13`: 5-Zone / 15-Quest Structural & Rotary Cadence
+   - `Gate 15`: Browser DOM & Spec-Based Playtest Runner
+   - `Gate 18`: 5-Feature Data Compliance
+   - `Gate 19`: Data Hub Schema Validation (`scripts/gate_schema_validation.mjs --generate-mode`) — Chặn drift schema ngay sau bước sinh dữ liệu hub.
+   - `Gate Media Tracked`: Hub-Declared Media Git-Tracked Integrity (`scripts/gate_declared_media_tracked.mjs`) — Chặn tình trạng media có trên đĩa nhưng chưa được `git add/commit`, dẫn tới lỗi 404 trên CDN.
+   - `Gate Production CDN`: Live Production Media & Content-Type Assertion (`scripts/test_production_media_assets.mjs`) — Xác thực asset live trên domain production thật với Content-Type chuẩn (`audio/mpeg`, `image/*`).
+
+2. **Gate 15 Spec-Based Runner Architecture**:
+   - Runner `scripts/gate15_production_dom_assertions.mjs` hiện tại được viết cứng theo tương tác của Cycle 1 (W33). Khi chạy trên Cycle 2 (W34), runner bị kẹt do Part 3 Listening và Part 2 Reading & Writing có UI/DOM khác biệt, dẫn đến false negative trên dedup screenshot.
+   - **Kiến trúc Runner Dựa Spec**: Runner phải được tái cấu trúc để đọc file đặc tả kiểm thử theo tuần: `docs/GATE15_SPEC_W{N}.json` (hoặc spec ma trận Cycle 1–4). Mỗi spec xác định chính xác selector tương tác thực tế (`data-testid`), các bước bấm nút, và điều kiện khẳng định thành công (assertions).
+
+3. **Danh Mục Việc Bắt Buộc Trước Mass Production (Blocking Pre-requisites)**:
+   Trước khi kích hoạt sản xuất hàng loạt cho các tuần mới (W35+), 4 hạng mục kỹ thuật cốt lõi sau bắt buộc phải được giải quyết:
+   - **(a) Sửa Runner tương tác theo Cycle/Spec**:
+     - File: `scripts/gate15_production_audit_spec_runner.mjs` (hoặc `scripts/gate15_production_dom_assertions.mjs`).
+     - Ước lượng phạm vi: ~150–200 dòng code.
+     - Thẩm quyền duyệt: Owner phê duyệt mở khóa `scripts/` (ngoài governance lock).
+   - **(b) Bổ sung `data-testid` chuẩn cho 4 Component thiếu**:
+     - `src/components/cambridge/NotepadNoteCompleter.jsx`: Bổ sung `data-testid="notepad-gap-input-${idx}"`, `data-testid="notepad-submit-btn"`. Phạm vi: ~15–25 dòng code.
+     - `src/components/cambridge/PictureStoryContinuation.jsx`: Bổ sung `data-testid="story-continuation-textarea"`, `data-testid="story-submit-btn"`. Phạm vi: ~15–25 dòng code.
+     - `src/components/cambridge/PersonalQuestionsCompleter.jsx`: Bổ sung `data-testid="personal-answer-input-${idx}"`, `data-testid="personal-submit-btn"`. Phạm vi: ~15–25 dòng code.
+     - `src/components/cambridge/InformationExchangeP2.jsx`: Bổ sung `data-testid="info-exchange-card-a"`, `data-testid="info-exchange-card-b"`, `data-testid="info-exchange-mic-btn"`, `data-testid="info-exchange-submit-btn"`. Phạm vi: ~20–30 dòng code.
+     - Thẩm quyền duyệt: Owner phê duyệt mở khóa `src/`.
+   - **(c) Sửa `bossRotarySchedule.js` tương thích lịch chèn Mock R75**:
+     - File: `src/config/bossRotarySchedule.js`.
+     - Ước lượng phạm vi: ~20–40 dòng code (tách biến `contentWeekIndex` khỏi `calendarWeekNumber`, loại bỏ nợ code `(w-33)%5`).
+     - Thẩm quyền duyệt: Owner phê duyệt mở khóa `src/`.
+   - **(d) Cập nhật trạng thái Hotfix W34 & Khuyến nghị CI Guard W34**:
+     - *Thực tế triển khai R115*: Hotfix W34 đã được Owner ủy quyền và triển khai thành công qua 2 commits trên branch `main`: commit `9840d0d5` (bổ sung `info_exchange_q5.mp3`, cập nhật freeze manifest) và commit `d9cc20cb` (bổ sung 4 file hub khai báo: `listening_p4_full.mp3`, `writing_scene_1.mp3`, `writing_scene_2.mp3`, `writing_scene_3.mp3`). Toàn bộ 5 file này đã live 100% trên production (`https://app.bkbacademy.vn`), xác nhận phát được audio và trả về header `Content-Type: audio/mpeg`.
+     - *Tồn đọng 5 file Orphan*: 5 file không được hub khai báo (`shadowing_9.mp3`, `shadowing_10.mp3`, `writing_panel_1.png`, `writing_panel_2.png`, `writing_panel_3.png`) tiếp tục được giữ nguyên trạng thái untracked tại local `public/` và được bảo vệ mã băm trong `docs/W34_GOLDEN_FREEZE_MANIFEST.json` chờ xử lý qua change control trong tương lai.
+     - *Bài học kiểm soát CI*: CI hiện tại trên GitHub Actions (`.github/workflows/deploy.yml:32`) chạy trực tiếp `node scripts/guard_golden_w33_freeze.mjs` (trong `package.json` định nghĩa lệnh `"guard:freeze:w33"`, hoàn toàn không có script `test:manifest`), và workflow này CHƯA CÓ bước chạy `scripts/guard_golden_w34_freeze.mjs`. Bắt buộc phải bổ sung guard W34 vào CI workflow khi mở băng repo.
+
+4. **Quy Tắc Bài Học Đúc Kết Từ R113–R115 (Operational & Forensic Invariants)**:
+   - **Quy tắc Cập nhật Freeze Manifest**: Khi cập nhật mã băm file đóng băng, trường mục tiêu BẮT BUỘC là `protectedFileHashes` trong file manifest (CẤM dùng trường `files` vì sẽ gây lỗi cú pháp runner guard).
+   - **Quy tắc Kiểm thử Production Thực tế**: Mọi phép thử hồi quy hoặc nghiệm thu truyền thông BẮT BUỘC phải thực hiện trên domain thật `https://app.bkbacademy.vn`. Tuyệt đối không suy diễn trạng thái live từ kết quả chạy trên localhost hay file system.
+   - **Quy tắc Kiểm tra HTTP Content-Type**: Khi dùng `curl` kiểm tra CDN, bắt buộc phải đối soát header `Content-Type` (`audio/mpeg`, `image/png`, `image/jpeg`, `image/svg+xml`). CẤM coi HTTP status 200 là bằng chứng tồn tại file, do Cloudflare Pages SPA router tự động trả về HTTP 200 kèm `text/html` khi đường dẫn tài nguyên không tồn tại (SPA fallback 404).
+   - **Chiến lược Quản Trị Nội Dung Cũ (No Legacy Migration & Phân Lập Staged Data)**: Nội dung legacy/staged trước pipeline mới (kể cả các thư mục tuần W35–W46, W73–W82, W125–W134 hiện có trong `src/data/weeks`) KHÔNG được tái sử dụng hay di trú (migration); mọi tuần mới phải được sinh mới 100% từ Blueprint v2 và vượt qua Gate 19 Schema Validation. Bản cũ chỉ được gỡ bỏ khi bản thay thế mới của đúng tuần đó đã được nghiệm thu và duyệt chính thức, thông qua một hành động quản trị thay đổi (change control) riêng biệt để bảo toàn toàn vẹn lịch sử Git (git history). Trong thời gian chờ hoàn thiện tuần mới, hotfix giới hạn số tuần hiển thị trên UI tại `TOTAL_TRIPS = 34` (`src/components/questmap/QuestSidebar.jsx:12` và `src/pages/PassportTracker.jsx:12`) tiếp tục được giữ nguyên.
+   - **Nợ Kỹ Thuật UI Playback Part 4 W34**: Audio `listening_p4_full.mp3` của W34 đã hiện diện đầy đủ trên đĩa và CDN live, nhưng chưa thể kiểm thử phát trực tiếp trên UI do cơ chế thi tuần tự của Boss Castle Cycle 2 hiển thị Part 3 Listening. Hạng mục này được ghi nhận vào Sổ Nợ Kỹ Thuật (SOP Appendix & Backlog) và gắn vào kịch bản kiểm thử tự động của Gate 15 Cycle 3 spec.
+
+### §22. Quản Lý Dung Lượng & Contact Sheet Mỹ Thuật
+- Ảnh thumbnail/cards nén WebP/JPG tối ưu ($\le 250$ KB/ảnh). Ảnh Story Writer $\le 400$ KB/ảnh.
+- Audio MP3 nén bitrate 64–128 kbps mono/stereo tối ưu cho học trực tuyến.
+- Mỗi tuần sản xuất phải sinh Contact Sheet ảnh chụp trực quan để hội đồng sư phạm nghiệm thu mỹ thuật.
+
+### §23. Quy Trình Quản Trị Thay Đổi (Governance Change Control)
+- CẤM TUYỆT ĐỐI sửa trực tiếp các file hiến pháp bị khóa hash (`AGENTS.md`, `docs/ARCHITECTURE_CURRENT.md`, `docs/WEEK_PRODUCTION_SOP.md`).
+- Mọi đề xuất thay đổi phải lập thành bản nháp Patch Diff (`governance_amendment_draft.diff`), kiểm tra bằng `git apply --check` trên bản sao tạm, và chỉ được áp dụng khi có phê duyệt chính thức bằng văn bản của Owner và Claude QA.

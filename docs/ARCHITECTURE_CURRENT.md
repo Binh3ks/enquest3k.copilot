@@ -196,7 +196,7 @@ Hệ thống EngQuest3K từ Tuần 33 trở đi hoạt động trên quy chuẩ
 
 ### 4.1. Nguyên Tắc Âm Thanh Bắt Buộc (Owner Decisions Locked)
 1. **Âm thanh bài học bắt buộc là file vật lý MP3 tĩnh**:
-   - 100% audio nội dung bài học (Story scenes, Voice Shadowing, CLIL, Discovery hotspots, Flash Arena vocab, Cambridge Listening P1–P5, Cambridge Speaking Intros, Model dialogue) BẮT BUỘC phải tồn tại dưới dạng file vật lý `.mp3` tại `public/audio/week{N}/`.
+   - 100% audio nội dung bài học (Story scenes, Voice Shadowing, CLIL, Discovery Hotspots & Report, Cambridge Listening P1–P5, Cambridge Speaking Intros, Model dialogue, Video Prompts) BẮT BUỘC phải tồn tại dưới dạng file vật lý `.mp3` tại `public/audio/week{N}/`.
 2. **Cấm dùng Google TTS làm fallback cho bài học**:
    - Google TTS Direct runtime CHỈ ĐƯỢC PHÉP kích hoạt cho nội dung động do chính học sinh gõ trên bàn phím (dynamic user-generated text).
    - **Cổng chặn Gate 15 / Gate Firewall**: Bất kỳ request nào tới Google Cloud TTS API (`texttospeech.googleapis.com`) trong quá trình thực hiện 15 Quests đều bị đánh trượt (**FAIL**).
