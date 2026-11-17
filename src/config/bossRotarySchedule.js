@@ -5,9 +5,10 @@
  * - 16 Cambridge Parts collectively evaluated across 4 weekly cycles (4 parts/week = 16 parts total):
  *   - Cycle 1 (W33): L1, L2, R1, S1 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
  *   - Cycle 2 (W34): L3, R2, R3, S2 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
- *   - Cycle 3 (W35): L4, R4, R5, S3 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
- *   - Cycle 4 (W36): L5, R6, R7, S4 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
- *   - Cycle 5 (W37): ⚔️ FULL MOCK — all 16 Cambridge Parts (5L + 7RW + 4S)
+ *   - Cycle 3 (e.g. W35, W39): L4, R4, R5, S3 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
+ *   - Cycle 4 (e.g. W36, W40): L5, R6, R7, S4 [4 Cambridge Parts — 1L + 1RW + 1S balanced]
+ *   - Cycle 0 (Standalone Mock Checkpoint): ⚔️ FULL MOCK — all 16 Cambridge Parts (5L + 7RW + 4S).
+ *     Triggered via opt-in isMock flag / mock route; does NOT consume content week numbers (W37 remains normal Cycle 1).
  *
  * ZERO ROUTE COLLISION INVARIANT:
  *   boss_listening ──► Cambridge Listening Paper ONLY
@@ -82,7 +83,7 @@ export const BOSS_ROTARY_CYCLES = {
     bossAvatar:       "🎙️",
     bossDescription:  "Colour and write from audio, solve open cloze, write a 3-picture story, and answer personal examiner questions!"
   },
-  // Cycle 0 = Full Mock (Week 5 of each 5-week rotation: W37, W42…)
+  // Cycle 0 = Full Mock (Standalone Mock Checkpoint interleaved after Cycle 4; opt-in via isMock)
   0: {
     mode:             'FULL_MOCK',
     cycleName:        "Full Cambridge A2 Flyers Mock Exam",
