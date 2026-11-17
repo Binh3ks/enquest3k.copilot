@@ -789,6 +789,7 @@ export function StoryWriting({ content, customData, data, vocab, storyPrompts, t
               )}
 
               <textarea
+                data-testid="rw-p7-text-area"
                 ref={textareaRef}
                 rows={2}
                 value={panelTexts[currentStepIdx] || ''}

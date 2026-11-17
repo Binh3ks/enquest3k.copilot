@@ -217,6 +217,7 @@ export function NotepadNoteCompleter({ customData, data: propData, title, notes,
 
                 <div className="flex items-center gap-1.5 w-full">
                   <input
+                    data-testid="notepad-input-q1"
                     type="text"
                     disabled={isSubmitted}
                     value={answers[note.id] || ''}

@@ -279,6 +279,7 @@ export function RWPart3ClozeWithTitle({ customData, data: propData, onComplete }
               return (
                 <button
                   key={idx}
+                  data-testid="cloze-option-pill"
                   type="button"
                   disabled={isSubmitted}
                   onClick={() => handleSelectWord(word)}

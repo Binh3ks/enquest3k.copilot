@@ -125,6 +125,7 @@ export function PersonalQuestionsCompleter({ customData, data: propData, onCompl
           </p>
         </div>
         <button
+          data-testid="personal-q-listen-btn"
           onClick={handlePlayIntro}
           className="px-3 py-1.5 bg-violet-600 hover:bg-violet-700 text-white text-xs font-black rounded-xl shadow-sm flex items-center gap-1.5 transition"
         >

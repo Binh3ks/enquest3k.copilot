@@ -158,6 +158,7 @@ export function VisualMatchingAH({ customData, onComplete, weekNumber }) {
             return (
               <div
                 key={item.id}
+                data-testid="matching-item-card"
                 onClick={() => handleSelectItem(item)}
                 className={`p-2.5 sm:p-3 rounded-xl border-2 transition-all cursor-pointer flex flex-col justify-between ${
                   isSubmitted

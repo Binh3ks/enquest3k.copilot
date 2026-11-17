@@ -275,6 +275,7 @@ export function DialogueAHCompleter({ customData, data: propData, onComplete }) 
               return (
                 <button
                   key={opt.key}
+                  data-testid="dialogue-option-card"
                   disabled={isSubmitted || isUsed}
                   onClick={() => handleSelectOption(opt.key)}
                   className={`w-full p-2 sm:p-2.5 rounded-lg sm:rounded-xl text-left text-[11px] sm:text-xs font-bold transition-all flex items-start gap-2 border shadow-2xs ${

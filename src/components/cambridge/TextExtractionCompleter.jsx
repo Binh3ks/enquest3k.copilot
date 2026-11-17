@@ -273,6 +273,7 @@ function levenshteinDistance(s1, s2) {
                   <div className="flex items-center justify-between gap-2 pt-1">
                     <div className="relative flex-1">
                       <input
+                        data-testid="extraction-input-field"
                         type="text"
                         maxLength={40}
                         disabled={isSubmitted}

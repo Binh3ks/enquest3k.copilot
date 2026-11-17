@@ -194,6 +194,7 @@ export function SVGColorAndWrite({ customData, data: propData, weekNumber, onCom
               {colorsPalette.map((c) => (
                 <button
                   key={c.hex}
+                  data-testid="color-palette-btn"
                   onClick={() => setSelectedColor(c.hex)}
                   style={{ backgroundColor: c.hex }}
                   className={`h-8 rounded-lg transition-all border-2 flex items-center justify-center shadow-xs ${

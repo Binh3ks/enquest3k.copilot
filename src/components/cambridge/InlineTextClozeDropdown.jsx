@@ -213,6 +213,7 @@ export function InlineTextClozeDropdown({ customData, data: propData, onComplete
           return (
             <span key={idx} className="relative inline-block mx-1">
               <button
+                data-testid="cloze-select-dropdown"
                 disabled={isSubmitted}
                 onClick={() => setActiveGapPopover(isPopoverOpen ? null : seg.gapId)}
                 className={`px-3 py-1 rounded-xl font-sans font-black text-xs sm:text-sm border-2 transition-all inline-flex items-center gap-1 shadow-sm ${

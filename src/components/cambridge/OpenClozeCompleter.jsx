@@ -121,6 +121,7 @@ export function OpenClozeCompleter({ customData, data: propData, onComplete }) {
       parts.push(
         <span key={`gap-${gapId}`} className="inline-flex flex-col items-center mx-1.5 my-1 align-baseline relative">
           <input
+            data-testid="open-cloze-input"
             type="text"
             disabled={isSubmitted}
             value={userVal}

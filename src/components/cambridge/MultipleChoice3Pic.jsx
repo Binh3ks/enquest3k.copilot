@@ -131,6 +131,7 @@ export default function MultipleChoice3Pic({ customData, data, weekNumber, onCom
           return (
             <button
               key={opt.letter}
+              data-testid="p4-option-card"
               type="button"
               disabled={showFeedback || currentQ.isExample}
               onClick={() => handleSelectOption(opt.letter)}

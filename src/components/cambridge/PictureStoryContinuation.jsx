@@ -159,6 +159,7 @@ export function PictureStoryContinuation({ customData, data: propData, weekNumbe
             return (
               <div
                 key={img.id || idx}
+                data-testid="picture-sequence-panel"
                 onClick={() => !isSubmitted && setActiveImageIdx(idx)}
                 className={`p-2 rounded-2xl border-2 transition-all cursor-pointer space-y-1.5 ${
                   isLeadIn

@@ -414,6 +414,7 @@ export function InformationExchangeP2({ customData, data: propData, isStealthMod
           />
           {flowState === 'idle' && (
             <button
+              data-testid="ie-card-toggle-btn"
               onClick={handleStartExam}
               className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-black rounded-xl text-xs shadow-md transition flex items-center gap-1.5 animate-bounce shrink-0"
             >
@@ -589,6 +590,7 @@ export function InformationExchangeP2({ customData, data: propData, isStealthMod
                 <LifeBuoy size={16} className="text-amber-400 animate-spin" /> 🛟 Lifebuoy Hint Unlocked (2 Failed Attempts):
               </span>
               <button
+                data-testid="ie-listen-prompt-btn"
                 onClick={() => VoiceService.speak(currentActiveFieldA.acceptable_questions[0], 'questions')}
                 className="px-3 py-1 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-lg text-xs font-black transition flex items-center gap-1 shadow-sm"
               >
