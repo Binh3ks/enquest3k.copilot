@@ -1,6 +1,7 @@
 // SMART INDEX SYSTEM - LAZY LOADING FOR SCALABILITY
 // ⚡ Dynamic import: Only load weeks when needed (NOT eager)
 import { weekTitles, getWeekTitle } from './metadata.js';
+import { isWeekReleased, canBypassRelease } from '../../config/releaseConfig.js';
 
 const advModules = import.meta.glob('./week_*/index.js');
 const advModulesFlat = import.meta.glob('./week_*.js');
@@ -11,7 +12,13 @@ const easyModulesFolder = import.meta.glob('../weeks_easy/**/index.js');
 const weekCache = new Map();
 
 // Function to dynamically load a specific week
-export const loadWeekData = async (weekId, isEasy = false) => {
+export const loadWeekData = async (weekId, isEasy = false, bypass = false) => {
+  const hasBypass = canBypassRelease(bypass);
+  if (!isWeekReleased(weekId) && !hasBypass) {
+    console.warn(`[LazyLoad] Week ${weekId} is unreleased (MAX_RELEASED_WEEK = 34). Access denied.`);
+    return null;
+  }
+
   // Single mode policy: W33+ has only 1 unified mode (Full Mode)
   const effectiveEasy = weekId >= 33 ? false : isEasy;
   const cacheKey = `${weekId}_${effectiveEasy ? 'easy' : 'adv'}`;

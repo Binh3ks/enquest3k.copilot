@@ -9,6 +9,7 @@ import { progressAPI } from './services/api';
 import useTTSStore from './stores/useTTSStore';
 import useDailyQuestStore from './stores/useDailyQuestStore';
 import { QUEST_SCHEDULE } from './config/questSchedule';
+import { MAX_RELEASED_WEEK, isWeekReleased, canBypassRelease } from './config/releaseConfig';
 import './services/badgeEngine';
 
 // CONFIG & CONSTANTS
@@ -237,6 +238,10 @@ const TaskRoute = () => {
   const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
   const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
 
+  // ── Release Guard Check (Router Level Defense) ───────────────────────────
+  // Note: Release Guard strictly uses role / staff / localStorage bypass (NO displayName / email matching)
+  const isWeekReleasedForStudent = isWeekReleased(weekId) || canBypassRelease(currentUser);
+
   // ── Progressive Day Lock check (runs before data fetch) ──────────────────
   const questDayIndex = getQuestDayIndex(taskId);
   const questUnlocked = isDayUnlocked(weekId, questDayIndex, isStaffOrOwner);
@@ -246,7 +251,17 @@ const TaskRoute = () => {
   const prevDayLabel = prevDayConfig?.label || `Day ${questDayIndex}`;
 
   useEffect(() => {
-    if (!questUnlocked) {
+    if (!isWeekReleasedForStudent) {
+      setLockToast("Tuần học này đang được chuẩn bị, vui lòng quay lại sau!");
+      const t = setTimeout(() => {
+        navigate('/week/34/hub/1', { replace: true });
+      }, 2200);
+      return () => clearTimeout(t);
+    }
+  }, [isWeekReleasedForStudent, navigate]);
+
+  useEffect(() => {
+    if (isWeekReleasedForStudent && !questUnlocked) {
       // Show brief toast then redirect
       setLockToast(prevDayLabel);
       const t = setTimeout(() => {
@@ -254,9 +269,26 @@ const TaskRoute = () => {
       }, 2200);
       return () => clearTimeout(t);
     }
-  }, [questUnlocked, weekId, navigate, prevDayLabel]);
+  }, [isWeekReleasedForStudent, questUnlocked, weekId, navigate, prevDayLabel]);
 
   const { data: weekData, loading: isWeekDataLoading } = useFetchWeekData(weekId, learningMode);
+
+  // Show unreleased week lock screen + redirect
+  if (!isWeekReleasedForStudent) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white gap-5 p-6" data-testid="router-guard-locked-screen">
+        <div className="text-6xl">🔒</div>
+        <div className="text-center">
+          <p className="font-black text-xl text-amber-400 mb-1">Tuần học chưa mở khóa!</p>
+          <p className="text-slate-300 text-sm">Tuần học này đang được chuẩn bị, vui lòng quay lại sau!</p>
+        </div>
+        <div className="w-48 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-full bg-amber-400 rounded-full animate-[lock-slide_2s_linear_forwards]" style={{ width: '100%', animation: 'width 2.2s linear' }} />
+        </div>
+        <p className="text-slate-500 text-xs">Đang chuyển hướng về Tuần 34...</p>
+      </div>
+    );
+  }
 
   // Show lock toast + redirect screen
   if (!questUnlocked) {
@@ -300,6 +332,7 @@ const TaskRoute = () => {
  */
 const QuestMapRoute = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const weekId = parseInt(params.weekId || 33);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { currentUser, learningMode, toggleLearningMode } = useUserStore();
@@ -309,6 +342,36 @@ const QuestMapRoute = () => {
   const effectiveShowOnboarding = showOnboarding && !isStaffOrOwner;
 
   const { isArcadeOpen, setArcadeOpen, showBreakPrompt, dismissBreakPrompt } = useArcadeStore();
+
+  // ── Release Guard Check (Router Level Defense) ───────────────────────────
+  // Note: Release Guard strictly uses role / staff / localStorage bypass (NO displayName / email matching)
+  const isWeekReleasedForStudent = isWeekReleased(weekId) || canBypassRelease(currentUser);
+
+  useEffect(() => {
+    if (!isWeekReleasedForStudent) {
+      const t = setTimeout(() => {
+        navigate('/week/34/hub/1', { replace: true });
+      }, 2200);
+      return () => clearTimeout(t);
+    }
+  }, [isWeekReleasedForStudent, navigate]);
+
+  // Show unreleased week lock screen + redirect
+  if (!isWeekReleasedForStudent) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white gap-5 p-6" data-testid="router-guard-locked-screen">
+        <div className="text-6xl">🔒</div>
+        <div className="text-center">
+          <p className="font-black text-xl text-amber-400 mb-1">Tuần học chưa mở khóa!</p>
+          <p className="text-slate-300 text-sm">Tuần học này đang được chuẩn bị, vui lòng quay lại sau!</p>
+        </div>
+        <div className="w-48 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-full bg-amber-400 rounded-full animate-[lock-slide_2s_linear_forwards]" style={{ width: '100%', animation: 'width 2.2s linear' }} />
+        </div>
+        <p className="text-slate-500 text-xs">Đang chuyển hướng về Tuần 34...</p>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -354,12 +417,45 @@ const PracticeRoute = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { learningMode, toggleLearningMode, currentUser } = useUserStore();
   const isOwner = currentUser?.role === 'owner' || localStorage.getItem('arcade_owner_bypass') === 'true';
+  const isStaffOrOwner = isOwner || STAFF_ROLES.includes(currentUser?.role);
+
+  // ── Release Guard Check (Router Level Defense) ───────────────────────────
+  // Note: Release Guard strictly uses role / staff / localStorage bypass (NO displayName / email matching)
+  const isWeekReleasedForStudent = isWeekReleased(weekId) || canBypassRelease(currentUser);
 
   React.useEffect(() => {
-    import('./utils/srsGenerator').then(({ generateSmartReviewAsync }) => {
-      generateSmartReviewAsync(weekId).then(items => setReviewItems(items || []));
-    }).catch(() => setReviewItems([]));
-  }, [weekId]);
+    if (!isWeekReleasedForStudent) {
+      const t = setTimeout(() => {
+        navigate('/week/34/hub/1', { replace: true });
+      }, 2200);
+      return () => clearTimeout(t);
+    }
+  }, [isWeekReleasedForStudent, navigate]);
+
+  React.useEffect(() => {
+    if (isWeekReleasedForStudent) {
+      import('./utils/srsGenerator').then(({ generateSmartReviewAsync }) => {
+        generateSmartReviewAsync(weekId).then(items => setReviewItems(items || []));
+      }).catch(() => setReviewItems([]));
+    }
+  }, [isWeekReleasedForStudent, weekId]);
+
+  // Show unreleased week lock screen + redirect
+  if (!isWeekReleasedForStudent) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex flex-col items-center justify-center text-white gap-5 p-6" data-testid="router-guard-locked-screen">
+        <div className="text-6xl">🔒</div>
+        <div className="text-center">
+          <p className="font-black text-xl text-amber-400 mb-1">Tuần học chưa mở khóa!</p>
+          <p className="text-slate-300 text-sm">Tuần học này đang được chuẩn bị, vui lòng quay lại sau!</p>
+        </div>
+        <div className="w-48 h-1.5 bg-slate-700 rounded-full overflow-hidden">
+          <div className="h-full bg-amber-400 rounded-full animate-[lock-slide_2s_linear_forwards]" style={{ width: '100%', animation: 'width 2.2s linear' }} />
+        </div>
+        <p className="text-slate-500 text-xs">Đang chuyển hướng về Tuần 34...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
