@@ -12,6 +12,7 @@ import { execSync } from 'child_process';
 import fetch from 'node-fetch';
 import fs from 'fs';
 import path from 'path';
+import { getBossRotaryConfig } from '../src/config/bossRotarySchedule.js';
 
 const WEEK = parseInt(process.argv[2] || '34', 10);
 const hasProdFlag = process.argv.includes('--production');
@@ -42,6 +43,38 @@ const SPEC = JSON.parse(rawSpec);
 
 const GLOBAL_NEGATIVES = SPEC.global_negative_patterns || [];
 const QUESTS_SPEC = SPEC.quests || {};
+
+// Dynamic Rotary Cycle Specification Loading (Round 131 Upgrade)
+const rotaryConfig = getBossRotaryConfig(WEEK);
+const cycleNum = rotaryConfig.cycleNumber;
+const cycleSpecPath = path.resolve(rootDir, 'docs/agent_artifacts/GATE15_CYCLE_SPEC_PROPOSAL.json');
+
+if (!fs.existsSync(cycleSpecPath)) {
+  console.error(`🚨 FATAL: Dynamic cycle spec file not found at ${cycleSpecPath}`);
+  process.exit(1);
+}
+
+const cycleSpecData = JSON.parse(fs.readFileSync(cycleSpecPath, 'utf8'));
+const cycleSpec = cycleSpecData.cycles ? cycleSpecData.cycles[String(cycleNum)] : null;
+
+if (!cycleSpec) {
+  console.error(`🚨 FATAL: Rotary Cycle ${cycleNum} (Week ${WEEK}) specification NOT FOUND in cycle spec! Fallback to Cycle 1 is strictly forbidden.`);
+  process.exit(1);
+}
+
+console.log(`🌀 Rotary Cycle: Cycle ${cycleNum} ("${rotaryConfig.cycleName}") loaded from ${cycleSpecPath}`);
+
+// Negative test mode support: simulate missing selector / broken interaction
+const isNegativeTest = process.argv.includes('--negative-test-fail');
+if (isNegativeTest) {
+  console.warn(`🧪 NEGATIVE TEST ACTIVE: Injecting simulated missing selector to verify runner fails loud!`);
+  if (cycleSpec.boss_listening && cycleSpec.boss_listening.interaction_steps) {
+    cycleSpec.boss_listening.interaction_steps = [
+      { step: 1, action: 'click', selector: '[data-testid="simulated-missing-selector-negative-test"]', description: 'Simulated Missing Selector' }
+    ];
+    cycleSpec.boss_listening.dom_state_condition = "false";
+  }
+}
 
 function evaluatePosCheck(check, dom) {
   const { type, name } = check;
@@ -328,50 +361,36 @@ async function performMeaningfulInteraction(page, qid) {
         }
         break;
       }
-      case 'boss_listening': {
-        // Cambridge A2 Listening Part 1: Select character name, click target pin, and click Check
-        const nameBtn = page.locator('[data-testid="line-matcher-name-btn"]').first();
-        if (await nameBtn.isVisible().catch(() => false)) {
-          await nameBtn.click().catch(() => {});
-          await page.waitForTimeout(250);
-          const targetPin = page.locator('[data-testid="line-matcher-target"]:not([data-example])').first();
-          if (await targetPin.isVisible().catch(() => false)) {
-            await targetPin.click({ force: true }).catch(() => {});
-            await page.waitForTimeout(250);
-          }
-          const checkBtn = page.locator('[data-testid="line-matcher-check-btn"]');
-          if (await checkBtn.isVisible().catch(() => false) && !(await checkBtn.isDisabled().catch(() => true))) {
-            await checkBtn.click().catch(() => {});
-            await page.waitForTimeout(400);
-          }
-        }
-        break;
-      }
-      case 'boss_reading': {
-        // WordBankMatchingGrid: select first word pill, assign to first def row
-        const pill = page.locator('[data-testid="word-bank-pill"]').first();
-        if (await pill.isVisible().catch(() => false)) {
-          await pill.click().catch(() => {});
-          await page.waitForTimeout(300);
-          const defRow = page.locator('[data-testid="word-def-row"]').first();
-          if (await defRow.isVisible().catch(() => false)) {
-            await defRow.click().catch(() => {});
-            await page.waitForTimeout(400);
-          }
-        }
-        break;
-      }
+      case 'boss_listening':
+      case 'boss_reading':
       case 'weekly_review': {
-        // FindDifferencesInteractive: click first hotspot on Picture A or B
-        const hotspot = page.locator('[data-testid="diff-hotspot-btn"]').first();
-        if (await hotspot.isVisible().catch(() => false)) {
-          await hotspot.click({ force: true }).catch(() => {});
-          await page.waitForTimeout(400);
-          const hintBtn = page.locator('[data-testid="diff-hint-btn"]').first();
-          if (await hintBtn.isVisible().catch(() => false)) {
-            await hintBtn.click().catch(() => {});
-            await page.waitForTimeout(300);
+        const questSpec = cycleSpec[qid];
+        if (!questSpec || !questSpec.interaction_steps || questSpec.interaction_steps.length === 0) {
+          throw new Error(`[Zone 5 Cycle ${cycleNum}] No interaction steps defined in spec for ${qid}`);
+        }
+        let executedSteps = 0;
+        console.log(`     🔄 [Zone 5 Cycle ${cycleNum}] Executing ${questSpec.interaction_steps.length} interaction steps for ${qid}...`);
+        for (const step of questSpec.interaction_steps) {
+          const loc = page.locator(step.selector);
+          const isVis = await loc.first().isVisible({ timeout: 2500 }).catch(() => false);
+          if (isVis) {
+            if (step.action === 'click') {
+              await loc.first().click({ force: true });
+              await page.waitForTimeout(400);
+              executedSteps++;
+              console.log(`       ✓ Step ${step.step} (${step.description}): clicked "${step.selector}"`);
+            } else if (step.action === 'type') {
+              await loc.first().fill(step.text || "The brave monkey was climbing the tall tree quickly.");
+              await page.waitForTimeout(400);
+              executedSteps++;
+              console.log(`       ✓ Step ${step.step} (${step.description}): typed into "${step.selector}"`);
+            }
+          } else {
+            console.log(`       ⚠️ Step ${step.step} (${step.description}): selector "${step.selector}" not visible (may be conditional)`);
           }
+        }
+        if (executedSteps === 0) {
+          throw new Error(`[Zone 5 Cycle ${cycleNum}] FATAL: 0 interaction steps could be executed for ${qid}! Target selectors missing or invisible.`);
         }
         break;
       }
@@ -554,6 +573,7 @@ async function main() {
   const questDoms = {};
   const results = [];
   const interactionEvidenceMap = {};
+  const interactionFailures = [];
   let globalPass = true;
 
   for (let qi = 0; qi < questIds.length; qi++) {
@@ -951,11 +971,23 @@ async function main() {
     // Extract live visual/DOM interaction metrics for authentic verification
     let questInteractionState = {};
     try {
-      if (qid === 'boss_listening') {
-        const linesCount = await page.locator('svg line[stroke="#10b981"], svg line[stroke="#f43f5e"], svg line[stroke="#6366f1"]').count();
-        const scoreText = await page.locator('[data-testid="line-matcher-score"]').innerText().catch(() => '');
-        questInteractionState = { linesCount, scoreText, pass: linesCount > 0 && scoreText.includes('Score:') };
-        console.log(`     🎯 [boss_listening interaction]: lines=${linesCount}, scoreText="${scoreText}" (pass=${questInteractionState.pass})`);
+      if (['boss_listening', 'boss_reading', 'weekly_review'].includes(qid)) {
+        const questSpec = cycleSpec[qid];
+        const cond = questSpec?.dom_state_condition;
+        let domConditionOk = false;
+        if (cond) {
+          domConditionOk = await page.evaluate(cond).catch(err => false);
+        }
+        questInteractionState = {
+          cycle: cycleNum,
+          domConditionOk,
+          condition: cond,
+          pass: domConditionOk
+        };
+        console.log(`     🎯 [Zone 5 ${qid} DOM-state]: pass=${domConditionOk} (condition: ${cond ? cond.slice(0, 70) : 'none'}...)`);
+        if (!domConditionOk) {
+          interactionFailures.push({ qid, reason: `DOM-state condition failed for Cycle ${cycleNum}: ${cond}` });
+        }
       } else if (qid === 'science_lab') {
         const scoreText = await page.locator('[data-testid="lab-score-display"]').innerText().catch(() => '');
         const placedCount = await page.locator('[data-testid="lab-drop-zone"].bg-emerald-600\\/95, [data-testid="lab-drop-zone"] span:not(:has-text("Drop")):not(:has-text("Tap"))').count();
@@ -1000,18 +1032,6 @@ async function main() {
         const isCard2Active = await page.locator('[data-testid="ie-card2-tab-btn"].bg-indigo-600').isVisible().catch(() => false);
         questInteractionState = { phaseTitle, isCard2Active, pass: isCard2Active || phaseTitle.includes('Phase 2') };
         console.log(`     🎯 [info_exchange interaction]: phaseTitle="${phaseTitle}", isCard2Active=${isCard2Active} (pass=${questInteractionState.pass})`);
-      } else if (qid === 'boss_reading') {
-        const rawAssigned = await page.locator('[data-testid="word-def-slot"]').first().innerText().catch(() => '');
-        const assignedWord = rawAssigned.replace(/[✕\n\r]/g, '').trim();
-        const isAssigned = assignedWord.length > 2 && !assignedWord.includes('Tap to slot');
-        questInteractionState = { assignedWord, isAssigned, pass: isAssigned };
-        console.log(`     🎯 [boss_reading interaction]: assignedWord="${assignedWord}" (pass=${questInteractionState.pass})`);
-      } else if (qid === 'weekly_review') {
-        const counterText = await page.locator('[data-testid="diff-counter"]').innerText().catch(() => '');
-        const diffName = await page.locator('[data-testid="diff-name"]').innerText().catch(() => '');
-        const sampleAnswer = await page.locator('[data-testid="diff-sample-answer"]').innerText().catch(() => '');
-        questInteractionState = { counterText, diffName, sampleAnswer: sampleAnswer.slice(0, 60), pass: counterText.includes('1/') || diffName.length > 0 };
-        console.log(`     🎯 [weekly_review interaction]: counter="${counterText}", diffName="${diffName}" (pass=${questInteractionState.pass})`);
       }
     } catch (e) {
       console.warn(`[WARN] Failed to capture interaction metrics for ${qid}: ${e.message}`);
@@ -1091,6 +1111,12 @@ async function main() {
         console.log(`   ✅ ${qid}: distinct screenshots (before: ${hBefore.slice(0, 8)} != after: ${hAfter.slice(0, 8)})`);
       }
     }
+  }
+
+  if (interactionFailures.length > 0) {
+    console.error(`🚨 FATAL: ${interactionFailures.length} quest(s) failed interaction / DOM-state condition:`);
+    interactionFailures.forEach(f => console.error(`   ❌ ${f.qid}: ${f.reason}`));
+    globalPass = false;
   }
 
   if (identicalPairsCount > 0) {

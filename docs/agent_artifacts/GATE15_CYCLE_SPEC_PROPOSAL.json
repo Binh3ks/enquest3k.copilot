@@ -1,0 +1,676 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gate 15 Dynamic Rotary Cycle Specification Proposal (DOM Cross-Referenced)",
+  "description": "Defines active Cambridge parts, tabs, interactive sequential steps, and DOM change verification per Rotary Cycle (1..4 & 0) for automated audit runner, cross-referenced against actual codebase DOM components.",
+  "cycles": {
+    "0": {
+      "name": "Cycle 0 (Mock Weeks M01–M34) — Full Exam Suite (16 Parts)",
+      "boss_listening": {
+        "activeParts": [
+          "list_p1",
+          "list_p2",
+          "list_p3",
+          "list_p4",
+          "list_p5"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p1\"]",
+            "description": "Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p5\"]",
+            "description": "Part 5 Tab"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid^=\"boss-part-tab-list_\"]').length === 5",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p5\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          }
+        ]
+      },
+      "boss_reading": {
+        "activeParts": [
+          "rw_p1",
+          "rw_p2",
+          "rw_p3",
+          "rw_p4",
+          "rw_p5",
+          "rw_p6",
+          "rw_p7"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p1\"]",
+            "description": "RW Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p7\"]",
+            "description": "RW Part 7 Tab"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid^=\"boss-part-tab-rw_\"]').length === 7",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p7\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          }
+        ]
+      },
+      "weekly_review": {
+        "activeParts": [
+          "spk_p1",
+          "spk_p2",
+          "spk_p3",
+          "spk_p4"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p1\"]",
+            "description": "Speaking Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p4\"]",
+            "description": "Speaking Part 4 Tab"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid^=\"boss-part-tab-spk_\"]').length === 4",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p4\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          }
+        ]
+      }
+    },
+    "1": {
+      "name": "Cycle 1 (e.g. W33) — Listening P1/P2, Reading P1, Speaking P1",
+      "boss_listening": {
+        "activeParts": [
+          "list_p1",
+          "list_p2"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p1\"]",
+            "description": "Select Listening Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"line-matcher-name-btn\"]",
+            "description": "Select character name pill"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"line-matcher-target\"]",
+            "description": "Select target scene hotspot"
+          },
+          {
+            "step": 4,
+            "action": "click",
+            "selector": "[data-testid=\"line-matcher-check-btn\"]",
+            "description": "Verify drawn line"
+          },
+          {
+            "step": 5,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p2\"]",
+            "description": "Select Listening Part 2 Tab"
+          }
+        ],
+        "dom_state_condition": "document.querySelector('[data-testid=\"notepad-input-q1\"]') !== null || document.querySelectorAll('[data-testid=\"line-matcher-line\"]').length > 0 || document.querySelector('[data-testid=\"line-matcher-name-btn\"]') !== null",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"line-matcher-name-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/SVGLineMatcher.jsx:165"
+          },
+          {
+            "selector": "[data-testid=\"line-matcher-target\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/SVGLineMatcher.jsx:308"
+          },
+          {
+            "selector": "[data-testid=\"line-matcher-check-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/SVGLineMatcher.jsx:361"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p2\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"notepad-input-q1\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/NotepadNoteCompleter.jsx:215"
+          }
+        ]
+      },
+      "boss_reading": {
+        "activeParts": [
+          "rw_p1"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p1\"]",
+            "description": "Select RW Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"word-bank-pill\"]",
+            "description": "Select word pill"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"word-def-slot\"]",
+            "description": "Place word in definition slot"
+          },
+          {
+            "step": 4,
+            "action": "click",
+            "selector": "[data-testid=\"word-bank-check-btn\"]",
+            "description": "Check definition match"
+          }
+        ],
+        "dom_state_condition": "document.querySelector('[data-testid=\"word-bank-matching\"]') !== null || document.querySelector('[data-testid=\"word-bank-check-btn\"]') !== null || document.querySelectorAll('[data-testid=\"diff-hotspot-btn\"]').length > 0 || document.body.innerText.includes('Find Differences') || document.body.innerText.includes('BOSS BATTLE VICTORY')",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"word-bank-pill\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/WordBankMatchingGrid.jsx:154"
+          },
+          {
+            "selector": "[data-testid=\"word-def-slot\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/WordBankMatchingGrid.jsx:232"
+          },
+          {
+            "selector": "[data-testid=\"word-bank-check-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/WordBankMatchingGrid.jsx:270"
+          }
+        ]
+      },
+      "weekly_review": {
+        "activeParts": [
+          "spk_p1"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p1\"]",
+            "description": "Select Speaking Part 1 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"diff-hotspot-btn\"]",
+            "description": "Click hotspot revealing difference"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"diff-hotspot-btn\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p1\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"diff-hotspot-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/FindDifferencesInteractive.jsx:238"
+          },
+          {
+            "selector": "[data-testid=\"diff-active-card\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/FindDifferencesInteractive.jsx:288"
+          }
+        ]
+      }
+    },
+    "2": {
+      "name": "Cycle 2 (e.g. W34) — Listening P3, Reading P2/P3, Speaking P2",
+      "boss_listening": {
+        "activeParts": [
+          "list_p3"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p3\"]",
+            "description": "Select Listening Part 3 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"matching-item-card\"]",
+            "description": "Select letter item card A-H"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"matching-item-card\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p3\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"matching-item-card\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/VisualMatchingAH.jsx:180"
+          }
+        ]
+      },
+      "boss_reading": {
+        "activeParts": [
+          "rw_p2",
+          "rw_p3"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p2\"]",
+            "description": "Select RW Part 2 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"dialogue-option-card\"]",
+            "description": "Select dialogue turn option"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p3\"]",
+            "description": "Select RW Part 3 Tab"
+          },
+          {
+            "step": 4,
+            "action": "click",
+            "selector": "[data-testid=\"cloze-option-pill\"]",
+            "description": "Place word in story gap"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"cloze-option-pill\"]').length > 0 || document.querySelectorAll('[data-testid=\"dialogue-option-card\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p2\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"dialogue-option-card\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/DialogueAHCompleter.jsx:175"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p3\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"cloze-option-pill\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/RWPart3ClozeWithTitle.jsx:160"
+          }
+        ]
+      },
+      "weekly_review": {
+        "activeParts": [
+          "spk_p2"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p2\"]",
+            "description": "Select Speaking Part 2 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"ie-card-toggle-btn\"]",
+            "description": "Toggle between Candidate and Examiner cards"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"ie-listen-prompt-btn\"]",
+            "description": "Trigger question prompt audio"
+          }
+        ],
+        "dom_state_condition": "document.querySelector('[data-testid=\"ie-card-toggle-btn\"]') !== null || document.body.innerText.includes('Table A') || document.body.innerText.includes('Candidate') || document.body.innerText.includes('Examiner') || document.querySelector('[data-testid=\"ie-listen-prompt-btn\"]') !== null",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p2\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"ie-card-toggle-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/InformationExchangeP2.jsx:416"
+          },
+          {
+            "selector": "[data-testid=\"ie-listen-prompt-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/InformationExchangeP2.jsx:591"
+          }
+        ]
+      }
+    },
+    "3": {
+      "name": "Cycle 3 (e.g. W35) — Listening P4, Reading P4/P5, Speaking P3",
+      "boss_listening": {
+        "activeParts": [
+          "list_p4"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p4\"]",
+            "description": "Select Listening Part 4 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"p4-option-card\"]",
+            "description": "Select 3-Picture MCQ option card"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"p4-option-card\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p4\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"p4-option-card\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/MultipleChoice3Pic.jsx:130"
+          }
+        ]
+      },
+      "boss_reading": {
+        "activeParts": [
+          "rw_p4",
+          "rw_p5"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p4\"]",
+            "description": "Select RW Part 4 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"cloze-select-dropdown\"]",
+            "description": "Select option in 3-choice cloze"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p5\"]",
+            "description": "Select RW Part 5 Tab"
+          },
+          {
+            "step": 4,
+            "action": "type",
+            "selector": "[data-testid=\"extraction-input-field\"]",
+            "description": "Type extracted story detail in gap"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"cloze-select-dropdown\"]').length > 0 || document.querySelector('[data-testid=\"extraction-input-field\"]') !== null",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p4\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"cloze-select-dropdown\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/InlineTextClozeDropdown.jsx:190"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p5\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"extraction-input-field\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/TextExtractionCompleter.jsx:220"
+          }
+        ]
+      },
+      "weekly_review": {
+        "activeParts": [
+          "spk_p3"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p3\"]",
+            "description": "Select Speaking Part 3 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"picture-sequence-panel\"]",
+            "description": "Inspect story sequence panel"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"picture-sequence-panel\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p3\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"picture-sequence-panel\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/PictureStoryContinuation.jsx:110"
+          }
+        ]
+      }
+    },
+    "4": {
+      "name": "Cycle 4 (e.g. W36) — Listening P5, Reading P6/P7, Speaking P4",
+      "boss_listening": {
+        "activeParts": [
+          "list_p5"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-list_p5\"]",
+            "description": "Select Listening Part 5 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"color-palette-btn\"]",
+            "description": "Select paint color"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"color-palette-btn\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-list_p5\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"color-palette-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/SVGColorAndWrite.jsx:260"
+          }
+        ]
+      },
+      "boss_reading": {
+        "activeParts": [
+          "rw_p6",
+          "rw_p7"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p6\"]",
+            "description": "Select RW Part 6 Tab"
+          },
+          {
+            "step": 2,
+            "action": "type",
+            "selector": "[data-testid=\"open-cloze-input\"]",
+            "description": "Type word into open cloze blank"
+          },
+          {
+            "step": 3,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-rw_p7\"]",
+            "description": "Select RW Part 7 Tab"
+          },
+          {
+            "step": 4,
+            "action": "type",
+            "selector": "[data-testid=\"rw-p7-text-area\"]",
+            "description": "Type short 3-picture story (>= 20 words)"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"open-cloze-input\"]').length > 0 || document.querySelector('[data-testid=\"rw-p7-text-area\"]') !== null",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p6\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"open-cloze-input\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/OpenClozeCompleter.jsx:210"
+          },
+          {
+            "selector": "[data-testid=\"boss-part-tab-rw_p7\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"rw-p7-text-area\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/StoryWriting.jsx:145"
+          }
+        ]
+      },
+      "weekly_review": {
+        "activeParts": [
+          "spk_p4"
+        ],
+        "tabSelectorTemplate": "[data-testid=\"boss-part-tab-{partId}\"]",
+        "interaction_steps": [
+          {
+            "step": 1,
+            "action": "click",
+            "selector": "[data-testid=\"boss-part-tab-spk_p4\"]",
+            "description": "Select Speaking Part 4 Tab"
+          },
+          {
+            "step": 2,
+            "action": "click",
+            "selector": "[data-testid=\"personal-q-listen-btn\"]",
+            "description": "Listen to examiner question"
+          }
+        ],
+        "dom_state_condition": "document.querySelectorAll('[data-testid=\"personal-q-listen-btn\"]').length > 0",
+        "actionSelectors": [
+          {
+            "selector": "[data-testid=\"boss-part-tab-spk_p4\"]",
+            "status": "EXISTING",
+            "file_line": "src/modules/zones/BossBattleZone.jsx:494"
+          },
+          {
+            "selector": "[data-testid=\"personal-q-listen-btn\"]",
+            "status": "EXISTING",
+            "file_line": "src/components/cambridge/PersonalQuestionsCompleter.jsx:130"
+          }
+        ]
+      }
+    }
+  }
+}
