@@ -21,7 +21,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY || 'AIzaSyAtggk9xPlVt-P34qtSSFqKRx5lJkCO8gU';
+const GOOGLE_API_KEY = process.env.VITE_GOOGLE_TTS_API_KEY || process.env.GOOGLE_TTS_API_KEY;
+if (!GOOGLE_API_KEY) {
+  console.error('\n❌ FAIL CLOSED: No Google Cloud TTS API key found in environment.');
+  console.error('   Please set VITE_GOOGLE_TTS_API_KEY or GOOGLE_TTS_API_KEY in .env');
+  process.exit(1);
+}
 const outputDir = path.join(rootDir, 'public/audio/week33');
 
 if (!fs.existsSync(outputDir)) {
